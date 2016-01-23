@@ -25,18 +25,18 @@ public class FretboardTest {
   @Test
   public void testString() {
     GuitarString s = new GuitarString(E, 7);
-    s.mark(A, 'X');
+    s.markFirst(A, () -> 'X');
     assertEquals("|---|---|---|---|-X-|---|---|", s.toString());
-    s.mark(G, 'G');
+    s.markFirst(G, () -> 'G');
     assertEquals("|---|---|-G-|---|-X-|---|---|", s.toString());
   }
 
   @Test
   public void testFretboard() {
     Fretboard b = new Fretboard(6);
-    b.getString(0).mark(G, 'G');
-    b.getString(4).mark(C, 'C');
-    final String expected = 
+    b.getString(0).markFirst(G, () -> 'G');
+    b.getString(4).markFirst(C, () -> 'C');
+    final String expected = //
         "|---|---|---|---|---|---|\n" + //
         "|-C-|---|---|---|---|---|\n" + //
         "|---|---|---|---|---|---|\n" + //
@@ -45,7 +45,6 @@ public class FretboardTest {
         "|---|---|-G-|---|---|---|\n"; //
     assertEquals(expected, b.toString());
   }
-  
 
   @Test
   public void printMajorScaleBerkley() {
@@ -56,22 +55,22 @@ public class FretboardTest {
   public void printDoreanScaleBerkley() {
     printFatboard(CMajor, new Berkley(), new RootMarker(2, 'D'));
   }
+
   @Test
   public void printLydianScaleBerkley() {
     printFatboard(CMajor, new Berkley(), new RootMarker(4, 'L'));
   }
+
   @Test
   public void printMixoLydianScaleBerkley() {
     printFatboard(CMajor, new Berkley(), new RootMarker(5, 'M'));
   }
 
-  
   @Test
   @Ignore
   public void printMelodicMinorScaleBerkley() {
     printFatboard(CMelodicMinor, new Berkley(), rootMarker);
   }
-
 
   @Test
   @Ignore
@@ -90,7 +89,7 @@ public class FretboardTest {
   public void print3NotesPerStringForHarmonicMinorScale() {
     printFatboard(CHarmonicMinor.transpose(F), threeNotesPerString, rootMarker);
   }
-  
+
   @Test
   @Ignore
   public void print2NotesPerStringForMinorPentatonic() {
@@ -102,33 +101,36 @@ public class FretboardTest {
   public void print2NotesPerStringForMinor6Pentatonic() {
     printFatboard(CMinor6Pentatonic, twoNotesPerString, rootMarker);
   }
-  
+
   interface Fingering {
     boolean nextString(int index);
+
     int startIndex();
+
     int numberOfPositions();
   }
 
   interface Marker {
     char mark(int index);
   }
-  
+
   class RootMarker implements Marker {
     int position;
     char marker;
+
     public RootMarker(int position, char marker) {
       this.position = position;
       this.marker = marker;
     }
+
     @Override
     public char mark(int index) {
       return this.position == index + 1 ? marker : '\u2022';
     }
   }
-  
+
   Marker rootMarker = new RootMarker(1, 'R');
-  
-  
+
   class Berkley implements Fingering {
 
     @Override
@@ -141,13 +143,14 @@ public class FretboardTest {
     public int startIndex() {
       return -1;
     }
+
     @Override
     public int numberOfPositions() {
       return 5;
     }
-    
+
   }
-  
+
   class NotesPerString implements Fingering {
 
     private int notesPerString;
@@ -165,28 +168,39 @@ public class FretboardTest {
     public boolean nextString(int index) {
       return (index + 1) % notesPerString == 0;
     }
+
     @Override
     public int startIndex() {
       return startIndex;
     }
+
     @Override
     public int numberOfPositions() {
       return numberOfPositions;
     }
   }
-  
+
   NotesPerString twoNotesPerString = new NotesPerString(2, 0, 5);
   NotesPerString threeNotesPerString = new NotesPerString(3, 0, 7);
-  
-  
+
+  Note[] fatTuning(int numberOfStrings) {
+    Note note = E;
+    Note[] tuning = new Note[numberOfStrings];
+    for (int i = 0; i < numberOfStrings; i++) {
+      tuning[i] = note;
+      note = note.transpose(5);
+    }
+    return tuning;
+  }
+
   private Fretboard printFatboard(Scale scale, Fingering fingering, Marker marker) {
-    Fretboard b = new Fretboard(12, fingering.numberOfPositions() * 2);
+    Fretboard b = new Fretboard(12, fatTuning(fingering.numberOfPositions() * 2));
     int index = fingering.startIndex();
     Iterator<GuitarString> si = b.getStrings().iterator();
     GuitarString string = si.next();
     while (true) {
       Note note = scale.getNote(index);
-      string.mark(note, marker.mark(scale.indexOf(note)));
+      string.markFirst(note, () -> marker.mark(scale.indexOf(note)));
       if ((fingering.nextString(index))) {
         if (!si.hasNext())
           break;
@@ -198,7 +212,6 @@ public class FretboardTest {
     return b;
   }
 
-  
   @Test
   @Ignore
   public void printIntervals() {
@@ -214,10 +227,10 @@ public class FretboardTest {
     for (GuitarString string : f.getStrings()) {
       f.clear();
       Note root = string.getRoot().transpose(4);
-      string.mark(root, 'R');
+      string.markFirst(root, () -> 'R');
       Note interval = root.transpose(semitones);
       for (GuitarString other : f.getStrings()) {
-        other.mark(interval, 'o');
+        other.markFirst(interval, () -> 'o');
       }
       sb.append(f.toString());
       sb.append("\n");

@@ -15,19 +15,14 @@ import de.jlab.scales.theory.Note;
 public class Fretboard {
 
   private List<GuitarString> strings;
+  public static final Note[] STANDARD_TUNING = new Note[] { E, A, D, G, B, E };
 
   public Fretboard(int length) {
-    strings = createStrings(length, new Note[] { E, A, D, G, B, E});
+    this(length, STANDARD_TUNING);
   }
 
-  public Fretboard(int length, int numberOfStrings) {
-    Note root = E;
-    Note[] roots = new Note[numberOfStrings];
-    for (int i = 0; i < numberOfStrings; i++) {
-      roots[i] = root;
-      root = root.transpose(5);
-    }
-    strings = createStrings(length, roots);
+  public Fretboard(int length, Note[] tuning) {
+    strings = createStrings(length, STANDARD_TUNING);
   }
 
   private List<GuitarString> createStrings(int length, Note[] roots) {
