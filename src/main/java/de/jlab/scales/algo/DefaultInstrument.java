@@ -2,6 +2,7 @@ package de.jlab.scales.algo;
 
 import static de.jlab.scales.midi.Parts.note;
 import static de.jlab.scales.midi.Parts.rest;
+
 import de.jlab.scales.midi.Parallel;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.midi.ProgramChange;
