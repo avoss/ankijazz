@@ -1,0 +1,9 @@
+https://github.com/gleitz/MIDI.js
+https://github.com/gleitz/midi-js-soundfonts
+
+// original, w/o precompiled soundfonts
+https://github.com/mudcube/MIDI.js
+http://mudcu.be/midi-js/
+
+fun:
+http://mudcu.be/midi-js/WhitneyMusicBox.html

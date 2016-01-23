@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+    mavenCentral()
+    maven {
+      url "http://www.eclipse.org/downloads/download.php?r=1&nf=1&file=/rt/eclipselink/maven.repo"
+    }
+}
+
+dependencies {
+    compile 'com.google.guava:guava:13.0.1'
+    compile "com.google.inject:guice:3.0"
+    compile 'com.google.inject.extensions:guice-assistedinject:3.0'
+    compile 'com.google.inject.extensions:guice-multibindings:3.0'
+    testCompile 'junit:junit:4.11'
+}
+
