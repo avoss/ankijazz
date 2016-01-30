@@ -1,6 +1,6 @@
 package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.F;
@@ -25,17 +25,17 @@ public class FretboardTest {
   @Test
   public void testString() {
     GuitarString s = new GuitarString(E, 7);
-    s.markFirst(A, () -> 'X');
+    s.markFirst(A, 'X');
     assertEquals("|---|---|---|---|-X-|---|---|", s.toString());
-    s.markFirst(G, () -> 'G');
+    s.markFirst(G, 'G');
     assertEquals("|---|---|-G-|---|-X-|---|---|", s.toString());
   }
 
   @Test
   public void testFretboard() {
     Fretboard b = new Fretboard(6);
-    b.getString(0).markFirst(G, () -> 'G');
-    b.getString(4).markFirst(C, () -> 'C');
+    b.getString(0).markFirst(G, 'G');
+    b.getString(4).markFirst(C, 'C');
     final String expected = //
         "|---|---|---|---|---|---|\n" + //
         "|-C-|---|---|---|---|---|\n" + //
@@ -183,24 +183,15 @@ public class FretboardTest {
   NotesPerString twoNotesPerString = new NotesPerString(2, 0, 5);
   NotesPerString threeNotesPerString = new NotesPerString(3, 0, 7);
 
-  Note[] fatTuning(int numberOfStrings) {
-    Note note = E;
-    Note[] tuning = new Note[numberOfStrings];
-    for (int i = 0; i < numberOfStrings; i++) {
-      tuning[i] = note;
-      note = note.transpose(5);
-    }
-    return tuning;
-  }
 
   private Fretboard printFatboard(Scale scale, Fingering fingering, Marker marker) {
-    Fretboard b = new Fretboard(12, fatTuning(fingering.numberOfPositions() * 2));
+    Fretboard b = new Fretboard(12, fingering.numberOfPositions() * 2);
     int index = fingering.startIndex();
     Iterator<GuitarString> si = b.getStrings().iterator();
     GuitarString string = si.next();
     while (true) {
       Note note = scale.getNote(index);
-      string.markFirst(note, () -> marker.mark(scale.indexOf(note)));
+      string.markFirst(note, marker.mark(scale.indexOf(note)));
       if ((fingering.nextString(index))) {
         if (!si.hasNext())
           break;
@@ -227,14 +218,25 @@ public class FretboardTest {
     for (GuitarString string : f.getStrings()) {
       f.clear();
       Note root = string.getRoot().transpose(4);
-      string.markFirst(root, () -> 'R');
+      string.markFirst(root, 'R');
       Note interval = root.transpose(semitones);
       for (GuitarString other : f.getStrings()) {
-        other.markFirst(interval, () -> 'o');
+        other.markFirst(interval, 'o');
       }
       sb.append(f.toString());
       sb.append("\n");
     }
     return sb.toString();
+  }
+  
+  @Test
+  public void printMajorTriads() {
+    Fretboard f = new Fretboard(36);
+    for (GuitarString s : f.getStrings()) {
+      s.markAll(C, '1');
+      s.markAll(E, '3');
+      s.markAll(G, '5');
+    }
+    System.out.println(f);
   }
 }

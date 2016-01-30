@@ -17,18 +17,28 @@ public class Fretboard {
   private List<GuitarString> strings;
   public static final Note[] STANDARD_TUNING = new Note[] { E, A, D, G, B, E };
 
-  public Fretboard(int length) {
-    this(length, STANDARD_TUNING);
+  public Fretboard(int numberOfFrets) {
+    this(numberOfFrets, STANDARD_TUNING);
   }
 
-  public Fretboard(int length, Note[] tuning) {
-    strings = createStrings(length, STANDARD_TUNING);
+  public Fretboard(int numberOfFrets, Note[] tuning) {
+    strings = createStrings(numberOfFrets, STANDARD_TUNING);
   }
 
-  private List<GuitarString> createStrings(int length, Note[] roots) {
+  public Fretboard(int numberOfFrets, int numberOfStrings) {
+    Note note = E;
+    Note[] tuning = new Note[numberOfStrings];
+    for (int i = 0; i < numberOfStrings; i++) {
+      tuning[i] = note;
+      note = note.transpose(5);
+    }
+    strings = createStrings(numberOfFrets, tuning);
+  }
+  
+  private List<GuitarString> createStrings(int numberOfFrets, Note[] roots) {
     List<GuitarString> strings = new ArrayList<GuitarString>();
     for (Note root : roots)
-      strings.add(new GuitarString(root, length));
+      strings.add(new GuitarString(root, numberOfFrets));
     return strings;
   }
 
