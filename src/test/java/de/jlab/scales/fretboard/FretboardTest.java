@@ -1,6 +1,6 @@
 package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.theory.Note.*;
+import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.F;
@@ -238,5 +238,10 @@ public class FretboardTest {
       s.markAll(G, '5');
     }
     System.out.println(f);
+  }
+  
+  @Test
+  public void printInversionsOfChord() {
+    
   }
 }
