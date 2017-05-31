@@ -42,22 +42,26 @@ public class NotesPracticeSheet {
   
   private void permutate(AccNote prev, List<AccNote> notes) {
     Collections.shuffle(notes);
-    while (containsHalfStep(prev, notes)) {
+    while (containsInvalidInterval(prev, notes)) {
       Collections.shuffle(notes);
     }
   }
 
-  private boolean containsHalfStep(AccNote prev, List<AccNote> notes) {
+  private boolean containsInvalidInterval(AccNote prev, List<AccNote> notes) {
     for (AccNote note : notes) {
-      if (prev.note.isSemitone(note.note)) {
+      if (isInvalidInterval(prev, note)) {
         return true;
       }
       prev = note;
     }
-    if (notes.get(0).note.isSemitone(notes.get(notes.size() - 1).note)) {
+    if (isInvalidInterval(notes.get(0), notes.get(notes.size() - 1))) {
       return true;
     }
     return false;
+  }
+
+  private boolean isInvalidInterval(AccNote a, AccNote b) {
+    return a.note == b.note || a.note.isSemitone(b.note);
   }
   
 
@@ -69,28 +73,14 @@ public class NotesPracticeSheet {
     AccNote prev = new AccNote(C, FLAT);
     for (int i = 0; i< 10; i++) {
       permutate(prev, notes);
-      System.out.println(notes.stream().map(an -> an.toString()).reduce("", (a, b) -> a + b + "\t"));
+      System.out.println(toString(notes));
       prev = notes.get(notes.size()-1);
     }
   }
+
+  private String toString(List<?> list) {
+    return list.stream().map(o -> o.toString()).reduce("", (a, b) -> a + b + "\t");
+  }
   
-
-  @Test
-  public void printSheet() {
-    for (int i = 0; i < 30; i++) {
-      System.out.println(sequence(Accidental.FLAT)); 
-      System.out.println(sequence(Accidental.SHARP)); 
-    }
-  }
-
-  private String sequence(Accidental acc) {
-    return createList().stream().map(n -> n.getName(acc)).reduce("", (a, b) -> a + b + "\t").trim();
-  }
-
-  private List<Note> createList() {
-    List<Note> list = new ArrayList<>(asList(Note.values()));
-    Collections.shuffle(list);
-    return list;
-  }
 
 }
