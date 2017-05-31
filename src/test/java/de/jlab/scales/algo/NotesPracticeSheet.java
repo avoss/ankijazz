@@ -1,6 +1,19 @@
 package de.jlab.scales.algo;
 
-import static java.util.Arrays.asList;
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.Ab;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.Eb;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Note.Gb;
 import static java.util.stream.Stream.concat;
 
 import java.util.ArrayList;
@@ -13,9 +26,6 @@ import org.junit.Test;
 
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.Note;
-
-import static de.jlab.scales.theory.Accidental.*;
-import static de.jlab.scales.theory.Note.*;
 
 public class NotesPracticeSheet {
   
@@ -53,9 +63,6 @@ public class NotesPracticeSheet {
         return true;
       }
       prev = note;
-    }
-    if (isInvalidInterval(notes.get(0), notes.get(notes.size() - 1))) {
-      return true;
     }
     return false;
   }
