@@ -72,4 +72,8 @@ public enum Note {
     return semitones;
   }
 
+  public boolean isSemitone(Note other) {
+    return this.semitones(other) == 1 || other.semitones(this) == 1;
+  }
+
 }
