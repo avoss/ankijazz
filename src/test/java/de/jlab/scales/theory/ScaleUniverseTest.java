@@ -1,13 +1,13 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.ScaleType.Diminished;
+import static de.jlab.scales.theory.ScaleType.*;
 import static de.jlab.scales.theory.ScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.ScaleType.Major;
 import static de.jlab.scales.theory.ScaleType.MelodicMinor;
@@ -130,8 +130,9 @@ public class ScaleUniverseTest {
   }
 
   private void printValidScalesForChord(Scale chord, Accidental acc) {
-    System.out.println(String.format("valid scales for chord %s:", chord.asChord(acc)));
-    ScaleUniverse universe = new ScaleUniverse(acc);
+    System.out.println(String.format("valid scales for chord %s:", chord.asScale()));
+    ScaleUniverse universe = new ScaleUniverse(Accidental.FLAT, Major, MelodicMinor, HarmonicMinor, Diminished, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
+    
     for (Scale scale : universe.getAllScales()) {
       if (scale.contains(chord)) {
         System.out.println(" " + scale.getName());
@@ -142,8 +143,12 @@ public class ScaleUniverseTest {
   }
   
   @Test
-  public void printValidScalesForSong() {
-    printValidScalesForChord(new Scale(C, E, Gb, Bb), Accidental.FLAT); // 
+  public void printValidScalesForMiles() {
+    printValidScalesForChord(new Scale(E, Gb, B, E, G, B), Accidental.FLAT);  
+//    printValidScalesForChord(new Scale(E, G, B, D, F, A), Accidental.FLAT);  
+    printValidScalesForChord(new Scale(D, F, A, D, F, Bb), Accidental.FLAT);  
+//    printValidScalesForChord(new Scale(D, F, Bb, Eb, Gb, B), Accidental.FLAT);  
+    printValidScalesForChord(new Scale(Eb, Gb, B, E, G, B), Accidental.FLAT);  
   }
 
   private void superimposeChord(ScaleType type, Accidental acc) {

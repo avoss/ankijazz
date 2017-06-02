@@ -70,19 +70,34 @@ public class NotesPracticeSheet {
   private boolean isInvalidInterval(AccNote a, AccNote b) {
     return a.note == b.note || a.note.isSemitone(b.note);
   }
-  
 
+  int col = 0;
+  
   @Test
   public void leadSheetRandomSmall() {
     // 10 rows, 16 cols = 160 notes in total
     // 7 notes + 5 sharps + 5 flats = 17 notes to practice
     List<AccNote> notes = allNotes();
+    col = 0;
     AccNote prev = new AccNote(C, FLAT);
-    for (int i = 0; i< 10; i++) {
+    for (int i = 0; i< 8; i++) {
       permutate(prev, notes);
-      System.out.println(toString(notes));
+      print(notes);
       prev = notes.get(notes.size()-1);
     }
+  }
+
+  private void print(List<AccNote> notes) {
+    notes.stream().forEach(note-> {
+      System.out.print(note);
+      col = col + 1;
+      if (col == 8) {
+        System.out.print("\n");
+        col = 0;
+      } else {
+        System.out.print("\t");
+      }
+    });
   }
 
   private String toString(List<?> list) {

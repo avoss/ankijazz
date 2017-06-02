@@ -1,17 +1,19 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Scales.C7;
 import static de.jlab.scales.theory.Scales.C7flat5;
+import static de.jlab.scales.theory.Scales.C7flat5flat9;
+import static de.jlab.scales.theory.Scales.C7flat5sharp9;
+import static de.jlab.scales.theory.Scales.C7flat9;
 import static de.jlab.scales.theory.Scales.C7sharp5;
+import static de.jlab.scales.theory.Scales.C7sharp5flat9;
 import static de.jlab.scales.theory.Scales.C7sharp5sharp9;
 import static de.jlab.scales.theory.Scales.C7sharp9;
 import static de.jlab.scales.theory.Scales.C7sus4;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.Cdim7;
-import static de.jlab.scales.theory.Scales.Cm7;
-import static de.jlab.scales.theory.Scales.Cm7b5;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,14 +44,18 @@ public class BackCycler {
     MyLeader() {
       add(C7);
       add(C7sus4);
-      add(Cm7b5.transpose(E));
-      add(Cm7.transpose(A));
+//      add(Cm7b5.transpose(E));
+//      add(Cm7.transpose(A));
       add(Cdim7.transpose(1));
       chords.add(C7sharp5);
       chords.add(C7flat5);
-      chords.add(C7sharp5sharp9);
       chords.add(C7sharp9);
-      //chords.addAll(CMelodicMinor.transpose(Db).getChords(4));
+      chords.add(C7flat9);
+      chords.add(C7sharp5sharp9);
+      chords.add(C7sharp5flat9);
+      chords.add(C7flat5sharp9);
+      chords.add(C7flat5flat9);
+      chords.addAll(CMelodicMinor.transpose(Db).getChords(4));
     }
 
     private void add(Scale chord) {
