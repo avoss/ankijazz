@@ -2,3 +2,6 @@
 /temp
 /bin
 /build
+/out
+/.idea/
+/scales.core.iml

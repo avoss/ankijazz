@@ -1,18 +1,8 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Note.*;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.ScaleType.*;
-import static de.jlab.scales.theory.ScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.ScaleType.Major;
-import static de.jlab.scales.theory.ScaleType.MelodicMinor;
-import static de.jlab.scales.theory.ScaleType.Minor6Pentatonic;
-import static de.jlab.scales.theory.ScaleType.Minor7Pentatonic;
+import static java.lang.String.format;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -48,7 +38,7 @@ public class ScaleUniverseTest {
     for (Scale scale : universe) {
       // System.out.println(scale.getName());
       if (!scale.getSuperScales().isEmpty()) {
-        System.out.println(String.format("%s is contained in:", scale.getName()));
+        System.out.println(format("%s is contained in:", scale.getName()));
         for (Scale superScale : scale.getSuperScales())
           System.out.println(superScale.getName());
         System.out.println();
@@ -69,7 +59,7 @@ public class ScaleUniverseTest {
       Set<Note> intersection = new TreeSet<Note>(chord.getNotes());
       intersection.removeAll(scale.getNotes());
       if (intersection.size() < 2) {
-        System.out.println(String.format("%s - not including: %s", scale.getName(), intersection.toString()));
+        System.out.println(format("%s - not including: %s", scale.getName(), intersection.toString()));
         for (Scale sub : scale.getSubScales())
           System.out.println("  - " + sub.getName());
       }
@@ -89,12 +79,12 @@ public class ScaleUniverseTest {
 
   private void printTriadsInScale(ScaleType type, Accidental acc) {
     Scale scale = type.getScale();
-    System.out.println(String.format("\nTriads of %s %s", scale.getRoot().name(), type.getName()));
+    System.out.println(format("\nTriads of %s %s", scale.getRoot().name(), type.getName()));
     for (Note triadRoot : Note.values()) {
       for (ScaleType triadType : ScaleType.TRIADS) {
         Scale chord = triadType.getScale().transpose(triadRoot);
         if (scale.getNotes().containsAll(chord.getNotes()))
-          System.out.println(String.format("  %5s  %5s (%s)", scale.getRoot().romanName(chord.getRoot())  , chord.asChord(acc), chord.asScale()));
+          System.out.println(format("  %5s  %5s (%s)", scale.getRoot().intervalName(chord.getRoot())  , chord.asChord(acc), chord.asScale()));
       }
     }
   }
@@ -108,7 +98,7 @@ public class ScaleUniverseTest {
   
   private void printPositionsOfChordInScale(Scale chord, ScaleType type, Accidental acc) {
     Scale scale = type.getScale();
-    System.out.println(String.format("\nPositions of %s in %s", chord.asChord(), type.getName()));
+    System.out.println(format("\nPositions of %s in %s", chord.asChord(), type.getName()));
     for (int i = 0; i < 12; i++) {
       if (scale.getNotes().containsAll(chord.transpose(i).getNotes()))
         System.out.println(chord.transpose(i).asChord());
@@ -116,53 +106,58 @@ public class ScaleUniverseTest {
   }
 
   private void printScalesContainingChord(Scale chord, Accidental acc) {
-    System.out.println(String.format("Chord %s is contained in:", chord.asChord(acc)));
+    System.out.println(format("Chord %s is contained in:", chord.asChord(acc)));
     for (ScaleType type : new ScaleType[] { Major, MelodicMinor, HarmonicMinor, Minor7Pentatonic, Minor6Pentatonic }) {
       for (Note root : Note.values()) {
         Scale x = chord.transpose(root);
         Scale scale = type.getScale();
         if (scale.getNotes().containsAll(x.getNotes())) {
-          System.out.println(String.format("%s %s contains %s at %s", scale.getRoot(), type.getName(), x.asChord(acc),
-              chord.getRoot().romanName(root)));
+          System.out.println(format("%s %s contains %s at %s", scale.getRoot(), type.getName(), x.asChord(acc),
+              chord.getRoot().intervalName(root)));
         }
       }
     }
   }
 
   private void printValidScalesForChord(Scale chord, Accidental acc) {
-    System.out.println(String.format("valid scales for chord %s:", chord.asScale()));
-    ScaleUniverse universe = new ScaleUniverse(Accidental.FLAT, Major, MelodicMinor, HarmonicMinor, Diminished, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
+    Note root = chord.getRoot();
+    System.out.println(format("\nValid scales for chord %s, notes %s, intervals %s:", chord.asChord(acc), chord.asScale(), chord.asIntervals(root)));
+    ScaleUniverse universe = new ScaleUniverse(Accidental.FLAT, Major, MelodicMinor, HarmonicMinor, Diminished, WholeTone, Minor7Pentatonic, Minor6Pentatonic, RagaPentatonic);
     
     for (Scale scale : universe.getAllScales()) {
       if (scale.contains(chord)) {
-        System.out.println(" " + scale.getName());
-        for (Scale sub : scale.getSubScales())
-          System.out.println("   > " + sub.getName());
+        System.out.println(format("  %s", modeInfo(root, scale)));
+        for (Scale sub : scale.getSubScales()) {
+          System.out.println(format("    > %s", modeInfo(root, sub)));
+        }
       }
     }
   }
-  
+
+  private String modeInfo(Note root, Scale scale) {
+    Scale mode = scale.superimpose(root);
+    return format("%s, notes %s, intervals %s", mode.getName(), mode.asScale(), mode.asIntervals(root));
+  }
+
   @Test
-  public void printValidScalesForMiles() {
-    printValidScalesForChord(new Scale(E, Gb, B, E, G, B), Accidental.FLAT);  
-//    printValidScalesForChord(new Scale(E, G, B, D, F, A), Accidental.FLAT);  
-    printValidScalesForChord(new Scale(D, F, A, D, F, Bb), Accidental.FLAT);  
-//    printValidScalesForChord(new Scale(D, F, Bb, Eb, Gb, B), Accidental.FLAT);  
-    printValidScalesForChord(new Scale(Eb, Gb, B, E, G, B), Accidental.FLAT);  
+  public void printValidScalesForDWYW() {
+    printValidScalesForChord(new Scale(Db, F, B, Db, Eb, Ab), Accidental.FLAT);
+    printValidScalesForChord(new Scale(Eb, G, Db, Eb, F, Bb), Accidental.FLAT);
+    printValidScalesForChord(new Scale(C, G, Db, E, Bb), Accidental.FLAT);
+    printValidScalesForChord(new Scale(B, Ab,A,Eb, F, B), Accidental.FLAT);
   }
 
   private void superimposeChord(ScaleType type, Accidental acc) {
     Scale chord = type.getScale();
     Note oldRoot = chord.getRoot();
-    System.out.println(String.format("\n%2s %s = %s (%s)\n", oldRoot.getName(acc), type.getName(), chord.asChord(),
-        chord.asScale()));
+    System.out.println(format("\n%2s %s = %s (%s)\n", oldRoot.getName(acc), type.getName(), chord.asChord(), chord.asScale()));
     for (Note newRoot : Note.values()) {
       Scale x = chord.transpose(newRoot);
-      System.out.print(String.format("%5s : %2s %s over %2s = %10s, Intervals = ", oldRoot.romanName(newRoot),
+      System.out.print(format("%5s : %2s %s over %2s = %10s, Intervals = ", oldRoot.intervalName(newRoot),
           newRoot.getName(acc), type.getName(), oldRoot, x.superimpose(oldRoot).asChord()));
       for (Note n : x) {
-        System.out.print(String.format("%6s", chord.intervalName(n)));
-        // System.out.print(String.format("%6s", oldRoot.romanName(n)));
+        System.out.print(format("%6s", chord.intervalName(n)));
+        // System.out.print(String.format("%6s", oldRoot.intervalName(n)));
       }
       System.out.println();
     }
@@ -171,9 +166,9 @@ public class ScaleUniverseTest {
   @Test
   public void printChordNames() {
     Scale chord = new Scale(D, Bb, C, F).transpose(-7);
-    System.out.println(String.format("%s = %s", chord.asChord(), chord.asScale()));
+    System.out.println(format("%s = %s", chord.asChord(), chord.asScale()));
     for (Note newRoot : Note.values()) {
-      System.out.println(String.format("%s", chord.superimpose(newRoot).asChord()));
+      System.out.println(format("%s", chord.superimpose(newRoot).asChord()));
     }
   }
 
@@ -190,9 +185,9 @@ public class ScaleUniverseTest {
   public void printSomeTriads() {
     Scale scale = Major.getScale();
     for (int i = 0; i < scale.getNotes().size(); i++) {
-      System.out.print(String.format("%3s: ", scale.getNote(i)));
+      System.out.print(format("%3s: ", scale.getNote(i)));
       for (int k : new int[] { 12, 0, 2, 4 })
-        System.out.print(String.format("%8s", scale.getChord(i + k, 3).asChord(),
+        System.out.print(format("%8s", scale.getChord(i + k, 3).asChord(),
             scale.getChord(i + k, 3).superimpose(scale.getNote(i)).asChord()));
       System.out.println();
     }

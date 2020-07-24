@@ -2,24 +2,24 @@ package de.jlab.scales.theory;
 
 
 public enum Note {
-  C("I", "C", "C"), 
-  Db("bII", "Db", "C#"), 
-  D("II", "D", "D"), 
-  Eb("bIII", "Eb", "D#"), 
-  E("III", "E", "E"), 
-  F("IV", "F", "F"), 
-  Gb("bV", "Gb", "F#"), 
-  G("V", "G", "G"), 
-  Ab("bVI", "Ab", "G#"), 
-  A("VI", "A", "A"), 
-  Bb("bVII", "Bb", "A#"),
-  B("VII", "B", "B");
+  C("1", "C", "C"),
+  Db("b2", "Db", "C#"),
+  D("2", "D", "D"),
+  Eb("b3", "Eb", "D#"),
+  E("3", "E", "E"),
+  F("4", "F", "F"),
+  Gb("b5", "Gb", "F#"),
+  G("5", "G", "G"),
+  Ab("b6", "Ab", "G#"),
+  A("6", "A", "A"),
+  Bb("b7", "Bb", "A#"),
+  B("7", "B", "B");
   
   private final String flatName;
   private final String sharpName;
   private final String romanName;
   
-  private Note(String romanName, String flatName, String sharpName) {
+  Note(String romanName, String flatName, String sharpName) {
     this.romanName = romanName;
     this.flatName = flatName;
     this.sharpName = sharpName;
@@ -49,7 +49,7 @@ public enum Note {
   public Note flat7() { return transpose(10); }
   public Note sharp7() { return transpose(11); }
 
-  public final String romanName(Note upper) {
+  public final String intervalName(Note upper) {
     return interval(upper).romanName;
   }
 

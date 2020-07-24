@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import static java.lang.String.format;
+
 public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   private final Note root;
@@ -48,6 +50,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   public Scale superimpose(Note newRoot) {
     Scale scale = new Scale(newRoot);
     scale.notes.addAll(notes);
+    scale.setName(format("Mode %d of %s", indexOf(newRoot) + 1, name));
     return scale;
   }
 
@@ -184,6 +187,23 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     for (int i = 0; i < notes.size(); i++)
       sb.append(getNote(i).name()).append(" ");
     return sb.toString().trim();
+  }
+
+  public String asIntervals() {
+    return asIntervals(root);
+  }
+
+  /* TODO
+   * List<Note> ascendingThirds(Note start) // sort by ascending 3rds for chords, start may not be part of scale!
+   */
+
+  public String asIntervals(Note root) {
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < notes.size(); i++) {
+      sb.append(root.intervalName(getNote(i))).append(" ");
+    }
+    return sb.toString().trim();
+
   }
 
   @Override

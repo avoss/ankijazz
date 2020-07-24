@@ -16,8 +16,8 @@ import static de.jlab.scales.theory.Note.Gb;
 public enum ScaleType {
   
   Major("Major Scale", new Scale(C, D, E, F, G, A, B), "Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
-  MelodicMinor("Melodic Minor Scale", new Scale(C, D, Eb, F, G, A, B), "Dorian #7", "Phrygian #6", "Lydian #5", "Mixolydian #4", "Aeolean #3", "Locrian #2", "Ionian #1"),
-  HarmonicMinor("Harmonic Minor Scale", new Scale(C, D, Eb, F, G, Ab, B), "Aeolean #7", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian #3", "Lydian #2", "Mixolydian #1"),
+  MelodicMinor("Melodic Minor Scale", new Scale(C, D, Eb, F, G, A, B), "Dorian #7", "Phrygian #6", "Lydian #5", "Mixolydian #4", "Aeolean #3", "Altered", "Ionian #1"),
+  HarmonicMinor("Harmonic Minor Scale", new Scale(C, D, Eb, F, G, Ab, B), "Aeolean #7", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
   HarmonicMajor("Harmonic Major Scale", new Scale(C, D, E, F, G, Ab, B), "Ionian b6", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
   Diminished("Diminished Half/Whole Scale", new Scale(C, Db, Eb, E, Gb, G, A, Bb)),
   WholeTone("Whole Tone Scale", new Scale(C, D, E, Gb, Ab, Bb)),
@@ -28,8 +28,8 @@ public enum ScaleType {
   //Minor6Flat5Pentatonic("m6b5 Pent", new Scale(C, Eb, F, Gb, A)),
   //Minor6Sharp5Pentatonic("m6#5 Pent", new Scale(C, Eb, F, Ab, A)),
   //Minor7Flat5Pentatonic("m7b5 Pent", new Scale(C, Eb, F, Gb, Bb)),
-  //RagaPentatonic("Raga",  new Scale(C, E, F, G, Bb)),
-
+  RagaPentatonic("Raga",  new Scale(C, E, F, G, Bb)),
+  // why triads? what about arpeggios?
   MajorTriad("Major Triad", new Scale(C, E, G)),
   MinorTriad("Minor Triad", new Scale(C, Eb, G)),
   DiminishedTriad("Diminished Triad", new Scale(C, Eb, Gb)),
