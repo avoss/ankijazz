@@ -25,7 +25,7 @@ import org.assertj.core.util.Arrays;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.MultimapBuilder;
 
-import de.jlab.scales.theory.Scales.ScaleInfos.Formatter.FormatterBuilder;
+import de.jlab.scales.theory.Scales.ScaleInfos.Namer.FormatterBuilder;
 import lombok.Builder;
 import lombok.RequiredArgsConstructor;
 
@@ -107,7 +107,7 @@ public class Scales {
     private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
     
     @Builder
-    static class Formatter {
+    static class Namer {
       // {0} mode root name
       // {1} mode||scale name
       // {2} parent root name
@@ -139,7 +139,7 @@ public class Scales {
     }
     
     private void scale(Scale scale, String scaleName, String... modeNames) {
-      FormatterBuilder fmt = Formatter.builder()
+      NamerBuilder fmt = Namer.builder()
         .namePattern("{0} {1}")
         .scaleName(scaleName)
         .fallbackPattern("{2} {1}/{0}")
@@ -148,7 +148,7 @@ public class Scales {
     }
     
     private void chord(Scale scale, String scaleName, String... modeNames) {
-      FormatterBuilder fmt = Formatter.builder()
+      NamerBuilder fmt = Namer.builder()
           .namePattern("{0}{1}")
           .scaleName(scaleName)
           .fallbackPattern("{2}{1}/{0}")
@@ -156,14 +156,14 @@ public class Scales {
         addAll(scale, fmt);
     }
 
-    private void addAll(Scale scale, FormatterBuilder formatter) {
+    private void addAll(Scale scale, NamerBuilder namerBuilder) {
       for (Note newRoot : Note.values()) {
         Scale transposed = scale.transpose(newRoot);
-        addModes(transposed, formatter.accidental(newRoot.getAccidental()).build());
+        addModes(transposed, namerBuilder.accidental(newRoot.getAccidental()).build());
       }
     }
 
-    private void addModes(Scale parent, Formatter formatter) {
+    private void addModes(Scale parent, Namer formatter) {
       Note oldRoot = parent.getRoot();
       Accidental accidental = oldRoot.getAccidental();
       for (int i = 0; i < parent.length(); i++) {
