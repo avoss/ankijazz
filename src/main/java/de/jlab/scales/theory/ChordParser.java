@@ -1,8 +1,6 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
-import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.E;
@@ -10,6 +8,7 @@ import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
+import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -21,11 +20,10 @@ import java.util.regex.Pattern;
 import com.google.common.collect.Sets;
 
 public class ChordParser {
-  private static final Scale C_MAJOR = new Scale(C, D, E, F, G, A, B);
   private final Accidental accidental;
 
-  private static final Pattern chordPattern = Pattern.compile("\\s*(C#|C|D#|Db|D|Eb|E|F#|F|G#|Gb|G|A#|Ab|A|Bb|B)\\s*(aug|dim7|dim|sus4|sus2|maj7|maj|m7|m|7|m6|6|5)?(.*)\\s*", Pattern.CASE_INSENSITIVE);
-  private static final Pattern optionsPattern = Pattern.compile("(sus4)|(maj7)|((b|#)?(4|5|6|7|9|11|13))\\s*");
+  private static final Pattern chordPattern = Pattern.compile("\\s*(C#|C|D#|Db|D|Eb|E|F#|F|G#|Gb|G|A#|Ab|A|Bb|B)\\s*(aug|\\+|dim7|o7|dim|o|7sus4|7sus|sus4|7sus2|sus2|sus|mmaj7|maj7|maj|m7|-7|m|-|7|m6|-6|6|5)?(.*)\\s*", Pattern.CASE_INSENSITIVE);
+  private static final Pattern optionsPattern = Pattern.compile("(b|#)?(4|5|6|7|9|11|13)\\s*", Pattern.CASE_INSENSITIVE);
   
   public ChordParser(Accidental accidental) {
     this.accidental = accidental;
@@ -43,12 +41,13 @@ public class ChordParser {
 
 
   public static Scale parseChord(String string) throws ParseChordException {
-    Matcher matcher = chordPattern.matcher(string.toLowerCase());
+    string = string.replace("Δ7", "maj7"); // bug in regex?
+    Matcher matcher = chordPattern.matcher(string);
     if (!matcher.find())
-      throw new ParseChordException(string);
+      throw new ParseChordException("Not a chord: " + string);
     Note root = noteNameMap.get(matcher.group(1).toLowerCase());
     if (root == null)
-      throw new ParseChordException(string);
+      throw new ParseChordException("Root not found: " + string);
     Set<Note> notes = new TreeSet<Note>();
     
 
@@ -57,71 +56,102 @@ public class ChordParser {
       notes.add(root.five());
     } else {
       String type = matcher.group(2).toLowerCase();
-      if ("dim7".equals(type)) {
+      switch(type) {
+      case "dim7":
+      case "o7":
+          notes.add(root.minor3());
+          notes.add(root.flat5());
+          notes.add(root.major6());
+          break;
+      case "dim":
+      case "o":
         notes.add(root.minor3());
         notes.add(root.flat5());
-        notes.add(root.major6());
-      } else if ("dim".equals(type)) {
-        notes.add(root.minor3());
-        notes.add(root.flat5());
-      } else if ("aug".equals(type)) {
+        break;
+      case "aug":
+      case "+":
         notes.add(root.major3());
         notes.add(root.sharp5());
-      } else if ("sus4".equals(type)) {
+        break;
+      case "sus4":
+      case "sus":
         notes.add(root.four());
         notes.add(root.five());
-      } else if ("sus2".equals(type)) {
+        break;
+      case "sus2":
         notes.add(root.nine());
         notes.add(root.five());
-      } else if ("maj7".equals(type)) {
+        break;
+      case "maj7":
+      case "Δ7":
         notes.add(root.major3());
         notes.add(root.five());
         notes.add(root.sharp7());
-      } else if ("maj".equals(type)) {
+        break;
+      case "mmaj7":
+      case "mΔ7":
+        notes.add(root.minor3());
+        notes.add(root.five());
+        notes.add(root.sharp7());
+        break;
+      case "maj":
         notes.add(root.major3());
         notes.add(root.five());
-      } else if ("m7".equals(type)) {
+        break;
+      case "m7":
+      case "-7":
         notes.add(root.minor3());
         notes.add(root.five());
         notes.add(root.flat7());
-      } else if ("m".equals(type)) {
+        break;
+      case "m":
+      case "-":
         notes.add(root.minor3());
         notes.add(root.five());
-      } else if ("7".equals(type)) {
+        break;
+      case "7":
         notes.add(root.major3());
         notes.add(root.five());
         notes.add(root.flat7());
-      } else if ("m6".equals(type)) {
+        break;
+      case "7sus":
+      case "7sus4":
+        notes.add(root.four());
+        notes.add(root.five());
+        notes.add(root.flat7());
+        break;
+      case "7sus2":
+        notes.add(root.nine());
+        notes.add(root.five());
+        notes.add(root.flat7());
+        break;
+      case "m6":
+      case "-6":
         notes.add(root.minor3());
         notes.add(root.five());
         notes.add(root.major6());
-      } else if ("6".equals(type)) {
+        break;
+      case "6":
         notes.add(root.major3());
         notes.add(root.five());
         notes.add(root.major6());
-      } else if ("5".equals(type)) {
+        break;
+      case "5":
         notes.add(root.five());
+        break;
       }
     }
 
     matcher = optionsPattern.matcher(matcher.group(3));
     while (matcher.find()) {
-      if ("sus4".equals(matcher.group(1))) {
-        notes.remove(root.major3());
-        notes.remove(root.minor3());
-        notes.add(root.four());
-      } else if ("maj7".equals(matcher.group(2))) {
-        notes.add(root.sharp7());
-      } else {
-        int degree = Integer.parseInt(matcher.group(5));
-        Note option = degree == 7 ? Note.C.flat7() : C_MAJOR.getNote(degree - 1);
-        notes.remove(option.transpose(root.ordinal()));
-        if ("#".equals(matcher.group(4)))
-          option = option.transpose(1);
-        else if ("b".equalsIgnoreCase(matcher.group(4)))
-          option = option.transpose(-1);
-        notes.add(option.transpose(root.ordinal()));
-      }
+      int degree = Integer.parseInt(matcher.group(2));
+      Note option = degree == 7 ? Note.C.flat7() : CMajor.getNote(degree - 1);
+      notes.remove(option.transpose(root.ordinal()));
+      if ("#".equals(matcher.group(1)))
+        option = option.transpose(1);
+      else if ("b".equalsIgnoreCase(matcher.group(1)))
+        option = option.transpose(-1);
+      notes.add(option.transpose(root.ordinal()));
     }
 
     return new Scale(root, notes);
@@ -144,16 +174,16 @@ public class ChordParser {
       if (remaining.contains(root.flat5()) && remaining.contains(root.major6())) {
         remaining.remove(root.flat5());
         remaining.remove(root.major6());
-        sb.append("Dim7");
+        sb.append("o7");
       } else if (remaining.contains(root.flat5()) && remaining.size() == 1) {
         remaining.remove(root.flat5());
-        sb.append("Dim");
+        sb.append("o");
       } else
         sb.append("m");
     } else if (remaining.remove(root.four()))
-      sb.append("Sus4");
+      sb.append("sus");
     else if (remaining.remove(root.nine()))
-      sb.append("Sus2");
+      sb.append("sus2");
     else if (remaining.remove(root.five()))
       sb.append("5");
 
@@ -164,7 +194,7 @@ public class ChordParser {
       flat7 = true;
     }
     if (remaining.remove(root.sharp7()))
-      sb.append("Maj7");
+      sb.append("Δ7");
 
     // options
     if (remaining.remove(root.flat5()))
@@ -207,13 +237,13 @@ public class ChordParser {
     if (set.containsAll(C, Eb, G))
       return root + "m";
     if (set.containsAll(C, Eb, Gb))
-      return root + "Dim";
+      return root + "o";
     if (set.containsAll(C, E, Ab))
-      return root + "Aug";
+      return root + "+";
     if (set.containsAll(C, D, G))
-      return root + "Sus2";
+      return root + "sus2";
     if (set.containsAll(C, F, G))
-      return root + "Sus4";
+      return root + "sus4";
     return null;
   }
 

@@ -122,7 +122,7 @@ public class ScaleUniverseTest {
   private void printValidScalesForChord(Scale chord, Accidental acc) {
     Note root = chord.getRoot();
     System.out.println(format("\nValid scales for chord %s, notes %s, intervals %s:", chord.asChord(acc), chord.asScale(), chord.asIntervals(root)));
-    ScaleUniverse universe = new ScaleUniverse(Accidental.FLAT, Major, MelodicMinor, HarmonicMinor, Diminished, WholeTone, Minor7Pentatonic, Minor6Pentatonic, RagaPentatonic);
+    ScaleUniverse universe = new ScaleUniverse(Accidental.FLAT, Major, MelodicMinor, HarmonicMinor, Diminished, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
     
     for (Scale scale : universe.getAllScales()) {
       if (scale.contains(chord)) {

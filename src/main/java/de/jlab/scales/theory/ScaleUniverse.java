@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
+// TODO mode names not available in scales
 public class ScaleUniverse implements Iterable<Scale> {
   private final List<Scale> allScales = new ArrayList<Scale>();
   private final Accidental accidental;
@@ -34,6 +35,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     Scale scale = type.getScale();
     for (Note root : Note.values()) {
       Scale transposed = scale.transpose(root);
+      // TODO this should be in Scale.transpose, not caller of transpose()
       transposed.setName(String.format("%s %s", root.getName(accidental), type.getName()));
       allScales.add(transposed);
     }

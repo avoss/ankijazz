@@ -1,5 +1,7 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;
@@ -17,13 +19,12 @@ import static de.jlab.scales.theory.Scales.CHarmonicMajor;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
-import static de.jlab.scales.theory.Scales.CMinorPentatonic;
 import static de.jlab.scales.theory.Scales.Cdim7;
 import static de.jlab.scales.theory.Scales.Cm7;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -36,14 +37,14 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 public class ScaleTest {
-  
+
   @Test
   public void getNote_should_work_with_negative_index() {
-    assertEquals(C, CMajor.getNote(0)); 
-    assertEquals(D, CMajor.getNote(1)); 
-    assertEquals(B, CMajor.getNote(-1)); 
+    assertEquals(C, CMajor.getNote(0));
+    assertEquals(D, CMajor.getNote(1));
+    assertEquals(B, CMajor.getNote(-1));
   }
-  
+
   @Test
   public void printInversions() {
     for (Scale chord : CMajor.getChords(4)) {
@@ -55,7 +56,7 @@ public class ScaleTest {
 
   @Test
   public void testIsMajor() {
-    boolean expected [] = {true, false, false, true, true, false, false};
+    boolean expected[] = { true, false, false, true, true, false, false };
     for (int i = 0; i < expected.length; i++) {
       Scale s = CMajor.superimpose(CMajor.getNote(i));
       assertEquals(expected[i], s.isMajor());
@@ -63,7 +64,7 @@ public class ScaleTest {
     assertTrue(CmajTriad.isMajor());
     assertFalse(CminTriad.isMajor());
   }
-  
+
   @Test
   public void testIsDominant() {
     assertTrue(C7.isDominant());
@@ -74,14 +75,17 @@ public class ScaleTest {
 
   @Test
   public void intervals() {
-    List<Integer> expected = Arrays.asList(new Integer[]{2, 2, 1, 2, 2, 2, 1});
-    for (Note n : Note.values())
+    List<Integer> expected = Arrays.asList(new Integer[] { 2, 2, 1, 2, 2, 2, 1 });
+    for (Note n : Note.values()) {
       assertEquals("Intervals do not match for root " + n, expected, CMajor.transpose(n).intervals());
+    }
   }
+
   @Test
   public void testSpell() {
     assertEquals("C D E F G A B", CMajor.toString());
-    assertEquals("G A B C D E Gb", CMajor.transpose(G.ordinal()).toString());
+    assertEquals("G A B C D E F#", CMajor.transpose(G).toString());
+    assertEquals("F G A Bb C D E", CMajor.transpose(F).toString());
   }
 
   @Test
@@ -106,7 +110,7 @@ public class ScaleTest {
     assertFalse(CMelodicMinor.contains(CMajor));
     assertTrue(CMajor.contains(new Scale(D, F, A, C)));
   }
-  
+
   @Test
   public void testTranspose() {
     assertEquals(C, C.root());
@@ -126,45 +130,34 @@ public class ScaleTest {
 
   @Test
   public void testAsChord() {
-    assertEquals("CMaj7", Cmaj7.superimpose(C).asChord());
+    assertEquals("CΔ7", Cmaj7.superimpose(C).asChord());
     assertEquals("Am79", Cmaj7.superimpose(A).asChord());
     assertEquals("Eb6", Cm7.superimpose(Eb).asChord());
     assertEquals("Dm7", Cm7.transpose(2).asChord());
     assertEquals("Dm7", Cm7.transpose(2).superimpose(D).asChord());
     assertEquals("Em7", CMajor.getChord(2).asChord());
-    assertEquals("CMaj79", CMajor.getChord(2).superimpose(C).asChord());
+    assertEquals("CΔ79", CMajor.getChord(2).superimpose(C).asChord());
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
     assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
-    assertEquals("CDim7", Cdim7.superimpose(C).superimpose(C).asChord());
+    assertEquals("Co7", Cdim7.superimpose(C).superimpose(C).asChord());
     assertEquals("Gb7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
   }
 
   @Test
   public void fromChord() {
-    // fromChord("Bbsus2b56b9");
+    fromChord("CΔ7");
+    fromChord("C7");
     fromChord("F#", Accidental.SHARP);
     fromChord("F7#5", Accidental.SHARP);
     fromChord("Eb7#5b913");
-    fromChord("CSus47913");
+    fromChord("Csus7913");
     fromChord("Cm7");
     fromChord("Cm79");
     fromChord("C6");
     fromChord("C7b5#9");
-    fromChord("CDim");
-    fromChord("CDim7");
-    fromChord("Dm7Maj7b5");
-  }
-
-  @Test
-  @Ignore
-  public void allFromChord() {
-    for (int degree = 0; degree < 8; degree++) {
-      for (Note root : Note.values()) {
-        Scale chord = CMajor.getChord(degree).superimpose(root);
-        assertEquals(chord.asChord(), Scales.parseChord(chord.asChord()).asChord());
-      }
-    }
+    fromChord("Co");
+    fromChord("Co7");
   }
 
   @Test
@@ -174,7 +167,8 @@ public class ScaleTest {
       for (Note root : Note.values()) {
         Scale transposed = scale.transpose(root);
         for (Scale chord : transposed.getChords(4)) {
-          assertEquals(chord.asChord(), Scales.parseChord(chord.asChord()).asChord());
+          assertThat(chord.asChord(FLAT)).isEqualTo(Scales.parseChord(chord.asChord(FLAT)).asChord(FLAT));
+          assertThat(chord.asChord(Accidental.SHARP)).isEqualTo(Scales.parseChord(chord.asChord(SHARP)).asChord(SHARP));
         }
       }
     }
@@ -183,8 +177,11 @@ public class ScaleTest {
   private void fromChord(String string) {
     fromChord(string, Accidental.FLAT);
   }
-  private void fromChord(String string, Accidental accidental) {
-    assertEquals(string, Scales.parseChord(string).asChord(accidental));
+
+  private void fromChord(String expected, Accidental accidental) {
+    Scale chord = Scales.parseChord(expected);
+    String actual = chord.asChord(accidental);
+    assertEquals(expected, actual);
   }
 
   @Test(expected = ParseChordException.class)
@@ -196,18 +193,6 @@ public class ScaleTest {
   @Ignore
   public void invalidChord2() {
     Scales.parseChord("Cm7x");
-  }
-
-  @Test
-  public void intervalNames() {
-    assertEquals("b5", CMajor.intervalName(Gb));
-    assertEquals("b5", CMajor.transpose(2).intervalName(Ab));
-    assertEquals("#9", CMajor.transpose(-1).intervalName(D));
-  }
-
-  @Test
-  public void alter() {
-    assertEquals(CMinor6Pentatonic, CMinorPentatonic.alter(4, -1));
   }
 
   @Test
@@ -247,7 +232,7 @@ public class ScaleTest {
   @Test
   public void testPrintScale() {
     printScale(CMelodicMinor.transpose(6));
-    //printScale(C_HARMONIC_MINOR.transpose(2));
+    // printScale(C_HARMONIC_MINOR.transpose(2));
   }
 
   @Test
@@ -258,7 +243,7 @@ public class ScaleTest {
     printChord(C, Eb, G, Bb);
   }
 
-  private void printChord(Note ... notes) {
+  private void printChord(Note... notes) {
     Scale s = new Scale(notes[0], notes);
     System.out.println(s.asChord());
   }

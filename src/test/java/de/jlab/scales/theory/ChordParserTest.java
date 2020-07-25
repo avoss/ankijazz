@@ -41,10 +41,10 @@ public class ChordParserTest {
   public void testTriads() {
     assertChord("C", C, E, G);
     assertChord("Cm", C, Eb, G);
-    assertChord("CDim", C, Eb, Gb);
-    assertChord("CAug", C, E, Ab);
-    assertChord("CSus2", C, D, G);
-    assertChord("CSus4", C, F, G);
+    assertChord("Co", C, Eb, Gb);
+    assertChord("C+", C, E, Ab);
+    assertChord("Csus2", C, D, G);
+    assertChord("Csus4", C, F, G);
   }
 
   @Test
@@ -64,14 +64,14 @@ public class ChordParserTest {
     assertChord("C711", C, E, G, Bb, F);
     assertChord("C713", C, E, G, Bb, A);
     assertChord("C7b13", "C7#5", C, E, G, Bb, Ab);
-    assertChord("CDim7", C, Eb, Gb, A);
+    assertChord("Co7", C, Eb, Gb, A);
     
   }
   
   @Test
   public void testMajorChords() {
-    assertChord("CMaj7", C, E, G, B);
-    assertChord("CMaj7#11", "CMaj7b5", C, E, G, B, Gb);
+    assertChord("CΔ7", C, E, G, B);
+    assertChord("CΔ7#11", "CΔ7b5", C, E, G, B, Gb);
   }
 
   @Test

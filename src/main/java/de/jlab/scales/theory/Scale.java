@@ -7,15 +7,10 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static java.lang.String.format;
-
 public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   private final Note root;
   private final Set<Note> notes = new TreeSet<Note>();
-  private String name;
-  private final List<Scale> subScales = new ArrayList<Scale>();
-  private final List<Scale> superScales = new ArrayList<Scale>();
 
   public Scale(Note root, Note... notes) {
     this.root = root;
@@ -37,6 +32,9 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public Scale transpose(int semitones) {
+    if (semitones == 0) {
+      return this;
+    }
     Scale scale = new Scale(root.transpose(semitones));
     for (Note note : notes)
       scale.internalAdd(note.transpose(semitones));
@@ -48,9 +46,11 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public Scale superimpose(Note newRoot) {
+    if (newRoot == this.root) {
+      return this;
+    }
     Scale scale = new Scale(newRoot);
     scale.notes.addAll(notes);
-    scale.setName(format("Mode %d of %s", indexOf(newRoot) + 1, name));
     return scale;
   }
 
@@ -88,7 +88,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String asChord() {
-    return asChord(Accidental.FLAT);
+    return asChord(root.getAccidental());
   }
 
   public String asChord(Accidental accidental) {
@@ -115,21 +115,6 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     Scale result = new Scale(this);
     result.internalRemove(note);
     return result;
-  }
-
-  public Scale alter(int degree, int semitones) {
-    Note root = this.getRoot();
-    if (degree == 0)
-      root = root.transpose(semitones);
-    Scale altered = new Scale(root);
-    for (int i = 0; i < this.getNotes().size(); i++) {
-      Note note = this.getNote(i);
-      if (i == degree)
-        note = note.transpose(semitones);
-      altered.internalAdd(note);
-    }
-
-    return altered;
   }
 
   public Iterator<Note> iterator() {
@@ -183,19 +168,16 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String asScale() {
+    Accidental accidental = root.getAccidental();
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < notes.size(); i++)
-      sb.append(getNote(i).name()).append(" ");
+      sb.append(getNote(i).getName(accidental)).append(" ");
     return sb.toString().trim();
   }
 
   public String asIntervals() {
     return asIntervals(root);
   }
-
-  /* TODO
-   * List<Note> ascendingThirds(Note start) // sort by ascending 3rds for chords, start may not be part of scale!
-   */
 
   public String asIntervals(Note root) {
     StringBuilder sb = new StringBuilder();
@@ -227,22 +209,6 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return root;
   }
 
-  public final String getName() {
-    return name;
-  }
-
-  public final void setName(String name) {
-    this.name = name;
-  }
-
-  public final List<Scale> getSubScales() {
-    return subScales;
-  }
-
-  public final List<Scale> getSuperScales() {
-    return superScales;
-  }
-
   @Override
   public int compareTo(Scale that) {
     Iterator<Note> it = that.iterator();
@@ -267,56 +233,26 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return intervals;
   }
 
-  public String intervalName(Note upper) {
-    switch (root.semitones(upper)) {
-    case 0:
-      return "R";
-    case 1:
-      return "b9";
-    case 2:
-      return "9";
-    case 3:
-      return isMajor() ? "#9" : "m3";
-    case 4:
-      return "3";
-    case 5:
-      return "4";
-    case 6:
-      return "b5";
-    case 7:
-      return "5";
-    case 8:
-      return "#5";
-    case 9:
-      return "6";
-    case 10:
-      return "7";
-    case 11:
-      return "Maj7";
-    }
-    throw new IllegalStateException("can not have more than 11 semitone interval");
-  }
-
   public boolean isMajor() {
     return contains(root.major3());
   }
-  
+
   public boolean isDominant() {
     return contains(root.flat7());
   }
-  
+
   public boolean isAlteredDominant() {
     if (!isDominant())
       return false;
     return contains(root.flat5()) || contains(root.sharp5()) || contains(root.flat9()) || contains(root.sharp9());
   }
-  
+
   public Set<Note> commonNotes(Scale other) {
     Set<Note> commons = new TreeSet<Note>(notes);
     commons.retainAll(other.notes);
     return commons;
   }
-  
+
   private int modSize(int index) {
     while (index < 0)
       index += (notes.size() * 1000);

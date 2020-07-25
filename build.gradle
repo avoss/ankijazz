@@ -12,12 +12,13 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.guava:guava:13.0.1'
+    compile 'com.google.guava:guava:29.0-jre'
     compile "com.google.inject:guice:3.0"
     compile 'com.google.inject.extensions:guice-assistedinject:3.0'
     compile 'com.google.inject.extensions:guice-multibindings:3.0'
+    compile 'org.projectlombok:lombok:1.18.12'
     compile fileTree(dir: 'lib', include: '*.jar')
     testCompile 'junit:junit:4.12'
-    testCompile 'org.assertj:assertj-core:3.3.0'
+    testCompile 'org.assertj:assertj-core:3.16.1'
 }
 
