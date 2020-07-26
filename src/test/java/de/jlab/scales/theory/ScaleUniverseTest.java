@@ -19,7 +19,8 @@ import static de.jlab.scales.theory.Scales.CdimTriad;
 import static de.jlab.scales.theory.Scales.Cm7b5;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
 import static org.junit.Assert.fail;
 
 import java.util.Collection;
@@ -86,7 +87,6 @@ public class ScaleUniverseTest {
   public void testUnknownScale() {
     Scale s = new Scale(D, E, Gb);
     assertInfo(s, s, "D9", SHARP);
-    ScaleInfo info = scaleUniverse.info(s);
   }
   
   @Test
