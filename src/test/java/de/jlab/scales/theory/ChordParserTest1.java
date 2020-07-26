@@ -24,12 +24,11 @@ public class ChordParserTest1 {
   @Parameters(name="Chord={0}")
   public static Collection<Object[]> data() {
     return Arrays.asList(new Object[][] { 
-        { "csus47" }, 
-        { "Cdim" }, 
+        { "csus7" }, 
+        { "Co" }, 
         { "Esus4" }, 
         { "Ebsus4" }, 
         { "EBSUS2" }, 
-        { "Fmaj7" }, 
         { "F" }, 
         { "Fm7" }, 
         { "Fm" }, 

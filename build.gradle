@@ -1,14 +1,12 @@
-apply plugin: 'java'
-apply plugin: 'eclipse'
-
+plugins {
+  id "java"
+  id "io.freefair.lombok" version "5.1.0"
+}
 sourceCompatibility = 1.8
 version = '1.0'
 
 repositories {
     mavenCentral()
-    maven {
-      url "http://www.eclipse.org/downloads/download.php?r=1&nf=1&file=/rt/eclipselink/maven.repo"
-    }
 }
 
 dependencies {
@@ -16,8 +14,8 @@ dependencies {
     compile "com.google.inject:guice:3.0"
     compile 'com.google.inject.extensions:guice-assistedinject:3.0'
     compile 'com.google.inject.extensions:guice-multibindings:3.0'
-    compile 'org.projectlombok:lombok:1.18.12'
-    compile fileTree(dir: 'lib', include: '*.jar')
+    
+    //compile fileTree(dir: 'lib', include: '*.jar')
     testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.16.1'
 }

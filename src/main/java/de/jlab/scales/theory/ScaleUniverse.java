@@ -1,68 +1,187 @@
 package de.jlab.scales.theory;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import static de.jlab.scales.theory.Scales.*;
+import static java.util.stream.Collectors.toList;
+
+import java.text.MessageFormat;
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Stream;
 
-// TODO mode names not available in scales
+import com.google.common.collect.ListMultimap;
+import com.google.common.collect.MultimapBuilder;
+
+import de.jlab.scales.theory.ScaleUniverse.Namer.NamerBuilder;
+import lombok.Builder;
+
 public class ScaleUniverse implements Iterable<Scale> {
-  private final List<Scale> allScales = new ArrayList<Scale>();
-  private final Accidental accidental;
-
-  public ScaleUniverse() {
-    this(Accidental.FLAT);
-  }
-
-  public ScaleUniverse(Accidental accidentals) {
-    this(accidentals, ScaleType.ALL);
-  }
-
-  public ScaleUniverse(Accidental accidentals, ScaleType ... includedScaleTypes) {
-    this(accidentals, Arrays.asList(includedScaleTypes));
-  }
   
-  public ScaleUniverse(Accidental accidentals, Collection<? extends ScaleType> includedScaleTypes) {
-    this.accidental = accidentals;
-    for (ScaleType type : includedScaleTypes)
-      createScales(type);
-    initializeSubScales();
-  }
+  private boolean includeModes;
 
-  private void createScales(ScaleType type) {
-    Scale scale = type.getScale();
-    for (Note root : Note.values()) {
-      Scale transposed = scale.transpose(root);
-      // TODO this should be in Scale.transpose, not caller of transpose()
-      transposed.setName(String.format("%s %s", root.getName(accidental), type.getName()));
-      allScales.add(transposed);
+  @lombok.Builder
+  static class Namer {
+    // {0} mode root name
+    // {1} mode||scale name
+    // {2} parent root name
+    private final String namePattern;
+    private final String fallbackPattern;
+    private final String scaleName;
+    private final String[] modeNames;
+    private final Accidental accidental;
+    
+    public String name(int index, Note oldRoot, Note newRoot) {
+      String oldRootName = oldRoot.getName(accidental);
+      String newRootName = newRoot.getName(accidental);
+      String modeName = modeName(index);
+      if (modeName != null) {
+        return MessageFormat.format(namePattern, newRootName, modeName, oldRootName);
+      }
+      return MessageFormat.format(fallbackPattern, newRootName, scaleName, oldRootName);
+    }
+
+    private String modeName(int index) {
+      if (index == 0) {
+        return scaleName;
+      }
+      if (index < modeNames.length) {
+        return modeNames[index];
+      }
+      return null;
     }
   }
 
+  public ScaleUniverse() {
+    this(false);
+  }
+
+  public ScaleUniverse(boolean includeModes) {
+    this(includeModes, BuiltInScaleTypes.values());
+  }
+
+  public ScaleUniverse(ScaleType ... types) {
+    this(false, types);
+  }
+  public ScaleUniverse(boolean includeModes, ScaleType ... types) {
+    this.includeModes = includeModes;
+    Stream.of(types).forEach(this::add);
+    initializeSubScales();
+  }
+  
+  private void add(ScaleType type) {
+    if (isChord(type)) {
+      chord(type);
+    } else {
+      scale(type);
+    }
+  }
+
+  private boolean isChord(ScaleType type) {
+    return type.getPrototype().length() < 5; // TODO remove this hack!!
+  }
+
+  private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
+  
+  private void scale(ScaleType type) {
+    NamerBuilder namerBuilder = Namer.builder()
+      .namePattern("{0} {1}")
+      .scaleName(type.getScaleName())
+      .fallbackPattern("{2} {1}/{0}")
+      .modeNames(type.getModeNames());
+    addAll(type.getPrototype(), namerBuilder);
+  }
+  
+  private void chord(ScaleType type) {
+    NamerBuilder namerBuilder = Namer.builder()
+        .namePattern("{0}{1}")
+        .scaleName(type.getScaleName())
+        .fallbackPattern("{2}{1}/{0}")
+        .modeNames(type.getModeNames());
+      addAll(type.getPrototype(), namerBuilder);
+  }
+
+  private void addAll(Scale scale, NamerBuilder namerBuilder) {
+    for (Note newRoot : Note.values()) {
+      Scale transposed = scale.transpose(newRoot);
+      addModes(transposed, namerBuilder.accidental(newRoot.getAccidental()).build());
+    }
+  }
+
+  private void addModes(Scale parent, ScaleUniverse.Namer namer) {
+    Note oldRoot = parent.getRoot();
+    Accidental accidental = oldRoot.getAccidental();
+    int numberOfModes = this.includeModes ? parent.length() : 1;
+    for (int i = 0; i < numberOfModes; i++) {
+      Note newRoot = parent.getNote(i);
+      Scale mode = parent.superimpose(newRoot);
+      ScaleInfo info = ScaleInfo.builder()
+        .accidental(accidental)
+        .scale(mode)
+        .parent(parent)
+        .name(namer.name(i, oldRoot, newRoot))
+        .build();
+      infos.put(mode, info);
+    }
+  }
+
+  private final Comparator<ScaleInfo> infoQuality = (a, b) -> { 
+      return a.isInversion() == b.isInversion() ? 0 : (a.isInversion() ? 1 : -1);
+  };
+  
+  public List<ScaleInfo> infos(Scale scale) {
+    return infos.get(scale).stream().sorted(infoQuality).collect(toList());
+  }
+
+  public ScaleInfo info(Scale scale) {
+    return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
+  }
+
+  private ScaleInfo defaultInfo(Scale scale) {
+    Accidental accidental = scale.getRoot().getAccidental();
+    ScaleInfo info = ScaleInfo.builder()
+      .accidental(accidental)
+      .scale(scale)
+      .name(scale.asChord(accidental))
+      .parent(scale).build();
+    initializeDefaultInfoSubScales(info);
+    return info;
+  }
+
+  private void initializeDefaultInfoSubScales(ScaleInfo info) {
+    Set<? extends Note> notes = info.getScale().getNotes();
+    for (Scale scale : this) {
+      if (scale.getNotes().equals(notes)) {
+        continue;
+      }
+      if (scale.getNotes().containsAll(notes)) {
+        info.getSuperScales().add(scale);
+      }
+      if (notes.containsAll(scale.getNotes())) {
+        info.getSubScales().add(scale);
+      }
+    }
+  }
+  
   private void initializeSubScales() {
-    for (Scale superScale : allScales) {
-      Set<? extends Note> superSet = superScale.getNotes();
-      for (Scale subScale : allScales) {
+    for (Scale superScale : this) {
+      for (Scale subScale : this) {
+        Set<? extends Note> superSet = superScale.getNotes();
         Set<? extends Note> subSet = subScale.getNotes();
         if (superSet.equals(subSet))
           continue;
         if (superSet.containsAll(subSet)) {
-          subScale.getSuperScales().add(superScale);
-          superScale.getSubScales().add(subScale);
+          infos.get(subScale).forEach(info -> info.getSuperScales().add(superScale));
+          infos.get(superScale).forEach(info -> info.getSubScales().add(subScale));
         }
       }
     }
   }
-
+  
   @Override
   public Iterator<Scale> iterator() {
-    return allScales.iterator();
+    return infos.keySet().iterator();
   }
-
-  public List<? extends Scale> getAllScales() {
-    return allScales;
-  }
-
 }
