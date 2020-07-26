@@ -28,7 +28,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     // {1} mode||scale name
     // {2} parent root name
     private final String namePattern;
-    private final String fallbackPattern;
+    private final String nameFallbackPattern;
     private final String scaleName;
     private final String[] modeNames;
     private final Accidental accidental;
@@ -40,7 +40,11 @@ public class ScaleUniverse implements Iterable<Scale> {
       if (modeName != null) {
         return MessageFormat.format(namePattern, newRootName, modeName, oldRootName);
       }
-      return MessageFormat.format(fallbackPattern, newRootName, scaleName, oldRootName);
+      return MessageFormat.format(nameFallbackPattern, newRootName, scaleName, oldRootName);
+    }
+    
+    public String typeName(int index) {
+      return modeName(index) == null ? scaleName : modeName(index);
     }
 
     private String modeName(int index) {
@@ -88,22 +92,23 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void scale(ScaleType type) {
     NamerBuilder namerBuilder = Namer.builder()
       .namePattern("{0} {1}")
+      .nameFallbackPattern("{2} {1}/{0}")
       .scaleName(type.getScaleName())
-      .fallbackPattern("{2} {1}/{0}")
       .modeNames(type.getModeNames());
-    addAll(type.getPrototype(), namerBuilder);
+    addAll(type, namerBuilder);
   }
   
   private void chord(ScaleType type) {
     NamerBuilder namerBuilder = Namer.builder()
         .namePattern("{0}{1}")
+        .nameFallbackPattern("{2}{1}/{0}")
         .scaleName(type.getScaleName())
-        .fallbackPattern("{2}{1}/{0}")
         .modeNames(type.getModeNames());
-      addAll(type.getPrototype(), namerBuilder);
+      addAll(type, namerBuilder);
   }
 
-  private void addAll(Scale scale, NamerBuilder namerBuilder) {
+  private void addAll(ScaleType type, NamerBuilder namerBuilder) {
+    Scale scale = type.getPrototype();
     for (Note newRoot : Note.values()) {
       Scale transposed = scale.transpose(newRoot);
       addModes(transposed, namerBuilder.accidental(newRoot.getAccidental()).build());
@@ -121,6 +126,7 @@ public class ScaleUniverse implements Iterable<Scale> {
         .accidental(accidental)
         .scale(mode)
         .parent(parent)
+        .typeName(namer.typeName(i))
         .name(namer.name(i, oldRoot, newRoot))
         .build();
       infos.put(mode, info);
@@ -145,6 +151,7 @@ public class ScaleUniverse implements Iterable<Scale> {
       .accidental(accidental)
       .scale(scale)
       .name(scale.asChord(accidental))
+      .typeName(scale.asIntervals())
       .parent(scale).build();
     initializeDefaultInfoSubScales(info);
     return info;

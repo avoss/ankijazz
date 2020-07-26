@@ -10,6 +10,7 @@ import lombok.Data;
 @Builder
 public class ScaleInfo {
   private String name;
+  private String typeName;
   private Accidental accidental;
   private Scale scale;
   private Scale parent;

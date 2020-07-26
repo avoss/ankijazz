@@ -1,5 +1,6 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.D;
@@ -22,7 +23,7 @@ public class BackCyclerTest {
     List<Scale> chords = bc.backcycle();
     assertEquals(4, chords.size());
     for (Scale chord : chords)
-      System.out.println(chord.asChord() + " " + chord.asScale());
+      System.out.println(chord.asChord() + " " + chord.asScale(FLAT));
   }
   
   @Test
@@ -36,6 +37,6 @@ public class BackCyclerTest {
   private void print(BackCycler bc) {
     List<Scale> chords = bc.backcycle();
     for (Scale chord : chords)
-      System.out.println(chord.asChord() +  " = " + chord.asScale());
+      System.out.println(chord.asChord() +  " = " + chord.asScale(FLAT));
   }
 }

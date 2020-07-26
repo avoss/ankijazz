@@ -164,11 +164,10 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   @Override
   public String toString() {
-    return asScale();
+    return asScale(root.getAccidental());
   }
 
-  public String asScale() {
-    Accidental accidental = root.getAccidental();
+  public String asScale(Accidental accidental) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < notes.size(); i++)
       sb.append(getNote(i).getName(accidental)).append(" ");

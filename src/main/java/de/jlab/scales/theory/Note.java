@@ -87,6 +87,7 @@ public enum Note {
     return transpose(11);
   }
 
+  // TODO should return Interval instance
   public final String intervalName(Note upper) {
     return interval(upper).intervalName;
   }
@@ -103,6 +104,13 @@ public enum Note {
     return accidental == Accidental.FLAT ? flatName : sharpName;
   }
 
+  public String getBothNames() {
+    if (flatName.equals(sharpName)) {
+      return flatName;
+    }
+    return sharpName + "/" + flatName;
+  }
+  
   public Accidental getAccidental() {
     return accidental;
   }

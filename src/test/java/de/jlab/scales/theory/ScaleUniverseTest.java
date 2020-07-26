@@ -11,8 +11,8 @@ import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.Scales.C7sus4;
+import static de.jlab.scales.theory.Note.*;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CdimTriad;
@@ -28,6 +28,8 @@ import java.util.Collection;
 import org.junit.Test;
 
 public class ScaleUniverseTest {
+
+  ScaleUniverse universe = new ScaleUniverse(true);
 
   @Test
   public void testSuperScales() {
@@ -54,7 +56,6 @@ public class ScaleUniverseTest {
     assertThat(info.getSubScales()).containsExactlyInAnyOrder(CdimTriad.transpose(B));
   }
 
-  ScaleUniverse scaleUniverse = new ScaleUniverse(true);
 
   @Test
   public void testTransposeScale() {
@@ -79,7 +80,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testIdentity() {
-    ScaleInfo info = scaleUniverse.info(C7sus4.transpose(2));
+    ScaleInfo info = universe.info(C7sus4.transpose(2));
     assertSame(info.getScale(), info.getParent());
   }
   
@@ -91,7 +92,7 @@ public class ScaleUniverseTest {
   
   @Test
   public void testMultipleInfos() {
-    Collection<ScaleInfo> infos = scaleUniverse.infos(Cm7b5);
+    Collection<ScaleInfo> infos = universe.infos(Cm7b5);
     assertThat(infos.size()).isGreaterThan(1);
     assertInfo(Cm7b5, Cm7b5, "Cø");
   }
@@ -103,14 +104,26 @@ public class ScaleUniverseTest {
     assertThat(inf.info(ddorian).getName()).isNotEqualTo("D Dorian");
   }
   
+  @Test
+  public void testTypeName() {
+    assertTypeName(CMajor.superimpose(D), "Dorian");
+    assertTypeName(C7.superimpose(E), "7");  // TODO should be "Dominant 7"
+    assertTypeName(new Scale(C, Db, D, Eb), "1 b2 2 b3");
+  }
+
+  private void assertTypeName(Scale scale, String expectedType) {
+    ScaleInfo info = universe.info(scale);
+    assertThat(info.getTypeName()).isEqualTo(expectedType);
+  }
+  
   private void assertInfo(Scale scale, Scale parent, String name, Accidental accidental) {
     assertInfo(scale, parent, name);
-    ScaleInfo info = scaleUniverse.info(scale);
+    ScaleInfo info = universe.info(scale);
     assertThat(info.getAccidental()).isSameAs(accidental);
   }
 
   private void assertInfo(Scale scale, Scale parent, String name) {
-    ScaleInfo info = scaleUniverse.info(scale);
+    ScaleInfo info = universe.info(scale);
     assertThat(info.getName()).isEqualTo(name);
     assertEquals(info.getScale(), scale);
     assertEquals(info.getParent(), parent);

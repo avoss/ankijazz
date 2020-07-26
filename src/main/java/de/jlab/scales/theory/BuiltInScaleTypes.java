@@ -2,9 +2,10 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Scales.*;
 
+// TODO modes are also scale tyes ...
 public enum BuiltInScaleTypes implements ScaleType {
   Major(CMajor, "Major Scale", "Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
-  MelodicMinor(CMelodicMinor, "Melodic Minor", "Melodic Minor", "Phrygian #6", "Lydian #5", "Lydian Dominant", "Aeolean #3", "Altered", "Ionian #1"),
+  MelodicMinor(CMelodicMinor, "Melodic Minor", "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
   HarmonicMinor(CHarmonicMinor, "Harmonic Minor", "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
   HarmonicMajor(CHarmonicMajor, "Harmonic Major", "Ionian b6", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
   DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole"),
@@ -36,12 +37,12 @@ public enum BuiltInScaleTypes implements ScaleType {
   Sus4Triad(CsusTriad, "sus4");
 
   private Scale prototype;
-  private String scaleName;
+  private String typeName;
   private String[] modeNames;
 
-  BuiltInScaleTypes(Scale prototype, String scaleName, String ... modeNames) {
+  BuiltInScaleTypes(Scale prototype, String typeName, String ... modeNames) {
     this.prototype = prototype;
-    this.scaleName = scaleName;
+    this.typeName = typeName;
     this.modeNames = modeNames;
   }
 
@@ -57,7 +58,7 @@ public enum BuiltInScaleTypes implements ScaleType {
 
   @Override
   public String getScaleName() {
-    return scaleName;
+    return typeName;
   }
 
 }

@@ -14,6 +14,8 @@ import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Scales {
 
@@ -55,6 +57,16 @@ public class Scales {
 
   public static Scale parseChord(String name) {
     return ChordParser.parseChord(name);
+  }
+  
+  public static Set<Scale> allKeys(Collection<Scale> scales) {
+    Set<Scale> allScales = new HashSet<>();
+    for (Scale scale : scales) {
+      for (Note root: Note.values()) {
+        allScales.add(scale.transpose(root));
+      }
+    }
+    return allScales;
   }
  
 }
