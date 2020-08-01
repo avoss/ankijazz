@@ -1,8 +1,17 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.Accidental.*;
-import static de.jlab.scales.theory.BuiltInScaleTypes.*;
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
+import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
+import static de.jlab.scales.theory.Scales.allKeys;
 import static java.lang.String.format;
 
 import java.io.IOException;
@@ -13,12 +22,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 import de.jlab.scales.theory.Note;
-import static de.jlab.scales.theory.Note.*;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
+import de.jlab.scales.theory.ScaleParser;
 import de.jlab.scales.theory.ScaleUniverse;
 
 public class AnkiCards {

@@ -89,12 +89,6 @@ public class ScaleUniverse implements Iterable<Scale> {
     return type.getPrototype().length() < 5; 
   }
   
-  // TODO: move to scaleType?
-  private boolean isMinorType(ScaleType type) {
-    // TODO: minor 6 pentatonic is dorian
-    return !isChord(type) && type.getPrototype().contains(type.getPrototype().getRoot().minor3());
-  }
-
   private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
   private List<Scale> scales = new ArrayList<>();
   
@@ -120,20 +114,9 @@ public class ScaleUniverse implements Iterable<Scale> {
     Scale scale = type.getPrototype();
     for (Note newRoot : Note.values()) {
       Scale transposed = scale.transpose(newRoot);
-      addModes(transposed, namerBuilder.accidental(accidental(type, transposed)).build());
+      addModes(transposed, namerBuilder.accidental(Accidental.fromScale(transposed)).build());
     }
   }
-
-  // TODO see ScalePrinter
-  private Accidental accidental(ScaleType type, Scale mode) {
-    Note root = mode.getRoot();
-    if (isMinorType(type)) {
-      // for harmonic minor and melodic minor use accidental of relative major
-      root = root.minor3();
-    }
-    return root.getAccidental();
-  }
-
 
   private void addModes(Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();

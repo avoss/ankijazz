@@ -32,8 +32,9 @@ public class AnkiCardsTest {
     Deck deck = anki.spellScales();
     deck.writeTo(Paths.get("build", "anki-spell-scales.txt"));
     assertThat(deck.getCards()).contains("B Dorian;B C# D E F# G# A");
-    assertThat(deck.getCards()).contains("G# Melodic Minor;Ab Bb B Db Eb F G");
-    assertThat(deck.getCards()).contains("A# Phrygian instead of Bb");
+    assertThat(deck.getCards()).contains("Ab Melodic Minor;Ab Bb Cb Db Eb F G");
+    assertThat(deck.getCards()).contains("F# Major Scale;F# G# A# B C# D# E#");
+    assertThat(deck.getCards()).contains("A# Phrygian;A# B C# D# E# F# G#");
     assertThat(deck.getCards().size()).isEqualTo(144);
   }
   

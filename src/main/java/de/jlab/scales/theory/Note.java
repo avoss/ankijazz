@@ -1,13 +1,7 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.*;
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
 
 public enum Note {
   C("1", "C", "C", SHARP), 

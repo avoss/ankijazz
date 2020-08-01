@@ -1,5 +1,14 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.Gb;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
@@ -120,7 +129,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   public Iterator<Note> iterator() {
     return new Iterator<Note>() {
       int index = 0;
-      Note note = root;
+      Note note = root;  // TODO: note = root.transpose(-1);
 
       @Override
       public boolean hasNext() {
@@ -169,8 +178,15 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   public String asScale(Accidental accidental) {
     StringBuilder sb = new StringBuilder();
-    for (int i = 0; i < notes.size(); i++)
-      sb.append(getNote(i).getName(accidental)).append(" ");
+    for (Note note : this) {
+      if (accidental == SHARP && note == F && contains(Gb) && !contains(E)) {
+        sb.append("E# ");
+      } else if (accidental == FLAT && note == B && contains(Bb) && !contains(C)) {
+        sb.append("Cb ");
+      } else {
+        sb.append(note.getName(accidental)).append(" ");
+      }
+    }
     return sb.toString().trim();
   }
 
