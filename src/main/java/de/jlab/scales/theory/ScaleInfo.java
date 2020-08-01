@@ -1,6 +1,8 @@
 package de.jlab.scales.theory;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import lombok.Builder;
@@ -14,8 +16,8 @@ public class ScaleInfo {
   private Accidental accidental;
   private Scale scale;
   private Scale parent;
-  private final Set<Scale> superScales = new HashSet<>();
-  private final Set<Scale> subScales = new HashSet<>();
+  private final List<Scale> superScales = new ArrayList<>();
+  private final List<Scale> subScales = new ArrayList<>();
 
   public boolean isInversion() {
     return !scale.equals(parent);

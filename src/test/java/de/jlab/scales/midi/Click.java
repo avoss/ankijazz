@@ -14,7 +14,7 @@ public class Click extends WAV {
     Part bar44 = seq(timeSignature(4, 4), hi, r, r, r, seq(lo, r, r, r).repeat(3));
 
 
-    for (int bpm = 60; bpm <= 120; bpm += 2) {
+    for (int bpm = 60; bpm <= 120; bpm += 30) {
       int tenMinutes = 10 * bpm / 4;
       Part song = seq(r, bar44.repeat(tenMinutes));
       System.out.println(bpm);

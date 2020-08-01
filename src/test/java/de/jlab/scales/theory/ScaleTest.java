@@ -39,20 +39,19 @@ import org.junit.Test;
 public class ScaleTest {
 
   @Test
+  public void testCFlatAndESharp() {
+    Scale gbmaj = CMajor.transpose(Gb);
+    assertEquals("Gb Ab Bb Cb Db Eb F", gbmaj.asScale(FLAT));
+    assertEquals("F# G# A# B C# D# E#", gbmaj.asScale(SHARP));
+  }
+  
+  @Test
   public void getNote_should_work_with_negative_index() {
     assertEquals(C, CMajor.getNote(0));
     assertEquals(D, CMajor.getNote(1));
     assertEquals(B, CMajor.getNote(-1));
   }
 
-  @Test
-  public void printInversions() {
-    for (Scale chord : CMajor.getChords(4)) {
-      System.out.println("Chord " + chord.asChord());
-      for (Scale inversion : chord.getInversions())
-        System.out.println(inversion.asChord());
-    }
-  }
 
   @Test
   public void testIsMajor() {
@@ -140,7 +139,7 @@ public class ScaleTest {
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
     assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
     assertEquals("Co7", Cdim7.superimpose(C).superimpose(C).asChord());
-    assertEquals("Gb7b5b9", C7.superimpose(Gb).asChord());
+    assertEquals("F#7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
   }
 

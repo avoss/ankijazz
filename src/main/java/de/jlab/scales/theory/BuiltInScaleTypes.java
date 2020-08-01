@@ -12,6 +12,7 @@ public enum BuiltInScaleTypes implements ScaleType {
   WholeTone(CWholeTone, "Whole Tone"),
   Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic"),
   Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic"),
+  
   Major7(Cmaj7, "Δ7"),
   Major7Sharp11(Cmaj7Sharp11, "Δ7#11"),
   Minor7(Cm7, "-7"),
@@ -34,7 +35,9 @@ public enum BuiltInScaleTypes implements ScaleType {
   MinorTriad(CminTriad, "m"),
   DiminishedTriad(CdimTriad, "o"),
   AugmentedTriad(CaugTriad, "+"),
-  Sus4Triad(CsusTriad, "sus4");
+  Sus4Triad(CsusTriad, "sus4")
+  
+  ;
 
   private Scale prototype;
   private String typeName;

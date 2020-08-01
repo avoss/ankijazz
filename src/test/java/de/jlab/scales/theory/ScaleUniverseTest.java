@@ -23,13 +23,17 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
+import org.assertj.core.util.Lists;
 import org.junit.Test;
 
 public class ScaleUniverseTest {
 
-  ScaleUniverse universe = new ScaleUniverse(true);
+  private static ScaleUniverse universe = new ScaleUniverse(true);
 
   @Test
   public void testSuperScales() {
@@ -49,13 +53,33 @@ public class ScaleUniverseTest {
   }
 
   @Test
+  public void testOrdering1() {
+    ScaleUniverse universe = new ScaleUniverse(Major, MelodicMinor);
+    List<Scale> expected = Scales.allKeys(Arrays.asList(CMajor, CMelodicMinor));
+    List<Scale> actual = Lists.newArrayList(universe.iterator());
+    assertThat(expected).isEqualTo(actual);
+    ScaleInfo info = universe.info(Cm7b5.transpose(B));
+    assertThat(info.getSuperScales()).containsExactly(CMajor, CMelodicMinor, CMelodicMinor.transpose(D));
+  }
+
+  @Test
+  public void testOrdering2() {
+    ScaleUniverse universe = new ScaleUniverse(MelodicMinor, Major);
+    List<Scale> expected = Scales.allKeys(Arrays.asList(CMelodicMinor, CMajor));
+    List<Scale> actual = Lists.newArrayList(universe.iterator());
+    assertThat(expected).isEqualTo(actual);
+    ScaleInfo info = universe.info(Cm7b5.transpose(B));
+    assertThat(info.getSuperScales()).containsExactly(CMelodicMinor, CMelodicMinor.transpose(D), CMajor);
+  }
+  
+  
+  @Test
   public void testMatchingScalesForChordNotInUniverse() {
     ScaleUniverse universe = new ScaleUniverse(false, Major, MelodicMinor, DiminishedTriad);
     ScaleInfo info = universe.info(Cm7b5.transpose(B));
     assertThat(info.getSuperScales()).containsExactlyInAnyOrder(CMajor, CMelodicMinor, CMelodicMinor.transpose(D));
     assertThat(info.getSubScales()).containsExactlyInAnyOrder(CdimTriad.transpose(B));
   }
-
 
   @Test
   public void testTransposeScale() {
@@ -100,7 +124,7 @@ public class ScaleUniverseTest {
   @Test
   public void testWithoutModes() {
     ScaleUniverse inf = new ScaleUniverse(false, BuiltInScaleTypes.Major);
-    Scale ddorian = Scales.CMajor.superimpose(D);
+    Scale ddorian = CMajor.superimpose(D);
     assertThat(inf.info(ddorian).getName()).isNotEqualTo("D Dorian");
   }
   

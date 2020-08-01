@@ -200,8 +200,8 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return this.root == that.root && this.notes.equals(that.notes);
   }
 
-  public Set<? extends Note> getNotes() {
-    return notes;
+  public Set<Note> getNotes() {
+    return new TreeSet<>(notes);
   }
 
   public final Note getRoot() {

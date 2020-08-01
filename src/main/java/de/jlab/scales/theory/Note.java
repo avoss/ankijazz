@@ -1,11 +1,27 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.*;
+import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.G;
 
 public enum Note {
-  C("1", "C", "C", SHARP), Db("b2", "Db", "C#", FLAT), D("2", "D", "D", SHARP), Eb("b3", "Eb", "D#", FLAT),
-  E("3", "E", "E", SHARP), F("4", "F", "F", FLAT), Gb("b5", "Gb", "F#", FLAT), G("5", "G", "G", SHARP),
-  Ab("b6", "Ab", "G#", FLAT), A("6", "A", "A", SHARP), Bb("b7", "Bb", "A#", FLAT), B("7", "B", "B", SHARP);
+  C("1", "C", "C", SHARP), 
+  Db("b2", "Db", "C#", FLAT), 
+  D("2", "D", "D", SHARP), 
+  Eb("b3", "Eb", "D#", FLAT),
+  E("3", "E", "E", SHARP), 
+  F("4", "F", "F", FLAT), 
+  Gb("b5", "Gb", "F#", SHARP), 
+  G("5", "G", "G", SHARP),
+  Ab("b6", "Ab", "G#", FLAT), 
+  A("6", "A", "A", SHARP), 
+  Bb("b7", "Bb", "A#", FLAT), 
+  B("7", "B", "B", SHARP);
 
   private final String flatName;
   private final String sharpName;
@@ -125,5 +141,8 @@ public enum Note {
   public boolean isSemitone(Note other) {
     return this.semitones(other) == 1 || other.semitones(this) == 1;
   }
+  
+  public static final Note[] NATURALS = {C, D, E, F, G, A, B};
+
 
 }

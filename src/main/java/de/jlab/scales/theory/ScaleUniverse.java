@@ -4,6 +4,7 @@ import static de.jlab.scales.theory.Scales.*;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
@@ -71,7 +72,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
   public ScaleUniverse(boolean includeModes, ScaleType ... types) {
     this.includeModes = includeModes;
-    Stream.of(types).forEach(this::add);
+    Stream.of(types).forEachOrdered(this::add);
     initializeSubScales();
   }
   
@@ -83,11 +84,19 @@ public class ScaleUniverse implements Iterable<Scale> {
     }
   }
 
+  // TODO: move to scaleType?
   private boolean isChord(ScaleType type) {
-    return type.getPrototype().length() < 5; // TODO remove this hack!!
+    return type.getPrototype().length() < 5; 
+  }
+  
+  // TODO: move to scaleType?
+  private boolean isMinorType(ScaleType type) {
+    // TODO: minor 6 pentatonic is dorian
+    return !isChord(type) && type.getPrototype().contains(type.getPrototype().getRoot().minor3());
   }
 
   private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
+  private List<Scale> scales = new ArrayList<>();
   
   private void scale(ScaleType type) {
     NamerBuilder namerBuilder = Namer.builder()
@@ -111,9 +120,20 @@ public class ScaleUniverse implements Iterable<Scale> {
     Scale scale = type.getPrototype();
     for (Note newRoot : Note.values()) {
       Scale transposed = scale.transpose(newRoot);
-      addModes(transposed, namerBuilder.accidental(newRoot.getAccidental()).build());
+      addModes(transposed, namerBuilder.accidental(accidental(type, transposed)).build());
     }
   }
+
+  // TODO see ScalePrinter
+  private Accidental accidental(ScaleType type, Scale mode) {
+    Note root = mode.getRoot();
+    if (isMinorType(type)) {
+      // for harmonic minor and melodic minor use accidental of relative major
+      root = root.minor3();
+    }
+    return root.getAccidental();
+  }
+
 
   private void addModes(Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();
@@ -130,6 +150,7 @@ public class ScaleUniverse implements Iterable<Scale> {
         .name(namer.name(i, oldRoot, newRoot))
         .build();
       infos.put(mode, info);
+      scales.add(mode);
     }
   }
 
@@ -150,7 +171,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     ScaleInfo info = ScaleInfo.builder()
       .accidental(accidental)
       .scale(scale)
-      .name(scale.asChord(accidental))
+      .name(scale.asChord(accidental)) // TODO scale or chord?
       .typeName(scale.asIntervals())
       .parent(scale).build();
     initializeDefaultInfoSubScales(info);
@@ -189,6 +210,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   
   @Override
   public Iterator<Scale> iterator() {
-    return infos.keySet().iterator();
+    return scales.iterator();
   }
+
 }
