@@ -137,7 +137,7 @@ public class ScaleTest {
     assertEquals("Em7", CMajor.getChord(2).asChord());
     assertEquals("CΔ79", CMajor.getChord(2).superimpose(C).asChord());
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
-    assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
+    assertEquals("C#7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
     assertEquals("Co7", Cdim7.superimpose(C).superimpose(C).asChord());
     assertEquals("F#7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
@@ -219,40 +219,6 @@ public class ScaleTest {
       assertEquals(i, scale.indexOf(notes[i]));
     }
     assertFalse(iter.hasNext());
-  }
-
-  @Test
-  public void testGetNoteGLocrian() {
-    Note[] notes = { Gb, G, A, B, C, D, E };
-    Scale scale = CMajor.transpose(G).superimpose(Gb);
-    iteratorTest(notes, scale);
-  }
-
-  @Test
-  public void testPrintScale() {
-    printScale(CMelodicMinor.transpose(6));
-    // printScale(C_HARMONIC_MINOR.transpose(2));
-  }
-
-  @Test
-  public void testPrintChord() {
-    printChord(C, G, F);
-    printChord(C, F, Bb, Eb);
-    printChord(C, F, A);
-    printChord(C, Eb, G, Bb);
-  }
-
-  private void printChord(Note... notes) {
-    Scale s = new Scale(notes[0], notes);
-    System.out.println(s.asChord());
-  }
-
-  private void printScale(Scale scale) {
-    System.out.println(scale);
-    for (int i = 0; i < 8; i++) {
-      Scale chord = scale.getChord(i);
-      System.out.println(chord.asChord() + " = " + chord);
-    }
   }
 
 }

@@ -97,7 +97,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String asChord() {
-    return asChord(root.getAccidental());
+    return asChord(Accidental.fromScale(this));
   }
 
   public String asChord(Accidental accidental) {
@@ -173,7 +173,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   @Override
   public String toString() {
-    return asScale(root.getAccidental());
+    return asScale(Accidental.fromScale(this));
   }
 
   public String asScale(Accidental accidental) {

@@ -98,7 +98,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testChordInversion() {
-    assertInfo(Cmaj7, Cmaj7, "CΔ7", SHARP);
+    assertInfo(Cmaj7, Cmaj7, "CΔ7", FLAT);
     assertInfo(Cmaj7.superimpose(E), Cmaj7, "CΔ7/E");
   }
 

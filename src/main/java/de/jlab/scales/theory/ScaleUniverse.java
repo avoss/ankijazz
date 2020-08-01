@@ -77,7 +77,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
   
   private void add(ScaleType type) {
-    if (isChord(type)) {
+    if (isChord(type.getPrototype())) {
       chord(type);
     } else {
       scale(type);
@@ -85,8 +85,8 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   // TODO: move to scaleType?
-  private boolean isChord(ScaleType type) {
-    return type.getPrototype().length() < 5; 
+  private boolean isChord(Scale scale) {
+    return scale.length() < 5; 
   }
   
   private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
@@ -120,7 +120,7 @@ public class ScaleUniverse implements Iterable<Scale> {
 
   private void addModes(Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();
-    Accidental accidental = oldRoot.getAccidental();
+    Accidental accidental = Accidental.fromScale(parent);
     int numberOfModes = this.includeModes ? parent.length() : 1;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
@@ -150,14 +150,14 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   private ScaleInfo defaultInfo(Scale scale) {
-    Accidental accidental = scale.getRoot().getAccidental();
     ScaleInfo info = ScaleInfo.builder()
-      .accidental(accidental)
       .scale(scale)
-      .name(scale.asChord(accidental)) // TODO scale or chord?
       .typeName(scale.asIntervals())
       .parent(scale).build();
     initializeDefaultInfoSubScales(info);
+    Accidental accidental = Accidental.fromScale(info.getSuperScales().stream().findFirst().orElse(scale));
+    info.setAccidental(accidental);
+    info.setName(isChord(scale) ? scale.asChord(accidental) : scale.asScale(accidental));
     return info;
   }
 

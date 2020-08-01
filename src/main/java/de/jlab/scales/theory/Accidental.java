@@ -49,7 +49,7 @@ public enum Accidental {
   public abstract Note remove(Note note);
   
   public static Accidental fromScale(Scale s) {
-    return tryAccidental(s, SHARP) ? SHARP : (tryAccidental(s, FLAT) ? FLAT : SHARP);
+    return tryAccidental(s, FLAT) ? FLAT : (tryAccidental(s, SHARP) ? SHARP : FLAT);
   }
 
   private static boolean tryAccidental(Scale s, Accidental acc) {

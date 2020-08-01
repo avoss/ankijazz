@@ -1,32 +1,27 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
-
 public enum Note {
-  C("1", "C", "C", SHARP), 
-  Db("b2", "Db", "C#", FLAT), 
-  D("2", "D", "D", SHARP), 
-  Eb("b3", "Eb", "D#", FLAT),
-  E("3", "E", "E", SHARP), 
-  F("4", "F", "F", FLAT), 
-  Gb("b5", "Gb", "F#", SHARP), 
-  G("5", "G", "G", SHARP),
-  Ab("b6", "Ab", "G#", FLAT), 
-  A("6", "A", "A", SHARP), 
-  Bb("b7", "Bb", "A#", FLAT), 
-  B("7", "B", "B", SHARP);
+  C("1", "C", "C"), 
+  Db("b2", "Db", "C#"), 
+  D("2", "D", "D"), 
+  Eb("b3", "Eb", "D#"),
+  E("3", "E", "E"), 
+  F("4", "F", "F"), 
+  Gb("b5", "Gb", "F#"), 
+  G("5", "G", "G"),
+  Ab("b6", "Ab", "G#"), 
+  A("6", "A", "A"), 
+  Bb("b7", "Bb", "A#"), 
+  B("7", "B", "B");
 
   private final String flatName;
   private final String sharpName;
   private final String intervalName;
-  private final Accidental accidental;
 
-  Note(String intervalName, String flatName, String sharpName, Accidental accidental) {
+  Note(String intervalName, String flatName, String sharpName) {
     this.intervalName = intervalName;
     this.flatName = flatName;
     this.sharpName = sharpName;
-    this.accidental = accidental;
   }
 
   public Note transpose(int semitones) {
@@ -121,10 +116,6 @@ public enum Note {
     return sharpName + "/" + flatName;
   }
   
-  public Accidental getAccidental() {
-    return accidental;
-  }
-
   public int semitones(Note upper) {
     int semitones = upper.ordinal() - ordinal();
     while (semitones < 0)

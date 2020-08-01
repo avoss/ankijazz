@@ -12,8 +12,8 @@ public class ScaleParserTest {
   @Test
   public void testAsScale() {
     assertEquals("C E G Bb", asScale(C7));
-    assertEquals("F# G# A# B C# D# E#", asScale(CMajor.transpose(Gb)));
-    assertEquals("A# B C# D# E# F# G#", asScale(CMajor.transpose(Gb).superimpose(Bb)));
+    assertEquals("Gb Ab Bb Cb Db Eb F", asScale(CMajor.transpose(Gb)));
+    assertEquals("Bb Cb Db Eb F Gb Ab", asScale(CMajor.transpose(Gb).superimpose(Bb)));
 
     assertEquals("C D E F G A B", asScale(CMajor));
     assertEquals("G A B C D E F#", asScale(CMajor.transpose(G)));
@@ -22,7 +22,7 @@ public class ScaleParserTest {
     assertEquals("E G# B", asScale(new Scale(E, Ab, B)));
     assertEquals("D F# A C", asScale(C7.transpose(D)));
     
-    assertEquals("C C# D D# E F F#", asScale(new Scale(C, Db, D, Eb, E, F, Gb)));
+    assertEquals("C Db D Eb E F Gb", asScale(new Scale(C, Db, D, Eb, E, F, Gb)));
   }
   
   @Test
