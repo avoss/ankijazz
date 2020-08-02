@@ -8,11 +8,12 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static java.lang.String.format;
+import static java.util.Arrays.asList;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -31,7 +32,7 @@ import de.jlab.scales.theory.ScaleUniverse;
 
 public class AnkiCards {
 
-  private ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor);
+  private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor);
 
   public static class Deck {
     List<String> cards = new ArrayList<>();
@@ -78,13 +79,34 @@ public class AnkiCards {
     return deck;
   }
 
-  public Deck spellScales() {
+  public Deck spellAllScales() {
+    return spellScales(allKeys(commonScales()));
+  }
+  
+  private Deck spellScales(List<Scale> scales) {
     Deck deck = new Deck();
-    for (Scale scale : allKeys(commonScales())) {
-      ScaleInfo scaleInfo = universe.info(scale);
-      deck.add(scaleInfo.getName(), scale.asScale(scaleInfo.getAccidental()));
+    for (Scale scale : scales) {
+      addScale(deck, scale);
     }
     return deck;
+  }
+
+  private void addScale(Deck deck, Scale scale) {
+    ScaleInfo scaleInfo = universe.info(scale);
+    if (scale.getRoot() == Note.Gb) {
+      deck.add(scaleInfo.getName(), scale.asScale(FLAT));
+      deck.add(scaleInfo.getName(), scale.asScale(SHARP));
+    } else {
+      deck.add(scaleInfo.getName(), scale.asScale(scaleInfo.getAccidental()));
+    }
+  }
+
+  public Deck spellMajorScales() {
+    return spellScales(allKeys(asList(CMajor)));
+  }
+
+  public Deck spellMajorTriads() {
+    return spellScales(allKeys(asList(CmajTriad)));
   }
   
   public Deck spellTypes() {
@@ -106,5 +128,6 @@ public class AnkiCards {
     scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
     return scales;
   }
+
 
 }

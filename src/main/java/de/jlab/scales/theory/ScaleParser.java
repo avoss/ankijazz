@@ -8,6 +8,7 @@ public class ScaleParser {
 
   private static ScaleUniverse universe = new ScaleUniverse(Major, MelodicMinor, HarmonicMinor);
 
+  // TODO duplicated in ScaleUniverse
   public static String asScale(Scale scale) {
     Scale superScale = universe.info(scale).getSuperScales().stream().findFirst().orElse(scale);
     return scale.asScale(Accidental.fromScale(superScale));
