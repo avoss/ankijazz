@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN set -xe \
 	&& apt-get update \
-	&& apt-get install -y vim curl wget git openjdk-11-jdk dos2unix ffmpeg fluidsynth lame timidity lilypond openssh-server;
+	&& apt-get install -y vim curl wget git openjdk-11-jdk dos2unix ffmpeg fluidsynth normalize-audio lame timidity lilypond openssh-server;
 
 RUN mkdir /var/run/sshd
 COPY .ssh /root/.ssh
