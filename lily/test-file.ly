@@ -15,6 +15,7 @@
       \new Voice = "melody" {
         \clef treble
         \key g \major
+        \override Staff.TimeSignature.stencil = ##f
         \relative f' {
           c d e fs g a b c
         }
