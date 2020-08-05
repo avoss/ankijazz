@@ -12,13 +12,8 @@ import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.allKeys;
-import static java.lang.String.format;
 import static java.util.Arrays.asList;
 
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -33,27 +28,6 @@ import de.jlab.scales.theory.ScaleUniverse;
 public class AnkiCards {
 
   private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor);
-
-  public static class Deck {
-    List<String> cards = new ArrayList<>();
-
-    void add(String question, String answer) {
-      cards.add(format("%s;%s", question, answer));
-    }
-
-    public void writeTo(Path path) {
-      try {
-        Collections.shuffle(cards);
-        Files.write(path, cards);
-      } catch (IOException e) {
-        throw new UncheckedIOException(e);
-      }
-    }
-
-    public List<String> getCards() {
-      return cards;
-    }
-  }
 
   public Deck tritones() {
     Deck deck = new Deck();
@@ -94,8 +68,8 @@ public class AnkiCards {
   private void addScale(Deck deck, Scale scale) {
     ScaleInfo scaleInfo = universe.info(scale);
     if (scale.getRoot() == Note.Gb) {
-      deck.add(scaleInfo.getName(), scale.asScale(FLAT));
-      deck.add(scaleInfo.getName(), scale.asScale(SHARP));
+      deck.add(scaleInfo.getName(FLAT), scale.asScale(FLAT));
+      deck.add(scaleInfo.getName(SHARP), scale.asScale(SHARP));
     } else {
       deck.add(scaleInfo.getName(), scale.asScale(scaleInfo.getAccidental()));
     }

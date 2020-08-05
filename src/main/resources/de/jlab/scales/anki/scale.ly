@@ -14,19 +14,19 @@
     \new Staff {
       \new Voice = "melody" {
         \clef treble
-        \key g \major
+        \key ${key} \major
         
         % suppress 4/4 time signature
         \override Staff.TimeSignature.stencil = ##f
         
         \relative f' {
-          c d e fs g a b c
+          ${notes}
         }
       }
     }
     \new Lyrics {
       \lyricsto "melody" {
-        "C" "D" "E" "F#" "G" "A" "B" "C"
+        ${lyrics}
       }
     }
   >>

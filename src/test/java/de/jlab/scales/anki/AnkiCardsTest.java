@@ -6,8 +6,6 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.AnkiCards.Deck;
-
 public class AnkiCardsTest {
   AnkiCards anki = new AnkiCards();
 
