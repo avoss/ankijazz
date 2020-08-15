@@ -9,14 +9,9 @@
 }
 
 
-scaleNotes = \relative e' {
-%  ${scaleNotes}
-  c4 d e fs g af b c ~ c1
-}
+scaleNotes = \relative e' { ${scaleNotes} }
 
-chordNotes = \relative e' {
-  c4 d e fs g af b c
-}
+chordNotes = \relative e' { ${chordNotes} }
 
 
 \score {
@@ -24,7 +19,7 @@ chordNotes = \relative e' {
     \new Staff {
       \new Voice {
         \clef treble
-        \key c \major
+        \key ${key} \major
         % suppress 4/4 time signature
         \override Staff.TimeSignature.stencil = ##f
         \scaleNotes
@@ -41,7 +36,7 @@ chordNotes = \relative e' {
 \score {
   <<
     \new Staff {
-      \new Voice = "notes" {
+      \new Voice = "scale" {
          r1 \unfoldRepeats{ \repeat volta 4 { \scaleNotes } }
       }
     }

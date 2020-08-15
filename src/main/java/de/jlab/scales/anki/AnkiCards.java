@@ -48,7 +48,7 @@ public class AnkiCards {
         continue;
       }
       ScaleInfo parentInfo = universe.info(scaleInfo.getParent());
-      deck.add(scaleInfo.getName(), parentInfo.getName());
+      deck.add(scaleInfo.getDefaultName(), parentInfo.getDefaultName());
     }
     return deck;
   }
@@ -71,7 +71,7 @@ public class AnkiCards {
       deck.add(scaleInfo.getName(FLAT), scale.asScale(FLAT));
       deck.add(scaleInfo.getName(SHARP), scale.asScale(SHARP));
     } else {
-      deck.add(scaleInfo.getName(), scale.asScale(scaleInfo.getAccidental()));
+      deck.add(scaleInfo.getDefaultName(), scale.asScale(scaleInfo.getAccidental()));
     }
   }
 
@@ -87,7 +87,7 @@ public class AnkiCards {
     Deck deck = new Deck();
     for (Scale scale : commonScales()) {
       ScaleInfo scaleInfo = universe.info(scale);
-      deck.add(scaleInfo.getTypeName(), scale.asIntervals());
+      deck.add(scaleInfo.getModeName(), scale.asIntervals());
     }
     return deck;
   }

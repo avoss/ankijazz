@@ -37,18 +37,18 @@ public class ScaleUniverse implements Iterable<Scale> {
     public String name(int index, Note oldRoot, Note newRoot, Accidental accidental) {
       String oldRootName = oldRoot.getName(accidental);
       String newRootName = newRoot.getName(accidental);
-      String modeName = modeName(index);
+      String modeName = internalModeName(index);
       if (modeName != null) {
         return MessageFormat.format(namePattern, newRootName, modeName, oldRootName);
       }
       return MessageFormat.format(nameFallbackPattern, newRootName, scaleName, oldRootName);
     }
 
-    public String typeName(int index) {
-      return modeName(index) == null ? scaleName : modeName(index);
+    public String modeName(int index) {
+      return internalModeName(index) == null ? scaleName : internalModeName(index);
     }
 
-    private String modeName(int index) {
+    private String internalModeName(int index) {
       if (index == 0) {
         return scaleName;
       }
@@ -122,8 +122,8 @@ public class ScaleUniverse implements Iterable<Scale> {
           .accidental(accidental)
           .scale(mode)
           .parent(parent)
-          .typeName(namer.typeName(i))
-          .name(namer.name(i, oldRoot, newRoot, accidental))
+          .modeName(namer.modeName(i))
+          .defaultName(namer.name(i, oldRoot, newRoot, accidental))
           .flatName(namer.name(i, oldRoot, newRoot, FLAT))
           .sharpName(namer.name(i, oldRoot, newRoot, SHARP))
           .build();
@@ -145,11 +145,11 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   private ScaleInfo defaultInfo(Scale scale) {
-    ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).parent(scale).build();
+    ScaleInfo info = ScaleInfo.builder().scale(scale).modeName(scale.asIntervals()).parent(scale).build();
     initializeDefaultInfoSubScales(info);
     Accidental accidental = Accidental.fromScale(info.getSuperScales().stream().findFirst().orElse(scale));
     info.setAccidental(accidental);
-    info.setName(defaultName(scale, accidental));
+    info.setDefaultName(defaultName(scale, accidental));
     info.setFlatName(defaultName(scale, FLAT));
     info.setSharpName(defaultName(scale, SHARP));
     return info;

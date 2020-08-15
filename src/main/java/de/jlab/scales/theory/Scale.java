@@ -15,6 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Stream;
 
 public class Scale implements Iterable<Note>, Comparable<Scale> {
 
@@ -126,7 +127,20 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return result;
   }
 
+  public List<Note> asList() {
+    List<Note> list = new ArrayList<>();
+    for (int i = 0; i < length(); i++) {
+      list.add(this.getNote(i));
+    }
+    return list;
+  }
+  
+  public Stream<Note> stream() {
+    return asList().stream();
+  }
+  
   public Iterator<Note> iterator() {
+    //TODO this is far to complicated: put them into a list and return list.iterator() ?
     return new Iterator<Note>() {
       int index = 0;
       Note note = root;  // TODO: note = root.transpose(-1);
@@ -179,15 +193,19 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   public String asScale(Accidental accidental) {
     StringBuilder sb = new StringBuilder();
     for (Note note : this) {
-      if (accidental == SHARP && note == F && contains(Gb) && !contains(E)) {
-        sb.append("E# ");
-      } else if (accidental == FLAT && note == B && contains(Bb) && !contains(C)) {
-        sb.append("Cb ");
-      } else {
-        sb.append(note.getName(accidental)).append(" ");
-      }
+      sb.append(noteName(note, accidental)).append(" ");
     }
     return sb.toString().trim();
+  }
+
+  public String noteName(Note note, Accidental accidental) {
+    if (accidental == SHARP && note == F && contains(Gb) && !contains(E)) {
+      return "E#";
+    } 
+    if (accidental == FLAT && note == B && contains(Bb) && !contains(C)) {
+      return "Cb";
+    }
+    return note.getName(accidental);
   }
 
   public String asIntervals() {

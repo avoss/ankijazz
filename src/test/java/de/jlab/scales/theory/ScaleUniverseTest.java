@@ -97,7 +97,7 @@ public class ScaleUniverseTest {
   }
 
   private void assertName(String expectedName, Scale scale) {
-    assertEquals(expectedName, jazz.info(scale).getName());
+    assertEquals(expectedName, jazz.info(scale).getDefaultName());
   }
 
   @Test
@@ -138,7 +138,7 @@ public class ScaleUniverseTest {
   public void testWithoutModes() {
     ScaleUniverse inf = new ScaleUniverse(false, BuiltInScaleTypes.Major);
     Scale ddorian = CMajor.superimpose(D);
-    assertThat(inf.info(ddorian).getName()).isNotEqualTo("D Dorian");
+    assertThat(inf.info(ddorian).getDefaultName()).isNotEqualTo("D Dorian");
   }
   
   @Test
@@ -150,7 +150,7 @@ public class ScaleUniverseTest {
 
   private void assertTypeName(Scale scale, String expectedType) {
     ScaleInfo info = allScales.info(scale);
-    assertThat(info.getTypeName()).isEqualTo(expectedType);
+    assertThat(info.getModeName()).isEqualTo(expectedType);
   }
   
   private void assertInfo(Scale scale, Scale parent, String name, Accidental accidental) {
@@ -161,7 +161,7 @@ public class ScaleUniverseTest {
 
   private void assertInfo(Scale scale, Scale parent, String name) {
     ScaleInfo info = allScales.info(scale);
-    assertThat(info.getName()).isEqualTo(name);
+    assertThat(info.getDefaultName()).isEqualTo(name);
     assertEquals(info.getScale(), scale);
     assertEquals(info.getParent(), parent);
   }

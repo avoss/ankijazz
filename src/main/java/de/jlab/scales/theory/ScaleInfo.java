@@ -12,8 +12,8 @@ import lombok.Data;
 public class ScaleInfo {
   private String sharpName;
   private String flatName;
-  private String name;
-  private String typeName;
+  private String defaultName;
+  private String modeName;
   private Accidental accidental;
   private Scale scale;
   private Scale parent;
@@ -23,6 +23,7 @@ public class ScaleInfo {
   public boolean isInversion() {
     return !scale.equals(parent);
   }
+
   public String getName(Accidental accidental) {
     return accidental == FLAT ? flatName : sharpName;
   }

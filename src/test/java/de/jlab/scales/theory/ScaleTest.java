@@ -32,6 +32,7 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.Ignore;
 import org.junit.Test;
@@ -221,4 +222,11 @@ public class ScaleTest {
     assertFalse(iter.hasNext());
   }
 
+  @Test
+  public void stream() {
+    Scale ddorian = CMajor.superimpose(D);
+    List<Note> expected = Arrays.asList(D, E, F, G, A, B, C);
+    List<Note> actual = ddorian.stream().collect(Collectors.toList());
+    assertEquals(expected, actual);
+  }
 }
