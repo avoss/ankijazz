@@ -1,7 +1,7 @@
-/test-file.midi
-/test-file.wav
-/test-file.log
-/test-file.pdf
-
-
-/test-file.mp3
+/*.midi
+/*.wav
+/*.log
+/*.pdf
+/*.png
+/*.mp3
+/x.*

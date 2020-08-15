@@ -1,6 +1,7 @@
 package de.jlab.scales.anki;
 
 import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 import java.io.IOException;
@@ -10,7 +11,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Deck {
@@ -19,7 +19,7 @@ public class Deck {
   void add(String... fields) {
     add(0, fields);
   }
-  void add(double priority, String... fields) {
+  void add(int priority, String... fields) {
     cards.add(new BasicCard(priority, fields));
   }
 
@@ -41,7 +41,7 @@ public class Deck {
   }
 
   private String toCsv(String... fields) {
-    return Stream.of(fields).collect(Collectors.joining(";"));
+    return Stream.of(fields).collect(joining(";"));
   }
 
   public List<Card> getCards() {

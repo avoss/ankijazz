@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public final class Utils {
@@ -18,6 +19,15 @@ public final class Utils {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+  
+  public static String uuid() {
+    return UUID.randomUUID().toString().substring(0, 8);
+    
+  }
+
+  public static String uuid(String prefix) {
+    return prefix + "-" + uuid();
   }
 
 }
