@@ -9,22 +9,17 @@
 }
 
 
-scaleNotes = \relative e' {
-%  ${scaleNotes}
-  c4 d e fs g af b c ~ c1
-}
-
-chordNotes = \relative e' {
-  c4 d e fs g af b c
-}
-
+scaleNotes = \relative e' { e4 fs4 g4 a4 b4 cs4 d4 e~ e1 }
+noteNames = \relative e' { e4 fs4 g4 a4 b4 cs4 d4 e }
+midiChord = \relative e' { <e, b' d g>1 }
+lilyChord = \relative e' { <e g b d>1 }
 
 \score {
   <<
     \new Staff {
       \new Voice {
         \clef treble
-        \key c \major
+        \key d \major
         % suppress 4/4 time signature
         \override Staff.TimeSignature.stencil = ##f
         \scaleNotes
@@ -32,7 +27,7 @@ chordNotes = \relative e' {
     }
 	\new ChordNames {
 %	  \set minorChordModifier = \markup { "-" }
-	  \chordNotes
+	  \noteNames \lilyChord
 	}
   >>
   \layout { }
@@ -41,8 +36,16 @@ chordNotes = \relative e' {
 \score {
   <<
     \new Staff {
-      \new Voice = "notes" {
+      \new Voice = "scale" {
          r1 \unfoldRepeats{ \repeat volta 4 { \scaleNotes } }
+      }
+    }
+    \new Staff {
+      \set Staff.midiInstrument = #"pad 2 (warm)"
+      \set Staff.midiMinimumVolume = #0.1
+      \set Staff.midiMaximumVolume = #0.1
+      \new Voice = "chord" {
+         \unfoldRepeats{ \repeat volta 12 { \midiChord } }
       }
     }
     \new DrumStaff = "click" {
@@ -55,4 +58,3 @@ chordNotes = \relative e' {
     \tempo 4 = 80 
   }
 }
-
