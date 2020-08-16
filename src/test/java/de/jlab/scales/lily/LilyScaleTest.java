@@ -7,8 +7,10 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
@@ -43,4 +45,13 @@ public class LilyScaleTest {
     assertThat(source).contains("scaleNotes = \\relative e' { gf4 af4 bf4 cf4 df4 ef4 f4 gf~ gf1 }");
     assertThat(source).contains("\\key gf \\major");
   }
+  
+  @Test
+  public void reproduceBug() {
+    Scale gbaltered = CMelodicMinor.transpose(G).superimpose(Gb);
+    ScaleInfo info = universe.info(gbaltered);
+    String source = new LilyScale(info, info.getKeySignature()).toLily();
+    assertThat(source).contains("\\key bf \\major");
+  }
+  
 }

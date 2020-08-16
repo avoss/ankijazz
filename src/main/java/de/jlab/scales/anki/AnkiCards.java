@@ -83,7 +83,7 @@ public class AnkiCards {
 
   private void addScaleCard(Deck deck, Scale scale) {
     ScaleInfo scaleInfo = universe.info(scale);
-    if (scale.getRoot() == Gb) {
+    if (scaleInfo.getKeySignature().getRoot() == Gb) {
       deck.add(new ScaleCard(scale, KeySignature.of(Gb, FLAT)));
       deck.add(new ScaleCard(scale, KeySignature.of(Gb, SHARP)));
     } else {

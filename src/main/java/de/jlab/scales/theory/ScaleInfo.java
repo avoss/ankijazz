@@ -10,12 +10,13 @@ import lombok.Data;
 @Data
 @Builder
 public class ScaleInfo {
-  private String sharpName;
-  private String flatName;
-  private String defaultName;
-  private String modeName;
+  private String sharpName;   // "A# Dorian"
+  private String flatName;    // "Bb Dorian"
+  private String defaultName; // "Bb Dorian" because parent is Ab Major 
+  private String modeName;    // "Dorian"
   private Scale scale;
   private Scale parent;
+  // TODO: add degree, e.g. "defaultName is the x-th mode of parant"
   private KeySignature keySignature;
   private final List<Scale> superScales = new ArrayList<>();
   private final List<Scale> subScales = new ArrayList<>();

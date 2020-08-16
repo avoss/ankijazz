@@ -187,6 +187,14 @@ public class ScaleUniverseTest {
     }
   }
 
+  @Test
+  public void testBbAltered() {
+    Scale gbAltered = CMelodicMinor.transpose(G).superimpose(Gb);
+    System.out.println(gbAltered);
+    ScaleInfo info = jazz.info(gbAltered);
+    assertEquals(KeySignature.of(Bb, FLAT), info.getKeySignature());
+  }
+
   private void assertSignature(Scale scale, Note root, Accidental accidental) {
     assertSignature(scale, root);
     assertEquals(scale.toString(), accidental, jazz.info(scale).getKeySignature().getAccidental());
