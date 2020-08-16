@@ -190,7 +190,6 @@ public class ScaleTest {
   }
 
   @Test(expected = ParseChordException.class)
-  @Ignore
   public void invalidChord2() {
     Scales.parseChord("Cm7x");
   }

@@ -44,7 +44,21 @@ public class LilyScale {
     return readTemplate()
       .replace("${key}", key())
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
-      .replace("${chordNotes}", scaleNotesWithOctave());
+      .replace("${noteNames}", scaleNotesWithOctave())
+      .replace("${midiChord}", drop2Chord())
+      .replace("${lilyChord}", closedChord());
+  }
+
+  private CharSequence closedChord() {
+    return "<" + scale.getChord(0).stream().map(this::toLilyNote).collect(joining(" ")) + ">1";
+  }
+
+  private String drop2Chord() {
+    return "<" + 
+        toLilyNote(scale.getNote(0)) + ", " +
+        toLilyNote(scale.getNote(4)) + "' " +
+        toLilyNote(scale.getNote(6)) + " " +
+        toLilyNote(scale.getNote(2)) + ">1";
   }
 
   private String scaleNotesWithExtendedOctave() {

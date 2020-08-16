@@ -10,9 +10,9 @@
 
 
 scaleNotes = \relative e' { ${scaleNotes} }
-
-chordNotes = \relative e' { ${chordNotes} }
-
+noteNames = \relative e' { ${noteNames} }
+midiChord = \relative e' { ${midiChord} }
+lilyChord = \relative e' { ${lilyChord} }
 
 \score {
   <<
@@ -27,7 +27,7 @@ chordNotes = \relative e' { ${chordNotes} }
     }
 	\new ChordNames {
 %	  \set minorChordModifier = \markup { "-" }
-	  \chordNotes
+	  \noteNames \lilyChord
 	}
   >>
   \layout { }
@@ -40,6 +40,14 @@ chordNotes = \relative e' { ${chordNotes} }
          r1 \unfoldRepeats{ \repeat volta 4 { \scaleNotes } }
       }
     }
+    \new Staff {
+      \set Staff.midiInstrument = #"pad 2 (warm)"
+      \set Staff.midiMinimumVolume = #0.1
+      \set Staff.midiMaximumVolume = #0.1
+      \new Voice = "chord" {
+         \unfoldRepeats{ \repeat volta 12 { \midiChord } }
+      }
+    }
     \new DrumStaff = "click" {
       \drummode {
         \unfoldRepeats \repeat volta 4 { cl4 wbh wbh wbh r1 r1 }
@@ -50,4 +58,3 @@ chordNotes = \relative e' { ${chordNotes} }
     \tempo 4 = 80 
   }
 }
-

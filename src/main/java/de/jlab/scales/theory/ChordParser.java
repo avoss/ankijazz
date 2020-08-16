@@ -142,8 +142,11 @@ public class ChordParser {
       }
     }
 
-    matcher = optionsPattern.matcher(matcher.group(3));
+    String options = matcher.group(3);
+    int matchedLength = 0;
+    matcher = optionsPattern.matcher(options);
     while (matcher.find()) {
+      matchedLength = matcher.end();
       int degree = Integer.parseInt(matcher.group(2));
       Note option = degree == 7 ? Note.C.flat7() : CMajor.getNote(degree - 1);
       notes.remove(option.transpose(root.ordinal()));
@@ -152,6 +155,9 @@ public class ChordParser {
       else if ("b".equalsIgnoreCase(matcher.group(1)))
         option = option.transpose(-1);
       notes.add(option.transpose(root.ordinal()));
+    }
+    if (matchedLength != options.length()) {
+      throw new ParseChordException("Invalid options in chord: " + string);
     }
 
     return new Scale(root, notes);

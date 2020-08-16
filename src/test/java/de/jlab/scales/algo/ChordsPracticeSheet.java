@@ -75,7 +75,6 @@ public class ChordsPracticeSheet {
   }
 
   @Test
-  @Ignore
   public void printSingleSheets() throws IOException {
     for (String quality : qualities)
       createSheet("temp/" + quality, quality);

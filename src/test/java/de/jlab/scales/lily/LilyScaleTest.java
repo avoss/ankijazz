@@ -27,8 +27,11 @@ public class LilyScaleTest {
   public void testEDorian() {
     Scale edorian = CMajor.transpose(D).superimpose(E);
     String source = new LilyScale(universe.info(edorian), Accidental.SHARP).toLily();
+    //assertEquals("", source);
     assertThat(source).contains("scaleNotes = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e~ e1 }");
-    assertThat(source).contains("chordNotes = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e }");
+    assertThat(source).contains("noteNames = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e }");
+    assertThat(source).contains("midiChord = \\relative e' { <e, b' d g>1 }");
+    assertThat(source).contains("lilyChord = \\relative e' { <e g b d>1 }");
     assertThat(source).contains("\\key d \\major");
   }
 
