@@ -187,7 +187,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   @Override
   public String toString() {
-    return asScale(Accidental.fromScale(this));
+    return asScale(FLAT);
   }
 
   public String asScale(Accidental accidental) {
@@ -270,9 +270,14 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return contains(root.major3());
   }
 
-  public boolean isDominant() {
-    return contains(root.flat7());
+  public boolean isMinor() {
+    return contains(root.minor3()) && !contains(root.major3());
   }
+  
+  public boolean isDominant() {
+    return isMajor() && contains(root.flat7());
+  }
+  
 
   public boolean isAlteredDominant() {
     if (!isDominant())

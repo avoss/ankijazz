@@ -14,9 +14,9 @@ public class ScaleInfo {
   private String flatName;
   private String defaultName;
   private String modeName;
-  private Accidental accidental;
   private Scale scale;
   private Scale parent;
+  private KeySignature keySignature;
   private final List<Scale> superScales = new ArrayList<>();
   private final List<Scale> subScales = new ArrayList<>();
 
@@ -27,4 +27,5 @@ public class ScaleInfo {
   public String getName(Accidental accidental) {
     return accidental == FLAT ? flatName : sharpName;
   }
+
 }

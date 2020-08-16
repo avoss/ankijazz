@@ -6,37 +6,22 @@ import static java.util.stream.Collectors.joining;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Pattern;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
 
 import de.jlab.scales.Utils;
-import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.Scales.*;
 
 public class LilyScale {
   
   private ScaleInfo scaleInfo;
   private Scale scale;
-  private Accidental accidental;
+  private KeySignature keySignature;
 
-  public LilyScale(ScaleInfo scaleInfo, Accidental accidental) {
+  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature) {
     this.scaleInfo = scaleInfo;
-    this.accidental = accidental;
+    this.keySignature = keySignature;
     this.scale = scaleInfo.getScale();
   }
   
@@ -78,11 +63,11 @@ public class LilyScale {
   }
 
   private String key() {
-    return toLilyNote(scaleInfo.getParent().getRoot());
+    return toLilyNote(keySignature.getRoot());
   }
 
   private String toLilyNote(Note note) {
-    return scale.noteName(note, accidental)
+    return scale.noteName(note, keySignature.getAccidental())
         .replace("b", "f")
         .replace("#", "s")
         .toLowerCase();

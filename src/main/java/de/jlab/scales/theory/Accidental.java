@@ -2,7 +2,7 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.Note.NATURALS;
+import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Set;
 
@@ -54,7 +54,7 @@ public enum Accidental {
 
   private static boolean tryAccidental(Scale s, Accidental acc) {
     Set<Note> notes = s.getNotes();
-    for (Note note : NATURALS) {
+    for (Note note : CMajor) {
       if (!notes.remove(note)) {
         notes.remove(acc.apply(note));
       }

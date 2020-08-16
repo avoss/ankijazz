@@ -13,10 +13,13 @@ public interface Card extends Comparable<Card> {
   int getPriority();
 
   String[] getFields();
-  void writeAssets(Path directory);
+  
+  default void writeAssets(Path directory) {
+    // empty
+  }
 
-  @Override
-  default public int compareTo(Card that) {
+  default int compareTo(Card that) {
     return Integer.compare(this.getPriority(), that.getPriority());
   }
+  
 }

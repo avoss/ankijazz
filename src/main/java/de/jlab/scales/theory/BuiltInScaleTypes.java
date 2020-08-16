@@ -4,10 +4,10 @@ import static de.jlab.scales.theory.Scales.*;
 
 // TODO modes are also scale tyes ...
 public enum BuiltInScaleTypes implements ScaleType {
-  Major(CMajor, "Major Scale", "Ionian", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
+  Major(CMajor, "Major Scale", "Major Scale", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
   MelodicMinor(CMelodicMinor, "Melodic Minor", "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
   HarmonicMinor(CHarmonicMinor, "Harmonic Minor", "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
-  HarmonicMajor(CHarmonicMajor, "Harmonic Major", "Ionian b6", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
+  HarmonicMajor(CHarmonicMajor, "Harmonic Major", "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
   DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole"),
   WholeTone(CWholeTone, "Whole Tone"),
   Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic"),

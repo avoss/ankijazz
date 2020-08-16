@@ -14,6 +14,7 @@ import java.util.List;
 import org.junit.Test;
 
 import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 import static org.assertj.core.api.Assertions.*;
 
@@ -35,6 +36,7 @@ public class ScaleCardTest {
     Scale bb7 = CMajor.transpose(Eb).superimpose(Bb);
     ScaleCard c = card(bb7, FLAT);
     Path dir = Paths.get("build/lily");
+    Files.createDirectories(dir);
     c.writeAssets(dir);
     Path ly = dir.resolve(c.lilyName());
     List<String> lines = Files.readAllLines(ly);
@@ -42,7 +44,7 @@ public class ScaleCardTest {
   }
   
   private ScaleCard card(Scale scale, Accidental accidental) {
-    return new ScaleCard(scale, accidental);
+    return new ScaleCard(scale, KeySignature.of(scale.getRoot(), accidental));
   }
 
 

@@ -21,8 +21,4 @@ public class BasicCard implements Card {
     return fields;
   }
 
-  @Override
-  public void writeAssets(Path directory) {
-    // ignore
-  }
 }

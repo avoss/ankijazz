@@ -41,6 +41,9 @@ public class ScaleUniverse implements Iterable<Scale> {
       if (modeName != null) {
         return MessageFormat.format(namePattern, newRootName, modeName, oldRootName);
       }
+      if (index == 0) {
+        return MessageFormat.format(namePattern, newRootName, scaleName, oldRootName);
+      }
       return MessageFormat.format(nameFallbackPattern, newRootName, scaleName, oldRootName);
     }
 
@@ -49,9 +52,6 @@ public class ScaleUniverse implements Iterable<Scale> {
     }
 
     private String internalModeName(int index) {
-      if (index == 0) {
-        return scaleName;
-      }
       if (index < modeNames.length) {
         return modeNames[index];
       }
@@ -94,12 +94,22 @@ public class ScaleUniverse implements Iterable<Scale> {
   private List<Scale> scales = new ArrayList<>();
 
   private void scale(ScaleType type) {
-    Namer namer = Namer.builder().namePattern("{0} {1}").nameFallbackPattern("{2} {1}/{0}").scaleName(type.getScaleName()).modeNames(type.getModeNames()).build();
+    Namer namer = Namer.builder()
+        .namePattern("{0} {1}")
+        .nameFallbackPattern("{2} {1}/{0}")
+        .scaleName(type.getScaleName())
+        .modeNames(type.getModeNames())
+        .build();
     addAll(type, namer);
   }
 
   private void chord(ScaleType type) {
-    Namer namer = Namer.builder().namePattern("{0}{1}").nameFallbackPattern("{2}{1}/{0}").scaleName(type.getScaleName()).modeNames(type.getModeNames()).build();
+    Namer namer = Namer.builder()
+        .namePattern("{0}{1}")
+        .nameFallbackPattern("{2}{1}/{0}")
+        .scaleName(type.getScaleName())
+        .modeNames(type.getModeNames())
+        .build();
     addAll(type, namer);
   }
 
@@ -113,23 +123,34 @@ public class ScaleUniverse implements Iterable<Scale> {
 
   private void addModes(Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();
-    Accidental accidental = Accidental.fromScale(parent);
+    
+    // in case of harmonic or melodic minor we need to take keysignature of corresponding natural minor.
+    KeySignature keySignature = keySignatureFromParentScale(parent);
+    
     int numberOfModes = this.includeModes ? parent.length() : 1;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
       Scale mode = parent.superimpose(newRoot);
       ScaleInfo info = ScaleInfo.builder()
-          .accidental(accidental)
+          .keySignature(keySignature)
           .scale(mode)
           .parent(parent)
           .modeName(namer.modeName(i))
-          .defaultName(namer.name(i, oldRoot, newRoot, accidental))
+          .defaultName(namer.name(i, oldRoot, newRoot, Accidental.fromScale(parent)))
           .flatName(namer.name(i, oldRoot, newRoot, FLAT))
           .sharpName(namer.name(i, oldRoot, newRoot, SHARP))
           .build();
       infos.put(mode, info);
       scales.add(mode);
     }
+  }
+
+  private KeySignature keySignatureFromParentScale(Scale parent) {
+    if (parent.isMinor()) {
+      Scale major = CMajor.transpose(parent.getRoot()).transpose(3);
+      return KeySignature.of(major.getRoot(), Accidental.fromScale(major));
+    }
+    return KeySignature.of(parent.getRoot(), Accidental.fromScale(parent));
   }
 
   private final Comparator<ScaleInfo> infoQuality = (a, b) -> {
@@ -144,11 +165,16 @@ public class ScaleUniverse implements Iterable<Scale> {
     return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
   }
 
+  // FIXME throw / return null instead? - NO, because need to find scales for unknown chords
   private ScaleInfo defaultInfo(Scale scale) {
     ScaleInfo info = ScaleInfo.builder().scale(scale).modeName(scale.asIntervals()).parent(scale).build();
     initializeDefaultInfoSubScales(info);
-    Accidental accidental = Accidental.fromScale(info.getSuperScales().stream().findFirst().orElse(scale));
-    info.setAccidental(accidental);
+    Scale superScale = info.getSuperScales().stream().findFirst().orElse(scale);
+    
+    // FIXME same here: if minor need to take key signature from natural minor
+    Accidental accidental = Accidental.fromScale(superScale);
+    info.setKeySignature(KeySignature.of(scale.getRoot(), accidental));
+    
     info.setDefaultName(defaultName(scale, accidental));
     info.setFlatName(defaultName(scale, FLAT));
     info.setSharpName(defaultName(scale, SHARP));

@@ -127,7 +127,4 @@ public enum Note {
     return this.semitones(other) == 1 || other.semitones(this) == 1;
   }
   
-  public static final Note[] NATURALS = {C, D, E, F, G, A, B};
-
-
 }

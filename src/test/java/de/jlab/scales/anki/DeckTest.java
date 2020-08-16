@@ -13,15 +13,15 @@ import org.junit.Test;
 public class DeckTest {
 
   @Test
-  public void test() throws IOException {
+  public void testWriteCsv() throws IOException {
     Deck deck = new Deck();
     deck.add(1,  "A", "B");
     deck.add(3,  "E", "F");
     deck.add(2,  "C", "D");
-    Path path = Paths.get("build/deck.csv");
+    Path path = Paths.get("build/csvtest");
     deck.writeTo(path);
     
-    String actual = Files.readAllLines(path).stream().collect(Collectors.joining("\n"));
+    String actual = Files.readAllLines(path.resolve("anki.txt")).stream().collect(Collectors.joining("\n"));
     assertEquals("A;B\nC;D\nE;F", actual);
   }
 

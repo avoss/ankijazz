@@ -8,6 +8,7 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
@@ -19,6 +20,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -53,36 +56,6 @@ public class AnkiCards {
     return deck;
   }
 
-  public Deck spellAllScales() {
-    return spellScales(allKeys(commonScales()));
-  }
-  
-  private Deck spellScales(List<Scale> scales) {
-    Deck deck = new Deck();
-    for (Scale scale : scales) {
-      addScale(deck, scale);
-    }
-    return deck;
-  }
-
-  private void addScale(Deck deck, Scale scale) {
-    ScaleInfo scaleInfo = universe.info(scale);
-    if (scale.getRoot() == Note.Gb) {
-      deck.add(scaleInfo.getName(FLAT), scale.asScale(FLAT));
-      deck.add(scaleInfo.getName(SHARP), scale.asScale(SHARP));
-    } else {
-      deck.add(scaleInfo.getDefaultName(), scale.asScale(scaleInfo.getAccidental()));
-    }
-  }
-
-  public Deck spellMajorScales() {
-    return spellScales(allKeys(asList(CMajor)));
-  }
-
-  public Deck spellMajorTriads() {
-    return spellScales(allKeys(asList(CmajTriad)));
-  }
-  
   public Deck spellTypes() {
     Deck deck = new Deck();
     for (Scale scale : commonScales()) {
@@ -91,6 +64,33 @@ public class AnkiCards {
     }
     return deck;
   }
+  
+  public Deck spellAllScales() {
+    return spellScales(allKeys(commonScales()));
+  }
+
+  public Deck spellMajorScales() {
+    return spellScales(allKeys(asList(CMajor)));
+  }
+  
+  private Deck spellScales(List<Scale> scales) {
+    Deck deck = new Deck();
+    for (Scale scale : scales) {
+      addScaleCard(deck, scale);
+    }
+    return deck;
+  }
+
+  private void addScaleCard(Deck deck, Scale scale) {
+    ScaleInfo scaleInfo = universe.info(scale);
+    if (scale.getRoot() == Gb) {
+      deck.add(new ScaleCard(scale, KeySignature.of(Gb, FLAT)));
+      deck.add(new ScaleCard(scale, KeySignature.of(Gb, SHARP)));
+    } else {
+      deck.add(new ScaleCard(scale, scaleInfo.getKeySignature()));
+    }
+  }
+
 
   private Collection<Scale> commonScales() {
     List<Scale> scales = new ArrayList<>();

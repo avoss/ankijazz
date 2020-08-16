@@ -14,6 +14,7 @@ import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
@@ -61,6 +62,10 @@ public class Scales {
     return ChordParser.parseChord(name);
   }
   
+  public static List<Scale> allKeys(Scale ... scales) {
+    return allKeys(Arrays.asList(scales));
+  }
+  
   public static List<Scale> allKeys(Collection<Scale> scales) {
     List<Scale> allScales = new ArrayList<>();
     for (Scale scale : scales) {
@@ -70,5 +75,19 @@ public class Scales {
     }
     return allScales;
   }
- 
+
+  public static List<Scale> allModes(Scale ... scales) {
+    return allModes(Arrays.asList(scales));
+  }
+  
+  public static List<Scale> allModes(Collection<Scale> scales) {
+    List<Scale> allScales = new ArrayList<>();
+    for (Scale scale : scales) {
+      for (Note root: scale) {
+        allScales.add(scale.superimpose(root));
+      }
+    }
+    return allScales;
+  }
+  
 }

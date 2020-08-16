@@ -1,45 +1,50 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.BuiltInScaleTypes.*;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
+import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static java.lang.String.format;
 import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.joining;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.UUID;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyScale;
 import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
-import de.jlab.scales.theory.Scales;
 
 public class ScaleCard implements Card {
   private static final ScaleUniverse universe = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
-  private final Accidental accidental;
   private final String uuid;
+  private KeySignature keySignature;
 
-  public ScaleCard(Scale mode, Accidental accidental) {
+  public ScaleCard(Scale mode, KeySignature keySignature) {
+    this.keySignature = keySignature;
     this.modeInfo = universe.info(mode);
     this.parentInfo = universe.info(modeInfo.getParent());
-    this.accidental = accidental;
     this.uuid = Utils.uuid("AnkiJazz");
   }
 
   @Override
   public String[] getFields() {
-    return new String[] { modeFullName(), modeTypeName(), modeRootName(), parentFullName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
+    return new String[] { modeFullName(), noteNames(), modeTypeName(), modeRootName(), parentFullName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
+  }
+
+  private String noteNames() {
+    return modeInfo.getScale().asScale(keySignature.getAccidental());
   }
 
   private String modeFullName() {
-    return modeInfo.getName(accidental);
+    return modeInfo.getName(keySignature.getAccidental());
   }
 
   private String modeTypeName() {
@@ -47,11 +52,11 @@ public class ScaleCard implements Card {
   }
 
   private String modeRootName() {
-    return modeInfo.getScale().getRoot().getName(accidental);
+    return modeInfo.getScale().getRoot().getName(keySignature.getAccidental());
   }
 
   private String parentFullName() {
-    return parentInfo.getName(accidental);
+    return parentInfo.getName(keySignature.getAccidental());
   }
 
   private String parentTypeName() {
@@ -59,15 +64,15 @@ public class ScaleCard implements Card {
   }
 
   private String parentRootName() {
-    return parentInfo.getScale().getRoot().getName(accidental);
+    return parentInfo.getScale().getRoot().getName(keySignature.getAccidental());
   }
 
   private String modePngName() {
-    return uuid + ".png";
+    return format("<img src=\"%s.png\">", uuid);
   }
 
   private String modeMp3Name() {
-    return uuid + ".mp3";
+    return format("[sound:%s.mp3]",  uuid);
   }
 
   public String lilyName() {
@@ -83,15 +88,14 @@ public class ScaleCard implements Card {
     // we cannot check whether note is contained in CMajor because of Fb and B#
     // TODO: move to Scale?
     Scale parent = parentInfo.getScale();
-    return (int) parent.stream().map(note -> parent.noteName(note, accidental)).filter(name -> name.contains("b") || name.contains("#")).count();
+    return (int) parent.stream().map(note -> parent.noteName(note, keySignature.getAccidental())).filter(name -> name.contains("b") || name.contains("#")).count();
   }
 
   @Override
   public void writeAssets(Path dir) {
     try {
-      Files.createDirectories(dir);
       Path path = dir.resolve(lilyName());
-      String lily = new LilyScale(modeInfo, accidental).toLily();
+      String lily = new LilyScale(modeInfo, keySignature).toLily();
       Files.write(path, asList(lily));
     } catch (IOException e) {
       throw new UncheckedIOException(e);

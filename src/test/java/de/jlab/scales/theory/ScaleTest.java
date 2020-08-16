@@ -28,6 +28,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.Iterator;
@@ -52,7 +53,6 @@ public class ScaleTest {
     assertEquals(D, CMajor.getNote(1));
     assertEquals(B, CMajor.getNote(-1));
   }
-
 
   @Test
   public void testIsMajor() {
@@ -84,7 +84,7 @@ public class ScaleTest {
   @Test
   public void testSpell() {
     assertEquals("C D E F G A B", CMajor.toString());
-    assertEquals("G A B C D E F#", CMajor.transpose(G).toString());
+    assertEquals("G A B C D E Gb", CMajor.transpose(G).toString());
     assertEquals("F G A Bb C D E", CMajor.transpose(F).toString());
   }
 
