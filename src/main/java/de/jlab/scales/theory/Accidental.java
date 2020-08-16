@@ -2,6 +2,7 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Set;
@@ -49,6 +50,9 @@ public enum Accidental {
   public abstract Note remove(Note note);
   
   public static Accidental fromScale(Scale s) {
+    if (s.equals(CMajor)) {
+      return SHARP;
+    }
     return tryAccidental(s, FLAT) ? FLAT : (tryAccidental(s, SHARP) ? SHARP : FLAT);
   }
 

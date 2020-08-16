@@ -27,7 +27,7 @@ lilyChord = \relative e' { ${lilyChord} }
     }
 	\new ChordNames {
 %	  \set minorChordModifier = \markup { "-" }
-	  \noteNames \lilyChord
+	  \noteNames % \lilyChord
 	}
   >>
   \layout { }

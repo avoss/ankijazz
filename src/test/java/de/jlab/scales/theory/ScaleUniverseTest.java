@@ -155,10 +155,8 @@ public class ScaleUniverseTest {
 
   @Test
   public void testMajorKeySignatures() {
-    assertSignature(CMajor, C);
-    asList(G, D, A, E, B).forEach(root -> assertSignature(CMajor.transpose(root), root, SHARP));
-    asList(F, Bb, Eb, Ab, Db).forEach(root -> assertSignature(CMajor.transpose(root), root, FLAT));
-    assertSignature(CMajor.transpose(Gb), Gb, FLAT);
+    asList(C, G, D, A, E, B).forEach(root -> assertSignature(CMajor.transpose(root), root, SHARP));
+    asList(F, Bb, Eb, Ab, Db, Gb).forEach(root -> assertSignature(CMajor.transpose(root), root, FLAT));
   }
   
   @Test
@@ -191,11 +189,11 @@ public class ScaleUniverseTest {
 
   private void assertSignature(Scale scale, Note root, Accidental accidental) {
     assertSignature(scale, root);
-    assertEquals(accidental, jazz.info(scale).getKeySignature().getAccidental());
+    assertEquals(scale.toString(), accidental, jazz.info(scale).getKeySignature().getAccidental());
   }
 
   private void assertSignature(Scale scale, Note root) {
-    assertEquals(root, jazz.info(scale).getKeySignature().getRoot());
+    assertEquals(scale.toString(), root, jazz.info(scale).getKeySignature().getRoot());
   }
 
   private void assertTypeName(Scale scale, String expectedType) {

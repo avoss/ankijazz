@@ -25,8 +25,8 @@ public class AccidentalTest {
 
   @Test
   public void testFromScale() {
-      asList(G, D, A, E, B).forEach(root -> assertEquals("Sharp expected for key " + root, SHARP, fromScale(CMajor.transpose(root))));
-      asList(C, F, Bb, Eb, Ab, Db, Gb).forEach(root -> assertEquals("Flat expected for key " + root, FLAT, fromScale(CMajor.transpose(root))));
+      asList(C, G, D, A, E, B).forEach(root -> assertEquals("Sharp expected for key " + root, SHARP, fromScale(CMajor.transpose(root))));
+      asList(F, Bb, Eb, Ab, Db, Gb).forEach(root -> assertEquals("Flat expected for key " + root, FLAT, fromScale(CMajor.transpose(root))));
   }
 
 }
