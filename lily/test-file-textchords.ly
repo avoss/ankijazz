@@ -15,20 +15,30 @@ midiChord = \relative e' { <e, b' d g>1 }
 lilyChord = \relative e' { <e g b d>1 }
 
 chordLyrics = \lyricmode {
-  \markup{\sans "E"}
-  \markup{\sans \concat{"F"\super{\sharp}}}
+  \markup{"E"}
+  \markup{\concat{"F"\super{\sharp}}} 
   \markup{\sans "G"}
   \markup{\sans "A"}
   \markup{\sans \concat{"B"\super{\flat}}}
   \markup{\sans \concat{"C"\super{\sharp}}}
-  \markup{\sans "D"}
   \markup {
 %    \override #'(font-name . "Bitstream Vera Sans,sans-serif, Oblique Bold")
     \sans  
     \concat {
-      "E" \super\small {
+      "E" \raise #2 \small {
         \override #'(baseline-skip . 1.5) {
-          \column{"Δ7" "m"}
+          \column{\fontsize #-3 {\sharp} "mΔ7"}
+        }
+      }
+    }
+  }
+  \markup {
+%    \override #'(font-name . "Bitstream Vera Sans,sans-serif, Oblique Bold")
+    \sans  
+    \concat {
+      "E" \raise #1.5 \small {
+        \override #'(baseline-skip . 1.5) {
+          \column{\fontsize #-1 {\flat} "mΔ7"}
         }
       }
     }
