@@ -49,21 +49,24 @@ public enum Accidental {
 
   public abstract Note remove(Note note);
   
-  public static Accidental fromScale(Scale s) {
-    if (s.equals(CMajor)) {
+  /** works for major scales, otherwise approximate guesswork */
+  public static Accidental fromScale(Scale scale) {
+    if (scale.equals(CMajor)) {
       return SHARP;
     }
-    return tryAccidental(s, FLAT) ? FLAT : (tryAccidental(s, SHARP) ? SHARP : FLAT);
+    int sharpFailures = tryAccidental(scale, SHARP);
+    int flatFailures = tryAccidental(scale, FLAT);
+    return sharpFailures == flatFailures ? FLAT : (sharpFailures < flatFailures ? SHARP : FLAT);
   }
 
-  private static boolean tryAccidental(Scale s, Accidental acc) {
-    Set<Note> notes = s.getNotes();
+  private static int tryAccidental(Scale scale, Accidental acc) {
+    Set<Note> notes = scale.getNotes();
     for (Note note : CMajor) {
       if (!notes.remove(note)) {
         notes.remove(acc.apply(note));
       }
     }
-    return notes.isEmpty();
+    return notes.size();
   }
   
 }
