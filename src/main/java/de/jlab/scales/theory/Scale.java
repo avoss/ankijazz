@@ -5,7 +5,9 @@ import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.Gb;
 
@@ -199,11 +201,22 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String noteName(Note note, Accidental accidental) {
-    if (accidental == SHARP && note == F && contains(Gb) && !contains(E)) {
-      return "E#";
-    } 
-    if (accidental == FLAT && note == B && contains(Bb) && !contains(C)) {
-      return "Cb";
+    if (accidental == SHARP) {
+      if (note == F && contains(Gb) && !contains(E)) {
+        return "E#";
+      }
+      if (note == C && contains(Db) && !contains(B)) {
+        return "B#";
+      }
+    }
+
+    if (accidental == FLAT) {
+      if (note == B && contains(Bb) && !contains(C)) {
+        return "Cb";
+      }
+      if (note == E && contains(Eb) && !contains(F)) {
+        return "Fb";
+      }
     }
     return note.getName(accidental);
   }

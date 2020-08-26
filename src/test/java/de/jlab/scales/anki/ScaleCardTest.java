@@ -1,6 +1,8 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.ScaleCard.SHUFFLE;
 import static de.jlab.scales.theory.Accidental.*;
+
 import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Note.*;
 import static org.junit.Assert.*;
@@ -17,18 +19,16 @@ import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 import static org.assertj.core.api.Assertions.*;
-
 public class ScaleCardTest {
 
   @Test
   public void testPriority() {
-    assertEquals(0, card(CMajor, SHARP).getPriority());
-    assertEquals(0, card(CMajor, FLAT).getPriority());
-    assertEquals(1, card(CMajor.transpose(F), FLAT).getPriority());
-    assertEquals(1, card(CMajor.transpose(G), FLAT).getPriority());
-    assertEquals(2, card(CMajor.transpose(Bb), FLAT).getPriority());
-    assertEquals(2, card(CMajor.transpose(D), FLAT).getPriority());
-    assertEquals(6, card(CMajor.transpose(Gb), FLAT).getPriority());
+    assertThat(card(CMajor, SHARP).getPriority()).isBetween(0, SHUFFLE);
+    assertThat(card(CMajor.transpose(F), FLAT).getPriority()).isBetween(1,  1 + SHUFFLE);
+    assertThat(card(CMajor.transpose(G), SHARP).getPriority()).isBetween(1, 1 + SHUFFLE);
+    assertThat(card(CMajor.transpose(D), SHARP).getPriority()).isBetween(2, 2 + SHUFFLE);
+    assertThat(card(CMajor.transpose(Bb), FLAT).getPriority()).isBetween(2, 2 + SHUFFLE);
+    assertThat(card(CMajor.transpose(Gb), FLAT).getPriority()).isBetween(6, 6 + SHUFFLE);
   }
 
   @Test

@@ -240,8 +240,4 @@ public class FretboardTest {
     System.out.println(f);
   }
   
-  @Test
-  public void printInversionsOfChord() {
-    
-  }
 }

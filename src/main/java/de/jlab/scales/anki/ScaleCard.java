@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.concurrent.ThreadLocalRandom;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyScale;
@@ -26,12 +27,15 @@ public class ScaleCard implements Card {
   private final ScaleInfo parentInfo;
   private final String uuid;
   private KeySignature keySignature;
+  private int priority;
+  static int SHUFFLE = 3;
 
   public ScaleCard(Scale mode, KeySignature keySignature) {
     this.keySignature = keySignature;
     this.modeInfo = universe.info(mode);
     this.parentInfo = universe.info(modeInfo.getParent());
     this.uuid = Utils.uuid("AnkiJazz");
+    this.priority = numberOfAccidentalsInParentScale() + ThreadLocalRandom.current().nextInt(SHUFFLE);
   }
 
   @Override
@@ -81,11 +85,11 @@ public class ScaleCard implements Card {
   
   @Override
   public int getPriority() {
-    return numberOfAccidentalsInParentScale();
+    return priority;
   }
 
   private int numberOfAccidentalsInParentScale() {
-    // we cannot check whether note is contained in CMajor because of Fb and B#
+    // we cannot check whether note is contained in CMajor because of Fb,Cb and B#,E#
     // TODO: move to Scale?
     Scale parent = parentInfo.getScale();
     return (int) parent.stream().map(note -> parent.noteName(note, keySignature.getAccidental())).filter(name -> name.contains("b") || name.contains("#")).count();

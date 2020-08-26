@@ -46,6 +46,13 @@ public class ScaleTest {
     assertEquals("Gb Ab Bb Cb Db Eb F", gbmaj.asScale(FLAT));
     assertEquals("F# G# A# B C# D# E#", gbmaj.asScale(SHARP));
   }
+
+  @Test
+  public void testDFlatAndCSharpMelodicMinor() {
+    Scale dbmm = CMelodicMinor.transpose(Db);
+    assertEquals("Db Eb Fb Gb Ab Bb C", dbmm.asScale(FLAT));
+    assertEquals("C# D# E F# G# A# B#", dbmm.asScale(SHARP));
+  }
   
   @Test
   public void getNote_should_work_with_negative_index() {
