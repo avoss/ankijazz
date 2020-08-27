@@ -10,6 +10,8 @@ import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.Gb;
+import static de.jlab.scales.theory.Scales.CMajor;
+import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,6 +19,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Scale implements Iterable<Note>, Comparable<Scale> {
@@ -142,7 +145,6 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
   
   public Iterator<Note> iterator() {
-    //TODO this is far to complicated: put them into a list and return list.iterator() ?
     return new Iterator<Note>() {
       int index = 0;
       Note note = root;  // TODO: note = root.transpose(-1);
@@ -189,18 +191,57 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   @Override
   public String toString() {
-    return asScale(FLAT);
+    return defaultNoteNames(FLAT).stream().collect(joining(" "));
   }
 
   public String asScale(Accidental accidental) {
-    StringBuilder sb = new StringBuilder();
-    for (Note note : this) {
-      sb.append(noteName(note, accidental)).append(" ");
-    }
-    return sb.toString().trim();
+    return noteNames(accidental).stream().collect(Collectors.joining(" "));
   }
 
   public String noteName(Note note, Accidental accidental) {
+    return noteNames(accidental).get(indexOf(note));
+  }
+  
+  private List<String> noteNames(Accidental accidental) {
+    if (length() != CMajor.length())  { // everything relates to CMajor
+      return defaultNoteNames(accidental);
+    }
+    Note majorRoot = getRoot();
+    if (!CMajor.contains(majorRoot)) {
+      majorRoot = accidental.inverse().apply(majorRoot);
+      if (!CMajor.contains(majorRoot)) {
+        return defaultNoteNames(accidental);
+      }
+    }
+    List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
+    List<Note> scaleNotes = asList();
+    List<String> result = new ArrayList<>();
+    for (int i = 0; i < cmajorNotes.size(); i++) {
+      Note cmajorNote = cmajorNotes.get(i);
+      Note scaleNote = scaleNotes.get(i);
+      String majorName = cmajorNote.getName(SHARP);
+      if (cmajorNote == scaleNote) {
+        result.add(majorName);
+      } else if (accidental.apply(cmajorNote) == scaleNote) {
+        result.add(majorName + accidental.symbol());
+      } else if (accidental.inverse().apply(cmajorNote) == scaleNote) {
+        result.add(majorName + accidental.inverse().symbol());
+      } else {
+        return defaultNoteNames(accidental);
+      }
+    }
+    return result;
+  }
+
+  public List<String> defaultNoteNames(Accidental accidental) {
+    List<String> result = new ArrayList<>();
+    for (Note note : this) {
+      result.add(defaultNoteName(note, accidental));
+    }
+    return result;
+  }
+
+  public String defaultNoteName(Note note, Accidental accidental) {
     if (accidental == SHARP) {
       if (note == F && contains(Gb) && !contains(E)) {
         return "E#";
@@ -220,7 +261,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     }
     return note.getName(accidental);
   }
-
+  
   public String asIntervals() {
     return asIntervals(root);
   }

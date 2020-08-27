@@ -48,6 +48,38 @@ public class ScaleTest {
   }
 
   @Test
+  public void testDMelodicMinor() {
+    Scale dbmm = CMelodicMinor.transpose(D);
+    assertEquals("D E F G A B C#", dbmm.asScale(FLAT));
+    assertEquals("D E F G A B C#", dbmm.asScale(SHARP));
+  }
+
+  @Test
+  public void testGSharpHarmonicMinor() {
+    Scale scale = CHarmonicMinor.transpose(Ab);
+    assertEquals("", scale.asScale(SHARP));
+  }
+
+  @Test
+  public void testDSharpHarmonicMinor() {
+    Scale scale = CHarmonicMinor.transpose(Eb);
+    assertEquals("", scale.asScale(SHARP));
+  }
+
+  @Test
+  public void testGSharpMelodicMinor() {
+    Scale scale = CMelodicMinor.transpose(Ab);
+    assertEquals("", scale.asScale(SHARP));
+  }
+
+  @Test
+  public void testDSharpMelodicMinor() {
+    Scale scale = CMelodicMinor.transpose(Eb);
+    assertEquals("", scale.asScale(SHARP));
+  }
+
+  
+  @Test
   public void testDFlatAndCSharpMelodicMinor() {
     Scale dbmm = CMelodicMinor.transpose(Db);
     assertEquals("Db Eb Fb Gb Ab Bb C", dbmm.asScale(FLAT));

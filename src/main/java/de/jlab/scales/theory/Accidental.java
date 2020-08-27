@@ -16,8 +16,8 @@ public enum Accidental {
     }
 
     @Override
-    public Note remove(Note note) {
-      return note.transpose(1);
+    public Accidental inverse() {
+      return SHARP;
     }
 
     @Override
@@ -33,8 +33,8 @@ public enum Accidental {
     }
 
     @Override
-    public Note remove(Note note) {
-      return note.transpose(-1);
+    public Accidental inverse() {
+      return FLAT;
     }
 
     @Override
@@ -47,7 +47,7 @@ public enum Accidental {
 
   public abstract String symbol();
 
-  public abstract Note remove(Note note);
+  public abstract Accidental inverse();
   
   /** works for major scales, otherwise approximate guesswork */
   public static Accidental fromScale(Scale scale) {
