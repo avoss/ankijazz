@@ -2,10 +2,16 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Scales.CMajor;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
+
+import com.google.common.base.Optional;
+import com.google.common.collect.Sets;
 
 public enum Accidental {
   FLAT() {
@@ -41,6 +47,7 @@ public enum Accidental {
     public String symbol() {
       return "#";
     }
+  
   };
 
   public abstract Note apply(Note note);
@@ -49,21 +56,52 @@ public enum Accidental {
 
   public abstract Accidental inverse();
   
-  /** works for major scales, otherwise approximate guesswork */
+  
+  /** TODO: delete */
   public static Accidental fromScale(Scale scale) {
-    if (scale.equals(CMajor)) {
-      return SHARP;
-    }
     int sharpFailures = tryAccidental(scale, SHARP);
     int flatFailures = tryAccidental(scale, FLAT);
-    return sharpFailures == flatFailures ? FLAT : (sharpFailures < flatFailures ? SHARP : FLAT);
+    return sharpFailures == flatFailures ? SHARP : (sharpFailures < flatFailures ? SHARP : FLAT);
   }
+  
+  private static int tryAccidental(Scale scale, Accidental accidental) {
+    if (scale.length() != CMajor.length())  { // everything relates to CMajor
+      return 1000;
+    }
+    Note majorRoot = scale.getRoot();
+    if (!CMajor.contains(majorRoot)) {
+      majorRoot = accidental.inverse().apply(majorRoot);
+      if (!CMajor.contains(majorRoot)) {
+        return 1000;
+      }
+    }
+    List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
+    List<Note> scaleNotes = scale.asList();
+    int failures = 0;
+    for (int i = 0; i < cmajorNotes.size(); i++) {
+      Note cmajorNote = cmajorNotes.get(i);
+      Note scaleNote = scaleNotes.get(i);
+      if (cmajorNote == scaleNote) {
+        ;
+      } else if (accidental.apply(cmajorNote) == scaleNote) {
+        failures += 1;
+      } else if (accidental.inverse().apply(cmajorNote) == scaleNote) {
+        failures += 2;
+      } else {
+        failures += 100;
+      }
+    }
+    return failures;
+  }
+  
 
-  private static int tryAccidental(Scale scale, Accidental acc) {
+  private static int xtryAccidental(Scale scale, Accidental accidental) {
     Set<Note> notes = scale.getNotes();
     for (Note note : CMajor) {
       if (!notes.remove(note)) {
-        notes.remove(acc.apply(note));
+        if (!notes.remove(accidental.apply(note))) {
+          notes.remove(accidental.inverse().apply(note));
+        }
       }
     }
     return notes.size();
