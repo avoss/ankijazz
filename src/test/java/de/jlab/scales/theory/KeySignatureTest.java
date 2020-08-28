@@ -1,5 +1,6 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltInScaleTypes.*;
@@ -28,6 +29,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -42,6 +44,8 @@ import org.assertj.core.util.Arrays;
 import org.junit.Test;
 
 import com.google.common.base.Splitter;
+
+import de.jlab.scales.Utils;
 
 public class KeySignatureTest {
 
@@ -86,20 +90,18 @@ public class KeySignatureTest {
     for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor)) {
       for (Scale scale : allKeys(type.getPrototype())) {
         KeySignature signature = fromScale(scale);
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s", scale.getRoot(), type.getTypeName(), signature.notateKey(), signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale));
-        // TODO review and convert to assertion
-        System.out.println(message);
+        String inverseAccidentalsHint = hasInverseAccidentals(scale, signature) ? " (found b and #)" : "";
+        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", scale.getRoot(), type.getTypeName(), signature.notateKey(), signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), inverseAccidentalsHint);
         actual.add(message);
         assertNoDuplicateNotesExist(scale, signature);
         assertNoDuplicateNotationExist(scale, signature);
       }
     }
     
-    Path dir = Paths.get("build", "KeySignatureTest");
-    Files.createDirectories(dir);
-    Files.write(dir.resolve("testScalesNotation.txt"), actual);
+    assertFileContentMatches(actual, KeySignatureTest.class, "testScalesNotation.txt");
   }
-  
+
+
   @Test
   public void testAccidentalFromScale() {
     assertSignature("Major Scale", CMajor, SHARP, C, G, D, A, E, B, Gb);
@@ -133,12 +135,12 @@ public class KeySignatureTest {
       .map(s -> s.replaceAll("#|b", ""))
       .collect(Collectors.toSet());
     assertEquals(signature.toString(scale), scale.length(), set.size());
-//    Set<String> set = new HashSet<>();
-//    String string = signature.toString(scale);
-//    Splitter.on(" ").split(string).forEach(s -> set.add(s.replaceAll("#|b", "")));
-//    assertEquals(string, scale.length(), set.size());
   }
 
+  private boolean hasInverseAccidentals(Scale scale, KeySignature signature) {
+    String notation = signature.toString(scale);
+    return notation.contains("b") && notation.contains("#");
+  }
   
 
 }
