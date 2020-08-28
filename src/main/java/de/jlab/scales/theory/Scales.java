@@ -28,6 +28,8 @@ public class Scales {
   public static final Scale CHarmonicMajor = new Scale(C, D, E, F, G, Ab, B);
   public static final Scale CDiminishedHalfWhole = new Scale(C, Db, Eb, E, Gb, G, A, Bb);
   public static final Scale CWholeTone = new Scale(C, D, E, Gb, Ab, Bb);
+  
+  public static final Scale CChromatic = new Scale(C, Note.values());
 
   public static final Scale CMinorPentatonic = new Scale(C, Eb, F, G, Bb);
   public static final Scale CMinor6Pentatonic = new Scale(C, Eb, F, G, A);

@@ -97,7 +97,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     Namer namer = Namer.builder()
         .namePattern("{0} {1}")
         .nameFallbackPattern("{2} {1}/{0}")
-        .scaleName(type.getScaleName())
+        .scaleName(type.getTypeName())
         .modeNames(type.getModeNames())
         .build();
     addAll(type, namer);
@@ -107,7 +107,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     Namer namer = Namer.builder()
         .namePattern("{0}{1}")
         .nameFallbackPattern("{2}{1}/{0}")
-        .scaleName(type.getScaleName())
+        .scaleName(type.getTypeName())
         .modeNames(type.getModeNames())
         .build();
     addAll(type, namer);

@@ -60,7 +60,7 @@ public enum BuiltInScaleTypes implements ScaleType {
   }
 
   @Override
-  public String getScaleName() {
+  public String getTypeName() {
     return typeName;
   }
 

@@ -36,8 +36,10 @@ public class Analyzer {
   @lombok.ToString
   static class Result {
     
-    private Note root;
     private final Accidental accidental;
+    private final Scale scale;
+    
+    private Note root;
     private int numberOfAccidentalsInKeySignature;
 
     private final Set<Note> majorNotesWithoutAccidental = new HashSet<>();
@@ -47,7 +49,8 @@ public class Analyzer {
     private final Set<Note> remainingScaleNotes = new LinkedHashSet<>();
     private final Map<Note, String> notationMap = new LinkedHashMap<>();
 
-    Result(Accidental accidental) {
+    Result(Scale scale, Accidental accidental) {
+      this.scale = scale;
       this.accidental = accidental;
     }
 
@@ -57,7 +60,36 @@ public class Analyzer {
       } else {
         initialize(flatSignatureKeys, (n) -> n.transpose(6));
       }
+      putDefaultNotationIntoNotationMapForNotesNotInScale();
     }
+
+    private void putDefaultNotationIntoNotationMapForNotesNotInScale() {
+      for (Note note : Note.values()) {
+        notationMap.putIfAbsent(note, defaultNotation(scale, note));
+      }
+    }
+    
+    private String defaultNotation(Scale scale, Note note) {
+      if (accidental == SHARP) {
+        if (note == F && scale.contains(Gb) && !scale.contains(E)) {
+          return "E#";
+        }
+        if (note == C && scale.contains(Db) && !scale.contains(B)) {
+          return "B#";
+        }
+      }
+
+      if (accidental == FLAT) {
+        if (note == B && scale.contains(Bb) && !scale.contains(C)) {
+          return "Cb";
+        }
+        if (note == E && scale.contains(Eb) && !scale.contains(F)) {
+          return "Fb";
+        }
+      }
+      return note.getName(accidental);
+    }
+    
 
     private void initialize(List<Note> signatureKeys, Function<Note, Note> transposer) {
       root = C;
@@ -83,8 +115,8 @@ public class Analyzer {
   }
 
   Analyzer.Result analyze(Scale scale, Accidental accidental) {
+    Analyzer.Result result = new Result(scale, accidental);
     Note majorRoot = cMajorStartNote(scale, accidental);
-    Analyzer.Result result = new Result(accidental);
     List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
     List<Note> scaleNotes = scale.asList();
     result.remainingScaleNotes.addAll(scaleNotes);

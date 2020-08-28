@@ -5,24 +5,22 @@ import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Scales.CMajor;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
 
+import java.util.List;
 import java.util.Map;
 
-@lombok.RequiredArgsConstructor(staticName = "of")
+@lombok.RequiredArgsConstructor
 @lombok.Getter 
 @lombok.EqualsAndHashCode
+@lombok.ToString
 public class KeySignature {
   private final Note majorKey;
   private final Accidental accidental;
+  private final int numberOfAccidentals;
   private final Map<Note, String> notationMap;
   
-  @Override
-  public String toString() {
-    if (!CMajor.contains(majorKey)) {
-      return accidental.inverse().apply(majorKey).name() + accidental.symbol();
-    }
-    return majorKey.name();
-  }
   
   public Accidental getAccidental() {
     return accidental;
@@ -31,8 +29,12 @@ public class KeySignature {
     return majorKey;
   }
   
+  /**
+   * works for Major, MelodicMinor, and Harmonic Minor. For their respective modes it also works but comes 
+   * up with results that differ from their parent scale. 
+   */
   public static KeySignature fromScale(Scale scale) {
-    if (scale.length() != CMajor.length()) { // everything relates to CMajor
+    if (scale.length() != CMajor.length()) { // everything relates to CMajor in this crazy music system
       throw new IllegalArgumentException("Must be 7 notes scale" + scale.toString());
     }
     
@@ -43,7 +45,23 @@ public class KeySignature {
     if (!best.getRemainingScaleNotes().isEmpty()) {
       throw new IllegalArgumentException("could not find singature for " + scale + ", best was " + best);
     }
-    return new KeySignature(best.getRoot(), best.getAccidental(), best.getNotationMap());
+    return new KeySignature(best.getRoot(), best.getAccidental(), best.getNumberOfAccidentalsInKeySignature(), best.getNotationMap());
+  }
+
+  public String notateKey() {
+    return notate(majorKey);
+  }
+  
+  public String notate(Note note) {
+    return notationMap.get(note);
+  }
+  
+  public List<String> notate(Scale scale) {
+    return scale.asList().stream().map(this::notate).collect(toList());
+  }
+  
+  public String toString(Scale scale) {
+    return scale.asList().stream().map(this::notate).collect(joining(" "));
   }
 
 }
