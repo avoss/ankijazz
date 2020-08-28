@@ -139,7 +139,7 @@ public class ChordsPracticeSheet {
 
     private Part playChord(Scale chord) {
       Parallel par = new Parallel();
-      for (Note note : chord.getNotes()) {
+      for (Note note : chord.asSet()) {
         int pitch = 60 + note.ordinal();
        // pitch = random.nextBoolean() ? pitch + 12 : pitch;
         par.add(note(CHORD_CHANNEL, pitch, 80, 4));

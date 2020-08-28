@@ -229,6 +229,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
       } else {
         return defaultNoteNames(accidental);
       }
+      // FIXME does not work for diminished (extra notes)
     }
     return result;
   }
@@ -242,6 +243,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String defaultNoteName(Note note, Accidental accidental) {
+    // FIXME remove
     if (accidental == SHARP) {
       if (note == F && contains(Gb) && !contains(E)) {
         return "E#";
@@ -288,7 +290,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return this.root == that.root && this.notes.equals(that.notes);
   }
 
-  public Set<Note> getNotes() {
+  public Set<Note> asSet() {
     return new TreeSet<>(notes);
   }
 
@@ -338,6 +340,10 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
       return false;
     return contains(root.flat5()) || contains(root.sharp5()) || contains(root.flat9()) || contains(root.sharp9());
   }
+  
+  public boolean isInversionOf(Scale other) {
+    return asSet().equals(other.asSet());
+  }
 
   public Set<Note> commonNotes(Scale other) {
     Set<Note> commons = new TreeSet<Note>(notes);
@@ -356,7 +362,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public boolean contains(Scale chord) {
-    return this.notes.containsAll(chord.getNotes());
+    return this.notes.containsAll(chord.asSet());
   }
 
 }

@@ -22,8 +22,8 @@ public class Chooser {
     Entry(Scale chord) {
       this.chord = chord;
 
-      Set<Note> diff = new TreeSet<Note>(target.getNotes());
-      diff.removeAll(chord.getNotes());
+      Set<Note> diff = new TreeSet<Note>(target.asSet());
+      diff.removeAll(chord.asSet());
       
       for (Note unmatched : diff) {
         exclusive(unmatched, root.major3(), root.minor3());

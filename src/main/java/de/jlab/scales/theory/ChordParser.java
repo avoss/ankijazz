@@ -168,7 +168,7 @@ public class ChordParser {
         return asTriad(chord);
     
     StringBuilder sb = new StringBuilder();
-    Set<Note> remaining = new TreeSet<Note>(chord.getNotes());
+    Set<Note> remaining = new TreeSet<Note>(chord.asSet());
     Note root = chord.getRoot();
     sb.append(root.getName(accidental));
     remaining.remove(root);
@@ -226,7 +226,7 @@ public class ChordParser {
   @SuppressWarnings("serial")
   static class NoteSet extends TreeSet<Note> {
     public NoteSet(Scale scale) {
-      super(scale.getNotes());
+      super(scale.asSet());
     }
     boolean containsAll(Note ...notes) {
       return super.containsAll(Sets.newTreeSet(Arrays.asList(notes)));
@@ -234,7 +234,7 @@ public class ChordParser {
   }
 
   private String asTriad(Scale chord) {
-    if (chord.getNotes().size() != 3)
+    if (chord.asSet().size() != 3)
       return null;
     String root = chord.getRoot().getName(accidental);
     NoteSet set = new NoteSet(chord.transpose(C));

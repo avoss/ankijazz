@@ -47,10 +47,10 @@ public class ScaleUniverseTest {
     for (Scale scale : universe) {
       // System.out.println(scale.getName());
       ScaleInfo info = universe.info(scale);
-      if (scale.getNotes().size() == 5) {
+      if (scale.asSet().size() == 5) {
         assertEquals(3, info.getSuperScales().size());
         assertEquals(0, info.getSubScales().size());
-      } else if (scale.getNotes().size() == 7) {
+      } else if (scale.asSet().size() == 7) {
         assertEquals(0, info.getSuperScales().size());
         assertEquals(3, info.getSubScales().size());
       } else
@@ -155,8 +155,8 @@ public class ScaleUniverseTest {
 
   @Test
   public void testMajorKeySignatures() {
-    asList(C, G, D, A, E, B).forEach(root -> assertSignature(CMajor.transpose(root), root, SHARP));
-    asList(F, Bb, Eb, Ab, Db, Gb).forEach(root -> assertSignature(CMajor.transpose(root), root, FLAT));
+    asList(C, G, D, A, E, B, Gb).forEach(root -> assertSignature(CMajor.transpose(root), root, SHARP));
+    asList(F, Bb, Eb, Ab, Db).forEach(root -> assertSignature(CMajor.transpose(root), root, FLAT));
   }
   
   @Test
@@ -201,7 +201,7 @@ public class ScaleUniverseTest {
   }
 
   private void assertSignature(Scale scale, Note root) {
-    assertEquals(scale.toString(), root, jazz.info(scale).getKeySignature().getRoot());
+    assertEquals(scale.toString(), root, jazz.info(scale).getKeySignature().getMajorKey());
   }
 
   private void assertTypeName(Scale scale, String expectedType) {

@@ -63,7 +63,7 @@ public class LilyScale {
   }
 
   private String key() {
-    return toLilyNote(keySignature.getRoot());
+    return toLilyNote(keySignature.getMajorKey());
   }
 
   private String toLilyNote(Note note) {

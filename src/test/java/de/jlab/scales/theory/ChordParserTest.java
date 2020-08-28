@@ -92,7 +92,7 @@ public class ChordParserTest {
 
   private void assertChord(String symbol, String expected, Accidental accidental, Note... notes) {
     Scale chord = ChordParser.parseChord(symbol);
-    assertEquals("could not parse " + symbol, Sets.newTreeSet(Arrays.asList(notes)), chord.getNotes());
+    assertEquals("could not parse " + symbol, Sets.newTreeSet(Arrays.asList(notes)), chord.asSet());
     assertEquals("could not print " + symbol, expected, new ChordParser(accidental).asChord(chord));
   }
 }

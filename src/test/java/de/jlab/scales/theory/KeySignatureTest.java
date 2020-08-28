@@ -1,13 +1,33 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.*;
-import static de.jlab.scales.theory.Note.*;
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.KeySignature.fromScale;
+import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.Ab;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.Eb;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Note.Gb;
+import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
+import static java.lang.String.format;
 import static java.util.Arrays.asList;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.KeySignature.Analyzer.Result;
+import com.google.common.base.Splitter;
 
 public class KeySignatureTest {
 
@@ -40,11 +60,42 @@ public class KeySignatureTest {
   }
 
   private void assertResult(Note expectedRoot, Accidental accidental, int expectedNumberOfAccidentalsInKeySignature, Note ...notesWithAccidental) {
-    Result r = new Result(accidental);
-    r.getNotesWithAccidental().addAll(asList(notesWithAccidental));
+    Analyzer.Result r = new Analyzer.Result(accidental);
+    r.getMajorNotesWithAccidental().addAll(asList(notesWithAccidental));
     r.initialize();
     assertEquals(expectedRoot, r.getRoot());
     assertEquals(expectedNumberOfAccidentalsInKeySignature, r.getNumberOfAccidentalsInKeySignature());
   }
+  
+  @Test
+  public void testFromScale() {
+    assertSignature("Major Scale", CMajor, SHARP, C, G, D, A, E, B, Gb);
+    assertSignature("Major Scale", CMajor, FLAT, F, Bb, Eb, Ab, Db);
+    assertSignature("Melodic Minor", CMelodicMinor, SHARP, D, G, A, E, B, Gb, Db);
+    assertSignature("Melodic Minor", CMelodicMinor, FLAT, Ab, Eb, Bb, F, C);
+    assertSignature("Harmonic Minor", CHarmonicMinor, SHARP, A, E, B, Gb, Db);
+    assertSignature("Harmonic Minor", CHarmonicMinor, FLAT, Ab, Eb, Bb, F, C, D, G);
+   
+  }
+
+  private void assertSignature(String scaleType, Scale cscale, Accidental expected, Note ... roots) {
+    for (int i = 0; i < roots.length; i++) {
+      Scale scale = cscale.transpose(roots[i]);
+      KeySignature actual = fromScale(scale);
+      System.out.println(format("%2s %15s Signature: %2s [%s]", roots[i].toString(), scaleType, actual, scale.asScale(actual.getAccidental())));
+      String message = format("%s-%s expected %s [%s] actual %s [%s]:", roots[i].toString(), scaleType, expected, scale.asScale(expected), actual.getAccidental(), scale.asScale(actual.getAccidental()));
+      assertEquals(message, expected, actual.getAccidental());
+      assertNoDuplicateNotesExist(scale, actual);
+    }
+  }
+
+  private void assertNoDuplicateNotesExist(Scale scale, KeySignature signature) {
+    Set<String> set = new HashSet<>();
+    String string = scale.asScale(signature.getAccidental());
+    Splitter.on(" ").split(string).forEach(s -> set.add(s.replaceAll("#|b", "")));
+    assertEquals(string, scale.length(), set.size());
+  }
+
+  
 
 }

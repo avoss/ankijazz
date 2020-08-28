@@ -186,15 +186,15 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   private void initializeDefaultInfoSubScales(ScaleInfo info) {
-    Set<? extends Note> notes = info.getScale().getNotes();
+    Set<? extends Note> notes = info.getScale().asSet();
     for (Scale scale : this) {
-      if (scale.getNotes().equals(notes)) {
+      if (scale.asSet().equals(notes)) {
         continue;
       }
-      if (scale.getNotes().containsAll(notes)) {
+      if (scale.asSet().containsAll(notes)) {
         info.getSuperScales().add(scale);
       }
-      if (notes.containsAll(scale.getNotes())) {
+      if (notes.containsAll(scale.asSet())) {
         info.getSubScales().add(scale);
       }
     }
@@ -203,8 +203,8 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void initializeSubScales() {
     for (Scale superScale : this) {
       for (Scale subScale : this) {
-        Set<? extends Note> superSet = superScale.getNotes();
-        Set<? extends Note> subSet = subScale.getNotes();
+        Set<? extends Note> superSet = superScale.asSet();
+        Set<? extends Note> subSet = subScale.asSet();
         if (superSet.equals(subSet))
           continue;
         if (superSet.containsAll(subSet)) {

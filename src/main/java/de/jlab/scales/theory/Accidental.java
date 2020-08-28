@@ -96,7 +96,7 @@ public enum Accidental {
   
 
   private static int xtryAccidental(Scale scale, Accidental accidental) {
-    Set<Note> notes = scale.getNotes();
+    Set<Note> notes = scale.asSet();
     for (Note note : CMajor) {
       if (!notes.remove(note)) {
         if (!notes.remove(accidental.apply(note))) {

@@ -47,7 +47,7 @@ public class Hans extends Base16 {
 
   private void playDrop2VoicingOfChord(Scale chord) {
     int i = 0; 
-    for (Note note : chord.getNotes()) {
+    for (Note note : chord.asSet()) {
       int pitch = 60 + note.ordinal();
       if (i == 2)
         pitch -= 12; 
