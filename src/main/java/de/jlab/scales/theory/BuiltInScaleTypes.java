@@ -10,6 +10,7 @@ public enum BuiltInScaleTypes implements ScaleType {
   HarmonicMajor(CHarmonicMajor, "Harmonic Major", "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
   DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole"),
   WholeTone(CWholeTone, "Whole Tone"),
+  
   Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic"),
   Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic"),
   

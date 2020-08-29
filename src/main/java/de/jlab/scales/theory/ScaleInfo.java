@@ -10,13 +10,18 @@ import lombok.Data;
 @Data
 @Builder
 public class ScaleInfo {
-  private String sharpName;   // "A# Dorian"
-  private String flatName;    // "Bb Dorian"
-  private String defaultName; // "Bb Dorian" because parent is Ab Major 
-  private String modeName;    // "Dorian"
+  /**
+   * scale: "Bb Dorian" because parent is Ab Major
+   * chord: "Bbm7"
+   */
+  private String scaleName;   //  
+  /**
+   * scale: "Dorian" 
+   * chord: "m7"
+   */
+  private String modeName;
   private Scale scale;
   private Scale parent;
-  // TODO: add degree, e.g. "defaultName is the x-th mode of parant"
   private KeySignature keySignature;
   private final List<Scale> superScales = new ArrayList<>();
   private final List<Scale> subScales = new ArrayList<>();
@@ -24,9 +29,9 @@ public class ScaleInfo {
   public boolean isInversion() {
     return !scale.equals(parent);
   }
-
-  public String getName(Accidental accidental) {
-    return accidental == FLAT ? flatName : sharpName;
+  
+  public int modeIndex() {
+    return parent.indexOf(scale.getRoot());
   }
 
 }

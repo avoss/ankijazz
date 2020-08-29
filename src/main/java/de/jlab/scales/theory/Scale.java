@@ -103,7 +103,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String asChord() {
-    return asChord(Accidental.fromScale(this));
+    return asChord(FLAT);
   }
 
   public String asChord(Accidental accidental) {

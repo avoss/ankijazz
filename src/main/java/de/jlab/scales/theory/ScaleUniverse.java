@@ -124,8 +124,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void addModes(Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();
     
-    // in case of harmonic or melodic minor we need to take keysignature of corresponding natural minor.
-    KeySignature keySignature = keySignatureFromParentScale(parent);
+    KeySignature keySignature = KeySignature.fromScale(parent);
     
     int numberOfModes = this.includeModes ? parent.length() : 1;
     for (int i = 0; i < numberOfModes; i++) {
@@ -136,21 +135,11 @@ public class ScaleUniverse implements Iterable<Scale> {
           .scale(mode)
           .parent(parent)
           .modeName(namer.modeName(i))
-          .defaultName(namer.name(i, oldRoot, newRoot, Accidental.fromScale(parent)))
-          .flatName(namer.name(i, oldRoot, newRoot, FLAT))
-          .sharpName(namer.name(i, oldRoot, newRoot, SHARP))
+          .scaleName(namer.name(i, oldRoot, newRoot, keySignature.getAccidental()))
           .build();
       infos.put(mode, info);
       scales.add(mode);
     }
-  }
-
-  private KeySignature keySignatureFromParentScale(Scale parent) {
-    if (parent.isMinor()) {
-      Scale major = CMajor.transpose(parent.getRoot()).transpose(3);
-      return KeySignature.of(major.getRoot(), Accidental.fromScale(major));
-    }
-    return KeySignature.of(parent.getRoot(), Accidental.fromScale(parent));
   }
 
   private final Comparator<ScaleInfo> infoQuality = (a, b) -> {
@@ -168,24 +157,24 @@ public class ScaleUniverse implements Iterable<Scale> {
   // FIXME throw / return null instead? - NO, because need to find scales for unknown chords
   private ScaleInfo defaultInfo(Scale scale) {
     ScaleInfo info = ScaleInfo.builder().scale(scale).modeName(scale.asIntervals()).parent(scale).build();
-    initializeDefaultInfoSubScales(info);
+    initializeDefaultInfoSuperAndSubScales(info);
+    /*
+     * TODO: shouls search for major scale with lowest index. 
+     * E.g. FMaj7 belongs to F major scale, not to c major, although contained in both
+     * If no major scale can be found, then meldodic / harmonic minor schould be searched. 
+     */
     Scale superScale = info.getSuperScales().stream().findFirst().orElse(scale);
-    
-    // FIXME same here: if minor need to take key signature from natural minor
-    Accidental accidental = Accidental.fromScale(superScale);
-    info.setKeySignature(KeySignature.of(scale.getRoot(), accidental));
-    
-    info.setDefaultName(defaultName(scale, accidental));
-    info.setFlatName(defaultName(scale, FLAT));
-    info.setSharpName(defaultName(scale, SHARP));
+    KeySignature signature = KeySignature.fromScale(superScale);
+    info.setKeySignature(signature);
+    info.setScaleName(scaleName(scale, signature));
     return info;
   }
 
-  private String defaultName(Scale scale, Accidental accidental) {
-    return isChord(scale) ? scale.asChord(accidental) : scale.asScale(accidental);
+  private String scaleName(Scale scale, KeySignature signature) {
+    return isChord(scale) ? scale.asChord(signature.getAccidental()) : signature.toString(scale);
   }
 
-  private void initializeDefaultInfoSubScales(ScaleInfo info) {
+  private void initializeDefaultInfoSuperAndSubScales(ScaleInfo info) {
     Set<? extends Note> notes = info.getScale().asSet();
     for (Scale scale : this) {
       if (scale.asSet().equals(notes)) {

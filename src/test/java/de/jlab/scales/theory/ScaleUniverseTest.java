@@ -102,21 +102,22 @@ public class ScaleUniverseTest {
   }
 
   private void assertName(String expectedName, Scale scale) {
-    assertEquals(expectedName, jazz.info(scale).getDefaultName());
+    assertEquals(expectedName, jazz.info(scale).getScaleName());
   }
 
   @Test
   public void testModes() {
     Scale bbmajor = CMajor.transpose(Bb);
-    assertInfo(bbmajor, bbmajor, "Bb Major Scale", KeySignature.of(Bb, FLAT));
+    KeySignature signature = KeySignature.fromScale(bbmajor);
+    assertInfo(bbmajor, bbmajor, "Bb Major Scale", signature);
     Scale cdorian = bbmajor.superimpose(C);
-    assertInfo(cdorian, bbmajor, "C Dorian", KeySignature.of(Bb, FLAT));
+    assertInfo(cdorian, bbmajor, "C Dorian", signature);
    
   }
 
   @Test
   public void testChordInversion() {
-    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.of(C, FLAT));
+    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.fromScale(CMajor));
     assertInfo(Cmaj7.superimpose(E), Cmaj7, "CΔ7/E");
   }
 
@@ -127,12 +128,6 @@ public class ScaleUniverseTest {
   }
   
   @Test
-  public void testUnknownScale() {
-    Scale s = new Scale(D, E, Gb);
-    assertInfo(s, s, "D9", KeySignature.of(D, SHARP));
-  }
-  
-  @Test
   public void testMultipleInfos() {
     Collection<ScaleInfo> infos = allScales.infos(Cm7b5);
     assertThat(infos.size()).isGreaterThan(1);
@@ -140,25 +135,21 @@ public class ScaleUniverseTest {
   }
   
   @Test
-  public void testWithoutModes() {
-    ScaleUniverse inf = new ScaleUniverse(false, BuiltInScaleTypes.Major);
-    Scale ddorian = CMajor.superimpose(D);
-    assertThat(inf.info(ddorian).getDefaultName()).isNotEqualTo("D Dorian");
+  public void testModeInUniverseWithoutModes() {
+    ScaleUniverse universe = new ScaleUniverse(false, BuiltInScaleTypes.Major);
+    Scale dDorianScale = CMajor.superimpose(D);
+    ScaleInfo dDorianInfo = universe.info(dDorianScale);
+    assertThat(dDorianInfo.getScaleName()).isNotEqualTo("D Dorian");
+    assertEquals(dDorianScale, dDorianInfo.getParent());
   }
   
   @Test
   public void testTypeName() {
     assertTypeName(CMajor.superimpose(D), "Dorian");
-    assertTypeName(C7.superimpose(E), "7");  // TODO should be "Dominant 7"
+    assertTypeName(C7.superimpose(E), "7");
     assertTypeName(new Scale(C, Db, D, Eb), "1 b2 2 b3");
   }
 
-  @Test
-  public void testMajorKeySignatures() {
-    asList(C, G, D, A, E, B, Gb).forEach(root -> assertSignature(CMajor.transpose(root), root, SHARP));
-    asList(F, Bb, Eb, Ab, Db).forEach(root -> assertSignature(CMajor.transpose(root), root, FLAT));
-  }
-  
   @Test
   public void testMajorModeKeySignatures() {
     for (Scale scale : allKeys(CMajor)) {
@@ -173,26 +164,12 @@ public class ScaleUniverseTest {
   }
   
   @Test
-  public void testMinorScalesUseSignatureFromAeolean() {
-    final Scale CNaturalMinor = CMajor.transpose(Eb).superimpose(C);
-    for (Note root : Note.values()) {
-      Scale naturalMinor = CNaturalMinor.transpose(root);
-      KeySignature expected = jazz.info(naturalMinor).getKeySignature();
-      Scale melodicMinor = CMelodicMinor.transpose(root);
-      Scale harmonicMinor = CHarmonicMinor.transpose(root);
-      allModes(harmonicMinor, melodicMinor).forEach(scale -> {
-        ScaleInfo info = jazz.info(scale);
-        assertEquals("KeySignature mismatch " + info, expected, info.getKeySignature());
-      });
-    }
-  }
-
-  @Test
   public void testBbAltered() {
-    Scale gbAltered = CMelodicMinor.transpose(G).superimpose(Gb);
-    System.out.println(gbAltered);
-    ScaleInfo info = jazz.info(gbAltered);
-    assertEquals(KeySignature.of(Bb, FLAT), info.getKeySignature());
+    Scale gMelodicMinor = CMelodicMinor.transpose(G);
+    KeySignature expected = KeySignature.fromScale(gMelodicMinor);
+    Scale gFlatAltered = gMelodicMinor.superimpose(Gb);
+    ScaleInfo info = jazz.info(gFlatAltered);
+    assertEquals(expected, info.getKeySignature());
   }
 
   private void assertSignature(Scale scale, Note root, Accidental accidental) {
@@ -217,7 +194,7 @@ public class ScaleUniverseTest {
 
   private void assertInfo(Scale scale, Scale parent, String name) {
     ScaleInfo info = allScales.info(scale);
-    assertThat(info.getDefaultName()).isEqualTo(name);
+    assertThat(info.getScaleName()).isEqualTo(name);
     assertEquals(info.getScale(), scale);
     assertEquals(info.getParent(), parent);
   }
