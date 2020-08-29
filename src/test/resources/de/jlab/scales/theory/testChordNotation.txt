@@ -1,0 +1,388 @@
+# Major Scale
+## C Major Scale
+       CΔ7 C E G B
+       Dm7 D F A C
+       Em7 E G B D
+       FΔ7 F A C E
+        G7 G B D F
+       Am7 A C E G
+     Bm7b5 B D F A
+## Db Major Scale
+      DbΔ7 Db F Ab C
+      Ebm7 Eb Gb Bb Db
+       Fm7 F Ab C Eb
+      GbΔ7 Gb Bb Db F
+       Ab7 Ab C Eb Gb
+      Bbm7 Bb Db F Ab
+     Cm7b5 C Eb Gb Bb
+## D Major Scale
+       DΔ7 D F# A C#
+       Em7 E G B D
+      F#m7 F# A C# E
+       GΔ7 G B D F#
+        A7 A C# E G
+       Bm7 B D F# A
+    C#m7b5 C# E G B
+## Eb Major Scale
+      EbΔ7 Eb G Bb D
+       Fm7 F Ab C Eb
+       Gm7 G Bb D F
+      AbΔ7 Ab C Eb G
+       Bb7 Bb D F Ab
+       Cm7 C Eb G Bb
+     Dm7b5 D F Ab C
+## E Major Scale
+       EΔ7 E G# B D#
+      F#m7 F# A C# E
+      G#m7 G# B D# F#
+       AΔ7 A C# E G#
+        B7 B D# F# A
+      C#m7 C# E G# B
+    D#m7b5 D# F# A C#
+## F Major Scale
+       FΔ7 F A C E
+       Gm7 G Bb D F
+       Am7 A C E G
+      BbΔ7 Bb D F A
+        C7 C E G Bb
+       Dm7 D F A C
+     Em7b5 E G Bb D
+## Gb Major Scale
+      GbΔ7 Gb Bb Db F
+      Abm7 Ab Cb Eb Gb
+      Bbm7 Bb Db F Ab
+       BΔ7 Cb Eb Gb Bb
+       Db7 Db F Ab Cb
+      Ebm7 Eb Gb Bb Db
+     Fm7b5 F Ab Cb Eb
+## G Major Scale
+       GΔ7 G B D F#
+       Am7 A C E G
+       Bm7 B D F# A
+       CΔ7 C E G B
+        D7 D F# A C
+       Em7 E G B D
+    F#m7b5 F# A C E
+## Ab Major Scale
+      AbΔ7 Ab C Eb G
+      Bbm7 Bb Db F Ab
+       Cm7 C Eb G Bb
+      DbΔ7 Db F Ab C
+       Eb7 Eb G Bb Db
+       Fm7 F Ab C Eb
+     Gm7b5 G Bb Db F
+## A Major Scale
+       AΔ7 A C# E G#
+       Bm7 B D F# A
+      C#m7 C# E G# B
+       DΔ7 D F# A C#
+        E7 E G# B D
+      F#m7 F# A C# E
+    G#m7b5 G# B D F#
+## Bb Major Scale
+      BbΔ7 Bb D F A
+       Cm7 C Eb G Bb
+       Dm7 D F A C
+      EbΔ7 Eb G Bb D
+        F7 F A C Eb
+       Gm7 G Bb D F
+     Am7b5 A C Eb G
+## B Major Scale
+       BΔ7 B D# F# A#
+      C#m7 C# E G# B
+      D#m7 D# F# A# C#
+       EΔ7 E G# B D#
+       F#7 F# A# C# E
+      G#m7 G# B D# F#
+    A#m7b5 A# C# E G#
+# Melodic Minor
+## C Melodic Minor
+      CmΔ7 C Eb G B
+       Dm7 D F A C
+    EbΔ7#5 Eb G B D
+        F7 F A C Eb
+        G7 G B D F
+     Am7b5 A C Eb G
+     Bm7b5 B D F A
+## Db Melodic Minor
+     DbmΔ7 Db Fb Ab C
+      Ebm7 Eb Gb Bb Db
+     EΔ7#5 Fb Ab C Eb
+       Gb7 Gb Bb Db Fb
+       Ab7 Ab C Eb Gb
+    Bbm7b5 Bb Db Fb Ab
+     Cm7b5 C Eb Gb Bb
+## D Melodic Minor
+      DmΔ7 D F A C#
+       Em7 E G B D
+     FΔ7#5 F A C# E
+        G7 G B D F
+        A7 A C# E G
+     Bm7b5 B D F A
+    C#m7b5 C# E G B
+## Eb Melodic Minor
+     EbmΔ7 Eb Gb Bb D
+       Fm7 F Ab C Eb
+    GbΔ7#5 Gb Bb D F
+       Ab7 Ab C Eb Gb
+       Bb7 Bb D F Ab
+     Cm7b5 C Eb Gb Bb
+     Dm7b5 D F Ab C
+## E Melodic Minor
+      EmΔ7 E G B D#
+      F#m7 F# A C# E
+     GΔ7#5 G B D# F#
+        A7 A C# E G
+        B7 B D# F# A
+    C#m7b5 C# E G B
+    D#m7b5 D# F# A C#
+## F Melodic Minor
+      FmΔ7 F Ab C E
+       Gm7 G Bb D F
+    AbΔ7#5 Ab C E G
+       Bb7 Bb D F Ab
+        C7 C E G Bb
+     Dm7b5 D F Ab C
+     Em7b5 E G Bb D
+## F# Melodic Minor
+     F#mΔ7 F# A C# E#
+      G#m7 G# B D# F#
+     AΔ7#5 A C# E# G#
+        B7 B D# F# A
+       C#7 C# E# G# B
+    D#m7b5 D# F# A C#
+     Fm7b5 E# G# B D#
+## G Melodic Minor
+      GmΔ7 G Bb D F#
+       Am7 A C E G
+    BbΔ7#5 Bb D F# A
+        C7 C E G Bb
+        D7 D F# A C
+     Em7b5 E G Bb D
+    Gbm7b5 F# A C E
+## Ab Melodic Minor
+     AbmΔ7 Ab Cb Eb G
+      Bbm7 Bb Db F Ab
+     BΔ7#5 Cb Eb G Bb
+       Db7 Db F Ab Cb
+       Eb7 Eb G Bb Db
+     Fm7b5 F Ab Cb Eb
+     Gm7b5 G Bb Db F
+## A Melodic Minor
+      AmΔ7 A C E G#
+       Bm7 B D F# A
+     CΔ7#5 C E G# B
+        D7 D F# A C
+        E7 E G# B D
+    F#m7b5 F# A C E
+    G#m7b5 G# B D F#
+## Bb Melodic Minor
+     BbmΔ7 Bb Db F A
+       Cm7 C Eb G Bb
+    DbΔ7#5 Db F A C
+       Eb7 Eb G Bb Db
+        F7 F A C Eb
+     Gm7b5 G Bb Db F
+     Am7b5 A C Eb G
+## B Melodic Minor
+      BmΔ7 B D F# A#
+      C#m7 C# E G# B
+     DΔ7#5 D F# A# C#
+        E7 E G# B D
+       F#7 F# A# C# E
+    G#m7b5 G# B D F#
+    A#m7b5 A# C# E G#
+# Harmonic Minor
+## C Harmonic Minor
+      CmΔ7 C Eb G B
+     Dm7b5 D F Ab C
+    EbΔ7#5 Eb G B D
+       Fm7 F Ab C Eb
+        G7 G B D F
+      AbΔ7 Ab C Eb G
+       Bo7 B D F Ab
+## C# Harmonic Minor
+     C#mΔ7 C# E G# B#
+    D#m7b5 D# F# A C#
+     EΔ7#5 E G# B# D#
+      F#m7 F# A C# E
+       G#7 G# B# D# F#
+       AΔ7 A C# E G#
+       Co7 B# D# F# A
+## D Harmonic Minor
+      DmΔ7 D F A C#
+     Em7b5 E G Bb D
+     FΔ7#5 F A C# E
+       Gm7 G Bb D F
+        A7 A C# E G
+      BbΔ7 Bb D F A
+      Dbo7 C# E G Bb
+## Eb Harmonic Minor
+     EbmΔ7 Eb Gb Bb D
+     Fm7b5 F Ab Cb Eb
+    GbΔ7#5 Gb Bb D F
+      Abm7 Ab Cb Eb Gb
+       Bb7 Bb D F Ab
+       BΔ7 Cb Eb Gb Bb
+       Do7 D F Ab Cb
+## E Harmonic Minor
+      EmΔ7 E G B D#
+    F#m7b5 F# A C E
+     GΔ7#5 G B D# F#
+       Am7 A C E G
+        B7 B D# F# A
+       CΔ7 C E G B
+      D#o7 D# F# A C
+## F Harmonic Minor
+      FmΔ7 F Ab C E
+     Gm7b5 G Bb Db F
+    AbΔ7#5 Ab C E G
+      Bbm7 Bb Db F Ab
+        C7 C E G Bb
+      DbΔ7 Db F Ab C
+       Eo7 E G Bb Db
+## F# Harmonic Minor
+     F#mΔ7 F# A C# E#
+    G#m7b5 G# B D F#
+     AΔ7#5 A C# E# G#
+       Bm7 B D F# A
+       C#7 C# E# G# B
+       DΔ7 D F# A C#
+       Fo7 E# G# B D
+## G Harmonic Minor
+      GmΔ7 G Bb D F#
+     Am7b5 A C Eb G
+    BbΔ7#5 Bb D F# A
+       Cm7 C Eb G Bb
+        D7 D F# A C
+      EbΔ7 Eb G Bb D
+      Gbo7 F# A C Eb
+## Ab Harmonic Minor
+     AbmΔ7 Ab Cb Eb G
+    Bbm7b5 Bb Db Fb Ab
+     BΔ7#5 Cb Eb G Bb
+      Dbm7 Db Fb Ab Cb
+       Eb7 Eb G Bb Db
+       EΔ7 Fb Ab Cb Eb
+       Go7 G Bb Db Fb
+## A Harmonic Minor
+      AmΔ7 A C E G#
+     Bm7b5 B D F A
+     CΔ7#5 C E G# B
+       Dm7 D F A C
+        E7 E G# B D
+       FΔ7 F A C E
+      G#o7 G# B D F
+## Bb Harmonic Minor
+     BbmΔ7 Bb Db F A
+     Cm7b5 C Eb Gb Bb
+    DbΔ7#5 Db F A C
+      Ebm7 Eb Gb Bb Db
+        F7 F A C Eb
+      GbΔ7 Gb Bb Db F
+       Ao7 A C Eb Gb
+## B Harmonic Minor
+      BmΔ7 B D F# A#
+    C#m7b5 C# E G B
+     DΔ7#5 D F# A# C#
+       Em7 E G B D
+       F#7 F# A# C# E
+       GΔ7 G B D F#
+      A#o7 A# C# E G
+# Harmonic Major
+## C Harmonic Major
+       CΔ7 C E G B
+     Dm7b5 D F Ab C
+       Em7 E G B D
+      FmΔ7 F Ab C E
+        G7 G B D F
+    AbΔ7#5 Ab C E G
+       Bo7 B D F Ab
+## C# Harmonic Major
+      C#Δ7 C# E# G# B#
+    D#m7b5 D# F# A C#
+       Fm7 E# G# B# D#
+     F#mΔ7 F# A C# E#
+       G#7 G# B# D# F#
+     AΔ7#5 A C# E# G#
+       Co7 B# D# F# A
+## D Harmonic Major
+       DΔ7 D F# A C#
+     Em7b5 E G Bb D
+      F#m7 F# A C# E
+      GmΔ7 G Bb D F#
+        A7 A C# E G
+    A#Δ7#5 Bb D F# A
+      C#o7 C# E G Bb
+## Eb Harmonic Major
+      EbΔ7 Eb G Bb D
+     Fm7b5 F Ab Cb Eb
+       Gm7 G Bb D F
+     AbmΔ7 Ab Cb Eb G
+       Bb7 Bb D F Ab
+     BΔ7#5 Cb Eb G Bb
+       Do7 D F Ab Cb
+## E Harmonic Major
+       EΔ7 E G# B D#
+    F#m7b5 F# A C E
+      G#m7 G# B D# F#
+      AmΔ7 A C E G#
+        B7 B D# F# A
+     CΔ7#5 C E G# B
+      D#o7 D# F# A C
+## F Harmonic Major
+       FΔ7 F A C E
+     Gm7b5 G Bb Db F
+       Am7 A C E G
+     BbmΔ7 Bb Db F A
+        C7 C E G Bb
+    DbΔ7#5 Db F A C
+       Eo7 E G Bb Db
+## F# Harmonic Major
+      F#Δ7 F# A# C# E#
+    G#m7b5 G# B D F#
+      A#m7 A# C# E# G#
+      BmΔ7 B D F# A#
+       C#7 C# E# G# B
+     DΔ7#5 D F# A# C#
+       Fo7 E# G# B D
+## G Harmonic Major
+       GΔ7 G B D F#
+     Am7b5 A C Eb G
+       Bm7 B D F# A
+      CmΔ7 C Eb G B
+        D7 D F# A C
+    D#Δ7#5 Eb G B D
+      F#o7 F# A C Eb
+## Ab Harmonic Major
+      AbΔ7 Ab C Eb G
+    Bbm7b5 Bb Db Fb Ab
+       Cm7 C Eb G Bb
+     DbmΔ7 Db Fb Ab C
+       Eb7 Eb G Bb Db
+     EΔ7#5 Fb Ab C Eb
+       Go7 G Bb Db Fb
+## A Harmonic Major
+       AΔ7 A C# E G#
+     Bm7b5 B D F A
+      C#m7 C# E G# B
+      DmΔ7 D F A C#
+        E7 E G# B D
+     FΔ7#5 F A C# E
+      G#o7 G# B D F
+## Bb Harmonic Major
+      BbΔ7 Bb D F A
+     Cm7b5 C Eb Gb Bb
+       Dm7 D F A C
+     EbmΔ7 Eb Gb Bb D
+        F7 F A C Eb
+    GbΔ7#5 Gb Bb D F
+       Ao7 A C Eb Gb
+## B Harmonic Major
+       BΔ7 B D# F# A#
+    C#m7b5 C# E G B
+      D#m7 D# F# A# C#
+      EmΔ7 E G B D#
+       F#7 F# A# C# E
+     GΔ7#5 G B D# F#
+      A#o7 A# C# E G

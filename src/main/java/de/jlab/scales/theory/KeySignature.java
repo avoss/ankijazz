@@ -34,18 +34,9 @@ public class KeySignature {
    * up with results that differ from their parent scale. 
    */
   public static KeySignature fromScale(Scale scale) {
-    if (scale.length() != CMajor.length()) { // everything relates to CMajor in this crazy music system
-      throw new IllegalArgumentException("Must be 7 notes scale" + scale.toString());
-    }
-    
     Analyzer analyzer = new Analyzer();
-    Analyzer.Result sharpResult = analyzer.analyze(scale, SHARP);
-    Analyzer.Result flatResult = analyzer.analyze(scale, FLAT);
-    Analyzer.Result best = sharpResult.getBadness() <= flatResult.getBadness() ? sharpResult : flatResult;
-    if (!best.getRemainingScaleNotes().isEmpty()) {
-      throw new IllegalArgumentException("could not find singature for " + scale + ", best was " + best);
-    }
-    return new KeySignature(best.getRoot(), best.getAccidental(), best.getNumberOfAccidentalsInKeySignature(), best.getNotationMap());
+    Analyzer.Result result = analyzer.analyze(scale);
+    return new KeySignature(result.getRoot(), result.getAccidental(), result.getNumberOfAccidentalsInKeySignature(), result.getNotationMap());
   }
 
   public String notateKey() {

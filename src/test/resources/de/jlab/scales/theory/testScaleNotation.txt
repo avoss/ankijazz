@@ -1,0 +1,78 @@
+# Major Scale
+ C     Major Scale, Signature:  C (0b), Notation: C D E F G A B
+Db     Major Scale, Signature: Db (5b), Notation: Db Eb F Gb Ab Bb C
+ D     Major Scale, Signature:  D (2#), Notation: D E F# G A B C#
+Eb     Major Scale, Signature: Eb (3b), Notation: Eb F G Ab Bb C D
+ E     Major Scale, Signature:  E (4#), Notation: E F# G# A B C# D#
+ F     Major Scale, Signature:  F (1b), Notation: F G A Bb C D E
+Gb     Major Scale, Signature: Gb (6b), Notation: Gb Ab Bb Cb Db Eb F
+ G     Major Scale, Signature:  G (1#), Notation: G A B C D E F#
+Ab     Major Scale, Signature: Ab (4b), Notation: Ab Bb C Db Eb F G
+ A     Major Scale, Signature:  A (3#), Notation: A B C# D E F# G#
+Bb     Major Scale, Signature: Bb (2b), Notation: Bb C D Eb F G A
+ B     Major Scale, Signature:  B (5#), Notation: B C# D# E F# G# A#
+# Melodic Minor
+ C   Melodic Minor, Signature:  C (0b), Notation: C D Eb F G A B
+Db   Melodic Minor, Signature: Db (5b), Notation: Db Eb Fb Gb Ab Bb C
+ D   Melodic Minor, Signature:  C (0#), Notation: D E F G A B C#
+Eb   Melodic Minor, Signature: Eb (3b), Notation: Eb F Gb Ab Bb C D
+ E   Melodic Minor, Signature:  D (2#), Notation: E F# G A B C# D#
+ F   Melodic Minor, Signature:  F (1b), Notation: F G Ab Bb C D E
+F#   Melodic Minor, Signature:  E (4#), Notation: F# G# A B C# D# E#
+ G   Melodic Minor, Signature:  F (1b), Notation: G A Bb C D E F# (found b and #)
+Ab   Melodic Minor, Signature: Ab (4b), Notation: Ab Bb Cb Db Eb F G
+ A   Melodic Minor, Signature:  G (1#), Notation: A B C D E F# G#
+Bb   Melodic Minor, Signature: Bb (2b), Notation: Bb C Db Eb F G A
+ B   Melodic Minor, Signature:  A (3#), Notation: B C# D E F# G# A#
+# Harmonic Minor
+ C  Harmonic Minor, Signature:  C (0b), Notation: C D Eb F G Ab B
+C#  Harmonic Minor, Signature:  E (4#), Notation: C# D# E F# G# A B#
+ D  Harmonic Minor, Signature:  F (1b), Notation: D E F G A Bb C# (found b and #)
+Eb  Harmonic Minor, Signature: Eb (3b), Notation: Eb F Gb Ab Bb Cb D
+ E  Harmonic Minor, Signature:  G (1#), Notation: E F# G A B C D#
+ F  Harmonic Minor, Signature:  F (1b), Notation: F G Ab Bb C Db E
+F#  Harmonic Minor, Signature:  A (3#), Notation: F# G# A B C# D E#
+ G  Harmonic Minor, Signature: Bb (2b), Notation: G A Bb C D Eb F# (found b and #)
+Ab  Harmonic Minor, Signature: Ab (4b), Notation: Ab Bb Cb Db Eb Fb G
+ A  Harmonic Minor, Signature:  C (0#), Notation: A B C D E F G#
+Bb  Harmonic Minor, Signature: Bb (2b), Notation: Bb C Db Eb F Gb A
+ B  Harmonic Minor, Signature:  D (2#), Notation: B C# D E F# G A#
+# Harmonic Major
+ C  Harmonic Major, Signature:  C (0b), Notation: C D E F G Ab B
+C#  Harmonic Major, Signature:  E (4#), Notation: C# D# E# F# G# A B#
+ D  Harmonic Major, Signature:  D (2#), Notation: D E F# G A Bb C# (found b and #)
+Eb  Harmonic Major, Signature: Eb (3b), Notation: Eb F G Ab Bb Cb D
+ E  Harmonic Major, Signature:  G (1#), Notation: E F# G# A B C D#
+ F  Harmonic Major, Signature:  F (1b), Notation: F G A Bb C Db E
+F#  Harmonic Major, Signature:  A (3#), Notation: F# G# A# B C# D E#
+ G  Harmonic Major, Signature:  G (1#), Notation: G A B C D Eb F# (found b and #)
+Ab  Harmonic Major, Signature: Ab (4b), Notation: Ab Bb C Db Eb Fb G
+ A  Harmonic Major, Signature:  C (0#), Notation: A B C# D E F G#
+Bb  Harmonic Major, Signature: Bb (2b), Notation: Bb C D Eb F Gb A
+ B  Harmonic Major, Signature:  D (2#), Notation: B C# D# E F# G A#
+# Diminished Half/Whole
+ C Diminished Half/Whole, Signature:  C (0b), Notation: C Db Eb Fb Gb G A Bb
+Db Diminished Half/Whole, Signature:  C (0b), Notation: Db D E F G Ab Bb Cb
+ D Diminished Half/Whole, Signature:  C (0b), Notation: D Eb F Gb Ab A B C
+Eb Diminished Half/Whole, Signature:  C (0b), Notation: Eb Fb Gb G A Bb C Db
+ E Diminished Half/Whole, Signature:  C (0b), Notation: E F G Ab Bb Cb Db D
+ F Diminished Half/Whole, Signature:  C (0b), Notation: F Gb Ab A B C D Eb
+Gb Diminished Half/Whole, Signature:  C (0b), Notation: Gb G A Bb C Db Eb Fb
+ G Diminished Half/Whole, Signature:  C (0b), Notation: G Ab Bb Cb Db D E F
+Ab Diminished Half/Whole, Signature:  C (0b), Notation: Ab A B C D Eb F Gb
+ A Diminished Half/Whole, Signature:  C (0b), Notation: A Bb C Db Eb Fb Gb G
+Bb Diminished Half/Whole, Signature:  C (0b), Notation: Bb Cb Db D E F G Ab
+ B Diminished Half/Whole, Signature:  C (0b), Notation: B C D Eb F Gb Ab A
+# Whole Tone
+ C      Whole Tone, Signature:  C (0b), Notation: C D E Gb Ab Bb
+Db      Whole Tone, Signature:  C (0b), Notation: Db Eb F G A B
+ D      Whole Tone, Signature:  C (0b), Notation: D E Gb Ab Bb C
+Eb      Whole Tone, Signature:  C (0b), Notation: Eb F G A B Db
+ E      Whole Tone, Signature:  C (0b), Notation: E Gb Ab Bb C D
+ F      Whole Tone, Signature:  C (0b), Notation: F G A B Db Eb
+Gb      Whole Tone, Signature:  C (0b), Notation: Gb Ab Bb C D E
+ G      Whole Tone, Signature:  C (0b), Notation: G A B Db Eb F
+Ab      Whole Tone, Signature:  C (0b), Notation: Ab Bb C D E Gb
+ A      Whole Tone, Signature:  C (0b), Notation: A B Db Eb F G
+Bb      Whole Tone, Signature:  C (0b), Notation: Bb C D E Gb Ab
+ B      Whole Tone, Signature:  C (0b), Notation: B Db Eb F G A

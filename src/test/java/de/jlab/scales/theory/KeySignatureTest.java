@@ -27,7 +27,7 @@ import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -74,32 +74,52 @@ public class KeySignatureTest {
     assertEquals(expectedRoot, r.getRoot());
     assertEquals(expectedNumberOfAccidentalsInKeySignature, r.getNumberOfAccidentalsInKeySignature());
   }
-
+ 
   @Test
-  public void testScalesNotation() throws IOException {
+  public void testChordNotation() throws IOException {
     List<String> actual = new ArrayList<>();
-    for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic)) {
+    for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor)) {
+      actual.add(format("# %s", type.getTypeName()));
+      for (Scale scale : allKeys(type.getPrototype())) {
+        KeySignature signature = fromScale(scale);
+        actual.add(format("## %s %s", signature.notate(scale.getRoot()), type.getTypeName()));
+        for (Scale chord : scale.getChords(4)) {
+          String message = format("%10s %s", chord.asChord(signature.getAccidental()), signature.toString(chord));
+          System.out.println(message);
+          actual.add(message);
+          
+        }
+      }
+    }
+    assertFileContentMatches(actual, KeySignatureTest.class, "testChordNotation.txt");
+  }
+  
+  @Test
+  public void testScaleNotation() throws IOException {
+    List<String> actual = new ArrayList<>();
+    for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone)) {
       actual.add("# " + type.getTypeName());
       for (Scale scale : allKeys(type.getPrototype())) {
         KeySignature signature = fromScale(scale);
         String inverseAccidentalsHint = hasInverseAccidentals(scale, signature) ? " (found b and #)" : "";
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", scale.getRoot(), type.getTypeName(), signature.notateKey(), signature.getNumberOfAccidentals(),
+        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), signature.getNumberOfAccidentals(),
             signature.getAccidental().symbol(), signature.toString(scale), inverseAccidentalsHint);
         actual.add(message);
+        System.out.println(message);
         assertNoDuplicateNotesExist(scale, signature);
         assertNoDuplicateNotationExist(scale, signature);
       }
     }
 
-    assertFileContentMatches(actual, KeySignatureTest.class, "testScalesNotation.txt");
+    assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");
   }
 
   @Test
   public void testAccidentalFromScale() {
-    assertSignature("Major Scale", CMajor, SHARP, C, G, D, A, E, B, Gb);
-    assertSignature("Major Scale", CMajor, FLAT, F, Bb, Eb, Ab, Db);
-    assertSignature("Melodic Minor", CMelodicMinor, SHARP, D, G, A, E, B, Gb, Db);
-    assertSignature("Melodic Minor", CMelodicMinor, FLAT, Ab, Eb, Bb, F, C);
+    assertSignature("Major Scale", CMajor, SHARP, G, D, A, E, B);
+    assertSignature("Major Scale", CMajor, FLAT, C, F, Bb, Eb, Ab, Db, Gb);
+    assertSignature("Melodic Minor", CMelodicMinor, SHARP,  A, D, E, B, Gb);
+    assertSignature("Melodic Minor", CMelodicMinor, FLAT, Db, Ab, Eb, Bb, F, C, G);
     assertSignature("Harmonic Minor", CHarmonicMinor, SHARP, A, E, B, Gb, Db);
     assertSignature("Harmonic Minor", CHarmonicMinor, FLAT, Ab, Eb, Bb, F, C, D, G);
 
@@ -111,6 +131,7 @@ public class KeySignatureTest {
       KeySignature actual = fromScale(scale);
       String message = format("%2s %15s Signature: %2s (%d%s) [%s]", roots[i].toString(), scaleType, actual.notateKey(), actual.getNumberOfAccidentals(),
           actual.getAccidental().symbol(), actual.toString(scale));
+      System.out.println(message);
       assertEquals(message, expected, actual.getAccidental());
     }
   }
@@ -125,7 +146,7 @@ public class KeySignatureTest {
 
   private void assertNoDuplicateNotesExist(Scale scale, KeySignature signature) {
     Set<String> set = signature.notate(scale).stream().map(s -> s.replaceAll("#|b", "")).collect(Collectors.toSet());
-    assertEquals(signature.toString(scale), scale.length(), set.size());
+    assertEquals(signature.toString(scale), Math.min(scale.length(), CMajor.length()), set.size());
   }
 
   private boolean hasInverseAccidentals(Scale scale, KeySignature signature) {

@@ -151,4 +151,28 @@ public class Analyzer {
     }
     return note;
   }
+
+  public Result fallback(Scale scale, Accidental accidental) {
+    Result result = new Analyzer.Result(scale, accidental);
+    result.initialize();
+    return result;
+  }
+
+  private Result fallback(Scale scale) {
+    return fallback(scale, FLAT);
+  }
+
+  public Result analyze(Scale scale) {
+    if (scale.length() != CMajor.length()) {
+      return fallback(scale);
+    }
+    Result sharpResult = analyze(scale, SHARP);
+    Result flatResult = analyze(scale, FLAT);
+    Result best = sharpResult.getBadness() < flatResult.getBadness() ? sharpResult : flatResult;
+    if (!best.getRemainingScaleNotes().isEmpty()) {
+      best = fallback(scale);
+    }
+    return best;
+  }
+
 }
