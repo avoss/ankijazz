@@ -5,7 +5,6 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.joining;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -15,7 +14,6 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyScale;
-import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -35,40 +33,40 @@ public class ScaleCard implements Card {
     this.modeInfo = universe.info(mode);
     this.parentInfo = universe.info(modeInfo.getParent());
     this.uuid = Utils.uuid("AnkiJazz");
-    this.priority = numberOfAccidentalsInParentScale() + ThreadLocalRandom.current().nextInt(SHUFFLE);
+    this.priority = keySignature.getNumberOfAccidentals() + ThreadLocalRandom.current().nextInt(SHUFFLE);
   }
 
   @Override
   public String[] getFields() {
-    return new String[] { modeFullName(), noteNames(), modeTypeName(), modeRootName(), parentFullName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
+    return new String[] { modeName(), noteNames(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
   }
 
   private String noteNames() {
-    return modeInfo.getScale().asScale(keySignature.getAccidental());
+    return keySignature.toString(modeInfo.getScale());
   }
 
-  private String modeFullName() {
-    return modeInfo.getName(keySignature.getAccidental());
+  private String modeName() {
+    return modeInfo.getScaleName();
   }
 
   private String modeTypeName() {
-    return modeInfo.getModeName();
+    return modeInfo.getTypeName();
   }
 
   private String modeRootName() {
-    return modeInfo.getScale().getRoot().getName(keySignature.getAccidental());
+    return keySignature.notate(modeInfo.getScale().getRoot());
   }
 
-  private String parentFullName() {
-    return parentInfo.getName(keySignature.getAccidental());
+  private String parentName() {
+    return parentInfo.getScaleName();
   }
 
   private String parentTypeName() {
-    return parentInfo.getModeName();
+    return parentInfo.getTypeName();
   }
 
   private String parentRootName() {
-    return parentInfo.getScale().getRoot().getName(keySignature.getAccidental());
+    return keySignature.notate(parentInfo.getScale().getRoot());
   }
 
   private String modePngName() {
@@ -86,13 +84,6 @@ public class ScaleCard implements Card {
   @Override
   public int getPriority() {
     return priority;
-  }
-
-  private int numberOfAccidentalsInParentScale() {
-    // we cannot check whether note is contained in CMajor because of Fb,Cb and B#,E#
-    // TODO: move to Scale?
-    Scale parent = parentInfo.getScale();
-    return (int) parent.stream().map(note -> parent.noteName(note, keySignature.getAccidental())).filter(name -> name.contains("b") || name.contains("#")).count();
   }
 
   @Override

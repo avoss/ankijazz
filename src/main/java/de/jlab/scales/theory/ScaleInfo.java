@@ -1,6 +1,4 @@
 package de.jlab.scales.theory;
-import static de.jlab.scales.theory.Accidental.FLAT;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,12 +12,12 @@ public class ScaleInfo {
    * scale: "Bb Dorian" because parent is Ab Major
    * chord: "Bbm7"
    */
-  private String scaleName;   //  
+  private String scaleName;
   /**
    * scale: "Dorian" 
    * chord: "m7"
    */
-  private String modeName;
+  private String typeName;
   private Scale scale;
   private Scale parent;
   private KeySignature keySignature;

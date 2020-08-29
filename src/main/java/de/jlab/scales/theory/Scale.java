@@ -1,16 +1,6 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
@@ -19,7 +9,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Scale implements Iterable<Note>, Comparable<Scale> {
@@ -191,79 +180,14 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   @Override
   public String toString() {
-    return defaultNoteNames(FLAT).stream().collect(joining(" "));
+    return asScale(FLAT);
   }
-
+  
+  @Deprecated
   public String asScale(Accidental accidental) {
-    return noteNames(accidental).stream().collect(Collectors.joining(" "));
+    return stream().map(n -> n.getName(accidental)).collect(joining(" "));
   }
 
-  public String noteName(Note note, Accidental accidental) {
-    return noteNames(accidental).get(indexOf(note));
-  }
-  
-  private List<String> noteNames(Accidental accidental) {
-    if (length() != CMajor.length())  { // everything relates to CMajor
-      return defaultNoteNames(accidental);
-    }
-    Note majorRoot = getRoot();
-    if (!CMajor.contains(majorRoot)) {
-      majorRoot = accidental.inverse().apply(majorRoot);
-      if (!CMajor.contains(majorRoot)) {
-        return defaultNoteNames(accidental);
-      }
-    }
-    List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
-    List<Note> scaleNotes = asList();
-    List<String> result = new ArrayList<>();
-    for (int i = 0; i < cmajorNotes.size(); i++) {
-      Note cmajorNote = cmajorNotes.get(i);
-      Note scaleNote = scaleNotes.get(i);
-      String majorName = cmajorNote.getName(SHARP);
-      if (cmajorNote == scaleNote) {
-        result.add(majorName);
-      } else if (accidental.apply(cmajorNote) == scaleNote) {
-        result.add(majorName + accidental.symbol());
-      } else if (accidental.inverse().apply(cmajorNote) == scaleNote) {
-        result.add(majorName + accidental.inverse().symbol());
-      } else {
-        return defaultNoteNames(accidental);
-      }
-      // FIXME does not work for diminished (extra notes)
-    }
-    return result;
-  }
-
-  public List<String> defaultNoteNames(Accidental accidental) {
-    List<String> result = new ArrayList<>();
-    for (Note note : this) {
-      result.add(defaultNoteName(note, accidental));
-    }
-    return result;
-  }
-
-  public String defaultNoteName(Note note, Accidental accidental) {
-    // FIXME remove
-    if (accidental == SHARP) {
-      if (note == F && contains(Gb) && !contains(E)) {
-        return "E#";
-      }
-      if (note == C && contains(Db) && !contains(B)) {
-        return "B#";
-      }
-    }
-
-    if (accidental == FLAT) {
-      if (note == B && contains(Bb) && !contains(C)) {
-        return "Cb";
-      }
-      if (note == E && contains(Eb) && !contains(F)) {
-        return "Fb";
-      }
-    }
-    return note.getName(accidental);
-  }
-  
   public String asIntervals() {
     return asIntervals(root);
   }

@@ -1,10 +1,5 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Note.*;
-
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -30,12 +25,30 @@ public class KeySignature {
   }
   
   /**
-   * works for Major, MelodicMinor, and Harmonic Minor. For their respective modes it also works but comes 
-   * up with results that differ from their parent scale. 
+   * Works for Major, MelodicMinor, and Harmonic Minor. For their respective modes it also works but comes 
+   * up with results that differ from their parent scale.
+   * 
+   * For scales with numberOfNotes != 7 a fallback keysignature (all notes flat) will be returned
    */
   public static KeySignature fromScale(Scale scale) {
     Analyzer analyzer = new Analyzer();
     Analyzer.Result result = analyzer.analyze(scale);
+    return toKeySignature(result);
+  }
+
+  /**
+   * if a key signatulre could be constructed, no matter how bad, then it is returned. Otherwise returns null.
+   */
+  public static KeySignature fromScale(Scale scale, Accidental accidental) {
+    Analyzer analyzer = new Analyzer();
+    Analyzer.Result result = analyzer.analyze(scale, accidental);
+    if (!result.getRemainingScaleNotes().isEmpty()) {
+      return null;
+    }
+    return toKeySignature(result);
+  }
+  
+  private static KeySignature toKeySignature(Analyzer.Result result) {
     return new KeySignature(result.getRoot(), result.getAccidental(), result.getNumberOfAccidentalsInKeySignature(), result.getNotationMap());
   }
 

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
@@ -13,9 +14,13 @@ public final class Utils {
   private Utils() {
   }
 
-  public static String read(InputStream input) {
+  public static String readString(InputStream input) {
+    return readLines(input).stream().collect(Collectors.joining("\n"));
+  }
+
+  public static List<String> readLines(InputStream input) {
     try (BufferedReader buffer = new BufferedReader(new InputStreamReader(input, StandardCharsets.UTF_8))) {
-      return buffer.lines().collect(Collectors.joining("\n"));
+      return buffer.lines().collect(Collectors.toList());
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }

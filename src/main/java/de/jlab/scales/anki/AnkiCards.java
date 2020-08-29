@@ -8,8 +8,7 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.allKeys;
@@ -17,15 +16,11 @@ import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 
-import de.jlab.scales.theory.Accidental;
-import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleParser;
 import de.jlab.scales.theory.ScaleUniverse;
 
 public class AnkiCards {
@@ -51,7 +46,7 @@ public class AnkiCards {
         continue;
       }
       ScaleInfo parentInfo = universe.info(scaleInfo.getParent());
-      deck.add(scaleInfo.getDefaultName(), parentInfo.getDefaultName());
+      deck.add(scaleInfo.getScaleName(), parentInfo.getScaleName());
     }
     return deck;
   }
@@ -60,7 +55,7 @@ public class AnkiCards {
     Deck deck = new Deck();
     for (Scale scale : commonScales()) {
       ScaleInfo scaleInfo = universe.info(scale);
-      deck.add(scaleInfo.getModeName(), scale.asIntervals());
+      deck.add(scaleInfo.getTypeName(), scale.asIntervals());
     }
     return deck;
   }
@@ -83,12 +78,7 @@ public class AnkiCards {
 
   private void addScaleCard(Deck deck, Scale scale) {
     ScaleInfo scaleInfo = universe.info(scale);
-    if (scaleInfo.getKeySignature().getMajorKey() == Gb) {
-      deck.add(new ScaleCard(scale, KeySignature.of(Gb, FLAT)));
-      deck.add(new ScaleCard(scale, KeySignature.of(Gb, SHARP)));
-    } else {
-      deck.add(new ScaleCard(scale, scaleInfo.getKeySignature()));
-    }
+    deck.add(new ScaleCard(scale, scaleInfo.getKeySignature()));
   }
 
 

@@ -1,6 +1,6 @@
 package de.jlab.scales.anki;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.nio.file.Paths;
@@ -31,10 +31,10 @@ public class AnkiCardsTest {
     Deck deck = anki.spellAllScales();
     deck.writeTo(Paths.get("build/anki/all-scales"));
     assertContainsSubstring(deck, "B Dorian;B C# D E F# G# A");
-    assertContainsSubstring(deck, "G# Melodic Minor;G# A# B C# D# F G");
+    assertContainsSubstring(deck, "Ab Melodic Minor;Ab Bb Cb Db Eb F G");
     assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
     assertContainsSubstring(deck, "Bb Phrygian;Bb Cb Db Eb F Gb Ab");
-    assertThat(deck.getCsv().size()).isEqualTo(156);
+    assertThat(deck.getCsv().size()).isEqualTo(144);
   }
 
   @Test
@@ -45,8 +45,7 @@ public class AnkiCardsTest {
     assertContainsSubstring(deck, "D Major Scale;D E F# G A B C#");
     assertContainsSubstring(deck, "Eb Major Scale;Eb F G Ab Bb C D");
     assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
-    assertContainsSubstring(deck, "F# Major Scale;F# G# A# B C# D# E#");
-    assertThat(deck.getCsv().size()).isEqualTo(13);
+    assertThat(deck.getCsv().size()).isEqualTo(12);
   }
 
   private void assertContainsSubstring(Deck deck, String string) {

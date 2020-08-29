@@ -1,6 +1,36 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.C7;
+import static de.jlab.scales.theory.Scales.C7flat5;
+import static de.jlab.scales.theory.Scales.C7flat5flat9;
+import static de.jlab.scales.theory.Scales.C7flat5sharp9;
+import static de.jlab.scales.theory.Scales.C7flat9;
+import static de.jlab.scales.theory.Scales.C7sharp5;
+import static de.jlab.scales.theory.Scales.C7sharp5flat9;
+import static de.jlab.scales.theory.Scales.C7sharp5sharp9;
+import static de.jlab.scales.theory.Scales.C7sharp9;
+import static de.jlab.scales.theory.Scales.C7sus4;
+import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
+import static de.jlab.scales.theory.Scales.CHarmonicMajor;
+import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
+import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
+import static de.jlab.scales.theory.Scales.CMinorPentatonic;
+import static de.jlab.scales.theory.Scales.CWholeTone;
+import static de.jlab.scales.theory.Scales.CaugTriad;
+import static de.jlab.scales.theory.Scales.Cdim7;
+import static de.jlab.scales.theory.Scales.CdimTriad;
+import static de.jlab.scales.theory.Scales.Cm6;
+import static de.jlab.scales.theory.Scales.Cm7;
+import static de.jlab.scales.theory.Scales.Cm7b5;
+import static de.jlab.scales.theory.Scales.Cmaj7;
+import static de.jlab.scales.theory.Scales.Cmaj7Sharp11;
+import static de.jlab.scales.theory.Scales.Cmaj7Sharp5;
+import static de.jlab.scales.theory.Scales.CmajTriad;
+import static de.jlab.scales.theory.Scales.CminTriad;
+import static de.jlab.scales.theory.Scales.Cmmaj7;
+import static de.jlab.scales.theory.Scales.CsusTriad;
 
 // TODO modes are also scale tyes ...
 public enum BuiltInScaleTypes implements ScaleType {

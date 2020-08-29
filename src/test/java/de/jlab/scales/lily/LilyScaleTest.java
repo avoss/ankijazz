@@ -38,10 +38,10 @@ public class LilyScaleTest {
   @Test
   public void testGbMajor() {
     Scale gbmajor = CMajor.transpose(Gb);
-    String source = new LilyScale(universe.info(gbmajor), KeySignature.of(Gb, SHARP)).toLily();
+    String source = new LilyScale(universe.info(gbmajor), KeySignature.fromScale(gbmajor, SHARP)).toLily();
     assertThat(source).contains("scaleNotes = \\relative e' { fs4 gs4 as4 b4 cs4 ds4 es4 fs~ fs1 }");
     assertThat(source).contains("\\key fs \\major");
-    source = new LilyScale(universe.info(gbmajor), KeySignature.of(Gb, FLAT)).toLily();
+    source = new LilyScale(universe.info(gbmajor), KeySignature.fromScale(gbmajor, FLAT)).toLily();
     assertThat(source).contains("scaleNotes = \\relative e' { gf4 af4 bf4 cf4 df4 ef4 f4 gf~ gf1 }");
     assertThat(source).contains("\\key gf \\major");
   }
@@ -51,7 +51,7 @@ public class LilyScaleTest {
     Scale gbaltered = CMelodicMinor.transpose(G).superimpose(Gb);
     ScaleInfo info = universe.info(gbaltered);
     String source = new LilyScale(info, info.getKeySignature()).toLily();
-    assertThat(source).contains("\\key bf \\major");
+    assertThat(source).contains("\\key f \\major");
   }
   
 }

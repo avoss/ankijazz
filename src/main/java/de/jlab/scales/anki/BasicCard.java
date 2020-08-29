@@ -1,7 +1,5 @@
 package de.jlab.scales.anki;
 
-import java.nio.file.Path;
-
 public class BasicCard implements Card {
   private final int priority;
   private final String[] fields;

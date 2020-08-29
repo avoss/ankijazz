@@ -15,9 +15,7 @@ import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CMajor;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -114,7 +112,7 @@ public class Analyzer {
 
   }
 
-  Analyzer.Result analyze(Scale scale, Accidental accidental) {
+  public Result analyze(Scale scale, Accidental accidental) {
     Analyzer.Result result = new Result(scale, accidental);
     Note majorRoot = cMajorStartNote(scale, accidental);
     List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
@@ -158,7 +156,7 @@ public class Analyzer {
     return result;
   }
 
-  private Result fallback(Scale scale) {
+  public Result fallback(Scale scale) {
     return fallback(scale, FLAT);
   }
 

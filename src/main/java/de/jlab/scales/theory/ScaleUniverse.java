@@ -1,13 +1,9 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Scales.*;
-import static de.jlab.scales.theory.Accidental.*;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -16,9 +12,6 @@ import java.util.stream.Stream;
 
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.MultimapBuilder;
-
-import de.jlab.scales.theory.ScaleUniverse.Namer.NamerBuilder;
-import lombok.Builder;
 
 public class ScaleUniverse implements Iterable<Scale> {
 
@@ -47,7 +40,7 @@ public class ScaleUniverse implements Iterable<Scale> {
       return MessageFormat.format(nameFallbackPattern, newRootName, scaleName, oldRootName);
     }
 
-    public String modeName(int index) {
+    public String typeName(int index) {
       return internalModeName(index) == null ? scaleName : internalModeName(index);
     }
 
@@ -134,7 +127,7 @@ public class ScaleUniverse implements Iterable<Scale> {
           .keySignature(keySignature)
           .scale(mode)
           .parent(parent)
-          .modeName(namer.modeName(i))
+          .typeName(namer.typeName(i))
           .scaleName(namer.name(i, oldRoot, newRoot, keySignature.getAccidental()))
           .build();
       infos.put(mode, info);
@@ -156,7 +149,7 @@ public class ScaleUniverse implements Iterable<Scale> {
 
   // FIXME throw / return null instead? - NO, because need to find scales for unknown chords
   private ScaleInfo defaultInfo(Scale scale) {
-    ScaleInfo info = ScaleInfo.builder().scale(scale).modeName(scale.asIntervals()).parent(scale).build();
+    ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).parent(scale).build();
     initializeDefaultInfoSuperAndSubScales(info);
     /*
      * TODO: shouls search for major scale with lowest index. 

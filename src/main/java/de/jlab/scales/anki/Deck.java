@@ -1,6 +1,5 @@
 package de.jlab.scales.anki;
 
-import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 

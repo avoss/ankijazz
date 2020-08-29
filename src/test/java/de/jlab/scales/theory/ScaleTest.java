@@ -28,64 +28,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class ScaleTest {
 
-  @Test
-  public void testCFlatAndESharp() {
-    Scale gbmaj = CMajor.transpose(Gb);
-    assertEquals("Gb Ab Bb Cb Db Eb F", gbmaj.asScale(FLAT));
-    assertEquals("F# G# A# B C# D# E#", gbmaj.asScale(SHARP));
-  }
-
-  @Test
-  public void testDMelodicMinor() {
-    Scale dbmm = CMelodicMinor.transpose(D);
-    assertEquals("D E F G A B C#", dbmm.asScale(FLAT));
-    assertEquals("D E F G A B C#", dbmm.asScale(SHARP));
-  }
-
-  @Test
-  public void testGSharpHarmonicMinor() {
-    Scale scale = CHarmonicMinor.transpose(Ab);
-    assertEquals("", scale.asScale(SHARP));
-  }
-
-  @Test
-  public void testDSharpHarmonicMinor() {
-    Scale scale = CHarmonicMinor.transpose(Eb);
-    assertEquals("", scale.asScale(SHARP));
-  }
-
-  @Test
-  public void testGSharpMelodicMinor() {
-    Scale scale = CMelodicMinor.transpose(Ab);
-    assertEquals("", scale.asScale(SHARP));
-  }
-
-  @Test
-  public void testDSharpMelodicMinor() {
-    Scale scale = CMelodicMinor.transpose(Eb);
-    assertEquals("", scale.asScale(SHARP));
-  }
-
-  
-  @Test
-  public void testDFlatAndCSharpMelodicMinor() {
-    Scale dbmm = CMelodicMinor.transpose(Db);
-    assertEquals("Db Eb Fb Gb Ab Bb C", dbmm.asScale(FLAT));
-    assertEquals("C# D# E F# G# A# B#", dbmm.asScale(SHARP));
-  }
-  
   @Test
   public void getNote_should_work_with_negative_index() {
     assertEquals(C, CMajor.getNote(0));
@@ -177,9 +129,9 @@ public class ScaleTest {
     assertEquals("Em7", CMajor.getChord(2).asChord());
     assertEquals("CΔ79", CMajor.getChord(2).superimpose(C).asChord());
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
-    assertEquals("C#7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
+    assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
     assertEquals("Co7", Cdim7.superimpose(C).superimpose(C).asChord());
-    assertEquals("F#7b5b9", C7.superimpose(Gb).asChord());
+    assertEquals("Gb7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
   }
 

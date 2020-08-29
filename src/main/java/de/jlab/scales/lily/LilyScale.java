@@ -50,7 +50,7 @@ public class LilyScale {
     return format("%s~ %s1", scaleNotesWithOctave(), lilyRoot());
   }
 
-  private CharSequence scaleNotesWithOctave() {
+  private String scaleNotesWithOctave() {
     return format("%s %s", lilyNotes(), lilyRoot());
   }
   
@@ -67,7 +67,7 @@ public class LilyScale {
   }
 
   private String toLilyNote(Note note) {
-    return scale.noteName(note, keySignature.getAccidental())
+    return keySignature.notate(note)
         .replace("b", "f")
         .replace("#", "s")
         .toLowerCase();
@@ -79,7 +79,7 @@ public class LilyScale {
 
   private String readTemplate() {
     try (InputStream input = LilyScale.class.getResourceAsStream("LilyScale.ly")) {
-      return Utils.read(input);
+      return Utils.readString(input);
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }

@@ -10,7 +10,6 @@ public class Repeater<T> implements Sequence<T> {
   private int size;
   private Appender<T> appender;
 
-  @SuppressWarnings("unchecked")
   public Repeater(Sequence<T> source, int repeatCount) {
     this(null, source, repeatCount);
   }
