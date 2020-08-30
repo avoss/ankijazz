@@ -47,19 +47,23 @@ public class KeySignature {
   }
 
   /**
-   * if a key signatulre could be constructed, no matter how bad, then it is returned. Otherwise returns null.
+   * if a key signature could be constructed, no matter how bad, then it is returned. Otherwise returns null.
    */
-  public static KeySignature fromScale(Scale scale, Accidental accidental) {
+  public static KeySignature fromScale(Scale scale, Note root, Accidental accidental) {
     Analyzer analyzer = new Analyzer();
     Analyzer.Result result = analyzer.analyze(scale, accidental);
     if (!result.getRemainingScaleNotes().isEmpty()) {
       return null;
     }
-    return toKeySignature(result);
+    return toKeySignature(result, root);
   }
   
   private static KeySignature toKeySignature(Analyzer.Result result) {
-    return new KeySignature(result.getRoot(), result.getAccidental(), result.getNumberOfAccidentalsInKeySignature(), result.getNotationMap());
+    return toKeySignature(result, result.getRoot());
+  }
+  
+  private static KeySignature toKeySignature(Analyzer.Result result, Note root) {
+    return new KeySignature(root, result.getAccidental(), result.getNumberOfAccidentalsInKeySignature(), result.getNotationMap());
   }
 
   public String notateKey() {

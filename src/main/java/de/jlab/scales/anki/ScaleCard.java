@@ -27,6 +27,7 @@ public class ScaleCard implements Card {
   private final String uuid;
   private KeySignature keySignature;
   private int priority;
+  private boolean bothNames;
   static int SHUFFLE = 3;
 
   public ScaleCard(Scale mode, KeySignature keySignature) {
@@ -35,6 +36,11 @@ public class ScaleCard implements Card {
     this.parentInfo = universe.info(modeInfo.getParent());
     this.uuid = Utils.uuid("AnkiJazz");
     this.priority = keySignature.getNumberOfAccidentals() + ThreadLocalRandom.current().nextInt(SHUFFLE);
+  }
+  
+  public ScaleCard withBothNames() {
+    this.bothNames = true;
+    return this;
   }
 
   @Override
@@ -47,10 +53,10 @@ public class ScaleCard implements Card {
   }
 
   private String modeName() {
-    if (keySignature.isSuppressStaffSignature()) {
+    if (bothNames) {
       return modeInfo.getScale().getRoot().getBothNames() + " " + modeInfo.getTypeName();
     }
-    return modeInfo.getScaleName();
+    return modeInfo.getScale().getRoot().getName(keySignature.getAccidental()) + " " + modeInfo.getTypeName();
   }
 
   private String modeTypeName() {

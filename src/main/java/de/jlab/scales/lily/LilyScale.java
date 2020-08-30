@@ -78,6 +78,7 @@ public class LilyScale {
   private String toLilyNote(String notatedNote) {
     return notatedNote.replace("b", "f")
         .replace("#", "s")
+        .replace("x", "ss")
         .toLowerCase();
 
   }

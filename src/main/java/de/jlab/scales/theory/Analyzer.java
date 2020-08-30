@@ -43,6 +43,7 @@ public class Analyzer {
     private final Set<Note> majorNotesWithoutAccidental = new HashSet<>();
     private final Set<Note> majorNotesWithAccidental = new HashSet<>();
     private final Set<Note> majorNotesWithInverseAccidental = new HashSet<>();
+    private final Set<Note> majorNotesWithDoubleAccidental = new HashSet<>();
     private final Set<Note> remainingMajorNotes = new LinkedHashSet<>();
     private final Set<Note> remainingScaleNotes = new LinkedHashSet<>();
     private final Map<Note, String> notationMap = new LinkedHashMap<>();
@@ -106,7 +107,8 @@ public class Analyzer {
       int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
       return numberOfAccidentalsInKeySignature 
           + numberOfExtraAccidentals * 10
-          + majorNotesWithInverseAccidental.size() * 100
+          + majorNotesWithInverseAccidental.size() * 20
+          + majorNotesWithDoubleAccidental.size() * 30
           + remainingScaleNotes.size() * 1000;
     }
 
@@ -134,6 +136,10 @@ public class Analyzer {
         result.majorNotesWithInverseAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
         result.notationMap.put(scaleNote, cmajorNote.name() + accidental.inverse().symbol());
+      } else if (accidental.twice().apply(cmajorNote) == scaleNote) {
+        result.majorNotesWithDoubleAccidental.add(cmajorNote);
+        result.remainingScaleNotes.remove(scaleNote);
+        result.notationMap.put(scaleNote, cmajorNote.name() + accidental.twice().symbol());
       } else {
         result.remainingMajorNotes.add(cmajorNote);
       }

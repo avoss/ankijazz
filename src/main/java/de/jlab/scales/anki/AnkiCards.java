@@ -18,8 +18,11 @@ import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
@@ -68,12 +71,29 @@ public class AnkiCards {
   }
 
   public Deck spellMajorScales() {
+    Map<Note, Accidental> majorKeyAccidentals = new HashMap<>();
     Deck deck = new Deck();
     for (Scale scale : allKeys(CMajor)) {
-      deck.add(new ScaleCard(scale, universe.info(scale).getKeySignature()));
+      KeySignature keySignature = KeySignature.fromScale(scale);
+      deck.add(new ScaleCard(scale, keySignature));
+      majorKeyAccidentals.put(scale.getRoot(), keySignature.getAccidental());
     }
-    for (Scale scale : allKeys(CMelodicMinor, CHarmonicMinor, CHarmonicMajor)) {
-      deck.add(new ScaleCard(scale, universe.info(scale).getKeySignature().suppressStaffSignature()));
+    for (Scale scale : allKeys(CMelodicMinor)) {
+      Note majorRoot = scale.getRoot().transpose(-2);
+      KeySignature keySignature = KeySignature.fromScale(scale, majorRoot, majorKeyAccidentals.get(majorRoot));
+      deck.add(new ScaleCard(scale, keySignature).withBothNames());
+    }
+    for (Scale scale : allKeys(CHarmonicMinor)) {
+      System.out.println("harmonic minor");
+      Note majorRoot = scale.getRoot().transpose(3);
+      KeySignature keySignature = KeySignature.fromScale(scale, majorRoot, majorKeyAccidentals.get(majorRoot));
+      deck.add(new ScaleCard(scale, keySignature).withBothNames());
+    }
+    for (Scale scale : allKeys(CHarmonicMajor)) {
+      System.out.println("harmonic major");
+      Note majorRoot = scale.getRoot().transpose(0);
+      KeySignature keySignature = KeySignature.fromScale(scale, majorRoot, majorKeyAccidentals.get(majorRoot));
+      deck.add(new ScaleCard(scale, keySignature));
     }
     return deck;
   }
