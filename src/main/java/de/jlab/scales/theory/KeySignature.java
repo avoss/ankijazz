@@ -3,8 +3,11 @@ package de.jlab.scales.theory;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import com.google.common.collect.Maps;
 
 @lombok.RequiredArgsConstructor
 @lombok.Getter 
@@ -15,13 +18,20 @@ public class KeySignature {
   private final Accidental accidental;
   private final int numberOfAccidentals;
   private final Map<Note, String> notationMap;
-  
+  private boolean suppressStaffSignature = false;
   
   public Accidental getAccidental() {
     return accidental;
   }
+  
   public Note getMajorKey() {
     return majorKey;
+  }
+  
+  public KeySignature suppressStaffSignature() {
+    KeySignature keySignature = new KeySignature(Note.C, accidental, numberOfAccidentals, notationMap);
+    keySignature.suppressStaffSignature = true;
+    return keySignature;
   }
   
   /**
@@ -53,6 +63,9 @@ public class KeySignature {
   }
 
   public String notateKey() {
+    if (suppressStaffSignature) {
+      return "C";
+    }
     return notate(majorKey);
   }
   

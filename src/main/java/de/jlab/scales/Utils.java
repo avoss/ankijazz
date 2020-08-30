@@ -26,8 +26,10 @@ public final class Utils {
     }
   }
   
+  static int counter = 1;
   public static String uuid() {
-    return UUID.randomUUID().toString().substring(0, 8);
+    //return UUID.randomUUID().toString().substring(0, 8);
+    return String.format("%04d", counter++);
     
   }
 

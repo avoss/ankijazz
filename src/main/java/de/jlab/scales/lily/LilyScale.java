@@ -27,6 +27,7 @@ public class LilyScale {
   
   public String toLily() {
     return readTemplate()
+      .replace("${title}", scaleInfo.getScaleName())
       .replace("${key}", key())
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
       .replace("${noteNames}", scaleNotesWithOctave())
@@ -63,16 +64,20 @@ public class LilyScale {
   }
 
   private String key() {
-    return toLilyNote(keySignature.getMajorKey());
+    return toLilyNote(keySignature.notateKey());
   }
 
   private String toLilyNote(Note note) {
-    return keySignature.notate(note)
-        .replace("b", "f")
-        .replace("#", "s")
-        .toLowerCase();
+    return toLilyNote(keySignature.notate(note));
   }
   
+  private String toLilyNote(String notatedNote) {
+    return notatedNote.replace("b", "f")
+        .replace("#", "s")
+        .toLowerCase();
+
+  }
+
   private String toLilyQuarterNote(Note note) {
     return toLilyNote(note) + "4";
   }

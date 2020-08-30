@@ -1,11 +1,12 @@
 \version "2.20.0"
 \include "english.ly"
 
-#(set! paper-alist (cons '("anki-png" . (cons (* 120 mm) (* 25 mm))) paper-alist))
+#(set! paper-alist (cons '("anki-png" . (cons (* 120 mm) (* 28 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
 \header {
-  tagline = "" % \markup { \tiny "mail@jlab.de" }
+  title = \markup{ \small { "${title}" }}
+  tagline = "" % \markup { \tiny "(C) mail@ankijazz.com" }
 }
 
 

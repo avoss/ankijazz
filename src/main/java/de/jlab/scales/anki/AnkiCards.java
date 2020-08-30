@@ -65,7 +65,7 @@ public class AnkiCards {
   }
 
   public Deck spellMajorScales() {
-    return spellScales(allKeys(asList(CMajor)));
+    return spellScales(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor)));
   }
   
   private Deck spellScales(List<Scale> scales) {
@@ -78,7 +78,7 @@ public class AnkiCards {
 
   private void addScaleCard(Deck deck, Scale scale) {
     ScaleInfo scaleInfo = universe.info(scale);
-    deck.add(new ScaleCard(scale, scaleInfo.getKeySignature()));
+    deck.add(new ScaleCard(scale, scaleInfo.getKeySignature()/*.suppressStaffSignature()*/));
   }
 
 
