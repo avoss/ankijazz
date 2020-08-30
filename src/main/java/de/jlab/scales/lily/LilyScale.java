@@ -15,19 +15,23 @@ import de.jlab.scales.theory.ScaleInfo;
 
 public class LilyScale {
   
-  private ScaleInfo scaleInfo;
   private Scale scale;
   private KeySignature keySignature;
+  private String scaleName;
 
   public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature) {
-    this.scaleInfo = scaleInfo;
+    this(scaleInfo, keySignature, scaleInfo.getScaleName());
+    
+  }
+  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature, String scaleName) {
+    this.scaleName = scaleName;
     this.keySignature = keySignature;
     this.scale = scaleInfo.getScale();
   }
   
   public String toLily() {
     return readTemplate()
-      .replace("${title}", scaleInfo.getScaleName())
+      .replace("${title}", scaleName)
       .replace("${key}", key())
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
       .replace("${noteNames}", scaleNotesWithOctave())

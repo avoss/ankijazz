@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
@@ -20,7 +21,7 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
 
 public class ScaleCard implements Card {
-  private static final ScaleUniverse universe = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
+  private static final ScaleUniverse universe = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor, HarmonicMajor);
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
   private final String uuid;
@@ -46,6 +47,9 @@ public class ScaleCard implements Card {
   }
 
   private String modeName() {
+    if (keySignature.isSuppressStaffSignature()) {
+      return modeInfo.getScale().getRoot().getBothNames() + " " + modeInfo.getTypeName();
+    }
     return modeInfo.getScaleName();
   }
 
@@ -90,7 +94,7 @@ public class ScaleCard implements Card {
   public void writeAssets(Path dir) {
     try {
       Path path = dir.resolve(lilyName());
-      String lily = new LilyScale(modeInfo, keySignature).toLily();
+      String lily = new LilyScale(modeInfo, keySignature, modeName()).toLily();
       Files.write(path, asList(lily));
     } catch (IOException e) {
       throw new UncheckedIOException(e);

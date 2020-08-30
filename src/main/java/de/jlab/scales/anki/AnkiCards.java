@@ -2,12 +2,14 @@ package de.jlab.scales.anki;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Scales.CHarmonicMajor;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
@@ -18,6 +20,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -25,7 +28,7 @@ import de.jlab.scales.theory.ScaleUniverse;
 
 public class AnkiCards {
 
-  private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor);
+  private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor);
 
   public Deck tritones() {
     Deck deck = new Deck();
@@ -65,7 +68,14 @@ public class AnkiCards {
   }
 
   public Deck spellMajorScales() {
-    return spellScales(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor)));
+    Deck deck = new Deck();
+    for (Scale scale : allKeys(CMajor)) {
+      deck.add(new ScaleCard(scale, universe.info(scale).getKeySignature()));
+    }
+    for (Scale scale : allKeys(CMelodicMinor, CHarmonicMinor, CHarmonicMajor)) {
+      deck.add(new ScaleCard(scale, universe.info(scale).getKeySignature().suppressStaffSignature()));
+    }
+    return deck;
   }
   
   private Deck spellScales(List<Scale> scales) {
@@ -78,7 +88,8 @@ public class AnkiCards {
 
   private void addScaleCard(Deck deck, Scale scale) {
     ScaleInfo scaleInfo = universe.info(scale);
-    deck.add(new ScaleCard(scale, scaleInfo.getKeySignature()/*.suppressStaffSignature()*/));
+    KeySignature keySignature = scaleInfo.getKeySignature();
+    deck.add(new ScaleCard(scale, keySignature));
   }
 
 
@@ -90,6 +101,8 @@ public class AnkiCards {
     scales.add(CMelodicMinor.superimpose(B)); // Altered
     scales.add(CHarmonicMinor);
     scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
+    scales.add(CHarmonicMajor);
+    scales.add(CHarmonicMajor.transpose(B));   // Marcus
     return scales;
   }
 

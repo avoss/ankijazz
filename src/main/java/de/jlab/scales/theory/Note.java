@@ -113,7 +113,7 @@ public enum Note {
     if (flatName.equals(sharpName)) {
       return flatName;
     }
-    return sharpName + "/" + flatName;
+    return flatName + "/" + sharpName;
   }
   
   public int semitones(Note upper) {
