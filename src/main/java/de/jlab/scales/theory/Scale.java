@@ -49,6 +49,10 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return transpose(newRoot.ordinal() - root.ordinal());
   }
 
+  public Scale superimpose(int semitones) {
+    return superimpose(root.transpose(semitones));
+  }
+  
   public Scale superimpose(Note newRoot) {
     if (newRoot == this.root) {
       return this;

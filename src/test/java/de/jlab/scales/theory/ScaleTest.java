@@ -123,6 +123,7 @@ public class ScaleTest {
   public void testAsChord() {
     assertEquals("CΔ7", Cmaj7.superimpose(C).asChord());
     assertEquals("Am79", Cmaj7.superimpose(A).asChord());
+    assertEquals("Am79", Cmaj7.superimpose(A.ordinal()).asChord());
     assertEquals("Eb6", Cm7.superimpose(Eb).asChord());
     assertEquals("Dm7", Cm7.transpose(2).asChord());
     assertEquals("Dm7", Cm7.transpose(2).superimpose(D).asChord());

@@ -13,7 +13,7 @@ import static de.jlab.scales.theory.Scales.CHarmonicMajor;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.allKeys;
+import static de.jlab.scales.theory.Scales.*;
 import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
@@ -21,6 +21,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Stream;
 
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.KeySignature;
@@ -66,34 +68,53 @@ public class AnkiCards {
     return deck;
   }
   
-  public Deck spellAllScales() {
-    return spellScales(allKeys(commonScales()));
-  }
 
   public Deck spellMajorScales() {
+    Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
+    Stream.of(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor).forEach(type -> modeMap.put(type, (parent) -> asList(parent)));
+    return spellScales(modeMap);
+  }
+
+  public Deck spellAllScales() {
+    Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
+    modeMap.put(CMajor, parent -> allModes(parent));
+    modeMap.put(CMelodicMinor, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.transpose(B.ordinal())));
+    modeMap.put(CHarmonicMinor, parent -> asList(parent, parent.superimpose(G.ordinal())));
+    modeMap.put(CHarmonicMajor, parent -> asList(parent, parent.superimpose(B.ordinal())));
+    return spellScales(modeMap);
+  }
+  
+  private Deck spellScales(Map<Scale, Function<Scale, List<Scale>>> modes) {
     Map<Note, Accidental> majorKeyAccidentals = new HashMap<>();
     Deck deck = new Deck();
-    for (Scale scale : allKeys(CMajor)) {
-      KeySignature keySignature = KeySignature.fromScale(scale);
-      deck.add(new ScaleCard(scale, keySignature));
-      majorKeyAccidentals.put(scale.getRoot(), keySignature.getAccidental());
+    for (Scale parent : allKeys(CMajor)) {
+      KeySignature keySignature = KeySignature.fromScale(parent);
+      majorKeyAccidentals.put(parent.getRoot(), keySignature.getAccidental());
+      for (Scale mode : modes.get(CMajor).apply(parent)) {
+        deck.add(new ScaleCard(mode, keySignature));
+      }
     }
-    for (Scale scale : allKeys(CMelodicMinor)) {
-      Note majorRoot = scale.getRoot().transpose(-2);
-      KeySignature keySignature = KeySignature.fromScale(scale, majorRoot, majorKeyAccidentals.get(majorRoot));
-      deck.add(new ScaleCard(scale, keySignature).withBothNames());
+    for (Scale parent : allKeys(CMelodicMinor)) {
+      Note majorRoot = parent.getRoot().transpose(-2);
+      KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, majorKeyAccidentals.get(majorRoot));
+      for (Scale mode : modes.get(CMelodicMinor).apply(parent)) {
+        deck.add(new ScaleCard(mode, keySignature).withBothNames());
+      }
     }
-    for (Scale scale : allKeys(CHarmonicMinor)) {
-      System.out.println("harmonic minor");
-      Note majorRoot = scale.getRoot().transpose(3);
-      KeySignature keySignature = KeySignature.fromScale(scale, majorRoot, majorKeyAccidentals.get(majorRoot));
-      deck.add(new ScaleCard(scale, keySignature).withBothNames());
+    for (Scale parent : allKeys(CHarmonicMinor)) {
+      Note majorRoot = parent.getRoot().transpose(3);
+      KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, majorKeyAccidentals.get(majorRoot));
+      for (Scale mode : modes.get(CHarmonicMinor).apply(parent)) {
+        deck.add(new ScaleCard(mode, keySignature).withBothNames());
+      }
     }
-    for (Scale scale : allKeys(CHarmonicMajor)) {
-      System.out.println("harmonic major");
-      Note majorRoot = scale.getRoot().transpose(0);
-      KeySignature keySignature = KeySignature.fromScale(scale, majorRoot, majorKeyAccidentals.get(majorRoot));
-      deck.add(new ScaleCard(scale, keySignature));
+    for (Scale parent : allKeys(CHarmonicMajor)) {
+      Note majorRoot = parent.getRoot().transpose(0);
+      KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, majorKeyAccidentals.get(majorRoot));
+      Function<Scale, List<Scale>> fun = modes.get(CHarmonicMajor);
+      for (Scale mode : fun.apply(parent)) {
+        deck.add(new ScaleCard(mode, keySignature));
+      }
     }
     return deck;
   }

@@ -152,7 +152,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).parent(scale).build();
     initializeDefaultInfoSuperAndSubScales(info);
     /*
-     * TODO: shouls search for major scale with lowest index. 
+     * TODO: should search for major scale with lowest index. 
      * E.g. FMaj7 belongs to F major scale, not to c major, although contained in both
      * If no major scale can be found, then meldodic / harmonic minor schould be searched. 
      */

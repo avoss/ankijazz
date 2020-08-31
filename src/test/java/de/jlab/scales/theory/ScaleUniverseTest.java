@@ -60,6 +60,24 @@ public class ScaleUniverseTest {
   }
 
   @Test
+  public void testDorianTypeName() {
+    Scale dorian = CMajor.superimpose(D);
+    for (Note note: Note.values()) {
+      Scale scale = dorian.transpose(note);
+      assertEquals("Dorian", jazz.info(scale).getTypeName());
+    }
+  }
+  
+  @Test
+  public void testDorianB2TypeName() {
+    Scale dorian = CMelodicMinor.superimpose(D);
+    for (Note note: Note.values()) {
+      Scale scale = dorian.transpose(note);
+      assertEquals("Dorian b2", jazz.info(scale).getTypeName());
+    }
+  }
+
+  @Test
   public void testOrdering1() {
     ScaleUniverse universe = new ScaleUniverse(Major, MelodicMinor);
     List<Scale> expected = Scales.allKeys(asList(CMajor, CMelodicMinor));

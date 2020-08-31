@@ -104,7 +104,7 @@ public class KeySignatureTest {
       actual.add("# " + type.getTypeName());
       for (Scale scale : allKeys(type.getPrototype())) {
         KeySignature signature = fromScale(scale);
-        String inverseAccidentalsHint = hasInverseAccidentals(scale, signature) ? " (found b and #)" : "";
+        String inverseAccidentalsHint = reviewRequired(scale, signature) ? " (*)" : "";
         String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), signature.getNumberOfAccidentals(),
             signature.getAccidental().symbol(), signature.toString(scale), inverseAccidentalsHint);
         actual.add(message);
@@ -152,9 +152,11 @@ public class KeySignatureTest {
     assertEquals(signature.toString(scale), Math.min(scale.length(), CMajor.length()), set.size());
   }
 
-  private boolean hasInverseAccidentals(Scale scale, KeySignature signature) {
+  private boolean reviewRequired(Scale scale, KeySignature signature) {
     String notation = signature.toString(scale);
-    return notation.contains("b") && notation.contains("#");
+    return (notation.contains("b") && notation.contains("#"))
+           || notation.contains("bb") 
+           || notation.contains("x");
   }
 
 }
