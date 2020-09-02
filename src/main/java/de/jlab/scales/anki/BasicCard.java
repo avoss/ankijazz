@@ -19,4 +19,9 @@ public class BasicCard implements Card {
     return fields;
   }
 
+  @Override
+  public void setId(String id) {
+     // ignore    
+  }
+
 }

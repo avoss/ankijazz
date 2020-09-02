@@ -45,7 +45,7 @@ public class ScaleCardTest {
   }
   
   private ScaleCard card(Scale scale) {
-    return new ScaleCard(scale, KeySignature.fromScale(scale));
+    return new ScaleCard(scale, KeySignature.fromMajorScale(scale));
   }
 
 

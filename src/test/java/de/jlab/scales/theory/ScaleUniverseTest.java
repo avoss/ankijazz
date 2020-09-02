@@ -1,18 +1,19 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedTriad;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
+import static de.jlab.scales.theory.BuiltInScaleTypes.*;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.C7;
@@ -22,7 +23,7 @@ import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CdimTriad;
 import static de.jlab.scales.theory.Scales.Cm7b5;
 import static de.jlab.scales.theory.Scales.Cmaj7;
-import static de.jlab.scales.theory.Scales.CmajTriad;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.allModes;
 import static java.util.Arrays.asList;
@@ -41,6 +42,13 @@ public class ScaleUniverseTest {
 
   private static ScaleUniverse allScales = new ScaleUniverse(true);
   private static ScaleUniverse jazz = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
+  
+  @Test
+  public void testMinor6PentatonicModes() {
+    assertEquals("C Minor6 Pentatonic", allScales.info(CMinor6Pentatonic).getScaleName());
+    assertEquals("F Dominant7 Pentatonic", allScales.info(CMinor6Pentatonic.superimpose(F)).getScaleName());
+    assertEquals("A Minor7b5 Pentatonic", allScales.info(CMinor6Pentatonic.superimpose(A)).getScaleName());
+  }
 
   @Test
   public void testSuperScales() {
@@ -127,7 +135,7 @@ public class ScaleUniverseTest {
   @Test
   public void testModes() {
     Scale bbmajor = CMajor.transpose(Bb);
-    KeySignature signature = KeySignature.fromScale(bbmajor);
+    KeySignature signature = KeySignature.fromMajorScale(bbmajor);
     assertInfo(bbmajor, bbmajor, "Bb Major Scale", signature);
     Scale cdorian = bbmajor.superimpose(C);
     assertInfo(cdorian, bbmajor, "C Dorian", signature);
@@ -136,7 +144,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testChordInversion() {
-    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.fromScale(CMajor));
+    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.fromMajorScale(CMajor));
     assertInfo(Cmaj7.superimpose(E), Cmaj7, "CΔ7/E");
   }
 
@@ -185,7 +193,8 @@ public class ScaleUniverseTest {
   @Test
   public void testBbAltered() {
     Scale gMelodicMinor = CMelodicMinor.transpose(G);
-    KeySignature expected = KeySignature.fromScale(gMelodicMinor);
+    Note majorKey = MelodicMinor.notationKey().apply(G);
+    KeySignature expected = KeySignature.fromScale(gMelodicMinor, majorKey, Accidental.fromMajorKey(majorKey));
     Scale gFlatAltered = gMelodicMinor.superimpose(Gb);
     ScaleInfo info = jazz.info(gFlatAltered);
     assertEquals(expected, info.getKeySignature());

@@ -3,9 +3,12 @@ package de.jlab.scales.anki;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
+import java.io.IOException;
 import java.nio.file.Paths;
 
 import org.junit.Test;
+
+import de.jlab.scales.TestUtils;
 
 public class AnkiCardsTest {
   AnkiCards anki = new AnkiCards();
@@ -27,26 +30,30 @@ public class AnkiCardsTest {
   }
   
   @Test
-  public void spellAllScales() {
-    //FIXME A# melodic major (instead of 7th position)
-    Deck deck = anki.spellAllScales();
-    deck.writeTo(Paths.get("build/anki/all-scales"));
-    assertContainsSubstring(deck, "B Dorian;B C# D E F# G# A");
-    assertContainsSubstring(deck, "Ab Melodic Minor;Ab Bb Cb Db Eb F G");
-    assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
-    assertContainsSubstring(deck, "Bb Phrygian;Bb Cb Db Eb F Gb Ab");
-    assertThat(deck.getCsv().size()).isEqualTo(144);
-  }
-
-  @Test
-  public void spellMajorScales() {
-    Deck deck = anki.spellMajorScales();
-    deck.writeTo(Paths.get("build/anki/major-scales"));
+  public void spellParentScales() throws IOException {
+    Deck deck = anki.spellParentScales();
+    TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "parent-scales-ordered.txt");
+    deck.shuffle();
+    deck.writeTo(Paths.get("build/anki/parent-scales"));
     assertContainsSubstring(deck, "D Major Scale;D E F# G A B C#");
     assertContainsSubstring(deck, "D Major Scale;D E F# G A B C#");
     assertContainsSubstring(deck, "Eb Major Scale;Eb F G Ab Bb C D");
     assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
-    assertThat(deck.getCsv().size()).isEqualTo(12);
+  }
+  
+  @Test
+  public void spellAllScales() throws IOException {
+    Deck deck = anki.spellAllScales();
+    TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "all-scales-ordered.txt");
+    deck.shuffle();
+    deck.writeTo(Paths.get("build/anki/all-scales"));
+    assertContainsSubstring(deck, "B Dorian;B C# D E F# G# A");
+    assertContainsSubstring(deck, "Ab Melodic Minor;Ab Bb Cb Db Eb F G");
+    assertContainsSubstring(deck, "G# Harmonic Minor;G# A# B C# D# E Fx");
+    assertContainsSubstring(deck, "Db Harmonic Major;Db Eb F Gb Ab Bbb C");
+    assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
+    assertContainsSubstring(deck, "Bb Phrygian;Bb Cb Db Eb F Gb Ab");
+    assertContainsSubstring(deck, "C# Melodic Minor;C# D# E F# G# A# B#");
   }
 
   private void assertContainsSubstring(Deck deck, String string) {

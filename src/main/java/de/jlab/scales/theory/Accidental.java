@@ -1,5 +1,24 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.Ab;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.Eb;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Note.Gb;
+
+import java.util.Map;
+
+import com.google.common.collect.ImmutableMap;
+
 public enum Accidental {
   FLAT() {
 
@@ -99,5 +118,24 @@ public enum Accidental {
   public abstract Accidental inverse();
   
   public abstract Accidental twice();
+
+  private static final Map<Note, Accidental> majorKeyAccidentals = ImmutableMap.<Note, Accidental>builder()
+      .put(C, FLAT)
+      .put(G, SHARP)
+      .put(D, SHARP)
+      .put(A, SHARP)
+      .put(E, SHARP)
+      .put(B, SHARP)
+      .put(Gb, FLAT)
+      .put(Db, FLAT)
+      .put(Ab, FLAT)
+      .put(Eb, FLAT)
+      .put(Bb, FLAT)
+      .put(F, FLAT)
+      .build();
+  
+  public static Accidental fromMajorKey(Note majorKey) {
+    return majorKeyAccidentals.get(majorKey);
+  }
   
 }

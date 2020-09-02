@@ -14,16 +14,23 @@ import java.util.stream.Stream;
 
 public class Deck {
   private List<Card> cards = new ArrayList<>();
-
+  private String id;
+  private int counter;
+  
+  public Deck(String id) {
+    this.id = "AnkiJazz-" + id;
+  }
+  
   public void add(String... fields) {
     add(0, fields);
   }
   
   public void add(int priority, String... fields) {
-    cards.add(new BasicCard(priority, fields));
+    add(new BasicCard(priority, fields));
   }
   
   public void add(Card card) {
+    card.setId(String.format("%s-%04d", id, counter++));
     cards.add(card);
   }
 
@@ -39,11 +46,13 @@ public class Deck {
     }
   }
   
+  public void shuffle() {
+    Collections.shuffle(cards);
+    Collections.sort(cards);
+  }
+  
   public List<String> getCsv() {
-    List<Card> temp = new ArrayList<>(cards);
-    Collections.shuffle(temp);
-    Collections.sort(temp);
-    return temp.stream().map(Card::getFields).map(this::toCsv).collect(toList());
+    return cards.stream().map(Card::getFields).map(this::toCsv).collect(toList());
   }
 
   private String toCsv(String... fields) {

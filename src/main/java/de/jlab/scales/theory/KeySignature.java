@@ -1,11 +1,15 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.google.common.collect.Maps;
 
@@ -40,27 +44,41 @@ public class KeySignature {
    * 
    * For scales with numberOfNotes != 7 a fallback keysignature (all notes flat) will be returned
    */
-  public static KeySignature fromScale(Scale scale) {
-    Analyzer analyzer = new Analyzer();
-    Analyzer.Result result = analyzer.analyze(scale);
-    return toKeySignature(result);
-  }
+//  public static KeySignature fromScale(Scale scale) {
+//    Analyzer analyzer = new Analyzer();
+//    Analyzer.Result result = analyzer.analyze(scale);
+//    return toKeySignature(result);
+//  }
 
   /**
-   * if a key signature could be constructed, no matter how bad, then it is returned. Otherwise returns null.
+   * if a key signature could be constructed, no matter how bad, then it is returned. Otherwise returns fallback scale
+   * TODO: rename to "analyzeOrElseFallback
    */
-  public static KeySignature fromScale(Scale scale, Note root, Accidental accidental) {
+  public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
+    if (scale.length() != CMajor.length())  {
+      return fallback(scale, accidental);
+    }
     Analyzer analyzer = new Analyzer();
     Analyzer.Result result = analyzer.analyze(scale, accidental);
     if (!result.getRemainingScaleNotes().isEmpty()) {
-      return null;
+      return fallback(scale, accidental);
     }
-    return toKeySignature(result, root);
+    return toKeySignature(result, notationKey);
+  }
+
+  public static KeySignature fromMajorScale(Scale majorScale) {
+    return fromScale(majorScale, majorScale.getRoot(), Accidental.fromMajorKey(majorScale.getRoot()));
   }
   
-  private static KeySignature toKeySignature(Analyzer.Result result) {
-    return toKeySignature(result, result.getRoot());
+  public static KeySignature fallback(Scale scale, Accidental accidental) {
+    Map<Note, String> notationMap = Stream.of(Note.values()).collect(Collectors.toMap(Function.identity(), n -> n.getName(accidental)));
+    int numberOfAccidentals = (int) scale.stream().filter(n -> !CMajor.contains(n)).count();
+    return new KeySignature(Note.C, accidental, numberOfAccidentals, notationMap);
   }
+  
+//  private static KeySignature toKeySignature(Analyzer.Result result) {
+//    return toKeySignature(result, result.getRoot());
+//  }
   
   private static KeySignature toKeySignature(Analyzer.Result result, Note root) {
     return new KeySignature(root, result.getAccidental(), result.getNumberOfAccidentalsInKeySignature(), result.getNotationMap());

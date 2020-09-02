@@ -26,6 +26,7 @@ import java.util.function.Function;
 
 
 public class Analyzer {
+  // TODO duplicated in ScaleUniverse?
   private static final List<Note> sharpSignatureKeys = Arrays.asList(F, C, G, D, A, E, B);
   private static final List<Note> flatSignatureKeys = Arrays.asList(B, E, A, D, G, C, F);
 
@@ -55,9 +56,9 @@ public class Analyzer {
 
     void initialize() {
       if (accidental == SHARP) {
-        initialize(sharpSignatureKeys, (n) -> n.transpose(2));
+        computeNotationKey(sharpSignatureKeys, (n) -> n.transpose(2));
       } else {
-        initialize(flatSignatureKeys, (n) -> n.transpose(6));
+        computeNotationKey(flatSignatureKeys, (n) -> n.transpose(6));
       }
       putDefaultNotationIntoNotationMapForNotesNotInScale();
     }
@@ -90,7 +91,7 @@ public class Analyzer {
     }
     
 
-    private void initialize(List<Note> signatureKeys, Function<Note, Note> transposer) {
+    private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
       root = C;
       numberOfAccidentalsInKeySignature = 0;
       for (Note note : signatureKeys) {
@@ -103,14 +104,14 @@ public class Analyzer {
       }
     }
     
-    public int getBadness() {
-      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
-      return numberOfAccidentalsInKeySignature 
-          + numberOfExtraAccidentals * 10
-          + majorNotesWithInverseAccidental.size() * 20
-          + majorNotesWithDoubleAccidental.size() * 30
-          + remainingScaleNotes.size() * 1000;
-    }
+//    public int getBadness() {
+//      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
+//      return numberOfAccidentalsInKeySignature 
+//          + numberOfExtraAccidentals * 10
+//          + majorNotesWithInverseAccidental.size() * 20
+//          + majorNotesWithDoubleAccidental.size() * 50
+//          + remainingScaleNotes.size() * 1000;
+//    }
 
   }
 
@@ -156,27 +157,27 @@ public class Analyzer {
     return note;
   }
 
-  public Result fallback(Scale scale, Accidental accidental) {
-    Result result = new Analyzer.Result(scale, accidental);
-    result.initialize();
-    return result;
-  }
-
-  public Result fallback(Scale scale) {
-    return fallback(scale, FLAT);
-  }
-
-  public Result analyze(Scale scale) {
-    if (scale.length() != CMajor.length()) {
-      return fallback(scale);
-    }
-    Result sharpResult = analyze(scale, SHARP);
-    Result flatResult = analyze(scale, FLAT);
-    Result best = sharpResult.getBadness() < flatResult.getBadness() ? sharpResult : flatResult;
-    if (!best.getRemainingScaleNotes().isEmpty()) {
-      best = fallback(scale);
-    }
-    return best;
-  }
+//  public Result fallback(Scale scale, Accidental accidental) {
+//    Result result = new Analyzer.Result(scale, accidental);
+//    result.initialize();
+//    return result;
+//  }
+//
+//  public Result fallback(Scale scale) {
+//    return fallback(scale, FLAT);
+//  }
+//
+//  public Result analyze(Scale scale) {
+//    if (scale.length() != CMajor.length()) {
+//      return fallback(scale);
+//    }
+//    Result sharpResult = analyze(scale, SHARP);
+//    Result flatResult = analyze(scale, FLAT);
+//    Result best = sharpResult.getBadness() < flatResult.getBadness() ? sharpResult : flatResult;
+//    if (!best.getRemainingScaleNotes().isEmpty()) {
+//      best = fallback(scale);
+//    }
+//    return best;
+//  }
 
 }

@@ -21,5 +21,7 @@ public interface Card extends Comparable<Card> {
   default int compareTo(Card that) {
     return Integer.compare(this.getPriority(), that.getPriority());
   }
+
+  void setId(String id);
   
 }

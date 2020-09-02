@@ -32,51 +32,58 @@ import static de.jlab.scales.theory.Scales.CminTriad;
 import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.CsusTriad;
 
-// TODO modes are also scale tyes ...
-public enum BuiltInScaleTypes implements ScaleType {
-  Major(CMajor, "Major Scale", "Major Scale", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
-  MelodicMinor(CMelodicMinor, "Melodic Minor", "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
-  HarmonicMinor(CHarmonicMinor, "Harmonic Minor", "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
-  HarmonicMajor(CHarmonicMajor, "Harmonic Major", "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
-  DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole"),
-  WholeTone(CWholeTone, "Whole Tone"),
-  
-  Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic"),
-  Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic"),
-  
-  Major7(Cmaj7, "Δ7"),
-  Major7Sharp11(Cmaj7Sharp11, "Δ7#11"),
-  Minor7(Cm7, "-7"),
-  Minor6(Cm6, "-6"),
-  Dominant7(C7, "7"),
-  Minor7b5(Cm7b5, "ø"),
-  Diminished7(Cdim7, "o7"),
-  MinorMajor7(Cmmaj7, "mΔ7"),
-  Major7Sharp5(Cmaj7Sharp5, "Δ7#5"),
-  Dominant7sus4(C7sus4, "7sus"),
-  Dominant7flat9(C7flat9, "7b9"),
-  Dominant7sharp9(C7sharp9, "7#9"),
-  Dominant7flat5(C7flat5, "7b5"),
-  Dominant7sharp5(C7sharp5, "7#5"),
-  Dominant7flat5flat9(C7flat5flat9, "7b5b9"),
-  Dominant7sharp5flat9(C7sharp5flat9, "7#5b9"),
-  Dominant7flat5sharp9(C7flat5sharp9, "7b5#9"),
-  Dominant7sharp5sharp9(C7sharp5sharp9, "7#5#9"),
-  MajorTriad(CmajTriad, ""),
-  MinorTriad(CminTriad, "m"),
-  DiminishedTriad(CdimTriad, "o"),
-  AugmentedTriad(CaugTriad, "+"),
-  Sus4Triad(CsusTriad, "sus4")
-  
-  ;
+import java.util.function.Function;
 
+import static de.jlab.scales.theory.Note.*;
+
+
+public enum BuiltInScaleTypes implements ScaleType {
+  Major(CMajor, "Major Scale", C, "Major Scale", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
+  MelodicMinor(CMelodicMinor,  "Melodic Minor", D, "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
+  HarmonicMinor(CHarmonicMinor, "Harmonic Minor", A, "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
+  HarmonicMajor(CHarmonicMajor, "Harmonic Major", C, "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
+
+  DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole", C),
+  WholeTone(CWholeTone, "Whole Tone", C),
+  
+  Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
+  Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", "x1", "Dominant7 Pentatonic", "x2", "Minor7b5 Pentatonic", "x3", "x4"),
+  
+  Major7(Cmaj7, "Δ7", C),
+  Major7Sharp11(Cmaj7Sharp11, "Δ7#11", C),
+  Minor7(Cm7, "-7", A),
+  Minor6(Cm6, "-6", D),
+  Dominant7(C7, "7", G),
+  Minor7b5(Cm7b5, "ø", B),
+  Diminished7(Cdim7, "o7", G),
+  MinorMajor7(Cmmaj7, "mΔ7", A),
+  Major7Sharp5(Cmaj7Sharp5, "Δ7#5", C),
+  Dominant7sus4(C7sus4, "7sus", G),
+  Dominant7flat9(C7flat9, "7b9", G),
+  Dominant7sharp9(C7sharp9, "7#9", G),
+  Dominant7flat5(C7flat5, "7b5", G),
+  Dominant7sharp5(C7sharp5, "7#5", G),
+  Dominant7flat5flat9(C7flat5flat9, "7b5b9", G),
+  Dominant7sharp5flat9(C7sharp5flat9, "7#5b9", G),
+  Dominant7flat5sharp9(C7flat5sharp9, "7b5#9", G),
+  Dominant7sharp5sharp9(C7sharp5sharp9, "7#5#9", G),
+  
+  MajorTriad(CmajTriad, "", C),
+  MinorTriad(CminTriad, "m", A),
+  DiminishedTriad(CdimTriad, "o", B),
+  AugmentedTriad(CaugTriad, "+", G),
+  Sus4Triad(CsusTriad, "sus4", G)
+  ;
+  
   private Scale prototype;
   private String typeName;
   private String[] modeNames;
+  private Note modeKey;
 
-  BuiltInScaleTypes(Scale prototype, String typeName, String ... modeNames) {
+  BuiltInScaleTypes(Scale prototype, String typeName, Note modeKey, String ... modeNames) {
     this.prototype = prototype;
     this.typeName = typeName;
+    this.modeKey = modeKey;
     this.modeNames = modeNames;
   }
 
@@ -93,6 +100,11 @@ public enum BuiltInScaleTypes implements ScaleType {
   @Override
   public String getTypeName() {
     return typeName;
+  }
+
+  @Override
+  public Function<Note, Note> notationKey() {
+    return (n) -> n.transpose(-modeKey.ordinal());
   }
 
 }

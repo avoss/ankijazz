@@ -1,9 +1,6 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
-import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.*;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
 
@@ -21,10 +18,11 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
 
 public class ScaleCard implements Card {
-  private static final ScaleUniverse universe = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor, HarmonicMajor);
+  // TODO duplicated in AnkiCards
+  private static final ScaleUniverse universe = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
-  private final String uuid;
+  private String id = Utils.uuid();
   private KeySignature keySignature;
   private int priority;
   private boolean bothNames;
@@ -33,10 +31,13 @@ public class ScaleCard implements Card {
   public ScaleCard(Scale mode, KeySignature keySignature) {
     this.keySignature = keySignature;
     this.modeInfo = universe.info(mode);
-    System.out.println(keySignature.getMajorKey() + ", type: " + modeInfo.getTypeName() + ", scale: " + modeInfo.getScaleName());
     this.parentInfo = universe.info(modeInfo.getParent());
-    this.uuid = Utils.uuid("AnkiJazz");
     this.priority = keySignature.getNumberOfAccidentals() + ThreadLocalRandom.current().nextInt(SHUFFLE);
+  }
+  
+  @Override
+  public void setId(String id) {
+   this.id = id;
   }
   
   public ScaleCard withBothNames() {
@@ -81,15 +82,15 @@ public class ScaleCard implements Card {
   }
 
   private String modePngName() {
-    return format("<img src=\"%s.png\">", uuid);
+    return format("<img src=\"%s.png\">", id);
   }
 
   private String modeMp3Name() {
-    return format("[sound:%s.mp3]",  uuid);
+    return format("[sound:%s.mp3]",  id);
   }
 
   public String lilyName() {
-    return uuid + ".ly";
+    return id + ".ly";
   }
   
   @Override

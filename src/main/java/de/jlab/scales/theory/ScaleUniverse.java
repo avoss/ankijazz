@@ -1,5 +1,7 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.*;
+import static de.jlab.scales.theory.Note.*;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
@@ -7,15 +9,23 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
+import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.MultimapBuilder;
 
 public class ScaleUniverse implements Iterable<Scale> {
+  
+  /**
+   * TODO:
+   * - add keysignature as separate pass, because superscales are required (chords, pentatonics)
+   * - automated keysignature detection does not work, need to know the accidental and majorRoot per scale
+   */
 
-  private boolean includeModes;
 
   @lombok.Builder
   static class Namer {
@@ -52,6 +62,10 @@ public class ScaleUniverse implements Iterable<Scale> {
     }
   }
 
+  private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
+  private List<Scale> scales = new ArrayList<>();
+  private boolean includeModes;
+
   public ScaleUniverse() {
     this(false);
   }
@@ -68,6 +82,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     this.includeModes = includeModes;
     Stream.of(types).forEachOrdered(this::add);
     initializeSubScales();
+    // TODO: initializeKeySignatures() ????
   }
 
   private void add(ScaleType type) {
@@ -82,9 +97,6 @@ public class ScaleUniverse implements Iterable<Scale> {
   private boolean isChord(Scale scale) {
     return scale.length() < 5;
   }
-
-  private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
-  private List<Scale> scales = new ArrayList<>();
 
   private void scale(ScaleType type) {
     Namer namer = Namer.builder()
@@ -110,15 +122,16 @@ public class ScaleUniverse implements Iterable<Scale> {
     Scale scale = type.getPrototype();
     for (Note newRoot : Note.values()) {
       Scale transposed = scale.transpose(newRoot);
-      addModes(transposed, namer);
+      addModes(type, transposed, namer);
     }
   }
 
-  private void addModes(Scale parent, ScaleUniverse.Namer namer) {
+  private void addModes(ScaleType type, Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();
     
-    KeySignature keySignature = KeySignature.fromScale(parent);
-    
+    Note majorRoot = type.notationKey().apply(parent.getRoot());
+    Accidental accidental = Accidental.fromMajorKey(majorRoot);
+    KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
     int numberOfModes = this.includeModes ? parent.length() : 1;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
@@ -148,6 +161,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   // FIXME throw / return null instead? - NO, because need to find scales for unknown chords
+  // FIXME too much guesswork here ...
   private ScaleInfo defaultInfo(Scale scale) {
     ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).parent(scale).build();
     initializeDefaultInfoSuperAndSubScales(info);
@@ -156,8 +170,10 @@ public class ScaleUniverse implements Iterable<Scale> {
      * E.g. FMaj7 belongs to F major scale, not to c major, although contained in both
      * If no major scale can be found, then meldodic / harmonic minor schould be searched. 
      */
-    Scale superScale = info.getSuperScales().stream().findFirst().orElse(scale);
-    KeySignature signature = KeySignature.fromScale(superScale);
+    Optional<Scale> superScale = info.getSuperScales().stream().findFirst();
+    KeySignature signature = superScale.isPresent() 
+        ? info(superScale.get()).getKeySignature() 
+        : KeySignature.fallback(scale, Accidental.fromMajorKey(scale.getRoot())); 
     info.setKeySignature(signature);
     info.setScaleName(scaleName(scale, signature));
     return info;

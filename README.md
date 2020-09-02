@@ -13,13 +13,17 @@
 ### Midi
 - know your fretboard: single note, natural, flat, sharps, all keys. 
   - in different fretboard positions.
-  - single note on all strings
+  - single note on every string strings
 
 ## features:
 - sorted by number of accidentals with some randomness
-- F#/Gb and others: 
-  - chose a signature that does not require double flats or double sharps. If sharp and flat signatures are equally good, then use flat.
-  - harmonic minor and melodic minor require some extra accidentals
-  - some scales needs both, # and b to avoid double flats / double sharps, e.g. D Harmonic Minor
-  - none of the signatures require a "natural" accidental
+- harmonic minor notated with key signature of aeolean 
+- meldodic minor is "jazz melodic minor", ascending and descending the same notes
+- melodic minor notated with key signature of dorian
+- diminished and whole tone are notated with flats / naturals only
 - Melodic Minor is "Jazz Melodic Minor", i.e. it's the same ascending and descending
+
+## noteworthy
+- Ab/G# harmonic minor requires double-sharp
+- Db and Gb harmonic major require double-flat
+- CMMin, GHMin, DHMin, GHMaj and DHMaj contain both, # and b
