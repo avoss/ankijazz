@@ -34,7 +34,7 @@ public class LilyScale {
       .replace("${title}", scaleName)
       .replace("${key}", key())
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
-      .replace("${noteNames}", scaleNotesWithOctave())
+      .replace("${noteNames}", lilyNotesWithOctave())
       .replace("${midiChord}", drop2Chord())
       .replace("${lilyChord}", closedChord());
   }
@@ -52,10 +52,23 @@ public class LilyScale {
   }
 
   private String scaleNotesWithExtendedOctave() {
-    return format("%s~ %s1", scaleNotesWithOctave(), lilyRoot());
+    switch (scale.length()) {
+    case 5:
+      return format("%s %s2.", lilyNotes(), lilyRoot());
+    case 6:
+      return format("%s %s2", lilyNotes(), lilyRoot());
+    case 7:
+      return format("%s %s4 ~ %s1", lilyNotes(), lilyRoot(), lilyRoot());
+    case 8:
+      return format("%s %s1", lilyNotes(), lilyRoot());
+    default:
+      throw new IllegalStateException(format("Scales with %d notes not implemented", scale.length()));
+
+    }
+      
   }
 
-  private String scaleNotesWithOctave() {
+  private String lilyNotesWithOctave() {
     return format("%s %s", lilyNotes(), lilyRoot());
   }
   
@@ -76,7 +89,8 @@ public class LilyScale {
   }
   
   private String toLilyNote(String notatedNote) {
-    return notatedNote.replace("b", "f")
+    return notatedNote
+        .replace("b", "f")
         .replace("#", "s")
         .replace("x", "ss")
         .toLowerCase();
