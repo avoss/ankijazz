@@ -30,7 +30,7 @@ public class AnkiCardsTest {
   
   @Test
   public void spellParentScales() throws IOException {
-    Deck deck = anki.spellParentScales();
+    Deck deck = anki.spellParentScales(false);
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "parent-scales-ordered.txt");
     deck.shuffle();
     deck.writeTo(Paths.get("build/anki/parent-scales"));
@@ -38,7 +38,7 @@ public class AnkiCardsTest {
   
   @Test
   public void spellAllScales() throws IOException {
-    Deck deck = anki.spellAllScales();
+    Deck deck = anki.spellAllScales(false);
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "all-scales-ordered.txt");
     deck.shuffle();
     deck.writeTo(Paths.get("build/anki/all-scales"));
