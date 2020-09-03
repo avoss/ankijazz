@@ -41,7 +41,7 @@ public class AnkiCards {
   private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
 
   public Deck tritones() {
-    Deck deck = new Deck("Tritones");
+    Deck deck = new SimpleDeck("Tritones");
     for (Note note : Note.values()) {
       Note tritone = note.tritone();
       deck.add(note.getName(FLAT), tritone.getBothNames());
@@ -52,7 +52,7 @@ public class AnkiCards {
   }
 
   public Deck parentScales() {
-    Deck deck = new Deck("ParentScales");
+    Deck deck = new SimpleDeck("ParentScales");
     for (Scale scale : allKeys(commonScales())) {
       ScaleInfo scaleInfo = universe.info(scale);
       if (!scaleInfo.isInversion()) {
@@ -65,7 +65,7 @@ public class AnkiCards {
   }
 
   public Deck spellTypes() {
-    Deck deck = new Deck("ScaleTypes");
+    Deck deck = new SimpleDeck("ScaleTypes");
     for (Scale scale : commonScales()) {
       ScaleInfo scaleInfo = universe.info(scale);
       deck.add(scaleInfo.getTypeName(), scale.asIntervals());
@@ -76,7 +76,7 @@ public class AnkiCards {
   public Deck spellParentScales(boolean includeDescending) {
     Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
     Stream.of(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CMinorPentatonic, CMinor6Pentatonic).forEach(type -> modeMap.put(type, (parent) -> asList(parent)));
-    Deck deck = new Deck("ParentScales");
+    Deck deck = new SimpleDeck("ParentScales");
     return spellScales(deck, modeMap, includeDescending);
   }
 
@@ -88,7 +88,7 @@ public class AnkiCards {
     modeMap.put(CHarmonicMajor, parent -> asList(parent, parent.superimpose(B.ordinal())));
     modeMap.put(CMinorPentatonic, parent -> asList(parent, parent.superimpose(Eb.ordinal())));
     modeMap.put(CMinor6Pentatonic, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(A.ordinal())));
-    Deck deck = new Deck("AllScales");
+    Deck deck = new SimpleDeck("AllScales");
     return spellScales(deck, modeMap, includeDescending);
   }
   

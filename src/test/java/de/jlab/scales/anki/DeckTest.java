@@ -14,7 +14,7 @@ public class DeckTest {
 
   @Test
   public void testWriteCsv() throws IOException {
-    Deck deck = new Deck("xx");
+    Deck deck = new SimpleDeck("xx");
     deck.add(1,  "A", "B");
     deck.add(3,  "E", "F");
     deck.add(2,  "C", "D");
