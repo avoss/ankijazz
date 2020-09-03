@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN set -xe \
 	&& apt-get update \
-	&& apt-get install -y vim curl wget git openjdk-11-jdk dos2unix ffmpeg fluidsynth normalize-audio lame timidity lilypond imagemagick openssh-server gradle;
+	&& apt-get install -y vim curl wget git openjdk-11-jdk dos2unix ffmpeg fluidsynth normalize-audio lame timidity lilypond imagemagick sqlite openssh-server gradle;
 
 RUN mkdir /var/run/sshd
 COPY .ssh /root/.ssh

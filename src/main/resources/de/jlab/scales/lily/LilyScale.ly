@@ -10,7 +10,7 @@
 }
 
 
-scaleNotes = \relative e' { ${scaleNotes} }
+scaleNotes = \relative ${relativeTo} { ${scaleNotes} }
 noteNames = \relative e' { ${noteNames} }
 midiChord = \relative e' { ${midiChord} }
 lilyChord = \relative e' { ${lilyChord} }

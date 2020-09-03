@@ -27,9 +27,15 @@ public class ScaleCard implements Card {
   private int priority;
   private boolean bothNames;
   static int SHUFFLE = 3;
+  private boolean descending;
 
   public ScaleCard(Scale mode, KeySignature keySignature) {
+    this(mode, keySignature, false);
+  }
+  
+  public ScaleCard(Scale mode, KeySignature keySignature, boolean descending) {
     this.keySignature = keySignature;
+    this.descending = descending;
     this.modeInfo = universe.info(mode);
     this.parentInfo = universe.info(modeInfo.getParent());
     this.priority = keySignature.getNumberOfAccidentals() + ThreadLocalRandom.current().nextInt(SHUFFLE);
@@ -47,11 +53,7 @@ public class ScaleCard implements Card {
 
   @Override
   public String[] getFields() {
-    return new String[] { modeName(), noteNames(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
-  }
-
-  private String noteNames() {
-    return keySignature.toString(modeInfo.getScale());
+    return new String[] { modeName(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
   }
 
   private String modeName() {
@@ -102,7 +104,7 @@ public class ScaleCard implements Card {
   public void writeAssets(Path dir) {
     try {
       Path path = dir.resolve(lilyName());
-      String lily = new LilyScale(modeInfo, keySignature, modeName()).toLily();
+      String lily = new LilyScale(modeInfo, keySignature, modeName(), descending).toLily();
       Files.write(path, asList(lily));
     } catch (IOException e) {
       throw new UncheckedIOException(e);

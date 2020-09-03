@@ -18,6 +18,7 @@ public class DeckTest {
     deck.add(1,  "A", "B");
     deck.add(3,  "E", "F");
     deck.add(2,  "C", "D");
+    deck.shuffle();
     Path path = Paths.get("build/csvtest");
     deck.writeTo(path);
     

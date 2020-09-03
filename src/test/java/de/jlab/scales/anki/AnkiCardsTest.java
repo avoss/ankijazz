@@ -1,7 +1,6 @@
 package de.jlab.scales.anki;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -35,10 +34,6 @@ public class AnkiCardsTest {
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "parent-scales-ordered.txt");
     deck.shuffle();
     deck.writeTo(Paths.get("build/anki/parent-scales"));
-    assertContainsSubstring(deck, "D Major Scale;D E F# G A B C#");
-    assertContainsSubstring(deck, "D Major Scale;D E F# G A B C#");
-    assertContainsSubstring(deck, "Eb Major Scale;Eb F G Ab Bb C D");
-    assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
   }
   
   @Test
@@ -47,17 +42,6 @@ public class AnkiCardsTest {
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "all-scales-ordered.txt");
     deck.shuffle();
     deck.writeTo(Paths.get("build/anki/all-scales"));
-    assertContainsSubstring(deck, "B Dorian;B C# D E F# G# A");
-    assertContainsSubstring(deck, "Ab Melodic Minor;Ab Bb Cb Db Eb F G");
-    assertContainsSubstring(deck, "G# Harmonic Minor;G# A# B C# D# E Fx");
-    assertContainsSubstring(deck, "Db Harmonic Major;Db Eb F Gb Ab Bbb C");
-    assertContainsSubstring(deck, "Gb Major Scale;Gb Ab Bb Cb Db Eb F");
-    assertContainsSubstring(deck, "Bb Phrygian;Bb Cb Db Eb F Gb Ab");
-    assertContainsSubstring(deck, "C# Melodic Minor;C# D# E F# G# A# B#");
-  }
-
-  private void assertContainsSubstring(Deck deck, String string) {
-    assertEquals(string + " not found in " + deck.getCsv(), 1, deck.getCsv().stream().filter(s -> s.contains(string)).count());
   }
 
   @Test

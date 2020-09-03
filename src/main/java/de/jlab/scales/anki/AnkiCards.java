@@ -87,7 +87,6 @@ public class AnkiCards {
     modeMap.put(CHarmonicMinor, parent -> asList(parent, parent.superimpose(G.ordinal())));
     modeMap.put(CHarmonicMajor, parent -> asList(parent, parent.superimpose(B.ordinal())));
     modeMap.put(CMinorPentatonic, parent -> asList(parent, parent.superimpose(Eb.ordinal())));
-    //modeMap.put(CMinor6Pentatonic, parent -> asList(parent, parent.superimpose(parent.getNote(2)), parent.superimpose(parent.getNote(4)));
     modeMap.put(CMinor6Pentatonic, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(A.ordinal())));
     Deck deck = new Deck("AllScales");
     return spellScales(deck, modeMap);
@@ -98,52 +97,56 @@ public class AnkiCards {
       Note majorKey = parent.getRoot().transpose(0);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
       for (Scale mode : modes.get(CMajor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature));
+        deck.add(new ScaleCard(mode, keySignature, false));
+//        deck.add(new ScaleCard(mode, keySignature, true));
       }
     }
     for (Scale parent : allKeys(CMelodicMinor)) {
       Note majorKey = parent.getRoot().transpose(-2);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
       for (Scale mode : modes.get(CMelodicMinor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature));
+        deck.add(new ScaleCard(mode, keySignature, false));
+//        deck.add(new ScaleCard(mode, keySignature, true));
       }
     }
     for (Scale parent : allKeys(CHarmonicMinor)) {
       Note majorKey = parent.getRoot().transpose(3);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
       for (Scale mode : modes.get(CHarmonicMinor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature));
+        deck.add(new ScaleCard(mode, keySignature, false));
+//        deck.add(new ScaleCard(mode, keySignature, true));
       }
     }
     for (Scale parent : allKeys(CHarmonicMajor)) {
       Note majorKey = parent.getRoot().transpose(0);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
       for (Scale mode : modes.get(CHarmonicMajor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature));
+        deck.add(new ScaleCard(mode, keySignature, false));
+//        deck.add(new ScaleCard(mode, keySignature, true));
       }
     }
-    for (Scale scale : allKeys(CDiminishedHalfWhole)) {
-      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
-      deck.add(new ScaleCard(scale, keySignature));
-    }
-    for (Scale scale : allKeys(CWholeTone)) {
-      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
-      deck.add(new ScaleCard(scale, keySignature));
-    }
-    for (Scale parent : allKeys(CMinorPentatonic)) {
-      Note majorKey = parent.getRoot().transpose(3);
-      KeySignature keySignature = KeySignature.fromScale(CMajor.transpose(majorKey), majorKey, Accidental.fromMajorKey(majorKey));
-      for (Scale mode : modes.get(CMinorPentatonic).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature));
-      }
-    }
-    for (Scale parent : allKeys(CMinor6Pentatonic)) {
-      Note majorKey = parent.getRoot().transpose(-2);
-      KeySignature keySignature = KeySignature.fromScale(CMajor.transpose(majorKey), majorKey, Accidental.fromMajorKey(majorKey));
-      for (Scale mode : modes.get(CMinor6Pentatonic).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature));
-      }
-    }
+//    for (Scale scale : allKeys(CDiminishedHalfWhole)) {
+//      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
+//      deck.add(new ScaleCard(scale, keySignature));
+//    }
+//    for (Scale scale : allKeys(CWholeTone)) {
+//      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
+//      deck.add(new ScaleCard(scale, keySignature));
+//    }
+//    for (Scale parent : allKeys(CMinorPentatonic)) {
+//      Note majorKey = parent.getRoot().transpose(3);
+//      KeySignature keySignature = KeySignature.fromScale(CMajor.transpose(majorKey), majorKey, Accidental.fromMajorKey(majorKey));
+//      for (Scale mode : modes.get(CMinorPentatonic).apply(parent)) {
+//        deck.add(new ScaleCard(mode, keySignature));
+//      }
+//    }
+//    for (Scale parent : allKeys(CMinor6Pentatonic)) {
+//      Note majorKey = parent.getRoot().transpose(-2);
+//      KeySignature keySignature = KeySignature.fromScale(CMajor.transpose(majorKey), majorKey, Accidental.fromMajorKey(majorKey));
+//      for (Scale mode : modes.get(CMinor6Pentatonic).apply(parent)) {
+//        deck.add(new ScaleCard(mode, keySignature));
+//      }
+//    }
     return deck;
   }
   

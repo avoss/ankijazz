@@ -6,6 +6,8 @@ import static java.util.stream.Collectors.joining;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
+import java.util.Collections;
+import java.util.List;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.theory.KeySignature;
@@ -15,24 +17,31 @@ import de.jlab.scales.theory.ScaleInfo;
 
 public class LilyScale {
   
-  private Scale scale;
-  private KeySignature keySignature;
-  private String scaleName;
+  private final Scale scale;
+  private final KeySignature keySignature;
+  private final String scaleName;
+  private final boolean descending;
 
   public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature) {
-    this(scaleInfo, keySignature, scaleInfo.getScaleName());
-    
+    this(scaleInfo, keySignature, false);
   }
-  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature, String scaleName) {
-    this.scaleName = scaleName;
+
+  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature, boolean descending) {
+    this(scaleInfo, keySignature, scaleInfo.getScaleName(), descending);
+  }
+  
+  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature, String scaleName, boolean descending) {
     this.keySignature = keySignature;
+    this.scaleName = scaleName;
     this.scale = scaleInfo.getScale();
+    this.descending = descending;
   }
   
   public String toLily() {
     return readTemplate()
       .replace("${title}", scaleName)
       .replace("${key}", key())
+      .replace("${relativeTo}", descending ? "e''" : "e'")
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
       .replace("${noteNames}", lilyNotesWithOctave())
       .replace("${midiChord}", drop2Chord())
@@ -73,7 +82,12 @@ public class LilyScale {
   }
   
   private String lilyNotes() {
-    return scale.stream().map(this::toLilyQuarterNote).collect(joining(" "));
+    List<Note> notes = scale.asList();
+    if (descending) {
+      Collections.reverse(notes);
+      Collections.rotate(notes, 1);
+    }
+    return notes.stream().map(this::toLilyQuarterNote).collect(joining(" "));
   }
 
   private String lilyRoot() {

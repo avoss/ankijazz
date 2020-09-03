@@ -28,8 +28,7 @@ public class LilyScaleTest {
   public void testEDorian() {
     ScaleInfo edorian = universe.info(CMajor.transpose(D).superimpose(E));
     String source = new LilyScale(edorian, edorian.getKeySignature()).toLily();
-    //assertEquals("", source);
-    assertThat(source).contains("scaleNotes = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e~ e1 }");
+    assertThat(source).contains("scaleNotes = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e4 ~ e1 }");
     assertThat(source).contains("noteNames = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e }");
     assertThat(source).contains("midiChord = \\relative e' { <e, b' d g>1 }");
     assertThat(source).contains("lilyChord = \\relative e' { <e g b d>1 }");
@@ -37,13 +36,20 @@ public class LilyScaleTest {
   }
 
   @Test
+  public void testDescending() {
+    ScaleInfo edorian = universe.info(CMajor.transpose(D).superimpose(E));
+    String source = new LilyScale(edorian, edorian.getKeySignature(), true).toLily();
+    assertThat(source).contains("scaleNotes = \\relative e'' { e4 d4 cs4 b4 a4 g4 fs4 e4 ~ e1 }");
+  }
+  
+  @Test
   public void testGbMajor() {
     Scale gbmajor = CMajor.transpose(Gb);
     String source = new LilyScale(universe.info(gbmajor), KeySignature.fromScale(gbmajor, Gb, SHARP)).toLily();
-    assertThat(source).contains("scaleNotes = \\relative e' { fs4 gs4 as4 b4 cs4 ds4 es4 fs~ fs1 }");
+    assertThat(source).contains("scaleNotes = \\relative e' { fs4 gs4 as4 b4 cs4 ds4 es4 fs4 ~ fs1 }");
     assertThat(source).contains("\\key fs \\major");
     source = new LilyScale(universe.info(gbmajor), KeySignature.fromScale(gbmajor, Gb, FLAT)).toLily();
-    assertThat(source).contains("scaleNotes = \\relative e' { gf4 af4 bf4 cf4 df4 ef4 f4 gf~ gf1 }");
+    assertThat(source).contains("scaleNotes = \\relative e' { gf4 af4 bf4 cf4 df4 ef4 f4 gf4 ~ gf1 }");
     assertThat(source).contains("\\key gf \\major");
   }
   
