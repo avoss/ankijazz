@@ -58,7 +58,7 @@ public class ScaleCard implements Card {
 
   @Override
   public String[] getFields() {
-    return new String[] { modeName(), direction(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
+    return new String[] { modeName(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name(), direction() };
   }
 
   private String direction() {

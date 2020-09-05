@@ -1,74 +1,87 @@
-deck:"AnkiJazz - Scales" and ModeType:"Major Scale"
-AnkiJazz - Scales::ByType::01-Major
+# AnkiJazzMode
 
-deck:"AnkiJazz - Scales" and ModeType:"Dorian"
-AnkiJazz - Scales::ByType::02-Dorian
+## NoteType AnkiJazzMode:
 
-deck:"AnkiJazz - Scales" and ModeType:"Phrygian"
-AnkiJazz - Scales::ByType::03-Phrygian
+ModeName
+ModeType
+ModeRoot
+ParentName
+ParentType
+ParentRoot
+ModePng
+ModeMp3
+Direction
 
-deck:"AnkiJazz - Scales" and ModeType:"Lydian"
-AnkiJazz - Scales::ByType::04-Lydian
+Deck: AnkiJazz::Modes
 
-deck:"AnkiJazz - Scales" and ModeType:"Mixolydian"
-AnkiJazz - Scales::ByType::05-Mixolydian
+Front:
+<div>Play <b>{{ModeName}}</b></div>
 
-deck:"AnkiJazz - Scales" and ModeType:"Aeolean"
-AnkiJazz - Scales::ByType::06-Aeolean
+Back:
+{{FrontSide}}
 
-deck:"AnkiJazz - Scales" and ModeType:"Locrian"
-AnkiJazz - Scales::ByType::07-Locrian
+<hr id=answer>
 
-deck:"AnkiJazz - Scales" and ModeType:"Melodic Minor"
-AnkiJazz - Scales::ByType::08-Melodic Minor
+<div>{{ModePng}}</div>
+<div>{{ModeMp3}}</div>
+<div><small>(Same notes as {{ParentName}})</small></div>
 
-deck:"AnkiJazz - Scales" and ModeType:"Lydian Dominant"
-AnkiJazz - Scales::ByType::09-Lydian Dominant
 
-deck:"AnkiJazz - Scales" and ModeType:"Altered"
-AnkiJazz - Scales::ByType::10-Altered
+deck:"AnkiJazz::Modes" and ModeType:"Major Scale"
+AnkiJazz::Modes::01-Major
 
-deck:"AnkiJazz - Scales" and ModeType:"Harmonic Minor"
-AnkiJazz - Scales::ByType::11-Harmonic Minor
+deck:"AnkiJazz::Modes" and ModeType:"Dorian"
+AnkiJazz::Modes::02-Dorian
 
-deck:"AnkiJazz - Scales" and ModeType:"Phrygian Dominant"
-AnkiJazz - Scales::ByType::12-Phrygian Dominant
+deck:"AnkiJazz::Modes" and ModeType:"Phrygian"
+AnkiJazz::Modes::03-Phrygian
 
-deck:"AnkiJazz - Scales" and ModeRoot:"A"
-AnkiJazz - Scales::ByKey::A
+deck:"AnkiJazz::Modes" and ModeType:"Lydian"
+AnkiJazz::Modes::04-Lydian
 
-deck:"AnkiJazz - Scales" and ModeRoot:"B"
-AnkiJazz - Scales::ByKey::B
+deck:"AnkiJazz::Modes" and ModeType:"Mixolydian"
+AnkiJazz::Modes::05-Mixolydian
 
-deck:"AnkiJazz - Scales" and ModeRoot:"C"
-AnkiJazz - Scales::ByKey::C
+deck:"AnkiJazz::Modes" and ModeType:"Aeolean"
+AnkiJazz::Modes::06-Aeolean
 
-deck:"AnkiJazz - Scales" and ModeRoot:"D"
-AnkiJazz - Scales::ByKey::D
+deck:"AnkiJazz::Modes" and ModeType:"Locrian"
+AnkiJazz::Modes::07-Locrian
 
-deck:"AnkiJazz - Scales" and ModeRoot:"E"
-AnkiJazz - Scales::ByKey::E
+deck:"AnkiJazz::Modes" and ModeType:"Melodic Minor"
+AnkiJazz::Modes::08-Melodic Minor
 
-deck:"AnkiJazz - Scales" and ModeRoot:"F"
-AnkiJazz - Scales::ByKey::F
+deck:"AnkiJazz::Modes" and ModeType:"Lydian Dominant"
+AnkiJazz::Modes::09-Lydian Dominant
 
-deck:"AnkiJazz - Scales" and ModeRoot:"G"
-AnkiJazz - Scales::ByKey::G
+deck:"AnkiJazz::Modes" and ModeType:"Altered"
+AnkiJazz::Modes::10-Altered
 
-deck:"AnkiJazz - Scales" and (ModeRoot:"Bb" or ModeRoot:"A#")
-AnkiJazz - Scales::ByKey::Bb/A#
+deck:"AnkiJazz::Modes" and ModeType:"Harmonic Minor"
+AnkiJazz::Modes::11-Harmonic Minor
 
-deck:"AnkiJazz - Scales" and (ModeRoot:"Eb" or ModeRoot:"D#")
-AnkiJazz - Scales::ByKey::Eb/D#
+deck:"AnkiJazz::Modes" and ModeType:"Phrygian Dominant"
+AnkiJazz::Modes::12-Phrygian Dominant
 
-deck:"AnkiJazz - Scales" and (ModeRoot:"Ab" or ModeRoot:"G#")
-AnkiJazz - Scales::ByKey::Ab/G#
 
-deck:"AnkiJazz - Scales" and (ModeRoot:"Db" or ModeRoot:"C#")
-AnkiJazz - Scales::ByKey::Db/C#
 
-deck:"AnkiJazz - Scales" and (ModeRoot:"Gb" or ModeRoot:"F#")
-AnkiJazz - Scales::ByKey::Gb/F#
+# AnkiJazzModeG
+
+## NoteType AnkiJazzModeG
+
+ModeName
+ModeType
+ModeRoot
+ParentName
+ParentType
+ParentRoot
+ModePng
+ModeMp3
+Direction
+Position
+PositionPng
+
+Deck: AnkiJazz::Modes (Guitar)
 
 Front:
 <div>Play <b>{{ModeName}}</b> in <b>{{Direction}}</b> order in <b>{{Position}}</b> position</div>
@@ -83,5 +96,38 @@ Back:
 <div>{{ModeMp3}}</div>
 <div><small>(Same notes as {{ParentName}})</small></div>
 
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Major Scale"
+AnkiJazz::Modes (Guitar)::01-Major
 
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Dorian"
+AnkiJazz::Modes (Guitar)::02-Dorian
 
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Phrygian"
+AnkiJazz::Modes (Guitar)::03-Phrygian
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Lydian"
+AnkiJazz::Modes (Guitar)::04-Lydian
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Mixolydian"
+AnkiJazz::Modes (Guitar)::05-Mixolydian
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Aeolean"
+AnkiJazz::Modes (Guitar)::06-Aeolean
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Locrian"
+AnkiJazz::Modes (Guitar)::07-Locrian
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Melodic Minor"
+AnkiJazz::Modes (Guitar)::08-Melodic Minor
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Lydian Dominant"
+AnkiJazz::Modes (Guitar)::09-Lydian Dominant
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Altered"
+AnkiJazz::Modes (Guitar)::10-Altered
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Harmonic Minor"
+AnkiJazz::Modes (Guitar)::11-Harmonic Minor
+
+deck:"AnkiJazz::Modes (Guitar)" and ModeType:"Phrygian Dominant"
+AnkiJazz::Modes (Guitar)::12-Phrygian Dominant
