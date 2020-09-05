@@ -1,7 +1,6 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.Accidental.*;
 import static de.jlab.scales.theory.BuiltInScaleTypes.*;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
@@ -88,7 +87,7 @@ public class AnkiCards {
     modeMap.put(CHarmonicMajor, parent -> asList(parent, parent.superimpose(B.ordinal())));
     modeMap.put(CMinorPentatonic, parent -> asList(parent, parent.superimpose(Eb.ordinal())));
     modeMap.put(CMinor6Pentatonic, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(A.ordinal())));
-    Deck deck = new SimpleDeck("AllScales");
+    Deck deck = new GuitarDeck(new SimpleDeck("AllScales"));
     return spellScales(deck, modeMap, includeDescending);
   }
   
@@ -96,43 +95,49 @@ public class AnkiCards {
     for (Scale parent : allKeys(CMajor)) {
       Note majorKey = parent.getRoot().transpose(0);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
+      int scaleDifficulty = keySignature.getNumberOfAccidentals() + 0;
       for (Scale mode : modes.get(CMajor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature, false));
+        int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
+        deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
         if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, true));
+          deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
         }
       }
     }
     for (Scale parent : allKeys(CMelodicMinor)) {
       Note majorKey = parent.getRoot().transpose(-2);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
+      int scaleDifficulty = keySignature.getNumberOfAccidentals() + 4;
       for (Scale mode : modes.get(CMelodicMinor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature, false));
+        int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
+        deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
         if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, true));
+          deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
         }
       }
     }
     for (Scale parent : allKeys(CHarmonicMinor)) {
       Note majorKey = parent.getRoot().transpose(3);
       KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
+      int scaleDifficulty = keySignature.getNumberOfAccidentals() + 4;
       for (Scale mode : modes.get(CHarmonicMinor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature, false));
+        int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
+        deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
         if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, true));
+          deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
         }
       }
     }
-    for (Scale parent : allKeys(CHarmonicMajor)) {
-      Note majorKey = parent.getRoot().transpose(0);
-      KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
-      for (Scale mode : modes.get(CHarmonicMajor).apply(parent)) {
-        deck.add(new ScaleCard(mode, keySignature, false));
-        if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, true));
-        }
-      }
-    }
+//    for (Scale parent : allKeys(CHarmonicMajor)) {
+//      Note majorKey = parent.getRoot().transpose(0);
+//      KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
+//      for (Scale mode : modes.get(CHarmonicMajor).apply(parent)) {
+//        deck.add(new ScaleCard(mode, keySignature, false));
+//        if (includeDescending) {
+//          deck.add(new ScaleCard(mode, keySignature, true));
+//        }
+//      }
+//    }
 //    for (Scale scale : allKeys(CDiminishedHalfWhole)) {
 //      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
 //      deck.add(new ScaleCard(scale, keySignature));

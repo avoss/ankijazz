@@ -10,7 +10,7 @@ public interface Card extends Comparable<Card> {
   /** 
    * 0 = highest priority 
    */
-  int getPriority();
+  int getDifficulty();
 
   String[] getFields();
   
@@ -19,7 +19,7 @@ public interface Card extends Comparable<Card> {
   }
 
   default int compareTo(Card that) {
-    return Integer.compare(this.getPriority(), that.getPriority());
+    return Integer.compare(this.getDifficulty(), that.getDifficulty());
   }
 
   void setId(String id);

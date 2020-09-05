@@ -1,17 +1,17 @@
 package de.jlab.scales.anki;
 
 public class BasicCard implements Card {
-  private final int priority;
+  private final int difficulty;
   private final String[] fields;
-
-  public BasicCard(int priority, String[] fields) {
-    this.priority = priority;
+ 
+  public BasicCard(int difficulty, String... fields) {
+    this.difficulty = difficulty;
     this.fields = fields;
   }
 
   @Override
-  public int getPriority() {
-    return priority;
+  public int getDifficulty() {
+    return difficulty;
   }
 
   @Override

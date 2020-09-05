@@ -32,16 +32,16 @@ public class AnkiCardsTest {
   public void spellParentScales() throws IOException {
     Deck deck = anki.spellParentScales(false);
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "parent-scales-ordered.txt");
-    deck.shuffle();
+    deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki/parent-scales"));
   }
   
   @Test
   public void spellAllScales() throws IOException {
-    Deck deck = anki.spellAllScales(false);
+    Deck deck = anki.spellAllScales(true);
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "all-scales-ordered.txt");
-    deck.shuffle();
-    deck.writeTo(Paths.get("build/anki/all-scales"));
+    deck.shuffle(3);
+    new GuitarDeck(deck).writeTo(Paths.get("build/anki/all-scales"));
   }
 
   @Test

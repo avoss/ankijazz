@@ -10,6 +10,8 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 public class SimpleDeck implements Deck {
@@ -20,17 +22,7 @@ public class SimpleDeck implements Deck {
   public SimpleDeck(String id) {
     this.id = "AnkiJazz-" + id;
   }
-  
-  @Override
-  public void add(String... fields) {
-    add(0, fields);
-  }
-  
-  @Override
-  public void add(int priority, String... fields) {
-    add(new BasicCard(priority, fields));
-  }
-  
+ 
   @Override
   public void add(Card card) {
     card.setId(String.format("%s-%04d", id, counter++));
@@ -50,12 +42,33 @@ public class SimpleDeck implements Deck {
     }
   }
   
-  @Override
-  public void shuffle() {
-    Collections.shuffle(cards);
-    Collections.sort(cards);
+  private static class RandomDifficultyCard implements Comparable<RandomDifficultyCard> {
+    private final Card card;
+    private final int difficulty;
+    RandomDifficultyCard(Card card, int randomness) {
+      this.card = card;
+      this.difficulty = card.getDifficulty() + ThreadLocalRandom.current().nextInt(randomness);
+    }
+    
+    @Override
+    public int compareTo(RandomDifficultyCard that) {
+      return Integer.compare(this.difficulty, that.difficulty);
+    }
   }
   
+  @Override
+  public void shuffle(int randomness) {
+    if (randomness <= 0) {
+      Collections.sort(cards);
+      return;
+    }
+    List<RandomDifficultyCard> temp = new ArrayList<>();
+    this.cards.stream().map(c -> new RandomDifficultyCard(c, randomness)).forEach (r -> temp.add(r));
+    Collections.shuffle(temp);
+    Collections.sort(temp);
+    this.cards = temp.stream().map(r -> r.card).collect(toList()); 
+  }
+
   @Override
   public List<String> getCsv() {
     return cards.stream().map(Card::getFields).map(this::toCsv).collect(toList());

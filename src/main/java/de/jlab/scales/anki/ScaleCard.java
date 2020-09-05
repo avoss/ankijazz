@@ -1,6 +1,13 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.BuiltInScaleTypes.*;
+import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedHalfWhole;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
+import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
+import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
 
@@ -8,7 +15,6 @@ import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.concurrent.ThreadLocalRandom;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyScale;
@@ -24,21 +30,20 @@ public class ScaleCard implements Card {
   private final ScaleInfo parentInfo;
   private String id = Utils.uuid();
   private KeySignature keySignature;
-  private int priority;
+  private int difficulty;
   private boolean bothNames;
-  static int SHUFFLE = 3;
   private boolean descending;
 
   public ScaleCard(Scale mode, KeySignature keySignature) {
-    this(mode, keySignature, false);
+    this(mode, keySignature, keySignature.getNumberOfAccidentals(), false);
   }
   
-  public ScaleCard(Scale mode, KeySignature keySignature, boolean descending) {
+  public ScaleCard(Scale mode, KeySignature keySignature, int difficulty, boolean descending) {
     this.keySignature = keySignature;
     this.descending = descending;
     this.modeInfo = universe.info(mode);
     this.parentInfo = universe.info(modeInfo.getParent());
-    this.priority = keySignature.getNumberOfAccidentals() + ThreadLocalRandom.current().nextInt(SHUFFLE);
+    this.difficulty = difficulty;
   }
   
   @Override
@@ -53,7 +58,11 @@ public class ScaleCard implements Card {
 
   @Override
   public String[] getFields() {
-    return new String[] { modeName(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
+    return new String[] { modeName(), direction(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name() };
+  }
+
+  private String direction() {
+    return descending ? "Descending" : "Ascending";
   }
 
   private String modeName() {
@@ -96,8 +105,8 @@ public class ScaleCard implements Card {
   }
   
   @Override
-  public int getPriority() {
-    return priority;
+  public int getDifficulty() {
+    return difficulty;
   }
 
   @Override
