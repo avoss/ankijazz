@@ -29,6 +29,7 @@ import java.util.function.Function;
 import java.util.stream.Stream;
 
 import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.BuiltInScaleTypes;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
@@ -52,7 +53,7 @@ public class AnkiCards {
 
   public Deck parentScales() {
     Deck deck = new SimpleDeck("ParentScales");
-    for (Scale scale : allKeys(commonScales())) {
+    for (Scale scale : allKeys(commonModes())) {
       ScaleInfo scaleInfo = universe.info(scale);
       if (!scaleInfo.isInversion()) {
         continue;
@@ -65,126 +66,53 @@ public class AnkiCards {
 
   public Deck spellTypes() {
     Deck deck = new SimpleDeck("ScaleTypes");
-    for (Scale scale : commonScales()) {
+    for (Scale scale : commonModes()) {
       ScaleInfo scaleInfo = universe.info(scale);
       deck.add(scaleInfo.getTypeName(), scale.asIntervals());
     }
     return deck;
   }
 
-  public Deck spellScales(boolean guitar) {
-    Deck deck = guitar ? new GuitarDeck(new SimpleDeck("ScalesG")) : new SimpleDeck("Scales");
-    Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
-    Stream.of(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CMinorPentatonic, CMinor6Pentatonic).forEach(type -> modeMap.put(type, (parent) -> asList(parent)));
-    return spellScales(deck, modeMap, guitar);
-  }
-
-  public Deck spellModes(boolean guitar) {
-    Deck deck = guitar ? new GuitarDeck(new SimpleDeck("ModesG")) : new SimpleDeck("Modes");
-    Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
-    modeMap.put(CMajor, parent -> allModes(parent));
-    modeMap.put(CMelodicMinor, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(B.ordinal())));
-    modeMap.put(CHarmonicMinor, parent -> asList(parent, parent.superimpose(G.ordinal())));
-    modeMap.put(CHarmonicMajor, parent -> asList(parent, parent.superimpose(B.ordinal())));
-    modeMap.put(CMinorPentatonic, parent -> asList(parent, parent.superimpose(Eb.ordinal())));
-    modeMap.put(CMinor6Pentatonic, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(A.ordinal())));
-    return spellScales(deck, modeMap, guitar);
+  public Deck spellScales() {
+    return spellScales(commonScales(), new SimpleDeck("Scales"), false);
   }
   
-  private Deck spellScales(Deck deck, Map<Scale, Function<Scale, List<Scale>>> modes, boolean includeDescending) {
-    for (Scale parent : allKeys(CMajor)) {
-      Note majorKey = parent.getRoot().transpose(0);
-      KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
-      int scaleDifficulty = keySignature.getNumberOfAccidentals() + 0;
-      for (Scale mode : modes.get(CMajor).apply(parent)) {
-        int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
-        if (!keySignature.equals(universe.info(mode).getKeySignature())) {
-          throw new IllegalStateException();
-        }
-        deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
-        if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
-        }
+  public Deck spellGuitarScales() {
+    return spellScales(commonScales(), new GuitarDeck(new SimpleDeck("ScalesG")), true);
+  }
+
+  public Deck spellModes() {
+    return spellScales(commonModes(), new SimpleDeck("Modes"), false);
+  }
+  
+  public Deck spellGuitarModes() {
+    return spellScales(commonModes(), new GuitarDeck(new SimpleDeck("ModesG")), true);
+  }
+  
+  private Deck spellScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
+    for (Scale scale : allKeys(scales)) {
+      ScaleInfo info = universe.info(scale);
+      int difficulty = info.getKeySignature().getNumberOfAccidentals();
+      difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
+      difficulty += info.isInversion() ? 3 : 0;
+      deck.add(new ScaleCard(scale, info.getKeySignature(), difficulty, false));
+      if (includeDescending) {
+        deck.add(new ScaleCard(scale, info.getKeySignature(), difficulty, true));
       }
     }
-    for (Scale parent : allKeys(CMelodicMinor)) {
-      Note majorKey = parent.getRoot().transpose(-2);
-      KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
-      int scaleDifficulty = keySignature.getNumberOfAccidentals() + 4;
-      for (Scale mode : modes.get(CMelodicMinor).apply(parent)) {
-        int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
-        if (!keySignature.equals(universe.info(mode).getKeySignature())) {
-          throw new IllegalStateException();
-        }
-        deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
-        if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
-        }
-      }
-    }
-    for (Scale parent : allKeys(CHarmonicMinor)) {
-      Note majorKey = parent.getRoot().transpose(3);
-      KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
-      int scaleDifficulty = keySignature.getNumberOfAccidentals() + 4;
-      for (Scale mode : modes.get(CHarmonicMinor).apply(parent)) {
-        int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
-        if (!keySignature.equals(universe.info(mode).getKeySignature())) {
-          throw new IllegalStateException();
-        }
-        deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
-        if (includeDescending) {
-          deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
-        }
-      }
-    }
-//    for (Scale parent : allKeys(CHarmonicMajor)) {
-//      Note majorKey = parent.getRoot().transpose(0);
-//      KeySignature keySignature = KeySignature.fromScale(parent, majorKey, Accidental.fromMajorKey(majorKey));
-//      for (Scale mode : modes.get(CHarmonicMajor).apply(parent)) {
-//        deck.add(new ScaleCard(mode, keySignature, false));
-//        if (includeDescending) {
-//          deck.add(new ScaleCard(mode, keySignature, true));
-//        }
-//      }
-//    }
-//    for (Scale scale : allKeys(CDiminishedHalfWhole)) {
-//      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
-//      deck.add(new ScaleCard(scale, keySignature));
-//      if (includeDescending) {
-//        deck.add(new ScaleCard(scale, keySignature, true));
-//      }
-//    }
-//    for (Scale scale : allKeys(CWholeTone)) {
-//      KeySignature keySignature = KeySignature.fallback(scale, FLAT);
-//      deck.add(new ScaleCard(scale, keySignature));
-//      if (includeDescending) {
-//        deck.add(new ScaleCard(scale, keySignature, true));
-//      }
-//    }
-//    for (Scale parent : allKeys(CMinorPentatonic)) {
-//      Note majorKey = parent.getRoot().transpose(3);
-//      KeySignature keySignature = KeySignature.fromScale(CMajor.transpose(majorKey), majorKey, Accidental.fromMajorKey(majorKey));
-//      for (Scale mode : modes.get(CMinorPentatonic).apply(parent)) {
-//        deck.add(new ScaleCard(mode, keySignature));
-//        if (includeDescending) {
-//          deck.add(new ScaleCard(mode, keySignature, true));
-//        }
-//      }
-//    }
-//    for (Scale parent : allKeys(CMinor6Pentatonic)) {
-//      Note majorKey = parent.getRoot().transpose(-2);
-//      KeySignature keySignature = KeySignature.fromScale(CMajor.transpose(majorKey), majorKey, Accidental.fromMajorKey(majorKey));
-//      for (Scale mode : modes.get(CMinor6Pentatonic).apply(parent)) {
-//        deck.add(new ScaleCard(mode, keySignature));
-//        if (includeDescending) {
-//          deck.add(new ScaleCard(mode, keySignature, true));
-//        }
-//      }
-//    }
     return deck;
   }
   
   private Collection<Scale> commonScales() {
+    List<Scale> scales = new ArrayList<>();
+    scales.add(CMajor);
+    scales.add(CMelodicMinor);
+    scales.add(CHarmonicMinor);
+//    scales.add(CHarmonicMajor);
+    return scales;
+  }
+
+  private Collection<Scale> commonModes() {
     List<Scale> scales = new ArrayList<>();
     scales.addAll(CMajor.getInversions());
     scales.add(CMelodicMinor);
@@ -192,10 +120,9 @@ public class AnkiCards {
     scales.add(CMelodicMinor.superimpose(B)); // Altered
     scales.add(CHarmonicMinor);
     scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
-    scales.add(CHarmonicMajor);
-    scales.add(CHarmonicMajor.transpose(B));   // Marcus
+//    scales.add(CHarmonicMajor);
+//    scales.add(CHarmonicMajor.transpose(B));   // Marcus
     return scales;
   }
-
 
 }

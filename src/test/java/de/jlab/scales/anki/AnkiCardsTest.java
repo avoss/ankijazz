@@ -29,14 +29,28 @@ public class AnkiCardsTest {
   }
   
   @Test
+  public void spellGuitarScales() throws IOException {
+    checkAndWrite(anki.spellGuitarScales());
+  }
+  
+  @Test
   public void spellScales() throws IOException {
-    checkAndWrite(anki.spellScales(true));
-    checkAndWrite(anki.spellScales(false));
-    checkAndWrite(anki.spellModes(true));
-    checkAndWrite(anki.spellModes(false));
+    checkAndWrite(anki.spellScales());
+  }
+  
+  @Test
+  public void spellGuitarModes() throws IOException {
+    checkAndWrite(anki.spellGuitarModes());
+  }
+  
+  @Test
+  public void spellModes() throws IOException {
+    checkAndWrite(anki.spellModes());
   }
   
   private void checkAndWrite(Deck deck) throws IOException {
+    deck.shuffle(0);
+    //TestUtils.assertFileContentMatchesInAnyOrder(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki").resolve(deck.getId()));

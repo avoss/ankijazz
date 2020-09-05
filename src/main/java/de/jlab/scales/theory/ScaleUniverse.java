@@ -74,22 +74,22 @@ public class ScaleUniverse implements Iterable<Scale> {
     this(includeModes, BuiltInScaleTypes.values());
   }
 
-  public ScaleUniverse(ScaleType... types) {
-    this(false, types);
+  public ScaleUniverse(ScaleType... scaleTypes) {
+    this(false, scaleTypes);
   }
 
-  public ScaleUniverse(boolean includeModes, ScaleType... types) {
+  public ScaleUniverse(boolean includeModes, ScaleType... scaleTypes) {
     this.includeModes = includeModes;
-    Stream.of(types).forEachOrdered(this::add);
+    Stream.of(scaleTypes).forEachOrdered(this::add);
     initializeSubScales();
     // TODO: initializeKeySignatures() ????
   }
 
-  private void add(ScaleType type) {
-    if (isChord(type.getPrototype())) {
-      chord(type);
+  private void add(ScaleType scaleType) {
+    if (isChord(scaleType.getPrototype())) {
+      chord(scaleType);
     } else {
-      scale(type);
+      scale(scaleType);
     }
   }
 
@@ -98,38 +98,38 @@ public class ScaleUniverse implements Iterable<Scale> {
     return scale.length() < 5;
   }
 
-  private void scale(ScaleType type) {
+  private void scale(ScaleType scaleType) {
     Namer namer = Namer.builder()
         .namePattern("{0} {1}")
         .nameFallbackPattern("{2} {1}/{0}")
-        .scaleName(type.getTypeName())
-        .modeNames(type.getModeNames())
+        .scaleName(scaleType.getTypeName())
+        .modeNames(scaleType.getModeNames())
         .build();
-    addAll(type, namer);
+    addAll(scaleType, namer);
   }
 
-  private void chord(ScaleType type) {
+  private void chord(ScaleType scaleType) {
     Namer namer = Namer.builder()
         .namePattern("{0}{1}")
         .nameFallbackPattern("{2}{1}/{0}")
-        .scaleName(type.getTypeName())
-        .modeNames(type.getModeNames())
+        .scaleName(scaleType.getTypeName())
+        .modeNames(scaleType.getModeNames())
         .build();
-    addAll(type, namer);
+    addAll(scaleType, namer);
   }
 
-  private void addAll(ScaleType type, Namer namer) {
-    Scale scale = type.getPrototype();
+  private void addAll(ScaleType scaleType, Namer namer) {
+    Scale scale = scaleType.getPrototype();
     for (Note newRoot : Note.values()) {
       Scale transposed = scale.transpose(newRoot);
-      addModes(type, transposed, namer);
+      addModes(scaleType, transposed, namer);
     }
   }
 
-  private void addModes(ScaleType type, Scale parent, ScaleUniverse.Namer namer) {
+  private void addModes(ScaleType scaleType, Scale parent, ScaleUniverse.Namer namer) {
     Note oldRoot = parent.getRoot();
     
-    Note majorRoot = type.notationKey().apply(parent.getRoot());
+    Note majorRoot = scaleType.notationKey().apply(parent.getRoot());
     Accidental accidental = Accidental.fromMajorKey(majorRoot);
     KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
     int numberOfModes = this.includeModes ? parent.length() : 1;
@@ -142,6 +142,7 @@ public class ScaleUniverse implements Iterable<Scale> {
           .parent(parent)
           .typeName(namer.typeName(i))
           .scaleName(namer.name(i, oldRoot, newRoot, keySignature.getAccidental()))
+          .scaleType(scaleType)
           .build();
       infos.put(mode, info);
       scales.add(mode);

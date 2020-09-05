@@ -23,6 +23,7 @@ public class ScaleInfo {
   private KeySignature keySignature;
   private final List<Scale> superScales = new ArrayList<>();
   private final List<Scale> subScales = new ArrayList<>();
+  private ScaleType scaleType;
 
   public boolean isInversion() {
     return !scale.equals(parent);
@@ -31,5 +32,6 @@ public class ScaleInfo {
   public int modeIndex() {
     return parent.indexOf(scale.getRoot());
   }
+  
 
 }
