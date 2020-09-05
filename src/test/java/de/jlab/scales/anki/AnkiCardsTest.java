@@ -29,19 +29,17 @@ public class AnkiCardsTest {
   }
   
   @Test
-  public void spellParentScales() throws IOException {
-    Deck deck = anki.spellParentScales(false);
-    TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "parent-scales-ordered.txt");
-    deck.shuffle(3);
-    deck.writeTo(Paths.get("build/anki/parent-scales"));
+  public void spellScales() throws IOException {
+    checkAndWrite(anki.spellScales(true));
+    checkAndWrite(anki.spellScales(false));
+    checkAndWrite(anki.spellModes(true));
+    checkAndWrite(anki.spellModes(false));
   }
   
-  @Test
-  public void spellAllScales() throws IOException {
-    Deck deck = anki.spellAllScales(true);
-    TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, "all-scales-ordered.txt");
+  private void checkAndWrite(Deck deck) throws IOException {
+    TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     deck.shuffle(3);
-    new GuitarDeck(deck).writeTo(Paths.get("build/anki/all-scales"));
+    deck.writeTo(Paths.get("build/anki").resolve(deck.getId()));
   }
 
   @Test

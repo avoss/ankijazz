@@ -20,10 +20,15 @@ public class GuitarDeck implements Deck {
     delegate.add(new CardDecorator(card, "High", "<img src=\"AnkiJazz-FretboardHigh.png\">"));
   }
 
+  @Override
+  public String getId() {
+    return delegate.getId();
+  }
+
   public void writeTo(Path dir) {
     delegate.writeTo(dir);
   }
-  
+
   public void shuffle(int randomness) {
     delegate.shuffle(randomness);
   }
@@ -34,5 +39,5 @@ public class GuitarDeck implements Deck {
 
   public List<Card> getCards() {
     return delegate.getCards();
-  } 
+  }
 }

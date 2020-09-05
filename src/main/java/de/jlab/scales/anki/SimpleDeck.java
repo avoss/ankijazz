@@ -22,6 +22,11 @@ public class SimpleDeck implements Deck {
   public SimpleDeck(String id) {
     this.id = "AnkiJazz-" + id;
   }
+  
+  @Override
+  public String getId() {
+    return id;
+  }
  
   @Override
   public void add(Card card) {

@@ -72,14 +72,15 @@ public class AnkiCards {
     return deck;
   }
 
-  public Deck spellParentScales(boolean includeDescending) {
+  public Deck spellScales(boolean guitar) {
+    Deck deck = guitar ? new GuitarDeck(new SimpleDeck("ScalesG")) : new SimpleDeck("Scales");
     Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
     Stream.of(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CMinorPentatonic, CMinor6Pentatonic).forEach(type -> modeMap.put(type, (parent) -> asList(parent)));
-    Deck deck = new SimpleDeck("ParentScales");
-    return spellScales(deck, modeMap, includeDescending);
+    return spellScales(deck, modeMap, guitar);
   }
 
-  public Deck spellAllScales(boolean includeDescending) {
+  public Deck spellModes(boolean guitar) {
+    Deck deck = guitar ? new GuitarDeck(new SimpleDeck("ModesG")) : new SimpleDeck("Modes");
     Map<Scale, Function<Scale, List<Scale>>> modeMap = new HashMap<>();
     modeMap.put(CMajor, parent -> allModes(parent));
     modeMap.put(CMelodicMinor, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(B.ordinal())));
@@ -87,8 +88,7 @@ public class AnkiCards {
     modeMap.put(CHarmonicMajor, parent -> asList(parent, parent.superimpose(B.ordinal())));
     modeMap.put(CMinorPentatonic, parent -> asList(parent, parent.superimpose(Eb.ordinal())));
     modeMap.put(CMinor6Pentatonic, parent -> asList(parent, parent.superimpose(F.ordinal()), parent.superimpose(A.ordinal())));
-    Deck deck = new GuitarDeck(new SimpleDeck("AllScales"));
-    return spellScales(deck, modeMap, includeDescending);
+    return spellScales(deck, modeMap, guitar);
   }
   
   private Deck spellScales(Deck deck, Map<Scale, Function<Scale, List<Scale>>> modes, boolean includeDescending) {
@@ -98,6 +98,9 @@ public class AnkiCards {
       int scaleDifficulty = keySignature.getNumberOfAccidentals() + 0;
       for (Scale mode : modes.get(CMajor).apply(parent)) {
         int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
+        if (!keySignature.equals(universe.info(mode).getKeySignature())) {
+          throw new IllegalStateException();
+        }
         deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
         if (includeDescending) {
           deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
@@ -110,6 +113,9 @@ public class AnkiCards {
       int scaleDifficulty = keySignature.getNumberOfAccidentals() + 4;
       for (Scale mode : modes.get(CMelodicMinor).apply(parent)) {
         int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
+        if (!keySignature.equals(universe.info(mode).getKeySignature())) {
+          throw new IllegalStateException();
+        }
         deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
         if (includeDescending) {
           deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
@@ -122,6 +128,9 @@ public class AnkiCards {
       int scaleDifficulty = keySignature.getNumberOfAccidentals() + 4;
       for (Scale mode : modes.get(CHarmonicMinor).apply(parent)) {
         int modeDifficulty = mode.getRoot() == parent.getRoot() ? scaleDifficulty : scaleDifficulty + 3;
+        if (!keySignature.equals(universe.info(mode).getKeySignature())) {
+          throw new IllegalStateException();
+        }
         deck.add(new ScaleCard(mode, keySignature, modeDifficulty, false));
         if (includeDescending) {
           deck.add(new ScaleCard(mode, keySignature, modeDifficulty, true));
