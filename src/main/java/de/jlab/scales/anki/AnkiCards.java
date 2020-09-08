@@ -19,12 +19,14 @@ import static de.jlab.scales.theory.Scales.CWholeTone;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.allModes;
 import static java.util.Arrays.asList;
+import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -67,8 +69,29 @@ public class AnkiCards {
   public Deck spellTypes() {
     Deck deck = new SimpleDeck("ScaleTypes");
     for (Scale scale : commonModes()) {
+      List<String> intervals = new ArrayList<>();
+      Set<Note> scaleNotes = scale.asSet();
+      Scale major = CMajor.transpose(scale.getRoot());
+      for (int i = 0; i < major.length(); i++) {
+        Note cMajorNote = major.getNote(i);
+        String intervalName = Integer.toString(i + 1);
+        if (i > 0 && scaleNotes.contains(cMajorNote.transpose(-1))) {
+          intervals.add("b" + intervalName);
+          scaleNotes.remove(cMajorNote.transpose(-1));
+        } else if (scaleNotes.contains(cMajorNote)) {
+          intervals.add(intervalName);
+          scaleNotes.remove(cMajorNote);
+        } else if (scaleNotes.contains(cMajorNote.transpose(1))) {
+          intervals.add("#" + intervalName);
+          scaleNotes.remove(cMajorNote.transpose(1));
+        }
+      }
+      if (!scaleNotes.isEmpty()) {
+        ScaleInfo scaleInfo = universe.info(scale);
+        throw new IllegalArgumentException("Intervals could not be detected for " + scaleInfo + ", scale: " + scale);
+      }
       ScaleInfo scaleInfo = universe.info(scale);
-      deck.add(scaleInfo.getTypeName(), scale.asIntervals());
+      deck.add(scaleInfo.getTypeName(), intervals.stream().collect(joining(" ")));
     }
     return deck;
   }

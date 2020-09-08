@@ -14,13 +14,13 @@ public class DeckTest {
 
   @Test
   public void testWriteCsv() throws IOException {
-    Deck deck = new SimpleDeck("xx");
+    Deck deck = new SimpleDeck("WriteCsv");
     deck.add(1,  "A", "B");
     deck.add(3,  "E", "F");
     deck.add(2,  "C", "D");
     deck.shuffle(0);
-    Path path = Paths.get("build/csvtest");
-    deck.writeTo(path);
+    Path parent = Paths.get("build");
+    Path path = deck.writeTo(parent);
     
     String actual = Files.readAllLines(path.resolve("anki.txt")).stream().collect(Collectors.joining("\n"));
     assertEquals("A;B\nC;D\nE;F", actual);

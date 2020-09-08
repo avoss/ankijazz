@@ -35,7 +35,8 @@ public class SimpleDeck implements Deck {
   }
 
   @Override
-  public void writeTo(Path dir) {
+  public Path writeTo(Path parentDir) {
+    Path dir = parentDir.resolve(id);
     try {
       Files.createDirectories(dir);
       Path path = dir.resolve("anki.txt");
@@ -45,6 +46,7 @@ public class SimpleDeck implements Deck {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+    return dir;
   }
   
   private static class RandomDifficultyCard implements Comparable<RandomDifficultyCard> {

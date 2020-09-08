@@ -16,7 +16,7 @@ public interface Deck {
 
   void add(Card card);
 
-  void writeTo(Path dir);
+  Path writeTo(Path dir);
 
   void shuffle(int randomness);
 

@@ -25,8 +25,8 @@ public class GuitarDeck implements Deck {
     return delegate.getId();
   }
 
-  public void writeTo(Path dir) {
-    delegate.writeTo(dir);
+  public Path writeTo(Path dir) {
+    return delegate.writeTo(dir);
   }
 
   public void shuffle(int randomness) {
