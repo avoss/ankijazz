@@ -37,6 +37,7 @@ lilyChord = \relative e' { ${lilyChord} }
 \score {
   <<
     \new Staff {
+      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "scale" {
          \scaleNotes
       }
@@ -47,7 +48,6 @@ lilyChord = \relative e' { ${lilyChord} }
       \set Staff.midiMaximumVolume = #0.1
       \new Voice = "chord" {
         \midiChord ~ \midiChord
-%         \unfoldRepeats{ \repeat volta 2 { \midiChord } }
       }
     }
 %    \new DrumStaff = "click" {

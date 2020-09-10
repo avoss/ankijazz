@@ -1,0 +1,91 @@
+# AnkiJazz - Play Two-Five-Ones
+
+Name
+Key
+Png
+Mp3
+
+Front:
+
+<div><b>{{Name}}</b> in <b>{{Key}}</b></div>
+<div>{{Png}}</div>
+
+Back:
+
+<div>{{Mp3}}</div>
+
+# AnkiJazz - Play Two-Five-Ones (Guitar)
+
+Name
+Key
+Png
+Mp3
+Position
+PositionPng
+
+Front:
+
+<div><b>{{Name}}</b> in <b>{{Key}}</b> in {{Position}} position</div>
+<div>{{PositionPng}}
+<div>{{Png}}</div>
+
+Back:
+
+<div>{{Mp3}}</div>
+
+# AnkiJazz - Play Modes
+
+ModeName
+ModeType
+ModeRoot
+ParentName
+ParentType
+ParentRoot
+ModePng
+ModeMp3
+Direction
+
+Front:
+
+<div>Play <b>{{ModeName}}</b></div>
+
+Back:
+
+{{FrontSide}}
+
+<hr id=answer>
+
+<div>{{ModePng}}</div>
+<div>{{ModeMp3}}</div>
+<div><small>(Same notes as {{ParentName}})</small></div>
+
+
+# AnkiJazz - Play Modes (Guitar)
+
+ModeName
+ModeType
+ModeRoot
+ParentName
+ParentType
+ParentRoot
+ModePng
+ModeMp3
+Direction
+Position
+PositionPng
+
+Front:
+
+<div>Play <b>{{ModeName}}</b> in <b>{{Direction}}</b> order in <b>{{Position}}</b> position</div>
+<div>{{PositionPng}}</div>
+
+Back:
+
+{{FrontSide}}
+
+<hr id=answer>
+
+<div>{{ModePng}}</div>
+<div>{{ModeMp3}}</div>
+<div><small>(Same notes as {{ParentName}})</small></div>
+

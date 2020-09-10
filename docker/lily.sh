@@ -1,4 +1,4 @@
-rm -f *.midi *.wav *.mp3 *.png
+rm -f *.midi *.wav *.mp3 *.png *.pdf
 for i in *.ly; do
 	name=$(basename -s '.ly' $i)
 	echo $name
