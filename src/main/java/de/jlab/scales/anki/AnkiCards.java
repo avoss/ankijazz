@@ -101,7 +101,7 @@ public class AnkiCards {
   }
   
   public Deck spellGuitarScales() {
-    return spellScales(commonScales(), new GuitarDeck(new SimpleDeck("ScalesG")), true);
+    return spellScales(commonScales(), new GuitarDeck(new SimpleDeck("ScalesGuitar")), true);
   }
 
   public Deck spellModes() {
@@ -109,7 +109,7 @@ public class AnkiCards {
   }
   
   public Deck spellGuitarModes() {
-    return spellScales(commonModes(), new GuitarDeck(new SimpleDeck("ModesG")), true);
+    return spellScales(commonModes(), new GuitarDeck(new SimpleDeck("ModesGuitar")), true);
   }
   
   private Deck spellScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {

@@ -39,7 +39,6 @@ public class Analyzer {
     private final Scale scale;
     
     private Note root;
-    private int numberOfAccidentalsInKeySignature;
 
     private final Set<Note> majorNotesWithoutAccidental = new HashSet<>();
     private final Set<Note> majorNotesWithAccidental = new HashSet<>();
@@ -93,11 +92,9 @@ public class Analyzer {
 
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
       root = C;
-      numberOfAccidentalsInKeySignature = 0;
       for (Note note : signatureKeys) {
         if (majorNotesWithAccidental.contains(note)) {
           root = transposer.apply(note);
-          numberOfAccidentalsInKeySignature += 1;
         } else {
           break;
         }

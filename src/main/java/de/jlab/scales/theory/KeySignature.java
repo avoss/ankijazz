@@ -20,7 +20,6 @@ import com.google.common.collect.Maps;
 public class KeySignature {
   private final Note majorKey;
   private final Accidental accidental;
-  private final int numberOfAccidentals;
   private final Map<Note, String> notationMap;
   private boolean suppressStaffSignature = false;
   
@@ -33,7 +32,7 @@ public class KeySignature {
   }
   
   public KeySignature suppressStaffSignature() {
-    KeySignature keySignature = new KeySignature(Note.C, accidental, numberOfAccidentals, notationMap);
+    KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap);
     keySignature.suppressStaffSignature = true;
     return keySignature;
   }
@@ -72,8 +71,7 @@ public class KeySignature {
   
   public static KeySignature fallback(Scale scale, Accidental accidental) {
     Map<Note, String> notationMap = Stream.of(Note.values()).collect(Collectors.toMap(Function.identity(), n -> n.getName(accidental)));
-    int numberOfAccidentals = (int) scale.stream().filter(n -> !CMajor.contains(n)).count();
-    return new KeySignature(Note.C, accidental, numberOfAccidentals, notationMap);
+    return new KeySignature(Note.C, accidental, notationMap);
   }
   
 //  private static KeySignature toKeySignature(Analyzer.Result result) {
@@ -81,7 +79,7 @@ public class KeySignature {
 //  }
   
   private static KeySignature toKeySignature(Analyzer.Result result, Note root) {
-    return new KeySignature(root, result.getAccidental(), result.getNumberOfAccidentalsInKeySignature(), result.getNotationMap());
+    return new KeySignature(root, result.getAccidental(), result.getNotationMap());
   }
 
   public String notateKey() {
@@ -101,6 +99,10 @@ public class KeySignature {
   
   public String toString(Scale scale) {
     return scale.asList().stream().map(this::notate).collect(joining(" "));
+  }
+
+  public int getNumberOfAccidentals() {
+    return Accidental.numberOfAccidentalsInMajorKey(majorKey);
   }
 
 }

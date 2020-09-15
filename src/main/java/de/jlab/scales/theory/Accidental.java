@@ -137,5 +137,24 @@ public enum Accidental {
   public static Accidental fromMajorKey(Note majorKey) {
     return majorKeyAccidentals.get(majorKey);
   }
+
+  private static final Map<Note, Integer> numberOfAccidentalsInMajorKey = ImmutableMap.<Note, Integer>builder()
+      .put(C, 0)
+      .put(G, 1)
+      .put(D, 2)
+      .put(A, 3)
+      .put(E, 4)
+      .put(B, 5)
+      .put(Gb, 6)
+      .put(Db, 5)
+      .put(Ab, 4)
+      .put(Eb, 3)
+      .put(Bb, 2)
+      .put(F, 1)
+      .build();
+  
+  public static int numberOfAccidentalsInMajorKey(Note majorKey) {
+    return numberOfAccidentalsInMajorKey.get(majorKey);
+  }
   
 }

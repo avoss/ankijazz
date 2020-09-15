@@ -45,37 +45,36 @@ public class KeySignatureTest {
 
   @Test
   public void testResultInitialize() {
-    assertResult(C, SHARP, 0);
-    assertResult(G, SHARP, 1, F);
+    assertResult(C, SHARP);
+    assertResult(G, SHARP, F);
 
-    assertResult(D, SHARP, 2, F, C);
-    assertResult(D, SHARP, 2, C, F);
-    assertResult(D, SHARP, 2, F, C, D);
+    assertResult(D, SHARP, F, C);
+    assertResult(D, SHARP, C, F);
+    assertResult(D, SHARP, F, C, D);
 
-    assertResult(A, SHARP, 3, F, C, G);
-    assertResult(A, SHARP, 3, F, C, G, A, E);
-    assertResult(A, SHARP, 3, A, C, G, F, E);
+    assertResult(A, SHARP, F, C, G);
+    assertResult(A, SHARP, F, C, G, A, E);
+    assertResult(A, SHARP, A, C, G, F, E);
 
-    assertResult(E, SHARP, 4, F, C, G, D);
-    assertResult(E, SHARP, 4, F, C, G, D);
-    assertResult(B, SHARP, 5, F, C, G, D, A);
-    assertResult(Gb, SHARP, 6, F, C, G, D, A, E);
+    assertResult(E, SHARP, F, C, G, D);
+    assertResult(E, SHARP, F, C, G, D);
+    assertResult(B, SHARP, F, C, G, D, A);
+    assertResult(Gb, SHARP, F, C, G, D, A, E);
 
-    assertResult(F, FLAT, 1, B);
-    assertResult(F, FLAT, 1, B, D);
-    assertResult(Bb, FLAT, 2, B, E);
-    assertResult(Eb, FLAT, 3, B, E, A);
-    assertResult(Ab, FLAT, 4, B, E, A, D);
-    assertResult(Db, FLAT, 5, B, E, A, D, G);
-    assertResult(Gb, FLAT, 6, B, E, A, D, G, C);
+    assertResult(F, FLAT, B);
+    assertResult(F, FLAT, B, D);
+    assertResult(Bb, FLAT, B, E);
+    assertResult(Eb, FLAT, B, E, A);
+    assertResult(Ab, FLAT, B, E, A, D);
+    assertResult(Db, FLAT, B, E, A, D, G);
+    assertResult(Gb, FLAT, B, E, A, D, G, C);
   }
 
-  private void assertResult(Note expectedRoot, Accidental accidental, int expectedNumberOfAccidentalsInKeySignature, Note... notesWithAccidental) {
+  private void assertResult(Note expectedRoot, Accidental accidental, Note... notesWithAccidental) {
     Analyzer.Result r = new Analyzer.Result(CMajor, accidental);
     r.getMajorNotesWithAccidental().addAll(asList(notesWithAccidental));
     r.initialize();
     assertEquals(expectedRoot, r.getRoot());
-    assertEquals(expectedNumberOfAccidentalsInKeySignature, r.getNumberOfAccidentalsInKeySignature());
   }
  
   @Test
@@ -103,7 +102,7 @@ public class KeySignatureTest {
    */
   
   @Test
-  public void test7NotesScaleNotation() throws IOException {
+  public void testScaleNotation() throws IOException {
     List<String> actual = new ArrayList<>();
     for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor)) {
       actual.add("# " + type.getTypeName());
@@ -111,8 +110,8 @@ public class KeySignatureTest {
         Note majorKey = type.notationKey().apply(scale.getRoot());
         KeySignature signature = fromScale(scale, majorKey, Accidental.fromMajorKey(majorKey));
         String reviewRequired = reviewRequired(scale, signature) ? " (*)" : "";
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), signature.getNumberOfAccidentals(),
-            signature.getAccidental().symbol(), signature.toString(scale), reviewRequired);
+        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), 
+            signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewRequired);
         actual.add(message);
         System.out.println(message);
         assertNoDuplicateNotesExist(scale, signature);
