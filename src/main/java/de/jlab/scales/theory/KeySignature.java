@@ -61,7 +61,7 @@ public class KeySignature {
     if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
       result = alternate;
     } else if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
-     // result = alternate;
+      result = alternate;
     }
     if (!result.getRemainingScaleNotes().isEmpty()) {
       return fallback(scale, accidental);
