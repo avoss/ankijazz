@@ -49,16 +49,20 @@ public class KeySignature {
 //    return toKeySignature(result);
 //  }
 
-  /**
-   * if a key signature could be constructed, no matter how bad, then it is returned. Otherwise returns fallback scale
-   * TODO: rename to "analyzeOrElseFallback
-   */
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
     if (scale.length() != CMajor.length())  {
       return fallback(scale, accidental);
     }
     Analyzer analyzer = new Analyzer();
-    Analyzer.Result result = analyzer.analyze(scale, accidental);
+    Analyzer.Result preferred = analyzer.analyze(scale, accidental);
+    Analyzer.Result alternate = analyzer.analyze(scale, accidental.inverse());
+    Analyzer.Result result = preferred;
+    
+    if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
+      result = alternate;
+    } else if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
+     // result = alternate;
+    }
     if (!result.getRemainingScaleNotes().isEmpty()) {
       return fallback(scale, accidental);
     }

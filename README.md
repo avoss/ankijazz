@@ -23,6 +23,7 @@
   - single note on every string strings
 
 ## features:
+- the parallel Minor of B Major is G# Minor. Notation of G# Melodic Minor would require double sharps. To avoid this, it is notated as Ab. All scales, which require double sharps or double flats, are notated with the enharmonic "replacement" if that avoids the double sharps / double flats.
 - sorted by number of accidentals with some randomness
 - since not answering a single word which is fast, playing a scale or chord progression takes time. Need to adjust settings. Here are mine:
   - preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day
