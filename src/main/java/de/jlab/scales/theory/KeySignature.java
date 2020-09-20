@@ -78,10 +78,6 @@ public class KeySignature {
     return new KeySignature(Note.C, accidental, notationMap);
   }
   
-//  private static KeySignature toKeySignature(Analyzer.Result result) {
-//    return toKeySignature(result, result.getRoot());
-//  }
-  
   private static KeySignature toKeySignature(Analyzer.Result result, Note root) {
     return new KeySignature(root, result.getAccidental(), result.getNotationMap());
   }
@@ -106,7 +102,7 @@ public class KeySignature {
   }
 
   public int getNumberOfAccidentals() {
-    return Accidental.numberOfAccidentalsInMajorKey(majorKey);
+    return accidental.numberOfAccidentals(majorKey);
   }
 
 }

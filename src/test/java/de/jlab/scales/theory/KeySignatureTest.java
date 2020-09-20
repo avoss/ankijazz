@@ -120,7 +120,13 @@ public class KeySignatureTest {
     }
     assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");
   }
-
+  
+  @Test
+  public void testAbAlteredMinorBug() {
+    KeySignature keySignature = KeySignature.fromScale(CMelodicMinor.transpose(A), B, SHARP);
+    assertEquals("G#", keySignature.notate(Ab));
+  }
+  
 //  @Test
 //  public void testAccidentalFromScale() {
 //    assertSignature("Major Scale", CMajor, SHARP, G, D, A, E, B);

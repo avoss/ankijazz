@@ -23,7 +23,6 @@ public class ScaleUniverse implements Iterable<Scale> {
   /**
    * TODO:
    * - add keysignature as separate pass, because superscales are required (chords, pentatonics)
-   * - automated keysignature detection does not work, need to know the accidental and majorRoot per scale
    */
 
 

@@ -26,7 +26,6 @@ import java.util.function.Function;
 
 
 public class Analyzer {
-  // TODO duplicated in ScaleUniverse?
   private static final List<Note> sharpSignatureKeys = Arrays.asList(F, C, G, D, A, E, B);
   private static final List<Note> flatSignatureKeys = Arrays.asList(B, E, A, D, G, C, F);
 
@@ -101,15 +100,6 @@ public class Analyzer {
       }
     }
     
-//    public int getBadness() {
-//      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
-//      return numberOfAccidentalsInKeySignature 
-//          + numberOfExtraAccidentals * 10
-//          + majorNotesWithInverseAccidental.size() * 20
-//          + majorNotesWithDoubleAccidental.size() * 50
-//          + remainingScaleNotes.size() * 1000;
-//    }
-
   }
 
   public Result analyze(Scale scale, Accidental accidental) {

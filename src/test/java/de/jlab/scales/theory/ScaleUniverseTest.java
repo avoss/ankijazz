@@ -44,6 +44,14 @@ public class ScaleUniverseTest {
   private static ScaleUniverse jazz = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
   
   @Test
+  public void testAbAltered() {
+    Scale aMelodicMinor = CMelodicMinor.transpose(A);
+    Scale aFlatAltered = aMelodicMinor.superimpose(Ab);
+    assertEquals(jazz.info(aMelodicMinor).getKeySignature(), jazz.info(aFlatAltered).getKeySignature());
+    System.out.println(jazz.info(aMelodicMinor));
+  }
+  
+  @Test
   public void testMinor6PentatonicModes() {
     assertEquals("C Minor6 Pentatonic", allScales.info(CMinor6Pentatonic).getScaleName());
     assertEquals("F Dominant7 Pentatonic", allScales.info(CMinor6Pentatonic.superimpose(F)).getScaleName());

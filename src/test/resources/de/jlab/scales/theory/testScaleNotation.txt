@@ -33,13 +33,13 @@ Eb  Harmonic Minor, Signature: Gb (6b), Notation: Eb F Gb Ab Bb Cb D
  F  Harmonic Minor, Signature: Ab (4b), Notation: F G Ab Bb C Db E
 F#  Harmonic Minor, Signature:  A (3#), Notation: F# G# A B C# D E#
  G  Harmonic Minor, Signature: Bb (2b), Notation: G A Bb C D Eb F# (*)
-Ab  Harmonic Minor, Signature: Cb (5b), Notation: Ab Bb Cb Db Eb Fb G
+Ab  Harmonic Minor, Signature: Cb (7b), Notation: Ab Bb Cb Db Eb Fb G
  A  Harmonic Minor, Signature:  C (0b), Notation: A B C D E F G#
 Bb  Harmonic Minor, Signature: Db (5b), Notation: Bb C Db Eb F Gb A
  B  Harmonic Minor, Signature:  D (2#), Notation: B C# D E F# G A#
 # Harmonic Major
  C  Harmonic Major, Signature:  C (0b), Notation: C D E F G Ab B
-C#  Harmonic Major, Signature: C# (5#), Notation: C# D# E# F# G# A B#
+C#  Harmonic Major, Signature: C# (7#), Notation: C# D# E# F# G# A B#
  D  Harmonic Major, Signature:  D (2#), Notation: D E F# G A Bb C# (*)
 Eb  Harmonic Major, Signature: Eb (3b), Notation: Eb F G Ab Bb Cb D
  E  Harmonic Major, Signature:  E (4#), Notation: E F# G# A B C D#

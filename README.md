@@ -1,9 +1,15 @@
 # Scales Core
 
+## BUGS
+- KeySignature.notationMap contains flats and sharps, should use accidental of keysignature to notate notes not in scale.
+- Wrong accidental in notationkey of Ab Altered in Anki cards??!!
+- migrate to junit 5 parameterized tests
+
 ## Accidentals
 - scales und chords sind doch verschieden, chords beziehen sich immer auf eine Scale, zumindest erbt er die Vorzeichen
 - Gb und F# haben ces und eis. Bei 7-Ton scales kann jeder Buchstabe nur einmal vergeben werden. Wie funktioniert das bei diminished scale?
 - Major Modes erben vorzeichen von parent-scale. HM/MM erben Vorzeichen von relative major. Bei Minor Pentatonic nicht klar, vermutlich dorisch zu sehen
+
 
 # Anki
 
