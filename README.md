@@ -3,7 +3,7 @@
 ## BUGS
 - KeySignature.notationMap contains flats and sharps, should use accidental of keysignature to notate notes not in scale.
 - limit number of b and # in key signature to 6 (Marcus), put additional b/# into staff
-- C altered is notated as B# altered because C altered is 7th mode of 
+- C altered is notated as B# altered because C altered is 7th mode of C# MM and C# Aeolean is parallel major of E-Major
 
 ## Accidentals
 - scales und chords sind doch verschieden, chords beziehen sich immer auf eine Scale, zumindest erbt er die Vorzeichen
@@ -12,8 +12,16 @@
 
 ## Special cases
 - B Lydian wäre korrekt Cb Lydian weil Gb major scale Cb statt B enthält
-- 
 - C Altered wäre korrekt B# Altered weil Calt = 7th mode of C# MM and relative minor of C# is E (MM with aeolean notation)
+
+special cases:
+
+- G#  Harmonic Minor, Signature:  B (5#), Notation: G# A# B C# D# E Fx // bb or ##
+- Db  Harmonic Major, Signature: Db (5b), Notation: Db Eb F Gb Ab Bbb C // bb or ##
+- Gb  Harmonic Major, Signature: Gb (6b), Notation: Gb Ab Bb Cb Db Ebb F // bb or ##
+
+- Cb Lydian, Signature: Gb (6b), Notation: Cb Db Eb F Gb Ab Bb // enharmonic root
+- F#/Gb: no one better than the other, need both - why is it so complicated? Modes always have enharmonic roots Gb has Cb and F# has E#
 
 ## TODO
 - migrate to junit 5
@@ -28,6 +36,8 @@ Decks:
 - spell types (done)
 
 Bugs:
+- double ## and bb are completely eliminated by choosing the inverse accidental! No need to take care in badness() or so.
+- have fallback() with notationKey and badness()
 - enharmonic roots (e.g. B# Altered instead of C Altered)!
 - scales, modes, w/ or w/o guitar should share media
 - add scaleNotes back to deck?

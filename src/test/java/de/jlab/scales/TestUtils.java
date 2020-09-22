@@ -9,6 +9,7 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -56,14 +57,22 @@ public class TestUtils {
   }
   
   public static String reviewMarker(Scale scale, KeySignature signature) {
+    List<String> markers = new ArrayList<>();
     String scaleNotation = signature.toString(scale);
+    if (scaleNotation.contains("bb") || scaleNotation.contains("x")) {
+      markers.add("bb or ##");
+    }
     String rootNotation = signature.notate(scale.getRoot());
-    return scaleNotation.contains("bb") 
-           || scaleNotation.contains("x")
-           || rootNotation.contains("Cb")
-           || rootNotation.contains("Fb")
-           || rootNotation.contains("B#")
-           || rootNotation.contains("E#") ? " (*)" : "";
+    if (rootNotation.contains("Cb") || rootNotation.contains("Fb") || rootNotation.contains("B#") || rootNotation.contains("E#")) {
+      markers.add("enharmonic root");
+    }
+    if (signature.getNumberOfAccidentals() > 6) {
+      markers.add("signature");
+    }
+    if (markers.isEmpty()) {
+      return "";
+    }
+    return "// " + markers.stream().collect(joining(", "));
   }
 
 }

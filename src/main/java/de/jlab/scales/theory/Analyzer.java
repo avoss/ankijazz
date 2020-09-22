@@ -28,7 +28,7 @@ import java.util.function.Function;
 public class Analyzer {
   private static final List<Note> sharpSignatureKeys = Arrays.asList(F, C, G, D, A, E, B);
   private static final List<Note> flatSignatureKeys = Arrays.asList(B, E, A, D, G, C, F);
-
+  
   @lombok.Getter
   @lombok.EqualsAndHashCode
   @lombok.ToString
@@ -37,7 +37,7 @@ public class Analyzer {
     private final Accidental accidental;
     private final Scale scale;
     
-    private Note root;
+    private Note notationKey;
     private int numberOfAccidentalsInKeySignature;
 
     private final Set<Note> majorNotesWithoutAccidental = new HashSet<>();
@@ -69,33 +69,37 @@ public class Analyzer {
     }
     
     private String defaultNotation(Scale scale, Note note) {
-      if (accidental == SHARP) {
-        if (note == F && scale.contains(Gb) && !scale.contains(E)) {
-          return "E#";
-        }
-        if (note == C && scale.contains(Db) && !scale.contains(B)) {
-          return "B#";
-        }
-      }
-
-      if (accidental == FLAT) {
-        if (note == B && scale.contains(Bb) && !scale.contains(C)) {
-          return "Cb";
-        }
-        if (note == E && scale.contains(Eb) && !scale.contains(F)) {
-          return "Fb";
-        }
-      }
       return note.getName(accidental);
     }
     
+//    private String defaultNotation(Scale scale, Note note) {
+//      if (accidental == SHARP) {
+//        if (note == F && scale.contains(Gb) && !scale.contains(E)) {
+//          return "E#";
+//        }
+//        if (note == C && scale.contains(Db) && !scale.contains(B)) {
+//          return "B#";
+//        }
+//      }
+//
+//      if (accidental == FLAT) {
+//        if (note == B && scale.contains(Bb) && !scale.contains(C)) {
+//          return "Cb";
+//        }
+//        if (note == E && scale.contains(Eb) && !scale.contains(F)) {
+//          return "Fb";
+//        }
+//      }
+//      return note.getName(accidental);
+//    }
+    
 
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
-      root = C;
+      notationKey = C;
       numberOfAccidentalsInKeySignature = 0;
       for (Note note : signatureKeys) {
         if (majorNotesWithAccidental.contains(note)) {
-          root = transposer.apply(note);
+          notationKey = transposer.apply(note);
           numberOfAccidentalsInKeySignature += 1;
         } else {
           break;
@@ -103,15 +107,6 @@ public class Analyzer {
       }
     }
     
-    public int getBadness() {
-      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
-      return numberOfAccidentalsInKeySignature 
-          + numberOfExtraAccidentals * 10
-          + majorNotesWithInverseAccidental.size() * 20
-          + majorNotesWithDoubleAccidental.size() * 30
-          + remainingScaleNotes.size() * 1000;
-    }
-
     public boolean isEnharmonicRoot() {
       // TODO should not rely on strings
       String root = notationMap.get(scale.getRoot());
@@ -120,11 +115,20 @@ public class Analyzer {
           || root.contains("Cb")
           || root.contains("Fb");
     }
+    
+    public int getBadness() {
+      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
+      return numberOfAccidentalsInKeySignature 
+          + numberOfExtraAccidentals * 10
+          + majorNotesWithInverseAccidental.size() * 20
+          + majorNotesWithDoubleAccidental.size() * 100
+          + remainingScaleNotes.size() * 10000;
+    }
 
   }
 
   public Result analyze(Scale scale, Accidental accidental) {
-    Analyzer.Result result = new Result(scale, accidental);
+    Result result = new Result(scale, accidental);
     Note majorRoot = cMajorStartNote(scale, accidental);
     List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
     List<Note> scaleNotes = scale.asList();

@@ -13,30 +13,45 @@ import java.util.stream.Stream;
 
 import com.google.common.collect.Maps;
 
+import de.jlab.scales.theory.Analyzer.Result;
+
+/**
+ * TODO: 
+ * - if (enharmonic root or double accidental or missing scale notes) { return fallback }
+ * - fallback should have badness
+ * 
+ * @author andreas
+ *
+ */
 @lombok.RequiredArgsConstructor
 @lombok.Getter 
 @lombok.EqualsAndHashCode
 @lombok.ToString
 public class KeySignature {
-  private final Note majorKey;
+  private final Note notationKey;
   private final Accidental accidental;
   private final Map<Note, String> notationMap;
   private boolean suppressStaffSignature = false;
-  
-  public Accidental getAccidental() {
-    return accidental;
-  }
-  
-  public Note getMajorKey() {
-    return majorKey;
-  }
   
   public KeySignature suppressStaffSignature() {
     KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap);
     keySignature.suppressStaffSignature = true;
     return keySignature;
   }
-  
+
+  public static KeySignature fromScale(Scale scale, Accidental preferredAccidental) {
+    if (scale.length() != CMajor.length())  {
+      return fallback(scale, preferredAccidental);
+    }
+    Analyzer analyzer = new Analyzer();
+    Analyzer.Result preferred = analyzer.analyze(scale, preferredAccidental);
+    Analyzer.Result alternate = analyzer.analyze(scale, preferredAccidental.inverse());
+    if (preferred.getBadness() > alternate.getBadness()) {
+      return toKeySignature(alternate);
+    }
+    return toKeySignature(preferred);
+  }
+
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
     if (scale.length() != CMajor.length())  {
       return fallback(scale, accidental);
@@ -55,10 +70,14 @@ public class KeySignature {
     if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
       return alternate;
     }
-    if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
-      return alternate;
+    // TODO: this check for enharmonic does not change anything (its either both or none of them)
+    if (preferred.isEnharmonicRoot() != alternate.isEnharmonicRoot()) {
+      throw new IllegalStateException("xxx");
     }
     if (preferred.isEnharmonicRoot() && !alternate.isEnharmonicRoot()) {
+      return alternate;
+    }
+    if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
       return alternate;
     }
     return preferred;
@@ -72,16 +91,20 @@ public class KeySignature {
     Map<Note, String> notationMap = Stream.of(Note.values()).collect(Collectors.toMap(Function.identity(), n -> n.getName(accidental)));
     return new KeySignature(Note.C, accidental, notationMap);
   }
+
+  private static KeySignature toKeySignature(Result result) {
+    return toKeySignature(result, result.getNotationKey());
+  }
   
-  private static KeySignature toKeySignature(Analyzer.Result result, Note root) {
-    return new KeySignature(root, result.getAccidental(), result.getNotationMap());
+  private static KeySignature toKeySignature(Analyzer.Result result, Note notationKey) {
+    return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap());
   }
 
   public String notateKey() {
     if (suppressStaffSignature) {
       return "C";
     }
-    return notate(majorKey);
+    return notate(notationKey);
   }
   
   public String notate(Note note) {
@@ -97,7 +120,7 @@ public class KeySignature {
   }
 
   public int getNumberOfAccidentals() {
-    return accidental.numberOfAccidentals(majorKey);
+    return accidental.numberOfAccidentals(notationKey);
   }
 
 }

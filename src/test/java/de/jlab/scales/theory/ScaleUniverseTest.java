@@ -45,7 +45,7 @@ public class ScaleUniverseTest {
 
   private static ScaleUniverse allScales = new ScaleUniverse(true);
   private static ScaleUniverse jazz = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
-  
+
   @Test
   public void testAllModesInAllKeys() {
     List<String> actual = new ArrayList<>();
@@ -55,27 +55,30 @@ public class ScaleUniverseTest {
       ScaleInfo parentInfo = allScales.info(scaleInfo.getParent());
       String reviewMarker = TestUtils.reviewMarker(scale, scaleInfo.getKeySignature());
       if (scaleInfo == parentInfo) {
-        String message = format("\n%20s, Signature: %2s (%d%s), Notation: %s%s\n",
-            scaleInfo.getScaleName(),
-            signature.notateKey(),
-            signature.getNumberOfAccidentals(),
-            signature.getAccidental().symbol(), 
-            signature.toString(scale),
-            reviewMarker);
-        actual.add(message);
-      } else {
-        String message = format("%25s, Parent: %20s, Notation: %s%s",
-            scaleInfo.getScaleName(),
-            parentInfo.getScaleName(),
-            signature.toString(scale),
-            reviewMarker);
-        actual.add(message);
+        actual.add("");
       }
+      String message = format("%20s, Signature: %2s (%d%s), Notation: %s %s",
+          scaleInfo.getScaleName(),
+          signature.notateKey(),
+          signature.getNumberOfAccidentals(),
+          signature.getAccidental().symbol(), 
+          signature.toString(scale),
+          reviewMarker);
+      actual.add(message);
     }
-    actual.forEach(m -> System.out.println(m));
     assertFileContentMatches(actual, ScaleUniverseTest.class, "testAllModesInAllKeys.txt");
   }
-
+  
+  @Test
+  public void testParents() {
+    for (Scale parent : allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor))) {
+      for (Scale mode : allModes(parent)) {
+        ScaleInfo modeInfo = allScales.info(mode);
+        assertEquals(parent, modeInfo.getParent());
+      }
+    }
+  }
+  
   @Test
   public void testAbAltered() {
     ScaleInfo aMelodicMinor = jazz.info(CMelodicMinor.transpose(A));
@@ -247,7 +250,7 @@ public class ScaleUniverseTest {
   }
 
   private void assertSignature(Scale scale, Note root) {
-    assertEquals(scale.toString(), root, jazz.info(scale).getKeySignature().getMajorKey());
+    assertEquals(scale.toString(), root, jazz.info(scale).getKeySignature().getNotationKey());
   }
 
   private void assertTypeName(Scale scale, String expectedTypeName) {

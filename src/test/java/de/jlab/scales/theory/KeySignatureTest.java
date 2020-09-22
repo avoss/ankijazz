@@ -74,7 +74,7 @@ public class KeySignatureTest {
     Analyzer.Result r = new Analyzer.Result(CMajor, accidental);
     r.getMajorNotesWithAccidental().addAll(asList(notesWithAccidental));
     r.initialize();
-    assertEquals(expectedRoot, r.getRoot());
+    assertEquals(expectedRoot, r.getNotationKey());
   }
  
   @Test
@@ -110,10 +110,10 @@ public class KeySignatureTest {
         Note majorKey = type.notationKey().apply(scale.getRoot());
         KeySignature signature = fromScale(scale, majorKey, Accidental.fromMajorKey(majorKey));
         String reviewMarker = reviewMarker(scale, signature);
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), 
+        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), 
             signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewMarker);
         actual.add(message);
-        System.out.println(message);
+        //System.out.println(message);
         assertNoDuplicateNotesExist(scale, signature);
         assertNoDuplicateNotationExist(scale, signature);
       }
