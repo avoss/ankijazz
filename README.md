@@ -2,26 +2,36 @@
 
 ## BUGS
 - KeySignature.notationMap contains flats and sharps, should use accidental of keysignature to notate notes not in scale.
-- Wrong accidental in notationkey of Ab Altered in Anki cards??!!
-- migrate to junit 5 parameterized tests
+- limit number of b and # in key signature to 6 (Marcus), put additional b/# into staff
+- C altered is notated as B# altered because C altered is 7th mode of 
 
 ## Accidentals
 - scales und chords sind doch verschieden, chords beziehen sich immer auf eine Scale, zumindest erbt er die Vorzeichen
 - Gb und F# haben ces und eis. Bei 7-Ton scales kann jeder Buchstabe nur einmal vergeben werden. Wie funktioniert das bei diminished scale?
 - Major Modes erben vorzeichen von parent-scale. HM/MM erben Vorzeichen von relative major. Bei Minor Pentatonic nicht klar, vermutlich dorisch zu sehen
 
+## Special cases
+- B Lydian wäre korrekt Cb Lydian weil Gb major scale Cb statt B enthält
+- 
+- C Altered wäre korrekt B# Altered weil Calt = 7th mode of C# MM and relative minor of C# is E (MM with aeolean notation)
+
+## TODO
+- migrate to junit 5
 
 # Anki
 
 ## TODO
-- chords: standard akkorde nicht doppelt bei 6251
-- rename chords to song (have notated chords later) or "IIVI"
-- pro edition with tabs?
+Decks:
+- learn enharmonics Ab -> G# etc
+- learn scale notes (text only)
+- parent scales (done)
+- spell types (done)
 
-- youtube account einrichten
-- scales ascending and descending
+Bugs:
+- enharmonic roots (e.g. B# Altered instead of C Altered)!
 - scales, modes, w/ or w/o guitar should share media
-- add scaleNotes back to deck
+- add scaleNotes back to deck?
+
 
 ### Midi
 - know your fretboard: single note, natural, flat, sharps, all keys. 
@@ -30,6 +40,8 @@
 
 ## features:
 - the parallel Minor of B Major is G# Minor. Notation of G# Melodic Minor would require double sharps. To avoid this, it is notated as Ab. All scales, which require double sharps or double flats, are notated with the enharmonic "replacement" if that avoids the double sharps / double flats.
+- enharmonic roots (e.g. B# Altered instead of C Altered) removed?
+
 - sorted by number of accidentals with some randomness
 - since not answering a single word which is fast, playing a scale or chord progression takes time. Need to adjust settings. Here are mine:
   - preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day

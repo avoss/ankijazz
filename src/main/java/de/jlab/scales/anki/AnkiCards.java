@@ -96,23 +96,23 @@ public class AnkiCards {
     return deck;
   }
 
-  public Deck spellScales() {
-    return spellScales(commonScales(), new SimpleDeck("Scales"), false);
+  public Deck playScales() {
+    return playScales(commonScales(), new SimpleDeck("PlayScales"), false);
   }
   
-  public Deck spellGuitarScales() {
-    return spellScales(commonScales(), new GuitarDeck(new SimpleDeck("ScalesGuitar")), true);
+  public Deck playGuitarScales() {
+    return playScales(commonScales(), new GuitarDeck(new SimpleDeck("PlayScalesGuitar")), true);
   }
 
-  public Deck spellModes() {
-    return spellScales(commonModes(), new SimpleDeck("Modes"), false);
+  public Deck playModes() {
+    return playScales(commonModes(), new SimpleDeck("PlayModes"), false);
   }
   
-  public Deck spellGuitarModes() {
-    return spellScales(commonModes(), new GuitarDeck(new SimpleDeck("ModesGuitar")), true);
+  public Deck playGuitarModes() {
+    return playScales(commonModes(), new GuitarDeck(new SimpleDeck("PlayModesGuitar")), true);
   }
   
-  private Deck spellScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
+  private Deck playScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
     for (Scale scale : allKeys(scales)) {
       ScaleInfo info = universe.info(scale);
       int difficulty = info.getKeySignature().getNumberOfAccidentals();

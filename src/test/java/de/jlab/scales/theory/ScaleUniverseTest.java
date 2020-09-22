@@ -1,12 +1,10 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedTriad;
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
-import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.*;
+import static de.jlab.scales.theory.KeySignature.fromScale;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
@@ -26,17 +24,22 @@ import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.allModes;
+import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.fail;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 import org.assertj.core.util.Lists;
 import org.junit.Test;
+
+import de.jlab.scales.TestUtils;
 
 public class ScaleUniverseTest {
 
@@ -44,11 +47,41 @@ public class ScaleUniverseTest {
   private static ScaleUniverse jazz = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
   
   @Test
+  public void testAllModesInAllKeys() {
+    List<String> actual = new ArrayList<>();
+    for (Scale scale : allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor)))) {
+      ScaleInfo scaleInfo = allScales.info(scale);
+      KeySignature signature = scaleInfo.getKeySignature();
+      ScaleInfo parentInfo = allScales.info(scaleInfo.getParent());
+      String reviewMarker = TestUtils.reviewMarker(scale, scaleInfo.getKeySignature());
+      if (scaleInfo == parentInfo) {
+        String message = format("\n%20s, Signature: %2s (%d%s), Notation: %s%s\n",
+            scaleInfo.getScaleName(),
+            signature.notateKey(),
+            signature.getNumberOfAccidentals(),
+            signature.getAccidental().symbol(), 
+            signature.toString(scale),
+            reviewMarker);
+        actual.add(message);
+      } else {
+        String message = format("%25s, Parent: %20s, Notation: %s%s",
+            scaleInfo.getScaleName(),
+            parentInfo.getScaleName(),
+            signature.toString(scale),
+            reviewMarker);
+        actual.add(message);
+      }
+    }
+    actual.forEach(m -> System.out.println(m));
+    assertFileContentMatches(actual, ScaleUniverseTest.class, "testAllModesInAllKeys.txt");
+  }
+
+  @Test
   public void testAbAltered() {
-    Scale aMelodicMinor = CMelodicMinor.transpose(A);
-    Scale aFlatAltered = aMelodicMinor.superimpose(Ab);
-    assertEquals(jazz.info(aMelodicMinor).getKeySignature(), jazz.info(aFlatAltered).getKeySignature());
-    System.out.println(jazz.info(aMelodicMinor));
+    ScaleInfo aMelodicMinor = jazz.info(CMelodicMinor.transpose(A));
+    ScaleInfo aFlatAltered = jazz.info(aMelodicMinor.getScale().superimpose(Ab));
+    assertEquals(aMelodicMinor.getKeySignature(), aFlatAltered.getKeySignature());
+    assertEquals("G# Altered", aFlatAltered.getScaleName());
   }
   
   @Test

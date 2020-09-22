@@ -36,9 +36,9 @@ public class ScaleUniverse implements Iterable<Scale> {
     private final String scaleName;
     private final String[] modeNames;
 
-    public String name(int index, Note oldRoot, Note newRoot, Accidental accidental) {
-      String oldRootName = oldRoot.getName(accidental);
-      String newRootName = newRoot.getName(accidental);
+    public String name(int index, Note oldRoot, Note newRoot, KeySignature keySignature) {
+      String oldRootName = keySignature.notate(oldRoot);
+      String newRootName = keySignature.notate(newRoot);
       String modeName = internalModeName(index);
       if (modeName != null) {
         return MessageFormat.format(namePattern, newRootName, modeName, oldRootName);
@@ -85,6 +85,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   private void add(ScaleType scaleType) {
+    // TODO: Chord and Scale extend Mode
     if (isChord(scaleType.getPrototype())) {
       chord(scaleType);
     } else {
@@ -140,7 +141,7 @@ public class ScaleUniverse implements Iterable<Scale> {
           .scale(mode)
           .parent(parent)
           .typeName(namer.typeName(i))
-          .scaleName(namer.name(i, oldRoot, newRoot, keySignature.getAccidental()))
+          .scaleName(namer.name(i, oldRoot, newRoot, keySignature))
           .scaleType(scaleType)
           .build();
       infos.put(mode, info);
@@ -160,7 +161,6 @@ public class ScaleUniverse implements Iterable<Scale> {
     return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
   }
 
-  // FIXME throw / return null instead? - NO, because need to find scales for unknown chords
   // FIXME too much guesswork here ...
   private ScaleInfo defaultInfo(Scale scale) {
     ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).parent(scale).build();

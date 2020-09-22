@@ -1,0 +1,432 @@
+
+       C Major Scale, Signature:  C (0b), Notation: C D E F G A B
+
+                 D Dorian, Parent:        C Major Scale, Notation: D E F G A B C
+               E Phrygian, Parent:        C Major Scale, Notation: E F G A B C D
+                 F Lydian, Parent:        C Major Scale, Notation: F G A B C D E
+             G Mixolydian, Parent:        C Major Scale, Notation: G A B C D E F
+                A Aeolean, Parent:        C Major Scale, Notation: A B C D E F G
+                B Locrian, Parent:        C Major Scale, Notation: B C D E F G A
+
+      Db Major Scale, Signature: Db (5b), Notation: Db Eb F Gb Ab Bb C
+
+                Eb Dorian, Parent:       Db Major Scale, Notation: Eb F Gb Ab Bb C Db
+               F Phrygian, Parent:       Db Major Scale, Notation: F Gb Ab Bb C Db Eb
+                Gb Lydian, Parent:       Db Major Scale, Notation: Gb Ab Bb C Db Eb F
+            Ab Mixolydian, Parent:       Db Major Scale, Notation: Ab Bb C Db Eb F Gb
+               Bb Aeolean, Parent:       Db Major Scale, Notation: Bb C Db Eb F Gb Ab
+                C Locrian, Parent:       Db Major Scale, Notation: C Db Eb F Gb Ab Bb
+
+       D Major Scale, Signature:  D (2#), Notation: D E F# G A B C#
+
+                 E Dorian, Parent:        D Major Scale, Notation: E F# G A B C# D
+              F# Phrygian, Parent:        D Major Scale, Notation: F# G A B C# D E
+                 G Lydian, Parent:        D Major Scale, Notation: G A B C# D E F#
+             A Mixolydian, Parent:        D Major Scale, Notation: A B C# D E F# G
+                B Aeolean, Parent:        D Major Scale, Notation: B C# D E F# G A
+               C# Locrian, Parent:        D Major Scale, Notation: C# D E F# G A B
+
+      Eb Major Scale, Signature: Eb (3b), Notation: Eb F G Ab Bb C D
+
+                 F Dorian, Parent:       Eb Major Scale, Notation: F G Ab Bb C D Eb
+               G Phrygian, Parent:       Eb Major Scale, Notation: G Ab Bb C D Eb F
+                Ab Lydian, Parent:       Eb Major Scale, Notation: Ab Bb C D Eb F G
+            Bb Mixolydian, Parent:       Eb Major Scale, Notation: Bb C D Eb F G Ab
+                C Aeolean, Parent:       Eb Major Scale, Notation: C D Eb F G Ab Bb
+                D Locrian, Parent:       Eb Major Scale, Notation: D Eb F G Ab Bb C
+
+       E Major Scale, Signature:  E (4#), Notation: E F# G# A B C# D#
+
+                F# Dorian, Parent:        E Major Scale, Notation: F# G# A B C# D# E
+              G# Phrygian, Parent:        E Major Scale, Notation: G# A B C# D# E F#
+                 A Lydian, Parent:        E Major Scale, Notation: A B C# D# E F# G#
+             B Mixolydian, Parent:        E Major Scale, Notation: B C# D# E F# G# A
+               C# Aeolean, Parent:        E Major Scale, Notation: C# D# E F# G# A B
+               D# Locrian, Parent:        E Major Scale, Notation: D# E F# G# A B C#
+
+       F Major Scale, Signature:  F (1b), Notation: F G A Bb C D E
+
+                 G Dorian, Parent:        F Major Scale, Notation: G A Bb C D E F
+               A Phrygian, Parent:        F Major Scale, Notation: A Bb C D E F G
+                Bb Lydian, Parent:        F Major Scale, Notation: Bb C D E F G A
+             C Mixolydian, Parent:        F Major Scale, Notation: C D E F G A Bb
+                D Aeolean, Parent:        F Major Scale, Notation: D E F G A Bb C
+                E Locrian, Parent:        F Major Scale, Notation: E F G A Bb C D
+
+      Gb Major Scale, Signature: Gb (6b), Notation: Gb Ab Bb Cb Db Eb F
+
+                Ab Dorian, Parent:       Gb Major Scale, Notation: Ab Bb Cb Db Eb F Gb
+              Bb Phrygian, Parent:       Gb Major Scale, Notation: Bb Cb Db Eb F Gb Ab
+                Cb Lydian, Parent:       Gb Major Scale, Notation: Cb Db Eb F Gb Ab Bb // FIXME
+            Db Mixolydian, Parent:       Gb Major Scale, Notation: Db Eb F Gb Ab Bb Cb
+               Eb Aeolean, Parent:       Gb Major Scale, Notation: Eb F Gb Ab Bb Cb Db
+                F Locrian, Parent:       Gb Major Scale, Notation: F Gb Ab Bb Cb Db Eb
+
+       G Major Scale, Signature:  G (1#), Notation: G A B C D E F#
+
+                 A Dorian, Parent:        G Major Scale, Notation: A B C D E F# G
+               B Phrygian, Parent:        G Major Scale, Notation: B C D E F# G A
+                 C Lydian, Parent:        G Major Scale, Notation: C D E F# G A B
+             D Mixolydian, Parent:        G Major Scale, Notation: D E F# G A B C
+                E Aeolean, Parent:        G Major Scale, Notation: E F# G A B C D
+               F# Locrian, Parent:        G Major Scale, Notation: F# G A B C D E
+
+      Ab Major Scale, Signature: Ab (4b), Notation: Ab Bb C Db Eb F G
+
+                Bb Dorian, Parent:       Ab Major Scale, Notation: Bb C Db Eb F G Ab
+               C Phrygian, Parent:       Ab Major Scale, Notation: C Db Eb F G Ab Bb
+                Db Lydian, Parent:       Ab Major Scale, Notation: Db Eb F G Ab Bb C
+            Eb Mixolydian, Parent:       Ab Major Scale, Notation: Eb F G Ab Bb C Db
+                F Aeolean, Parent:       Ab Major Scale, Notation: F G Ab Bb C Db Eb
+                G Locrian, Parent:       Ab Major Scale, Notation: G Ab Bb C Db Eb F
+
+       A Major Scale, Signature:  A (3#), Notation: A B C# D E F# G#
+
+                 B Dorian, Parent:        A Major Scale, Notation: B C# D E F# G# A
+              C# Phrygian, Parent:        A Major Scale, Notation: C# D E F# G# A B
+                 D Lydian, Parent:        A Major Scale, Notation: D E F# G# A B C#
+             E Mixolydian, Parent:        A Major Scale, Notation: E F# G# A B C# D
+               F# Aeolean, Parent:        A Major Scale, Notation: F# G# A B C# D E
+               G# Locrian, Parent:        A Major Scale, Notation: G# A B C# D E F#
+
+      Bb Major Scale, Signature: Bb (2b), Notation: Bb C D Eb F G A
+
+                 C Dorian, Parent:       Bb Major Scale, Notation: C D Eb F G A Bb
+               D Phrygian, Parent:       Bb Major Scale, Notation: D Eb F G A Bb C
+                Eb Lydian, Parent:       Bb Major Scale, Notation: Eb F G A Bb C D
+             F Mixolydian, Parent:       Bb Major Scale, Notation: F G A Bb C D Eb
+                G Aeolean, Parent:       Bb Major Scale, Notation: G A Bb C D Eb F
+                A Locrian, Parent:       Bb Major Scale, Notation: A Bb C D Eb F G
+
+       B Major Scale, Signature:  B (5#), Notation: B C# D# E F# G# A#
+
+                C# Dorian, Parent:        B Major Scale, Notation: C# D# E F# G# A# B
+              D# Phrygian, Parent:        B Major Scale, Notation: D# E F# G# A# B C#
+                 E Lydian, Parent:        B Major Scale, Notation: E F# G# A# B C# D#
+            F# Mixolydian, Parent:        B Major Scale, Notation: F# G# A# B C# D# E
+               G# Aeolean, Parent:        B Major Scale, Notation: G# A# B C# D# E F#
+               A# Locrian, Parent:        B Major Scale, Notation: A# B C# D# E F# G#
+
+     C Melodic Minor, Signature: Bb (2b), Notation: C D Eb F G A B
+
+              D Dorian b2, Parent:      C Melodic Minor, Notation: D Eb F G A B C
+      Eb Lydian Augmented, Parent:      C Melodic Minor, Notation: Eb F G A B C D
+        F Lydian Dominant, Parent:      C Melodic Minor, Notation: F G A B C D Eb
+          G Mixolydian b6, Parent:      C Melodic Minor, Notation: G A B C D Eb F
+      A Locrian natural 2, Parent:      C Melodic Minor, Notation: A B C D Eb F G
+                B Altered, Parent:      C Melodic Minor, Notation: B C D Eb F G A
+
+    C# Melodic Minor, Signature:  B (5#), Notation: C# D# E F# G# A# B#
+
+             D# Dorian b2, Parent:     C# Melodic Minor, Notation: D# E F# G# A# B# C#
+       E Lydian Augmented, Parent:     C# Melodic Minor, Notation: E F# G# A# B# C# D#
+       F# Lydian Dominant, Parent:     C# Melodic Minor, Notation: F# G# A# B# C# D# E
+         G# Mixolydian b6, Parent:     C# Melodic Minor, Notation: G# A# B# C# D# E F#
+     A# Locrian natural 2, Parent:     C# Melodic Minor, Notation: A# B# C# D# E F# G#
+               B# Altered, Parent:     C# Melodic Minor, Notation: B# C# D# E F# G# A# // FIXME
+
+     D Melodic Minor, Signature:  C (0b), Notation: D E F G A B C#
+
+              E Dorian b2, Parent:      D Melodic Minor, Notation: E F G A B C# D
+       F Lydian Augmented, Parent:      D Melodic Minor, Notation: F G A B C# D E
+        G Lydian Dominant, Parent:      D Melodic Minor, Notation: G A B C# D E F
+          A Mixolydian b6, Parent:      D Melodic Minor, Notation: A B C# D E F G
+      B Locrian natural 2, Parent:      D Melodic Minor, Notation: B C# D E F G A
+               C# Altered, Parent:      D Melodic Minor, Notation: C# D E F G A B
+
+    Eb Melodic Minor, Signature: Db (5b), Notation: Eb F Gb Ab Bb C D
+
+              F Dorian b2, Parent:     Eb Melodic Minor, Notation: F Gb Ab Bb C D Eb
+      Gb Lydian Augmented, Parent:     Eb Melodic Minor, Notation: Gb Ab Bb C D Eb F
+       Ab Lydian Dominant, Parent:     Eb Melodic Minor, Notation: Ab Bb C D Eb F Gb
+         Bb Mixolydian b6, Parent:     Eb Melodic Minor, Notation: Bb C D Eb F Gb Ab
+      C Locrian natural 2, Parent:     Eb Melodic Minor, Notation: C D Eb F Gb Ab Bb
+                D Altered, Parent:     Eb Melodic Minor, Notation: D Eb F Gb Ab Bb C
+
+     E Melodic Minor, Signature:  D (2#), Notation: E F# G A B C# D#
+
+             F# Dorian b2, Parent:      E Melodic Minor, Notation: F# G A B C# D# E
+       G Lydian Augmented, Parent:      E Melodic Minor, Notation: G A B C# D# E F#
+        A Lydian Dominant, Parent:      E Melodic Minor, Notation: A B C# D# E F# G
+          B Mixolydian b6, Parent:      E Melodic Minor, Notation: B C# D# E F# G A
+     C# Locrian natural 2, Parent:      E Melodic Minor, Notation: C# D# E F# G A B
+               D# Altered, Parent:      E Melodic Minor, Notation: D# E F# G A B C#
+
+     F Melodic Minor, Signature: Eb (3b), Notation: F G Ab Bb C D E
+
+              G Dorian b2, Parent:      F Melodic Minor, Notation: G Ab Bb C D E F
+      Ab Lydian Augmented, Parent:      F Melodic Minor, Notation: Ab Bb C D E F G
+       Bb Lydian Dominant, Parent:      F Melodic Minor, Notation: Bb C D E F G Ab
+          C Mixolydian b6, Parent:      F Melodic Minor, Notation: C D E F G Ab Bb
+      D Locrian natural 2, Parent:      F Melodic Minor, Notation: D E F G Ab Bb C
+                E Altered, Parent:      F Melodic Minor, Notation: E F G Ab Bb C D
+
+    F# Melodic Minor, Signature:  E (4#), Notation: F# G# A B C# D# E#
+
+             G# Dorian b2, Parent:     F# Melodic Minor, Notation: G# A B C# D# E# F#
+       A Lydian Augmented, Parent:     F# Melodic Minor, Notation: A B C# D# E# F# G#
+        B Lydian Dominant, Parent:     F# Melodic Minor, Notation: B C# D# E# F# G# A
+         C# Mixolydian b6, Parent:     F# Melodic Minor, Notation: C# D# E# F# G# A B
+     D# Locrian natural 2, Parent:     F# Melodic Minor, Notation: D# E# F# G# A B C#
+               E# Altered, Parent:     F# Melodic Minor, Notation: E# F# G# A B C# D# // FIXME
+
+     G Melodic Minor, Signature:  F (1b), Notation: G A Bb C D E F#
+
+              A Dorian b2, Parent:      G Melodic Minor, Notation: A Bb C D E F# G
+      Bb Lydian Augmented, Parent:      G Melodic Minor, Notation: Bb C D E F# G A
+        C Lydian Dominant, Parent:      G Melodic Minor, Notation: C D E F# G A Bb
+          D Mixolydian b6, Parent:      G Melodic Minor, Notation: D E F# G A Bb C
+      E Locrian natural 2, Parent:      G Melodic Minor, Notation: E F# G A Bb C D
+               F# Altered, Parent:      G Melodic Minor, Notation: F# G A Bb C D E
+
+    Ab Melodic Minor, Signature: Gb (6b), Notation: Ab Bb Cb Db Eb F G
+
+             Bb Dorian b2, Parent:     Ab Melodic Minor, Notation: Bb Cb Db Eb F G Ab
+      Cb Lydian Augmented, Parent:     Ab Melodic Minor, Notation: Cb Db Eb F G Ab Bb // FIXME
+       Db Lydian Dominant, Parent:     Ab Melodic Minor, Notation: Db Eb F G Ab Bb Cb
+         Eb Mixolydian b6, Parent:     Ab Melodic Minor, Notation: Eb F G Ab Bb Cb Db
+      F Locrian natural 2, Parent:     Ab Melodic Minor, Notation: F G Ab Bb Cb Db Eb
+                G Altered, Parent:     Ab Melodic Minor, Notation: G Ab Bb Cb Db Eb F
+
+     A Melodic Minor, Signature:  G (1#), Notation: A B C D E F# G#
+
+              B Dorian b2, Parent:      A Melodic Minor, Notation: B C D E F# G# A
+       C Lydian Augmented, Parent:      A Melodic Minor, Notation: C D E F# G# A B
+        D Lydian Dominant, Parent:      A Melodic Minor, Notation: D E F# G# A B C
+          E Mixolydian b6, Parent:      A Melodic Minor, Notation: E F# G# A B C D
+     F# Locrian natural 2, Parent:      A Melodic Minor, Notation: F# G# A B C D E
+               G# Altered, Parent:      A Melodic Minor, Notation: G# A B C D E F#
+
+    Bb Melodic Minor, Signature: Ab (4b), Notation: Bb C Db Eb F G A
+
+              C Dorian b2, Parent:     Bb Melodic Minor, Notation: C Db Eb F G A Bb
+      Db Lydian Augmented, Parent:     Bb Melodic Minor, Notation: Db Eb F G A Bb C
+       Eb Lydian Dominant, Parent:     Bb Melodic Minor, Notation: Eb F G A Bb C Db
+          F Mixolydian b6, Parent:     Bb Melodic Minor, Notation: F G A Bb C Db Eb
+      G Locrian natural 2, Parent:     Bb Melodic Minor, Notation: G A Bb C Db Eb F
+                A Altered, Parent:     Bb Melodic Minor, Notation: A Bb C Db Eb F G
+
+     B Melodic Minor, Signature:  A (3#), Notation: B C# D E F# G# A#
+
+             C# Dorian b2, Parent:      B Melodic Minor, Notation: C# D E F# G# A# B
+       D Lydian Augmented, Parent:      B Melodic Minor, Notation: D E F# G# A# B C#
+        E Lydian Dominant, Parent:      B Melodic Minor, Notation: E F# G# A# B C# D
+         F# Mixolydian b6, Parent:      B Melodic Minor, Notation: F# G# A# B C# D E
+     G# Locrian natural 2, Parent:      B Melodic Minor, Notation: G# A# B C# D E F#
+               A# Altered, Parent:      B Melodic Minor, Notation: A# B C# D E F# G#
+
+    C Harmonic Minor, Signature: Eb (3b), Notation: C D Eb F G Ab B
+
+             D Locrian #6, Parent:     C Harmonic Minor, Notation: D Eb F G Ab B C
+             Eb Ionian #5, Parent:     C Harmonic Minor, Notation: Eb F G Ab B C D
+              F Dorian #4, Parent:     C Harmonic Minor, Notation: F G Ab B C D Eb
+      G Phrygian Dominant, Parent:     C Harmonic Minor, Notation: G Ab B C D Eb F
+             Ab Lydian #2, Parent:     C Harmonic Minor, Notation: Ab B C D Eb F G
+          B Mixolydian #1, Parent:     C Harmonic Minor, Notation: B C D Eb F G Ab
+
+   C# Harmonic Minor, Signature:  E (4#), Notation: C# D# E F# G# A B#
+
+            D# Locrian #6, Parent:    C# Harmonic Minor, Notation: D# E F# G# A B# C#
+              E Ionian #5, Parent:    C# Harmonic Minor, Notation: E F# G# A B# C# D#
+             F# Dorian #4, Parent:    C# Harmonic Minor, Notation: F# G# A B# C# D# E
+     G# Phrygian Dominant, Parent:    C# Harmonic Minor, Notation: G# A B# C# D# E F#
+              A Lydian #2, Parent:    C# Harmonic Minor, Notation: A B# C# D# E F# G#
+         B# Mixolydian #1, Parent:    C# Harmonic Minor, Notation: B# C# D# E F# G# A // FIXME
+
+    D Harmonic Minor, Signature:  F (1b), Notation: D E F G A Bb C#
+
+             E Locrian #6, Parent:     D Harmonic Minor, Notation: E F G A Bb C# D
+              F Ionian #5, Parent:     D Harmonic Minor, Notation: F G A Bb C# D E
+              G Dorian #4, Parent:     D Harmonic Minor, Notation: G A Bb C# D E F
+      A Phrygian Dominant, Parent:     D Harmonic Minor, Notation: A Bb C# D E F G
+             Bb Lydian #2, Parent:     D Harmonic Minor, Notation: Bb C# D E F G A
+         C# Mixolydian #1, Parent:     D Harmonic Minor, Notation: C# D E F G A Bb
+
+   Eb Harmonic Minor, Signature: Gb (6b), Notation: Eb F Gb Ab Bb Cb D
+
+             F Locrian #6, Parent:    Eb Harmonic Minor, Notation: F Gb Ab Bb Cb D Eb
+             Gb Ionian #5, Parent:    Eb Harmonic Minor, Notation: Gb Ab Bb Cb D Eb F
+             Ab Dorian #4, Parent:    Eb Harmonic Minor, Notation: Ab Bb Cb D Eb F Gb
+     Bb Phrygian Dominant, Parent:    Eb Harmonic Minor, Notation: Bb Cb D Eb F Gb Ab
+             Cb Lydian #2, Parent:    Eb Harmonic Minor, Notation: Cb D Eb F Gb Ab Bb // FIXME
+          D Mixolydian #1, Parent:    Eb Harmonic Minor, Notation: D Eb F Gb Ab Bb Cb
+
+    E Harmonic Minor, Signature:  G (1#), Notation: E F# G A B C D#
+
+            F# Locrian #6, Parent:     E Harmonic Minor, Notation: F# G A B C D# E
+              G Ionian #5, Parent:     E Harmonic Minor, Notation: G A B C D# E F#
+              A Dorian #4, Parent:     E Harmonic Minor, Notation: A B C D# E F# G
+      B Phrygian Dominant, Parent:     E Harmonic Minor, Notation: B C D# E F# G A
+              C Lydian #2, Parent:     E Harmonic Minor, Notation: C D# E F# G A B
+         D# Mixolydian #1, Parent:     E Harmonic Minor, Notation: D# E F# G A B C
+
+    F Harmonic Minor, Signature: Ab (4b), Notation: F G Ab Bb C Db E
+
+             G Locrian #6, Parent:     F Harmonic Minor, Notation: G Ab Bb C Db E F
+             Ab Ionian #5, Parent:     F Harmonic Minor, Notation: Ab Bb C Db E F G
+             Bb Dorian #4, Parent:     F Harmonic Minor, Notation: Bb C Db E F G Ab
+      C Phrygian Dominant, Parent:     F Harmonic Minor, Notation: C Db E F G Ab Bb
+             Db Lydian #2, Parent:     F Harmonic Minor, Notation: Db E F G Ab Bb C
+          E Mixolydian #1, Parent:     F Harmonic Minor, Notation: E F G Ab Bb C Db
+
+   F# Harmonic Minor, Signature:  A (3#), Notation: F# G# A B C# D E#
+
+            G# Locrian #6, Parent:    F# Harmonic Minor, Notation: G# A B C# D E# F#
+              A Ionian #5, Parent:    F# Harmonic Minor, Notation: A B C# D E# F# G#
+              B Dorian #4, Parent:    F# Harmonic Minor, Notation: B C# D E# F# G# A
+     C# Phrygian Dominant, Parent:    F# Harmonic Minor, Notation: C# D E# F# G# A B
+              D Lydian #2, Parent:    F# Harmonic Minor, Notation: D E# F# G# A B C#
+         E# Mixolydian #1, Parent:    F# Harmonic Minor, Notation: E# F# G# A B C# D // FIXME
+
+    G Harmonic Minor, Signature: Bb (2b), Notation: G A Bb C D Eb F#
+
+             A Locrian #6, Parent:     G Harmonic Minor, Notation: A Bb C D Eb F# G
+             Bb Ionian #5, Parent:     G Harmonic Minor, Notation: Bb C D Eb F# G A
+              C Dorian #4, Parent:     G Harmonic Minor, Notation: C D Eb F# G A Bb
+      D Phrygian Dominant, Parent:     G Harmonic Minor, Notation: D Eb F# G A Bb C
+             Eb Lydian #2, Parent:     G Harmonic Minor, Notation: Eb F# G A Bb C D
+         F# Mixolydian #1, Parent:     G Harmonic Minor, Notation: F# G A Bb C D Eb
+
+   Ab Harmonic Minor, Signature: Cb (7b), Notation: Ab Bb Cb Db Eb Fb G // FIXME
+
+            Bb Locrian #6, Parent:    Ab Harmonic Minor, Notation: Bb Cb Db Eb Fb G Ab
+             Cb Ionian #5, Parent:    Ab Harmonic Minor, Notation: Cb Db Eb Fb G Ab Bb // FIXME
+             Db Dorian #4, Parent:    Ab Harmonic Minor, Notation: Db Eb Fb G Ab Bb Cb
+     Eb Phrygian Dominant, Parent:    Ab Harmonic Minor, Notation: Eb Fb G Ab Bb Cb Db
+             Fb Lydian #2, Parent:    Ab Harmonic Minor, Notation: Fb G Ab Bb Cb Db Eb // FIXME
+          G Mixolydian #1, Parent:    Ab Harmonic Minor, Notation: G Ab Bb Cb Db Eb Fb
+
+    A Harmonic Minor, Signature:  C (0b), Notation: A B C D E F G#
+
+             B Locrian #6, Parent:     A Harmonic Minor, Notation: B C D E F G# A
+              C Ionian #5, Parent:     A Harmonic Minor, Notation: C D E F G# A B
+              D Dorian #4, Parent:     A Harmonic Minor, Notation: D E F G# A B C
+      E Phrygian Dominant, Parent:     A Harmonic Minor, Notation: E F G# A B C D
+              F Lydian #2, Parent:     A Harmonic Minor, Notation: F G# A B C D E
+         G# Mixolydian #1, Parent:     A Harmonic Minor, Notation: G# A B C D E F
+
+   Bb Harmonic Minor, Signature: Db (5b), Notation: Bb C Db Eb F Gb A
+
+             C Locrian #6, Parent:    Bb Harmonic Minor, Notation: C Db Eb F Gb A Bb
+             Db Ionian #5, Parent:    Bb Harmonic Minor, Notation: Db Eb F Gb A Bb C
+             Eb Dorian #4, Parent:    Bb Harmonic Minor, Notation: Eb F Gb A Bb C Db
+      F Phrygian Dominant, Parent:    Bb Harmonic Minor, Notation: F Gb A Bb C Db Eb
+             Gb Lydian #2, Parent:    Bb Harmonic Minor, Notation: Gb A Bb C Db Eb F
+          A Mixolydian #1, Parent:    Bb Harmonic Minor, Notation: A Bb C Db Eb F Gb
+
+    B Harmonic Minor, Signature:  D (2#), Notation: B C# D E F# G A#
+
+            C# Locrian #6, Parent:     B Harmonic Minor, Notation: C# D E F# G A# B
+              D Ionian #5, Parent:     B Harmonic Minor, Notation: D E F# G A# B C#
+              E Dorian #4, Parent:     B Harmonic Minor, Notation: E F# G A# B C# D
+     F# Phrygian Dominant, Parent:     B Harmonic Minor, Notation: F# G A# B C# D E
+              G Lydian #2, Parent:     B Harmonic Minor, Notation: G A# B C# D E F#
+         A# Mixolydian #1, Parent:     B Harmonic Minor, Notation: A# B C# D E F# G
+
+    C Harmonic Major, Signature:  C (0b), Notation: C D E F G Ab B
+
+              D Dorian b5, Parent:     C Harmonic Major, Notation: D E F G Ab B C
+            E Phrygian b4, Parent:     C Harmonic Major, Notation: E F G Ab B C D
+              F Lydian b3, Parent:     C Harmonic Major, Notation: F G Ab B C D E
+          G Mixolydian b2, Parent:     C Harmonic Major, Notation: G Ab B C D E F
+            Ab Aeolean b1, Parent:     C Harmonic Major, Notation: Ab B C D E F G
+             B Locrian b7, Parent:     C Harmonic Major, Notation: B C D E F G Ab
+
+   C# Harmonic Major, Signature: C# (7#), Notation: C# D# E# F# G# A B#
+
+             D# Dorian b5, Parent:    C# Harmonic Major, Notation: D# E# F# G# A B# C#
+           E# Phrygian b4, Parent:    C# Harmonic Major, Notation: E# F# G# A B# C# D# // FIXME
+             F# Lydian b3, Parent:    C# Harmonic Major, Notation: F# G# A B# C# D# E#
+         G# Mixolydian b2, Parent:    C# Harmonic Major, Notation: G# A B# C# D# E# F#
+             A Aeolean b1, Parent:    C# Harmonic Major, Notation: A B# C# D# E# F# G#
+            B# Locrian b7, Parent:    C# Harmonic Major, Notation: B# C# D# E# F# G# A // FIXME
+
+    D Harmonic Major, Signature:  D (2#), Notation: D E F# G A Bb C#
+
+              E Dorian b5, Parent:     D Harmonic Major, Notation: E F# G A Bb C# D
+           F# Phrygian b4, Parent:     D Harmonic Major, Notation: F# G A Bb C# D E
+              G Lydian b3, Parent:     D Harmonic Major, Notation: G A Bb C# D E F#
+          A Mixolydian b2, Parent:     D Harmonic Major, Notation: A Bb C# D E F# G
+            Bb Aeolean b1, Parent:     D Harmonic Major, Notation: Bb C# D E F# G A
+            C# Locrian b7, Parent:     D Harmonic Major, Notation: C# D E F# G A Bb
+
+   Eb Harmonic Major, Signature: Eb (3b), Notation: Eb F G Ab Bb Cb D
+
+              F Dorian b5, Parent:    Eb Harmonic Major, Notation: F G Ab Bb Cb D Eb
+            G Phrygian b4, Parent:    Eb Harmonic Major, Notation: G Ab Bb Cb D Eb F
+             Ab Lydian b3, Parent:    Eb Harmonic Major, Notation: Ab Bb Cb D Eb F G
+         Bb Mixolydian b2, Parent:    Eb Harmonic Major, Notation: Bb Cb D Eb F G Ab
+            Cb Aeolean b1, Parent:    Eb Harmonic Major, Notation: Cb D Eb F G Ab Bb // FIXME
+             D Locrian b7, Parent:    Eb Harmonic Major, Notation: D Eb F G Ab Bb Cb
+
+    E Harmonic Major, Signature:  E (4#), Notation: E F# G# A B C D#
+
+             F# Dorian b5, Parent:     E Harmonic Major, Notation: F# G# A B C D# E
+           G# Phrygian b4, Parent:     E Harmonic Major, Notation: G# A B C D# E F#
+              A Lydian b3, Parent:     E Harmonic Major, Notation: A B C D# E F# G#
+          B Mixolydian b2, Parent:     E Harmonic Major, Notation: B C D# E F# G# A
+             C Aeolean b1, Parent:     E Harmonic Major, Notation: C D# E F# G# A B
+            D# Locrian b7, Parent:     E Harmonic Major, Notation: D# E F# G# A B C
+
+    F Harmonic Major, Signature:  F (1b), Notation: F G A Bb C Db E
+
+              G Dorian b5, Parent:     F Harmonic Major, Notation: G A Bb C Db E F
+            A Phrygian b4, Parent:     F Harmonic Major, Notation: A Bb C Db E F G
+             Bb Lydian b3, Parent:     F Harmonic Major, Notation: Bb C Db E F G A
+          C Mixolydian b2, Parent:     F Harmonic Major, Notation: C Db E F G A Bb
+            Db Aeolean b1, Parent:     F Harmonic Major, Notation: Db E F G A Bb C
+             E Locrian b7, Parent:     F Harmonic Major, Notation: E F G A Bb C Db
+
+   F# Harmonic Major, Signature: F# (6#), Notation: F# G# A# B C# D E#
+
+             G# Dorian b5, Parent:    F# Harmonic Major, Notation: G# A# B C# D E# F#
+           A# Phrygian b4, Parent:    F# Harmonic Major, Notation: A# B C# D E# F# G#
+              B Lydian b3, Parent:    F# Harmonic Major, Notation: B C# D E# F# G# A#
+         C# Mixolydian b2, Parent:    F# Harmonic Major, Notation: C# D E# F# G# A# B
+             D Aeolean b1, Parent:    F# Harmonic Major, Notation: D E# F# G# A# B C#
+            E# Locrian b7, Parent:    F# Harmonic Major, Notation: E# F# G# A# B C# D // FIXME
+
+    G Harmonic Major, Signature:  G (1#), Notation: G A B C D Eb F#
+
+              A Dorian b5, Parent:     G Harmonic Major, Notation: A B C D Eb F# G
+            B Phrygian b4, Parent:     G Harmonic Major, Notation: B C D Eb F# G A
+              C Lydian b3, Parent:     G Harmonic Major, Notation: C D Eb F# G A B
+          D Mixolydian b2, Parent:     G Harmonic Major, Notation: D Eb F# G A B C
+            Eb Aeolean b1, Parent:     G Harmonic Major, Notation: Eb F# G A B C D
+            F# Locrian b7, Parent:     G Harmonic Major, Notation: F# G A B C D Eb
+
+   Ab Harmonic Major, Signature: Ab (4b), Notation: Ab Bb C Db Eb Fb G
+
+             Bb Dorian b5, Parent:    Ab Harmonic Major, Notation: Bb C Db Eb Fb G Ab
+            C Phrygian b4, Parent:    Ab Harmonic Major, Notation: C Db Eb Fb G Ab Bb
+             Db Lydian b3, Parent:    Ab Harmonic Major, Notation: Db Eb Fb G Ab Bb C
+         Eb Mixolydian b2, Parent:    Ab Harmonic Major, Notation: Eb Fb G Ab Bb C Db
+            Fb Aeolean b1, Parent:    Ab Harmonic Major, Notation: Fb G Ab Bb C Db Eb // FIXME
+             G Locrian b7, Parent:    Ab Harmonic Major, Notation: G Ab Bb C Db Eb Fb
+
+    A Harmonic Major, Signature:  A (3#), Notation: A B C# D E F G#
+
+              B Dorian b5, Parent:     A Harmonic Major, Notation: B C# D E F G# A
+           C# Phrygian b4, Parent:     A Harmonic Major, Notation: C# D E F G# A B
+              D Lydian b3, Parent:     A Harmonic Major, Notation: D E F G# A B C#
+          E Mixolydian b2, Parent:     A Harmonic Major, Notation: E F G# A B C# D
+             F Aeolean b1, Parent:     A Harmonic Major, Notation: F G# A B C# D E
+            G# Locrian b7, Parent:     A Harmonic Major, Notation: G# A B C# D E F
+
+   Bb Harmonic Major, Signature: Bb (2b), Notation: Bb C D Eb F Gb A
+
+              C Dorian b5, Parent:    Bb Harmonic Major, Notation: C D Eb F Gb A Bb
+            D Phrygian b4, Parent:    Bb Harmonic Major, Notation: D Eb F Gb A Bb C
+             Eb Lydian b3, Parent:    Bb Harmonic Major, Notation: Eb F Gb A Bb C D
+          F Mixolydian b2, Parent:    Bb Harmonic Major, Notation: F Gb A Bb C D Eb
+            Gb Aeolean b1, Parent:    Bb Harmonic Major, Notation: Gb A Bb C D Eb F
+             A Locrian b7, Parent:    Bb Harmonic Major, Notation: A Bb C D Eb F Gb
+
+    B Harmonic Major, Signature:  B (5#), Notation: B C# D# E F# G A#
+
+             C# Dorian b5, Parent:     B Harmonic Major, Notation: C# D# E F# G A# B
+           D# Phrygian b4, Parent:     B Harmonic Major, Notation: D# E F# G A# B C#
+              E Lydian b3, Parent:     B Harmonic Major, Notation: E F# G A# B C# D#
+         F# Mixolydian b2, Parent:     B Harmonic Major, Notation: F# G A# B C# D# E
+             G Aeolean b1, Parent:     B Harmonic Major, Notation: G A# B C# D# E F#
+            A# Locrian b7, Parent:     B Harmonic Major, Notation: A# B C# D# E F# G

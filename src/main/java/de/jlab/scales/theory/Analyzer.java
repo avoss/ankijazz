@@ -38,6 +38,7 @@ public class Analyzer {
     private final Scale scale;
     
     private Note root;
+    private int numberOfAccidentalsInKeySignature;
 
     private final Set<Note> majorNotesWithoutAccidental = new HashSet<>();
     private final Set<Note> majorNotesWithAccidental = new HashSet<>();
@@ -91,15 +92,35 @@ public class Analyzer {
 
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
       root = C;
+      numberOfAccidentalsInKeySignature = 0;
       for (Note note : signatureKeys) {
         if (majorNotesWithAccidental.contains(note)) {
           root = transposer.apply(note);
+          numberOfAccidentalsInKeySignature += 1;
         } else {
           break;
         }
       }
     }
     
+    public int getBadness() {
+      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
+      return numberOfAccidentalsInKeySignature 
+          + numberOfExtraAccidentals * 10
+          + majorNotesWithInverseAccidental.size() * 20
+          + majorNotesWithDoubleAccidental.size() * 30
+          + remainingScaleNotes.size() * 1000;
+    }
+
+    public boolean isEnharmonicRoot() {
+      // TODO should not rely on strings
+      String root = notationMap.get(scale.getRoot());
+      return root.contains("E#")
+          || root.contains("B#")
+          || root.contains("Cb")
+          || root.contains("Fb");
+    }
+
   }
 
   public Result analyze(Scale scale, Accidental accidental) {

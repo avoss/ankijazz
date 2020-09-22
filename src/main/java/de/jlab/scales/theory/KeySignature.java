@@ -37,18 +37,6 @@ public class KeySignature {
     return keySignature;
   }
   
-  /**
-   * Works for Major, MelodicMinor, and Harmonic Minor. For their respective modes it also works but comes 
-   * up with results that differ from their parent scale.
-   * 
-   * For scales with numberOfNotes != 7 a fallback keysignature (all notes flat) will be returned
-   */
-//  public static KeySignature fromScale(Scale scale) {
-//    Analyzer analyzer = new Analyzer();
-//    Analyzer.Result result = analyzer.analyze(scale);
-//    return toKeySignature(result);
-//  }
-
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
     if (scale.length() != CMajor.length())  {
       return fallback(scale, accidental);
@@ -56,17 +44,24 @@ public class KeySignature {
     Analyzer analyzer = new Analyzer();
     Analyzer.Result preferred = analyzer.analyze(scale, accidental);
     Analyzer.Result alternate = analyzer.analyze(scale, accidental.inverse());
-    Analyzer.Result result = preferred;
-    
-    if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
-      result = alternate;
-    } else if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
-      result = alternate;
-    }
+    Analyzer.Result result = chooseBetterOne(preferred, alternate);
     if (!result.getRemainingScaleNotes().isEmpty()) {
       return fallback(scale, accidental);
     }
     return toKeySignature(result, notationKey);
+  }
+
+  private static Analyzer.Result chooseBetterOne(Analyzer.Result preferred, Analyzer.Result alternate) {
+    if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
+      return alternate;
+    }
+    if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
+      return alternate;
+    }
+    if (preferred.isEnharmonicRoot() && !alternate.isEnharmonicRoot()) {
+      return alternate;
+    }
+    return preferred;
   }
 
   public static KeySignature fromMajorScale(Scale majorScale) {

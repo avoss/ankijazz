@@ -48,6 +48,10 @@ public enum Accidental {
       return COUNT_FLATS.indexOf(majorKey);
     }
 
+    @Override
+    public boolean isEnharmonic(Note note) {
+      return note == Note.C || note == Note.F;
+    }
   },
   
   SHARP {
@@ -76,6 +80,11 @@ public enum Accidental {
     public int numberOfAccidentals(Note majorKey) {
       return COUNT_SHARPS.indexOf(majorKey);
     }
+
+    @Override
+    public boolean isEnharmonic(Note note) {
+      return note == Note.E || note == Note.B;
+    }
   }, 
   
   DOUBLE_FLAT {
@@ -97,11 +106,16 @@ public enum Accidental {
 
     @Override
     public Accidental twice() {
-      throw new IllegalStateException("double flat cannot be applied twice");
+      throw new UnsupportedOperationException();
     }
     @Override
     public int numberOfAccidentals(Note majorKey) {
-      throw new IllegalStateException("double flat cannot be applied twice");
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isEnharmonic(Note note) {
+      throw new UnsupportedOperationException();
     }
     
   },
@@ -123,23 +137,26 @@ public enum Accidental {
     }
     @Override
     public Accidental twice() {
-      throw new IllegalStateException("double sharp cannot be applied twice");
+      throw new UnsupportedOperationException();
     }
     @Override
     public int numberOfAccidentals(Note majorKey) {
-      throw new IllegalStateException("double flat cannot be applied twice");
+      throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isEnharmonic(Note note) {
+      throw new UnsupportedOperationException();
     }
     
   };
 
   public abstract Note apply(Note note);
-
   public abstract String symbol();
-
   public abstract Accidental inverse();
-  
   public abstract Accidental twice();
   public abstract int numberOfAccidentals(Note majorKey);
+  public abstract boolean isEnharmonic(Note note);
 
   private static final Map<Note, Accidental> majorKeyAccidentals = ImmutableMap.<Note, Accidental>builder()
       .put(C, FLAT)

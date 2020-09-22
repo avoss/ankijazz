@@ -29,26 +29,26 @@ public class AnkiCardsTest {
   }
   
   @Test
-  public void spellGuitarScales() throws IOException {
-    checkAndWrite(anki.spellGuitarScales());
+  public void playGuitarScales() {
+    checkAndWrite(anki.playGuitarScales());
   }
   
   @Test
-  public void spellScales() throws IOException {
-    checkAndWrite(anki.spellScales());
+  public void playScales() {
+    checkAndWrite(anki.playScales());
   }
   
   @Test
-  public void spellGuitarModes() throws IOException {
-    checkAndWrite(anki.spellGuitarModes());
+  public void playGuitarModes() {
+    checkAndWrite(anki.playGuitarModes());
   }
   
   @Test
-  public void spellModes() throws IOException {
-    checkAndWrite(anki.spellModes());
+  public void playModes() {
+    checkAndWrite(anki.playModes());
   }
   
-  private void checkAndWrite(Deck deck) throws IOException {
+  private void checkAndWrite(Deck deck) {
     //TestUtils.assertFileContentMatchesInAnyOrder(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     deck.shuffle(3);

@@ -1,6 +1,6 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.TestUtils.assertFileContentMatches;
+import static de.jlab.scales.TestUtils.*;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedHalfWhole;
@@ -109,9 +109,9 @@ public class KeySignatureTest {
       for (Scale scale : allKeys(type.getPrototype())) {
         Note majorKey = type.notationKey().apply(scale.getRoot());
         KeySignature signature = fromScale(scale, majorKey, Accidental.fromMajorKey(majorKey));
-        String reviewRequired = reviewRequired(scale, signature) ? " (*)" : "";
+        String reviewMarker = reviewMarker(scale, signature);
         String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s%s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), 
-            signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewRequired);
+            signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewMarker);
         actual.add(message);
         System.out.println(message);
         assertNoDuplicateNotesExist(scale, signature);
@@ -122,8 +122,9 @@ public class KeySignatureTest {
   }
   
   @Test
-  public void testAbAlteredMinorBug() {
+  public void testAMelodicMinorBug() {
     KeySignature keySignature = KeySignature.fromScale(CMelodicMinor.transpose(A), B, SHARP);
+    System.out.println(keySignature);
     assertEquals("G#", keySignature.notate(Ab));
   }
   
@@ -160,13 +161,6 @@ public class KeySignatureTest {
   private void assertNoDuplicateNotesExist(Scale scale, KeySignature signature) {
     Set<String> set = signature.notate(scale).stream().map(s -> s.replaceAll("x|#|b", "")).collect(Collectors.toSet());
     assertEquals(signature.toString(scale), Math.min(scale.length(), CMajor.length()), set.size());
-  }
-
-  private boolean reviewRequired(Scale scale, KeySignature signature) {
-    String notation = signature.toString(scale);
-    return (notation.contains("b") && notation.contains("#"))
-           || notation.contains("bb") 
-           || notation.contains("x");
   }
 
 }
