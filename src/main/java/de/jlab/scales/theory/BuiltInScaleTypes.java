@@ -39,7 +39,7 @@ import static de.jlab.scales.theory.Note.*;
 
 public enum BuiltInScaleTypes implements ScaleType {
   Major(CMajor, "Major Scale", C, "Major Scale", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
-  MelodicMinor(CMelodicMinor,  "Melodic Minor", D, "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
+  MelodicMinor(CMelodicMinor,  "Melodic Minor", A, "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
   HarmonicMinor(CHarmonicMinor, "Harmonic Minor", A, "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
   HarmonicMajor(CHarmonicMajor, "Harmonic Major", C, "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
 
