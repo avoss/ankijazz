@@ -4,14 +4,11 @@ import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import com.google.common.collect.Maps;
 
 import de.jlab.scales.theory.Analyzer.Result;
 
@@ -32,6 +29,7 @@ public class KeySignature {
   private final Accidental accidental;
   private final Map<Note, String> notationMap;
   private boolean suppressStaffSignature = false;
+  private static boolean strict = true;
   
   public KeySignature suppressStaffSignature() {
     KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap);
@@ -39,44 +37,48 @@ public class KeySignature {
     return keySignature;
   }
 
-  public static KeySignature fromScale(Scale scale, Accidental preferredAccidental) {
-    if (scale.length() != CMajor.length())  {
-      return fallback(scale, preferredAccidental);
-    }
-    Analyzer analyzer = new Analyzer();
-    Analyzer.Result preferred = analyzer.analyze(scale, preferredAccidental);
-    Analyzer.Result alternate = analyzer.analyze(scale, preferredAccidental.inverse());
-    if (preferred.getBadness() > alternate.getBadness()) {
-      return toKeySignature(alternate);
-    }
-    return toKeySignature(preferred);
-  }
+//  public static KeySignature fromScale(Scale scale, Accidental preferredAccidental) {
+//    if (scale.length() != CMajor.length())  {
+//      return fallback(scale, preferredAccidental);
+//    }
+//    Analyzer analyzer = new Analyzer();
+//    Analyzer.Result preferred = analyzer.analyze(scale, preferredAccidental);
+//    Analyzer.Result alternate = analyzer.analyze(scale, preferredAccidental.inverse());
+//    if (preferred.getBadness() > alternate.getBadness()) {
+//      return toKeySignature(alternate);
+//    }
+//    return toKeySignature(preferred);
+//  }
 
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
     if (scale.length() != CMajor.length())  {
-      return fallback(scale, accidental);
+      return fallback(scale, notationKey, accidental);
     }
     Analyzer analyzer = new Analyzer();
-    Analyzer.Result preferred = analyzer.analyze(scale, accidental);
-    Analyzer.Result alternate = analyzer.analyze(scale, accidental.inverse());
-    Analyzer.Result result = chooseBetterOne(preferred, alternate);
+    Result preferred = analyzer.analyze(scale, accidental);
+    Result alternate = analyzer.analyze(scale, accidental.inverse());
+    Result result = chooseBetterOne(preferred, alternate);
     if (!result.getRemainingScaleNotes().isEmpty()) {
-      return fallback(scale, accidental);
+      return fallback(scale, notationKey, accidental);
     }
     return toKeySignature(result, notationKey);
   }
 
   private static Analyzer.Result chooseBetterOne(Analyzer.Result preferred, Analyzer.Result alternate) {
-    if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
-      return alternate;
+    if (strict) {
+      return preferred;
     }
-    // TODO: this check for enharmonic does not change anything (its either both or none of them)
-    if (preferred.isEnharmonicRoot() != alternate.isEnharmonicRoot()) {
-      throw new IllegalStateException("xxx");
-    }
-    if (preferred.isEnharmonicRoot() && !alternate.isEnharmonicRoot()) {
-      return alternate;
-    }
+//    if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
+//      return alternate;
+//    }
+//    // TODO: this check for enharmonic does not change anything (its either both or none of them)
+//    // NONONO: its because analyzer is only called for the parent, not the modes!!
+//    if (preferred.isEnharmonicRoot() != alternate.isEnharmonicRoot()) {
+//      throw new IllegalStateException("xxx");
+//    }
+//    if (preferred.isEnharmonicRoot() && !alternate.isEnharmonicRoot()) {
+//      return alternate;
+//    }
     if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
       return alternate;
     }
@@ -88,8 +90,12 @@ public class KeySignature {
   }
   
   public static KeySignature fallback(Scale scale, Accidental accidental) {
+    return fallback(scale, Note.C, accidental);
+  }
+  
+  public static KeySignature fallback(Scale scale, Note notationKey, Accidental accidental) {
     Map<Note, String> notationMap = Stream.of(Note.values()).collect(Collectors.toMap(Function.identity(), n -> n.getName(accidental)));
-    return new KeySignature(Note.C, accidental, notationMap);
+    return new KeySignature(notationKey, accidental, notationMap);
   }
 
   private static KeySignature toKeySignature(Result result) {
@@ -122,5 +128,25 @@ public class KeySignature {
   public int getNumberOfAccidentals() {
     return accidental.numberOfAccidentals(notationKey);
   }
+
+  public KeySignature forMode(Scale mode) {
+    if (strict) {
+      return this;
+    }
+    if (isEnharmonicRoot(mode.getRoot())) {
+      return fallback(mode, notationKey, accidental);
+    }
+    return this;
+  }
+  
+  private boolean isEnharmonicRoot(Note root) {
+    // TODO should not rely on strings
+    String rootString = notationMap.get(root);
+    return rootString.contains("E#")
+        || rootString.contains("B#")
+        || rootString.contains("Cb")
+        || rootString.contains("Fb");
+  }
+
 
 }

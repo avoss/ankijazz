@@ -59,15 +59,15 @@ public class TestUtils {
   public static String reviewMarker(Scale scale, KeySignature signature) {
     List<String> markers = new ArrayList<>();
     String scaleNotation = signature.toString(scale);
+    if (signature.getNumberOfAccidentals() > 6) {
+      markers.add("signature");
+    }
     if (scaleNotation.contains("bb") || scaleNotation.contains("x")) {
-      markers.add("bb or ##");
+      markers.add("double sharp/flat");
     }
     String rootNotation = signature.notate(scale.getRoot());
     if (rootNotation.contains("Cb") || rootNotation.contains("Fb") || rootNotation.contains("B#") || rootNotation.contains("E#")) {
       markers.add("enharmonic root");
-    }
-    if (signature.getNumberOfAccidentals() > 6) {
-      markers.add("signature");
     }
     if (markers.isEmpty()) {
       return "";

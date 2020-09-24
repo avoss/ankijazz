@@ -31,6 +31,7 @@ import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -120,6 +121,17 @@ public class KeySignatureTest {
     }
     assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");
   }
+  
+//  @Test 
+//  public void testFAltered() {
+//    Scale fSharpMelodicMinor = CMelodicMinor.transpose(Gb);
+//    Scale fAltered = fSharpMelodicMinor.superimpose(F);
+//    KeySignature sharpSignature = KeySignature.fromScale(fAltered, SHARP);
+//    System.out.println(sharpSignature.toString(fAltered));
+//    KeySignature flatSignature = KeySignature.fromScale(fAltered, FLAT);
+//    System.out.println(flatSignature.toString(fAltered));
+//    fail("no assertions");
+//  }
   
   @Test
   public void testAMelodicMinorBug() {

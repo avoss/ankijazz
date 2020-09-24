@@ -1,5 +1,22 @@
 # Scales Core
 
+
+## Dr. B Music
+- https://youtu.be/ICDPWP6HUbk?list=PLw9t0oA3fHkxx1PgYpiXrMUPXaOiwh6KU
+- there are 15 major scales, need to know the enharmonics 
+- parallel = same root, relative = same signature
+
+Intervals
+- always starting from bottom counting to top
+- "number" = number of letters including start pitch
+- "category: 1,4,5,8 APd (Augmented, Perfect,diminished), 2,3,6,7 AMmd (Major, minor)
+- Inversion P->P, A->d, M->m and sum of numbers = 9
+
+## Frank Sikora "Jazz Harmony"
+- German edition is very popular here.
+- https://en.schott-music.com/shop/jazz-harmony-no326750.html
+- all minor modes relative to aeolean, all major modes relative to ionean
+
 ## BUGS
 - KeySignature.notationMap contains flats and sharps, should use accidental of keysignature to notate notes not in scale.
 - limit number of b and # in key signature to 6 (Marcus), put additional b/# into staff
@@ -20,13 +37,25 @@ special cases:
 - Db  Harmonic Major, Signature: Db (5b), Notation: Db Eb F Gb Ab Bbb C // bb or ##
 - Gb  Harmonic Major, Signature: Gb (6b), Notation: Gb Ab Bb Cb Db Ebb F // bb or ##
 
-- Cb Lydian, Signature: Gb (6b), Notation: Cb Db Eb F Gb Ab Bb // enharmonic root
+Major Scales and Modes:
 - F#/Gb: no one better than the other, need both - why is it so complicated? Modes always have enharmonic roots Gb has Cb and F# has E#
+- Cb Lydian, Signature: Gb (6b), Notation: Cb Db Eb F Gb Ab Bb // enharmonic root
+
+KeySignature strict:
+- Modes use signature of parent scale
+- HM and MM use signature of Aeolean
+- result contains double bb and ##, enharmonic roots
+
+KeySignature simplified:
+- same as above
+- in case of bb/## use inverse accidental and limit signature to 6 accidentals
+- enharmonic root is replaced with accidental applied (e.g. E# is replaced with F) TODO: all or just root?
 
 ## TODO
 - migrate to junit 5
 
 # Anki
+
 
 ## TODO
 Decks:

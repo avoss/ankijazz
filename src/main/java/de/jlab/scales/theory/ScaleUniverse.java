@@ -138,6 +138,7 @@ public class ScaleUniverse implements Iterable<Scale> {
       Scale mode = parent.superimpose(newRoot);
       ScaleInfo info = ScaleInfo.builder()
           //.keySignature(KeySignature.fromScale(mode, accidental))
+          //.keySignature(keySignature.forMode(mode))
           .keySignature(keySignature)
           .scale(mode)
           .parent(parent)

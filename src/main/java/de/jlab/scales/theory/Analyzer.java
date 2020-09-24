@@ -22,6 +22,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.function.Function;
 
 
@@ -46,7 +47,7 @@ public class Analyzer {
     private final Set<Note> majorNotesWithDoubleAccidental = new HashSet<>();
     private final Set<Note> remainingMajorNotes = new LinkedHashSet<>();
     private final Set<Note> remainingScaleNotes = new LinkedHashSet<>();
-    private final Map<Note, String> notationMap = new LinkedHashMap<>();
+    private final Map<Note, String> notationMap = new TreeMap<>();
 
     Result(Scale scale, Accidental accidental) {
       this.scale = scale;
@@ -101,6 +102,9 @@ public class Analyzer {
         if (majorNotesWithAccidental.contains(note)) {
           notationKey = transposer.apply(note);
           numberOfAccidentalsInKeySignature += 1;
+          if (numberOfAccidentalsInKeySignature >= 6) {
+            break;
+          }
         } else {
           break;
         }
@@ -122,6 +126,7 @@ public class Analyzer {
           + numberOfExtraAccidentals * 10
           + majorNotesWithInverseAccidental.size() * 20
           + majorNotesWithDoubleAccidental.size() * 100
+          + (isEnharmonicRoot() ? 1000 : 0)
           + remainingScaleNotes.size() * 10000;
     }
 
@@ -169,11 +174,11 @@ public class Analyzer {
     return note;
   }
 
-//  public Result fallback(Scale scale, Accidental accidental) {
-//    Result result = new Analyzer.Result(scale, accidental);
-//    result.initialize();
-//    return result;
-//  }
+  public Result fallback(Scale scale, Accidental accidental) {
+    Result result = new Analyzer.Result(scale, accidental);
+    result.initialize();
+    return result;
+  }
 //
 //  public Result fallback(Scale scale) {
 //    return fallback(scale, FLAT);
