@@ -102,7 +102,8 @@ public class KeySignature {
     return toKeySignature(result, result.getNotationKey());
   }
   
-  private static KeySignature toKeySignature(Analyzer.Result result, Note notationKey) {
+  private static KeySignature toKeySignature(Analyzer.Result result, Note strictNotationKey) {
+    Note notationKey = strict ? strictNotationKey : result.getNotationKey();
     return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap());
   }
 
@@ -133,10 +134,11 @@ public class KeySignature {
     if (strict) {
       return this;
     }
-    if (isEnharmonicRoot(mode.getRoot())) {
-      return fallback(mode, notationKey, accidental);
-    }
-    return this;
+    return fromScale(mode, notationKey, accidental);
+//    if (isEnharmonicRoot(mode.getRoot())) {
+//      return fallback(mode, notationKey, accidental);
+//    }
+//    return this;
   }
   
   private boolean isEnharmonicRoot(Note root) {
@@ -147,6 +149,7 @@ public class KeySignature {
         || rootString.contains("Cb")
         || rootString.contains("Fb");
   }
+
 
 
 }
