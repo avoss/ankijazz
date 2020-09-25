@@ -52,14 +52,13 @@ public class ScaleUniverseTest {
     for (Scale scale : allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor)))) {
       ScaleInfo scaleInfo = allScales.info(scale);
       KeySignature signature = scaleInfo.getKeySignature();
-      ScaleInfo parentInfo = allScales.info(scaleInfo.getParent());
-      String reviewMarker = TestUtils.reviewMarker(scale, scaleInfo.getKeySignature());
-      if (scaleInfo == parentInfo) {
+      String reviewMarker = TestUtils.reviewMarker(scale, signature);
+      if (scaleInfo == allScales.info(scaleInfo.getParent())) {
         actual.add("");
       }
       String message = format("%20s, Signature: %2s (%d%s), Notation: %s %s",
           scaleInfo.getScaleName(),
-          signature.notateKey(),
+          signature.notationKey(),
           signature.getNumberOfAccidentals(),
           signature.getAccidental().symbol(), 
           signature.toString(scale),

@@ -111,7 +111,7 @@ public class KeySignatureTest {
         Note majorKey = type.notationKey().apply(scale.getRoot());
         KeySignature signature = fromScale(scale, majorKey, Accidental.preferred(majorKey));
         String reviewMarker = reviewMarker(scale, signature);
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), 
+        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notationKey(), 
             signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewMarker);
         actual.add(message);
         //System.out.println(message);

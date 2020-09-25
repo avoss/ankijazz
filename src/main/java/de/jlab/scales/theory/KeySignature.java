@@ -70,7 +70,7 @@ public class KeySignature {
     return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap());
   }
 
-  public String notateKey() {
+  public String notationKey() {
     if (suppressStaffSignature) {
       return "C";
     }

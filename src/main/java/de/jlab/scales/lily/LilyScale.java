@@ -95,7 +95,7 @@ public class LilyScale {
   }
 
   private String key() {
-    return toLilyNote(keySignature.notateKey());
+    return toLilyNote(keySignature.notationKey());
   }
 
   private String toLilyNote(Note note) {
