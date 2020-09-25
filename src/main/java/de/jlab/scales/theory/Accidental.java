@@ -173,7 +173,7 @@ public enum Accidental {
       .put(F, FLAT)
       .build();
   
-  public static Accidental fromMajorKey(Note majorKey) {
+  public static Accidental preferred(Note majorKey) {
     return majorKeyAccidentals.get(majorKey);
   }
  

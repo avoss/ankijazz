@@ -179,7 +179,7 @@ public class ScaleUniverseTest {
   @Test
   public void testModes() {
     Scale bbmajor = CMajor.transpose(Bb);
-    KeySignature signature = KeySignature.fromMajorScale(bbmajor);
+    KeySignature signature = KeySignature.fromScale(bbmajor);
     assertInfo(bbmajor, bbmajor, "Bb Major Scale", signature);
     Scale cdorian = bbmajor.superimpose(C);
     assertInfo(cdorian, bbmajor, "C Dorian", signature);
@@ -188,7 +188,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testChordInversion() {
-    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.fromMajorScale(CMajor));
+    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.fromScale(CMajor));
     assertInfo(Cmaj7.superimpose(E), Cmaj7, "CΔ7/E");
   }
 
@@ -238,7 +238,7 @@ public class ScaleUniverseTest {
   public void testBbAltered() {
     Scale gMelodicMinor = CMelodicMinor.transpose(G);
     Note majorKey = MelodicMinor.notationKey().apply(G);
-    KeySignature expected = KeySignature.fromScale(gMelodicMinor, majorKey, Accidental.fromMajorKey(majorKey));
+    KeySignature expected = KeySignature.fromScale(gMelodicMinor, majorKey, Accidental.preferred(majorKey));
     Scale gFlatAltered = gMelodicMinor.superimpose(Gb);
     ScaleInfo info = jazz.info(gFlatAltered);
     assertEquals(expected, info.getKeySignature());

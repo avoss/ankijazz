@@ -56,13 +56,16 @@ KeySignature simplified:
 
 # Anki
 
-
 ## TODO
 Decks:
-- learn enharmonics Ab -> G# etc
+- enharmonics Ab -> G# etc
+- relative minor/major
+- spell scales w/o notation
 - learn scale notes (text only)
 - parent scales (done)
 - spell types (done)
+- !! 15 scales, not 12 
+- decks should share media, e.g. by creating a shared hash of content.
 
 Bugs:
 - double ## and bb are completely eliminated by choosing the inverse accidental! No need to take care in badness() or so.

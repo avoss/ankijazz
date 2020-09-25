@@ -29,7 +29,6 @@ public class KeySignature {
   private final Accidental accidental;
   private final Map<Note, String> notationMap;
   private boolean suppressStaffSignature = false;
-  private static boolean strict = true;
   
   public KeySignature suppressStaffSignature() {
     KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap);
@@ -37,56 +36,25 @@ public class KeySignature {
     return keySignature;
   }
 
-//  public static KeySignature fromScale(Scale scale, Accidental preferredAccidental) {
-//    if (scale.length() != CMajor.length())  {
-//      return fallback(scale, preferredAccidental);
-//    }
-//    Analyzer analyzer = new Analyzer();
-//    Analyzer.Result preferred = analyzer.analyze(scale, preferredAccidental);
-//    Analyzer.Result alternate = analyzer.analyze(scale, preferredAccidental.inverse());
-//    if (preferred.getBadness() > alternate.getBadness()) {
-//      return toKeySignature(alternate);
-//    }
-//    return toKeySignature(preferred);
-//  }
-
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
     if (scale.length() != CMajor.length())  {
       return fallback(scale, notationKey, accidental);
     }
     Analyzer analyzer = new Analyzer();
-    Result preferred = analyzer.analyze(scale, accidental);
-    Result alternate = analyzer.analyze(scale, accidental.inverse());
-    Result result = chooseBetterOne(preferred, alternate);
+    Result result = analyzer.analyze(scale, accidental);
     if (!result.getRemainingScaleNotes().isEmpty()) {
       return fallback(scale, notationKey, accidental);
     }
     return toKeySignature(result, notationKey);
   }
 
-  private static Analyzer.Result chooseBetterOne(Analyzer.Result preferred, Analyzer.Result alternate) {
-    if (strict) {
-      return preferred;
-    }
-//    if (!preferred.getRemainingScaleNotes().isEmpty() && alternate.getRemainingScaleNotes().isEmpty()) {
-//      return alternate;
-//    }
-//    // TODO: this check for enharmonic does not change anything (its either both or none of them)
-//    // NONONO: its because analyzer is only called for the parent, not the modes!!
-//    if (preferred.isEnharmonicRoot() != alternate.isEnharmonicRoot()) {
-//      throw new IllegalStateException("xxx");
-//    }
-//    if (preferred.isEnharmonicRoot() && !alternate.isEnharmonicRoot()) {
-//      return alternate;
-//    }
-    if (!preferred.getMajorNotesWithDoubleAccidental().isEmpty() && alternate.getMajorNotesWithDoubleAccidental().isEmpty()) {
-      return alternate;
-    }
-    return preferred;
-  }
-
-  public static KeySignature fromMajorScale(Scale majorScale) {
-    return fromScale(majorScale, majorScale.getRoot(), Accidental.fromMajorKey(majorScale.getRoot()));
+  /**
+   * according to Frank Sikora's book, every minor scale is notated using the key signature 
+   * of relative major.
+   */
+  public static KeySignature fromScale(Scale scale) {
+    Note notationKey = scale.isMinor() ? scale.getRoot().transpose(3) : scale.getRoot();
+    return fromScale(scale, notationKey, Accidental.preferred(notationKey));
   }
   
   public static KeySignature fallback(Scale scale, Accidental accidental) {
@@ -98,12 +66,7 @@ public class KeySignature {
     return new KeySignature(notationKey, accidental, notationMap);
   }
 
-  private static KeySignature toKeySignature(Result result) {
-    return toKeySignature(result, result.getNotationKey());
-  }
-  
-  private static KeySignature toKeySignature(Analyzer.Result result, Note strictNotationKey) {
-    Note notationKey = strict ? strictNotationKey : result.getNotationKey();
+  private static KeySignature toKeySignature(Result result, Note notationKey) {
     return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap());
   }
 
@@ -129,27 +92,6 @@ public class KeySignature {
   public int getNumberOfAccidentals() {
     return accidental.numberOfAccidentals(notationKey);
   }
-
-  public KeySignature forMode(Scale mode) {
-    if (strict) {
-      return this;
-    }
-    return fromScale(mode, notationKey, accidental);
-//    if (isEnharmonicRoot(mode.getRoot())) {
-//      return fallback(mode, notationKey, accidental);
-//    }
-//    return this;
-  }
-  
-  private boolean isEnharmonicRoot(Note root) {
-    // TODO should not rely on strings
-    String rootString = notationMap.get(root);
-    return rootString.contains("E#")
-        || rootString.contains("B#")
-        || rootString.contains("Cb")
-        || rootString.contains("Fb");
-  }
-
 
 
 }

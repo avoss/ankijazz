@@ -59,13 +59,13 @@ public class LilyScaleTest {
     String cMinorPentatonicsource = new LilyScale(universe.info(CMinorPentatonic), KeySignature.fromScale(CMajor.transpose(Eb), Eb, FLAT)).toLily();
     assertThat(cMinorPentatonicsource).contains("scaleNotes = \\relative e' { c4 ef4 f4 g4 bf4 c2. }");
     // 6 notes
-    String cWholeToneSource = new LilyScale(universe.info(CWholeTone), KeySignature.fallback(CWholeTone, FLAT)).toLily();
+    String cWholeToneSource = new LilyScale(universe.info(CWholeTone), KeySignature.fromScale(CWholeTone)).toLily();
     assertThat(cWholeToneSource).contains("scaleNotes = \\relative e' { c4 d4 e4 gf4 af4 bf4 c2 }");
     // 7 notes
     String cMajorSource = new LilyScale(universe.info(CMajor), KeySignature.fromScale(CMajor, C, SHARP)).toLily();
     assertThat(cMajorSource).contains("scaleNotes = \\relative e' { c4 d4 e4 f4 g4 a4 b4 c4 ~ c1 }");
     // 8 notes
-    String cDiminishedSource = new LilyScale(universe.info(CDiminishedHalfWhole), KeySignature.fallback(CDiminishedHalfWhole, FLAT)).toLily();
+    String cDiminishedSource = new LilyScale(universe.info(CDiminishedHalfWhole), KeySignature.fromScale(CDiminishedHalfWhole)).toLily();
     assertThat(cDiminishedSource).contains("scaleNotes = \\relative e' { c4 df4 ef4 e4 gf4 g4 a4 bf4 c1 }");
   }
   

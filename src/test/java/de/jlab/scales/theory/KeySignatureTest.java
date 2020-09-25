@@ -85,7 +85,7 @@ public class KeySignatureTest {
       actual.add(format("# %s", type.getTypeName()));
       for (Scale scale : allKeys(type.getPrototype())) {
         Note majorKey = type.notationKey().apply(scale.getRoot());
-        KeySignature signature = fromScale(scale, majorKey, Accidental.fromMajorKey(majorKey));
+        KeySignature signature = fromScale(scale, majorKey, Accidental.preferred(majorKey));
         actual.add(format("## %s %s", signature.notate(scale.getRoot()), type.getTypeName()));
         for (Scale chord : scale.getChords(4)) {
           String message = format("%10s %s", chord.asChord(signature.getAccidental()), signature.toString(chord));
@@ -109,7 +109,7 @@ public class KeySignatureTest {
       actual.add("# " + type.getTypeName());
       for (Scale scale : allKeys(type.getPrototype())) {
         Note majorKey = type.notationKey().apply(scale.getRoot());
-        KeySignature signature = fromScale(scale, majorKey, Accidental.fromMajorKey(majorKey));
+        KeySignature signature = fromScale(scale, majorKey, Accidental.preferred(majorKey));
         String reviewMarker = reviewMarker(scale, signature);
         String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notateKey(), 
             signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewMarker);

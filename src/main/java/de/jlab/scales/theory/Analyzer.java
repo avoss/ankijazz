@@ -1,23 +1,17 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -26,6 +20,9 @@ import java.util.TreeMap;
 import java.util.function.Function;
 
 
+/**
+ * TODO only notationMap and remainingScaleNotes is used, everything else can be removed
+ */
 public class Analyzer {
   private static final List<Note> sharpSignatureKeys = Arrays.asList(F, C, G, D, A, E, B);
   private static final List<Note> flatSignatureKeys = Arrays.asList(B, E, A, D, G, C, F);
@@ -73,28 +70,6 @@ public class Analyzer {
       return note.getName(accidental);
     }
     
-//    private String defaultNotation(Scale scale, Note note) {
-//      if (accidental == SHARP) {
-//        if (note == F && scale.contains(Gb) && !scale.contains(E)) {
-//          return "E#";
-//        }
-//        if (note == C && scale.contains(Db) && !scale.contains(B)) {
-//          return "B#";
-//        }
-//      }
-//
-//      if (accidental == FLAT) {
-//        if (note == B && scale.contains(Bb) && !scale.contains(C)) {
-//          return "Cb";
-//        }
-//        if (note == E && scale.contains(Eb) && !scale.contains(F)) {
-//          return "Fb";
-//        }
-//      }
-//      return note.getName(accidental);
-//    }
-    
-
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
       notationKey = C;
       numberOfAccidentalsInKeySignature = 0;
@@ -102,32 +77,10 @@ public class Analyzer {
         if (majorNotesWithAccidental.contains(note)) {
           notationKey = transposer.apply(note);
           numberOfAccidentalsInKeySignature += 1;
-          if (numberOfAccidentalsInKeySignature >= 6) {
-            break;
-          }
         } else {
           break;
         }
       }
-    }
-    
-    public boolean isEnharmonicRoot() {
-      // TODO should not rely on strings
-      String root = notationMap.get(scale.getRoot());
-      return root.contains("E#")
-          || root.contains("B#")
-          || root.contains("Cb")
-          || root.contains("Fb");
-    }
-    
-    public int getBadness() {
-      int numberOfExtraAccidentals = majorNotesWithAccidental.size() - numberOfAccidentalsInKeySignature;
-      return numberOfAccidentalsInKeySignature 
-          + numberOfExtraAccidentals * 10
-          + majorNotesWithInverseAccidental.size() * 20
-          + majorNotesWithDoubleAccidental.size() * 100
-          + (isEnharmonicRoot() ? 1000 : 0)
-          + remainingScaleNotes.size() * 10000;
     }
 
   }
@@ -166,7 +119,7 @@ public class Analyzer {
     return result;
   }
 
-  Note cMajorStartNote(Scale scale, Accidental accidental) {
+  private Note cMajorStartNote(Scale scale, Accidental accidental) {
     Note note = scale.getRoot();
     if (!CMajor.contains(note)) {
       return accidental.inverse().apply(note);
@@ -174,27 +127,5 @@ public class Analyzer {
     return note;
   }
 
-  public Result fallback(Scale scale, Accidental accidental) {
-    Result result = new Analyzer.Result(scale, accidental);
-    result.initialize();
-    return result;
-  }
-//
-//  public Result fallback(Scale scale) {
-//    return fallback(scale, FLAT);
-//  }
-//
-//  public Result analyze(Scale scale) {
-//    if (scale.length() != CMajor.length()) {
-//      return fallback(scale);
-//    }
-//    Result sharpResult = analyze(scale, SHARP);
-//    Result flatResult = analyze(scale, FLAT);
-//    Result best = sharpResult.getBadness() < flatResult.getBadness() ? sharpResult : flatResult;
-//    if (!best.getRemainingScaleNotes().isEmpty()) {
-//      best = fallback(scale);
-//    }
-//    return best;
-//  }
 
 }
