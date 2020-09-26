@@ -49,7 +49,6 @@ public class AnkiCardsTest {
   }
   
   private void checkAndWrite(Deck deck) {
-    //TestUtils.assertFileContentMatchesInAnyOrder(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     TestUtils.assertFileContentMatches(deck.getCsv(), AnkiCardsTest.class, deck.getId() + ".txt");
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));

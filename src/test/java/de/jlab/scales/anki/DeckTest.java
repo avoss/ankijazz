@@ -22,7 +22,7 @@ public class DeckTest {
     Path parent = Paths.get("build");
     Path path = deck.writeTo(parent);
     
-    String actual = Files.readAllLines(path.resolve("anki.txt")).stream().collect(Collectors.joining("\n"));
+    String actual = Files.readAllLines(path.resolve("AnkiJazz-WriteCsv.txt")).stream().collect(Collectors.joining("\n"));
     assertEquals("A;B\nC;D\nE;F", actual);
   }
 

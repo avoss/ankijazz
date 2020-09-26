@@ -34,8 +34,4 @@ public class CardDecorator implements Card {
     return delegate.compareTo(that);
   }
 
-  public void setId(String id) {
-    delegate.setId(id);
-  }
-
 }

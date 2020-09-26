@@ -22,6 +22,4 @@ public interface Card extends Comparable<Card> {
     return Integer.compare(this.getDifficulty(), that.getDifficulty());
   }
 
-  void setId(String id);
-  
 }

@@ -17,7 +17,6 @@ import java.util.stream.Stream;
 public class SimpleDeck implements Deck {
   private List<Card> cards = new ArrayList<>();
   private String id;
-  private int counter;
   
   public SimpleDeck(String id) {
     this.id = "AnkiJazz-" + id;
@@ -30,16 +29,14 @@ public class SimpleDeck implements Deck {
  
   @Override
   public void add(Card card) {
-    card.setId(String.format("%s-%04d", id, counter++));
     cards.add(card);
   }
 
   @Override
-  public Path writeTo(Path parentDir) {
-    Path dir = parentDir.resolve(id);
+  public Path writeTo(Path dir) {
     try {
       Files.createDirectories(dir);
-      Path path = dir.resolve("anki.txt");
+      Path path = dir.resolve(id + ".txt");
       List<String> rows = getCsv();
       Files.write(path, rows);
       cards.forEach(c -> c.writeAssets(dir));
