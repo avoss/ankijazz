@@ -130,15 +130,13 @@ public class ScaleUniverse implements Iterable<Scale> {
     Note oldRoot = parent.getRoot();
     
     Note majorRoot = scaleType.notationKey().apply(parent.getRoot());
-    Accidental accidental = Accidental.preferred(majorRoot);
+    Accidental accidental = Accidental.preferredAccidentalForMajorKey(majorRoot);
     KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
     int numberOfModes = this.includeModes ? parent.length() : 1;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
       Scale mode = parent.superimpose(newRoot);
       ScaleInfo info = ScaleInfo.builder()
-          //.keySignature(KeySignature.fromScale(mode, majorRoot, accidental))
-          //.keySignature(keySignature.forMode(mode))
           .keySignature(keySignature)
           .scale(mode)
           .parent(parent)
@@ -175,7 +173,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     Optional<Scale> superScale = info.getSuperScales().stream().findFirst();
     KeySignature signature = superScale.isPresent() 
         ? info(superScale.get()).getKeySignature() 
-        : KeySignature.fallback(scale, Accidental.preferred(scale.getRoot())); 
+        : KeySignature.fromScale(scale); 
     info.setKeySignature(signature);
     info.setScaleName(scaleName(scale, signature));
     return info;

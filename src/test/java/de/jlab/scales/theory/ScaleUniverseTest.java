@@ -46,10 +46,25 @@ public class ScaleUniverseTest {
   private static ScaleUniverse allScales = new ScaleUniverse(true);
   private static ScaleUniverse jazz = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
 
+  // TODO: prevent modes of wholetone and diminished scales
+  @Test
+  public void testMultipleInfosForSingleScale() {
+    for (Scale scale : allScales) {
+      List<ScaleInfo> infos = allScales.infos(scale);
+      if (infos.size() > 1) {
+        System.out.println(scale);
+        infos.forEach(info -> {
+          System.out.println(info.getScaleName() + ", notation: " + info.getKeySignature().toString(info.getScale()));
+        });
+      }
+    }
+  }
   @Test
   public void testAllModesInAllKeys() {
     List<String> actual = new ArrayList<>();
-    for (Scale scale : allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor)))) {
+    List<Scale> scales = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor)));
+    scales.addAll(allKeys(asList( CWholeTone, CDiminishedHalfWhole)));
+    for (Scale scale : scales) {
       ScaleInfo scaleInfo = allScales.info(scale);
       KeySignature signature = scaleInfo.getKeySignature();
       String reviewMarker = TestUtils.reviewMarker(scale, signature);
@@ -237,7 +252,7 @@ public class ScaleUniverseTest {
   public void testBbAltered() {
     Scale gMelodicMinor = CMelodicMinor.transpose(G);
     Note majorKey = MelodicMinor.notationKey().apply(G);
-    KeySignature expected = KeySignature.fromScale(gMelodicMinor, majorKey, Accidental.preferred(majorKey));
+    KeySignature expected = KeySignature.fromScale(gMelodicMinor, majorKey, Accidental.preferredAccidentalForMajorKey(majorKey));
     Scale gFlatAltered = gMelodicMinor.superimpose(Gb);
     ScaleInfo info = jazz.info(gFlatAltered);
     assertEquals(expected, info.getKeySignature());

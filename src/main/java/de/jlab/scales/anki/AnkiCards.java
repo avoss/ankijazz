@@ -1,38 +1,32 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.Accidental.*;
-import static de.jlab.scales.theory.BuiltInScaleTypes.*;
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedHalfWhole;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.*;
+import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CWholeTone;
 import static de.jlab.scales.theory.Scales.allKeys;
-import static de.jlab.scales.theory.Scales.allModes;
-import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.function.Function;
-import java.util.stream.Stream;
 
-import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.BuiltInScaleTypes;
-import de.jlab.scales.theory.KeySignature;
+import de.jlab.scales.theory.IntervalAnalyzer;
+import de.jlab.scales.theory.IntervalAnalyzer.Result;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -68,30 +62,11 @@ public class AnkiCards {
 
   public Deck spellTypes() {
     Deck deck = new SimpleDeck("ScaleTypes");
+    IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
-      List<String> intervals = new ArrayList<>();
-      Set<Note> scaleNotes = scale.asSet();
-      Scale major = CMajor.transpose(scale.getRoot());
-      for (int i = 0; i < major.length(); i++) {
-        Note cMajorNote = major.getNote(i);
-        String intervalName = Integer.toString(i + 1);
-        if (i > 0 && scaleNotes.contains(cMajorNote.transpose(-1))) {
-          intervals.add("b" + intervalName);
-          scaleNotes.remove(cMajorNote.transpose(-1));
-        } else if (scaleNotes.contains(cMajorNote)) {
-          intervals.add(intervalName);
-          scaleNotes.remove(cMajorNote);
-        } else if (scaleNotes.contains(cMajorNote.transpose(1))) {
-          intervals.add("#" + intervalName);
-          scaleNotes.remove(cMajorNote.transpose(1));
-        }
-      }
-      if (!scaleNotes.isEmpty()) {
-        ScaleInfo scaleInfo = universe.info(scale);
-        throw new IllegalArgumentException("Intervals could not be detected for " + scaleInfo + ", scale: " + scale);
-      }
       ScaleInfo scaleInfo = universe.info(scale);
-      deck.add(scaleInfo.getTypeName(), intervals.stream().collect(joining(" ")));
+      Result result = analyzer.analyze(scale);
+      deck.add(scaleInfo.getTypeName(), result.toString());
     }
     return deck;
   }
@@ -132,6 +107,8 @@ public class AnkiCards {
     scales.add(CMelodicMinor);
     scales.add(CHarmonicMinor);
 //    scales.add(CHarmonicMajor);
+    scales.add(CWholeTone);
+    scales.add(CDiminishedHalfWhole);
     return scales;
   }
 
@@ -145,6 +122,8 @@ public class AnkiCards {
     scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
 //    scales.add(CHarmonicMajor);
 //    scales.add(CHarmonicMajor.transpose(B));   // Marcus
+    scales.add(CWholeTone);
+    scales.add(CDiminishedHalfWhole);
     return scales;
   }
 

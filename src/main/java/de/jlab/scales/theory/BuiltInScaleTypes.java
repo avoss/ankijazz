@@ -43,8 +43,8 @@ public enum BuiltInScaleTypes implements ScaleType {
   HarmonicMinor(CHarmonicMinor, "Harmonic Minor", A, "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
   HarmonicMajor(CHarmonicMajor, "Harmonic Major", C, "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
 
-  DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole", C),
-  WholeTone(CWholeTone, "Whole Tone", C),
+  DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole"),
+  WholeTone(CWholeTone, "Whole Tone"),
   
   Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
   Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", "x1", "Dominant7 Pentatonic", "x2", "Minor7b5 Pentatonic", "x3", "x4"),
@@ -78,15 +78,22 @@ public enum BuiltInScaleTypes implements ScaleType {
   private Scale prototype;
   private String typeName;
   private String[] modeNames;
-  private Note modeKey;
-
+  Function<Note, Note> notationKey;
+  
   BuiltInScaleTypes(Scale prototype, String typeName, Note modeKey, String ... modeNames) {
     this.prototype = prototype;
     this.typeName = typeName;
-    this.modeKey = modeKey;
+    this.notationKey = (n) -> n.transpose(-modeKey.ordinal());
     this.modeNames = modeNames;
   }
 
+  BuiltInScaleTypes(Scale prototype, String typeName, String ... modeNames) {
+    this.prototype = prototype;
+    this.typeName = typeName;
+    this.notationKey = (n) -> Note.C;
+    this.modeNames = modeNames;
+  }
+  
   @Override
   public Scale getPrototype() {
     return prototype;
@@ -104,7 +111,7 @@ public enum BuiltInScaleTypes implements ScaleType {
 
   @Override
   public Function<Note, Note> notationKey() {
-    return (n) -> n.transpose(-modeKey.ordinal());
+    return notationKey;
   }
 
 }

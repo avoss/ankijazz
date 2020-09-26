@@ -1,5 +1,6 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -54,16 +55,15 @@ public class KeySignature {
    */
   public static KeySignature fromScale(Scale scale) {
     Note notationKey = scale.isMinor() ? scale.getRoot().transpose(3) : scale.getRoot();
-    return fromScale(scale, notationKey, Accidental.preferred(notationKey));
+    return fromScale(scale, notationKey, Accidental.preferredAccidentalForMajorKey(notationKey));
   }
   
-  public static KeySignature fallback(Scale scale, Accidental accidental) {
-    return fallback(scale, Note.C, accidental);
+  public static KeySignature fallback(Scale scale) {
+    return fallback(scale, Note.C, FLAT);
   }
   
   public static KeySignature fallback(Scale scale, Note notationKey, Accidental accidental) {
-    Map<Note, String> notationMap = Stream.of(Note.values()).collect(Collectors.toMap(Function.identity(), n -> n.getName(accidental)));
-    return new KeySignature(notationKey, accidental, notationMap);
+    return toKeySignature(new Analyzer().fallback(scale, accidental), notationKey);
   }
 
   private static KeySignature toKeySignature(Result result, Note notationKey) {

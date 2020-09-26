@@ -22,7 +22,7 @@ import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.allKeys;
@@ -44,39 +44,6 @@ import org.junit.Test;
 
 public class KeySignatureTest {
 
-  @Test
-  public void testResultInitialize() {
-    assertResult(C, SHARP);
-    assertResult(G, SHARP, F);
-
-    assertResult(D, SHARP, F, C);
-    assertResult(D, SHARP, C, F);
-    assertResult(D, SHARP, F, C, D);
-
-    assertResult(A, SHARP, F, C, G);
-    assertResult(A, SHARP, F, C, G, A, E);
-    assertResult(A, SHARP, A, C, G, F, E);
-
-    assertResult(E, SHARP, F, C, G, D);
-    assertResult(E, SHARP, F, C, G, D);
-    assertResult(B, SHARP, F, C, G, D, A);
-    assertResult(Gb, SHARP, F, C, G, D, A, E);
-
-    assertResult(F, FLAT, B);
-    assertResult(F, FLAT, B, D);
-    assertResult(Bb, FLAT, B, E);
-    assertResult(Eb, FLAT, B, E, A);
-    assertResult(Ab, FLAT, B, E, A, D);
-    assertResult(Db, FLAT, B, E, A, D, G);
-    assertResult(Gb, FLAT, B, E, A, D, G, C);
-  }
-
-  private void assertResult(Note expectedRoot, Accidental accidental, Note... notesWithAccidental) {
-    Analyzer.Result r = new Analyzer.Result(CMajor, accidental);
-    r.getMajorNotesWithAccidental().addAll(asList(notesWithAccidental));
-    r.initialize();
-    assertEquals(expectedRoot, r.getNotationKey());
-  }
  
   @Test
   public void testChordNotation() throws IOException {
@@ -85,7 +52,7 @@ public class KeySignatureTest {
       actual.add(format("# %s", type.getTypeName()));
       for (Scale scale : allKeys(type.getPrototype())) {
         Note majorKey = type.notationKey().apply(scale.getRoot());
-        KeySignature signature = fromScale(scale, majorKey, Accidental.preferred(majorKey));
+        KeySignature signature = fromScale(scale, majorKey, Accidental.preferredAccidentalForMajorKey(majorKey));
         actual.add(format("## %s %s", signature.notate(scale.getRoot()), type.getTypeName()));
         for (Scale chord : scale.getChords(4)) {
           String message = format("%10s %s", chord.asChord(signature.getAccidental()), signature.toString(chord));
@@ -109,7 +76,7 @@ public class KeySignatureTest {
       actual.add("# " + type.getTypeName());
       for (Scale scale : allKeys(type.getPrototype())) {
         Note majorKey = type.notationKey().apply(scale.getRoot());
-        KeySignature signature = fromScale(scale, majorKey, Accidental.preferred(majorKey));
+        KeySignature signature = fromScale(scale, majorKey, Accidental.preferredAccidentalForMajorKey(majorKey));
         String reviewMarker = reviewMarker(scale, signature);
         String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notationKey(), 
             signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewMarker);
@@ -122,46 +89,29 @@ public class KeySignatureTest {
     assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");
   }
   
-//  @Test 
-//  public void testFAltered() {
-//    Scale fSharpMelodicMinor = CMelodicMinor.transpose(Gb);
-//    Scale fAltered = fSharpMelodicMinor.superimpose(F);
-//    KeySignature sharpSignature = KeySignature.fromScale(fAltered, SHARP);
-//    System.out.println(sharpSignature.toString(fAltered));
-//    KeySignature flatSignature = KeySignature.fromScale(fAltered, FLAT);
-//    System.out.println(flatSignature.toString(fAltered));
-//    fail("no assertions");
-//  }
+  @Test
+  public void testNotationMapFromScale() {
+    assertNotation("C D E F G A B", CMajor);
+    assertNotation("Db Eb F Gb Ab Bb C", CMajor.transpose(Db));
+    assertNotation("G# A# B C# D# E Fx", CHarmonicMinor.transpose(Ab));
+  }
+
+  @Test
+  public void testNotationMapFallback() {
+    assertNotation("C Db Eb E Gb G A Bb", CDiminishedHalfWhole);
+  }
   
+  private void assertNotation(String expected, Scale scale) {
+    assertEquals(expected, fromScale(scale).toString(scale));
+  }
+
   @Test
   public void testAMelodicMinorBug() {
-    KeySignature keySignature = KeySignature.fromScale(CMelodicMinor.transpose(A), B, SHARP);
+    KeySignature keySignature = fromScale(CMelodicMinor.transpose(A), B, SHARP);
     System.out.println(keySignature);
     assertEquals("G#", keySignature.notate(Ab));
   }
   
-//  @Test
-//  public void testAccidentalFromScale() {
-//    assertSignature("Major Scale", CMajor, SHARP, G, D, A, E, B);
-//    assertSignature("Major Scale", CMajor, FLAT, C, F, Bb, Eb, Ab, Db, Gb);
-//    assertSignature("Melodic Minor", CMelodicMinor, SHARP,  A, D, E, B, Gb);
-//    assertSignature("Melodic Minor", CMelodicMinor, FLAT, Db, Ab, Eb, Bb, F, C, G);
-//    assertSignature("Harmonic Minor", CHarmonicMinor, SHARP, A, E, B, Gb, Db);
-//    assertSignature("Harmonic Minor", CHarmonicMinor, FLAT, Ab, Eb, Bb, F, C, D, G);
-//
-//  }
-//
-//  private void assertSignature(String scaleType, Scale cscale, Accidental expected, Note... roots) {
-//    for (int i = 0; i < roots.length; i++) {
-//      Scale scale = cscale.transpose(roots[i]);
-//      KeySignature actual = fromScale(scale);
-//      String message = format("%2s %15s Signature: %2s (%d%s) [%s]", roots[i].toString(), scaleType, actual.notateKey(), actual.getNumberOfAccidentals(),
-//          actual.getAccidental().symbol(), actual.toString(scale));
-//      System.out.println(message);
-//      assertEquals(message, expected, actual.getAccidental());
-//    }
-//  }
-
   private void assertNoDuplicateNotationExist(Scale scale, KeySignature signature) {
     List<String> scaleNotations = signature.notate(scale);
     List<String> otherNotations = Stream.of(Note.values()).filter(n -> !scale.contains(n)).map(signature::notate).collect(toList());

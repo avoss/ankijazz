@@ -20,7 +20,6 @@ Intervals
 ## BUGS
 - KeySignature.notationMap contains flats and sharps, should use accidental of keysignature to notate notes not in scale.
 - limit number of b and # in key signature to 6 (Marcus), put additional b/# into staff
-- C altered is notated as B# altered because C altered is 7th mode of C# MM and C# Aeolean is parallel major of E-Major
 
 ## Accidentals
 - scales und chords sind doch verschieden, chords beziehen sich immer auf eine Scale, zumindest erbt er die Vorzeichen
@@ -28,6 +27,7 @@ Intervals
 - Major Modes erben vorzeichen von parent-scale. HM/MM erben Vorzeichen von relative major. Bei Minor Pentatonic nicht klar, vermutlich dorisch zu sehen
 
 ## Special cases
+- C altered is notated as B# altered because C altered is 7th mode of C# MM and C# Aeolean is the relative minor of E-Major
 - B Lydian wäre korrekt Cb Lydian weil Gb major scale Cb statt B enthält
 - C Altered wäre korrekt B# Altered weil Calt = 7th mode of C# MM and relative minor of C# is E (MM with aeolean notation)
 

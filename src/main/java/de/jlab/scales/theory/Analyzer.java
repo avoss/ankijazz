@@ -9,6 +9,7 @@ import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.CMajor;
+import static java.util.stream.Collectors.joining;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -57,17 +58,13 @@ public class Analyzer {
       } else {
         computeNotationKey(flatSignatureKeys, (n) -> n.transpose(6));
       }
-      putDefaultNotationIntoNotationMapForNotesNotInScale();
+      completeNotationMap();
     }
 
-    private void putDefaultNotationIntoNotationMapForNotesNotInScale() {
+    private void completeNotationMap() {
       for (Note note : Note.values()) {
-        notationMap.putIfAbsent(note, defaultNotation(scale, note));
+        notationMap.putIfAbsent(note, note.getName(accidental));
       }
-    }
-    
-    private String defaultNotation(Scale scale, Note note) {
-      return note.getName(accidental);
     }
     
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
@@ -85,6 +82,7 @@ public class Analyzer {
 
   }
 
+  // TODO feature envy, move to Result
   public Result analyze(Scale scale, Accidental accidental) {
     Result result = new Result(scale, accidental);
     Note majorRoot = cMajorStartNote(scale, accidental);
@@ -127,5 +125,10 @@ public class Analyzer {
     return note;
   }
 
+  public Result fallback(Scale scale, Accidental accidental) {
+    Result result = new Analyzer.Result(scale, accidental);
+    result.initialize();
+    return result;
+  }
 
 }

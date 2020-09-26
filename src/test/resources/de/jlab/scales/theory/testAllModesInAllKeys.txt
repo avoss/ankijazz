@@ -382,3 +382,51 @@ F# Phrygian Dominant, Signature:  D (2#), Notation: F# G A# B C# D E
     F# Mixolydian b2, Signature:  B (5#), Notation: F# G A# B C# D# E 
         G Aeolean b1, Signature:  B (5#), Notation: G A# B C# D# E F# 
        A# Locrian b7, Signature:  B (5#), Notation: A# B C# D# E F# G 
+
+        C Whole Tone, Signature:  C (0b), Notation: C D E Gb Ab Bb 
+
+       Db Whole Tone, Signature:  C (0b), Notation: Db Eb F G A B 
+
+        D Whole Tone, Signature:  C (0b), Notation: D E Gb Ab Bb C 
+
+       Eb Whole Tone, Signature:  C (0b), Notation: Eb F G A B Db 
+
+        E Whole Tone, Signature:  C (0b), Notation: E Gb Ab Bb C D 
+
+        F Whole Tone, Signature:  C (0b), Notation: F G A B Db Eb 
+
+       Gb Whole Tone, Signature:  C (0b), Notation: Gb Ab Bb C D E 
+
+        G Whole Tone, Signature:  C (0b), Notation: G A B Db Eb F 
+
+       Ab Whole Tone, Signature:  C (0b), Notation: Ab Bb C D E Gb 
+
+        A Whole Tone, Signature:  C (0b), Notation: A B Db Eb F G 
+
+       Bb Whole Tone, Signature:  C (0b), Notation: Bb C D E Gb Ab 
+
+        B Whole Tone, Signature:  C (0b), Notation: B Db Eb F G A 
+
+C Diminished Half/Whole, Signature:  C (0b), Notation: C Db Eb E Gb G A Bb 
+
+Db Diminished Half/Whole, Signature:  C (0b), Notation: Db D E F G Ab Bb B 
+
+D Diminished Half/Whole, Signature:  C (0b), Notation: D Eb F Gb Ab A B C 
+
+Eb Diminished Half/Whole, Signature:  C (0b), Notation: Eb E Gb G A Bb C Db 
+
+E Diminished Half/Whole, Signature:  C (0b), Notation: E F G Ab Bb B Db D 
+
+F Diminished Half/Whole, Signature:  C (0b), Notation: F Gb Ab A B C D Eb 
+
+Gb Diminished Half/Whole, Signature:  C (0b), Notation: Gb G A Bb C Db Eb E 
+
+G Diminished Half/Whole, Signature:  C (0b), Notation: G Ab Bb B Db D E F 
+
+Ab Diminished Half/Whole, Signature:  C (0b), Notation: Ab A B C D Eb F Gb 
+
+A Diminished Half/Whole, Signature:  C (0b), Notation: A Bb C Db Eb E Gb G 
+
+Bb Diminished Half/Whole, Signature:  C (0b), Notation: Bb B Db D E F G Ab 
+
+B Diminished Half/Whole, Signature:  C (0b), Notation: B C D Eb F Gb Ab A 

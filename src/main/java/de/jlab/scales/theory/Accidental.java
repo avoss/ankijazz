@@ -158,7 +158,7 @@ public enum Accidental {
   public abstract int numberOfAccidentals(Note majorKey);
   public abstract boolean isEnharmonic(Note note);
 
-  private static final Map<Note, Accidental> majorKeyAccidentals = ImmutableMap.<Note, Accidental>builder()
+  private static final Map<Note, Accidental> preferredMajorKeyAccidentals = ImmutableMap.<Note, Accidental>builder()
       .put(C, FLAT)
       .put(G, SHARP)
       .put(D, SHARP)
@@ -173,8 +173,8 @@ public enum Accidental {
       .put(F, FLAT)
       .build();
   
-  public static Accidental preferred(Note majorKey) {
-    return majorKeyAccidentals.get(majorKey);
+  public static Accidental preferredAccidentalForMajorKey(Note majorKey) {
+    return preferredMajorKeyAccidentals.get(majorKey);
   }
  
 }
