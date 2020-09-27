@@ -166,3 +166,15 @@ Ab Diminished Half/Whole;Diminished Half/Whole;Ab;Ab Diminished Half/Whole;Dimin
 A Diminished Half/Whole;Diminished Half/Whole;A;A Diminished Half/Whole;Diminished Half/Whole;A;<img src="AnkiJazz-59a32f40ac.png">;[sound:AnkiJazz-59a32f40ac.mp3];Ascending
 Bb Diminished Half/Whole;Diminished Half/Whole;Bb;Bb Diminished Half/Whole;Diminished Half/Whole;Bb;<img src="AnkiJazz-72a65c6179.png">;[sound:AnkiJazz-72a65c6179.mp3];Ascending
 B Diminished Half/Whole;Diminished Half/Whole;B;B Diminished Half/Whole;Diminished Half/Whole;B;<img src="AnkiJazz-fb00031997.png">;[sound:AnkiJazz-fb00031997.mp3];Ascending
+C Diminished Whole/Half;Diminished Whole/Half;C;B Diminished Half/Whole;Diminished Half/Whole;B;<img src="AnkiJazz-1aa1707657.png">;[sound:AnkiJazz-1aa1707657.mp3];Ascending
+Db Diminished Whole/Half;Diminished Whole/Half;Db;C Diminished Half/Whole;Diminished Half/Whole;C;<img src="AnkiJazz-f2446be694.png">;[sound:AnkiJazz-f2446be694.mp3];Ascending
+D Diminished Whole/Half;Diminished Whole/Half;D;Db Diminished Half/Whole;Diminished Half/Whole;Db;<img src="AnkiJazz-f0c7c3873d.png">;[sound:AnkiJazz-f0c7c3873d.mp3];Ascending
+Eb Diminished Whole/Half;Diminished Whole/Half;Eb;D Diminished Half/Whole;Diminished Half/Whole;D;<img src="AnkiJazz-23d4bc433c.png">;[sound:AnkiJazz-23d4bc433c.mp3];Ascending
+E Diminished Whole/Half;Diminished Whole/Half;E;Eb Diminished Half/Whole;Diminished Half/Whole;Eb;<img src="AnkiJazz-c7896791b8.png">;[sound:AnkiJazz-c7896791b8.mp3];Ascending
+F Diminished Whole/Half;Diminished Whole/Half;F;E Diminished Half/Whole;Diminished Half/Whole;E;<img src="AnkiJazz-ecdcb5926f.png">;[sound:AnkiJazz-ecdcb5926f.mp3];Ascending
+Gb Diminished Whole/Half;Diminished Whole/Half;Gb;F Diminished Half/Whole;Diminished Half/Whole;F;<img src="AnkiJazz-f7596a2202.png">;[sound:AnkiJazz-f7596a2202.mp3];Ascending
+G Diminished Whole/Half;Diminished Whole/Half;G;Gb Diminished Half/Whole;Diminished Half/Whole;Gb;<img src="AnkiJazz-e72839122e.png">;[sound:AnkiJazz-e72839122e.mp3];Ascending
+Ab Diminished Whole/Half;Diminished Whole/Half;Ab;G Diminished Half/Whole;Diminished Half/Whole;G;<img src="AnkiJazz-b8b4c63891.png">;[sound:AnkiJazz-b8b4c63891.mp3];Ascending
+A Diminished Whole/Half;Diminished Whole/Half;A;Ab Diminished Half/Whole;Diminished Half/Whole;Ab;<img src="AnkiJazz-626cd8d321.png">;[sound:AnkiJazz-626cd8d321.mp3];Ascending
+Bb Diminished Whole/Half;Diminished Whole/Half;Bb;A Diminished Half/Whole;Diminished Half/Whole;A;<img src="AnkiJazz-0b2b60f4a2.png">;[sound:AnkiJazz-0b2b60f4a2.mp3];Ascending
+B Diminished Whole/Half;Diminished Whole/Half;B;Bb Diminished Half/Whole;Diminished Half/Whole;Bb;<img src="AnkiJazz-d6b2b9d7ab.png">;[sound:AnkiJazz-d6b2b9d7ab.mp3];Ascending

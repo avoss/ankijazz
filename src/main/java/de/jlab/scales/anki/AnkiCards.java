@@ -11,6 +11,7 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
 import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
@@ -49,7 +50,7 @@ public class AnkiCards {
 
   public Deck parentScales() {
     Deck deck = new SimpleDeck("ParentScales");
-    for (Scale scale : allKeys(commonModes())) {
+    for (Scale scale : allKeys(commonModes(false))) {
       ScaleInfo scaleInfo = universe.info(scale);
       if (!scaleInfo.isInversion()) {
         continue;
@@ -113,6 +114,9 @@ public class AnkiCards {
   }
 
   private Collection<Scale> commonModes() {
+    return commonModes(true);
+  }
+  private Collection<Scale> commonModes(boolean includeSymmetricScales) {
     List<Scale> scales = new ArrayList<>();
     scales.addAll(CMajor.getInversions());
     scales.add(CMelodicMinor);
@@ -122,8 +126,11 @@ public class AnkiCards {
     scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
 //    scales.add(CHarmonicMajor);
 //    scales.add(CHarmonicMajor.transpose(B));   // Marcus
-    scales.add(CWholeTone);
-    scales.add(CDiminishedHalfWhole);
+    if (includeSymmetricScales) {
+      scales.add(CWholeTone);
+      scales.add(CDiminishedHalfWhole);
+      scales.add(CDiminishedHalfWhole.superimpose(Db));
+    }
     return scales;
   }
 

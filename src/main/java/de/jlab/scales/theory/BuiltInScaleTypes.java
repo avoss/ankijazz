@@ -43,11 +43,11 @@ public enum BuiltInScaleTypes implements ScaleType {
   HarmonicMinor(CHarmonicMinor, "Harmonic Minor", A, "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
   HarmonicMajor(CHarmonicMajor, "Harmonic Major", C, "Harmonic Major", "Dorian b5", "Phrygian b4", "Lydian b3", "Mixolydian b2", "Aeolean b1", "Locrian b7"),
 
-  DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole"),
+  DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole", "Diminished Half/Whole", "Diminished Whole/Half"),
   WholeTone(CWholeTone, "Whole Tone"),
   
   Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
-  Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", "x1", "Dominant7 Pentatonic", "x2", "Minor7b5 Pentatonic", "x3", "x4"),
+  Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", null, "Dominant7 Pentatonic", null, "Minor7b5 Pentatonic"),
   
   Major7(Cmaj7, "Δ7", C),
   Major7Sharp11(Cmaj7Sharp11, "Δ7#11", C),
@@ -61,8 +61,8 @@ public enum BuiltInScaleTypes implements ScaleType {
   Dominant7sus4(C7sus4, "7sus", G),
   Dominant7flat9(C7flat9, "7b9", G),
   Dominant7sharp9(C7sharp9, "7#9", G),
-  Dominant7flat5(C7flat5, "7b5", G),
-  Dominant7sharp5(C7sharp5, "7#5", G),
+  Dominant7flat5(C7flat5, "7b5", G), // TODO #11?
+  Dominant7sharp5(C7sharp5, "7#5", G), // TODO b13?
   Dominant7flat5flat9(C7flat5flat9, "7b5b9", G),
   Dominant7sharp5flat9(C7sharp5flat9, "7#5b9", G),
   Dominant7flat5sharp9(C7flat5sharp9, "7b5#9", G),
@@ -75,10 +75,10 @@ public enum BuiltInScaleTypes implements ScaleType {
   Sus4Triad(CsusTriad, "sus4", G)
   ;
   
-  private Scale prototype;
-  private String typeName;
-  private String[] modeNames;
-  Function<Note, Note> notationKey;
+  private final Scale prototype;
+  private final String typeName;
+  private final String[] modeNames;
+  private final Function<Note, Note> notationKey;
   
   BuiltInScaleTypes(Scale prototype, String typeName, Note modeKey, String ... modeNames) {
     this.prototype = prototype;

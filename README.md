@@ -1,6 +1,5 @@
 # Scales Core
 
-
 ## Dr. B Music
 - https://youtu.be/ICDPWP6HUbk?list=PLw9t0oA3fHkxx1PgYpiXrMUPXaOiwh6KU
 - there are 15 major scales, need to know the enharmonics 
@@ -17,21 +16,13 @@ Intervals
 - https://en.schott-music.com/shop/jazz-harmony-no326750.html
 - all minor modes relative to aeolean, all major modes relative to ionean
 
-## BUGS
-- KeySignature.notationMap contains flats and sharps, should use accidental of keysignature to notate notes not in scale.
-- limit number of b and # in key signature to 6 (Marcus), put additional b/# into staff
-
-## Accidentals
-- scales und chords sind doch verschieden, chords beziehen sich immer auf eine Scale, zumindest erbt er die Vorzeichen
-- Gb und F# haben ces und eis. Bei 7-Ton scales kann jeder Buchstabe nur einmal vergeben werden. Wie funktioniert das bei diminished scale?
-- Major Modes erben vorzeichen von parent-scale. HM/MM erben Vorzeichen von relative major. Bei Minor Pentatonic nicht klar, vermutlich dorisch zu sehen
+## Pitch Class Set Theory
 
 ## Special cases
+- Diminished scale is halfstep/wholestep, not the other way round
 - C altered is notated as B# altered because C altered is 7th mode of C# MM and C# Aeolean is the relative minor of E-Major
 - B Lydian wäre korrekt Cb Lydian weil Gb major scale Cb statt B enthält
 - C Altered wäre korrekt B# Altered weil Calt = 7th mode of C# MM and relative minor of C# is E (MM with aeolean notation)
-
-special cases:
 
 - G#  Harmonic Minor, Signature:  B (5#), Notation: G# A# B C# D# E Fx // bb or ##
 - Db  Harmonic Major, Signature: Db (5b), Notation: Db Eb F Gb Ab Bbb C // bb or ##
@@ -43,13 +34,11 @@ Major Scales and Modes:
 
 KeySignature strict:
 - Modes use signature of parent scale
-- HM and MM use signature of Aeolean
+- HM and MM use signature of parallel Aeolean
 - result contains double bb and ##, enharmonic roots
 
 KeySignature simplified:
-- same as above
-- in case of bb/## use inverse accidental and limit signature to 6 accidentals
-- enharmonic root is replaced with accidental applied (e.g. E# is replaced with F) TODO: all or just root?
+- MM uses signature of parallel Dorian
 
 ## TODO
 - migrate to junit 5
@@ -58,22 +47,12 @@ KeySignature simplified:
 
 ## TODO
 Decks:
-- enharmonics Ab -> G# etc
-- relative minor/major
+- learn enharmonics Ab -> G# etc
+- learn relative minor/major
 - spell scales w/o notation
-- learn scale notes (text only)
 - parent scales (done)
 - spell types (done)
 - !! 15 scales, not 12 
-- decks should share media, e.g. by creating a shared hash of content.
-
-Bugs:
-- double ## and bb are completely eliminated by choosing the inverse accidental! No need to take care in badness() or so.
-- have fallback() with notationKey and badness()
-- enharmonic roots (e.g. B# Altered instead of C Altered)!
-- scales, modes, w/ or w/o guitar should share media
-- add scaleNotes back to deck?
-
 
 ### Midi
 - know your fretboard: single note, natural, flat, sharps, all keys. 

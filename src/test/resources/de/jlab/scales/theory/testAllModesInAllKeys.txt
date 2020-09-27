@@ -408,25 +408,37 @@ F# Phrygian Dominant, Signature:  D (2#), Notation: F# G A# B C# D E
         B Whole Tone, Signature:  C (0b), Notation: B Db Eb F G A 
 
 C Diminished Half/Whole, Signature:  C (0b), Notation: C Db Eb E Gb G A Bb 
+Db Diminished Whole/Half, Signature:  C (0b), Notation: Db Eb E Gb G A Bb C 
 
 Db Diminished Half/Whole, Signature:  C (0b), Notation: Db D E F G Ab Bb B 
+D Diminished Whole/Half, Signature:  C (0b), Notation: D E F G Ab Bb B Db 
 
 D Diminished Half/Whole, Signature:  C (0b), Notation: D Eb F Gb Ab A B C 
+Eb Diminished Whole/Half, Signature:  C (0b), Notation: Eb F Gb Ab A B C D 
 
 Eb Diminished Half/Whole, Signature:  C (0b), Notation: Eb E Gb G A Bb C Db 
+E Diminished Whole/Half, Signature:  C (0b), Notation: E Gb G A Bb C Db Eb 
 
 E Diminished Half/Whole, Signature:  C (0b), Notation: E F G Ab Bb B Db D 
+F Diminished Whole/Half, Signature:  C (0b), Notation: F G Ab Bb B Db D E 
 
 F Diminished Half/Whole, Signature:  C (0b), Notation: F Gb Ab A B C D Eb 
+Gb Diminished Whole/Half, Signature:  C (0b), Notation: Gb Ab A B C D Eb F 
 
 Gb Diminished Half/Whole, Signature:  C (0b), Notation: Gb G A Bb C Db Eb E 
+G Diminished Whole/Half, Signature:  C (0b), Notation: G A Bb C Db Eb E Gb 
 
 G Diminished Half/Whole, Signature:  C (0b), Notation: G Ab Bb B Db D E F 
+Ab Diminished Whole/Half, Signature:  C (0b), Notation: Ab Bb B Db D E F G 
 
 Ab Diminished Half/Whole, Signature:  C (0b), Notation: Ab A B C D Eb F Gb 
+A Diminished Whole/Half, Signature:  C (0b), Notation: A B C D Eb F Gb Ab 
 
 A Diminished Half/Whole, Signature:  C (0b), Notation: A Bb C Db Eb E Gb G 
+Bb Diminished Whole/Half, Signature:  C (0b), Notation: Bb C Db Eb E Gb G A 
 
 Bb Diminished Half/Whole, Signature:  C (0b), Notation: Bb B Db D E F G Ab 
+B Diminished Whole/Half, Signature:  C (0b), Notation: B Db D E F G Ab Bb 
 
 B Diminished Half/Whole, Signature:  C (0b), Notation: B C D Eb F Gb Ab A 
+C Diminished Whole/Half, Signature:  C (0b), Notation: C D Eb F Gb Ab A B 

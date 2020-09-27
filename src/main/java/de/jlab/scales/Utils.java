@@ -16,6 +16,8 @@ import java.util.stream.Collectors;
 
 import com.google.common.base.Charsets;
 
+import de.jlab.scales.theory.Scale;
+
 public final class Utils {
   private Utils() {
   }
@@ -52,6 +54,10 @@ public final class Utils {
       throw new IllegalStateException(e);
     }
 
+  }
+
+  public static boolean isSymmetricalDuplicate(Scale parent, Scale mode) {
+    return !parent.equals(mode) && parent.transpose(mode.getRoot()).equals(mode);
   }
 
 }

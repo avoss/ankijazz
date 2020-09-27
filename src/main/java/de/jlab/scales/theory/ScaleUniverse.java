@@ -3,6 +3,7 @@ package de.jlab.scales.theory;
 import static de.jlab.scales.theory.Accidental.*;
 import static de.jlab.scales.theory.Note.*;
 import static java.util.stream.Collectors.toList;
+import static de.jlab.scales.Utils.*;
 
 import java.text.MessageFormat;
 import java.util.ArrayList;
@@ -81,7 +82,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     this.includeModes = includeModes;
     Stream.of(scaleTypes).forEachOrdered(this::add);
     initializeSubScales();
-    // TODO: initializeKeySignatures() ????
+    // TODO: initializeKeySignatures() now because parent scale is available
   }
 
   private void add(ScaleType scaleType) {
@@ -119,23 +120,25 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   private void addAll(ScaleType scaleType, Namer namer) {
-    Scale scale = scaleType.getPrototype();
-    for (Note newRoot : Note.values()) {
-      Scale transposed = scale.transpose(newRoot);
-      addModes(scaleType, transposed, namer);
+    Scale prototype = scaleType.getPrototype();
+    for (Scale parent : Scales.allKeys(prototype)) {
+      Note majorRoot = scaleType.notationKey().apply(parent.getRoot());
+      Accidental accidental = Accidental.preferredAccidentalForMajorKey(majorRoot);
+      KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
+      addModes(scaleType, parent, namer, keySignature);
     }
   }
 
-  private void addModes(ScaleType scaleType, Scale parent, ScaleUniverse.Namer namer) {
+  private void addModes(ScaleType scaleType, Scale parent, Namer namer, KeySignature keySignature) {
     Note oldRoot = parent.getRoot();
     
-    Note majorRoot = scaleType.notationKey().apply(parent.getRoot());
-    Accidental accidental = Accidental.preferredAccidentalForMajorKey(majorRoot);
-    KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
     int numberOfModes = this.includeModes ? parent.length() : 1;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
       Scale mode = parent.superimpose(newRoot);
+      if (isSymmetricalDuplicate(parent, mode)) {
+        break;
+      }
       ScaleInfo info = ScaleInfo.builder()
           .keySignature(keySignature)
           .scale(mode)

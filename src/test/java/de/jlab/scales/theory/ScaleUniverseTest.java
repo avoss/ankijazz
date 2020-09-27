@@ -28,7 +28,7 @@ import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
+import static org.junit.Assert.*;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
@@ -62,27 +62,28 @@ public class ScaleUniverseTest {
   @Test
   public void testAllModesInAllKeys() {
     List<String> actual = new ArrayList<>();
-    List<Scale> scales = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor)));
-    scales.addAll(allKeys(asList( CWholeTone, CDiminishedHalfWhole)));
+    List<Scale> scales = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CWholeTone, CDiminishedHalfWhole)));
     for (Scale scale : scales) {
-      ScaleInfo scaleInfo = allScales.info(scale);
-      KeySignature signature = scaleInfo.getKeySignature();
-      String reviewMarker = TestUtils.reviewMarker(scale, signature);
-      if (scaleInfo == allScales.info(scaleInfo.getParent())) {
-        actual.add("");
+      for (ScaleInfo scaleInfo : allScales.infos(scale)) {
+        KeySignature signature = scaleInfo.getKeySignature();
+        String reviewMarker = TestUtils.reviewMarker(scale, signature);
+        if (scaleInfo == allScales.info(scaleInfo.getParent())) {
+          actual.add("");
+        }
+        String message = format("%20s, Signature: %2s (%d%s), Notation: %s %s",
+            scaleInfo.getScaleName(),
+            signature.notationKey(),
+            signature.getNumberOfAccidentals(),
+            signature.getAccidental().symbol(), 
+            signature.toString(scale),
+            reviewMarker);
+        actual.add(message);
       }
-      String message = format("%20s, Signature: %2s (%d%s), Notation: %s %s",
-          scaleInfo.getScaleName(),
-          signature.notationKey(),
-          signature.getNumberOfAccidentals(),
-          signature.getAccidental().symbol(), 
-          signature.toString(scale),
-          reviewMarker);
-      actual.add(message);
     }
     assertFileContentMatches(actual, ScaleUniverseTest.class, "testAllModesInAllKeys.txt");
   }
   
+
   @Test
   public void testParents() {
     for (Scale parent : allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor))) {

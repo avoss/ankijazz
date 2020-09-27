@@ -18,6 +18,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
+import de.jlab.scales.Utils;
+
 public class Scales {
 
   public static final Scale CMajor = new Scale(C, D, E, F, G, A, B);
@@ -82,9 +84,13 @@ public class Scales {
   
   public static List<Scale> allModes(Collection<Scale> scales) {
     List<Scale> allScales = new ArrayList<>();
-    for (Scale scale : scales) {
-      for (Note root: scale) {
-        allScales.add(scale.superimpose(root));
+    for (Scale parent : scales) {
+      for (Note root: parent) {
+        Scale mode = parent.superimpose(root);
+        if (Utils.isSymmetricalDuplicate(parent, mode)) {
+          break;
+        }
+        allScales.add(mode);
       }
     }
     return allScales;
