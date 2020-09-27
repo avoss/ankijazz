@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>{{id}}</title>
+</head>
+<body>
+  <div class="container">
+  <h1>Content of {{id}}</h1>
+  {{#cards}}
+    <hr />
+    <div>
+      <h3>{{modeName}}</h3>
+      <ul>
+        <li>modeName: {{modeName}}</li>
+        <li>modeTypeName: {{modeTypeName}}</li> 
+        <li>modeRootName: {{modeRootName}}</li>
+        <li>parentName: {{parentName}}</li>
+        <li>parentTypeName: {{parentTypeName}}</li>
+        <li>parentRootName: {{parentRootName}}</li>
+        <li>notationKey: {{notationKey}}</li>
+        <li>direction: {{direction}}</li>
+      </ul>
+      <div class="d-flex justify-content-center"><img src="{{modeHtmlPng}}"></img></div>
+      <div class="d-flex justify-content-center"><audio controls src="{{modeHtmlMp3}}"></audio></div>
+    </div>
+  {{/cards}}
+  </div>
+</body>
+</html>

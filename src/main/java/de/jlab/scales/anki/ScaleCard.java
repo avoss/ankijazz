@@ -51,45 +51,53 @@ public class ScaleCard implements Card {
   
   @Override
   public String[] getFields() {
-    return new String[] { modeName(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modePngName(), modeMp3Name(), direction() };
+    return new String[] { modeName(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modeAnkiPng(), modeAnkiMp3(), direction() };
   }
 
-  private String direction() {
+  public String direction() {
     return descending ? "Descending" : "Ascending";
   }
 
-  private String modeName() {
+  public String modeName() {
     return modeInfo.getScaleName();
   }
 
-  private String modeTypeName() {
+  public String modeTypeName() {
     return modeInfo.getTypeName();
   }
 
-  private String modeRootName() {
+  public String modeRootName() {
     return keySignature.notate(modeInfo.getScale().getRoot());
   }
 
-  private String parentName() {
+  public String parentName() {
     return parentInfo.getScaleName();
   }
 
-  private String parentTypeName() {
+  public String parentTypeName() {
     return parentInfo.getTypeName();
   }
 
-  private String parentRootName() {
+  public String parentRootName() {
     return keySignature.notate(parentInfo.getScale().getRoot());
   }
 
-  private String modePngName() {
+  public String modeAnkiPng() {
     return format("<img src=\"%s.png\">", lilyId);
   }
 
-  private String modeMp3Name() {
+  public String modeAnkiMp3() {
     return format("[sound:%s.mp3]",  lilyId);
   }
 
+  public String modeHtmlPng() {
+    return format("%s.png", lilyId);
+  }
+
+  public String modeHtmlMp3() {
+    return format("%s.mp3",  lilyId);
+  }
+  
   public String lilyName() {
     return format("%s.ly", lilyId);
   }
@@ -97,6 +105,9 @@ public class ScaleCard implements Card {
   @Override
   public int getDifficulty() {
     return difficulty;
+  }
+  public String notationKey() {
+    return keySignature.notationKey();
   }
 
   @Override

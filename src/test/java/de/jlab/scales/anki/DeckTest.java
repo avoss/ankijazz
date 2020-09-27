@@ -19,10 +19,10 @@ public class DeckTest {
     deck.add(3,  "E", "F");
     deck.add(2,  "C", "D");
     deck.shuffle(0);
-    Path parent = Paths.get("build");
-    Path path = deck.writeTo(parent);
+    Path dir = Paths.get("build");
+    deck.writeTo(dir);
     
-    String actual = Files.readAllLines(path.resolve("AnkiJazz-WriteCsv.txt")).stream().collect(Collectors.joining("\n"));
+    String actual = Files.readAllLines(dir.resolve("AnkiJazz-WriteCsv.txt")).stream().collect(Collectors.joining("\n"));
     assertEquals("A;B\nC;D\nE;F", actual);
   }
 

@@ -45,7 +45,9 @@ public class AnkiCardsTest {
   
   @Test
   public void playModes() {
-    checkAndWrite(anki.playModes());
+    Deck deck = anki.playModes();
+    deck.writeHtml(Paths.get("build/anki"));
+    checkAndWrite(deck);
   }
   
   private void checkAndWrite(Deck deck) {

@@ -14,6 +14,7 @@ public class GuitarDeck implements Deck {
     this.delegate = delegate;
   }
 
+  @Override
   public void add(Card card) {
     delegate.add(new CardDecorator(card, "Low", "<img src=\"AnkiJazz-FretboardLow.png\">"));
     delegate.add(new CardDecorator(card, "Medium", "<img src=\"AnkiJazz-FretboardMedium.png\">"));
@@ -25,19 +26,28 @@ public class GuitarDeck implements Deck {
     return delegate.getId();
   }
 
-  public Path writeTo(Path dir) {
-    return delegate.writeTo(dir);
+  @Override
+  public void writeTo(Path dir) {
+    delegate.writeTo(dir);
   }
 
+  @Override
   public void shuffle(int randomness) {
     delegate.shuffle(randomness);
   }
 
+  @Override
   public List<String> getCsv() {
     return delegate.getCsv();
   }
 
+  @Override
   public List<Card> getCards() {
     return delegate.getCards();
+  }
+
+  @Override
+  public void writeHtml(Path dir) {
+    delegate.writeHtml(dir);
   }
 }
