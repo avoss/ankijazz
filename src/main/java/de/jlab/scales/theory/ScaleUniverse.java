@@ -9,6 +9,7 @@ import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -63,7 +64,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   private ListMultimap<Scale, ScaleInfo> infos = MultimapBuilder.hashKeys().arrayListValues().build();
-  private List<Scale> scales = new ArrayList<>();
+  private Set<Scale> scales = new LinkedHashSet<>();
   private boolean includeModes;
 
   public ScaleUniverse() {
@@ -126,6 +127,9 @@ public class ScaleUniverse implements Iterable<Scale> {
       Accidental accidental = Accidental.preferredAccidentalForMajorKey(majorRoot);
       KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
       addModes(scaleType, parent, namer, keySignature);
+      if (majorRoot == Note.Gb) {
+        addModes(scaleType, parent, namer, KeySignature.fromScale(parent, majorRoot, accidental.inverse()));
+      }
     }
   }
 
@@ -133,6 +137,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     Note oldRoot = parent.getRoot();
     
     int numberOfModes = this.includeModes ? parent.length() : 1;
+    ScaleInfo parentInfo = null;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
       Scale mode = parent.superimpose(newRoot);
@@ -142,11 +147,15 @@ public class ScaleUniverse implements Iterable<Scale> {
       ScaleInfo info = ScaleInfo.builder()
           .keySignature(keySignature)
           .scale(mode)
-          .parent(parent)
+          .parentInfo(parentInfo)
           .typeName(namer.typeName(i))
           .scaleName(namer.name(i, oldRoot, newRoot, keySignature))
           .scaleType(scaleType)
           .build();
+      if (parentInfo == null) {
+        parentInfo = info;
+        info.setParentInfo(parentInfo);
+      }
       infos.put(mode, info);
       scales.add(mode);
     }
@@ -166,7 +175,8 @@ public class ScaleUniverse implements Iterable<Scale> {
 
   // FIXME too much guesswork here ...
   private ScaleInfo defaultInfo(Scale scale) {
-    ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).parent(scale).build();
+    ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).build();
+    info.setParentInfo(info);
     initializeDefaultInfoSuperAndSubScales(info);
     /*
      * TODO: should search for major scale with lowest index. 

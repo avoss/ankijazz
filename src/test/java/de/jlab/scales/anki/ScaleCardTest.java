@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Scales.CMajor;
@@ -15,8 +16,12 @@ import org.junit.Test;
 
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
-public class ScaleCardTest {
+import de.jlab.scales.theory.ScaleUniverse;
 
+public class ScaleCardTest {
+  
+  static ScaleUniverse universe = new ScaleUniverse(true, Major);
+  
   @Test
   public void testWriteAssets() throws IOException {
     Scale bb7 = CMajor.transpose(Eb).superimpose(Bb);
@@ -30,7 +35,7 @@ public class ScaleCardTest {
   }
   
   private ScaleCard card(Scale scale) {
-    return new ScaleCard(scale, KeySignature.fromScale(scale));
+    return new ScaleCard(universe.info(scale));
   }
 
 

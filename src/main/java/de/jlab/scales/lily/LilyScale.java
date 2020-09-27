@@ -22,17 +22,13 @@ public class LilyScale {
   private final String scaleName;
   private final boolean descending;
 
-  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature) {
-    this(scaleInfo, keySignature, false);
+  public LilyScale(ScaleInfo scaleInfo) {
+    this(scaleInfo, false);
   }
 
-  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature, boolean descending) {
-    this(scaleInfo, keySignature, scaleInfo.getScaleName(), descending);
-  }
-  
-  public LilyScale(ScaleInfo scaleInfo, KeySignature keySignature, String scaleName, boolean descending) {
-    this.keySignature = keySignature;
-    this.scaleName = scaleName;
+  public LilyScale(ScaleInfo scaleInfo, boolean descending) {
+    this.keySignature = scaleInfo.getKeySignature();
+    this.scaleName = scaleInfo.getScaleName();
     this.scale = scaleInfo.getScale();
     this.descending = descending;
   }

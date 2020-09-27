@@ -33,11 +33,15 @@ import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-import org.assertj.core.util.Lists;
 import org.junit.Test;
+
+import com.google.common.collect.Lists;
 
 import de.jlab.scales.TestUtils;
 
@@ -59,37 +63,66 @@ public class ScaleUniverseTest {
       }
     }
   }
+  
+  class ScaleInfoComparator implements Comparator<ScaleInfo> {
+    List<ScaleType> types = Arrays.asList(BuiltInScaleTypes.values());
+    List<Note> roots = Arrays.asList(Note.values());
+    @Override
+    public int compare(ScaleInfo a, ScaleInfo b) {
+      if (a.getParentInfo().getScaleType() != b.getParentInfo().getScaleType()) {
+        return Integer.compare(types.indexOf(a.getParentInfo().getScaleType()), types.indexOf(b.getParentInfo().getScaleType()));
+      }
+      
+      if (a.getParentInfo().getScale().getRoot() != b.getParentInfo().getScale().getRoot()) {
+        return Integer.compare(roots.indexOf(a.getParentInfo().getScale().getRoot()), roots.indexOf(b.getParentInfo().getScale().getRoot()));
+      }
+      
+      // Gb and F# have same root, but different notation
+      String aRoot = a.getParentInfo().getKeySignature().notate(a.getParentInfo().getScale().getRoot());
+      String bRoot = b.getParentInfo().getKeySignature().notate(b.getParentInfo().getScale().getRoot());
+      if (!aRoot.equals(bRoot)) {
+        return aRoot.compareTo(bRoot);
+      }
+      
+      return Integer.compare(a.modeIndex(), b.modeIndex());
+    }
+  }
+
   @Test
   public void testAllModesInAllKeys() {
+    List<ScaleInfo> scaleInfos = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CWholeTone, CDiminishedHalfWhole)))
+      .stream()
+      .flatMap(scale -> allScales.infos(scale).stream())
+      .sorted(new ScaleInfoComparator())
+      .collect(Collectors.toList());
+    
     List<String> actual = new ArrayList<>();
-    List<Scale> scales = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CWholeTone, CDiminishedHalfWhole)));
-    for (Scale scale : scales) {
-      for (ScaleInfo scaleInfo : allScales.infos(scale)) {
-        KeySignature signature = scaleInfo.getKeySignature();
-        String reviewMarker = TestUtils.reviewMarker(scale, signature);
-        if (scaleInfo == allScales.info(scaleInfo.getParent())) {
-          actual.add("");
-        }
-        String message = format("%20s, Signature: %2s (%d%s), Notation: %s %s",
-            scaleInfo.getScaleName(),
-            signature.notationKey(),
-            signature.getNumberOfAccidentals(),
-            signature.getAccidental().symbol(), 
-            signature.toString(scale),
-            reviewMarker);
-        actual.add(message);
+    for (ScaleInfo scaleInfo: scaleInfos) {
+      KeySignature signature = scaleInfo.getKeySignature();
+      Scale scale = scaleInfo.getScale();
+      String reviewMarker = TestUtils.reviewMarker(scale, signature);
+      if (!scaleInfo.isInversion()) {
+        actual.add("");
       }
+      String message = format("%25s, Signature: %2s (%d%s), Notation: %s %s",
+          scaleInfo.getScaleName(),
+          signature.notationKey(),
+          signature.getNumberOfAccidentals(),
+          signature.getAccidental().symbol(), 
+          signature.toString(scale),
+          //scaleInfo.getParentInfo().getScaleName(),
+          reviewMarker);
+      actual.add(message);
     }
     assertFileContentMatches(actual, ScaleUniverseTest.class, "testAllModesInAllKeys.txt");
   }
-  
 
   @Test
   public void testParents() {
     for (Scale parent : allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor))) {
       for (Scale mode : allModes(parent)) {
         ScaleInfo modeInfo = allScales.info(mode);
-        assertEquals(parent, modeInfo.getParent());
+        assertEquals(parent, modeInfo.getParentInfo().getScale());
       }
     }
   }
@@ -149,7 +182,7 @@ public class ScaleUniverseTest {
     ScaleUniverse universe = new ScaleUniverse(Major, MelodicMinor);
     List<Scale> expected = Scales.allKeys(asList(CMajor, CMelodicMinor));
     List<Scale> actual = Lists.newArrayList(universe.iterator());
-    assertThat(expected).isEqualTo(actual);
+    assertThat(actual).isEqualTo(expected);
     ScaleInfo info = universe.info(Cm7b5.transpose(B));
     assertThat(info.getSuperScales()).containsExactly(CMajor, CMelodicMinor, CMelodicMinor.transpose(D));
   }
@@ -210,7 +243,7 @@ public class ScaleUniverseTest {
   @Test
   public void testIdentity() {
     ScaleInfo info = allScales.info(C7sus4.transpose(2));
-    assertSame(info.getScale(), info.getParent());
+    assertSame(info.getScale(), info.getParentInfo().getScale());
   }
   
   @Test
@@ -226,7 +259,7 @@ public class ScaleUniverseTest {
     Scale dDorianScale = CMajor.superimpose(D);
     ScaleInfo dDorianInfo = universe.info(dDorianScale);
     assertThat(dDorianInfo.getScaleName()).isNotEqualTo("D Dorian");
-    assertEquals(dDorianScale, dDorianInfo.getParent());
+    assertEquals(dDorianScale, dDorianInfo.getParentInfo().getScale());
   }
   
   @Test
@@ -283,6 +316,6 @@ public class ScaleUniverseTest {
     ScaleInfo info = allScales.info(scale);
     assertThat(info.getScaleName()).isEqualTo(name);
     assertEquals(info.getScale(), scale);
-    assertEquals(info.getParent(), parent);
+    assertEquals(info.getParentInfo().getScale(), parent);
   }
 }

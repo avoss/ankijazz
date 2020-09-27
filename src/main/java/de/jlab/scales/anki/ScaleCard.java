@@ -34,17 +34,17 @@ public class ScaleCard implements Card {
   private String lilyString;
   private String lilyId;
 
-  public ScaleCard(Scale mode, KeySignature keySignature) {
-    this(mode, keySignature, keySignature.getNumberOfAccidentals(), false);
+  public ScaleCard(ScaleInfo modeInfo) {
+    this(modeInfo, modeInfo.getKeySignature().getNumberOfAccidentals(), false);
   }
   
-  public ScaleCard(Scale mode, KeySignature keySignature, int difficulty, boolean descending) {
-    this.keySignature = keySignature;
+  public ScaleCard(ScaleInfo modeInfo, int difficulty, boolean descending) {
+    this.modeInfo = modeInfo;
+    this.keySignature = modeInfo.getKeySignature();
     this.descending = descending;
-    this.modeInfo = universe.info(mode);
-    this.parentInfo = universe.info(modeInfo.getParent());
+    this.parentInfo = modeInfo.getParentInfo();
     this.difficulty = difficulty;
-    this.lilyString = new LilyScale(modeInfo, keySignature, modeName(), descending).toLily();
+    this.lilyString = new LilyScale(modeInfo, descending).toLily();
     this.lilyId = Utils.hash(lilyString);
 
   }

@@ -9,7 +9,7 @@ import lombok.Data;
 @Builder
 public class ScaleInfo {
   /**
-   * scale: "Bb Dorian" because parent is Ab Major
+   * scale: "Bb Dorian"
    * chord: "Bbm7"
    */
   private String scaleName;
@@ -19,19 +19,18 @@ public class ScaleInfo {
    */
   private String typeName;
   private Scale scale;
-  private Scale parent;
+  private ScaleInfo parentInfo;
   private KeySignature keySignature;
   private final List<Scale> superScales = new ArrayList<>();
   private final List<Scale> subScales = new ArrayList<>();
   private ScaleType scaleType;
 
   public boolean isInversion() {
-    return !scale.equals(parent);
+    return !scale.equals(parentInfo.getScale());
   }
-  
+
   public int modeIndex() {
-    return parent.indexOf(scale.getRoot());
+    return parentInfo.getScale().indexOf(scale.getRoot());
   }
-  
 
 }

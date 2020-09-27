@@ -55,7 +55,7 @@ public class AnkiCards {
       if (!scaleInfo.isInversion()) {
         continue;
       }
-      ScaleInfo parentInfo = universe.info(scaleInfo.getParent());
+      ScaleInfo parentInfo = scaleInfo.getParentInfo();
       deck.add(scaleInfo.getScaleName(), parentInfo.getScaleName());
     }
     return deck;
@@ -90,13 +90,14 @@ public class AnkiCards {
   
   private Deck playScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
     for (Scale scale : allKeys(scales)) {
-      ScaleInfo info = universe.info(scale);
-      int difficulty = info.getKeySignature().getNumberOfAccidentals();
-      difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
-      difficulty += info.isInversion() ? 3 : 0;
-      deck.add(new ScaleCard(scale, info.getKeySignature(), difficulty, false));
-      if (includeDescending) {
-        deck.add(new ScaleCard(scale, info.getKeySignature(), difficulty, true));
+      for (ScaleInfo info : universe.infos(scale)) {
+        int difficulty = info.getKeySignature().getNumberOfAccidentals();
+        difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
+        difficulty += info.isInversion() ? 3 : 0;
+        deck.add(new ScaleCard(info, difficulty, false));
+        if (includeDescending) {
+          deck.add(new ScaleCard(info, difficulty, true));
+        }
       }
     }
     return deck;
@@ -116,6 +117,7 @@ public class AnkiCards {
   private Collection<Scale> commonModes() {
     return commonModes(true);
   }
+
   private Collection<Scale> commonModes(boolean includeSymmetricScales) {
     List<Scale> scales = new ArrayList<>();
     scales.addAll(CMajor.getInversions());

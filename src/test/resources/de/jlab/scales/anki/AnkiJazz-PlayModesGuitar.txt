@@ -40,6 +40,12 @@ Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-7
 Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-45072ee0c5.png">;[sound:AnkiJazz-45072ee0c5.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-45072ee0c5.png">;[sound:AnkiJazz-45072ee0c5.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-45072ee0c5.png">;[sound:AnkiJazz-45072ee0c5.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-66415fadf0.png">;[sound:AnkiJazz-66415fadf0.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-66415fadf0.png">;[sound:AnkiJazz-66415fadf0.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-66415fadf0.png">;[sound:AnkiJazz-66415fadf0.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-fc141d4390.png">;[sound:AnkiJazz-fc141d4390.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-fc141d4390.png">;[sound:AnkiJazz-fc141d4390.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-fc141d4390.png">;[sound:AnkiJazz-fc141d4390.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 G Major Scale;Major Scale;G;G Major Scale;Major Scale;G;<img src="AnkiJazz-b8d19b6c35.png">;[sound:AnkiJazz-b8d19b6c35.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 G Major Scale;Major Scale;G;G Major Scale;Major Scale;G;<img src="AnkiJazz-b8d19b6c35.png">;[sound:AnkiJazz-b8d19b6c35.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 G Major Scale;Major Scale;G;G Major Scale;Major Scale;G;<img src="AnkiJazz-b8d19b6c35.png">;[sound:AnkiJazz-b8d19b6c35.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -124,6 +130,12 @@ Ab Dorian;Dorian;Ab;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-756e7c48ef.
 Ab Dorian;Dorian;Ab;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-f57b87f426.png">;[sound:AnkiJazz-f57b87f426.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Ab Dorian;Dorian;Ab;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-f57b87f426.png">;[sound:AnkiJazz-f57b87f426.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Ab Dorian;Dorian;Ab;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-f57b87f426.png">;[sound:AnkiJazz-f57b87f426.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+G# Dorian;Dorian;G#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-5dc9cfe7c9.png">;[sound:AnkiJazz-5dc9cfe7c9.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+G# Dorian;Dorian;G#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-5dc9cfe7c9.png">;[sound:AnkiJazz-5dc9cfe7c9.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+G# Dorian;Dorian;G#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-5dc9cfe7c9.png">;[sound:AnkiJazz-5dc9cfe7c9.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+G# Dorian;Dorian;G#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-a46c2cb010.png">;[sound:AnkiJazz-a46c2cb010.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+G# Dorian;Dorian;G#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-a46c2cb010.png">;[sound:AnkiJazz-a46c2cb010.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+G# Dorian;Dorian;G#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-a46c2cb010.png">;[sound:AnkiJazz-a46c2cb010.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 A Dorian;Dorian;A;G Major Scale;Major Scale;G;<img src="AnkiJazz-aa9b27ebc1.png">;[sound:AnkiJazz-aa9b27ebc1.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 A Dorian;Dorian;A;G Major Scale;Major Scale;G;<img src="AnkiJazz-aa9b27ebc1.png">;[sound:AnkiJazz-aa9b27ebc1.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 A Dorian;Dorian;A;G Major Scale;Major Scale;G;<img src="AnkiJazz-aa9b27ebc1.png">;[sound:AnkiJazz-aa9b27ebc1.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -208,6 +220,12 @@ Bb Phrygian;Phrygian;Bb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-0f79758
 Bb Phrygian;Phrygian;Bb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-256d44a926.png">;[sound:AnkiJazz-256d44a926.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Bb Phrygian;Phrygian;Bb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-256d44a926.png">;[sound:AnkiJazz-256d44a926.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Bb Phrygian;Phrygian;Bb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-256d44a926.png">;[sound:AnkiJazz-256d44a926.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+A# Phrygian;Phrygian;A#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-8d112485ef.png">;[sound:AnkiJazz-8d112485ef.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+A# Phrygian;Phrygian;A#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-8d112485ef.png">;[sound:AnkiJazz-8d112485ef.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+A# Phrygian;Phrygian;A#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-8d112485ef.png">;[sound:AnkiJazz-8d112485ef.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+A# Phrygian;Phrygian;A#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-b8b5bd2507.png">;[sound:AnkiJazz-b8b5bd2507.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+A# Phrygian;Phrygian;A#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-b8b5bd2507.png">;[sound:AnkiJazz-b8b5bd2507.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+A# Phrygian;Phrygian;A#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-b8b5bd2507.png">;[sound:AnkiJazz-b8b5bd2507.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 B Phrygian;Phrygian;B;G Major Scale;Major Scale;G;<img src="AnkiJazz-e40759d83c.png">;[sound:AnkiJazz-e40759d83c.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 B Phrygian;Phrygian;B;G Major Scale;Major Scale;G;<img src="AnkiJazz-e40759d83c.png">;[sound:AnkiJazz-e40759d83c.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 B Phrygian;Phrygian;B;G Major Scale;Major Scale;G;<img src="AnkiJazz-e40759d83c.png">;[sound:AnkiJazz-e40759d83c.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -286,6 +304,12 @@ Cb Lydian;Lydian;Cb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-9c3ec6fd02.
 Cb Lydian;Lydian;Cb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-370dcbf2c5.png">;[sound:AnkiJazz-370dcbf2c5.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Cb Lydian;Lydian;Cb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-370dcbf2c5.png">;[sound:AnkiJazz-370dcbf2c5.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Cb Lydian;Lydian;Cb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-370dcbf2c5.png">;[sound:AnkiJazz-370dcbf2c5.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+B Lydian;Lydian;B;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-9b27871e51.png">;[sound:AnkiJazz-9b27871e51.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+B Lydian;Lydian;B;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-9b27871e51.png">;[sound:AnkiJazz-9b27871e51.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+B Lydian;Lydian;B;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-9b27871e51.png">;[sound:AnkiJazz-9b27871e51.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+B Lydian;Lydian;B;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-0ec1823586.png">;[sound:AnkiJazz-0ec1823586.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+B Lydian;Lydian;B;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-0ec1823586.png">;[sound:AnkiJazz-0ec1823586.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+B Lydian;Lydian;B;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-0ec1823586.png">;[sound:AnkiJazz-0ec1823586.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 C Mixolydian;Mixolydian;C;F Major Scale;Major Scale;F;<img src="AnkiJazz-6d6fe5ad0e.png">;[sound:AnkiJazz-6d6fe5ad0e.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 C Mixolydian;Mixolydian;C;F Major Scale;Major Scale;F;<img src="AnkiJazz-6d6fe5ad0e.png">;[sound:AnkiJazz-6d6fe5ad0e.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 C Mixolydian;Mixolydian;C;F Major Scale;Major Scale;F;<img src="AnkiJazz-6d6fe5ad0e.png">;[sound:AnkiJazz-6d6fe5ad0e.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -298,6 +322,12 @@ Db Mixolydian;Mixolydian;Db;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-97b
 Db Mixolydian;Mixolydian;Db;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-1c274b10c2.png">;[sound:AnkiJazz-1c274b10c2.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Db Mixolydian;Mixolydian;Db;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-1c274b10c2.png">;[sound:AnkiJazz-1c274b10c2.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Db Mixolydian;Mixolydian;Db;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-1c274b10c2.png">;[sound:AnkiJazz-1c274b10c2.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+C# Mixolydian;Mixolydian;C#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-7526752292.png">;[sound:AnkiJazz-7526752292.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+C# Mixolydian;Mixolydian;C#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-7526752292.png">;[sound:AnkiJazz-7526752292.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+C# Mixolydian;Mixolydian;C#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-7526752292.png">;[sound:AnkiJazz-7526752292.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+C# Mixolydian;Mixolydian;C#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-80db753d8c.png">;[sound:AnkiJazz-80db753d8c.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+C# Mixolydian;Mixolydian;C#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-80db753d8c.png">;[sound:AnkiJazz-80db753d8c.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+C# Mixolydian;Mixolydian;C#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-80db753d8c.png">;[sound:AnkiJazz-80db753d8c.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 D Mixolydian;Mixolydian;D;G Major Scale;Major Scale;G;<img src="AnkiJazz-b50f559b53.png">;[sound:AnkiJazz-b50f559b53.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 D Mixolydian;Mixolydian;D;G Major Scale;Major Scale;G;<img src="AnkiJazz-b50f559b53.png">;[sound:AnkiJazz-b50f559b53.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 D Mixolydian;Mixolydian;D;G Major Scale;Major Scale;G;<img src="AnkiJazz-b50f559b53.png">;[sound:AnkiJazz-b50f559b53.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -382,6 +412,12 @@ Eb Aeolean;Aeolean;Eb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-fda456528
 Eb Aeolean;Aeolean;Eb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-4b6aa495cd.png">;[sound:AnkiJazz-4b6aa495cd.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Eb Aeolean;Aeolean;Eb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-4b6aa495cd.png">;[sound:AnkiJazz-4b6aa495cd.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Eb Aeolean;Aeolean;Eb;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-4b6aa495cd.png">;[sound:AnkiJazz-4b6aa495cd.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+D# Aeolean;Aeolean;D#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-1616c21b2d.png">;[sound:AnkiJazz-1616c21b2d.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+D# Aeolean;Aeolean;D#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-1616c21b2d.png">;[sound:AnkiJazz-1616c21b2d.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+D# Aeolean;Aeolean;D#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-1616c21b2d.png">;[sound:AnkiJazz-1616c21b2d.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+D# Aeolean;Aeolean;D#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-158ef95873.png">;[sound:AnkiJazz-158ef95873.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+D# Aeolean;Aeolean;D#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-158ef95873.png">;[sound:AnkiJazz-158ef95873.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+D# Aeolean;Aeolean;D#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-158ef95873.png">;[sound:AnkiJazz-158ef95873.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 E Aeolean;Aeolean;E;G Major Scale;Major Scale;G;<img src="AnkiJazz-a194341f7d.png">;[sound:AnkiJazz-a194341f7d.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 E Aeolean;Aeolean;E;G Major Scale;Major Scale;G;<img src="AnkiJazz-a194341f7d.png">;[sound:AnkiJazz-a194341f7d.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 E Aeolean;Aeolean;E;G Major Scale;Major Scale;G;<img src="AnkiJazz-a194341f7d.png">;[sound:AnkiJazz-a194341f7d.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -466,6 +502,12 @@ F Locrian;Locrian;F;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-2841e28b24.
 F Locrian;Locrian;F;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-94aeca368f.png">;[sound:AnkiJazz-94aeca368f.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 F Locrian;Locrian;F;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-94aeca368f.png">;[sound:AnkiJazz-94aeca368f.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 F Locrian;Locrian;F;Gb Major Scale;Major Scale;Gb;<img src="AnkiJazz-94aeca368f.png">;[sound:AnkiJazz-94aeca368f.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+E# Locrian;Locrian;E#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-10cbce9d28.png">;[sound:AnkiJazz-10cbce9d28.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+E# Locrian;Locrian;E#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-10cbce9d28.png">;[sound:AnkiJazz-10cbce9d28.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+E# Locrian;Locrian;E#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-10cbce9d28.png">;[sound:AnkiJazz-10cbce9d28.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+E# Locrian;Locrian;E#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-0f17fd0807.png">;[sound:AnkiJazz-0f17fd0807.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+E# Locrian;Locrian;E#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-0f17fd0807.png">;[sound:AnkiJazz-0f17fd0807.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+E# Locrian;Locrian;E#;F# Major Scale;Major Scale;F#;<img src="AnkiJazz-0f17fd0807.png">;[sound:AnkiJazz-0f17fd0807.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 F# Locrian;Locrian;F#;G Major Scale;Major Scale;G;<img src="AnkiJazz-7895b6d3df.png">;[sound:AnkiJazz-7895b6d3df.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 F# Locrian;Locrian;F#;G Major Scale;Major Scale;G;<img src="AnkiJazz-7895b6d3df.png">;[sound:AnkiJazz-7895b6d3df.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 F# Locrian;Locrian;F#;G Major Scale;Major Scale;G;<img src="AnkiJazz-7895b6d3df.png">;[sound:AnkiJazz-7895b6d3df.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -556,6 +598,12 @@ Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab;<img src="An
 Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-22cefbad4f.png">;[sound:AnkiJazz-22cefbad4f.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-22cefbad4f.png">;[sound:AnkiJazz-22cefbad4f.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-22cefbad4f.png">;[sound:AnkiJazz-22cefbad4f.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-b2f2e32a3f.png">;[sound:AnkiJazz-b2f2e32a3f.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-b2f2e32a3f.png">;[sound:AnkiJazz-b2f2e32a3f.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-b2f2e32a3f.png">;[sound:AnkiJazz-b2f2e32a3f.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-9cd07f7ea3.png">;[sound:AnkiJazz-9cd07f7ea3.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-9cd07f7ea3.png">;[sound:AnkiJazz-9cd07f7ea3.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-9cd07f7ea3.png">;[sound:AnkiJazz-9cd07f7ea3.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 A Melodic Minor;Melodic Minor;A;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-4739e836f9.png">;[sound:AnkiJazz-4739e836f9.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 A Melodic Minor;Melodic Minor;A;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-4739e836f9.png">;[sound:AnkiJazz-4739e836f9.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 A Melodic Minor;Melodic Minor;A;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-4739e836f9.png">;[sound:AnkiJazz-4739e836f9.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -586,6 +634,12 @@ Db Lydian Dominant;Lydian Dominant;Db;Ab Melodic Minor;Melodic Minor;Ab;<img src
 Db Lydian Dominant;Lydian Dominant;Db;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-6f605972ea.png">;[sound:AnkiJazz-6f605972ea.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Db Lydian Dominant;Lydian Dominant;Db;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-6f605972ea.png">;[sound:AnkiJazz-6f605972ea.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Db Lydian Dominant;Lydian Dominant;Db;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-6f605972ea.png">;[sound:AnkiJazz-6f605972ea.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+C# Lydian Dominant;Lydian Dominant;C#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-310cd07b71.png">;[sound:AnkiJazz-310cd07b71.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+C# Lydian Dominant;Lydian Dominant;C#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-310cd07b71.png">;[sound:AnkiJazz-310cd07b71.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+C# Lydian Dominant;Lydian Dominant;C#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-310cd07b71.png">;[sound:AnkiJazz-310cd07b71.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+C# Lydian Dominant;Lydian Dominant;C#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-5d72ca39bb.png">;[sound:AnkiJazz-5d72ca39bb.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+C# Lydian Dominant;Lydian Dominant;C#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-5d72ca39bb.png">;[sound:AnkiJazz-5d72ca39bb.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+C# Lydian Dominant;Lydian Dominant;C#;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-5d72ca39bb.png">;[sound:AnkiJazz-5d72ca39bb.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 D Lydian Dominant;Lydian Dominant;D;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-67331e2821.png">;[sound:AnkiJazz-67331e2821.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 D Lydian Dominant;Lydian Dominant;D;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-67331e2821.png">;[sound:AnkiJazz-67331e2821.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 D Lydian Dominant;Lydian Dominant;D;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-67331e2821.png">;[sound:AnkiJazz-67331e2821.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -694,6 +748,12 @@ G Altered;Altered;G;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-ca4707f
 G Altered;Altered;G;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-51ad774aa6.png">;[sound:AnkiJazz-51ad774aa6.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 G Altered;Altered;G;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-51ad774aa6.png">;[sound:AnkiJazz-51ad774aa6.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 G Altered;Altered;G;Ab Melodic Minor;Melodic Minor;Ab;<img src="AnkiJazz-51ad774aa6.png">;[sound:AnkiJazz-51ad774aa6.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+Fx Altered;Altered;Fx;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-219d427683.png">;[sound:AnkiJazz-219d427683.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+Fx Altered;Altered;Fx;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-219d427683.png">;[sound:AnkiJazz-219d427683.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+Fx Altered;Altered;Fx;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-219d427683.png">;[sound:AnkiJazz-219d427683.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+Fx Altered;Altered;Fx;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-ae85889aa1.png">;[sound:AnkiJazz-ae85889aa1.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+Fx Altered;Altered;Fx;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-ae85889aa1.png">;[sound:AnkiJazz-ae85889aa1.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+Fx Altered;Altered;Fx;G# Melodic Minor;Melodic Minor;G#;<img src="AnkiJazz-ae85889aa1.png">;[sound:AnkiJazz-ae85889aa1.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 G# Altered;Altered;G#;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-e83b123a95.png">;[sound:AnkiJazz-e83b123a95.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 G# Altered;Altered;G#;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-e83b123a95.png">;[sound:AnkiJazz-e83b123a95.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 G# Altered;Altered;G#;A Melodic Minor;Melodic Minor;A;<img src="AnkiJazz-e83b123a95.png">;[sound:AnkiJazz-e83b123a95.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -742,6 +802,12 @@ Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src
 Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src="AnkiJazz-cf27eb2780.png">;[sound:AnkiJazz-cf27eb2780.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src="AnkiJazz-cf27eb2780.png">;[sound:AnkiJazz-cf27eb2780.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src="AnkiJazz-cf27eb2780.png">;[sound:AnkiJazz-cf27eb2780.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-f204cdb39d.png">;[sound:AnkiJazz-f204cdb39d.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-f204cdb39d.png">;[sound:AnkiJazz-f204cdb39d.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-f204cdb39d.png">;[sound:AnkiJazz-f204cdb39d.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-e54277ce1a.png">;[sound:AnkiJazz-e54277ce1a.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-e54277ce1a.png">;[sound:AnkiJazz-e54277ce1a.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-e54277ce1a.png">;[sound:AnkiJazz-e54277ce1a.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 E Harmonic Minor;Harmonic Minor;E;E Harmonic Minor;Harmonic Minor;E;<img src="AnkiJazz-1496d0bb23.png">;[sound:AnkiJazz-1496d0bb23.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 E Harmonic Minor;Harmonic Minor;E;E Harmonic Minor;Harmonic Minor;E;<img src="AnkiJazz-1496d0bb23.png">;[sound:AnkiJazz-1496d0bb23.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 E Harmonic Minor;Harmonic Minor;E;E Harmonic Minor;Harmonic Minor;E;<img src="AnkiJazz-1496d0bb23.png">;[sound:AnkiJazz-1496d0bb23.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
@@ -856,6 +922,12 @@ Bb Phrygian Dominant;Phrygian Dominant;Bb;Eb Harmonic Minor;Harmonic Minor;Eb;<i
 Bb Phrygian Dominant;Phrygian Dominant;Bb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src="AnkiJazz-538f638d64.png">;[sound:AnkiJazz-538f638d64.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
 Bb Phrygian Dominant;Phrygian Dominant;Bb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src="AnkiJazz-538f638d64.png">;[sound:AnkiJazz-538f638d64.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 Bb Phrygian Dominant;Phrygian Dominant;Bb;Eb Harmonic Minor;Harmonic Minor;Eb;<img src="AnkiJazz-538f638d64.png">;[sound:AnkiJazz-538f638d64.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
+A# Phrygian Dominant;Phrygian Dominant;A#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-5f464b411b.png">;[sound:AnkiJazz-5f464b411b.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
+A# Phrygian Dominant;Phrygian Dominant;A#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-5f464b411b.png">;[sound:AnkiJazz-5f464b411b.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+A# Phrygian Dominant;Phrygian Dominant;A#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-5f464b411b.png">;[sound:AnkiJazz-5f464b411b.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
+A# Phrygian Dominant;Phrygian Dominant;A#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-af930367cd.png">;[sound:AnkiJazz-af930367cd.mp3];Descending;Low;<img src="AnkiJazz-FretboardLow.png">
+A# Phrygian Dominant;Phrygian Dominant;A#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-af930367cd.png">;[sound:AnkiJazz-af930367cd.mp3];Descending;Medium;<img src="AnkiJazz-FretboardMedium.png">
+A# Phrygian Dominant;Phrygian Dominant;A#;D# Harmonic Minor;Harmonic Minor;D#;<img src="AnkiJazz-af930367cd.png">;[sound:AnkiJazz-af930367cd.mp3];Descending;High;<img src="AnkiJazz-FretboardHigh.png">
 B Phrygian Dominant;Phrygian Dominant;B;E Harmonic Minor;Harmonic Minor;E;<img src="AnkiJazz-1d4489bc10.png">;[sound:AnkiJazz-1d4489bc10.mp3];Ascending;Low;<img src="AnkiJazz-FretboardLow.png">
 B Phrygian Dominant;Phrygian Dominant;B;E Harmonic Minor;Harmonic Minor;E;<img src="AnkiJazz-1d4489bc10.png">;[sound:AnkiJazz-1d4489bc10.mp3];Ascending;Medium;<img src="AnkiJazz-FretboardMedium.png">
 B Phrygian Dominant;Phrygian Dominant;B;E Harmonic Minor;Harmonic Minor;E;<img src="AnkiJazz-1d4489bc10.png">;[sound:AnkiJazz-1d4489bc10.mp3];Ascending;High;<img src="AnkiJazz-FretboardHigh.png">
