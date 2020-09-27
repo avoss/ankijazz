@@ -1,7 +1,7 @@
-rm -f *.midi *.wav *.mp3 *.png *.pdf
+rm -f *.midi *.wav *.mp3 *.png
 for i in *.ly; do
-	name=$(basename -s '.ly' $i)
-	echo $name
+	name=$(basename -s '.ly' $i) &&
+	echo $name &&
 	lilypond --png -dresolution=200 "${name}.ly" \
 		&& timidity "${name}.midi" -Ow \
 		&& normalize-audio "${name}.wav" \
