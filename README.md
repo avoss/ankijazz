@@ -51,8 +51,7 @@ Decks:
 - learn relative minor/major
 - spell scales w/o notation
 - parent scales (done)
-- spell types (done)
-- !! 15 scales, not 12 
+- spell types (done?)
 
 ### Midi
 - know your fretboard: single note, natural, flat, sharps, all keys. 
@@ -60,16 +59,11 @@ Decks:
   - single note on every string strings
 
 ## features:
-- the parallel Minor of B Major is G# Minor. Notation of G# Melodic Minor would require double sharps. To avoid this, it is notated as Ab. All scales, which require double sharps or double flats, are notated with the enharmonic "replacement" if that avoids the double sharps / double flats.
-- enharmonic roots (e.g. B# Altered instead of C Altered) removed?
-
-- sorted by number of accidentals with some randomness
 - since not answering a single word which is fast, playing a scale or chord progression takes time. Need to adjust settings. Here are mine:
   - preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day
   - in deck options change learning steps from "1 10" to "20 1440" and increase graduating interval to 3 days
   - similar in lapses section change re-learning steps from "1 10" to "20 1440"
   - in "general" tab change "ignore answer time" to at least 1 minute (or how long it takes to play a scale or some chords)
-- harmonic minor notated with key signature of aeolean 
 - meldodic minor is "jazz melodic minor", ascending and descending the same notes
 - melodic minor notated with key signature of dorian
 - //diminished and whole tone are notated with flats / naturals only
