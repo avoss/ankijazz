@@ -19,7 +19,7 @@ Intervals
 ## Pitch Class Set Theory
 
 ## Special cases
-- Diminished scale is halfstep/wholestep, not the other way round
+- MM notated as Dorian #7 -> mode Lydian Dominant is notated as Mixolyidian #11 which makes sense!
 - C altered is notated as B# altered because C altered is 7th mode of C# MM and C# Aeolean is the relative minor of E-Major
 - B Lydian wäre korrekt Cb Lydian weil Gb major scale Cb statt B enthält
 - C Altered wäre korrekt B# Altered weil Calt = 7th mode of C# MM and relative minor of C# is E (MM with aeolean notation)
