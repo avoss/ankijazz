@@ -48,10 +48,10 @@ public class SimpleDeck implements Deck {
     }
   }
 
-  public void writeHtml(Path dir) {
+  public void writeHtml(MustacheTemplate template, Path dir) {
     try {
       MustacheFactory factory = new DefaultMustacheFactory();
-      Mustache mustache = factory.compile(id + ".mustache");
+      Mustache mustache = factory.compile(template.getTemplateName());
       Files.createDirectories(dir);
       Path path = dir.resolve(id + ".html");
       BufferedWriter writer = Files.newBufferedWriter(path);

@@ -47,7 +47,7 @@ public class GuitarDeck implements Deck {
   }
 
   @Override
-  public void writeHtml(Path dir) {
-    delegate.writeHtml(dir);
+  public void writeHtml(MustacheTemplate template, Path dir) {
+    delegate.writeHtml(template, dir);
   }
 }

@@ -24,6 +24,7 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
 
 public class ScaleCard implements Card {
+  public static final MustacheTemplate TEMPLATE = new MustacheTemplate("ScaleCard");
   // TODO duplicated in AnkiCards
   private static final ScaleUniverse universe = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
   private final ScaleInfo modeInfo;
