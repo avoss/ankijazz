@@ -1,5 +1,43 @@
 # Scales Core
 
+# TODO
+- agpl license
+- migrate to junit 5
+- rename methods to getX, setX
+
+--------------------------------------------------------------------------------------------
+
+# Anki
+
+## Decks
+
+Text
+- learn enharmonics Ab -> G# etc
+- learn relative minor/major
+- learn intervals e.g. what is b13 of F?
+- learn scale notes w/o notation
+- learn parent scales
+- spell mode intervals
+
+Lily
+- intervals
+- chords
+- notation of rhythms
+
+Sheets
+- know your fretboard: single note, natural, flat, sharps, all keys. 
+- triads in 251 progressions
+
+## Anki Scheduler:
+- preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day
+- in deck options change learning steps from "1 10" to "20 1440" and increase graduating interval to 3 days
+- similar in lapses section change re-learning steps from "1 10" to "20 1440"
+- in "general" tab change "ignore answer time" to at least 1 minute (or how long it takes to play a scale or some chords)
+
+--------------------------------------------------------------------------------------------
+
+# Stuff
+
 ## Dr. B Music
 - https://youtu.be/ICDPWP6HUbk?list=PLw9t0oA3fHkxx1PgYpiXrMUPXaOiwh6KU
 - there are 15 major scales, need to know the enharmonics 
@@ -15,8 +53,6 @@ Intervals
 - German edition is very popular here.
 - https://en.schott-music.com/shop/jazz-harmony-no326750.html
 - all minor modes relative to aeolean, all major modes relative to ionean
-
-## Pitch Class Set Theory
 
 ## Special cases
 - MM notated as Dorian #7 -> mode Lydian Dominant is notated as Mixolyidian #11 which makes sense!
@@ -40,39 +76,9 @@ KeySignature strict:
 KeySignature simplified:
 - MM uses signature of parallel Dorian
 
-## TODO
-- migrate to junit 5
 
-# Anki
-
-### TODO
-Decks:
-- learn enharmonics Ab -> G# etc
-- learn relative minor/major
-- spell scales w/o notation
-- parent scales (done)
-- spell types (done?)
-
-### Midi
-- know your fretboard: single note, natural, flat, sharps, all keys. 
-  - in different fretboard positions.
-  - single note on every string strings
-
-## features:
-- since not answering a single word which is fast, playing a scale or chord progression takes time. Need to adjust settings. Here are mine:
-  - preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day
-  - in deck options change learning steps from "1 10" to "20 1440" and increase graduating interval to 3 days
-  - similar in lapses section change re-learning steps from "1 10" to "20 1440"
-  - in "general" tab change "ignore answer time" to at least 1 minute (or how long it takes to play a scale or some chords)
-- meldodic minor is "jazz melodic minor", ascending and descending the same notes
-- melodic minor notated with key signature of dorian
-- //diminished and whole tone are notated with flats / naturals only
-- minor 251 key = relative major key
 
 ## noteworthy
 - Ab/G# harmonic minor requires double-sharp
 - Db and Gb harmonic major require double-flat
 - CMMin, GHMin, DHMin, GHMaj and DHMaj contain both, # and b ??? double check!
-
-## done
-- symbol b and # replace with unicode -> fonts don't support this

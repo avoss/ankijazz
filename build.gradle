@@ -24,3 +24,13 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.16.1'
 }
 
+jar {
+    manifest {
+        attributes (
+"Implementation-Title": "Scales Core",
+"Bundle-License": "http://www.fsf.org/licensing/licenses/agpl-3.0.html",
+"Bundle-Copyright": "(C) 2020 Andreas Voss - mail@jlab.de",
+"Implementation-Vendor-Id": "de.jlab.scales.cored"
+        )
+    }
+}
