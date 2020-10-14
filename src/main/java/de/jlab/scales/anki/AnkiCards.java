@@ -38,7 +38,7 @@ public class AnkiCards {
   private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
 
   public Deck tritones() {
-    Deck deck = new SimpleDeck("Tritones");
+    Deck deck = new SimpleDeck("LearnTritones");
     for (Note note : Note.values()) {
       Note tritone = note.tritone();
       deck.add(note.getName(FLAT), tritone.getBothNames());
@@ -48,21 +48,46 @@ public class AnkiCards {
     return deck;
   }
 
-  public Deck parentScales() {
-    Deck deck = new SimpleDeck("ParentScales");
+  public Deck enharmonics() {
+    Deck deck = new SimpleDeck("LearnEnharmonics");
+    for (Note note : Note.values()) {
+      if (!CMajor.contains(note)) {
+        deck.add(note.getName(SHARP), note.getName(FLAT));
+        deck.add(note.getName(FLAT), note.getName(SHARP));
+      }
+    }
+    return deck;
+  }
+
+  public Deck learnScales() {
+    Deck deck = new SimpleDeck("LearnScales");
+    for (Scale scale : allKeys(commonScales(false))) {
+      for (ScaleInfo info : universe.infos(scale)) {
+        int difficulty = info.getKeySignature().getNumberOfAccidentals();
+        difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
+        difficulty += info.isInversion() ? 3 : 0;
+        deck.add(difficulty, info.getScaleName(), info.getKeySignature().toString(scale));
+      }
+    }
+    return deck;
+  }
+  
+  public Deck learnModes() {
+    Deck deck = new SimpleDeck("LearnModes");
     for (Scale scale : allKeys(commonModes(false))) {
       ScaleInfo scaleInfo = universe.info(scale);
       if (!scaleInfo.isInversion()) {
         continue;
       }
       ScaleInfo parentInfo = scaleInfo.getParentInfo();
-      deck.add(scaleInfo.getScaleName(), parentInfo.getScaleName());
+      String modeIndex = Integer.toString(scaleInfo.getModeIndex() + 1);
+      deck.add(scaleInfo.getScaleName(), parentInfo.getScaleName(), modeIndex);
     }
     return deck;
   }
 
-  public Deck spellTypes() {
-    Deck deck = new SimpleDeck("ScaleTypes");
+  public Deck learnScaleTypes() {
+    Deck deck = new SimpleDeck("LearnScaleTypes");
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
       ScaleInfo scaleInfo = universe.info(scale);
@@ -104,13 +129,19 @@ public class AnkiCards {
   }
   
   private Collection<Scale> commonScales() {
+    return commonScales(true);
+  }
+  
+  private Collection<Scale> commonScales(boolean includeSymmetricScales) {
     List<Scale> scales = new ArrayList<>();
     scales.add(CMajor);
     scales.add(CMelodicMinor);
     scales.add(CHarmonicMinor);
 //    scales.add(CHarmonicMajor);
-    scales.add(CWholeTone);
-    scales.add(CDiminishedHalfWhole);
+    if (includeSymmetricScales) {
+      scales.add(CWholeTone);
+      scales.add(CDiminishedHalfWhole);
+    }
     return scales;
   }
 

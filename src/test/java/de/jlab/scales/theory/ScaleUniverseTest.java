@@ -84,7 +84,7 @@ public class ScaleUniverseTest {
         return aRoot.compareTo(bRoot);
       }
       
-      return Integer.compare(a.modeIndex(), b.modeIndex());
+      return Integer.compare(a.getModeIndex(), b.getModeIndex());
     }
   }
 

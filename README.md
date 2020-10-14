@@ -13,16 +13,17 @@
 
 Text
 - learn enharmonics Ab -> G# etc
-- learn relative minor/major
 - learn intervals e.g. what is b13 of F?
 - learn scale notes w/o notation
 - learn parent scales
 - spell mode intervals
+- learn relative minor/major (included in parent scales)
 
 Lily
 - intervals
 - chords
 - notation of rhythms
+- scales
 
 Sheets
 - know your fretboard: single note, natural, flat, sharps, all keys. 

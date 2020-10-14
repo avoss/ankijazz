@@ -29,7 +29,7 @@ public class ScaleInfo {
     return !scale.equals(parentInfo.getScale());
   }
 
-  public int modeIndex() {
+  public int getModeIndex() {
     return parentInfo.getScale().indexOf(scale.getRoot());
   }
 

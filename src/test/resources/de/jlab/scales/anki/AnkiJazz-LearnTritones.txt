@@ -1,0 +1,17 @@
+C;Gb/F#
+Db;G
+C#;G
+D;Ab/G#
+Eb;A
+D#;A
+E;Bb/A#
+F;B
+Gb;C
+F#;C
+G;Db/C#
+Ab;D
+G#;D
+A;Eb/D#
+Bb;E
+A#;E
+B;F

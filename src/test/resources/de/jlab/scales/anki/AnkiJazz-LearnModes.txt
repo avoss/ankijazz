@@ -1,0 +1,108 @@
+C Dorian;Bb Major Scale;2
+C# Dorian;B Major Scale;2
+D Dorian;C Major Scale;2
+Eb Dorian;Db Major Scale;2
+E Dorian;D Major Scale;2
+F Dorian;Eb Major Scale;2
+F# Dorian;E Major Scale;2
+G Dorian;F Major Scale;2
+Ab Dorian;Gb Major Scale;2
+A Dorian;G Major Scale;2
+Bb Dorian;Ab Major Scale;2
+B Dorian;A Major Scale;2
+C Phrygian;Ab Major Scale;3
+C# Phrygian;A Major Scale;3
+D Phrygian;Bb Major Scale;3
+D# Phrygian;B Major Scale;3
+E Phrygian;C Major Scale;3
+F Phrygian;Db Major Scale;3
+F# Phrygian;D Major Scale;3
+G Phrygian;Eb Major Scale;3
+G# Phrygian;E Major Scale;3
+A Phrygian;F Major Scale;3
+Bb Phrygian;Gb Major Scale;3
+B Phrygian;G Major Scale;3
+C Lydian;G Major Scale;4
+Db Lydian;Ab Major Scale;4
+D Lydian;A Major Scale;4
+Eb Lydian;Bb Major Scale;4
+E Lydian;B Major Scale;4
+F Lydian;C Major Scale;4
+Gb Lydian;Db Major Scale;4
+G Lydian;D Major Scale;4
+Ab Lydian;Eb Major Scale;4
+A Lydian;E Major Scale;4
+Bb Lydian;F Major Scale;4
+Cb Lydian;Gb Major Scale;4
+C Mixolydian;F Major Scale;5
+Db Mixolydian;Gb Major Scale;5
+D Mixolydian;G Major Scale;5
+Eb Mixolydian;Ab Major Scale;5
+E Mixolydian;A Major Scale;5
+F Mixolydian;Bb Major Scale;5
+F# Mixolydian;B Major Scale;5
+G Mixolydian;C Major Scale;5
+Ab Mixolydian;Db Major Scale;5
+A Mixolydian;D Major Scale;5
+Bb Mixolydian;Eb Major Scale;5
+B Mixolydian;E Major Scale;5
+C Aeolean;Eb Major Scale;6
+C# Aeolean;E Major Scale;6
+D Aeolean;F Major Scale;6
+Eb Aeolean;Gb Major Scale;6
+E Aeolean;G Major Scale;6
+F Aeolean;Ab Major Scale;6
+F# Aeolean;A Major Scale;6
+G Aeolean;Bb Major Scale;6
+G# Aeolean;B Major Scale;6
+A Aeolean;C Major Scale;6
+Bb Aeolean;Db Major Scale;6
+B Aeolean;D Major Scale;6
+C Locrian;Db Major Scale;7
+C# Locrian;D Major Scale;7
+D Locrian;Eb Major Scale;7
+D# Locrian;E Major Scale;7
+E Locrian;F Major Scale;7
+F Locrian;Gb Major Scale;7
+F# Locrian;G Major Scale;7
+G Locrian;Ab Major Scale;7
+G# Locrian;A Major Scale;7
+A Locrian;Bb Major Scale;7
+A# Locrian;B Major Scale;7
+B Locrian;C Major Scale;7
+C Lydian Dominant;G Melodic Minor;4
+Db Lydian Dominant;Ab Melodic Minor;4
+D Lydian Dominant;A Melodic Minor;4
+Eb Lydian Dominant;Bb Melodic Minor;4
+E Lydian Dominant;B Melodic Minor;4
+F Lydian Dominant;C Melodic Minor;4
+F# Lydian Dominant;C# Melodic Minor;4
+G Lydian Dominant;D Melodic Minor;4
+Ab Lydian Dominant;Eb Melodic Minor;4
+A Lydian Dominant;E Melodic Minor;4
+Bb Lydian Dominant;F Melodic Minor;4
+B Lydian Dominant;F# Melodic Minor;4
+B# Altered;C# Melodic Minor;7
+C# Altered;D Melodic Minor;7
+D Altered;Eb Melodic Minor;7
+D# Altered;E Melodic Minor;7
+E Altered;F Melodic Minor;7
+E# Altered;F# Melodic Minor;7
+F# Altered;G Melodic Minor;7
+G Altered;Ab Melodic Minor;7
+G# Altered;A Melodic Minor;7
+A Altered;Bb Melodic Minor;7
+A# Altered;B Melodic Minor;7
+B Altered;C Melodic Minor;7
+C Phrygian Dominant;F Harmonic Minor;5
+C# Phrygian Dominant;F# Harmonic Minor;5
+D Phrygian Dominant;G Harmonic Minor;5
+D# Phrygian Dominant;G# Harmonic Minor;5
+E Phrygian Dominant;A Harmonic Minor;5
+F Phrygian Dominant;Bb Harmonic Minor;5
+F# Phrygian Dominant;B Harmonic Minor;5
+G Phrygian Dominant;C Harmonic Minor;5
+G# Phrygian Dominant;C# Harmonic Minor;5
+A Phrygian Dominant;D Harmonic Minor;5
+Bb Phrygian Dominant;Eb Harmonic Minor;5
+B Phrygian Dominant;E Harmonic Minor;5

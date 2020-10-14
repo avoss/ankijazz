@@ -10,8 +10,8 @@ public interface Deck {
     add(0, fields);
   }
 
-  default void add(int priority, String... fields) {
-    add(new BasicCard(priority, fields));
+  default void add(int difficulty, String... fields) {
+    add(new BasicCard(difficulty, fields));
   }
 
   void add(Card card);

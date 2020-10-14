@@ -1,0 +1,15 @@
+Major Scale;1 2 3 4 5 6 7
+Dorian;1 2 b3 4 5 6 b7
+Phrygian;1 b2 b3 4 5 b6 b7
+Lydian;1 2 3 #4 5 6 7
+Mixolydian;1 2 3 4 5 6 b7
+Aeolean;1 2 b3 4 5 b6 b7
+Locrian;1 b2 b3 4 b5 b6 b7
+Melodic Minor;1 2 b3 4 5 6 7
+Lydian Dominant;1 2 3 #4 5 6 b7
+Altered;1 b2 b3 b4 b5 b6 b7
+Harmonic Minor;1 2 b3 4 5 b6 7
+Phrygian Dominant;1 b2 3 4 5 b6 b7
+Whole Tone;1 2 3 #4 #5 b7
+Diminished Half/Whole;1 b2 b3 3 b5 5 6 b7
+Diminished Whole/Half;1 2 b3 4 b5 b6 6 7

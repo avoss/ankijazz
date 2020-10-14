@@ -3,8 +3,10 @@ package de.jlab.scales;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,11 +23,14 @@ import de.jlab.scales.theory.Scale;
 public class TestUtils {
 
   public static void assertFileContentMatches(List<String> actualLines, Class<?> testClass, String fileName) {
-    try {
+    try (InputStream inputStream = testClass.getResourceAsStream(fileName)) {
       Path dir = Paths.get("build", testClass.getSimpleName());
       Files.createDirectories(dir);
       Files.write(dir.resolve(fileName), actualLines);
-      String expected = Utils.readString(testClass.getResourceAsStream(fileName));
+      if (inputStream == null) {
+        fail("Resource not found: " + fileName);
+      }
+      String expected = Utils.readString(inputStream);
       String actual = actualLines.stream().collect(joining("\n"));
       assertEquals(fileName, expected, actual);
     } catch (IOException e) {
