@@ -21,12 +21,14 @@ public class LilyScale {
   private final KeySignature keySignature;
   private final String scaleName;
   private final boolean descending;
+  private final LilyClef clef;
 
   public LilyScale(ScaleInfo scaleInfo) {
     this(scaleInfo, false);
   }
 
   public LilyScale(ScaleInfo scaleInfo, boolean descending) {
+    this.clef = LilyClef.TREBLE;
     this.keySignature = scaleInfo.getKeySignature();
     this.scaleName = scaleInfo.getScaleName();
     this.scale = scaleInfo.getScale();
@@ -37,7 +39,8 @@ public class LilyScale {
     return readTemplate()
       .replace("${title}", scaleName)
       .replace("${key}", key())
-      .replace("${relativeTo}", descending ? "e''" : "e'")
+      .replace("${clef}", clef.getClef())
+      .replace("${relativeTo}", descending ? clef.getDescendingRelativeTo() : clef.getAscendingRelativeTo())
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
       .replace("${noteNames}", lilyNotesWithOctave())
       .replace("${midiChord}", drop2Chord())

@@ -4,6 +4,7 @@
 - agpl license
 - migrate to junit 5
 - rename methods to getX, setX
+- scales free, modes commercial?
 
 --------------------------------------------------------------------------------------------
 
@@ -24,6 +25,7 @@ Lily
 - chords
 - notation of rhythms
 - scales
+- bass clef?
 
 Sheets
 - know your fretboard: single note, natural, flat, sharps, all keys. 
@@ -78,8 +80,8 @@ KeySignature simplified:
 - MM uses signature of parallel Dorian
 
 
-
 ## noteworthy
 - Ab/G# harmonic minor requires double-sharp
 - Db and Gb harmonic major require double-flat
+- D harmonic minor requires both, flats and sharps
 - CMMin, GHMin, DHMin, GHMaj and DHMaj contain both, # and b ??? double check!

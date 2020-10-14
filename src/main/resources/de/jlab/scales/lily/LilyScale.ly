@@ -19,7 +19,7 @@ lilyChord = \relative e' { ${lilyChord} }
   <<
     \new Staff {
       \new Voice {
-        \clef treble
+        \clef ${clef}
         \key ${key} \major
         % suppress 4/4 time signature
         \override Staff.TimeSignature.stencil = ##f
