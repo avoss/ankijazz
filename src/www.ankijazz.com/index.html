@@ -1,76 +1,73 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<!-- Required meta tags -->
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 
-<!-- Bootstrap CSS -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
-	crossorigin="anonymous">
-
-<title>AnkiJazz</title>
+  <title>AnkiJazz</title>
 </head>
-<body>
-	<div class="container">
-		<h1>Why Key Signatures suck</h1>
-		<h2>Abstract</h2>
-		<ol>
-		<li>Many Jazz songs change keys often and quickly, so it does not make sense to put a key signature in front of the staff</li>
-		<li>There are no agreed-upon rules to assign a key signature to <em>any</em> given scale.</li>
-		<li>There are some rules for Major scales and their relative minors which work pretty good. But when we look at Melodic Minor or Harmonic Minor, which are very common in jazz, things start to get difficult.
-		   And when we look at Modes of these scales, then experts disagree and we lost. This also applies for synthetic scales 
-		   like "half whole diminished" or "whole tone" (very common in Jazz).</li>
-		</ol>
-		
-		<h2>Major Scales and their relative Minors</h2>
-		<p>In classical music (e.g refer to <a href="https://www.youtube.com/watch?v=ICDPWP6HUbk&list=PLw9t0oA3fHkxx1PgYpiXrMUPXaOiwh6KU">Christopher Brellochs</a>) 
-		   there are <b>15</b> major scales, which means that some scales have multiple key signatures - these are Db/C#, Gb/F#, and Cb/B. 
-		   That's logically correct of course, but you'd never say in a practical situation (e.g. Jam Session) this Song is in Cb</p>
-		<p>In one of his lessons, Christopher Brellochs defines the <em>relative minor</em> to be the minor scale with the <em>same signature</em> 
-		   (or <em>same notes</em>) as the major scale. I'd like to ask, why was the Aeolan mode chosen to be the <em>relative minor</em> and not Dorian or Phrygian
-		   mode, which also share the same notes with their relative major scale?</p>
-		   
-		<h2>Melodic Minor and Harmonic Minor</h2>
-		<p>According to <a href="https://en.wikipedia.org/wiki/Minor_scale#Key_signature">Wikipedia</a> and other sources, Harmonic Minor and Melodic Minor are
-		   notated with the key signature of their <em>parallel</em> natural minor (where <em>parallel</em> means <em>same root</em>). This results in some 
-		   problems with the notation of Ab/G# Melodic Minor (same for Harmonic Hinor):</p>
-    <ul>
-      <li>applying above rule, Ab Melodic Minor must use the key signature of B (because B is the relative major of Ab), so it uses sharps (not flats)</li>
-      <li>G# Melodic Minor is notated as <em>G# A# B C# D# E# Fx</em> where <em>Fx</em> is double sharp (F##)</li>
-      <li>If we had chosen the enharmonic equivalent of G# which is Ab, then notation would not require any double sharps/flats: Ab Bb Cb Db Eb F G</li> 
-    </ul>
-    <p>A bit confusing, but still within the rules ...</p>
-    
-    <h2>Signature of Modes</h2>
-    <p>There are no agreed-upon rules that tell you which key signature to use for modes like say D-Dorian. Many sources on the internet say you should 
-       use the key signature of the <em>Parent Scale</em> C-Major to notate D-Dorian because D-Dorian and C-Major share the same notes.</p>
-    <blockquote>
-	     <p>The <em>Parent Scale</em> is the scale that a mode was derived from - e.g. the V-Chord of C-Major is G7 and if you play the notes of C-Major over G7 then you get 
-	     a mixolydian sound (especially if you play the C-Major scale starting from G and ending on G making G kind of note that the melody rests on)</p>
-    </blockquote>
-    <p>But others, like the German Best-Seller <a href="https://en.schott-music.com/shop/jazz-harmony-no326750.html">Jazz Harmony by Frank Sikora</a> recommend to</p> 
-     <ul>
-       <li>notate all minor scales (including diminished, melodic minor, harmonic minor, dorinan, phrygian, aeolean etc.) with the key signature of their parallel natural minor</li>
-       <li>notate all major scales (including dominant, lydian, altered, etc.) with the key signature of their parallel major scale</li>
-     </ul> 
-	</div>
 
-	<!-- Optional JavaScript -->
-	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-		crossorigin="anonymous"></script>
+<body>
+
+  <!-- Navigation -->
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">AnkiJazz <img src="img/anki-logo32x32.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" target="_new" href="https://www.ankiweb.net/">AnkiWeb</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+
+    <div class="fixed-background">
+      <!-- content on top of image -->
+      <div class="row text-light py-5">
+        <div class="col-12 text-center">
+          <h1 class="jazz-font">Anki Jazz</h1>
+
+          <p>
+            <a href="https://www.ankijazz.com">AnkiJazz</a> provides generated, high quality, and carefully reviewed (thanks to <a href="http://www.marcusarmani.de/">Marcus</a>) <a href="https://apps.ankiweb.net/">Anki</a> cards related to Music (and Jazz in particular) for free.
+          </p>
+      
+
+
+          <p>blah</p>
+        </div>
+      </div>
+      <div class="fixed-wrap">
+        <div class="fixed">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>
