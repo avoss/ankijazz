@@ -70,6 +70,9 @@ public class TestUtils {
     if (scaleNotation.contains("bb") || scaleNotation.contains("x")) {
       markers.add("double sharp/flat");
     }
+    if (scaleNotation.contains("b") && scaleNotation.contains("#")) {
+      markers.add("sharp + flat");
+    }
     String rootNotation = signature.notate(scale.getRoot());
     if (rootNotation.contains("Cb") || rootNotation.contains("Fb") || rootNotation.contains("B#") || rootNotation.contains("E#")) {
       markers.add("enharmonic root");
