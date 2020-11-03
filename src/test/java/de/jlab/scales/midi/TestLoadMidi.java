@@ -23,7 +23,7 @@ public class TestLoadMidi {
 
   @Test
   public void testPrintFile() throws Exception {
-      Sequence sequence = MidiSystem.getSequence(new File("src/midi/test.mid"));
+      Sequence sequence = MidiSystem.getSequence(new File("src/midi/DDorianGroove.mid"));
       System.out.println("PPQ: " + sequence.getResolution());
       int trackNumber = 0;
       for (Track track :  sequence.getTracks()) {
