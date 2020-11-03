@@ -11,7 +11,7 @@ public interface Deck {
   }
 
   default void add(int difficulty, String... fields) {
-    add(new BasicCard(difficulty, fields));
+    add(new SimpleCard(difficulty, fields));
   }
 
   void add(Card card);

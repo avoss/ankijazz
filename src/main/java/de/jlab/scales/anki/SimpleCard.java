@@ -1,10 +1,10 @@
 package de.jlab.scales.anki;
 
-public class BasicCard implements Card {
+public class SimpleCard implements Card {
   private final int difficulty;
   private final String[] fields;
  
-  public BasicCard(int difficulty, String... fields) {
+  public SimpleCard(int difficulty, String... fields) {
     this.difficulty = difficulty;
     this.fields = fields;
   }
