@@ -17,7 +17,7 @@ public class Instruments {
         return new int[]{dice.getMidiPitch()};
       }
     };
-    return new InstrumentBuilder(Drum.MIDI_CHANNEL, pitchGenerator);
+    return new InstrumentBuilder(Drum.getMidiChannel(), pitchGenerator);
   }
 
 }

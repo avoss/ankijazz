@@ -14,33 +14,8 @@ public class AnkiCardsTest {
   AnkiCards anki = new AnkiCards();
 
   @Test
-  public void testTritones() {
-    Deck deck = anki.tritones();
-    assertThat(deck.getCsv().size()).isEqualTo(17);
-    assertThat(deck.getCsv()).contains("C;Gb/F#", "F;B");
-    checkAndWrite(deck);
-  }
-
-  @Test
-  public void testEnharmonics() {
-    Deck deck = anki.enharmonics();
-    assertThat(deck.getCsv().size()).isEqualTo(10);
-    assertThat(deck.getCsv()).contains("Gb;F#");
-    checkAndWrite(deck);
-  }
-
-  @Test
-  public void spellScales() {
-    Deck deck = anki.learnScales();
-    assertEquals(39, deck.getCards().size());
-    checkAndWrite(deck);
-  }
-  
-  @Test
-  public void parentScales() {
+  public void learnModes() {
     Deck deck = anki.learnModes();
-    assertThat(deck.getCsv().size()).isEqualTo(108);
-    assertThat(deck.getCsv()).contains("D Dorian;C Major Scale;2");
     checkAndWrite(deck);
   }
   
@@ -72,24 +47,4 @@ public class AnkiCardsTest {
     deck.writeTo(Paths.get("build/anki"));
   }
 
-  @Test
-  public void spellTypes() {
-    Deck deck = anki.learnScaleTypes();
-    checkAndWrite(deck);
-    assertThat(deck.getCsv()).contains(
-        "Major Scale;1 2 3 4 5 6 7",
-        "Dorian;1 2 b3 4 5 6 b7",
-        "Phrygian;1 b2 b3 4 5 b6 b7",
-        "Lydian;1 2 3 #4 5 6 7",
-        "Mixolydian;1 2 3 4 5 6 b7",
-        "Aeolean;1 2 b3 4 5 b6 b7",
-        "Locrian;1 b2 b3 4 b5 b6 b7",
-        "Melodic Minor;1 2 b3 4 5 6 7",
-        "Lydian Dominant;1 2 3 #4 5 6 b7",
-        "Altered;1 b2 b3 b4 b5 b6 b7",
-        "Harmonic Minor;1 2 b3 4 5 b6 7",
-        "Phrygian Dominant;1 b2 3 4 5 b6 b7");
-        
-  }
-  
 }

@@ -14,6 +14,11 @@ import org.junit.Test;
 public class TestLoadMidi {
   public static final int NOTE_ON = 0x90;
   public static final int NOTE_OFF = 0x80;
+  public static final int KEY_PRESSURE = 0xA0;
+  public static final int CTRL_CHANGE = 0xB0;
+  public static final int PRG_CHANGE = 0xC0;
+  public static final int CHN_PRESSURE = 0xD0;
+  public static final int PITCH_BEND = 0xE0;
   public static final String[] NOTE_NAMES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
   @Test
@@ -46,6 +51,10 @@ public class TestLoadMidi {
                       String noteName = NOTE_NAMES[note];
                       int velocity = sm.getData2();
                       System.out.println("Note off, " + noteName + octave + " key=" + key + " velocity: " + velocity);
+                  } else if (sm.getCommand() == CTRL_CHANGE) {
+                    int controller = sm.getData1();
+                    int value = sm.getData2();
+                    System.out.println("Controller " + controller + ", value = " + value);
                   } else {
                       System.out.println("Command:" + Integer.toHexString(sm.getCommand()));
                   }

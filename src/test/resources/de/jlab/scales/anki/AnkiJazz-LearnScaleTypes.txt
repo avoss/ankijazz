@@ -1,15 +1,15 @@
-Major Scale;1 2 3 4 5 6 7
-Dorian;1 2 b3 4 5 6 b7
-Phrygian;1 b2 b3 4 5 b6 b7
-Lydian;1 2 3 #4 5 6 7
-Mixolydian;1 2 3 4 5 6 b7
-Aeolean;1 2 b3 4 5 b6 b7
-Locrian;1 b2 b3 4 b5 b6 b7
-Melodic Minor;1 2 b3 4 5 6 7
-Lydian Dominant;1 2 3 #4 5 6 b7
-Altered;1 b2 b3 b4 b5 b6 b7
-Harmonic Minor;1 2 b3 4 5 b6 7
-Phrygian Dominant;1 b2 3 4 5 b6 b7
-Whole Tone;1 2 3 #4 #5 b7
-Diminished Half/Whole;1 b2 b3 3 b5 5 6 b7
-Diminished Whole/Half;1 2 b3 4 b5 b6 6 7
+<div>What are the intervals of <b>Major Scale</b>?</div>;1 2 3 4 5 6 7;ModeIntervals MajorScale
+<div>What are the intervals of <b>Dorian</b>?</div>;1 2 b3 4 5 6 b7;ModeIntervals Dorian
+<div>What are the intervals of <b>Phrygian</b>?</div>;1 b2 b3 4 5 b6 b7;ModeIntervals Phrygian
+<div>What are the intervals of <b>Lydian</b>?</div>;1 2 3 #4 5 6 7;ModeIntervals Lydian
+<div>What are the intervals of <b>Mixolydian</b>?</div>;1 2 3 4 5 6 b7;ModeIntervals Mixolydian
+<div>What are the intervals of <b>Aeolean</b>?</div>;1 2 b3 4 5 b6 b7;ModeIntervals Aeolean
+<div>What are the intervals of <b>Locrian</b>?</div>;1 b2 b3 4 b5 b6 b7;ModeIntervals Locrian
+<div>What are the intervals of <b>Melodic Minor</b>?</div>;1 2 b3 4 5 6 7;ModeIntervals MelodicMinor
+<div>What are the intervals of <b>Lydian Dominant</b>?</div>;1 2 3 #4 5 6 b7;ModeIntervals LydianDominant
+<div>What are the intervals of <b>Altered</b>?</div>;1 b2 b3 b4 b5 b6 b7;ModeIntervals Altered
+<div>What are the intervals of <b>Harmonic Minor</b>?</div>;1 2 b3 4 5 b6 7;ModeIntervals HarmonicMinor
+<div>What are the intervals of <b>Phrygian Dominant</b>?</div>;1 b2 3 4 5 b6 b7;ModeIntervals PhrygianDominant
+<div>What are the intervals of <b>Whole Tone</b>?</div>;1 2 3 #4 #5 b7;ModeIntervals WholeTone
+<div>What are the intervals of <b>Diminished Half/Whole</b>?</div>;1 b2 b3 3 b5 5 6 b7;ModeIntervals DiminishedHalf/Whole
+<div>What are the intervals of <b>Diminished Whole/Half</b>?</div>;1 2 b3 4 b5 b6 6 7;ModeIntervals DiminishedWhole/Half

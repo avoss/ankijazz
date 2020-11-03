@@ -21,7 +21,7 @@ public class Parts {
   }
 
   public static Part note(Drum drum, int velocity, int denominator) {
-    return new NoteOn(Drum.MIDI_CHANNEL, drum.getMidiPitch(), velocity, 1, denominator);
+    return new NoteOn(Drum.getMidiChannel(), drum.getMidiPitch(), velocity, 1, denominator);
   }
 
   public static Part rest(int numerator, int denominator) {

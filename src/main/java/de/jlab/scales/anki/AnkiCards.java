@@ -20,6 +20,7 @@ import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CWholeTone;
 import static de.jlab.scales.theory.Scales.allKeys;
+import static java.lang.String.format;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -37,65 +38,89 @@ public class AnkiCards {
   // TODO duplicated in ScaleCard
   private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
 
-  public Deck tritones() {
-    Deck deck = new SimpleDeck("LearnTritones");
-    for (Note note : Note.values()) {
-      Note tritone = note.tritone();
-      deck.add(note.getName(FLAT), tritone.getBothNames());
-      if (!CMajor.contains(note))
-        deck.add(note.getName(SHARP), tritone.getBothNames());
-    }
-    return deck;
-  }
-
-  public Deck enharmonics() {
-    Deck deck = new SimpleDeck("LearnEnharmonics");
-    for (Note note : Note.values()) {
-      if (!CMajor.contains(note)) {
-        deck.add(note.getName(SHARP), note.getName(FLAT));
-        deck.add(note.getName(FLAT), note.getName(SHARP));
-      }
-    }
-    return deck;
-  }
-
-  public Deck learnScales() {
-    Deck deck = new SimpleDeck("LearnScales");
-    for (Scale scale : allKeys(commonScales(false))) {
-      for (ScaleInfo info : universe.infos(scale)) {
-        int difficulty = info.getKeySignature().getNumberOfAccidentals();
-        difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
-        difficulty += info.isInversion() ? 3 : 0;
-        deck.add(difficulty, info.getScaleName(), info.getKeySignature().toString(scale));
-      }
-    }
-    return deck;
-  }
-  
   public Deck learnModes() {
     Deck deck = new SimpleDeck("LearnModes");
     for (Scale scale : allKeys(commonModes(false))) {
-      ScaleInfo scaleInfo = universe.info(scale);
-      if (!scaleInfo.isInversion()) {
-        continue;
+      for (ScaleInfo info : universe.infos(scale)) {
+        int difficulty = difficulty(info);
+        spellNotes(deck, difficulty, info);
+        nameParent(deck, difficulty, info);
+        nameMode(deck, difficulty, info);
       }
-      ScaleInfo parentInfo = scaleInfo.getParentInfo();
-      String modeIndex = Integer.toString(scaleInfo.getModeIndex() + 1);
-      deck.add(scaleInfo.getScaleName(), parentInfo.getScaleName(), modeIndex);
     }
+    addScaleTypes(deck);
+    //addEnharmonics(deck);
     return deck;
   }
 
-  public Deck learnScaleTypes() {
-    Deck deck = new SimpleDeck("LearnScaleTypes");
+  private void addEnharmonics(Deck deck) {
+    final String pattern = "<div>What is the enharmonic equivalent of <b>%s</b>?</div>"; 
+    final String tags = "Enharmonics";
+    for (Note note : Note.values()) {
+      if (!CMajor.contains(note)) {
+        deck.add(0, format(pattern, note.getName(SHARP)), note.getName(FLAT), tags);
+        deck.add(0, format(pattern, note.getName(FLAT)), note.getName(SHARP), tags);
+      }
+    }
+  }
+
+  void addScaleTypes(Deck deck) {
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
-      ScaleInfo scaleInfo = universe.info(scale);
-      Result result = analyzer.analyze(scale);
-      deck.add(scaleInfo.getTypeName(), result.toString());
+      ScaleInfo info = universe.info(scale);
+      int difficulty = difficulty(info);
+      String front = format("<div>What are the intervals of <b>%s</b>?</div>", info.getTypeName());
+      String back = analyzer.analyze(scale).toString();
+      String tags = format("ModeIntervals %s", sanitizedTypeName(info));
+      deck.add(difficulty, front, back, tags);
     }
-    return deck;
   }
+
+  private String sanitizedTypeName(ScaleInfo info) {
+    return info.getTypeName().replace(" ", "");
+  }
+
+  private void nameMode(Deck deck, int difficulty, ScaleInfo scaleInfo) {
+    if (!scaleInfo.isInversion()) {
+      return;
+    }
+    ScaleInfo parentInfo = scaleInfo.getParentInfo();
+    int modeIndex = scaleInfo.getModeIndex() + 1;
+    String front = format("<div>What is mode <b>%d</b> of <b>%s</b>?</div>", modeIndex, parentInfo.getScaleName());
+    String back = format("<div><b>%s</b></div>", scaleInfo.getScaleName());
+    String tags = tags("NameMode", parentInfo);
+    deck.add(difficulty, front, back, tags);
+  }
+
+  private void nameParent(Deck deck, int difficulty, ScaleInfo scaleInfo) {
+    if (!scaleInfo.isInversion()) {
+      return;
+    }
+    ScaleInfo parentInfo = scaleInfo.getParentInfo();
+    String front = format("<div>What is the parent scale of <b>%s</b>?</div>", scaleInfo.getScaleName());
+    String back = format("<div><b>%s</b></div>", parentInfo.getScaleName());
+    String tags = tags("NameParent", scaleInfo);
+    deck.add(difficulty, front, back, tags);
+  }
+
+  private void spellNotes(Deck deck, int difficulty, ScaleInfo info) {
+    String front = format("<div>What are the notes of <b>%s</b>?</div>", info.getScaleName());
+    String back = format("<div><b>%s</b></div>", info.getKeySignature().toString(info.getScale()));
+    String tags = tags("SpellNotes", info);
+    deck.add(difficulty, front, back, tags);
+  }
+
+  private String tags(String task, ScaleInfo info) {
+    return format("%s %s %s", task, sanitizedTypeName(info), info.getScale().getRoot().getName(FLAT));
+  }
+
+  private int difficulty(ScaleInfo info) {
+    int difficulty = info.getKeySignature().getNumberOfAccidentals();
+    difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
+    difficulty += info.isInversion() ? 3 : 0;
+    return difficulty;
+  }
+  
 
   public Deck playScales() {
     return playScales(commonScales(), new SimpleDeck("PlayScales"), false);

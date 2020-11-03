@@ -17,7 +17,7 @@ public class MidiFile implements MidiOut {
   private Sequence sequence;
   private Track track;
   
-  private static final int PPQ = 96;
+  private final int PPQ = 480;
   
   private int clock = 0;
 

@@ -57,7 +57,7 @@ public enum Drum {
   MetronomeClick(33);
   
   private int midiPitch;
-  public static final int MIDI_CHANNEL = 9;
+  private static final int MIDI_CHANNEL = 9;
 
   private Drum(int midiPitch) {
     this.midiPitch = midiPitch;
@@ -66,10 +66,8 @@ public enum Drum {
   public int getMidiPitch() {
     return midiPitch;
   }
-  
-  public Part part(int velocity, String pattern) {
-    // FIXME
-    return null;
+
+  public static int getMidiChannel() {
+    return MIDI_CHANNEL;
   }
-  
 }

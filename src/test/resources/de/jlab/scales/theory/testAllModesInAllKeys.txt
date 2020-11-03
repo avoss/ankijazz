@@ -159,13 +159,13 @@
      D# Locrian natural 2, Signature:  E (4#), Notation: D# E# F# G# A B C# 
                E# Altered, Signature:  E (4#), Notation: E# F# G# A B C# D# // enharmonic root
 
-          G Melodic Minor, Signature:  F (1b), Notation: G A Bb C D E F# 
-              A Dorian b2, Signature:  F (1b), Notation: A Bb C D E F# G 
-      Bb Lydian Augmented, Signature:  F (1b), Notation: Bb C D E F# G A 
-        C Lydian Dominant, Signature:  F (1b), Notation: C D E F# G A Bb 
-          D Mixolydian b6, Signature:  F (1b), Notation: D E F# G A Bb C 
-      E Locrian natural 2, Signature:  F (1b), Notation: E F# G A Bb C D 
-               F# Altered, Signature:  F (1b), Notation: F# G A Bb C D E 
+          G Melodic Minor, Signature:  F (1b), Notation: G A Bb C D E F# // sharp + flat
+              A Dorian b2, Signature:  F (1b), Notation: A Bb C D E F# G // sharp + flat
+      Bb Lydian Augmented, Signature:  F (1b), Notation: Bb C D E F# G A // sharp + flat
+        C Lydian Dominant, Signature:  F (1b), Notation: C D E F# G A Bb // sharp + flat
+          D Mixolydian b6, Signature:  F (1b), Notation: D E F# G A Bb C // sharp + flat
+      E Locrian natural 2, Signature:  F (1b), Notation: E F# G A Bb C D // sharp + flat
+               F# Altered, Signature:  F (1b), Notation: F# G A Bb C D E // sharp + flat
 
          Ab Melodic Minor, Signature: Gb (6b), Notation: Ab Bb Cb Db Eb F G 
              Bb Dorian b2, Signature: Gb (6b), Notation: Bb Cb Db Eb F G Ab 
@@ -223,13 +223,13 @@
               A Lydian #2, Signature:  E (4#), Notation: A B# C# D# E F# G# 
          B# Mixolydian #1, Signature:  E (4#), Notation: B# C# D# E F# G# A // enharmonic root
 
-         D Harmonic Minor, Signature:  F (1b), Notation: D E F G A Bb C# 
-             E Locrian #6, Signature:  F (1b), Notation: E F G A Bb C# D 
-              F Ionian #5, Signature:  F (1b), Notation: F G A Bb C# D E 
-              G Dorian #4, Signature:  F (1b), Notation: G A Bb C# D E F 
-      A Phrygian Dominant, Signature:  F (1b), Notation: A Bb C# D E F G 
-             Bb Lydian #2, Signature:  F (1b), Notation: Bb C# D E F G A 
-         C# Mixolydian #1, Signature:  F (1b), Notation: C# D E F G A Bb 
+         D Harmonic Minor, Signature:  F (1b), Notation: D E F G A Bb C# // sharp + flat
+             E Locrian #6, Signature:  F (1b), Notation: E F G A Bb C# D // sharp + flat
+              F Ionian #5, Signature:  F (1b), Notation: F G A Bb C# D E // sharp + flat
+              G Dorian #4, Signature:  F (1b), Notation: G A Bb C# D E F // sharp + flat
+      A Phrygian Dominant, Signature:  F (1b), Notation: A Bb C# D E F G // sharp + flat
+             Bb Lydian #2, Signature:  F (1b), Notation: Bb C# D E F G A // sharp + flat
+         C# Mixolydian #1, Signature:  F (1b), Notation: C# D E F G A Bb // sharp + flat
 
         D# Harmonic Minor, Signature: F# (6#), Notation: D# E# F# G# A# B Cx // double sharp/flat
             E# Locrian #6, Signature: F# (6#), Notation: E# F# G# A# B Cx D# // double sharp/flat, enharmonic root
@@ -271,13 +271,13 @@
               D Lydian #2, Signature:  A (3#), Notation: D E# F# G# A B C# 
          E# Mixolydian #1, Signature:  A (3#), Notation: E# F# G# A B C# D // enharmonic root
 
-         G Harmonic Minor, Signature: Bb (2b), Notation: G A Bb C D Eb F# 
-             A Locrian #6, Signature: Bb (2b), Notation: A Bb C D Eb F# G 
-             Bb Ionian #5, Signature: Bb (2b), Notation: Bb C D Eb F# G A 
-              C Dorian #4, Signature: Bb (2b), Notation: C D Eb F# G A Bb 
-      D Phrygian Dominant, Signature: Bb (2b), Notation: D Eb F# G A Bb C 
-             Eb Lydian #2, Signature: Bb (2b), Notation: Eb F# G A Bb C D 
-         F# Mixolydian #1, Signature: Bb (2b), Notation: F# G A Bb C D Eb 
+         G Harmonic Minor, Signature: Bb (2b), Notation: G A Bb C D Eb F# // sharp + flat
+             A Locrian #6, Signature: Bb (2b), Notation: A Bb C D Eb F# G // sharp + flat
+             Bb Ionian #5, Signature: Bb (2b), Notation: Bb C D Eb F# G A // sharp + flat
+              C Dorian #4, Signature: Bb (2b), Notation: C D Eb F# G A Bb // sharp + flat
+      D Phrygian Dominant, Signature: Bb (2b), Notation: D Eb F# G A Bb C // sharp + flat
+             Eb Lydian #2, Signature: Bb (2b), Notation: Eb F# G A Bb C D // sharp + flat
+         F# Mixolydian #1, Signature: Bb (2b), Notation: F# G A Bb C D Eb // sharp + flat
 
         G# Harmonic Minor, Signature:  B (5#), Notation: G# A# B C# D# E Fx // double sharp/flat
             A# Locrian #6, Signature:  B (5#), Notation: A# B C# D# E Fx G# // double sharp/flat
@@ -327,13 +327,13 @@
            Bbb Aeolean b1, Signature: Db (5b), Notation: Bbb C Db Eb F Gb Ab // double sharp/flat
              C Locrian b7, Signature: Db (5b), Notation: C Db Eb F Gb Ab Bbb // double sharp/flat
 
-         D Harmonic Major, Signature:  D (2#), Notation: D E F# G A Bb C# 
-              E Dorian b5, Signature:  D (2#), Notation: E F# G A Bb C# D 
-           F# Phrygian b4, Signature:  D (2#), Notation: F# G A Bb C# D E 
-              G Lydian b3, Signature:  D (2#), Notation: G A Bb C# D E F# 
-          A Mixolydian b2, Signature:  D (2#), Notation: A Bb C# D E F# G 
-            Bb Aeolean b1, Signature:  D (2#), Notation: Bb C# D E F# G A 
-            C# Locrian b7, Signature:  D (2#), Notation: C# D E F# G A Bb 
+         D Harmonic Major, Signature:  D (2#), Notation: D E F# G A Bb C# // sharp + flat
+              E Dorian b5, Signature:  D (2#), Notation: E F# G A Bb C# D // sharp + flat
+           F# Phrygian b4, Signature:  D (2#), Notation: F# G A Bb C# D E // sharp + flat
+              G Lydian b3, Signature:  D (2#), Notation: G A Bb C# D E F# // sharp + flat
+          A Mixolydian b2, Signature:  D (2#), Notation: A Bb C# D E F# G // sharp + flat
+            Bb Aeolean b1, Signature:  D (2#), Notation: Bb C# D E F# G A // sharp + flat
+            C# Locrian b7, Signature:  D (2#), Notation: C# D E F# G A Bb // sharp + flat
 
         Eb Harmonic Major, Signature: Eb (3b), Notation: Eb F G Ab Bb Cb D 
               F Dorian b5, Signature: Eb (3b), Notation: F G Ab Bb Cb D Eb 
@@ -375,13 +375,13 @@
            Ebb Aeolean b1, Signature: Gb (6b), Notation: Ebb F Gb Ab Bb Cb Db // double sharp/flat
              F Locrian b7, Signature: Gb (6b), Notation: F Gb Ab Bb Cb Db Ebb // double sharp/flat
 
-         G Harmonic Major, Signature:  G (1#), Notation: G A B C D Eb F# 
-              A Dorian b5, Signature:  G (1#), Notation: A B C D Eb F# G 
-            B Phrygian b4, Signature:  G (1#), Notation: B C D Eb F# G A 
-              C Lydian b3, Signature:  G (1#), Notation: C D Eb F# G A B 
-          D Mixolydian b2, Signature:  G (1#), Notation: D Eb F# G A B C 
-            Eb Aeolean b1, Signature:  G (1#), Notation: Eb F# G A B C D 
-            F# Locrian b7, Signature:  G (1#), Notation: F# G A B C D Eb 
+         G Harmonic Major, Signature:  G (1#), Notation: G A B C D Eb F# // sharp + flat
+              A Dorian b5, Signature:  G (1#), Notation: A B C D Eb F# G // sharp + flat
+            B Phrygian b4, Signature:  G (1#), Notation: B C D Eb F# G A // sharp + flat
+              C Lydian b3, Signature:  G (1#), Notation: C D Eb F# G A B // sharp + flat
+          D Mixolydian b2, Signature:  G (1#), Notation: D Eb F# G A B C // sharp + flat
+            Eb Aeolean b1, Signature:  G (1#), Notation: Eb F# G A B C D // sharp + flat
+            F# Locrian b7, Signature:  G (1#), Notation: F# G A B C D Eb // sharp + flat
 
         Ab Harmonic Major, Signature: Ab (4b), Notation: Ab Bb C Db Eb Fb G 
              Bb Dorian b5, Signature: Ab (4b), Notation: Bb C Db Eb Fb G Ab 
