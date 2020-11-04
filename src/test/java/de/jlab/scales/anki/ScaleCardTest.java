@@ -29,7 +29,7 @@ public class ScaleCardTest {
     Path dir = Paths.get("build/lily");
     Files.createDirectories(dir);
     c.writeAssets(dir);
-    Path ly = dir.resolve(c.lilyName());
+    Path ly = dir.resolve(c.getLilyName());
     List<String> lines = Files.readAllLines(ly);
     assertThat(lines.toString()).contains("bf4 c4 d4 ef4 f4 g4 af4");
   }

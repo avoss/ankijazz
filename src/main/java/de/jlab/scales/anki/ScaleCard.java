@@ -19,7 +19,6 @@ import java.nio.file.Path;
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyScale;
 import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
 
@@ -52,54 +51,54 @@ public class ScaleCard implements Card {
   
   @Override
   public String[] getFields() {
-    return new String[] { modeName(), modeTypeName(), modeRootName(), parentName(), parentTypeName(), parentRootName(), modeAnkiPng(), modeAnkiMp3(), direction() };
+    return new String[] { getModeName(), getModeTypeName(), getModeRootName(), getParentName(), getParentTypeName(), getParentRootName(), getModeAnkiPng(), getModeAnkiMp3(), direction() };
   }
 
   public String direction() {
     return descending ? "Descending" : "Ascending";
   }
 
-  public String modeName() {
+  public String getModeName() {
     return modeInfo.getScaleName();
   }
 
-  public String modeTypeName() {
+  public String getModeTypeName() {
     return modeInfo.getTypeName();
   }
 
-  public String modeRootName() {
+  public String getModeRootName() {
     return keySignature.notate(modeInfo.getScale().getRoot());
   }
 
-  public String parentName() {
+  public String getParentName() {
     return parentInfo.getScaleName();
   }
 
-  public String parentTypeName() {
+  public String getParentTypeName() {
     return parentInfo.getTypeName();
   }
 
-  public String parentRootName() {
+  public String getParentRootName() {
     return keySignature.notate(parentInfo.getScale().getRoot());
   }
 
-  public String modeAnkiPng() {
+  public String getModeAnkiPng() {
     return format("<img src=\"%s.png\">", lilyId);
   }
 
-  public String modeAnkiMp3() {
+  public String getModeAnkiMp3() {
     return format("[sound:%s.mp3]",  lilyId);
   }
 
-  public String modeHtmlPng() {
+  public String getModeHtmlPng() {
     return format("%s.png", lilyId);
   }
 
-  public String modeHtmlMp3() {
+  public String getModeHtmlMp3() {
     return format("%s.mp3",  lilyId);
   }
   
-  public String lilyName() {
+  public String getLilyName() {
     return format("%s.ly", lilyId);
   }
   
@@ -107,14 +106,15 @@ public class ScaleCard implements Card {
   public int getDifficulty() {
     return difficulty;
   }
-  public String notationKey() {
+  
+  public String getNotationKey() {
     return keySignature.notationKey();
   }
 
   @Override
   public void writeAssets(Path dir) {
     try {
-      Path path = dir.resolve(lilyName());
+      Path path = dir.resolve(getLilyName());
       Files.write(path, asList(lilyString));
     } catch (IOException e) {
       throw new UncheckedIOException(e);
