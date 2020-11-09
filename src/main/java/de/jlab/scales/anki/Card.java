@@ -6,11 +6,7 @@ import java.nio.file.Path;
  * in Anki this is a Note - but to not confuse with musical Note, its called
  * Card here.
  */
-public interface Card extends Comparable<Card> {
-  /** 
-   * 0 = highest priority 
-   */
-  int getDifficulty();
+public interface Card extends HasDifficulty, Comparable<Card> {
 
   String toCsv();
   
