@@ -35,7 +35,7 @@ public class ScaleCardTest {
   }
   
   private ScaleCard card(Scale scale) {
-    return new ScaleCard(universe.info(scale));
+    return new ScaleCard(universe.info(scale), false);
   }
 
 

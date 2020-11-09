@@ -98,11 +98,7 @@ public class SimpleDeck implements Deck {
 
   @Override
   public List<String> getCsv() {
-    return cards.stream().map(Card::getFields).map(this::toCsv).collect(toList());
-  }
-
-  private String toCsv(String... fields) {
-    return Stream.of(fields).collect(joining(";"));
+    return cards.stream().map(Card::toCsv).collect(toList());
   }
 
   @Override

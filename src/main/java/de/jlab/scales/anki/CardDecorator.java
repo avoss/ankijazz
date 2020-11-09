@@ -1,9 +1,8 @@
 package de.jlab.scales.anki;
 
 import java.nio.file.Path;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+
+import de.jlab.scales.Utils;
 
 public class CardDecorator implements Card {
 
@@ -19,19 +18,17 @@ public class CardDecorator implements Card {
     return delegate.getDifficulty();
   }
 
-  public String[] getFields() {
-    List<String> result = new ArrayList<>();
-    result.addAll(Arrays.asList(delegate.getFields()));
-    result.addAll(Arrays.asList(extraFields));
-    return result.toArray(new String[result.size()]);
-  }
-
   public void writeAssets(Path directory) {
     delegate.writeAssets(directory);
   }
 
   public int compareTo(Card that) {
     return delegate.compareTo(that);
+  }
+
+  @Override
+  public String toCsv() {
+    return delegate.toCsv() + ";" + Utils.toCsv(extraFields);
   }
 
 }

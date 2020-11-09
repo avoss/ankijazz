@@ -12,7 +12,7 @@ public interface Card extends Comparable<Card> {
    */
   int getDifficulty();
 
-  String[] getFields();
+  String toCsv();
   
   default void writeAssets(Path directory) {
     // empty

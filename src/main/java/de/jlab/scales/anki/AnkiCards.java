@@ -141,12 +141,9 @@ public class AnkiCards {
   private Deck playScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
     for (Scale scale : allKeys(scales)) {
       for (ScaleInfo info : universe.infos(scale)) {
-        int difficulty = info.getKeySignature().getNumberOfAccidentals();
-        difficulty += info.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
-        difficulty += info.isInversion() ? 3 : 0;
-        deck.add(new ScaleCard(info, difficulty, false));
+        deck.add(new ScaleCard(info, false));
         if (includeDescending) {
-          deck.add(new ScaleCard(info, difficulty, true));
+          deck.add(new ScaleCard(info, true));
         }
       }
     }

@@ -1,5 +1,7 @@
 package de.jlab.scales;
 
+import static java.util.stream.Collectors.joining;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -13,6 +15,7 @@ import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.google.common.base.Charsets;
 
@@ -56,8 +59,17 @@ public final class Utils {
 
   }
 
+  /**
+   * symmetrical scales, when transposed, can result in the same scale as the original. This method returns true
+   * if the mode is either the parent scale, or a mode that is not equal to the parent scale. 
+   */
   public static boolean isSymmetricalDuplicate(Scale parent, Scale mode) {
     return !parent.equals(mode) && parent.transpose(mode.getRoot()).equals(mode);
   }
 
+  public static String toCsv(String... fields) {
+    // TODO maybe escape/replace ';' within fields?
+    return Stream.of(fields).collect(joining(";"));
+  }
+  
 }
