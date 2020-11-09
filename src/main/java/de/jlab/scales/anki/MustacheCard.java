@@ -48,12 +48,14 @@ public class MustacheCard<T extends HasDifficulty> implements Card {
 
   @Override
   public String toCsv() {
-    String result = transform(TemplateType.CSV);
-    result = result.replaceAll("\\s+", " ");
-    result = result.replaceAll("\\s*;\\s*", ";");
-    return result.trim();
+    return transform(TemplateType.CSV).replaceAll("\\s*-----[-]+\\s*", ";");
   }
 
+  @Override
+  public String toHtml() {
+    return transform(TemplateType.HTML);
+  }
+  
   private String transform(TemplateType type) {
     try {
       MustacheFactory factory = new DefaultMustacheFactory();
@@ -61,7 +63,7 @@ public class MustacheCard<T extends HasDifficulty> implements Card {
       StringWriter writer = new StringWriter();
       mustache.execute(writer, this);
       writer.close();
-      return writer.toString();
+      return writer.toString().replaceAll("\\s+", " ").trim();
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }

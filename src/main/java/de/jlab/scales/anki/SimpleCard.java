@@ -20,5 +20,9 @@ public class SimpleCard implements Card {
   public String toCsv() {
     return Utils.toCsv(fields);
   }
+  @Override
+  public String toHtml() {
+    throw new UnsupportedOperationException();
+  }
 
 }

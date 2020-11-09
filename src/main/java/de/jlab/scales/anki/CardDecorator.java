@@ -7,6 +7,7 @@ import de.jlab.scales.Utils;
 public class CardDecorator implements Card {
 
   private final Card delegate;
+
   private final String[] extraFields;
   
   public CardDecorator(Card delegate, String ... extraFields) {
@@ -31,4 +32,7 @@ public class CardDecorator implements Card {
     return delegate.toCsv() + ";" + Utils.toCsv(extraFields);
   }
 
+  public String toHtml() {
+    return delegate.toHtml();
+  }
 }

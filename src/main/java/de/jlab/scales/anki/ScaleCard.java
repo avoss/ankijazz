@@ -38,6 +38,11 @@ public class ScaleCard implements Card {
     return Utils.toCsv(getFields());
   }
   
+  @Override
+  public String toHtml() {
+    throw new UnsupportedOperationException();
+  }
+  
   public String[] getFields() {
     return new String[] { getModeName(), getModeTypeName(), getModeRootName(), getParentName(), getParentTypeName(), getParentRootName(), getModeAnkiPng(), getModeAnkiMp3(), direction() };
   }

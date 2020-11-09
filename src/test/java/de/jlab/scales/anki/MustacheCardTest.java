@@ -30,10 +30,15 @@ public class MustacheCardTest {
     }
   }
 
+  private MustacheCard<TestModel> card = new MustacheCard<>(new TestModel(), "MustacheCard");
+  
   @Test
   public void testToCsv() {
-    MustacheCard<TestModel> card = new MustacheCard<>(new TestModel(), "MustacheCard");
-    assertEquals("<div> Question: <b>A &lt;B?</b> </div>;<div> Answer: <b>Yes</b> </div>;A B", card.toCsv());
+    assertEquals("<div> Question: <b>A &lt; B?</b> </div>;<div> Answer: <b>Yes</b> </div>;A B", card.toCsv());
   }
 
+  @Test
+  public void testToHtml() {
+    assertEquals("<h1>Heading</h1> <div> Question: <b>A &lt; B?</b> </div> <div> Answer: <b>Yes</b> </div> <div> Tags: A B </div>", card.toHtml());
+  }
 }

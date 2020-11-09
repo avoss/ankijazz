@@ -9,6 +9,7 @@ import java.nio.file.Path;
 public interface Card extends HasDifficulty, Comparable<Card> {
 
   String toCsv();
+  String toHtml();
   
   default void writeAssets(Path directory) {
     // empty
