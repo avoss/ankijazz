@@ -25,7 +25,7 @@ public class ScaleCardTest {
   @Test
   public void testWriteAssets() throws IOException {
     Scale bb7 = CMajor.transpose(Eb).superimpose(Bb);
-    ScaleCard c = card(bb7);
+    ScaleModel c = card(bb7);
     Path dir = Paths.get("build/lily");
     Files.createDirectories(dir);
     c.writeAssets(dir);
@@ -34,8 +34,8 @@ public class ScaleCardTest {
     assertThat(lines.toString()).contains("bf4 c4 d4 ef4 f4 g4 af4");
   }
   
-  private ScaleCard card(Scale scale) {
-    return new ScaleCard(universe.info(scale), false);
+  private ScaleModel card(Scale scale) {
+    return new ScaleModel(universe.info(scale), false);
   }
 
 

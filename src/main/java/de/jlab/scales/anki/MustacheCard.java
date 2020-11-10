@@ -1,41 +1,21 @@
 package de.jlab.scales.anki;
 
-import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.regex.Pattern;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
 
-public class MustacheCard<T extends HasDifficulty> implements Card {
-  
+public class MustacheCard<T extends WithDifficulty> implements Card {
+
   private final T model;
-  private final String templateBaseName;
-  
-  private enum TemplateType {
-    CSV(".csv.mustache"),
-    HTML(".html.mustache");
 
-    private String extension;
-
-    TemplateType(String extension) {
-      this.extension = extension;
-    }
-    public String getTemplateName(String templateBaseName) {
-      return templateBaseName + extension;
-    }
-  }
-  
-  public MustacheCard(T model, String templateBaseName) {
+  public MustacheCard(T model) {
     this.model = model;
-    this.templateBaseName = templateBaseName;
   }
-  
+
   public T getModel() {
     return model;
   }
@@ -44,7 +24,6 @@ public class MustacheCard<T extends HasDifficulty> implements Card {
   public int getDifficulty() {
     return model.getDifficulty();
   }
-
 
   @Override
   public String toCsv() {
@@ -55,11 +34,11 @@ public class MustacheCard<T extends HasDifficulty> implements Card {
   public String toHtml() {
     return transform(TemplateType.HTML);
   }
-  
+
   private String transform(TemplateType type) {
     try {
       MustacheFactory factory = new DefaultMustacheFactory();
-      Mustache mustache = factory.compile(type.getTemplateName(templateBaseName));
+      Mustache mustache = factory.compile(type.getTemplateName(getClass()));
       StringWriter writer = new StringWriter();
       mustache.execute(writer, this);
       writer.close();
@@ -68,5 +47,5 @@ public class MustacheCard<T extends HasDifficulty> implements Card {
       throw new UncheckedIOException(e);
     }
   }
-  
+
 }

@@ -6,31 +6,7 @@ import org.junit.Test;
 
 public class MustacheCardTest {
 
-  static class TestModel implements HasDifficulty {
-
-    private final String front = "A < B?";
-    private final String back = "Yes";
-    private final String tags = "A B";
-
-    @Override
-    public int getDifficulty() {
-      return 0;
-    }
-
-    public String getFront() {
-      return front;
-    }
-
-    public String getBack() {
-      return back;
-    }
-
-    public String getTags() {
-      return tags;
-    }
-  }
-
-  private MustacheCard<TestModel> card = new MustacheCard<>(new TestModel(), "MustacheCard");
+  private MustacheCard<TestModel> card = new MustacheCard<>(new TestModel());
   
   @Test
   public void testToCsv() {

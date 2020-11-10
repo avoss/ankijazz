@@ -12,6 +12,11 @@ import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
+import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
+import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
+import static de.jlab.scales.theory.Scales.CWholeTone;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -94,6 +99,45 @@ public class Scales {
       }
     }
     return allScales;
+  }
+
+  public static Collection<Scale> commonScales() {
+    return commonScales(true);
+  }
+  
+  public static Collection<Scale> commonScales(boolean includeSymmetricScales) {
+    List<Scale> scales = new ArrayList<>();
+    scales.add(CMajor);
+    scales.add(CMelodicMinor);
+    scales.add(CHarmonicMinor);
+//    scales.add(CHarmonicMajor);
+    if (includeSymmetricScales) {
+      scales.add(CWholeTone);
+      scales.add(CDiminishedHalfWhole);
+    }
+    return scales;
+  }
+
+  public static Collection<Scale> commonModes() {
+    return commonModes(true);
+  }
+
+  public static Collection<Scale> commonModes(boolean includeSymmetricScales) {
+    List<Scale> scales = new ArrayList<>();
+    scales.addAll(CMajor.getInversions());
+    scales.add(CMelodicMinor);
+    scales.add(CMelodicMinor.superimpose(F)); // Lydian Dominant
+    scales.add(CMelodicMinor.superimpose(B)); // Altered
+    scales.add(CHarmonicMinor);
+    scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
+//    scales.add(CHarmonicMajor);
+//    scales.add(CHarmonicMajor.transpose(B));   // Marcus
+    if (includeSymmetricScales) {
+      scales.add(CWholeTone);
+      scales.add(CDiminishedHalfWhole);
+      scales.add(CDiminishedHalfWhole.superimpose(Db));
+    }
+    return scales;
   }
   
 }

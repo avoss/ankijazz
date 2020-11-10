@@ -14,7 +14,7 @@ import de.jlab.scales.theory.BuiltInScaleTypes;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class ScaleCard implements Card {
+public class ScaleModel implements WithDifficulty, WithAssets {
   public static final MustacheTemplate TEMPLATE = new MustacheTemplate("ScaleCard");
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
@@ -23,31 +23,16 @@ public class ScaleCard implements Card {
   private String lilyString;
   private String lilyId;
 
-  public ScaleCard(ScaleInfo modeInfo, boolean descending) {
+  public ScaleModel(ScaleInfo modeInfo, boolean descending) {
     this.modeInfo = modeInfo;
     this.keySignature = modeInfo.getKeySignature();
     this.descending = descending;
     this.parentInfo = modeInfo.getParentInfo();
     this.lilyString = new LilyScale(modeInfo, descending).toLily();
     this.lilyId = Utils.hash(lilyString);
-
   }
   
-  @Override
-  public String toCsv() {
-    return Utils.toCsv(getFields());
-  }
-  
-  @Override
-  public String toHtml() {
-    throw new UnsupportedOperationException();
-  }
-  
-  public String[] getFields() {
-    return new String[] { getModeName(), getModeTypeName(), getModeRootName(), getParentName(), getParentTypeName(), getParentRootName(), getModeAnkiPng(), getModeAnkiMp3(), direction() };
-  }
-
-  public String direction() {
+  public String getDirection() {
     return descending ? "Descending" : "Ascending";
   }
 

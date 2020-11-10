@@ -10,25 +10,16 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.CWholeTone;
 import static de.jlab.scales.theory.Scales.allKeys;
+import static de.jlab.scales.theory.Scales.commonModes;
+import static de.jlab.scales.theory.Scales.commonScales;
 import static java.lang.String.format;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 import de.jlab.scales.theory.BuiltInScaleTypes;
 import de.jlab.scales.theory.IntervalAnalyzer;
-import de.jlab.scales.theory.IntervalAnalyzer.Result;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -141,52 +132,14 @@ public class AnkiCards {
   private Deck playScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
     for (Scale scale : allKeys(scales)) {
       for (ScaleInfo info : universe.infos(scale)) {
-        deck.add(new ScaleCard(info, false));
-        if (includeDescending) {
-          deck.add(new ScaleCard(info, true));
-        }
+//        deck.add(new ScaleModel(info, false));
+//        if (includeDescending) {
+//          deck.add(new ScaleModel(info, true));
+//        }
       }
     }
     return deck;
   }
   
-  private Collection<Scale> commonScales() {
-    return commonScales(true);
-  }
-  
-  private Collection<Scale> commonScales(boolean includeSymmetricScales) {
-    List<Scale> scales = new ArrayList<>();
-    scales.add(CMajor);
-    scales.add(CMelodicMinor);
-    scales.add(CHarmonicMinor);
-//    scales.add(CHarmonicMajor);
-    if (includeSymmetricScales) {
-      scales.add(CWholeTone);
-      scales.add(CDiminishedHalfWhole);
-    }
-    return scales;
-  }
-
-  private Collection<Scale> commonModes() {
-    return commonModes(true);
-  }
-
-  private Collection<Scale> commonModes(boolean includeSymmetricScales) {
-    List<Scale> scales = new ArrayList<>();
-    scales.addAll(CMajor.getInversions());
-    scales.add(CMelodicMinor);
-    scales.add(CMelodicMinor.superimpose(F)); // Lydian Dominant
-    scales.add(CMelodicMinor.superimpose(B)); // Altered
-    scales.add(CHarmonicMinor);
-    scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
-//    scales.add(CHarmonicMajor);
-//    scales.add(CHarmonicMajor.transpose(B));   // Marcus
-    if (includeSymmetricScales) {
-      scales.add(CWholeTone);
-      scales.add(CDiminishedHalfWhole);
-      scales.add(CDiminishedHalfWhole.superimpose(Db));
-    }
-    return scales;
-  }
 
 }

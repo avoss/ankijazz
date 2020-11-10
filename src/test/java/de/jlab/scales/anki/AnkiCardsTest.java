@@ -37,7 +37,7 @@ public class AnkiCardsTest {
   @Test
   public void playModes() {
     Deck deck = anki.playModes();
-    deck.writeHtml(ScaleCard.TEMPLATE, Paths.get("build/anki"));
+    deck.writeHtml(ScaleModel.TEMPLATE, Paths.get("build/anki"));
     checkAndWrite(deck);
   }
   

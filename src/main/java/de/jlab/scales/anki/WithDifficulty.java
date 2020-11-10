@@ -1,6 +1,6 @@
 package de.jlab.scales.anki;
 
 @FunctionalInterface
-public interface HasDifficulty {
+public interface WithDifficulty {
   int getDifficulty();
 }
