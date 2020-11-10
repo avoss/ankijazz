@@ -17,11 +17,11 @@ public class SimpleCard implements Card {
   }
 
   @Override
-  public String toCsv() {
+  public String getCsv() {
     return Utils.toCsv(fields);
   }
   @Override
-  public String toHtml() {
+  public String getHtml() {
     throw new UnsupportedOperationException();
   }
 

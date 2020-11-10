@@ -3,35 +3,22 @@ package de.jlab.scales.anki;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
 
-public class MustacheCard<T extends WithDifficulty> implements Card {
-
-  private final T model;
-
-  public MustacheCard(T model) {
-    this.model = model;
-  }
-
-  public T getModel() {
-    return model;
-  }
+public abstract class MustacheCard implements Card {
 
   @Override
-  public int getDifficulty() {
-    return model.getDifficulty();
-  }
-
-  @Override
-  public String toCsv() {
+  public String getCsv() {
     return transform(TemplateType.CSV).replaceAll("\\s*-----[-]+\\s*", ";");
   }
 
   @Override
-  public String toHtml() {
+  public String getHtml() {
     return transform(TemplateType.HTML);
   }
 
@@ -46,6 +33,14 @@ public class MustacheCard<T extends WithDifficulty> implements Card {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+
+  protected String tags(String ... tags) {
+    return Stream.of(tags).map(s ->   s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
+  }
+  
+  public String getFrontSide() {
+    return "{{FrontSide}}";
   }
 
 }

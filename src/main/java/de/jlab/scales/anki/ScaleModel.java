@@ -15,7 +15,6 @@ import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.ScaleInfo;
 
 public class ScaleModel implements WithDifficulty, WithAssets {
-  public static final MustacheTemplate TEMPLATE = new MustacheTemplate("ScaleCard");
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
   private KeySignature keySignature;
@@ -29,7 +28,7 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     this.descending = descending;
     this.parentInfo = modeInfo.getParentInfo();
     this.lilyString = new LilyScale(modeInfo, descending).toLily();
-    this.lilyId = Utils.hash(lilyString);
+    this.lilyId = Utils.assetId(lilyString);
   }
   
   public String getDirection() {

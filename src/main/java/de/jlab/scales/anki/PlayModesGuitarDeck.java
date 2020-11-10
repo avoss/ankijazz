@@ -6,9 +6,9 @@ import static de.jlab.scales.theory.Scales.*;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class PlayModesDeck extends AbstractDeck {
+public class PlayModesGuitarDeck extends AbstractDeck {
 
-  public PlayModesDeck() {
+  public PlayModesGuitarDeck() {
     for (Scale scale : allKeys(commonModes())) {
       for (ScaleInfo info : MODES.infos(scale)) {
         add(new PlayModesCard(new ScaleModel(info, true)));

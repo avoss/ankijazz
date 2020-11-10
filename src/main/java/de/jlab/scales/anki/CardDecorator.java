@@ -28,11 +28,11 @@ public class CardDecorator implements Card {
   }
 
   @Override
-  public String toCsv() {
-    return delegate.toCsv() + ";" + Utils.toCsv(extraFields);
+  public String getCsv() {
+    return delegate.getCsv() + ";" + Utils.toCsv(extraFields);
   }
 
-  public String toHtml() {
-    return delegate.toHtml();
+  public String getHtml() {
+    return delegate.getHtml();
   }
 }

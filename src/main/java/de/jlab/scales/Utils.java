@@ -45,7 +45,7 @@ public final class Utils {
     return prefix + "-" + uuid();
   }
 
-  public static String hash(String string) {
+  public static String assetId(String string) {
     try {
       MessageDigest messageDigest = MessageDigest.getInstance("SHA");
       messageDigest.update(string.getBytes(Charsets.UTF_8));

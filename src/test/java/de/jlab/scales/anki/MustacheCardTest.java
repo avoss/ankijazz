@@ -6,15 +6,15 @@ import org.junit.Test;
 
 public class MustacheCardTest {
 
-  private MustacheCard<TestModel> card = new MustacheCard<>(new TestModel());
+  private Card card = new MustacheCardWithModel<TestModel>(new TestModel());
   
   @Test
   public void testToCsv() {
-    assertEquals("<div> Question: <b>A &lt; B?</b> </div>;<div> Answer: <b>Yes</b> </div>;A B", card.toCsv());
+    assertEquals("<div> Question: <b>A &lt; B?</b> </div>;<div> Answer: <b>Yes</b> </div>;A B", card.getCsv());
   }
 
   @Test
   public void testToHtml() {
-    assertEquals("<h1>Heading</h1> <div> Question: <b>A &lt; B?</b> </div> <div> Answer: <b>Yes</b> </div> <div> Tags: A B </div>", card.toHtml());
+    assertEquals("<h1>Heading</h1> <div> Question: <b>A &lt; B?</b> </div> <div> Answer: <b>Yes</b> </div> <div> Tags: A B </div>", card.getHtml());
   }
 }

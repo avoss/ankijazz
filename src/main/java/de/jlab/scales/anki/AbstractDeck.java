@@ -1,11 +1,13 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.TemplateType.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.StringWriter;
 import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -20,53 +22,53 @@ import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
 
-public class SimpleDeck implements Deck {
+public abstract class AbstractDeck implements Deck {
   private List<Card> cards = new ArrayList<>();
-  private String id;
-  
-  public SimpleDeck(String id) {
-    this.id = "AnkiJazz-" + id;
-  }
-  
-  @Override
-  public String getId() {
-    return id;
-  }
  
   @Override
   public void add(Card card) {
     cards.add(card);
   }
 
+  // TODO remove I/O from Deck into separate class
   @Override
   public void writeTo(Path dir) {
     try {
       Files.createDirectories(dir);
       writeCsv(dir);
+      writeHtml(dir);
+      cards.forEach(c -> c.writeAssets(dir));
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
   }
 
-  public void writeHtml(MustacheTemplate template, Path dir) {
+  public void writeHtml(Path dir) {
     try {
-      MustacheFactory factory = new DefaultMustacheFactory();
-      Mustache mustache = factory.compile(template.getTemplateName());
-      Files.createDirectories(dir);
-      Path path = dir.resolve(id + ".html");
-      BufferedWriter writer = Files.newBufferedWriter(path);
-      mustache.execute(writer, this);
-      writer.close();
+      Files.write(HTML.getOutputPath(dir, getClass()), Collections.singleton(getHtml()));
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
   }
 
+  @Override
+  public String getHtml() {
+    MustacheFactory factory = new DefaultMustacheFactory();
+    Mustache mustache = factory.compile(HTML.getTemplateName(getClass()));
+    StringWriter writer = new StringWriter();
+    mustache.execute(writer, this);
+    return writer.toString();
+  }
+  
   private void writeCsv(Path dir) throws IOException {
-    Path path = dir.resolve(id + ".txt");
+    Path path = CSV.getOutputPath(dir, getClass());
     List<String> rows = getCsv();
     Files.write(path, rows);
-    cards.forEach(c -> c.writeAssets(dir));
+  }
+  
+  @Override
+  public List<String> getCsv() {
+    return cards.stream().map(Card::getCsv).collect(toList());
   }
   
   private static class RandomDifficultyCard implements Comparable<RandomDifficultyCard> {
@@ -94,11 +96,6 @@ public class SimpleDeck implements Deck {
     Collections.shuffle(temp);
     Collections.sort(temp);
     this.cards = temp.stream().map(r -> r.card).collect(toList()); 
-  }
-
-  @Override
-  public List<String> getCsv() {
-    return cards.stream().map(Card::toCsv).collect(toList());
   }
 
   @Override

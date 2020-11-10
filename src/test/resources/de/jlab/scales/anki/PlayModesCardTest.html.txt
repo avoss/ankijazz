@@ -1,0 +1,1 @@
+<hr /> <div class="jumbotron"> <h2>D Dorian in Ascending Direction</h2> <div class="d-flex justify-content-center"> <p> <img src="AnkiJazz-128f54400d.png"> </p> </div> <div class="d-flex justify-content-center"> <p> <audio controls src="AnkiJazz-128f54400d.mp3"></audio> </p> </div> <div><p>Tags: D Dorian Ascending</p></div> </div>

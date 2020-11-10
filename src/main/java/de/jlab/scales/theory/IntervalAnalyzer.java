@@ -11,7 +11,7 @@ import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 import de.jlab.scales.anki.Deck;
-import de.jlab.scales.anki.SimpleDeck;
+import de.jlab.scales.anki.AbstractDeck;
 
 public class IntervalAnalyzer {
   

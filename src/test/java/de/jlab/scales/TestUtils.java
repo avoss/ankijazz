@@ -17,6 +17,10 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import de.jlab.scales.anki.AnkiCardsTest;
+import de.jlab.scales.anki.Deck;
+import de.jlab.scales.anki.PlayModesCard;
+import de.jlab.scales.anki.TemplateType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 
@@ -30,8 +34,9 @@ public class TestUtils {
       if (inputStream == null) {
         fail("Resource not found: " + fileName);
       }
-      String expected = Utils.readString(inputStream);
-      String actual = actualLines.stream().collect(joining("\n"));
+      List<String> expectedLines = Utils.readLines(inputStream);
+      String actual = actualLines.stream().map(s -> s.replaceAll("\r", "")).collect(joining("\n"));
+      String expected = expectedLines.stream().map(s -> s.replaceAll("\r", "")).collect(joining("\n"));
       assertEquals(fileName, expected, actual);
     } catch (IOException e) {
       throw new UncheckedIOException(e);
@@ -83,4 +88,11 @@ public class TestUtils {
     return "// " + markers.stream().collect(joining(", "));
   }
 
+  
+  public static void checkAndWrite(Deck deck, Class<?> testClass) {
+    TestUtils.assertFileContentMatches(deck.getCsv(), testClass, deck.getClass().getSimpleName());
+    deck.shuffle(3);
+    deck.writeTo(Paths.get("build/anki"));
+  }
+ 
 }

@@ -11,10 +11,12 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 public class DeckTest {
+  
+  static class TestDeck extends AbstractDeck{};
 
   @Test
   public void testWriteCsv() throws IOException {
-    Deck deck = new SimpleDeck("WriteCsv");
+    Deck deck = new TestDeck();
     deck.add(1,  "A", "B");
     deck.add(3,  "E", "F");
     deck.add(2,  "C", "D");
@@ -22,7 +24,7 @@ public class DeckTest {
     Path dir = Paths.get("build");
     deck.writeTo(dir);
     
-    String actual = Files.readAllLines(dir.resolve("AnkiJazz-WriteCsv.txt")).stream().collect(Collectors.joining("\n"));
+    String actual = Files.readAllLines(dir.resolve("TestDeck.txt")).stream().collect(Collectors.joining("\n"));
     assertEquals("A;B\nC;D\nE;F", actual);
   }
 

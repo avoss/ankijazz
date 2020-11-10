@@ -10,6 +10,7 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
+import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;
@@ -23,16 +24,14 @@ import de.jlab.scales.theory.IntervalAnalyzer;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
 
 public class AnkiCards {
   // TODO duplicated in ScaleCard
-  private static ScaleUniverse universe = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
-
+  
   public Deck learnModes() {
-    Deck deck = new SimpleDeck("LearnModes");
+    Deck deck = new AbstractDeck("LearnModes");
     for (Scale scale : allKeys(commonModes(false))) {
-      for (ScaleInfo info : universe.infos(scale)) {
+      for (ScaleInfo info : MODES.infos(scale)) {
         int difficulty = difficulty(info);
         spellNotes(deck, difficulty, info);
         nameParent(deck, difficulty, info);
@@ -58,7 +57,7 @@ public class AnkiCards {
   void addScaleTypes(Deck deck) {
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
-      ScaleInfo info = universe.info(scale);
+      ScaleInfo info = MODES.info(scale);
       int difficulty = difficulty(info);
       String front = format("<div>What are the intervals of <b>%s</b>?</div>", info.getTypeName());
       String back = analyzer.analyze(scale).toString();
@@ -114,24 +113,24 @@ public class AnkiCards {
   
 
   public Deck playScales() {
-    return playScales(commonScales(), new SimpleDeck("PlayScales"), false);
+    return playScales(commonScales(), new AbstractDeck("PlayScales"), false);
   }
   
   public Deck playGuitarScales() {
-    return playScales(commonScales(), new GuitarDeck(new SimpleDeck("PlayScalesGuitar")), true);
+    return playScales(commonScales(), new GuitarDeck(new AbstractDeck("PlayScalesGuitar")), true);
   }
 
   public Deck playModes() {
-    return playScales(commonModes(), new SimpleDeck("PlayModes"), false);
+    return playScales(commonModes(), new AbstractDeck("PlayModes"), false);
   }
   
   public Deck playGuitarModes() {
-    return playScales(commonModes(), new GuitarDeck(new SimpleDeck("PlayModesGuitar")), true);
+    return playScales(commonModes(), new GuitarDeck(new AbstractDeck("PlayModesGuitar")), true);
   }
   
   private Deck playScales(Collection<Scale> scales, Deck deck, boolean includeDescending) {
     for (Scale scale : allKeys(scales)) {
-      for (ScaleInfo info : universe.infos(scale)) {
+      for (ScaleInfo info : MODES.infos(scale)) {
 //        deck.add(new ScaleModel(info, false));
 //        if (includeDescending) {
 //          deck.add(new ScaleModel(info, true));

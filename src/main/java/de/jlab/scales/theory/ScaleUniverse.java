@@ -1,6 +1,14 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.*;
+import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedHalfWhole;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
+import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
+import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
+import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
 import static de.jlab.scales.theory.Note.*;
 import static java.util.stream.Collectors.toList;
 import static de.jlab.scales.Utils.*;
@@ -21,12 +29,13 @@ import com.google.common.collect.ListMultimap;
 import com.google.common.collect.MultimapBuilder;
 
 public class ScaleUniverse implements Iterable<Scale> {
+
+  public static final ScaleUniverse MODES = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
   
   /**
    * TODO:
    * - add keysignature as separate pass, because superscales are required (chords, pentatonics)
    */
-
 
   @lombok.Builder
   static class Namer {
