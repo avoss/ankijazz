@@ -39,8 +39,4 @@ public abstract class MustacheCard implements Card {
     return Stream.of(tags).map(s ->   s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
   }
   
-  public String getFrontSide() {
-    return "{{FrontSide}}";
-  }
-
 }
