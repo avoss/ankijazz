@@ -1,8 +1,8 @@
 package de.jlab.scales.anki;
 
 import java.nio.file.Path;
-import java.nio.file.Paths;
 
+// TODO: not sure whether its a good idea to make the class name identical to file names
 public enum TemplateType {
   CSV("csv.mustache", "txt"), HTML("html.mustache", "html");
 
