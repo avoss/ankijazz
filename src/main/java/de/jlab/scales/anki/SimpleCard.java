@@ -1,14 +1,16 @@
 package de.jlab.scales.anki;
 
-import de.jlab.scales.Utils;
-
-public class SimpleCard implements Card {
+public class SimpleCard extends MustacheCard {
   private final int difficulty;
-  private final String[] fields;
+  private final String front;
+  private final String back;
+  private final String tags;
 
-  public SimpleCard(int difficulty, String... fields) {
+  public SimpleCard(int difficulty, String front, String back, String tags) {
     this.difficulty = difficulty;
-    this.fields = fields;
+    this.front = front;
+    this.back = back;
+    this.tags = tags;
   }
 
   @Override
@@ -18,11 +20,19 @@ public class SimpleCard implements Card {
 
   @Override
   public String getCsv() {
-    return Utils.toCsv(fields);
+    return String.format("%s;%s;%s", front, back, tags);
   }
-  @Override
-  public String getHtml() {
-    throw new UnsupportedOperationException();
+  
+  public String getFront() {
+    return front;
+  }
+  
+  public String getBack() {
+    return back;
+  }
+  
+  public String getTags() {
+    return tags;
   }
 
 }

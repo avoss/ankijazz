@@ -5,12 +5,8 @@ import java.util.List;
 
 public interface Deck {
 
-  default void add(String... fields) {
-    add(0, fields);
-  }
-
-  default void add(int difficulty, String... fields) {
-    add(new SimpleCard(difficulty, fields));
+  default void add(int difficulty, String front, String back, String tags) {
+    add(new SimpleCard(difficulty, front, back, tags));
   }
 
   void add(Card card);

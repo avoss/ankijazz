@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import de.jlab.scales.Utils;
+
 public class PlayModesGuitarCard extends MustacheCardWithModel<ScaleModel> {
 
   private FretboardPosition position;
@@ -14,7 +16,7 @@ public class PlayModesGuitarCard extends MustacheCardWithModel<ScaleModel> {
   }
 
   public String getTags() {
-    return tags(model.getModeRootName(), model.getModeTypeName(), model.getDirection(), position.getLabel() + " Position");
+    return Utils.tags(model.getModeRootName(), model.getModeTypeName(), model.getDirection(), position.getLabel() + " Position");
   }
   
 }

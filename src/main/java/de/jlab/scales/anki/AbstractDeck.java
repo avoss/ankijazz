@@ -40,7 +40,6 @@ public abstract class AbstractDeck implements Deck {
     cards.add(card);
   }
 
-  // TODO remove I/O from Deck into separate class
   @Override
   public void writeTo(Path dir) {
     try {

@@ -34,9 +34,5 @@ public abstract class MustacheCard implements Card {
       throw new UncheckedIOException(e);
     }
   }
-
-  protected String tags(String ... tags) {
-    return Stream.of(tags).map(s ->   s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
-  }
   
 }

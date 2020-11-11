@@ -17,7 +17,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import de.jlab.scales.anki.AnkiCardsTest;
 import de.jlab.scales.anki.Deck;
 import de.jlab.scales.anki.PlayModesCard;
 import de.jlab.scales.anki.TemplateType;

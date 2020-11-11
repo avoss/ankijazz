@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import de.jlab.scales.Utils;
+
 public class PlayModesCard extends MustacheCardWithModel<ScaleModel> {
 
   public PlayModesCard(ScaleModel model) {
@@ -7,6 +9,6 @@ public class PlayModesCard extends MustacheCardWithModel<ScaleModel> {
   }
   
   public String getTags() {
-    return tags(model.getModeRootName(), model.getModeTypeName(), model.getDirection());
+    return Utils.tags(model.getModeRootName(), model.getModeTypeName(), model.getDirection());
   }
 }

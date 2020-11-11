@@ -66,10 +66,13 @@ public final class Utils {
   public static boolean isSymmetricalDuplicate(Scale parent, Scale mode) {
     return !parent.equals(mode) && parent.transpose(mode.getRoot()).equals(mode);
   }
-
-  public static String toCsv(String... fields) {
-    // TODO maybe escape/replace ';' within fields?
-    return Stream.of(fields).collect(joining(";"));
+  
+  /**
+   * remove whitespace etc to create valid Anki Tags
+   */
+  public static String tags(String ... tags) {
+    return Stream.of(tags).map(s ->   s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
   }
+  
   
 }

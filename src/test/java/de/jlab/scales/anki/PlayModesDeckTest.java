@@ -24,7 +24,6 @@ public class PlayModesDeckTest {
 
   @Test
   public void testPlayModesGuitarDeck() {
-
     Deck deck = new PlayModesGuitarDeck();
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PlayModesGuitarDeckTest.csv.txt");
     TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "PlayModesGuitarDeckTest.html.txt");
