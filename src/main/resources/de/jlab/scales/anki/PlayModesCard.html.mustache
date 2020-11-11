@@ -1,15 +1,8 @@
-<hr />
-<div class="jumbotron">
-  <h2>{{model.modeName}} in {{model.direction}} Direction</h2>
-  <div class="d-flex justify-content-center">
-    <p>
-      <img src="{{model.modeHtmlPng}}">
-    </p>
+<div class="card">
+  <h4 class="card-header">{{model.modeName}} in {{model.direction}} Direction</h4>
+  <div class="card-body">
+  <img class="card-img-top" src="{{model.modePng}}">
+  <p class="card-text"> <audio controls src="{{model.modeMp3}}" ></audio> </p>
+    <p class="card-text">Tags: {{tags}}</p>
   </div>
-  <div class="d-flex justify-content-center">
-    <p>
-      <audio controls src="{{model.modeHtmlMp3}}"></audio>
-    </p>
-  </div>
-  <div><p>Tags: {{tags}}</p></div>
 </div>

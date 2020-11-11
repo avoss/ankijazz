@@ -9,11 +9,14 @@
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>
+      This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>.
     </p>
-    {{#cards}}
+    <p>
+      Only a subset of cards is shown (the full deck contains more than 1100 cards).
+    </p>
+    {{#htmlCards}}
       {{{html}}}
-    {{/cards}}
+    {{/htmlCards}}
   </div>
 </body>
 </html>

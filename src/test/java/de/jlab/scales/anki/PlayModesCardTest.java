@@ -14,12 +14,23 @@ import de.jlab.scales.theory.Scales;
 public class PlayModesCardTest {
 
   @Test
-  public void test() {
-    Scale mode = Scales.CMajor.superimpose(Note.D);
-    ScaleInfo info = ScaleUniverse.MODES.info(mode);
-    PlayModesCard card = new PlayModesCard(new ScaleModel(info, false));
+  public void testPlayModes() {
+    Card card = new PlayModesCard(model());
     TestUtils.assertFileContentMatches(singletonList(card.getCsv()), getClass(), "PlayModesCardTest.csv.txt");
     TestUtils.assertFileContentMatches(singletonList(card.getHtml()), getClass(), "PlayModesCardTest.html.txt");
+  }
+
+  @Test
+  public void testPlayModesGuitar() {
+    Card card = new PlayModesGuitarCard(model(), FretboardPosition.HIGH);
+    TestUtils.assertFileContentMatches(singletonList(card.getCsv()), getClass(), "PlayModesGuitarCardTest.csv.txt");
+    TestUtils.assertFileContentMatches(singletonList(card.getHtml()), getClass(), "PlayModesGuitarCardTest.html.txt");
+  }
+  
+  private ScaleModel model() {
+    Scale mode = Scales.CMajor.superimpose(Note.D);
+    ScaleInfo info = ScaleUniverse.MODES.info(mode);
+    return new ScaleModel(info, false);
   }
 
 }

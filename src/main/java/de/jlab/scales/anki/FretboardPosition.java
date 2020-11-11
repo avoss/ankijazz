@@ -2,9 +2,9 @@ package de.jlab.scales.anki;
 
 public enum FretboardPosition {
   
-  LOW("Low", "<img src=\"AnkiJazz-FretboardLow.png\">"),
-  MEDIUM("Medium", "<img src=\"AnkiJazz-FretboardMedium.png\">"),
-  HIGH("High", "<img src=\"AnkiJazz-FretboardHigh.png\">");
+  LOW("Low", "AnkiJazz-FretboardLow.png"),
+  MEDIUM("Medium", "AnkiJazz-FretboardMedium.png"),
+  HIGH("High", "AnkiJazz-FretboardHigh.png");
 
   private final String label;
   private final String image;

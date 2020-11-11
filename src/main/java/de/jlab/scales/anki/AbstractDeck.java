@@ -23,8 +23,18 @@ import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
 
 public abstract class AbstractDeck implements Deck {
+  
   private List<Card> cards = new ArrayList<>();
+  private final String title;
  
+  protected AbstractDeck(String title) {
+    this.title = title;
+  }
+  
+  public String getTitle() {
+    return title;
+  }
+  
   @Override
   public void add(Card card) {
     cards.add(card);

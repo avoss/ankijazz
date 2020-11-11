@@ -1,1 +1,1 @@
-<div> <p> Play <b>D Dorian</b> in <b>Ascending</b> Direction </p> </div>;{{FrontSide}} <hr id=answer> <div><p><img src="AnkiJazz-128f54400d.png"></p></div> <div><p>[sound:AnkiJazz-128f54400d.mp3]</p></div>;D Dorian Ascending
+<div> <p> Play <b>D Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-128f54400d.png"></p></div> <div><p>[sound:AnkiJazz-128f54400d.mp3]</p></div>;D Dorian Ascending

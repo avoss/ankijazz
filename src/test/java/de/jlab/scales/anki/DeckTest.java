@@ -12,7 +12,10 @@ import org.junit.Test;
 
 public class DeckTest {
   
-  static class TestDeck extends AbstractDeck{};
+  static class TestDeck extends AbstractDeck{
+    protected TestDeck() {
+      super("TestDeck");
+    }};
 
   @Test
   public void testWriteCsv() throws IOException {

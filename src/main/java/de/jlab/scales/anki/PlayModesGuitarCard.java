@@ -13,4 +13,8 @@ public class PlayModesGuitarCard extends MustacheCardWithModel<ScaleModel> {
     return position;
   }
 
+  public String getTags() {
+    return tags(model.getModeRootName(), model.getModeTypeName(), model.getDirection(), position.getLabel() + " Position");
+  }
+  
 }

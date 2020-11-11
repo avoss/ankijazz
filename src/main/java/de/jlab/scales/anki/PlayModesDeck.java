@@ -9,6 +9,8 @@ import de.jlab.scales.theory.ScaleInfo;
 public class PlayModesDeck extends AbstractDeck {
 
   public PlayModesDeck() {
+    super("AnkiJazz - Modes Practice");
+    
     for (Scale scale : allKeys(commonModes())) {
       for (ScaleInfo info : MODES.infos(scale)) {
         add(new PlayModesCard(new ScaleModel(info, true)));

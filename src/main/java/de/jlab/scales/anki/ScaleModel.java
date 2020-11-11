@@ -59,6 +59,7 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     return keySignature.notate(parentInfo.getScale().getRoot());
   }
 
+  // FIXME: move to mustache, only return filename (both PNG and MP3)
   public String getModeAnkiPng() {
     return format("<img src=\"%s.png\">", lilyId);
   }
@@ -67,11 +68,11 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     return format("[sound:%s.mp3]",  lilyId);
   }
 
-  public String getModeHtmlPng() {
+  public String getModePng() {
     return format("%s.png", lilyId);
   }
 
-  public String getModeHtmlMp3() {
+  public String getModeMp3() {
     return format("%s.mp3",  lilyId);
   }
   
