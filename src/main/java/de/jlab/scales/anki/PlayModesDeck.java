@@ -1,7 +1,8 @@
 package de.jlab.scales.anki;
 
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.allKeys;
+import static de.jlab.scales.theory.Scales.commonModes;
 
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;

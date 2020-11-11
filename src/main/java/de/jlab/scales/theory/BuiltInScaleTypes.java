@@ -1,5 +1,10 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.C7;
 import static de.jlab.scales.theory.Scales.C7flat5;
 import static de.jlab.scales.theory.Scales.C7flat5flat9;
@@ -33,8 +38,6 @@ import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.CsusTriad;
 
 import java.util.function.Function;
-
-import static de.jlab.scales.theory.Note.*;
 
 
 public enum BuiltInScaleTypes implements ScaleType {

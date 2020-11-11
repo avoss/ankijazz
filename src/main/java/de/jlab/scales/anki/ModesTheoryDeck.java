@@ -9,7 +9,6 @@ import static de.jlab.scales.theory.Scales.commonModes;
 import static java.lang.String.format;
 
 import de.jlab.scales.Utils;
-import de.jlab.scales.theory.BuiltInScaleTypes;
 import de.jlab.scales.theory.IntervalAnalyzer;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;

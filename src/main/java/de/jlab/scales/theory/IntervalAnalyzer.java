@@ -3,15 +3,9 @@ package de.jlab.scales.theory;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
-
-import de.jlab.scales.anki.Deck;
-import de.jlab.scales.anki.AbstractDeck;
 
 public class IntervalAnalyzer {
   

@@ -3,8 +3,6 @@ package de.jlab.scales.anki;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;

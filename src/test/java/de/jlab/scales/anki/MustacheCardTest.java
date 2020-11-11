@@ -1,6 +1,6 @@
 package de.jlab.scales.anki;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 

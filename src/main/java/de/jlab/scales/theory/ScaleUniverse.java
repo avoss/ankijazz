@@ -1,6 +1,6 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.*;
+import static de.jlab.scales.Utils.isSymmetricalDuplicate;
 import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedHalfWhole;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
@@ -9,22 +9,17 @@ import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
 import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
-import static de.jlab.scales.theory.Note.*;
 import static java.util.stream.Collectors.toList;
-import static de.jlab.scales.Utils.*;
 
 import java.text.MessageFormat;
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.MultimapBuilder;
 

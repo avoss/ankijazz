@@ -1,11 +1,9 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.anki.TemplateType.*;
-import static java.util.stream.Collectors.joining;
+import static de.jlab.scales.anki.TemplateType.CSV;
+import static de.jlab.scales.anki.TemplateType.HTML;
 import static java.util.stream.Collectors.toList;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -15,8 +13,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;

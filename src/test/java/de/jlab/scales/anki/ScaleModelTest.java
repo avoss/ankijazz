@@ -1,8 +1,9 @@
 package de.jlab.scales.anki;
 
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
-import static de.jlab.scales.theory.Note.*;
+import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.Eb;
+import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -15,7 +16,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleUniverse;
 

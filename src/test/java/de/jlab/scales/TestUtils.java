@@ -18,8 +18,6 @@ import java.util.List;
 import java.util.Set;
 
 import de.jlab.scales.anki.Deck;
-import de.jlab.scales.anki.PlayModesCard;
-import de.jlab.scales.anki.TemplateType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 

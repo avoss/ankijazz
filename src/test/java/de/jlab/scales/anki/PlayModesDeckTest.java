@@ -1,9 +1,7 @@
 package de.jlab.scales.anki;
 
 import static java.util.Collections.singletonList;
-import static org.junit.Assert.*;
 
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.junit.Test;

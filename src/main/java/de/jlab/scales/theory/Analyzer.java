@@ -9,7 +9,6 @@ import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.CMajor;
-import static java.util.stream.Collectors.joining;
 
 import java.util.Arrays;
 import java.util.HashSet;
