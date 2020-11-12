@@ -21,7 +21,7 @@ public class ModesTheoryDeck extends AbstractDeck {
     
     for (Scale scale : allKeys(commonModes(false))) {
       for (ScaleInfo info : MODES.infos(scale)) {
-        ScaleModel model = new ScaleModel(info, false);
+        ScaleModel model = new ScaleModel(info);
         int difficulty = model.getDifficulty();
         spellNotes(difficulty, info);
         nameParent(difficulty, info);

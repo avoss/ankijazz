@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.Direction.ASCENDING;
+import static de.jlab.scales.anki.Direction.DESCENDING;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
 
@@ -18,21 +20,25 @@ public class ScaleModel implements WithDifficulty, WithAssets {
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
   private KeySignature keySignature;
-  private boolean descending;
   private String lilyString;
   private String lilyId;
+  private Direction direction;
 
-  public ScaleModel(ScaleInfo modeInfo, boolean descending) {
+  public ScaleModel(ScaleInfo info) {
+    this(info, ASCENDING);
+  }
+  
+  public ScaleModel(ScaleInfo modeInfo, Direction direction) {
     this.modeInfo = modeInfo;
+    this.direction = direction;
     this.keySignature = modeInfo.getKeySignature();
-    this.descending = descending;
     this.parentInfo = modeInfo.getParentInfo();
-    this.lilyString = new LilyScale(modeInfo, descending).toLily();
+    this.lilyString = new LilyScale(modeInfo, direction == DESCENDING).toLily();
     this.lilyId = Utils.assetId(lilyString);
   }
   
   public String getDirection() {
-    return descending ? "Descending" : "Ascending";
+    return direction.getLabel();
   }
 
   public String getModeName() {
@@ -57,15 +63,6 @@ public class ScaleModel implements WithDifficulty, WithAssets {
 
   public String getParentRootName() {
     return keySignature.notate(parentInfo.getScale().getRoot());
-  }
-
-  // FIXME: move to mustache, only return filename (both PNG and MP3)
-  public String getModeAnkiPng() {
-    return format("<img src=\"%s.png\">", lilyId);
-  }
-
-  public String getModeAnkiMp3() {
-    return format("[sound:%s.mp3]",  lilyId);
   }
 
   public String getModePng() {

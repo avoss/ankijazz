@@ -36,7 +36,7 @@ public class ScaleModelTest {
   }
   
   private ScaleModel model(Scale scale) {
-    return new ScaleModel(universe.info(scale), false);
+    return new ScaleModel(universe.info(scale));
   }
   
   @Test

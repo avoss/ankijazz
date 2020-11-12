@@ -30,7 +30,7 @@ public class PlayModesCardTest {
   private ScaleModel model() {
     Scale mode = Scales.CMajor.superimpose(Note.D);
     ScaleInfo info = ScaleUniverse.MODES.info(mode);
-    return new ScaleModel(info, false);
+    return new ScaleModel(info);
   }
 
 }
