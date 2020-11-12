@@ -1,4 +1,4 @@
-package de.jlab.scales.Rhythm;
+package de.jlab.scales.rhythm;
 
 import static de.jlab.scales.rhythm.Event.*;
 import static org.junit.Assert.*;

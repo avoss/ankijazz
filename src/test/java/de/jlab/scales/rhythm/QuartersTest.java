@@ -1,4 +1,4 @@
-package de.jlab.scales.Rhythm;
+package de.jlab.scales.rhythm;
 
 import java.util.Arrays;
 import java.util.List;
