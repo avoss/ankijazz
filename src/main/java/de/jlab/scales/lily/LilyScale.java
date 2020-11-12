@@ -30,13 +30,18 @@ public class LilyScale {
   }
 
   public LilyScale(ScaleInfo scaleInfo, Direction direction) {
+    this(scaleInfo, direction, Clef.TREBLE);
+  }
+  
+  public LilyScale(ScaleInfo scaleInfo, Direction direction, Clef clef) {
     this.direction = direction;
-    this.clef = Clef.TREBLE;
+    this.clef = clef;
     this.keySignature = scaleInfo.getKeySignature();
     this.scaleName = scaleInfo.getScaleName();
     this.scale = scaleInfo.getScale();
   }
   
+
   public String toLily() {
     return readTemplate()
       .replace("${title}", scaleName)

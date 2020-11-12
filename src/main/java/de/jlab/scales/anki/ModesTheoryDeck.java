@@ -21,8 +21,7 @@ public class ModesTheoryDeck extends AbstractDeck {
     
     for (Scale scale : allKeys(commonModes(false))) {
       for (ScaleInfo info : MODES.infos(scale)) {
-        ScaleModel model = new ScaleModel(info);
-        int difficulty = model.getDifficulty();
+        int difficulty = difficulty(info);
         spellNotes(difficulty, info);
         nameParent(difficulty, info);
         nameMode(difficulty, info);
@@ -32,7 +31,7 @@ public class ModesTheoryDeck extends AbstractDeck {
   }
 
   private void addEnharmonics() {
-    final String pattern = "<div>What is the enharmonic equivalent of <b>%s</b>?</div>"; 
+    final String pattern = "<div>What is the <b>enharmonic</b> equivalent of <b>%s</b>?</div>"; 
     final String tags = Utils.tags("Enharmonics");
     for (Note note : Note.values()) {
       if (!CMajor.contains(note)) {
@@ -46,12 +45,11 @@ public class ModesTheoryDeck extends AbstractDeck {
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
       ScaleInfo info = MODES.info(scale);
-      String front = format("<div>What are the intervals of <b>%s</b>?</div>", info.getTypeName());
-      String back = analyzer.analyze(scale).toString();
-      add(0, front, back, Utils.tags("ModeIntervals", info.getTypeName()));
+      String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", info.getTypeName());
+      String back = divb(analyzer.analyze(scale).toString());
+      add(difficulty(info), front, back, Utils.tags("ModeIntervals", info.getTypeName()));
     }
   }
-
 
   private void nameMode(int difficulty, ScaleInfo modeInfo) {
     if (!modeInfo.isInversion()) {
@@ -59,8 +57,8 @@ public class ModesTheoryDeck extends AbstractDeck {
     }
     ScaleInfo parentInfo = modeInfo.getParentInfo();
     int modeIndex = modeInfo.getModeIndex() + 1;
-    String front = format("<div>What is mode <b>%d</b> of <b>%s</b>?</div>", modeIndex, parentInfo.getScaleName());
-    String back = format("<div><b>%s</b></div>", modeInfo.getScaleName());
+    String front = format("<div>What is <b>mode %d</b> of <b>%s</b>?</div>", modeIndex, parentInfo.getScaleName());
+    String back = divb(modeInfo.getScaleName());
     String tags = tags("NameMode", parentInfo);
     add(difficulty, front, back, tags);
   }
@@ -70,15 +68,15 @@ public class ModesTheoryDeck extends AbstractDeck {
       return;
     }
     ScaleInfo parentInfo = scaleInfo.getParentInfo();
-    String front = format("<div>What is the parent scale of <b>%s</b>?</div>", scaleInfo.getScaleName());
-    String back = format("<div><b>%s</b></div>", parentInfo.getScaleName());
+    String front = format("<div>What is the <b>parent</b> scale of <b>%s</b>?</div>", scaleInfo.getScaleName());
+    String back = divb(parentInfo.getScaleName());
     String tags = tags("NameParent", scaleInfo);
     add(difficulty, front, back, tags);
   }
 
   private void spellNotes(int difficulty, ScaleInfo info) {
-    String front = format("<div>What are the notes of <b>%s</b>?</div>", info.getScaleName());
-    String back = format("<div><b>%s</b></div>", info.getKeySignature().toString(info.getScale()));
+    String front = format("<div>What are the <b>notes</b> of <b>%s</b>?</div>", info.getScaleName());
+    String back = divb(info.getKeySignature().toString(info.getScale()));
     String tags = tags("SpellNotes", info);
     add(difficulty, front, back, tags);
   }
@@ -87,6 +85,14 @@ public class ModesTheoryDeck extends AbstractDeck {
     return Utils.tags(task, info.getTypeName(), info.getScale().getRoot().getName(FLAT));
   }
   
-  
+  private String divb(String x) {
+    String back = format("<div><b>%s</b></div>", x);
+    return back;
+  }
+ 
+  private int difficulty(ScaleInfo info) {
+    ScaleModel model = new ScaleModel(info);
+    return model.getDifficulty();
+  }
   
 }

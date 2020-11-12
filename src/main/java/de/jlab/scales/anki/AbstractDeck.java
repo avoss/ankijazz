@@ -1,6 +1,5 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.anki.TemplateType.CSV;
 import static de.jlab.scales.anki.TemplateType.HTML;
 import static java.util.stream.Collectors.toList;
 
@@ -22,8 +21,15 @@ public abstract class AbstractDeck implements Deck {
   
   private List<Card> cards = new ArrayList<>();
   private final String title;
+  private String outputFileName;
  
   protected AbstractDeck(String title) {
+    this.outputFileName = getClass().getSimpleName();
+    this.title = title;
+  }
+  
+  protected AbstractDeck(String outputFileName, String title) {
+    this.outputFileName = outputFileName;
     this.title = title;
   }
   
@@ -48,14 +54,16 @@ public abstract class AbstractDeck implements Deck {
     }
   }
 
-  public void writeHtml(Path dir) {
-    try {
-      Files.write(HTML.getOutputPath(dir, getClass()), Collections.singleton(getHtml()));
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    }
+  private void writeHtml(Path dir) throws IOException {
+    Path path = dir.resolve(outputFileName.concat(".html"));
+    Files.write(path, Collections.singleton(getHtml()));
   }
 
+  private void writeCsv(Path dir) throws IOException {
+    Path path = dir.resolve(outputFileName.concat(".txt"));
+    Files.write(path, getCsv());
+  }
+  
   @Override
   public String getHtml() {
     MustacheFactory factory = new DefaultMustacheFactory();
@@ -65,11 +73,6 @@ public abstract class AbstractDeck implements Deck {
     return writer.toString();
   }
   
-  private void writeCsv(Path dir) throws IOException {
-    Path path = CSV.getOutputPath(dir, getClass());
-    List<String> rows = getCsv();
-    Files.write(path, rows);
-  }
   
   @Override
   public List<String> getCsv() {

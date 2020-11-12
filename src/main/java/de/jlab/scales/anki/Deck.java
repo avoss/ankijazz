@@ -12,11 +12,9 @@ public interface Deck {
   void add(Card card);
 
   void writeTo(Path dir);
-  void writeHtml(Path dir);
 
   void shuffle(int randomness);
 
-  // TODO rename to "toCsv()" and "toHtml()" to match Card interface
   List<String> getCsv();
   String getHtml();
 

@@ -34,3 +34,16 @@ jar {
         )
     }
 }
+
+
+task copyAssets {
+  copy {
+    from 'src/assets'
+    into 'build/anki'
+    include '*.png'
+  }
+}
+
+build.finalizedBy(copyAssets)
+
+
