@@ -13,7 +13,7 @@ import de.jlab.scales.theory.ScaleInfo;
 public class ModesPracticeDeck extends AbstractDeck {
 
   public ModesPracticeDeck(Clef clef) {
-    super("PlayModesDeck" + clef.getLabel(), "AnkiJazz - Modes Practice");
+    super("ModesPractice" + clef.getLabel() + "Deck", "AnkiJazz - Modes Practice");
     
     for (Scale scale : allKeys(commonModes())) {
       for (ScaleInfo info : MODES.infos(scale)) {
