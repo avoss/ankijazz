@@ -2,9 +2,9 @@ package de.jlab.scales.anki;
 
 import de.jlab.scales.Utils;
 
-public class PlayModesCard extends MustacheCardWithModel<ScaleModel> {
+public class ModesPracticeCard extends MustacheCardWithModel<ScaleModel> {
 
-  public PlayModesCard(ScaleModel model) {
+  public ModesPracticeCard(ScaleModel model) {
     super(model);
   }
   

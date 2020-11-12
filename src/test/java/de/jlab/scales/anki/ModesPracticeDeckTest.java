@@ -9,20 +9,20 @@ import org.junit.Test;
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.lily.Clef;
 
-public class PlayModesDeckTest {
+public class ModesPracticeDeckTest {
 
   @Test
   public void testPlayModesDeckTreble() {
-    Deck deck = new PlayModesDeck(Clef.TREBLE);
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PlayModesDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "PlayModesDeckTest.html.txt");
+    Deck deck = new ModesPracticeDeck(Clef.TREBLE);
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeDeckTest.csv.txt");
+    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "ModesPracticeDeckTest.html.txt");
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));
   }
 
   @Test
   public void testPlayModesDeckBass() {
-    Deck deck = new PlayModesDeck(Clef.BASS);
+    Deck deck = new ModesPracticeDeck(Clef.BASS);
 //    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PlayModesDeckTest.csv.txt");
 //    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "PlayModesDeckTest.html.txt");
     deck.shuffle(3);
@@ -31,9 +31,9 @@ public class PlayModesDeckTest {
   
   @Test
   public void testPlayModesGuitarDeck() {
-    Deck deck = new PlayModesGuitarDeck();
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PlayModesGuitarDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "PlayModesGuitarDeckTest.html.txt");
+    Deck deck = new ModesPracticeGuitarDeck();
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeGuitarDeckTest.csv.txt");
+    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "ModesPracticeGuitarDeckTest.html.txt");
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));
   }

@@ -10,15 +10,15 @@ import de.jlab.scales.lily.Clef;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class PlayModesDeck extends AbstractDeck {
+public class ModesPracticeDeck extends AbstractDeck {
 
-  public PlayModesDeck(Clef clef) {
+  public ModesPracticeDeck(Clef clef) {
     super("PlayModesDeck" + clef.getLabel(), "AnkiJazz - Modes Practice");
     
     for (Scale scale : allKeys(commonModes())) {
       for (ScaleInfo info : MODES.infos(scale)) {
-        add(new PlayModesCard(new ScaleModel(info, DESCENDING, clef)));
-        add(new PlayModesCard(new ScaleModel(info, ASCENDING, clef)));
+        add(new ModesPracticeCard(new ScaleModel(info, DESCENDING, clef)));
+        add(new ModesPracticeCard(new ScaleModel(info, ASCENDING, clef)));
       }
     }
   }

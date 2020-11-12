@@ -13,16 +13,16 @@ import java.util.stream.Collectors;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class PlayModesGuitarDeck extends AbstractDeck {
+public class ModesPracticeGuitarDeck extends AbstractDeck {
 
-  public PlayModesGuitarDeck() {
+  public ModesPracticeGuitarDeck() {
     super("AnkiJazz - Modes Practice (Guitar)");
 
     for (Scale scale : allKeys(commonModes())) {
       for (ScaleInfo info : MODES.infos(scale)) {
         for (FretboardPosition position : FretboardPosition.values()) {
-          add(new PlayModesGuitarCard(new ScaleModel(info, DESCENDING), position));
-          add(new PlayModesGuitarCard(new ScaleModel(info, ASCENDING), position));
+          add(new ModesPracticeGuitarCard(new ScaleModel(info, DESCENDING), position));
+          add(new ModesPracticeGuitarCard(new ScaleModel(info, ASCENDING), position));
         }
       }
     }

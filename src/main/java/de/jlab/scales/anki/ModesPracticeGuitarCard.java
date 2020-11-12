@@ -2,11 +2,11 @@ package de.jlab.scales.anki;
 
 import de.jlab.scales.Utils;
 
-public class PlayModesGuitarCard extends MustacheCardWithModel<ScaleModel> {
+public class ModesPracticeGuitarCard extends MustacheCardWithModel<ScaleModel> {
 
   private FretboardPosition position;
 
-  public PlayModesGuitarCard(ScaleModel model, FretboardPosition position) {
+  public ModesPracticeGuitarCard(ScaleModel model, FretboardPosition position) {
     super(model);
     this.position = position;
   }
