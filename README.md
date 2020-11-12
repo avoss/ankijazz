@@ -10,6 +10,33 @@
 
 # Anki
 
+Title:
+practice *efficiently* scales and more
+
+## Rhythm
+
+Rhyhtm: ties always end on a beat 1,2,3,4 (reason for ties)
+
+http://lilypond.org/doc/v2.18/Documentation/notation/displaying-rhythms
+Completion_heads_engraver = automatic ties across bars
+Pitch_squash_engraver = Guitar strumming notation
+
+9 Patterns pro 1/4 Note von https://www.youtube.com/watch?v=Y5_27Gc28ls
+- fraction: 4, 8+8, 16+16+16+16, 16+16+8, 8+16+16, 16+8+16, 8.+16, 16+8., 8-triplets
+- duration: 4, 2+2, 1+1+1+1, 1+1+2, 2+1+1, 1+2+1, 1+3, 3+1, 4/3+4/3+4/3
+
+- in jedem Pattern kann eine oder mehrere Noten fehlen (Pause), wobei dann das selbe rauskommen kann, z.B. r1+r1+r1+b1 == r1+r2+b1 == r3+b1
+- mehrere Pattern können über TIE verbunden werden, aber nur wenn die Pattern mit beat enden bzw anfangen
+- maybe same for triplet (swing) based rhyhtms
+
+b1 ... b4 = beats der länge 1..4
+r1 ... r4 = rest der länge 1..4
+bt / rt = 8-th triplet
+
+difficulty depends on length and where the beat occurs (on beat, on 8th, on 16th), number of different lenghts, number of different types (beat vs rest) and beams.
+
+Play single note melody with rhythm over different chords. Z.B. Note = A over Am7, FMaj7, Bm7b5, Esus4 - oder einfach Am7/D79
+
 ## Decks
 
 Text

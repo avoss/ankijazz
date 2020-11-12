@@ -18,6 +18,7 @@ dependencies {
     compile 'com.google.inject.extensions:guice-assistedinject:3.0'
     compile 'com.google.inject.extensions:guice-multibindings:3.0'
     compile 'com.github.spullara.mustache.java:compiler:0.9.4'
+    compile 'org.apache.commons:commons-math3:3.6.1'    
     
     //compile fileTree(dir: 'lib', include: '*.jar')
     testCompile 'junit:junit:4.12'

@@ -4,6 +4,7 @@ import static de.jlab.scales.theory.Accidental.FLAT;
 import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -17,10 +18,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   private final Set<Note> notes = new TreeSet<Note>();
 
   public Scale(Note root, Note... notes) {
-    this.root = root;
-    internalAdd(root);
-    for (int i = 0; i < notes.length; i++)
-      internalAdd(notes[i]);
+    this(root, Arrays.asList(notes));
   }
 
   public Scale(Note root, Collection<Note> notes) {
