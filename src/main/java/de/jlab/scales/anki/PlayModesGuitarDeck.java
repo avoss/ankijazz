@@ -1,7 +1,7 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.anki.Direction.ASCENDING;
-import static de.jlab.scales.anki.Direction.DESCENDING;
+import static de.jlab.scales.lily.Direction.ASCENDING;
+import static de.jlab.scales.lily.Direction.DESCENDING;
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;

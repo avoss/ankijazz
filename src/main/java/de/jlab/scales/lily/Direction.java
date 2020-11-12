@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package de.jlab.scales.lily;
 
 public enum Direction {
 

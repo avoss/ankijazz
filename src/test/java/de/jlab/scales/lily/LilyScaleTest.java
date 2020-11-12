@@ -43,7 +43,7 @@ public class LilyScaleTest {
   @Test
   public void testDescending() {
     ScaleInfo edorian = universe.info(CMajor.transpose(D).superimpose(E));
-    String source = new LilyScale(edorian, true).toLily();
+    String source = new LilyScale(edorian, Direction.DESCENDING).toLily();
     assertThat(source).contains("scaleNotes = \\relative e'' { e4 d4 cs4 b4 a4 g4 fs4 e4 ~ e1 }");
   }
   

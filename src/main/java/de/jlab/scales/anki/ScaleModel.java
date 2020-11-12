@@ -1,7 +1,7 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.anki.Direction.ASCENDING;
-import static de.jlab.scales.anki.Direction.DESCENDING;
+import static de.jlab.scales.lily.Direction.ASCENDING;
+import static de.jlab.scales.lily.Direction.DESCENDING;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
 
@@ -11,6 +11,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;
 import de.jlab.scales.theory.BuiltInScaleTypes;
 import de.jlab.scales.theory.KeySignature;
@@ -33,7 +34,7 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     this.direction = direction;
     this.keySignature = modeInfo.getKeySignature();
     this.parentInfo = modeInfo.getParentInfo();
-    this.lilyString = new LilyScale(modeInfo, direction == DESCENDING).toLily();
+    this.lilyString = new LilyScale(modeInfo, direction).toLily();
     this.lilyId = Utils.assetId(lilyString);
   }
   

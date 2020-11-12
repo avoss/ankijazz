@@ -1,5 +1,7 @@
 package de.jlab.scales.lily;
 
+import static de.jlab.scales.lily.Direction.ASCENDING;
+import static de.jlab.scales.lily.Direction.DESCENDING;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
@@ -20,19 +22,19 @@ public class LilyScale {
   private final Scale scale;
   private final KeySignature keySignature;
   private final String scaleName;
-  private final boolean descending;
-  private final LilyClef clef;
+  private final Clef clef;
+  private Direction direction;
 
   public LilyScale(ScaleInfo scaleInfo) {
-    this(scaleInfo, false);
+    this(scaleInfo, ASCENDING);
   }
 
-  public LilyScale(ScaleInfo scaleInfo, boolean descending) {
-    this.clef = LilyClef.TREBLE;
+  public LilyScale(ScaleInfo scaleInfo, Direction direction) {
+    this.direction = direction;
+    this.clef = Clef.TREBLE;
     this.keySignature = scaleInfo.getKeySignature();
     this.scaleName = scaleInfo.getScaleName();
     this.scale = scaleInfo.getScale();
-    this.descending = descending;
   }
   
   public String toLily() {
@@ -40,7 +42,7 @@ public class LilyScale {
       .replace("${title}", scaleName)
       .replace("${key}", key())
       .replace("${clef}", clef.getClef())
-      .replace("${relativeTo}", descending ? clef.getDescendingRelativeTo() : clef.getAscendingRelativeTo())
+      .replace("${relativeTo}", clef.getRelativeTo(direction))
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
       .replace("${noteNames}", lilyNotesWithOctave())
       .replace("${midiChord}", drop2Chord())
@@ -82,7 +84,7 @@ public class LilyScale {
   
   private String lilyNotes() {
     List<Note> notes = scale.asList();
-    if (descending) {
+    if (direction == DESCENDING) {
       Collections.reverse(notes);
       Collections.rotate(notes, 1);
     }
