@@ -41,6 +41,16 @@ public class EventSequenceTest {
     assertEquals(3, seq.getNumberOfEvents());
   }
   
+  
+  @Test
+  public void testEventSequenceCategory() {
+    EventSequence s1 = new EventSequence(r1,b1);
+    EventSequence s2 = new EventSequence(r1,b2,r3);
+    assertEquals(s1.getCategory(), s2.getCategory());
+    s2 = s2.add(b1);
+    assertNotEquals(s1.getCategory(), s2.getCategory());
+  }
+  
   @Test
   public void testHashEquals() {
     EventSequence s1 = new EventSequence();

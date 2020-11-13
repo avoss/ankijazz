@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.apache.commons.math3.fraction.Fraction;
 
+@lombok.EqualsAndHashCode
 public class EventSequence {
   
   private List<Event> events = new ArrayList<>();
@@ -48,38 +49,29 @@ public class EventSequence {
     events.add(event);
   }
 
-  public Object getNumberOfEvents() {
+  public int getNumberOfEvents() {
     return events.size();
   }
-
-  @Override
-  public int hashCode() {
-    final int prime = 31;
-    int result = 1;
-    result = prime * result + ((events == null) ? 0 : events.hashCode());
-    return result;
-  }
-
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    EventSequence other = (EventSequence) obj;
-    if (events == null) {
-      if (other.events != null)
-        return false;
-    } else if (!events.equals(other.events))
-      return false;
-    return true;
+  
+  public List<Event> getEvents() {
+    return events;
   }
 
   @Override
   public String toString() {
     return events.toString();
+  }
+
+  public EventSequenceCategory getCategory() {
+    Fraction time = Fraction.ZERO;
+    List<Fraction> beatPositions = new ArrayList<>();
+    for (Event e : events) {
+      if (e.isBeat()) {
+        beatPositions.add(time);
+      }
+      time = time.add(e.getLength());
+    }
+    return new EventSequenceCategory(beatPositions);
   }
 
 }

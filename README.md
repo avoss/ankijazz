@@ -26,7 +26,7 @@ Pitch_squash_engraver = Guitar strumming notation
 - duration: 4, 2+2, 1+1+1+1, 1+1+2, 2+1+1, 1+2+1, 1+3, 3+1, 4/3+4/3+4/3
 
 - in jedem Pattern kann eine oder mehrere Noten fehlen (Pause), wobei dann das selbe rauskommen kann, z.B. r1+r1+r1+b1 == r1+r2+b1 == r3+b1
-- mehrere Pattern können über TIE verbunden werden, aber nur wenn die Pattern mit beat enden bzw anfangen
+- mehrere Pattern können über TIE verbunden werden, aber nur wenn die Pattern mit beat enden bzw anfangen und mehr als 2 events beteiligt sind.
 - maybe same for triplet (swing) based rhyhtms
 
 b1 ... b4 = beats der länge 1..4

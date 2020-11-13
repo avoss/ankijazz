@@ -83,7 +83,7 @@ public enum Event {
   },
   r4(4,1,0,false),
   bt(4,3,7,true),  // beat triplet
-  rt(4,3,9,true);  // rest triplet
+  rt(4,3,12,false);  // rest triplet
 
   private Fraction length;
   private int difficulty;
