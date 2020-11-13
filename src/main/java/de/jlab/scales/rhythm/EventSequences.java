@@ -9,6 +9,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import static de.jlab.scales.rhythm.Event.*;
@@ -21,23 +22,17 @@ import com.google.common.collect.SetMultimap;
 
 public class EventSequences {
 
-  private final Set<EventSequence> invalid = new HashSet<>(Arrays.asList(
-      new EventSequence(r4)
-//      , new EventSequence(rt,bt,rt)
-//      , new EventSequence(bt,rt,bt)
-//      , new EventSequence(bt,rt,rt)
-//      , new EventSequence(rt,rt,bt)
-//      , new EventSequence(rt,rt,rt)
-      ));
   private final Fraction ticksPerQuarter;
   private SetMultimap<EventSequenceCategory,EventSequence> result = LinkedHashMultimap.create();
   private Collection<Event> events;
+  private final Predicate<EventSequence> filter;
 
   public EventSequences() {
-    this(4, asList(Event.values()));
+    this(4, asList(Event.values()), new SaherGaltEventSequenceFilter());
   }
   
-  public EventSequences(int ticksPerQuarter, Collection<Event> events) {
+  public EventSequences(int ticksPerQuarter, Collection<Event> events, Predicate<EventSequence> filter) {
+    this.filter = filter;
     this.ticksPerQuarter = new Fraction(ticksPerQuarter, 1);
     this.events = events;
     recurse(new EventSequence());
@@ -46,7 +41,7 @@ public class EventSequences {
 
   private void recurse(EventSequence current) {
     if (current.getLength().equals(ticksPerQuarter)) {
-      if (!invalid.contains(current)) {
+      if (filter.test(current)) {
         result.put(current.getCategory(), current);
       }
       return;
@@ -70,7 +65,7 @@ public class EventSequences {
     for (EventSequenceCategory category : map.keySet()) {
       sb.append("Category: ").append(category.getBeatPositions()).append("\n");
       for (EventSequence sequence : map.get(category)) {
-        sb.append("  ").append(sequence.getEvents()).append("\n");
+        sb.append(String.format("  %3d %s\n", sequence.getDifficulty(), sequence.getEvents()));
       }
     }
     return sb.toString();

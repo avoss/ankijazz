@@ -1,0 +1,1 @@
+<div> <p> Play the following rhythm </p> </div> <div><p><img src="AnkiJazz-125bb6b727.png"></p></div> <div><p>[sound:AnkiJazz-Metronome75.mp3]</p></div>;<div><p>[sound:AnkiJazz-125bb6b727.mp3]</p></div>;

@@ -10,7 +10,7 @@
 }
 
 
-scaleNotes = \relative e' { r1 ${scaleNotes} }
+scaleNotes = \relative e' { ${scaleNotes} }
 
 \score {
   <<
@@ -30,18 +30,19 @@ scaleNotes = \relative e' { r1 ${scaleNotes} }
 \score {
   <<
     \new Staff {
-      \set Staff.midiMaximumVolume = #0.6
+%      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "scale" {
-         \scaleNotes
+        r1 \scaleNotes
       }
     }
     \new DrumStaff = "click" {
+%      \set Staff.midiMaximumVolume = #0.6
       \drummode {
         cl4 wbh wbh wbh
-		bd bd bd bd 
-		bd bd bd bd 
-		bd bd bd bd 
-		bd bd bd bd 
+        bd bd bd bd 
+        bd bd bd bd 
+        bd bd bd bd 
+        bd bd bd bd 
       }
     }
   >>

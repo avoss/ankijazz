@@ -1,23 +1,26 @@
-package de.jlab.scales.lily;
+package de.jlab.scales.anki;
 
 import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.r2;
 import static java.util.Arrays.asList;
 import static java.util.Collections.singleton;
-import static org.assertj.core.api.Assertions.assertThat;
+import static java.util.Collections.singletonList;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
 import de.jlab.scales.rhythm.EventSequence;
 import de.jlab.scales.rhythm.Rhythm;
 
-public class LilyRhythmTest {
+public class RhythmCardTest {
 
   @Test
-  public void test() {
-    LilyRhythm lily = new LilyRhythm(rhythm());
-    assertThat(lily.toLily()).contains("r1 r8 a8 ~ a16 a16 r8");
+  public void testRhythmCard() {
+    Card card = new RhythmCard(new RhythmModel(rhythm()));
+    TestUtils.assertFileContentMatches(singletonList(card.getCsv()), getClass(), "RhythmCardTest.csv.txt");
+    TestUtils.assertFileContentMatches(singletonList(card.getHtml()), getClass(), "RhythmCardTest.html.txt");
   }
 
   private Rhythm rhythm() {

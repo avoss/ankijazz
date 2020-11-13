@@ -30,12 +30,16 @@ public class RhythmModel implements WithDifficulty, WithAssets {
   }
   
   // TODO BEGIN move to new super class
-  public String getPngName() {
+  public String getRhythmPngName() {
     return format("%s.png", lilyId);
   }
 
-  public String getMp3Name() {
+  public String getRhythmMp3Name() {
     return format("%s.mp3",  lilyId);
+  }
+
+  public String getMetronomeMp3Name() {
+    return "AnkiJazz-Metronome75.mp3";
   }
   
   public String getLilyName() {

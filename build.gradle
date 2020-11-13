@@ -42,6 +42,7 @@ task copyAssets {
     from 'src/assets'
     into 'build/anki'
     include '*.png'
+    include '*.mp3'
   }
 }
 

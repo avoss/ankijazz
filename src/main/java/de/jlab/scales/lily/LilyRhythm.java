@@ -29,6 +29,9 @@ public class LilyRhythm {
   
   private String toLily(EventSequence sequence) {
     String lily = sequence.getEvents().stream().map(this::toLily).collect(joining(" "));
+    if (sequence.isTriplet()) {
+      lily = String.format("\\tuplet 3/2 { %s }", lily);
+    }
     if (rhythm.isTied(sequence)) {
       lily = lily + " ~";
     }
@@ -41,10 +44,12 @@ public class LilyRhythm {
     case r2: return "r8";
     case r3: return "r8.";
     case r4: return "r4";
+    case rt: return "r8";
     case b1: return "a16";
     case b2: return "a8";
     case b3: return "a8.";
     case b4: return "a4";
+    case bt: return "a8";
     default:
       throw new IllegalArgumentException("Event not supported: " + event);
     }

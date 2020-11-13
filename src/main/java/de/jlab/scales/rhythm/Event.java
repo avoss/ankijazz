@@ -86,9 +86,19 @@ public enum Event {
       }
     }
   },
-  r4(4,1,0,false);
-//  bt(4,3,7,true),  
-//  rt(4,3,12,false); 
+  r4(4,1,0,false),
+  bt(4,3,7,true) {
+    @Override
+    public boolean isTriplet() {
+      return true;
+    }
+  },  
+  rt(4,3,12,false) {
+    @Override
+    public boolean isTriplet() {
+      return true;
+    }
+  }; 
 
   private Fraction length;
   private int difficulty;
@@ -118,5 +128,9 @@ public enum Event {
   
   public boolean isBeat() {
     return beat;
+  }
+
+  public boolean isTriplet() {
+    return false;
   }
 }

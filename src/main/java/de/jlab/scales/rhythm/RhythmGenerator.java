@@ -10,16 +10,21 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.function.Predicate;
 
 import de.jlab.scales.Utils;
 
 public class RhythmGenerator {
 
-  private Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
-  private final int numberOfRhythms = 100;
+  private final Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
+  private final int numberOfRhythms = 250;
   private final int numberOfSequences = 16;
   private final double tieProbability = 0.5;
-  
+
+  public RhythmGenerator() {
+    this(new EventSequences().getEventSequenceMap());
+  }
+
   public RhythmGenerator(Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap) {
     this.eventSequenceMap = eventSequenceMap;
   }
@@ -32,8 +37,6 @@ public class RhythmGenerator {
       List<EventSequence> events = chooseSequences(categories);
       result.add(new Rhythm(events, emptySet()));
     }
-    Collections.shuffle(result);
-    Collections.sort(result);
     return result;
   }
 

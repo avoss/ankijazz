@@ -96,4 +96,8 @@ public class EventSequence {
     return new EventSequence(events);
   }
 
+  public boolean isTriplet() {
+    return !events.isEmpty() && events.get(0).isTriplet();
+  }
+
 }

@@ -1,0 +1,15 @@
+<div class="card mb-3">
+	<h4 class="card-header">
+	  Play below rhythm
+	</h4>
+	<div class="card-body">
+		<img class="card-img-top" src="{{model.rhythmPngName}}">
+    <p class="card-text"> Metronome only:
+      <audio controls src="{{model.metronomeMp3Name}}"></audio>
+    </p>
+		<p class="card-text"> Metronome with Rhythm:
+			<audio controls src="{{model.rhythmMp3Name}}"></audio>
+		</p>
+		<p class="card-text">Tags: {{tags}}</p>
+	</div>
+</div>
