@@ -12,6 +12,9 @@
 
 scaleNotes = \relative e' { ${scaleNotes} }
 
+midiChord = \relative e' { <g c e a>1 <fs' c e a>1 }
+bassNotes = \relative e, { a2. a4 d2. d4 }
+
 \score {
   <<
     \new Staff {
@@ -33,6 +36,22 @@ scaleNotes = \relative e' { ${scaleNotes} }
 %      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "scale" {
         r1 \scaleNotes
+      }
+    }
+    \new Staff {
+      \set Staff.midiInstrument = #"pad 2 (warm)"
+      \set Staff.midiMinimumVolume = #0.2
+      \set Staff.midiMaximumVolume = #0.2
+      \new Voice = "chord" {
+        r1 \unfoldRepeats{ \repeat volta 2 { \midiChord } } 
+      }
+    }
+    \new Staff {
+      \set Staff.midiInstrument = #"electric bass (finger)"
+      \set Staff.midiMinimumVolume = #0.3
+      \set Staff.midiMaximumVolume = #0.3
+      \new Voice = "chord" {
+        r1 \unfoldRepeats{ \repeat volta 2 { \bassNotes } } 
       }
     }
     \new DrumStaff = "click" {
