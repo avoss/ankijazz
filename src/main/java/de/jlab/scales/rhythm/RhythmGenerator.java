@@ -17,7 +17,7 @@ import de.jlab.scales.Utils;
 public class RhythmGenerator {
 
   private final Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
-  private final int numberOfRhythms = 20;
+  private final int numberOfRhythms = 220;
   private final int numberOfSequences = 16;
   private final double tieProbability = 0.5;
 

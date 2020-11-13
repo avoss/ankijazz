@@ -37,6 +37,8 @@ difficulty depends on length and where the beat occurs (on beat, on 8th, on 16th
 
 Play single note melody with rhythm over different chords. Z.B. Note = A over Am7, FMaj7, Bm7b5, Esus4 - oder einfach Am7/D79
 
+**Schnipsel anzeigen** also aus welchen Bausteinen besteht ein Rhythmus.
+
 ## Decks
 
 Text

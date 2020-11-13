@@ -6,7 +6,7 @@
 
 \header {
   title = "" % \markup{ \small { "C Major Scale" }}
-  tagline = \markup { \tiny "Licensed to Shahram ;-) (C) 2020 Andreas Voss" }
+  tagline = \markup { \tiny "Licensed to my friend Shahram ;-) (C) 2020 Andreas Voss" }
 }
 
 
