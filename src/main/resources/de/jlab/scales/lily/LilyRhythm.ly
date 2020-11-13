@@ -48,8 +48,8 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
     }
     \new Staff {
       \set Staff.midiInstrument = #"electric bass (finger)"
-      \set Staff.midiMinimumVolume = #0.3
-      \set Staff.midiMaximumVolume = #0.3
+      \set Staff.midiMinimumVolume = #0.4
+      \set Staff.midiMaximumVolume = #0.4
       \new Voice = "chord" {
         r1 \unfoldRepeats{ \repeat volta 2 { \bassNotes } } 
       }
