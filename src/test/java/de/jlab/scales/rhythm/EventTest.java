@@ -13,7 +13,7 @@ public class EventTest {
 
   @Test
   public void testCombinable() {
-    for (Event e1 : Arrays.asList(b1,b2,b3,b4,r4,bt,rt)) {
+    for (Event e1 : Arrays.asList(b1,b2,b3,b4,r4)) {
       for (Event e2 : Event.values()) {
         assertFalse(e1.isCombinableWith(e2));
         assertFalse(e2.isCombinableWith(e1));

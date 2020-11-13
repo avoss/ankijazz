@@ -74,4 +74,26 @@ public class EventSequence {
     return new EventSequenceCategory(beatPositions);
   }
 
+  public int getDifficulty() {
+    return events.stream().mapToInt(e -> e.getDifficulty()).sum();
+  }
+
+  public boolean startsWithBeat() {
+    if (events.isEmpty()) {
+      return false;
+    }
+    return events.get(0).isBeat();
+  }
+
+  public boolean endsWithBeat() {
+    if (events.isEmpty()) {
+      return false;
+    }
+    return events.get(events.size() - 1).isBeat();
+  }
+
+  public static EventSequence of(Event ...events) {
+    return new EventSequence(events);
+  }
+
 }

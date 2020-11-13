@@ -2,9 +2,14 @@ package de.jlab.scales.rhythm;
 
 import org.apache.commons.math3.fraction.Fraction;
 
+/**
+ * b1 .. b4 = beats of length 1 .. 4 ticks (where tick is usually 1/16th note)
+ * r1 .. r4 = rest of length 1 .. 4
+ * bt and rt = beat and rest of length one 8th triplet
+ */
 public enum Event {
   
-  b1(1,1,4,true),  // beat of length 1 tick
+  b1(1,1,4,true), 
   b2(2,1,2,true),
   b3(3,1,3,true),
   b4(4,1,1,true),
@@ -35,7 +40,7 @@ public enum Event {
       }
     }
     
-  },  // rest of length 1 tick
+  },  
   r2(2,1,3,false) {
     @Override
     public boolean isCombinableWith(Event event) {
@@ -81,9 +86,9 @@ public enum Event {
       }
     }
   },
-  r4(4,1,0,false),
-  bt(4,3,7,true),  // beat triplet
-  rt(4,3,12,false);  // rest triplet
+  r4(4,1,0,false);
+//  bt(4,3,7,true),  
+//  rt(4,3,12,false); 
 
   private Fraction length;
   private int difficulty;

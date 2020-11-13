@@ -46,6 +46,8 @@ Text
 - learn parent scales
 - spell mode intervals
 - learn relative minor/major (included in parent scales)
+- für Bb und Eb Instrumente (midi transponiert)
+- Rhythm kostet
 
 Lily
 - intervals

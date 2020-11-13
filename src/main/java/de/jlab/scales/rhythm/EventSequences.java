@@ -22,12 +22,12 @@ import com.google.common.collect.SetMultimap;
 public class EventSequences {
 
   private final Set<EventSequence> invalid = new HashSet<>(Arrays.asList(
-      new EventSequence(rt,rt,rt)
-      , new EventSequence(rt,bt,rt)
-      , new EventSequence(bt,rt,bt)
-      , new EventSequence(bt,rt,rt)
+      new EventSequence(r4)
+//      , new EventSequence(rt,bt,rt)
+//      , new EventSequence(bt,rt,bt)
+//      , new EventSequence(bt,rt,rt)
 //      , new EventSequence(rt,rt,bt)
-      , new EventSequence(r4)
+//      , new EventSequence(rt,rt,rt)
       ));
   private final Fraction ticksPerQuarter;
   private SetMultimap<EventSequenceCategory,EventSequence> result = LinkedHashMultimap.create();
@@ -59,7 +59,7 @@ public class EventSequences {
     }
   }
   
-  public Map<EventSequenceCategory, Collection<EventSequence>> getResult() {
+  public Map<EventSequenceCategory, Collection<EventSequence>> getEventSequenceMap() {
     return result.asMap();
   }
   

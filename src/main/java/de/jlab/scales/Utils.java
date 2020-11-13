@@ -9,13 +9,19 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.google.common.base.Charsets;
 
+import de.jlab.scales.rhythm.EventSequenceCategory;
 import de.jlab.scales.theory.Scale;
 
 public final class Utils {
@@ -72,4 +78,30 @@ public final class Utils {
   }
   
   
+  public static <T> Iterator<T> loopIterator(Collection<T> collection) {
+    return new Iterator<T>() {
+      private Iterator<T> iter = collection.iterator();
+     
+      @Override
+      public boolean hasNext() {
+        return true;
+      }
+
+      @Override
+      public T next() {
+        if (!iter.hasNext()) {
+          iter = collection.iterator();
+        }
+        return iter.next();
+      }
+      
+    };
+  }
+
+  public static <T> Iterator<T> randomLoopIterator(Collection<T> collection) {
+    List<T> list = new ArrayList<>(collection);
+    Collections.shuffle(list);
+    return loopIterator(list);
+  }
+
 }
