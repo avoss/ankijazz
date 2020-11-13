@@ -23,7 +23,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
         %\key c \major
         % suppress 4/4 time signature
         \override Staff.TimeSignature.stencil = ##f
-        \scaleNotes
+        \repeat volta 2 { \scaleNotes }
       }
     }
   >>
@@ -35,7 +35,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
     \new Staff {
 %      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "scale" {
-        r1 \scaleNotes
+        r1  \unfoldRepeats{ \repeat volta 2 { \scaleNotes } }
       }
     }
     \new Staff {
@@ -43,7 +43,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
       \set Staff.midiMinimumVolume = #0.2
       \set Staff.midiMaximumVolume = #0.2
       \new Voice = "chord" {
-        r1 \unfoldRepeats{ \repeat volta 2 { \midiChord } } 
+        r1 \unfoldRepeats{ \repeat volta 4 { \midiChord } } 
       }
     }
     \new Staff {
@@ -51,17 +51,15 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
       \set Staff.midiMinimumVolume = #0.4
       \set Staff.midiMaximumVolume = #0.4
       \new Voice = "chord" {
-        r1 \unfoldRepeats{ \repeat volta 2 { \bassNotes } } 
+        r1 \unfoldRepeats{ \repeat volta 4 { \bassNotes } } 
       }
     }
     \new DrumStaff = "click" {
 %      \set Staff.midiMaximumVolume = #0.6
       \drummode {
         cl4 wbh wbh wbh
-        bd bd bd bd 
-        bd bd bd bd 
-        bd bd bd bd 
-        bd bd bd bd 
+        \unfoldRepeats{ \repeat volta 4 {bd bd bd bd    bd bd bd bd } }
+          
       }
     }
   >>
