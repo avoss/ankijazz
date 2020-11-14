@@ -1,5 +1,7 @@
 package de.jlab.scales.rhythm;
 
+import static java.util.Arrays.asList;
+import static java.util.Collections.emptySet;
 import static java.util.stream.Collectors.toSet;
 
 import java.util.List;
@@ -11,8 +13,10 @@ public class Rhythm implements Comparable<Rhythm> {
 
   private List<EventSequence> sequences;
   private Set<EventSequence> tiedSequences;
+  private String title;
 
-  public Rhythm(List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
+  public Rhythm(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
+    this.title = title;
     this.sequences = sequences;
     this.tiedSequences = tiedSequences;
   }
@@ -44,8 +48,12 @@ public class Rhythm implements Comparable<Rhythm> {
   public boolean isTied(EventSequence sequence) {
     return tiedSequences.contains(sequence);
   }
+  
+  public String getTitle() {
+    return title;
+  }
 
-  public static Rhythm  of(List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
-    return new Rhythm(sequences, tiedSequences);
+  public static Rhythm of(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
+    return new Rhythm(title, sequences, tiedSequences);
   }
 }

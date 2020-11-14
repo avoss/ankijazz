@@ -6,11 +6,11 @@
     \new DrumStaff = "click" {
       \drummode {
         cl4 wbh wbh wbh
-        \unfoldRepeats{ \repeat volta 4 {bd4 <bd sn> bd <bd sn>    bd <bd sn> bd <bd sn> } }
+        \unfoldRepeats{ \repeat volta 4 {bd4 bd bd bd    bd bd bd bd } }
       }
     }
   >>
   \midi {
-    \tempo 4 = 75
+    \tempo 4 = 70
   }
 }

@@ -29,6 +29,10 @@ public class RhythmModel implements WithDifficulty, WithAssets {
     return rhythm.getDifficulty();
   }
   
+  public String getTitle() {
+    return rhythm.getTitle();
+  }
+  
   // TODO BEGIN move to new super class
   public String getRhythmPngName() {
     return format("%s.png", lilyId);
@@ -39,7 +43,7 @@ public class RhythmModel implements WithDifficulty, WithAssets {
   }
 
   public String getMetronomeMp3Name() {
-    return "AnkiJazz-Metronome75.mp3";
+    return "AnkiJazz-Metronome70.mp3";
   }
   
   public String getLilyName() {

@@ -19,6 +19,7 @@ public class EventSequence {
   }
   
   public EventSequence(List<Event> events) {
+    // TODO use internalAdd instead
     this.events.addAll(events);
   }
   

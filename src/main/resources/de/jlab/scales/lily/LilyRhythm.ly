@@ -27,12 +27,15 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
       }
     }
   >>
-  \layout { }
+  \layout {
+    indent = 0.0 
+  }
 }
 
 \score {
   <<
     \new Staff {
+      \set Staff.midiInstrument = #"marimba"
       \new Voice = "scale" {
         r1  \unfoldRepeats{ \repeat volta 2 { \scaleNotes } }
       }
@@ -54,13 +57,14 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
       }
     }
     \new DrumStaff = "click" {
+      \set Staff.midiMaximumVolume = #0.9
       \drummode {
         cl4 wbh wbh wbh
-        \unfoldRepeats{ \repeat volta 4 {bd4 <bd sn> bd <bd sn>    bd <bd sn> bd <bd sn> } }
+        \unfoldRepeats{ \repeat volta 4 {bd4 bd bd bd    bd bd bd bd } }
       }
     }
   >>
   \midi {
-    \tempo 4 = 75
+    \tempo 4 = 70
   }
 }

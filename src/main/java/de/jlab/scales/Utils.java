@@ -103,5 +103,16 @@ public final class Utils {
     Collections.shuffle(list);
     return loopIterator(list);
   }
+  
+  public static <T> List<T> repeat(int times, T ... elements) {
+    List<T> result = new ArrayList<>();
+    for (int i = 0; i < times; i++) {
+      for (int j = 0; j < elements.length; j++) {
+        result.add(elements[j]);
+      }
+    }
+    return result;
+  }
+
 
 }

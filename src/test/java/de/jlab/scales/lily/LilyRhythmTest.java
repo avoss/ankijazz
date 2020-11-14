@@ -7,6 +7,8 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.singleton;
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+
 import org.junit.Test;
 
 import de.jlab.scales.rhythm.EventSequence;
@@ -23,7 +25,7 @@ public class LilyRhythmTest {
   private Rhythm rhythm() {
     EventSequence s1 = EventSequence.of(r2, b2);
     EventSequence s2 = EventSequence.of(b1, b1, r2);
-    return Rhythm.of(asList(s1, s2), singleton(s1));
+    return Rhythm.of("Test", List.of(s1, s2), singleton(s1));
   }
 
 }
