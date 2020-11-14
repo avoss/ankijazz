@@ -15,7 +15,7 @@ public class ModesPracticeDeckTest {
   public void testPlayModesDeckTreble() {
     Deck deck = new ModesPracticeDeck(Clef.TREBLE);
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "ModesPracticeDeckTest.html.txt");
+    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesPracticeDeckTest.html.txt");
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));
   }
@@ -33,7 +33,7 @@ public class ModesPracticeDeckTest {
   public void testPlayModesGuitarDeck() {
     Deck deck = new ModesPracticeGuitarDeck();
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeGuitarDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "ModesPracticeGuitarDeckTest.html.txt");
+    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesPracticeGuitarDeckTest.html.txt");
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));
   }

@@ -17,8 +17,8 @@ public class EventSequenceTest {
     assertEquals(Fraction.ONE, seq.getLength());
     seq = seq.add(r3);
     assertEquals(new Fraction(4), seq.getLength());
-//    seq = seq.add(rt);
-//    assertEquals(new Fraction(16, 3), seq.getLength());
+    seq = seq.add(rt);
+    assertEquals(new Fraction(16, 3), seq.getLength());
   }
 
   @Test
@@ -43,10 +43,21 @@ public class EventSequenceTest {
   
   @Test 
   public void testDifficulty() {
-    EventSequence s = new EventSequence(r1,b4);
-    assertEquals(r1.getDifficulty() + b4.getDifficulty(), s.getDifficulty());
+    Fraction f = new Fraction(16, 4);
+    f = f.divide(4);
+    assertEquals(1, f.getDenominator());
+    assertDifficulty(1, r4);
+    assertDifficulty(3, b2, b2);
+    assertDifficulty(4, b1, b3);
+    assertDifficulty(7, b1, b2, r1);
+    assertDifficulty(7, bt, bt, bt);
   }
   
+  private void assertDifficulty(int expected, Event ... events) {
+    EventSequence s = EventSequence.of(events);
+    assertEquals(expected, s.getDifficulty());
+  }
+
   @Test
   public void testStartsEndsWithBeat() {
     EventSequence s = new EventSequence();

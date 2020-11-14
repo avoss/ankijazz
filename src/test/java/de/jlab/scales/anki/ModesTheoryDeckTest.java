@@ -14,7 +14,7 @@ public class ModesTheoryDeckTest {
   public void testModesTheoryDeck() {
     Deck deck = new ModesTheoryDeck();
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesTheoryDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "ModesTheoryDeckTest.html.txt");
+    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesTheoryDeckTest.html.txt");
     
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));

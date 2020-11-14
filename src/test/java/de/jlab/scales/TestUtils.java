@@ -13,6 +13,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,6 +24,10 @@ import de.jlab.scales.theory.Scale;
 
 public class TestUtils {
 
+  public static void assertFileContentMatches(String actualString, Class<?> testClass, String fileName) {
+    assertFileContentMatches(Collections.singletonList(actualString), testClass, fileName);
+  }
+  
   public static void assertFileContentMatches(List<String> actualLines, Class<?> testClass, String fileName) {
     try (InputStream inputStream = testClass.getResourceAsStream(fileName)) {
       Path dir = Paths.get("build", testClass.getSimpleName());
@@ -32,8 +37,8 @@ public class TestUtils {
         fail("Resource not found: " + fileName);
       }
       List<String> expectedLines = Utils.readLines(inputStream);
-      String actual = actualLines.stream().map(s -> s.replaceAll("\r", "")).collect(joining("\n"));
-      String expected = expectedLines.stream().map(s -> s.replaceAll("\r", "")).collect(joining("\n"));
+      String actual = sanitize(actualLines).stream().collect(joining("\n"));
+      String expected = sanitize(expectedLines).stream().collect(joining("\n"));
       assertEquals(fileName, expected, actual);
     } catch (IOException e) {
       throw new UncheckedIOException(e);
@@ -60,7 +65,10 @@ public class TestUtils {
   }
 
   private static List<String> sanitize(Collection<String> lines) {
-    return lines.stream().map(s -> s.replaceAll("AnkiJazz-\\w+.\\d+", "")).collect(toList());
+    return lines.stream()
+        .map(s -> s.replaceAll("AnkiJazz-\\w+", "AnkiJazz-XXXX"))
+        .map(s -> s.replaceAll("\r", ""))
+        .collect(toList());
   }
   
   public static String reviewMarker(Scale scale, KeySignature signature) {

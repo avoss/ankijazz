@@ -16,15 +16,15 @@ public class ModesPracticeCardTest {
   @Test
   public void testPlayModes() {
     Card card = new ModesPracticeCard(model());
-    TestUtils.assertFileContentMatches(singletonList(card.getCsv()), getClass(), "ModesPracticeCardTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(card.getHtml()), getClass(), "ModesPracticeCardTest.html.txt");
+    TestUtils.assertFileContentMatches(card.getCsv(), getClass(), "ModesPracticeCardTest.csv.txt");
+    TestUtils.assertFileContentMatches(card.getHtml(), getClass(), "ModesPracticeCardTest.html.txt");
   }
 
   @Test
   public void testPlayModesGuitar() {
     Card card = new ModesPracticeGuitarCard(model(), FretboardPosition.HIGH);
-    TestUtils.assertFileContentMatches(singletonList(card.getCsv()), getClass(), "ModesPracticeGuitarCardTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(card.getHtml()), getClass(), "ModesPracticeGuitarCardTest.html.txt");
+    TestUtils.assertFileContentMatches(card.getCsv(), getClass(), "ModesPracticeGuitarCardTest.csv.txt");
+    TestUtils.assertFileContentMatches(card.getHtml(), getClass(), "ModesPracticeGuitarCardTest.html.txt");
   }
   
   private ScaleModel model() {

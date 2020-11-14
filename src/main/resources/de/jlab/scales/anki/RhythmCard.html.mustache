@@ -4,9 +4,17 @@
 	</h4>
 	<div class="card-body">
 		<img class="card-img-top" src="{{model.rhythmPngName}}">
-		<p class="card-text">
-			<audio controls src="{{model.rhythmMp3Name}}"></audio>
-		</p>
+
+    <div class="card-text">
+      <div class="w-50">Metronome</div>
+      <div class="w-50"><audio controls src="{{model.metronomeMp3Name}}"></audio></div>
+    </div>
+		
+		<div class="card-text">
+      <div class="w-50">Play Rhythm</div>
+      <div class="w-50"><audio controls src="{{model.rhythmMp3Name}}"></audio></div>
+		</div>
+
 		<p class="card-text">Tags: {{tags}}</p>
 	</div>
 </div>

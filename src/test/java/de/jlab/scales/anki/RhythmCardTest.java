@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.TestUtils.*;
 import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.r2;
@@ -10,7 +11,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
 import de.jlab.scales.rhythm.EventSequence;
 import de.jlab.scales.rhythm.Rhythm;
 
@@ -19,8 +19,8 @@ public class RhythmCardTest {
   @Test
   public void testRhythmCard() {
     Card card = new RhythmCard(new RhythmModel(rhythm()));
-    TestUtils.assertFileContentMatches(singletonList(card.getCsv()), getClass(), "RhythmCardTest.csv.txt");
-    TestUtils.assertFileContentMatches(singletonList(card.getHtml()), getClass(), "RhythmCardTest.html.txt");
+    assertFileContentMatches(card.getCsv(), getClass(), "RhythmCardTest.csv.txt");
+    assertFileContentMatches(card.getHtml(), getClass(), "RhythmCardTest.html.txt");
   }
 
   private Rhythm rhythm() {

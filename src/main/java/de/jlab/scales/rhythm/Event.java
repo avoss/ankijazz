@@ -9,11 +9,11 @@ import org.apache.commons.math3.fraction.Fraction;
  */
 public enum Event {
   
-  b1(1,1,4,true), 
-  b2(2,1,2,true),
-  b3(3,1,3,true),
-  b4(4,1,1,true),
-  r1(1,1,5,false) {
+  b1(1,1,true), 
+  b2(2,1,true),
+  b3(3,1,true),
+  b4(4,1,true),
+  r1(1,1,false) {
     @Override
     public boolean isCombinableWith(Event event) {
       switch(event) {
@@ -41,7 +41,7 @@ public enum Event {
     }
     
   },  
-  r2(2,1,3,false) {
+  r2(2,1,false) {
     @Override
     public boolean isCombinableWith(Event event) {
       switch(event) {
@@ -65,7 +65,7 @@ public enum Event {
       }
     }
   },
-  r3(3,1,4,false) {
+  r3(3,1,false) {
     @Override
     public boolean isCombinableWith(Event event) {
       switch(event) {
@@ -86,14 +86,14 @@ public enum Event {
       }
     }
   },
-  r4(4,1,0,false),
-  bt(4,3,7,true) {
+  r4(4,1,false),
+  bt(4,3,true) {
     @Override
     public boolean isTriplet() {
       return true;
     }
   },  
-  rt(4,3,12,false) {
+  rt(4,3,false) {
     @Override
     public boolean isTriplet() {
       return true;
@@ -101,11 +101,9 @@ public enum Event {
   }; 
 
   private Fraction length;
-  private int difficulty;
   private boolean beat;
 
-  Event(int numerator, int denominator, int difficulty, boolean beat) {
-    this.difficulty = difficulty;
+  Event(int numerator, int denominator, boolean beat) {
     this.beat = beat;
     this.length = new Fraction(numerator, denominator);
   }
@@ -114,10 +112,6 @@ public enum Event {
     return length;
   }
   
-  public int getDifficulty() {
-    return difficulty;
-  }
-
   public boolean isCombinableWith(Event event) {
     return false;
   }

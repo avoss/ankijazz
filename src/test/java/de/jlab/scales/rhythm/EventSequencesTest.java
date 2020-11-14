@@ -11,7 +11,7 @@ public class EventSequencesTest {
   @Test
   public void testEventSequences() {
     EventSequences eventSequences = new EventSequences();
-    TestUtils.assertFileContentMatches(Arrays.asList(eventSequences.toString()), getClass(), "EventSequences.txt");
+    TestUtils.assertFileContentMatches(eventSequences.toString(), getClass(), "EventSequences.txt");
   }
 
 }

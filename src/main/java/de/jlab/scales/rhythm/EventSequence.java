@@ -75,7 +75,27 @@ public class EventSequence {
   }
 
   public int getDifficulty() {
-    return events.stream().mapToInt(e -> e.getDifficulty()).sum();
+    Fraction time = Fraction.ZERO;
+    int difficulty = 0;
+    for (Event e : events) {
+      difficulty += difficulty(time);
+      time = time.add(e.getLength());
+    }
+    return difficulty;
+  }
+
+  int difficulty(Fraction time) {
+    if (isDividable(time, 4)) {
+      return 1;
+    }
+    if (isDividable(time, 2)) {
+      return 2;
+    }
+    return 3;
+  }
+
+  private boolean isDividable(Fraction time, int denominator) {
+    return time.divide(denominator).getDenominator() == 1;
   }
 
   public boolean startsWithBeat() {

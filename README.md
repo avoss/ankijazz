@@ -29,13 +29,9 @@ Pitch_squash_engraver = Guitar strumming notation
 - mehrere Pattern können über TIE verbunden werden, aber nur wenn die Pattern mit beat enden bzw anfangen und mehr als 2 events beteiligt sind.
 - maybe same for triplet (swing) based rhyhtms
 
-b1 ... b4 = beats der länge 1..4
-r1 ... r4 = rest der länge 1..4
-bt / rt = 8-th triplet
-
 difficulty depends on length and where the beat occurs (on beat, on 8th, on 16th), number of different lenghts, number of different types (beat vs rest) and beams.
 
-Play single note melody with rhythm over different chords. Z.B. Note = A over Am7, FMaj7, Bm7b5, Esus4 - oder einfach Am7/D79
+zuerst basic pattern, dann syncoped pattern, dann tied basics, dann standard pattern (clave etc), dann rest = random
 
 **Schnipsel anzeigen** also aus welchen Bausteinen besteht ein Rhythmus.
 
