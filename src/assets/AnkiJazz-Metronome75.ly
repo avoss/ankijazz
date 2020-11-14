@@ -6,10 +6,7 @@
     \new DrumStaff = "click" {
       \drummode {
         cl4 wbh wbh wbh
-		bd bd bd bd 
-		bd bd bd bd 
-		bd bd bd bd 
-		bd bd bd bd 
+        \unfoldRepeats{ \repeat volta 4 {bd4 <bd sn> bd <bd sn>    bd <bd sn> bd <bd sn> } }
       }
     }
   >>

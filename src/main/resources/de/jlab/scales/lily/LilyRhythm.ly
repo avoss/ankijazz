@@ -33,7 +33,6 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
 \score {
   <<
     \new Staff {
-%      \set Staff.midiMaximumVolume = #0.6
       \new Voice = "scale" {
         r1  \unfoldRepeats{ \repeat volta 2 { \scaleNotes } }
       }
@@ -55,11 +54,9 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
       }
     }
     \new DrumStaff = "click" {
-%      \set Staff.midiMaximumVolume = #0.6
       \drummode {
         cl4 wbh wbh wbh
-        \unfoldRepeats{ \repeat volta 4 {bd bd bd bd    bd bd bd bd } }
-          
+        \unfoldRepeats{ \repeat volta 4 {bd4 <bd sn> bd <bd sn>    bd <bd sn> bd <bd sn> } }
       }
     }
   >>
