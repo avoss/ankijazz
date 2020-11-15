@@ -44,6 +44,8 @@ public class LilyRhythm {
     case r2: return "r8";
     case r3: return "r8.";
     case r4: return "r4";
+    case r6: return "r4.";
+    case r8: return "r2";
     case rt: return "r8";
     case b1: return "a16";
     case b2: return "a8";

@@ -23,7 +23,7 @@ import de.jlab.scales.Utils;
 public class RhythmGenerator {
 
   private final Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
-  private final int numberOfRhythms = 100;
+  private final int numberOfRhythms = 250;
   private final int numberOfSequences = 16;
   private final double tieProbability = 0.5;
 
@@ -58,18 +58,20 @@ public class RhythmGenerator {
   
   public List<Rhythm> generate() {
     List<Rhythm> result = new ArrayList<>();
-//    result.addAll(basicRhythms(noTies));
-//    result.addAll(basicRhythms(withTies));
+    result.addAll(basicRhythms(noTies));
+    result.addAll(basicRhythms(withTies));
     result.addAll(standardRhythms());
-//    result.addAll(randomRhythms(result.size()));
+    result.addAll(randomRhythms(result.size()));
     return result;
   }
 
   private Collection<? extends Rhythm> randomRhythms(int rhythmsSoFar) {
     List<Rhythm> result = new ArrayList<>();
     Iterator<EventSequenceCategory> categoryIterator = Utils.randomLoopIterator(eventSequenceMap.keySet());
-    for (int i = rhythmsSoFar; i < numberOfRhythms; i++) {
-      Collection<EventSequenceCategory> categories = chooseCategories(i, categoryIterator);
+    int numberOfRandomRhythms = numberOfRhythms - rhythmsSoFar;
+    for (int i = 0; i < numberOfRandomRhythms; i++) {
+      int numberOfCategories = 2 + (int)((double)numberOfSequences * (double)i / (double)numberOfRandomRhythms);
+      Collection<EventSequenceCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
       List<EventSequence> events = chooseSequences(categories);
       result.add(new Rhythm("Random", events, emptySet()));
     }
@@ -79,9 +81,60 @@ public class RhythmGenerator {
   private List<Rhythm> standardRhythms() {
     List<Rhythm> result = new ArrayList<>();
     result.addAll(claves());
+    result.add(charleston());
+    result.addAll(bossas());
+    result.add(choro());
+    result.add(baiao());
+    result.addAll(montunos());
+    result.addAll(cascara());
     return result;
   }
   
+  private Collection<? extends Rhythm> cascara() {
+    EventSequence q1 = q(b2, b1, b1);
+    EventSequence q2 = q(r1, b2, b1);
+    EventSequence q3 = q(b2, b2);
+    EventSequence q4 = q(b1, b3);
+    return List.of(
+        new Rhythm("3/2 Cascara", repeat(4, q1, q2, q3, q4), emptySet()),
+        new Rhythm("2/3 Cascara", repeat(4, q3, q4, q1, q2), emptySet())
+        );
+  }
+
+  private Collection<? extends Rhythm> montunos() {
+    EventSequence q1 = q(b2, b1, b1);
+    EventSequence q2 = q(r1, b2, b1);
+    return List.of(
+        new Rhythm("2/3 Montuno", repeat(4, q1, q2, q2, q2), emptySet()),
+        new Rhythm("3/2 Montuno", repeat(4, q2, q2, q1, q2), emptySet())
+      );
+  }
+
+  private Rhythm baiao() {
+    EventSequence q1 = q(b3, b1);
+    EventSequence q2 = q(b2, b2);
+    return new Rhythm("Baiao", repeat(8, q1, q2), Set.of(q1));
+  }
+
+  private Rhythm choro() {
+    return new Rhythm("Choro Variation", repeat(8, q(r2, b2), q(r2, b1, r1)), emptySet());
+  }
+
+  private Collection<? extends Rhythm> bossas() {
+    EventSequence q1 = q(b2, b2);
+    EventSequence q2 = q(r1, b1, r1, b1);
+    return List.of(
+          new Rhythm("Bossa Nova", repeat(8, q1, q2), emptySet()),
+          new Rhythm("Reverse Bossa Nova", repeat(8, q2, q1), emptySet()),
+          new Rhythm("Samba", repeat(4, q2, q1, q1, q2), emptySet()),
+          new Rhythm("Reverse Samba", repeat(4, q1, q2, q2, q1), emptySet())
+        );
+  }
+
+  private Rhythm charleston() {
+    return new Rhythm("Carleston", repeat(8, q(b3, b1), q(r4)), emptySet());
+  }
+
   private Collection<Rhythm> claves() {
     Collection<Rhythm> result = new ArrayList<>();
     EventSequence q1 = q(r2, b2);
@@ -122,9 +175,8 @@ public class RhythmGenerator {
     return result;
   }
 
-  private Collection<EventSequenceCategory> chooseCategories(int rhythmIndex, Iterator<EventSequenceCategory> categoryIterator) {
+  private Collection<EventSequenceCategory> chooseCategories(int numberOfCategories, Iterator<EventSequenceCategory> categoryIterator) {
     List<EventSequenceCategory> result = new ArrayList<>();
-    int numberOfCategories = 1 + (int)((double)numberOfSequences * (double)rhythmIndex / (double)numberOfRhythms);
     for (int i = 0; i < numberOfCategories; i++) {
       result.add(categoryIterator.next());
     }

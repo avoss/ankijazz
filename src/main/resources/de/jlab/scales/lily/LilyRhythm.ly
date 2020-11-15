@@ -6,7 +6,7 @@
 
 \header {
   title = "" % \markup{ \small { "C Major Scale" }}
-  tagline = \markup { \tiny "Licensed to my friend Shahram ;-) (C) 2020 Andreas Voss" }
+  tagline = \markup { \tiny "(C) 2020 Andreas Voss - Do not distribute" }
 }
 
 
@@ -35,7 +35,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
 \score {
   <<
     \new Staff {
-      \set Staff.midiInstrument = #"marimba"
+      \set Staff.midiInstrument = #"electric grand"
       \new Voice = "scale" {
         r1  \unfoldRepeats{ \repeat volta 2 { \scaleNotes } }
       }

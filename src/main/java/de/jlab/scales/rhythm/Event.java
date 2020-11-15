@@ -1,5 +1,8 @@
 package de.jlab.scales.rhythm;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.apache.commons.math3.fraction.Fraction;
 
 /**
@@ -13,80 +16,12 @@ public enum Event {
   b2(2,1,true),
   b3(3,1,true),
   b4(4,1,true),
-  r1(1,1,false) {
-    @Override
-    public boolean isCombinableWith(Event event) {
-      switch(event) {
-      case r1:
-      case r2:
-      case r3:
-        return true;
-      default: 
-        return false;
-      }
-    }
-
-    @Override
-    public Event combineWith(Event event) {
-      switch(event) {
-      case r1:
-        return r2;
-      case r2:
-        return r3;
-      case r3:
-        return r4;
-      default: 
-        throw new IllegalArgumentException("cannot combine " + event + " with " + this);
-      }
-    }
-    
-  },  
-  r2(2,1,false) {
-    @Override
-    public boolean isCombinableWith(Event event) {
-      switch(event) {
-      case r1:
-      case r2:
-        return true;
-      default: 
-        return false;
-      }
-    }
-
-    @Override
-    public Event combineWith(Event event) {
-      switch(event) {
-      case r1:
-        return r3;
-      case r2:
-        return r4;
-      default: 
-        throw new IllegalArgumentException("cannot combine " + event + " with " + this);
-      }
-    }
-  },
-  r3(3,1,false) {
-    @Override
-    public boolean isCombinableWith(Event event) {
-      switch(event) {
-      case r1:
-        return true;
-      default: 
-        return false;
-      }
-    }
-
-    @Override
-    public Event combineWith(Event event) {
-      switch(event) {
-      case r1:
-        return r4;
-      default: 
-        throw new IllegalArgumentException("cannot combine " + event + " with " + this);
-      }
-    }
-  },
+  r1(1,1,false),
+  r2(2,1,false),
+  r3(3,1,false),
   r4(4,1,false),
+  r6(6,1,false),
+  r8(8,1,false),
   bt(4,3,true) {
     @Override
     public boolean isTriplet() {
@@ -113,12 +48,21 @@ public enum Event {
   }
   
   public boolean isCombinableWith(Event event) {
-    return false;
+    if (isBeat() || event.isBeat()) {
+      return false;
+    }
+    return combinedRest(event).isPresent();
   }
 
   public Event combineWith(Event event) {
-    throw new UnsupportedOperationException();
+    return combinedRest(event).get();
   }
+  
+  private Optional<Event> combinedRest(Event event) {
+    Fraction targetLength = this.getLength().add(event.getLength());
+    return List.of(Event.values()).stream().filter(e -> !e.isBeat() && e.getLength().equals(targetLength)).findAny();
+  }
+
   
   public boolean isBeat() {
     return beat;

@@ -80,6 +80,7 @@ public class EventSequence {
     int difficulty = 0;
     for (Event e : events) {
       difficulty += difficulty(time);
+      difficulty += e.isBeat() ? 0 : 1;  // syncopation is more difficult than a beat
       time = time.add(e.getLength());
     }
     return difficulty;

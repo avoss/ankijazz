@@ -1,7 +1,7 @@
 \version "2.20.0"
 \include "english.ly"
 
-#(set! paper-alist (cons '("anki-png" . (cons (* 120 mm) (* 28 mm))) paper-alist))
+#(set! paper-alist (cons '("anki-png" . (cons (* 100 mm) (* 28 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
 \header {
@@ -22,7 +22,7 @@ lilyChord = \relative e' { ${lilyChord} }
         \clef ${clef}
         \key ${key} \major
         % suppress 4/4 time signature
-        \override Staff.TimeSignature.stencil = ##f
+        % \override Staff.TimeSignature.stencil = ##f
         \scaleNotes
       }
     }
@@ -31,7 +31,9 @@ lilyChord = \relative e' { ${lilyChord} }
 	  \noteNames % \lilyChord
 	}
   >>
-  \layout { }
+  \layout {
+    indent = 0.0 
+  }
 }
 
 \score {

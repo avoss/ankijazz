@@ -46,10 +46,10 @@ public class EventSequenceTest {
     Fraction f = new Fraction(16, 4);
     f = f.divide(4);
     assertEquals(1, f.getDenominator());
-    assertDifficulty(1, r4);
+    assertDifficulty(2, r4);
     assertDifficulty(3, b2, b2);
     assertDifficulty(4, b1, b3);
-    assertDifficulty(7, b1, b2, r1);
+    assertDifficulty(8, b1, b2, r1);
     assertDifficulty(7, bt, bt, bt);
   }
   

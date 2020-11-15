@@ -14,6 +14,13 @@ Title:
 practice *efficiently* scales and more
 
 ## Rhythm
+12/8 Bembe Bell Pattern, 6/8 Clave, 
+transpose (3, 5 Marcus)
+
+alle Pattern mit max 1 Pause (statt pause nur am anfang = syncopation)?
+tag = number of different quarters Rhythm-1
+
+Cascara
 
 Rhyhtm: ties always end on a beat 1,2,3,4 (reason for ties)
 
@@ -57,6 +64,9 @@ Lily
 Sheets
 - know your fretboard: single note, natural, flat, sharps, all keys. 
 - triads in 251 progressions
+- 7th chords
+- melody snippets for site reading training
+
 
 ## Anki Scheduler:
 - preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day
