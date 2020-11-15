@@ -6,15 +6,18 @@
 		<img class="card-img-top" src="{{model.rhythmPngName}}">
 
     <div class="card-text">
-      <div class="w-50">Metronome</div>
-      <div class="w-50"><audio controls src="{{model.metronomeMp3Name}}"></audio></div>
+      <div class="container">
+        <div class="row">
+					<div class="col">Play Metronome</div>
+					<div class="col"><audio controls src="{{model.metronomeMp3Name}}"></audio></div>
+				</div>
+        <div class="row">
+          <div class="col">Play Rhythm</div>
+          <div class="col"><audio controls src="{{model.rhythmMp3Name}}"></audio></div>
+        </div>
+      </div>
     </div>
 		
-		<div class="card-text">
-      <div class="w-50">Play Rhythm</div>
-      <div class="w-50"><audio controls src="{{model.rhythmMp3Name}}"></audio></div>
-		</div>
-
 		<p class="card-text">Tags: {{tags}}</p>
 	</div>
 </div>

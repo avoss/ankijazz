@@ -6,7 +6,7 @@
 
 \header {
   title = \markup{ \small { "${title}" }}
-  tagline = "" % \markup { \tiny "(C) mail@ankijazz.com" }
+  tagline = \markup { \tiny "(C) 2020 www.AnkiJazz.com - Anki Shared Deck License" }
 }
 
 
@@ -40,6 +40,7 @@ lilyChord = \relative e' { ${lilyChord} }
   <<
     \new Staff {
       \set Staff.midiMaximumVolume = #0.6
+      \set Staff.midiInstrument = #"electric grand"
       \new Voice = "scale" {
          \scaleNotes
       }

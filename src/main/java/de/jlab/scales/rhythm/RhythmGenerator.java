@@ -35,8 +35,7 @@ public class RhythmGenerator {
     this.eventSequenceMap = eventSequenceMap;
   }
   
-  
-  Function<List<EventSequence>, Rhythm> noTies = s -> new Rhythm("Basic", s, emptySet());
+  Function<List<EventSequence>, Rhythm> noTies = s -> new Rhythm(s, emptySet());
   
   Function<List<EventSequence>, Rhythm> withTies = sequences -> {
     Set<EventSequence> ties = new LinkedHashSet<>();
@@ -53,7 +52,7 @@ public class RhythmGenerator {
     if (ties.isEmpty()) {
       return null;
     }
-    return new Rhythm("Basic", sequences, ties);
+    return new Rhythm(sequences, ties);
   };
   
   public List<Rhythm> generate() {
@@ -73,7 +72,7 @@ public class RhythmGenerator {
       int numberOfCategories = 2 + (int)((double)numberOfSequences * (double)i / (double)numberOfRandomRhythms);
       Collection<EventSequenceCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
       List<EventSequence> events = chooseSequences(categories);
-      result.add(new Rhythm("Random", events, emptySet()));
+      result.add(new Rhythm(events, emptySet()));
     }
     return result;
   }
@@ -117,7 +116,9 @@ public class RhythmGenerator {
   }
 
   private Rhythm choro() {
-    return new Rhythm("Choro Variation", repeat(8, q(r2, b2), q(r2, b1, r1)), emptySet());
+    EventSequence q1 = q(r2, b2);
+    EventSequence q2 = q(b3, r1);
+    return new Rhythm("Choro Variation", repeat(8, q1, q2), Set.of(q1));
   }
 
   private Collection<? extends Rhythm> bossas() {

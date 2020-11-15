@@ -1,5 +1,10 @@
 package de.jlab.scales.anki;
 
+import static java.lang.String.format;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import de.jlab.scales.Utils;
 
 public class RhythmCard extends MustacheCardWithModel<RhythmModel> {
@@ -9,6 +14,12 @@ public class RhythmCard extends MustacheCardWithModel<RhythmModel> {
   }
   
   public String getTags() {
-    return Utils.tags();
+    List<String> tags = new ArrayList<>();
+    if (model.hasTies()) {
+      tags.add("Rhythm with ties");
+    }
+    tags.add(format("Rhythm %d", model.getNumberOfUniqueSequences()));
+    tags.add(model.isStandardRhythm() ? "Standard Rhythm" : "Random Rhythm");    
+    return Utils.tags(tags);
   }
 }

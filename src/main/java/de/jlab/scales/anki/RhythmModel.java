@@ -29,8 +29,24 @@ public class RhythmModel implements WithDifficulty, WithAssets {
     return rhythm.getDifficulty();
   }
   
+  public boolean hasTies() {
+    return rhythm.hasTies();
+  }
+  
   public String getTitle() {
-    return rhythm.getTitle();
+    if (rhythm.getTitle() != null) {
+      return rhythm.getTitle();
+    }
+    return String.format("Random rhythm with %d pattern(s)", getNumberOfUniqueSequences());
+  }
+
+  // TODO title should never be null
+  public boolean isStandardRhythm() {
+    return rhythm.getTitle() != null;
+  }
+  
+  public int getNumberOfUniqueSequences() {
+    return rhythm.getUniqueSequences().size();
   }
   
   // TODO BEGIN move to new super class
@@ -59,6 +75,7 @@ public class RhythmModel implements WithDifficulty, WithAssets {
       throw new UncheckedIOException(e);
     }
   }
+
   
   // TODO END move to new super class
 }

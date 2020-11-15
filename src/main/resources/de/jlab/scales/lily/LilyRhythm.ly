@@ -6,7 +6,7 @@
 
 \header {
   title = "" % \markup{ \small { "C Major Scale" }}
-  tagline = \markup { \tiny "(C) 2020 Andreas Voss - Do not distribute" }
+  tagline = \markup { \tiny "(C) 2020 www.AnkiJazz.com - do not distribute" }
 }
 
 
@@ -22,7 +22,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
         %\clef treble
         %\key c \major
         % suppress 4/4 time signature
-        \override Staff.TimeSignature.stencil = ##f
+        % \override Staff.TimeSignature.stencil = ##f
         \repeat volta 2 { \scaleNotes }
       }
     }
@@ -36,7 +36,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
   <<
     \new Staff {
       \set Staff.midiInstrument = #"electric grand"
-      \new Voice = "scale" {
+      \new Voice = "rhythm" {
         r1  \unfoldRepeats{ \repeat volta 2 { \scaleNotes } }
       }
     }

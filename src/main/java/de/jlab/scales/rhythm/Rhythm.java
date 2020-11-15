@@ -14,6 +14,10 @@ public class Rhythm implements Comparable<Rhythm> {
   private Set<EventSequence> tiedSequences;
   private String title;
 
+  public Rhythm(List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
+    this(null, sequences, tiedSequences);
+  }
+  
   public Rhythm(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
     this.title = title;
     this.sequences = sequences;
@@ -21,12 +25,12 @@ public class Rhythm implements Comparable<Rhythm> {
   }
 
   public int getDifficulty() {
-    double difficulty = uniqueSequences().stream().mapToDouble(q -> q.getDifficulty()).sum();
+    double difficulty = getUniqueSequences().stream().mapToDouble(q -> q.getDifficulty()).sum();
     difficulty = difficulty * (1.0 + TIED_WEIGHT * (double) tiedSequences.size() / (double) sequences.size());
     return (int) difficulty;
   }
 
-  private Set<EventSequence> uniqueSequences() {
+  public Set<EventSequence> getUniqueSequences() {
     return sequences.stream().collect(toSet());
   }
 
@@ -41,6 +45,10 @@ public class Rhythm implements Comparable<Rhythm> {
   
   public boolean isTied(EventSequence sequence) {
     return tiedSequences.contains(sequence);
+  }
+  
+  public boolean hasTies() {
+    return !tiedSequences.isEmpty();
   }
   
   public String getTitle() {

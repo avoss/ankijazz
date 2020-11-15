@@ -74,7 +74,11 @@ public final class Utils {
    * remove whitespace etc to create valid Anki Tags
    */
   public static String tags(String ... tags) {
-    return Stream.of(tags).map(s ->   s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
+    return tags(List.of(tags));
+  }
+  
+  public static String tags(List<String> tags) {
+    return tags.stream().map(s -> s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
   }
   
   
