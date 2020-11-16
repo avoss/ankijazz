@@ -39,7 +39,6 @@ lilyChord = \relative e' { ${lilyChord} }
 \score {
   <<
     \new Staff {
-      \set Staff.midiMaximumVolume = #0.6
       \set Staff.midiInstrument = #"electric grand"
       \new Voice = "scale" {
          \scaleNotes
@@ -47,17 +46,12 @@ lilyChord = \relative e' { ${lilyChord} }
     }
     \new Staff {
       \set Staff.midiInstrument = #"pad 2 (warm)"
-      \set Staff.midiMinimumVolume = #0.1
-      \set Staff.midiMaximumVolume = #0.1
+      \set Staff.midiMinimumVolume = #0.2
+      \set Staff.midiMaximumVolume = #0.2
       \new Voice = "chord" {
         \midiChord ~ \midiChord
       }
     }
-%    \new DrumStaff = "click" {
-%      \drummode {
-%        \unfoldRepeats \repeat volta 4 { cl4 wbh wbh wbh r1 r1 }
-%      }
-%    }
   >>
   \midi {
     \tempo 4 = 100 

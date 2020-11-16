@@ -117,7 +117,7 @@ public class RhythmGenerator {
 
   private Rhythm choro() {
     EventSequence q1 = q(r2, b2);
-    EventSequence q2 = q(b3, r1);
+    EventSequence q2 = q(b4);
     return new Rhythm("Choro Variation", repeat(8, q1, q2), Set.of(q1));
   }
 

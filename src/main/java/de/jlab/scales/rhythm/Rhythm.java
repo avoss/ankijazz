@@ -27,6 +27,7 @@ public class Rhythm implements Comparable<Rhythm> {
   public int getDifficulty() {
     double difficulty = getUniqueSequences().stream().mapToDouble(q -> q.getDifficulty()).sum();
     difficulty = difficulty * (1.0 + TIED_WEIGHT * (double) tiedSequences.size() / (double) sequences.size());
+    difficulty += 2 * getUniqueSequences().stream().map(q -> q.isTriplet()).count();
     return (int) difficulty;
   }
 
