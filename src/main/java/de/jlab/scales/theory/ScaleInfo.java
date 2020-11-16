@@ -3,9 +3,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
-@Data
+@Getter
+@Setter
+@AllArgsConstructor 
+@EqualsAndHashCode
 @Builder
 public class ScaleInfo {
   /**
@@ -32,5 +35,12 @@ public class ScaleInfo {
   public int getModeIndex() {
     return parentInfo.getScale().indexOf(scale.getRoot());
   }
+
+  @Override
+  public String toString() {
+    return "ScaleInfo [scaleName=" + scaleName + ", typeName=" + typeName + ", scale=" + scale + ", parentInfo=" + parentInfo.getTypeName() + ", keySignature=" + keySignature + ", superScales="
+        + superScales + ", subScales=" + subScales + ", scaleType=" + scaleType + "]";
+  }
+  
 
 }

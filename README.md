@@ -18,11 +18,6 @@ practice *efficiently* scales and more
 transpose (3, 5 Marcus)
 
 alle Pattern mit max 1 Pause (statt pause nur am anfang = syncopation)?
-tag = number of different quarters Rhythm-1
-
-Cascara
-
-Rhyhtm: ties always end on a beat 1,2,3,4 (reason for ties)
 
 http://lilypond.org/doc/v2.18/Documentation/notation/displaying-rhythms
 Completion_heads_engraver = automatic ties across bars
@@ -31,14 +26,6 @@ Pitch_squash_engraver = Guitar strumming notation
 9 Patterns pro 1/4 Note von https://www.youtube.com/watch?v=Y5_27Gc28ls
 - fraction: 4, 8+8, 16+16+16+16, 16+16+8, 8+16+16, 16+8+16, 8.+16, 16+8., 8-triplets
 - duration: 4, 2+2, 1+1+1+1, 1+1+2, 2+1+1, 1+2+1, 1+3, 3+1, 4/3+4/3+4/3
-
-- in jedem Pattern kann eine oder mehrere Noten fehlen (Pause), wobei dann das selbe rauskommen kann, z.B. r1+r1+r1+b1 == r1+r2+b1 == r3+b1
-- mehrere Pattern können über TIE verbunden werden, aber nur wenn die Pattern mit beat enden bzw anfangen und mehr als 2 events beteiligt sind.
-- maybe same for triplet (swing) based rhyhtms
-
-difficulty depends on length and where the beat occurs (on beat, on 8th, on 16th), number of different lenghts, number of different types (beat vs rest) and beams.
-
-zuerst basic pattern, dann syncoped pattern, dann tied basics, dann standard pattern (clave etc), dann rest = random
 
 **Schnipsel anzeigen** also aus welchen Bausteinen besteht ein Rhythmus.
 

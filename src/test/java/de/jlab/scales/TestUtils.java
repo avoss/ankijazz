@@ -23,7 +23,8 @@ import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 
 public class TestUtils {
-
+  static boolean disabled = false;
+  
   public static void assertFileContentMatches(String actualString, Class<?> testClass, String fileName) {
     assertFileContentMatches(Collections.singletonList(actualString), testClass, fileName);
   }
@@ -33,6 +34,7 @@ public class TestUtils {
       Path dir = Paths.get("build", testClass.getSimpleName());
       Files.createDirectories(dir);
       Files.write(dir.resolve(fileName), actualLines);
+      if (disabled) return;
       if (inputStream == null) {
         fail("Resource not found: " + fileName);
       }
@@ -50,6 +52,7 @@ public class TestUtils {
       Path dir = Paths.get("build", testClass.getSimpleName());
       Files.createDirectories(dir);
       Files.write(dir.resolve(fileName), actualLines);
+      if (disabled) return;
       List<String> expectedLines = Utils.readLines(testClass.getResourceAsStream(fileName));
       Set<String> expected = new LinkedHashSet<>(sanitize(expectedLines));
       Set<String> actual = new LinkedHashSet<>(sanitize(actualLines));
@@ -95,7 +98,7 @@ public class TestUtils {
 
   
   public static void checkAndWrite(Deck deck, Class<?> testClass) {
-    TestUtils.assertFileContentMatches(deck.getCsv(), testClass, deck.getClass().getSimpleName());
+    assertFileContentMatches(deck.getCsv(), testClass, deck.getClass().getSimpleName());
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));
   }

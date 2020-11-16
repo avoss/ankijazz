@@ -6,14 +6,13 @@
 
 \header {
   title = \markup{ \small { "${title}" }}
-  tagline = \markup { \tiny "(C) 2020 www.AnkiJazz.com - Anki Shared Deck License" }
+  tagline = \markup { \tiny "(C) 2020 AnkiJazz.com - Anki Shared Deck License" }
 }
 
 
 scaleNotes = \relative ${relativeTo} { ${scaleNotes} }
 noteNames = \relative e' { ${noteNames} }
 midiChord = \relative e' { ${midiChord} }
-lilyChord = \relative e' { ${lilyChord} }
 
 \score {
   <<
@@ -21,14 +20,11 @@ lilyChord = \relative e' { ${lilyChord} }
       \new Voice {
         \clef ${clef}
         \key ${key} \major
-        % suppress 4/4 time signature
-        % \override Staff.TimeSignature.stencil = ##f
         \scaleNotes
       }
     }
 	\new ChordNames {
-%	  \set minorChordModifier = \markup { "-" }
-	  \noteNames % \lilyChord
+	  \noteNames
 	}
   >>
   \layout {
@@ -41,7 +37,7 @@ lilyChord = \relative e' { ${lilyChord} }
     \new Staff {
       \set Staff.midiInstrument = #"electric grand"
       \new Voice = "scale" {
-         \scaleNotes
+        ${transpose} { \scaleNotes }
       }
     }
     \new Staff {
@@ -49,7 +45,7 @@ lilyChord = \relative e' { ${lilyChord} }
       \set Staff.midiMinimumVolume = #0.2
       \set Staff.midiMaximumVolume = #0.2
       \new Voice = "chord" {
-        \midiChord ~ \midiChord
+        ${transpose} { \midiChord ~ \midiChord }
       }
     }
   >>

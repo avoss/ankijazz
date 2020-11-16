@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import static java.lang.String.format;
+
 import de.jlab.scales.Utils;
 
 public class ModesPracticeGuitarCard extends MustacheCardWithModel<ScaleModel> {
@@ -16,7 +18,13 @@ public class ModesPracticeGuitarCard extends MustacheCardWithModel<ScaleModel> {
   }
 
   public String getTags() {
-    return Utils.tags(model.getModeRootName(), model.getModeTypeName(), model.getDirection(), position.getLabel() + " Position");
+    return Utils.tags(
+        format("KeyOf %s", model.getModeRootName()), 
+        format("Mode %s", model.getModeTypeName()), 
+        format("Direction %s", model.getDirection()),
+        format("Clef %s", model.getClef()),
+        format("Instrument %s", model.getInstrument()),
+        format("Position %s", position.getLabel()));
   }
   
 }

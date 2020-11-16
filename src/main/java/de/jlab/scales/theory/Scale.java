@@ -185,7 +185,6 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return asScale(FLAT);
   }
   
-  @Deprecated
   public String asScale(Accidental accidental) {
     return stream().map(n -> n.getName(accidental)).collect(joining(" "));
   }

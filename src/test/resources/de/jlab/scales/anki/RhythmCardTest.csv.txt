@@ -1,1 +1,1 @@
-<div> <p> Play Test </p> </div> <div><p><img src="AnkiJazz-9f792f460b.png"></p></div> <div><p>[sound:AnkiJazz-Metronome70.mp3]</p></div>;<div><p>[sound:AnkiJazz-9f792f460b.mp3]</p></div>;Rhythm-with-ties Rhythm-2 Standard-Rhythm
+<div> <p> Play Test </p> </div> <div><p><img src="AnkiJazz-9cdab59e86.png"></p></div> <div><p>[sound:AnkiJazz-Metronome70.mp3]</p></div>;<div><p>[sound:AnkiJazz-9cdab59e86.mp3]</p></div>;Rhythm-with-ties Rhythm-2 Standard-Rhythm

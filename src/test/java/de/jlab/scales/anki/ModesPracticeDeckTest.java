@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.lily.Clef;
+import de.jlab.scales.theory.Note;
 
 public class ModesPracticeDeckTest {
 
@@ -23,8 +24,20 @@ public class ModesPracticeDeckTest {
   @Test
   public void testPlayModesDeckBass() {
     Deck deck = new ModesPracticeDeck(Clef.BASS);
-//    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PlayModesDeckTest.csv.txt");
-//    TestUtils.assertFileContentMatches(singletonList(deck.getHtml()), getClass(), "PlayModesDeckTest.html.txt");
+    deck.shuffle(3);
+    deck.writeTo(Paths.get("build/anki"));
+  }
+
+  @Test
+  public void testPlayModesDeckBb() {
+    Deck deck = new ModesPracticeDeck(Note.Bb);
+    deck.shuffle(3);
+    deck.writeTo(Paths.get("build/anki"));
+  }
+
+  @Test
+  public void testPlayModesDeckEb() {
+    Deck deck = new ModesPracticeDeck(Note.Eb);
     deck.shuffle(3);
     deck.writeTo(Paths.get("build/anki"));
   }

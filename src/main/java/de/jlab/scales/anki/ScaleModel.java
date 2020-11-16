@@ -13,8 +13,10 @@ import de.jlab.scales.Utils;
 import de.jlab.scales.lily.Clef;
 import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;
+import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.BuiltInScaleTypes;
 import de.jlab.scales.theory.KeySignature;
+import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.ScaleInfo;
 
 public class ScaleModel implements WithDifficulty, WithAssets {
@@ -25,22 +27,24 @@ public class ScaleModel implements WithDifficulty, WithAssets {
   private String lilyId;
   private Direction direction;
   private Clef clef;
+  private Note instrument;
 
   public ScaleModel(ScaleInfo info) {
     this(info, ASCENDING);
   }
 
   public ScaleModel(ScaleInfo info, Direction direction) {
-    this(info, direction, Clef.TREBLE);
+    this(info, direction, Clef.TREBLE, Note.C);
   }
   
-  public ScaleModel(ScaleInfo modeInfo, Direction direction, Clef clef) {
+  public ScaleModel(ScaleInfo modeInfo, Direction direction, Clef clef, Note instrument) {
     this.modeInfo = modeInfo;
     this.direction = direction;
     this.clef = clef;
+    this.instrument = instrument;
     this.keySignature = modeInfo.getKeySignature();
     this.parentInfo = modeInfo.getParentInfo();
-    this.lilyString = new LilyScale(modeInfo, direction, clef).toLily();
+    this.lilyString = new LilyScale(modeInfo, direction, clef, instrument).toLily();
     this.lilyId = Utils.assetId(lilyString);
   }
   
@@ -108,5 +112,9 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+
+  public String getInstrument() {
+    return instrument.getName(Accidental.FLAT);
   }
 }

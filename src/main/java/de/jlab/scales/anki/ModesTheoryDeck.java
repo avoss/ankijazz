@@ -82,7 +82,11 @@ public class ModesTheoryDeck extends AbstractDeck {
   }
 
   private String tags(String task, ScaleInfo info) {
-    return Utils.tags(task, info.getTypeName(), info.getScale().getRoot().getName(FLAT));
+    
+    return Utils.tags(
+        format("Task %s", task),
+        format("Mode %s", info.getTypeName()), 
+        format("KeyOf %s", info.getScale().getRoot().getName(FLAT))); 
   }
   
   private String divb(String x) {

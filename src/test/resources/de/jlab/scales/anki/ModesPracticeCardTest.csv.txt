@@ -1,1 +1,1 @@
-<div> <p> Play <b>D Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-128f54400d.png"></p></div> <div><p>[sound:AnkiJazz-128f54400d.mp3]</p></div>;D Dorian Ascending
+<div> <p> Play <b>D Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9a1fccb92b.png"></p></div> <div><p>[sound:AnkiJazz-9a1fccb92b.mp3]</p></div>;KeyOf-D Mode-Dorian Direction-Ascending Clef-Treble Instrument-C

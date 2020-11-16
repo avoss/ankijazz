@@ -24,18 +24,20 @@ public class LilyScale {
   private final String scaleName;
   private final Clef clef;
   private Direction direction;
+  private Note instrument;
 
   public LilyScale(ScaleInfo scaleInfo) {
     this(scaleInfo, ASCENDING);
   }
 
   public LilyScale(ScaleInfo scaleInfo, Direction direction) {
-    this(scaleInfo, direction, Clef.TREBLE);
+    this(scaleInfo, direction, Clef.TREBLE, Note.C);
   }
   
-  public LilyScale(ScaleInfo scaleInfo, Direction direction, Clef clef) {
+  public LilyScale(ScaleInfo scaleInfo, Direction direction, Clef clef, Note instrument) {
     this.direction = direction;
     this.clef = clef;
+    this.instrument = instrument;
     this.keySignature = scaleInfo.getKeySignature();
     this.scaleName = scaleInfo.getScaleName();
     this.scale = scaleInfo.getScale();
@@ -51,11 +53,18 @@ public class LilyScale {
       .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
       .replace("${noteNames}", lilyNotesWithOctave())
       .replace("${midiChord}", drop2Chord())
-      .replace("${lilyChord}", closedChord());
+      .replace("${transpose}", transpose());
   }
 
-  private CharSequence closedChord() {
-    return "<" + scale.getChord(0).stream().map(this::toLilyNote).collect(joining(" ")) + ">1";
+
+  private String transpose() {
+    switch (instrument) {
+    case C: return "";
+    case Bb: return "\\transpose c bf,";
+    case Eb: return "\\transpose c ef";
+    default:
+      throw new IllegalStateException("Unsupported transposing instrument: " + instrument);
+    }
   }
 
   private String drop2Chord() {

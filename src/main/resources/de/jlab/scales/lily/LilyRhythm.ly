@@ -6,7 +6,7 @@
 
 \header {
   title = "" % \markup{ \small { "C Major Scale" }}
-  tagline = \markup { \tiny "(C) 2020 www.AnkiJazz.com - do not distribute" }
+  tagline = \markup { \tiny "(C) 2020 AnkiJazz.com - do not distribute" }
 }
 
 
