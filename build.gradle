@@ -37,14 +37,13 @@ jar {
 }
 
 
-task copyAssets {
-  copy {
-    from 'src/assets'
-    into 'build/anki'
+task copyAssets(type:Copy) {
+  from ('src/assets') {
     include '*.png'
     include '*.mp3'
     include '*.ly'
-  }
+  } 
+  into 'build/anki'
 }
 
 build.finalizedBy(copyAssets)
