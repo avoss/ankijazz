@@ -14,18 +14,20 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+
+import com.google.common.base.Optional;
 
 import de.jlab.scales.Utils;
 
 public class RhythmGenerator {
 
   private final Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
-  private final int numberOfRhythms = 250;
+  private final int numberOfRhythms = 400;
   private final int numberOfSequences = 16;
-  private final double tieProbability = 0.5;
 
   public RhythmGenerator() {
     this(new EventSequences().getEventSequenceMap());
@@ -35,30 +37,70 @@ public class RhythmGenerator {
     this.eventSequenceMap = eventSequenceMap;
   }
   
-  Function<List<EventSequence>, Rhythm> noTies = s -> new Rhythm(s, emptySet());
+  Function<List<EventSequence>, Optional<Rhythm>> noTies = s -> Optional.of(new Rhythm(s, emptySet()));
+
+  static abstract class AbstractTies implements Function<List<EventSequence>, Optional<Rhythm>> {
+
+    @Override
+    public Optional<Rhythm> apply(List<EventSequence> sequences) {
+      Set<EventSequence> ties = new LinkedHashSet<>();
+      for (int i = 1; i < sequences.size(); i++) {
+        EventSequence prev = sequences.get(i-1);
+        EventSequence next = sequences.get(i);
+        if (prev.getNumberOfEvents() + next.getNumberOfEvents() < 3) {
+          continue;
+        }
+        if (prev.endsWithBeat() && next.startsWithBeat()) {
+          if (shouldCreateTie(prev, next)) {
+            ties.add(prev);
+          }
+        }
+      }
+      return result(sequences, ties);
+    }
+
+    protected abstract Optional<Rhythm> result(List<EventSequence> sequences, Set<EventSequence> ties);
+
+    protected abstract boolean shouldCreateTie(EventSequence prev, EventSequence next);
+  }
   
-  Function<List<EventSequence>, Rhythm> withTies = sequences -> {
-    Set<EventSequence> ties = new LinkedHashSet<>();
-    for (int i = 1; i < sequences.size(); i++) {
-      EventSequence prev = sequences.get(i-1);
-      EventSequence next = sequences.get(i);
-      if (prev.getNumberOfEvents() + next.getNumberOfEvents() < 3) {
-        continue;
-      }
-      if (prev.endsWithBeat() && next.startsWithBeat()) {
-        ties.add(prev);
-      }
+  static class OnlyTies extends AbstractTies {
+
+    @Override
+    protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
+      return true;
     }
-    if (ties.isEmpty()) {
-      return null;
+
+    @Override
+    protected Optional<Rhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
+      if (ties.isEmpty()) {
+        return Optional.absent();
+      }
+      return Optional.of(new Rhythm(sequences, ties));
     }
-    return new Rhythm(sequences, ties);
-  };
+    
+  }
+
+  static class RandomTies extends AbstractTies {
+
+    private ThreadLocalRandom random = ThreadLocalRandom.current();
+
+    @Override
+    protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
+      return random.nextBoolean(); 
+    }
+
+    @Override
+    protected Optional<Rhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
+      return Optional.of(new Rhythm(sequences, ties));
+    }
+    
+  }
   
   public List<Rhythm> generate() {
     List<Rhythm> result = new ArrayList<>();
     result.addAll(basicRhythms(noTies));
-    result.addAll(basicRhythms(withTies));
+    result.addAll(basicRhythms(new OnlyTies()));
     result.addAll(standardRhythms());
     result.addAll(randomRhythms(result.size()));
     return result;
@@ -66,13 +108,17 @@ public class RhythmGenerator {
 
   private Collection<? extends Rhythm> randomRhythms(int rhythmsSoFar) {
     List<Rhythm> result = new ArrayList<>();
+    RandomTies randomTies = new RandomTies();
     Iterator<EventSequenceCategory> categoryIterator = Utils.randomLoopIterator(eventSequenceMap.keySet());
     int numberOfRandomRhythms = numberOfRhythms - rhythmsSoFar;
     for (int i = 0; i < numberOfRandomRhythms; i++) {
       int numberOfCategories = 2 + (int)((double)numberOfSequences * (double)i / (double)numberOfRandomRhythms);
       Collection<EventSequenceCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
-      List<EventSequence> events = chooseSequences(categories);
-      result.add(new Rhythm(events, emptySet()));
+      List<EventSequence> sequences = chooseSequences(categories);
+      Optional<Rhythm> optionalRhythm = randomTies.apply(sequences);
+      if (optionalRhythm.isPresent()) {
+        result.add(optionalRhythm.get());
+      }
     }
     return result;
   }
@@ -117,7 +163,7 @@ public class RhythmGenerator {
 
   private Rhythm choro() {
     EventSequence q1 = q(r2, b2);
-    EventSequence q2 = q(b4);
+    EventSequence q2 = q(b2, b1, r1);
     return new Rhythm("Choro Variation", repeat(8, q1, q2), Set.of(q1));
   }
 
@@ -157,12 +203,13 @@ public class RhythmGenerator {
     return new EventSequence(events);
   }
   
-  private List<Rhythm> basicRhythms(Function<List<EventSequence>, Rhythm> factory) {
+  private List<Rhythm> basicRhythms(Function<List<EventSequence>, Optional<Rhythm>> factory) {
     return eventSequenceMap.keySet().stream()
       .map(Collections::singleton)
       .map(this::chooseSequences)
       .map(factory)
-      .filter(r -> r != null)
+      .filter(Optional::isPresent)
+      .map(Optional::get)
       .collect(Collectors.toList());
   }
 

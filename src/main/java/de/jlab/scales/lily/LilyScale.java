@@ -61,7 +61,7 @@ public class LilyScale {
     switch (instrument) {
     case C: return "";
     case Bb: return "\\transpose c bf,";
-    case Eb: return "\\transpose c ef";
+    case Eb: return "\\transpose c ef,";
     default:
       throw new IllegalStateException("Unsupported transposing instrument: " + instrument);
     }
@@ -123,7 +123,6 @@ public class LilyScale {
         .replace("#", "s")
         .replace("x", "ss")
         .toLowerCase();
-
   }
 
   private String toLilyQuarterNote(Note note) {

@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>AnkiJazz - Practice Modes (Treble-Clef)</title>
+  <title>AnkiJazz - Practice Modes (C-Instrument)</title>
 </head>
 <body>
   <div class="container">
-    <h1>AnkiJazz - Practice Modes (Treble-Clef)</h1>
+    <h1>AnkiJazz - Practice Modes (C-Instrument)</h1>
     <p>
       This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>
     </p>

@@ -14,7 +14,7 @@ public class ModesPracticeDeckTest {
 
   @Test
   public void testPlayModesDeckTreble() {
-    Deck deck = new ModesPracticeDeck(Clef.TREBLE);
+    Deck deck = new ModesPracticeDeck(Note.C);
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeDeckTest.csv.txt");
     TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesPracticeDeckTest.html.txt");
     deck.shuffle(3);
