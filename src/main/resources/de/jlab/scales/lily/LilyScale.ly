@@ -37,7 +37,7 @@ midiChord = \relative e' { ${midiChord} }
     \new Staff {
       \set Staff.midiInstrument = #"electric grand"
       \new Voice = "scale" {
-        ${transpose} { \scaleNotes }
+        ${scaleTranspose} { \scaleNotes }
       }
     }
     \new Staff {
@@ -45,7 +45,7 @@ midiChord = \relative e' { ${midiChord} }
       \set Staff.midiMinimumVolume = #0.2
       \set Staff.midiMaximumVolume = #0.2
       \new Voice = "chord" {
-        ${transpose} { \midiChord ~ \midiChord }
+        ${chordsTranspose} { \midiChord ~ \midiChord }
       }
     }
   >>

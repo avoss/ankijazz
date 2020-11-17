@@ -50,14 +50,15 @@ public class LilyScale {
       .replace("${key}", key())
       .replace("${clef}", clef.getClef())
       .replace("${relativeTo}", clef.getRelativeTo(direction))
-      .replace("${scaleNotes}", scaleNotesWithExtendedOctave())
+      .replace("${scaleNotes}", lilyNotesWithExtendedOctave())
       .replace("${noteNames}", lilyNotesWithOctave())
       .replace("${midiChord}", drop2Chord())
-      .replace("${transpose}", transpose());
+      .replace("${scaleTranspose}", scaleTranspose())
+      .replace("${chordsTranspose}", chordsTranspose());
   }
 
 
-  private String transpose() {
+  private String scaleTranspose() {
     switch (instrument) {
     case C: return "";
     case Bb: return "\\transpose c bf,";
@@ -67,6 +68,17 @@ public class LilyScale {
     }
   }
 
+  private String chordsTranspose() {
+    switch (instrument) {
+    case C: return "";
+    case Bb: return "\\transpose c bf,";
+    case Eb: return "\\transpose c ef";
+    default:
+      throw new IllegalStateException("Unsupported transposing instrument: " + instrument);
+    }
+  }
+
+  
   private String drop2Chord() {
     return "<" + 
         toLilyNote(scale.getNote(0)) + ", " +
@@ -75,7 +87,7 @@ public class LilyScale {
         toLilyNote(scale.getNote(2)) + ">1";
   }
 
-  private String scaleNotesWithExtendedOctave() {
+  private String lilyNotesWithExtendedOctave() {
     switch (scale.length()) {
     case 5:
       return format("%s %s2.", lilyNotes(), lilyRoot());
