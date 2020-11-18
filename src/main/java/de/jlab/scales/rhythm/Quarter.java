@@ -10,23 +10,23 @@ import java.util.List;
 import org.apache.commons.math3.fraction.Fraction;
 
 @lombok.EqualsAndHashCode
-public class EventSequence {
+public class Quarter {
   
   private List<Event> events = new ArrayList<>();
   private boolean tied;
   
-  public EventSequence() {
+  public Quarter() {
   }
 
-  public EventSequence(Event ... events) {
+  public Quarter(Event ... events) {
     this(Arrays.asList(events));
   }
   
-  public EventSequence(List<Event> events) {
+  public Quarter(List<Event> events) {
     this(false, events);
   }
 
-  private EventSequence(boolean tied, List<Event> events) {
+  private Quarter(boolean tied, List<Event> events) {
     this.tied = tied;
     // TODO use internalAdd instead
     this.events.addAll(events);
@@ -40,8 +40,8 @@ public class EventSequence {
     return result;
   }
 
-  public EventSequence add(Event event) {
-    EventSequence copy = new EventSequence(events);
+  public Quarter add(Event event) {
+    Quarter copy = new Quarter(events);
     copy.internalAdd(event);
     return copy;
   }
@@ -72,7 +72,7 @@ public class EventSequence {
     return events.stream().map(Event::name).collect(joining()).concat(isTied() ? " ~" : "");
   }
 
-  public EventSequenceCategory getCategory() {
+  public QuarterCategory getCategory() {
     Fraction time = Fraction.ZERO;
     List<Fraction> beatPositions = new ArrayList<>();
     for (Event e : events) {
@@ -81,7 +81,7 @@ public class EventSequence {
       }
       time = time.add(e.getLength());
     }
-    return new EventSequenceCategory(beatPositions);
+    return new QuarterCategory(beatPositions);
   }
 
   public int getDifficulty() {
@@ -131,18 +131,18 @@ public class EventSequence {
     return tied;
   }
   
-  public EventSequence tie() {
-    return new EventSequence(true, events);
+  public Quarter tie() {
+    return new Quarter(true, events);
   }
 
-  public static boolean hasTies(Collection<? extends EventSequence> sequences) {
-    return sequences.stream().filter(EventSequence::isTied).findAny().isPresent();
+  public static boolean hasTies(Collection<? extends Quarter> sequences) {
+    return sequences.stream().filter(Quarter::isTied).findAny().isPresent();
   }
   /**
    * return events of a quarter note typically
    */
-  public static EventSequence q(Event ... events) {
-    return new EventSequence(events);
+  public static Quarter q(Event ... events) {
+    return new Quarter(events);
   }
 
 }

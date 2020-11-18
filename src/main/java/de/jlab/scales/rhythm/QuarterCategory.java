@@ -14,11 +14,11 @@ import org.apache.commons.math3.fraction.Fraction;
 @lombok.RequiredArgsConstructor
 @lombok.Getter
 @lombok.ToString
-public class EventSequenceCategory {
+public class QuarterCategory {
   private final List<Fraction> beatPositions;
 
-  public static EventSequenceCategory of(int ... beatPositions) {
+  public static QuarterCategory of(int ... beatPositions) {
     List<Fraction> fractions = IntStream.of(beatPositions).mapToObj(position -> new Fraction(position)).collect(toList());
-    return new EventSequenceCategory(fractions);
+    return new QuarterCategory(fractions);
   }
 }

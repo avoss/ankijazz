@@ -4,11 +4,11 @@ import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 
-public class EventSequenceGeneratorTest {
+public class QuarterGeneratorTest {
 
   @Test
   public void testEventSequences() {
-    EventSequenceGenerator generator = new EventSequenceGenerator();
+    QuarterGenerator generator = new QuarterGenerator();
     TestUtils.assertFileContentMatches(generator.toString(), getClass(), "EventSequenceGenerator.txt");
   }
 

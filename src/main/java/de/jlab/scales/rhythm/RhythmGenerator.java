@@ -7,7 +7,7 @@ import static de.jlab.scales.rhythm.Event.b3;
 import static de.jlab.scales.rhythm.Event.r1;
 import static de.jlab.scales.rhythm.Event.r2;
 import static de.jlab.scales.rhythm.Event.r4;
-import static de.jlab.scales.rhythm.EventSequence.q;
+import static de.jlab.scales.rhythm.Quarter.q;
 import static java.util.Collections.emptySet;
 import static java.util.stream.Collectors.toList;
 
@@ -29,53 +29,53 @@ import de.jlab.scales.Utils;
 
 public class RhythmGenerator {
 
-  private final Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
+  private final Map<QuarterCategory, Collection<Quarter>> quarterMap;
   private final int numberOfRhythms = 300;
-  private final int numberOfSequences = 16;
+  private final int numberOfQuarters = 16;
 
   public RhythmGenerator() {
-    this(new EventSequenceGenerator().getEventSequenceMap());
+    this(new QuarterGenerator().getQuarterMap());
   }
 
-  public RhythmGenerator(Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap) {
-    this.eventSequenceMap = eventSequenceMap;
+  public RhythmGenerator(Map<QuarterCategory, Collection<Quarter>> quarterMap) {
+    this.quarterMap = quarterMap;
   }
   
-  static abstract class AbstractTies implements Function<List<EventSequence>, Optional<RandomRhythm>> {
+  static abstract class AbstractTies implements Function<List<Quarter>, Optional<RandomRhythm>> {
 
     @Override
-    public Optional<RandomRhythm> apply(List<EventSequence> sequences) {
-      List<EventSequence> copy = new ArrayList<>();
-      for (int i = 1; i < sequences.size(); i++) {
-        EventSequence prev = sequences.get(i-1);
-        EventSequence next = sequences.get(i);
+    public Optional<RandomRhythm> apply(List<Quarter> quarters) {
+      List<Quarter> copy = new ArrayList<>();
+      for (int i = 1; i < quarters.size(); i++) {
+        Quarter prev = quarters.get(i-1);
+        Quarter next = quarters.get(i);
         copy.add(canCreateTie(prev, next) && shouldCreateTie(prev, next) ? prev.tie() : prev);
       }
-      return result(sequences);
+      return result(quarters);
     }
     
-    boolean canCreateTie(EventSequence prev, EventSequence next) {
+    boolean canCreateTie(Quarter prev, Quarter next) {
       if (prev.getNumberOfEvents() + next.getNumberOfEvents() < 3) {
         return false;
       }
       return prev.endsWithBeat() && next.startsWithBeat();
     }
     
-    protected abstract boolean shouldCreateTie(EventSequence prev, EventSequence next);
-    protected abstract Optional<RandomRhythm> result(List<EventSequence> sequences);
+    protected abstract boolean shouldCreateTie(Quarter prev, Quarter next);
+    protected abstract Optional<RandomRhythm> result(List<Quarter> quarters);
   }
   
   static class AllTies extends AbstractTies {
 
     @Override
-    protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
+    protected boolean shouldCreateTie(Quarter prev, Quarter next) {
       return true;
     }
 
     @Override
-    protected Optional<RandomRhythm> result(List<EventSequence> sequences) {
-      if (EventSequence.hasTies(sequences)) {
-        return Optional.of(new RandomRhythm(sequences));
+    protected Optional<RandomRhythm> result(List<Quarter> quarters) {
+      if (Quarter.hasTies(quarters)) {
+        return Optional.of(new RandomRhythm(quarters));
       }
       return Optional.absent();
     }
@@ -87,13 +87,13 @@ public class RhythmGenerator {
     private ThreadLocalRandom random = ThreadLocalRandom.current();
 
     @Override
-    protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
+    protected boolean shouldCreateTie(Quarter prev, Quarter next) {
       return random.nextBoolean(); 
     }
 
     @Override
-    protected Optional<RandomRhythm> result(List<EventSequence> sequences) {
-      return Optional.of(new RandomRhythm(sequences));
+    protected Optional<RandomRhythm> result(List<Quarter> quarters) {
+      return Optional.of(new RandomRhythm(quarters));
     }
     
   }
@@ -101,13 +101,13 @@ public class RhythmGenerator {
   static class NoTies extends AbstractTies {
 
     @Override
-    protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
+    protected boolean shouldCreateTie(Quarter prev, Quarter next) {
       return false;
     }
 
     @Override
-    protected Optional<RandomRhythm> result(List<EventSequence> sequences) {
-      return Optional.of(new RandomRhythm(sequences));
+    protected Optional<RandomRhythm> result(List<Quarter> quarters) {
+      return Optional.of(new RandomRhythm(quarters));
     }
     
   }
@@ -125,10 +125,10 @@ public class RhythmGenerator {
 
   private Collection<? extends AbstractRhythm> groupingRhythms() {
     List<AbstractRhythm> result = new ArrayList<>();
-    EventSequence q1 = q(b3, b1).tie();
-    EventSequence q2 = q(b2, b2).tie();
-    EventSequence q3 = q(b1, b3).tie();
-    EventSequence q4 = q(b3, b1);
+    Quarter q1 = q(b3, b1).tie();
+    Quarter q2 = q(b2, b2).tie();
+    Quarter q3 = q(b1, b3).tie();
+    Quarter q4 = q(b3, b1);
     
     GroupingRhythm rhythm = new GroupingRhythm(0, 0, repeat(4, q1, q2, q3, q4));
     for (int i = 0; i < 3; i++) {
@@ -141,13 +141,13 @@ public class RhythmGenerator {
   private Collection<? extends AbstractRhythm> randomRhythms(int rhythmsSoFar) {
     List<AbstractRhythm> result = new ArrayList<>();
     RandomTies randomTies = new RandomTies();
-    Iterator<EventSequenceCategory> categoryIterator = Utils.randomLoopIterator(eventSequenceMap.keySet());
+    Iterator<QuarterCategory> categoryIterator = Utils.randomLoopIterator(quarterMap.keySet());
     int numberOfRandomRhythms = numberOfRhythms - rhythmsSoFar;
     for (int i = 0; i < numberOfRandomRhythms; i++) {
-      int numberOfCategories = 2 + (int)((double)numberOfSequences * (double)i / (double)numberOfRandomRhythms);
-      Collection<EventSequenceCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
-      List<EventSequence> sequences = chooseSequences(categories);
-      Optional<RandomRhythm> optionalRhythm = randomTies.apply(sequences);
+      int numberOfCategories = 2 + (int)((double)numberOfQuarters * (double)i / (double)numberOfRandomRhythms);
+      Collection<QuarterCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
+      List<Quarter> quarters = chooseQuarters(categories);
+      Optional<RandomRhythm> optionalRhythm = randomTies.apply(quarters);
       if (optionalRhythm.isPresent()) {
         result.add(optionalRhythm.get());
       }
@@ -168,10 +168,10 @@ public class RhythmGenerator {
   }
   
   private Collection<? extends AbstractRhythm> cascara() {
-    EventSequence q1 = q(b2, b1, b1);
-    EventSequence q2 = q(r1, b2, b1);
-    EventSequence q3 = q(b2, b2);
-    EventSequence q4 = q(b1, b3);
+    Quarter q1 = q(b2, b1, b1);
+    Quarter q2 = q(r1, b2, b1);
+    Quarter q3 = q(b2, b2);
+    Quarter q4 = q(b1, b3);
     return List.of(
         new StandardRhythm("3/2 Cascara", repeat(4, q1, q2, q3, q4)),
         new StandardRhythm("2/3 Cascara", repeat(4, q3, q4, q1, q2))
@@ -179,8 +179,8 @@ public class RhythmGenerator {
   }
 
   private Collection<? extends AbstractRhythm> montunos() {
-    EventSequence q1 = q(b2, b1, b1);
-    EventSequence q2 = q(r1, b2, b1);
+    Quarter q1 = q(b2, b1, b1);
+    Quarter q2 = q(r1, b2, b1);
     return List.of(
         new StandardRhythm("2/3 Montuno", repeat(4, q1, q2, q2, q2)),
         new StandardRhythm("3/2 Montuno", repeat(4, q2, q2, q1, q2))
@@ -188,20 +188,20 @@ public class RhythmGenerator {
   }
 
   private StandardRhythm baiao() {
-    EventSequence q1 = q(b3, b1).tie();
-    EventSequence q2 = q(b2, b2);
+    Quarter q1 = q(b3, b1).tie();
+    Quarter q2 = q(b2, b2);
     return new StandardRhythm("Baiao", repeat(8, q1, q2));
   }
 
   private StandardRhythm choro() {
-    EventSequence q1 = q(r2, b2).tie();
-    EventSequence q2 = q(b2, b1, r1);
+    Quarter q1 = q(r2, b2).tie();
+    Quarter q2 = q(b2, b1, r1);
     return new StandardRhythm("Choro Variation", repeat(8, q1, q2));
   }
 
   private Collection<? extends AbstractRhythm> bossas() {
-    EventSequence q1 = q(b2, b2);
-    EventSequence q2 = q(r1, b1, r1, b1);
+    Quarter q1 = q(b2, b2);
+    Quarter q2 = q(r1, b1, r1, b1);
     return List.of(
           new StandardRhythm("Bossa Nova", repeat(8, q1, q2)),
           new StandardRhythm("Reverse Bossa Nova", repeat(8, q2, q1)),
@@ -216,12 +216,12 @@ public class RhythmGenerator {
 
   private Collection<? extends AbstractRhythm> claves() {
     Collection<AbstractRhythm> result = new ArrayList<>();
-    EventSequence q1 = q(r2, b2);
-    EventSequence q2 = q(b2, r2);
-    EventSequence q3 = q(b3, b1).tie();
-    EventSequence q4 = q(b2, b2);
-    EventSequence q2bossa = q(r1, b2, r1);
-    EventSequence q4rhumba = q(b3, b1);
+    Quarter q1 = q(r2, b2);
+    Quarter q2 = q(b2, r2);
+    Quarter q3 = q(b3, b1).tie();
+    Quarter q4 = q(b2, b2);
+    Quarter q2bossa = q(r1, b2, r1);
+    Quarter q4rhumba = q(b3, b1);
     result.add(new StandardRhythm("2-3 Son Clave", repeat(4, q1, q2, q3, q4)));
     result.add(new StandardRhythm("3-2 Son Clave", repeat(4, q3, q4, q1, q2)));
     result.add(new StandardRhythm("2-3 Rhumba Clave", repeat(4, q1, q2, q3, q4rhumba)));
@@ -231,33 +231,32 @@ public class RhythmGenerator {
     return result;
   }
 
-  private Collection<? extends AbstractRhythm> basicRhythms(Function<List<EventSequence>, Optional<RandomRhythm>> factory) {
-    return eventSequenceMap.keySet().stream()
+  private Collection<? extends AbstractRhythm> basicRhythms(Function<List<Quarter>, Optional<RandomRhythm>> factory) {
+    return quarterMap.keySet().stream()
       .map(Collections::singleton)
-      .map(this::chooseSequences)
+      .map(this::chooseQuarters)
       .map(factory)
       .filter(Optional::isPresent)
       .map(Optional::get)
       .collect(Collectors.toList());
   }
 
-  private List<EventSequence> chooseSequences(Collection<EventSequenceCategory> categories) {
-    List<EventSequence> validSequences = categories.stream().flatMap(category -> eventSequenceMap.get(category).stream()).collect(toList());
-    Iterator<EventSequence> iterator = Utils.randomLoopIterator(validSequences);
-    List<EventSequence> result = new ArrayList<>();
-    for (int i = 0; i < numberOfSequences; i++) {
+  private List<Quarter> chooseQuarters(Collection<QuarterCategory> categories) {
+    List<Quarter> validQuarters = categories.stream().flatMap(category -> quarterMap.get(category).stream()).collect(toList());
+    Iterator<Quarter> iterator = Utils.randomLoopIterator(validQuarters);
+    List<Quarter> result = new ArrayList<>();
+    for (int i = 0; i < numberOfQuarters; i++) {
       result.add(iterator.next());
     }
     return result;
   }
 
-  private Collection<EventSequenceCategory> chooseCategories(int numberOfCategories, Iterator<EventSequenceCategory> categoryIterator) {
-    List<EventSequenceCategory> result = new ArrayList<>();
+  private Collection<QuarterCategory> chooseCategories(int numberOfCategories, Iterator<QuarterCategory> categoryIterator) {
+    List<QuarterCategory> result = new ArrayList<>();
     for (int i = 0; i < numberOfCategories; i++) {
       result.add(categoryIterator.next());
     }
     return result;
   }
-
 
 }

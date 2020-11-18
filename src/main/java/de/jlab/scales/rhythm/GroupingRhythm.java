@@ -6,13 +6,11 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class GroupingRhythm extends AbstractRhythm {
-
-
   private int length;
   private int position;
 
-  protected GroupingRhythm(int length, int position, List<EventSequence> sequences) {
-    super(sequences);
+  protected GroupingRhythm(int length, int position, List<Quarter> quarters) {
+    super(quarters);
     this.length = length;
     this.position = position;
   }
@@ -28,7 +26,7 @@ public class GroupingRhythm extends AbstractRhythm {
   }
 
   public GroupingRhythm transpose() {
-    Function<List<EventSequence>, GroupingRhythm> factory = seqs -> {
+    Function<List<Quarter>, GroupingRhythm> factory = seqs -> {
       return new GroupingRhythm(length, (position + 1) % length, seqs);
     };
     return super.transpose(factory);

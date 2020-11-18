@@ -12,7 +12,7 @@ public class RhythmGeneratorTest {
     RhythmGenerator generator = new RhythmGenerator();
     List<AbstractRhythm> rhythms = generator.generate();
     for (AbstractRhythm rhythm : rhythms) {
-      for (EventSequence sequence: rhythm.getSequences()) {
+      for (Quarter quarter: rhythm.getQuarters()) {
        // assertEquals(new Fraction(4), sequence.getLength());
       }
       System.out.println(rhythm.getDifficulty());

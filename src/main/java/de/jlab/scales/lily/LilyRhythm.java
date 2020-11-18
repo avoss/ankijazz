@@ -9,7 +9,7 @@ import java.io.UncheckedIOException;
 import de.jlab.scales.Utils;
 import de.jlab.scales.rhythm.AbstractRhythm;
 import de.jlab.scales.rhythm.Event;
-import de.jlab.scales.rhythm.EventSequence;
+import de.jlab.scales.rhythm.Quarter;
 
 public class LilyRhythm {
   
@@ -24,15 +24,15 @@ public class LilyRhythm {
   }
 
   private CharSequence scaleNotes() {
-    return rhythm.getSequences().stream().map(this::toLily).collect(joining(" "));
+    return rhythm.getQuarters().stream().map(this::toLily).collect(joining(" "));
   }
   
-  private String toLily(EventSequence sequence) {
-    String lily = sequence.getEvents().stream().map(this::toLily).collect(joining(" "));
-    if (sequence.isTriplet()) {
+  private String toLily(Quarter quarter) {
+    String lily = quarter.getEvents().stream().map(this::toLily).collect(joining(" "));
+    if (quarter.isTriplet()) {
       lily = String.format("\\tuplet 3/2 { %s }", lily);
     }
-    if (sequence.isTied()) {
+    if (quarter.isTied()) {
       lily = lily + " ~";
     }
     return lily;

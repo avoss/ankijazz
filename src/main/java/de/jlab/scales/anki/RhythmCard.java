@@ -23,7 +23,7 @@ public class RhythmCard extends LilyCard {
     if (rhythm.hasTies()) {
       tags.add("Rhythm with ties");
     }
-    tags.add(format("Rhythm %d", rhythm.getUniqueSequences().size()));
+    tags.add(format("Rhythm %d", rhythm.getUniqueQuarters().size()));
     tags.add(format("Rhythm %s", rhythm.getTypeName()));    
     return Utils.tags(tags);
   }

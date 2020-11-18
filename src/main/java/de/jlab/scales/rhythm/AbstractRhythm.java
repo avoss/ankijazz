@@ -11,18 +11,18 @@ import java.util.stream.Stream;
 
 public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
   
-  private List<EventSequence> sequences;
+  private List<Quarter> quarters;
   private int difficulty;
 
   
-  protected AbstractRhythm(List<EventSequence> sequences) {
-    this.sequences = sequences;
+  protected AbstractRhythm(List<Quarter> quarters) {
+    this.quarters = quarters;
     this.difficulty = computeDifficulty();
   }
 
   public int computeDifficulty() {
-    double difficulty = getUniqueSequences().stream().mapToDouble(q -> q.getDifficulty() * (q.isTied() ? 2 : 1)).sum();
-    difficulty += 2 * getUniqueSequences().stream().map(q -> q.isTriplet()).count();
+    double difficulty = getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty() * (q.isTied() ? 2 : 1)).sum();
+    difficulty += 2 * getUniqueQuarters().stream().map(q -> q.isTriplet()).count();
     return (int) difficulty;
   }
   
@@ -30,16 +30,16 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
     return difficulty;
   }
 
-  public Set<EventSequence> getUniqueSequences() {
-    return sequences.stream().collect(toSet());
+  public Set<Quarter> getUniqueQuarters() {
+    return quarters.stream().collect(toSet());
   }
 
-  public List<EventSequence> getSequences() {
-    return sequences;
+  public List<Quarter> getQuarters() {
+    return quarters;
   }
   
   public boolean hasTies() {
-    return EventSequence.hasTies(sequences);
+    return Quarter.hasTies(quarters);
   }
 
   @Override
@@ -51,7 +51,7 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
 
   public abstract String getTypeName();
 
-  public <T extends AbstractRhythm> T transpose(Function<List<EventSequence>, T> factory) {
+  public <T extends AbstractRhythm> T transpose(Function<List<Quarter>, T> factory) {
     
     // TODO Auto-generated method stub
     return null;
@@ -59,7 +59,7 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
   
   @Override
   public String toString() {
-    return sequences.stream().map(s -> s.toString()).collect(joining(" "));
+    return quarters.stream().map(s -> s.toString()).collect(joining(" "));
   }
   
 }

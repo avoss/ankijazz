@@ -5,13 +5,13 @@ import java.util.Set;
 
 public class RandomRhythm extends AbstractRhythm {
 
-  public RandomRhythm(List<EventSequence> sequences) {
+  public RandomRhythm(List<Quarter> sequences) {
     super(sequences);
   }
 
   @Override
   public String getTitle() {
-    return String.format("Random rhythm with %d pattern(s)", getUniqueSequences().size());
+    return String.format("Random rhythm with %d pattern(s)", getUniqueQuarters().size());
   }
 
   @Override
