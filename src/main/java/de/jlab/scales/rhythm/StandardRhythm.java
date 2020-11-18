@@ -7,8 +7,8 @@ public class StandardRhythm extends AbstractRhythm {
 
   private String title;
 
-  public StandardRhythm(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
-    super(sequences, tiedSequences);
+  public StandardRhythm(String title, List<EventSequence> sequences) {
+    super(sequences);
     this.title = title;
   }
 

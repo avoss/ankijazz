@@ -8,6 +8,7 @@ import static de.jlab.scales.rhythm.Event.r1;
 import static de.jlab.scales.rhythm.Event.r3;
 import static de.jlab.scales.rhythm.Event.r4;
 import static de.jlab.scales.rhythm.Event.rt;
+import static de.jlab.scales.rhythm.EventSequence.q;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -63,7 +64,7 @@ public class EventSequenceTest {
   }
   
   private void assertDifficulty(int expected, Event ... events) {
-    EventSequence s = EventSequence.of(events);
+    EventSequence s = q(events);
     assertEquals(expected, s.getDifficulty());
   }
 

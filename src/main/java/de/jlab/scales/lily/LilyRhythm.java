@@ -32,7 +32,7 @@ public class LilyRhythm {
     if (sequence.isTriplet()) {
       lily = String.format("\\tuplet 3/2 { %s }", lily);
     }
-    if (rhythm.isTied(sequence)) {
+    if (sequence.isTied()) {
       lily = lily + " ~";
     }
     return lily;

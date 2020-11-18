@@ -11,18 +11,18 @@ import org.apache.commons.math3.fraction.Fraction;
 import com.google.common.collect.LinkedHashMultimap;
 import com.google.common.collect.SetMultimap;
 
-public class EventSequences {
+public class EventSequenceGenerator {
 
   private final Fraction ticksPerQuarter;
   private SetMultimap<EventSequenceCategory,EventSequence> result = LinkedHashMultimap.create();
   private Collection<Event> events;
   private final Predicate<EventSequence> filter;
 
-  public EventSequences() {
+  public EventSequenceGenerator() {
     this(4, asList(Event.values()), new SaherGaltEventSequenceFilter());
   }
   
-  public EventSequences(int ticksPerQuarter, Collection<Event> events, Predicate<EventSequence> filter) {
+  public EventSequenceGenerator(int ticksPerQuarter, Collection<Event> events, Predicate<EventSequence> filter) {
     this.filter = filter;
     this.ticksPerQuarter = new Fraction(ticksPerQuarter, 1);
     this.events = events;

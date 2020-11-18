@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class RandomRhythm extends AbstractRhythm {
 
-  public RandomRhythm(List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
-    super(sequences, tiedSequences);
+  public RandomRhythm(List<EventSequence> sequences) {
+    super(sequences);
   }
 
   @Override
