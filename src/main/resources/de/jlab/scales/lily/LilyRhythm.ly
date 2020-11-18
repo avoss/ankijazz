@@ -1,12 +1,12 @@
 \version "2.20.0"
 \include "english.ly"
 
-#(set! paper-alist (cons '("anki-png" . (cons (* 130 mm) (* 60 mm))) paper-alist))
+#(set! paper-alist (cons '("anki-png" . (cons (* 130 mm) (* 50 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
 \header {
   title = "" % \markup{ \small { "C Major Scale" }}
-  tagline = \markup { \tiny "(C) 2020 AnkiJazz.com - do not distribute" }
+  tagline = \markup { \teeny "(C) 2020 AnkiJazz.com - do not distribute" }
 }
 
 

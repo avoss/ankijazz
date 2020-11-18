@@ -22,9 +22,9 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-		<nature>org.elysium.ui.natures.LilyPond</nature>
 		<nature>org.eclipse.xtext.ui.shared.xtextNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
+		<nature>org.elysium.ui.natures.LilyPond</nature>
 	</natures>
 </projectDescription>

@@ -1,12 +1,12 @@
 \version "2.20.0"
 \include "english.ly"
 
-#(set! paper-alist (cons '("anki-png" . (cons (* 100 mm) (* 28 mm))) paper-alist))
+#(set! paper-alist (cons '("anki-png" . (cons (* 100 mm) (* 32 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
 \header {
   title = \markup{ \small { "${title}" }}
-  tagline = \markup { \tiny "(C) 2020 AnkiJazz.com - Anki Shared Deck License" }
+  tagline = \markup { \teeny "(C) 2020 AnkiJazz.com - Anki Shared Deck License" }
 }
 
 

@@ -19,7 +19,7 @@ public class RhythmCard extends MustacheCardWithModel<RhythmModel> {
       tags.add("Rhythm with ties");
     }
     tags.add(format("Rhythm %d", model.getNumberOfUniqueSequences()));
-    tags.add(model.isStandardRhythm() ? "Standard Rhythm" : "Random Rhythm");    
+    tags.add(format("Rhythm %s", model.getTypeName()));    
     return Utils.tags(tags);
   }
 }

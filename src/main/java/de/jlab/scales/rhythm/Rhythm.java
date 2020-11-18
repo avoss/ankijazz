@@ -8,18 +8,38 @@ import java.util.List;
 import java.util.Set;
 
 public class Rhythm implements Comparable<Rhythm> {
-  private final double TIED_WEIGHT = 1.0;
+  
+  public enum Type {
+    STANDARD("Standard"), RANDOM("Random"), GROUPING("Grouping");
 
+    private String name;
+
+    Type(String name) {
+      this.name = name;
+    }
+    public String getName() {
+      return name;
+    }
+  }
+
+  private final double TIED_WEIGHT = 1.0;
   private List<EventSequence> sequences;
   private Set<EventSequence> tiedSequences;
   private String title;
+  private Type type;
 
+  
   public Rhythm(List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
-    this(null, sequences, tiedSequences);
+    this("Random", Type.RANDOM, sequences, tiedSequences);
+  }
+
+  public Rhythm(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
+    this(title, Type.STANDARD, sequences, tiedSequences);
   }
   
-  public Rhythm(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
+  public Rhythm(String title, Type type, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
     this.title = title;
+    this.type = type;
     this.sequences = sequences;
     this.tiedSequences = tiedSequences;
   }
@@ -56,7 +76,8 @@ public class Rhythm implements Comparable<Rhythm> {
     return title;
   }
 
-  public static Rhythm of(String title, List<EventSequence> sequences, Set<EventSequence> tiedSequences) {
-    return new Rhythm(title, sequences, tiedSequences);
+  public Type getType() {
+    return type;
   }
+  
 }

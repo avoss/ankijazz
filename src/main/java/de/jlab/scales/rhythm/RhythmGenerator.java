@@ -26,7 +26,7 @@ import de.jlab.scales.Utils;
 public class RhythmGenerator {
 
   private final Map<EventSequenceCategory, Collection<EventSequence>> eventSequenceMap;
-  private final int numberOfRhythms = 400;
+  private final int numberOfRhythms = 300;
   private final int numberOfSequences = 16;
 
   public RhythmGenerator() {
@@ -106,6 +106,7 @@ public class RhythmGenerator {
     return result;
   }
 
+
   private Collection<? extends Rhythm> randomRhythms(int rhythmsSoFar) {
     List<Rhythm> result = new ArrayList<>();
     RandomTies randomTies = new RandomTies();
@@ -123,7 +124,7 @@ public class RhythmGenerator {
     return result;
   }
 
-  private List<Rhythm> standardRhythms() {
+  private Collection<? extends Rhythm> standardRhythms() {
     List<Rhythm> result = new ArrayList<>();
     result.addAll(claves());
     result.add(charleston());
@@ -203,7 +204,7 @@ public class RhythmGenerator {
     return new EventSequence(events);
   }
   
-  private List<Rhythm> basicRhythms(Function<List<EventSequence>, Optional<Rhythm>> factory) {
+  private Collection<? extends Rhythm> basicRhythms(Function<List<EventSequence>, Optional<Rhythm>> factory) {
     return eventSequenceMap.keySet().stream()
       .map(Collections::singleton)
       .map(this::chooseSequences)

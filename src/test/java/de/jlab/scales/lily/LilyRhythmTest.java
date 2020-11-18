@@ -25,7 +25,7 @@ public class LilyRhythmTest {
   private Rhythm rhythm() {
     EventSequence s1 = EventSequence.of(r2, b2);
     EventSequence s2 = EventSequence.of(b1, b1, r2);
-    return Rhythm.of("Test", List.of(s1, s2), singleton(s1));
+    return new Rhythm(List.of(s1, s2), singleton(s1));
   }
 
 }

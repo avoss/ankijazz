@@ -8,6 +8,8 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
+import org.objectweb.asm.Type;
+
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyRhythm;
 import de.jlab.scales.rhythm.Rhythm;
@@ -40,6 +42,10 @@ public class RhythmModel implements WithDifficulty, WithAssets {
     return String.format("Random rhythm with %d pattern(s)", getNumberOfUniqueSequences());
   }
 
+  public String getTypeName() {
+    return rhythm.getType().getName();
+  }
+  
   // TODO title should never be null
   public boolean isStandardRhythm() {
     return rhythm.getTitle() != null;
@@ -76,6 +82,6 @@ public class RhythmModel implements WithDifficulty, WithAssets {
     }
   }
 
-  
+ 
   // TODO END move to new super class
 }
