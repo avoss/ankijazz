@@ -9,7 +9,7 @@ public class QuarterGeneratorTest {
   @Test
   public void testEventSequences() {
     QuarterGenerator generator = new QuarterGenerator();
-    TestUtils.assertFileContentMatches(generator.toString(), getClass(), "EventSequenceGenerator.txt");
+    TestUtils.assertFileContentMatches(generator.toString(), getClass(), "QuarterGenerator.txt");
   }
 
 }

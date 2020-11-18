@@ -9,10 +9,10 @@ import java.util.function.Predicate;
 public class SaherGaltEventFilter implements Predicate<Quarter> {
 
   @Override
-  public boolean test(Quarter sequence) {
+  public boolean test(Quarter quarter) {
     // either no rests, or first event is a rest
-    int numberOfRests = (int) sequence.getEvents().stream().filter(e -> !e.isBeat()).count();
-    return numberOfRests == 0 || (sequence.getNumberOfEvents() > 1 && numberOfRests == 1 && !sequence.startsWithBeat());
+    int numberOfRests = (int) quarter.getEvents().stream().filter(e -> !e.isBeat()).count();
+    return numberOfRests == 0 || (quarter.getNumberOfEvents() > 1 && numberOfRests == 1 && !quarter.startsWithBeat());
   }
 
 }
