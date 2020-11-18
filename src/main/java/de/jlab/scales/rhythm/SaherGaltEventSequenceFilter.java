@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 // https://www.youtube.com/watch?reload=9&v=Ri0w4gLeeZE
 // https://www.youtube.com/watch?v=RuvA4b_2pk0&feature=youtu.be
-
+// TODO: why only first note replaced with rest? why not any note?
 public class SaherGaltEventSequenceFilter implements Predicate<EventSequence> {
 
   @Override

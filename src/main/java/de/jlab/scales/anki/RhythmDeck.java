@@ -9,7 +9,7 @@ public class RhythmDeck extends AbstractDeck {
     super("AnkiJazz - Read and Play Rhythms");
     RhythmGenerator generator = new RhythmGenerator();
     for (AbstractRhythm rhythm : generator.generate()) {
-      add(new RhythmCard(new RhythmModel(rhythm)));
+      add(new RhythmCard(rhythm));
     }
   }
 

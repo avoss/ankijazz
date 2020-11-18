@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import java.nio.file.Path;
+
 public class SimpleCard extends MustacheCard {
   private final int difficulty;
   private final String front;
@@ -33,6 +35,10 @@ public class SimpleCard extends MustacheCard {
   
   public String getTags() {
     return tags;
+  }
+
+  @Override
+  public void writeAssets(Path directory) {
   }
 
 }

@@ -6,20 +6,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.lily.LilyRhythm;
+import de.jlab.scales.rhythm.AbstractRhythm;
 
-public class RhythmCard extends MustacheCardWithModel<RhythmModel> {
+public class RhythmCard extends LilyCard {
 
-  public RhythmCard(RhythmModel model) {
-    super(model);
+  private AbstractRhythm rhythm;
+
+  public RhythmCard(AbstractRhythm rhythm) {
+    super(new LilyRhythm(rhythm).toLily());
+    this.rhythm = rhythm;
   }
   
   public String getTags() {
     List<String> tags = new ArrayList<>();
-    if (model.hasTies()) {
+    if (rhythm.hasTies()) {
       tags.add("Rhythm with ties");
     }
-    tags.add(format("Rhythm %d", model.getNumberOfUniqueSequences()));
-    tags.add(format("Rhythm %s", model.getTypeName()));    
+    tags.add(format("Rhythm %d", rhythm.getUniqueSequences().size()));
+    tags.add(format("Rhythm %s", rhythm.getTypeName()));    
     return Utils.tags(tags);
   }
+
+  @Override
+  public int getDifficulty() {
+    return rhythm.getDifficulty();
+  }
+
+  public String getMetronomeMp3Name() {
+    return "AnkiJazz-Metronome70.mp3";
+  }
+  
+  public String getTitle() {
+    return rhythm.getTitle();
+  }
+  
+
 }

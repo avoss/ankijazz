@@ -1,19 +1,19 @@
 <div class="card mb-3">
 	<h4 class="card-header">
-	  Play {{model.title}}
+	  Play {{title}}
 	</h4>
 	<div class="card-body">
-		<img class="card-img-top" src="{{model.rhythmPngName}}">
+		<img class="card-img-top" src="{{pngName}}">
 
     <div class="card-text">
       <div class="container">
         <div class="row">
 					<div class="col">Play Metronome</div>
-					<div class="col"><audio controls src="{{model.metronomeMp3Name}}"></audio></div>
+					<div class="col"><audio controls src="{{metronomeMp3Name}}"></audio></div>
 				</div>
         <div class="row">
           <div class="col">Play Rhythm</div>
-          <div class="col"><audio controls src="{{model.rhythmMp3Name}}"></audio></div>
+          <div class="col"><audio controls src="{{mp3Name}}"></audio></div>
         </div>
       </div>
     </div>
