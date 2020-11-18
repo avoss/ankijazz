@@ -13,8 +13,8 @@ public class RhythmGeneratorTest {
   public void test() {
     // FIXME add asserts
     RhythmGenerator generator = new RhythmGenerator();
-    List<Rhythm> rhythms = generator.generate();
-    for (Rhythm rhythm : rhythms) {
+    List<AbstractRhythm> rhythms = generator.generate();
+    for (AbstractRhythm rhythm : rhythms) {
       for (EventSequence sequence: rhythm.getSequences()) {
        // assertEquals(new Fraction(4), sequence.getLength());
       }

@@ -7,15 +7,15 @@ import java.io.InputStream;
 import java.io.UncheckedIOException;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.rhythm.AbstractRhythm;
 import de.jlab.scales.rhythm.Event;
 import de.jlab.scales.rhythm.EventSequence;
-import de.jlab.scales.rhythm.Rhythm;
 
 public class LilyRhythm {
   
-  private Rhythm rhythm;
+  private AbstractRhythm rhythm;
 
-  public LilyRhythm(Rhythm rhythm) {
+  public LilyRhythm(AbstractRhythm rhythm) {
     this.rhythm = rhythm;
   }
 

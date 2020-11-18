@@ -1,12 +1,16 @@
 package de.jlab.scales.rhythm;
 
 import static de.jlab.scales.Utils.repeat;
-import static de.jlab.scales.rhythm.Event.*;
+import static de.jlab.scales.rhythm.Event.b1;
+import static de.jlab.scales.rhythm.Event.b2;
+import static de.jlab.scales.rhythm.Event.b3;
+import static de.jlab.scales.rhythm.Event.r1;
+import static de.jlab.scales.rhythm.Event.r2;
+import static de.jlab.scales.rhythm.Event.r4;
 import static java.util.Collections.emptySet;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
@@ -16,7 +20,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Optional;
@@ -37,12 +40,10 @@ public class RhythmGenerator {
     this.eventSequenceMap = eventSequenceMap;
   }
   
-  Function<List<EventSequence>, Optional<Rhythm>> noTies = s -> Optional.of(new Rhythm(s, emptySet()));
-
-  static abstract class AbstractTies implements Function<List<EventSequence>, Optional<Rhythm>> {
+  static abstract class AbstractTies implements Function<List<EventSequence>, Optional<RandomRhythm>> {
 
     @Override
-    public Optional<Rhythm> apply(List<EventSequence> sequences) {
+    public Optional<RandomRhythm> apply(List<EventSequence> sequences) {
       Set<EventSequence> ties = new LinkedHashSet<>();
       for (int i = 1; i < sequences.size(); i++) {
         EventSequence prev = sequences.get(i-1);
@@ -59,12 +60,11 @@ public class RhythmGenerator {
       return result(sequences, ties);
     }
 
-    protected abstract Optional<Rhythm> result(List<EventSequence> sequences, Set<EventSequence> ties);
-
     protected abstract boolean shouldCreateTie(EventSequence prev, EventSequence next);
+    protected abstract Optional<RandomRhythm> result(List<EventSequence> sequences, Set<EventSequence> ties);
   }
   
-  static class OnlyTies extends AbstractTies {
+  static class AllTies extends AbstractTies {
 
     @Override
     protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
@@ -72,11 +72,11 @@ public class RhythmGenerator {
     }
 
     @Override
-    protected Optional<Rhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
+    protected Optional<RandomRhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
       if (ties.isEmpty()) {
         return Optional.absent();
       }
-      return Optional.of(new Rhythm(sequences, ties));
+      return Optional.of(new RandomRhythm(sequences, ties));
     }
     
   }
@@ -91,24 +91,38 @@ public class RhythmGenerator {
     }
 
     @Override
-    protected Optional<Rhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
-      return Optional.of(new Rhythm(sequences, ties));
+    protected Optional<RandomRhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
+      return Optional.of(new RandomRhythm(sequences, ties));
+    }
+    
+  }
+
+  static class NoTies extends AbstractTies {
+
+    @Override
+    protected boolean shouldCreateTie(EventSequence prev, EventSequence next) {
+      return false;
+    }
+
+    @Override
+    protected Optional<RandomRhythm> result(List<EventSequence> sequences, Set<EventSequence> ties) {
+      return Optional.of(new RandomRhythm(sequences, ties));
     }
     
   }
   
-  public List<Rhythm> generate() {
-    List<Rhythm> result = new ArrayList<>();
-    result.addAll(basicRhythms(noTies));
-    result.addAll(basicRhythms(new OnlyTies()));
+  public List<AbstractRhythm> generate() {
+    List<AbstractRhythm> result = new ArrayList<>();
+    result.addAll(basicRhythms(new NoTies()));
+    result.addAll(basicRhythms(new AllTies()));
     result.addAll(standardRhythms());
     result.addAll(randomRhythms(result.size()));
     return result;
   }
 
 
-  private Collection<? extends Rhythm> randomRhythms(int rhythmsSoFar) {
-    List<Rhythm> result = new ArrayList<>();
+  private Collection<? extends AbstractRhythm> randomRhythms(int rhythmsSoFar) {
+    List<AbstractRhythm> result = new ArrayList<>();
     RandomTies randomTies = new RandomTies();
     Iterator<EventSequenceCategory> categoryIterator = Utils.randomLoopIterator(eventSequenceMap.keySet());
     int numberOfRandomRhythms = numberOfRhythms - rhythmsSoFar;
@@ -116,7 +130,7 @@ public class RhythmGenerator {
       int numberOfCategories = 2 + (int)((double)numberOfSequences * (double)i / (double)numberOfRandomRhythms);
       Collection<EventSequenceCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
       List<EventSequence> sequences = chooseSequences(categories);
-      Optional<Rhythm> optionalRhythm = randomTies.apply(sequences);
+      Optional<RandomRhythm> optionalRhythm = randomTies.apply(sequences);
       if (optionalRhythm.isPresent()) {
         result.add(optionalRhythm.get());
       }
@@ -124,8 +138,8 @@ public class RhythmGenerator {
     return result;
   }
 
-  private Collection<? extends Rhythm> standardRhythms() {
-    List<Rhythm> result = new ArrayList<>();
+  private Collection<? extends AbstractRhythm> standardRhythms() {
+    List<AbstractRhythm> result = new ArrayList<>();
     result.addAll(claves());
     result.add(charleston());
     result.addAll(bossas());
@@ -136,67 +150,67 @@ public class RhythmGenerator {
     return result;
   }
   
-  private Collection<? extends Rhythm> cascara() {
+  private Collection<? extends AbstractRhythm> cascara() {
     EventSequence q1 = q(b2, b1, b1);
     EventSequence q2 = q(r1, b2, b1);
     EventSequence q3 = q(b2, b2);
     EventSequence q4 = q(b1, b3);
     return List.of(
-        new Rhythm("3/2 Cascara", repeat(4, q1, q2, q3, q4), emptySet()),
-        new Rhythm("2/3 Cascara", repeat(4, q3, q4, q1, q2), emptySet())
+        new StandardRhythm("3/2 Cascara", repeat(4, q1, q2, q3, q4), emptySet()),
+        new StandardRhythm("2/3 Cascara", repeat(4, q3, q4, q1, q2), emptySet())
         );
   }
 
-  private Collection<? extends Rhythm> montunos() {
+  private Collection<? extends AbstractRhythm> montunos() {
     EventSequence q1 = q(b2, b1, b1);
     EventSequence q2 = q(r1, b2, b1);
     return List.of(
-        new Rhythm("2/3 Montuno", repeat(4, q1, q2, q2, q2), emptySet()),
-        new Rhythm("3/2 Montuno", repeat(4, q2, q2, q1, q2), emptySet())
+        new StandardRhythm("2/3 Montuno", repeat(4, q1, q2, q2, q2), emptySet()),
+        new StandardRhythm("3/2 Montuno", repeat(4, q2, q2, q1, q2), emptySet())
       );
   }
 
-  private Rhythm baiao() {
+  private StandardRhythm baiao() {
     EventSequence q1 = q(b3, b1);
     EventSequence q2 = q(b2, b2);
-    return new Rhythm("Baiao", repeat(8, q1, q2), Set.of(q1));
+    return new StandardRhythm("Baiao", repeat(8, q1, q2), Set.of(q1));
   }
 
-  private Rhythm choro() {
+  private StandardRhythm choro() {
     EventSequence q1 = q(r2, b2);
     EventSequence q2 = q(b2, b1, r1);
-    return new Rhythm("Choro Variation", repeat(8, q1, q2), Set.of(q1));
+    return new StandardRhythm("Choro Variation", repeat(8, q1, q2), Set.of(q1));
   }
 
-  private Collection<? extends Rhythm> bossas() {
+  private Collection<? extends AbstractRhythm> bossas() {
     EventSequence q1 = q(b2, b2);
     EventSequence q2 = q(r1, b1, r1, b1);
     return List.of(
-          new Rhythm("Bossa Nova", repeat(8, q1, q2), emptySet()),
-          new Rhythm("Reverse Bossa Nova", repeat(8, q2, q1), emptySet()),
-          new Rhythm("Samba", repeat(4, q2, q1, q1, q2), emptySet()),
-          new Rhythm("Reverse Samba", repeat(4, q1, q2, q2, q1), emptySet())
+          new StandardRhythm("Bossa Nova", repeat(8, q1, q2), emptySet()),
+          new StandardRhythm("Reverse Bossa Nova", repeat(8, q2, q1), emptySet()),
+          new StandardRhythm("Samba", repeat(4, q2, q1, q1, q2), emptySet()),
+          new StandardRhythm("Reverse Samba", repeat(4, q1, q2, q2, q1), emptySet())
         );
   }
 
-  private Rhythm charleston() {
-    return new Rhythm("Carleston", repeat(8, q(b3, b1), q(r4)), emptySet());
+  private StandardRhythm charleston() {
+    return new StandardRhythm("Carleston", repeat(8, q(b3, b1), q(r4)), emptySet());
   }
 
-  private Collection<Rhythm> claves() {
-    Collection<Rhythm> result = new ArrayList<>();
+  private Collection<? extends AbstractRhythm> claves() {
+    Collection<AbstractRhythm> result = new ArrayList<>();
     EventSequence q1 = q(r2, b2);
     EventSequence q2 = q(b2, r2);
     EventSequence q3 = q(b3, b1);
     EventSequence q4 = q(b2, b2);
     EventSequence q2bossa = q(r1, b2, r1);
     EventSequence q4rhumba = q(b3, b1);
-    result.add(new Rhythm("2-3 Son Clave", repeat(4, q1, q2, q3, q4), Set.of(q3)));
-    result.add(new Rhythm("3-2 Son Clave", repeat(4, q3, q4, q1, q2), Set.of(q3)));
-    result.add(new Rhythm("2-3 Rhumba Clave", repeat(4, q1, q2, q3, q4rhumba), Set.of(q3)));
-    result.add(new Rhythm("3-2 Rhumba Clave", repeat(4, q3, q4rhumba, q1, q2), Set.of(q3)));
-    result.add(new Rhythm("2-3 Bossa Clave", repeat(4, q1, q2bossa, q3, q4), Set.of(q3)));
-    result.add(new Rhythm("3-2 Bossa Clave", repeat(4, q3, q4, q1, q2bossa), Set.of(q3)));
+    result.add(new StandardRhythm("2-3 Son Clave", repeat(4, q1, q2, q3, q4), Set.of(q3)));
+    result.add(new StandardRhythm("3-2 Son Clave", repeat(4, q3, q4, q1, q2), Set.of(q3)));
+    result.add(new StandardRhythm("2-3 Rhumba Clave", repeat(4, q1, q2, q3, q4rhumba), Set.of(q3)));
+    result.add(new StandardRhythm("3-2 Rhumba Clave", repeat(4, q3, q4rhumba, q1, q2), Set.of(q3)));
+    result.add(new StandardRhythm("2-3 Bossa Clave", repeat(4, q1, q2bossa, q3, q4), Set.of(q3)));
+    result.add(new StandardRhythm("3-2 Bossa Clave", repeat(4, q3, q4, q1, q2bossa), Set.of(q3)));
     return result;
   }
 
@@ -204,7 +218,7 @@ public class RhythmGenerator {
     return new EventSequence(events);
   }
   
-  private Collection<? extends Rhythm> basicRhythms(Function<List<EventSequence>, Optional<Rhythm>> factory) {
+  private Collection<? extends AbstractRhythm> basicRhythms(Function<List<EventSequence>, Optional<RandomRhythm>> factory) {
     return eventSequenceMap.keySet().stream()
       .map(Collections::singleton)
       .map(this::chooseSequences)

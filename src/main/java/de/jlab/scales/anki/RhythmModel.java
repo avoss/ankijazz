@@ -8,19 +8,17 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import org.objectweb.asm.Type;
-
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyRhythm;
-import de.jlab.scales.rhythm.Rhythm;
+import de.jlab.scales.rhythm.AbstractRhythm;
 
 public class RhythmModel implements WithDifficulty, WithAssets {
   
-  private final Rhythm rhythm;
+  private final AbstractRhythm rhythm;
   private String lilyString;
   private String lilyId;
 
-  public RhythmModel(Rhythm rhythm) {
+  public RhythmModel(AbstractRhythm rhythm) {
     this.rhythm = rhythm;
     this.lilyString = new LilyRhythm(rhythm).toLily();
     this.lilyId = Utils.assetId(lilyString);
@@ -36,24 +34,17 @@ public class RhythmModel implements WithDifficulty, WithAssets {
   }
   
   public String getTitle() {
-    if (rhythm.getTitle() != null) {
-      return rhythm.getTitle();
-    }
-    return String.format("Random rhythm with %d pattern(s)", getNumberOfUniqueSequences());
+    return rhythm.getTitle();
   }
 
   public String getTypeName() {
-    return rhythm.getType().getName();
-  }
-  
-  // TODO title should never be null
-  public boolean isStandardRhythm() {
-    return rhythm.getTitle() != null;
+    return rhythm.getTypeName();
   }
   
   public int getNumberOfUniqueSequences() {
     return rhythm.getUniqueSequences().size();
   }
+  
   
   // TODO BEGIN move to new super class
   public String getRhythmPngName() {
