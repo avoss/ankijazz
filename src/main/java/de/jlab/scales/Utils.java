@@ -14,14 +14,11 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.google.common.base.Charsets;
 
-import de.jlab.scales.rhythm.EventSequenceCategory;
 import de.jlab.scales.theory.Scale;
 
 public final class Utils {

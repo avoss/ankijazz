@@ -1,7 +1,5 @@
 package de.jlab.scales.rhythm;
 
-import static java.util.Arrays.asList;
-import static java.util.Collections.emptySet;
 import static java.util.stream.Collectors.toSet;
 
 import java.util.List;

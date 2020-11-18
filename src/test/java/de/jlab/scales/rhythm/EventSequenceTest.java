@@ -1,12 +1,21 @@
 package de.jlab.scales.rhythm;
 
-import static de.jlab.scales.rhythm.Event.*;
-import static org.junit.Assert.*;
+import static de.jlab.scales.rhythm.Event.b1;
+import static de.jlab.scales.rhythm.Event.b2;
+import static de.jlab.scales.rhythm.Event.b3;
+import static de.jlab.scales.rhythm.Event.bt;
+import static de.jlab.scales.rhythm.Event.r1;
+import static de.jlab.scales.rhythm.Event.r3;
+import static de.jlab.scales.rhythm.Event.r4;
+import static de.jlab.scales.rhythm.Event.rt;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertTrue;
 
 import org.apache.commons.math3.fraction.Fraction;
 import org.junit.Test;
-
-import de.jlab.scales.rhythm.EventSequence;
 
 public class EventSequenceTest {
 

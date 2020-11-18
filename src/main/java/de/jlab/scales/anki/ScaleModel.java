@@ -1,15 +1,7 @@
 package de.jlab.scales.anki;
 
 import static de.jlab.scales.lily.Direction.ASCENDING;
-import static java.lang.String.format;
-import static java.util.Arrays.asList;
 
-import java.io.IOException;
-import java.io.UncheckedIOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-
-import de.jlab.scales.Utils;
 import de.jlab.scales.lily.Clef;
 import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;

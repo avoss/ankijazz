@@ -1,7 +1,5 @@
 package de.jlab.scales.anki;
 
-import static java.util.Collections.singletonList;
-
 import java.nio.file.Paths;
 
 import org.junit.Test;

@@ -1,10 +1,7 @@
 package de.jlab.scales.rhythm;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 
-import org.apache.commons.math3.fraction.Fraction;
 import org.junit.Test;
 
 public class RhythmGeneratorTest {

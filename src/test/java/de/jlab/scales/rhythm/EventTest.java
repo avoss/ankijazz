@@ -1,13 +1,22 @@
 package de.jlab.scales.rhythm;
 
-import static de.jlab.scales.rhythm.Event.*;
-import static org.junit.Assert.*;
+import static de.jlab.scales.rhythm.Event.b1;
+import static de.jlab.scales.rhythm.Event.b2;
+import static de.jlab.scales.rhythm.Event.b3;
+import static de.jlab.scales.rhythm.Event.b4;
+import static de.jlab.scales.rhythm.Event.r1;
+import static de.jlab.scales.rhythm.Event.r2;
+import static de.jlab.scales.rhythm.Event.r3;
+import static de.jlab.scales.rhythm.Event.r4;
+import static de.jlab.scales.rhythm.Event.r6;
+import static de.jlab.scales.rhythm.Event.r8;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
 
 import org.junit.Test;
-
-import de.jlab.scales.rhythm.Event;
 
 public class EventTest {
 

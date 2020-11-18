@@ -8,13 +8,10 @@ import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;
 import static java.lang.String.format;
 
-import java.util.List;
-
 import de.jlab.scales.lily.Clef;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.Scales;
 
 public class ModesPracticeDeck extends AbstractDeck {
 

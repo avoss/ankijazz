@@ -2,22 +2,13 @@ package de.jlab.scales.rhythm;
 
 import static java.util.Arrays.asList;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
-import static de.jlab.scales.rhythm.Event.*;
 
 import org.apache.commons.math3.fraction.Fraction;
 
 import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.Multimaps;
 import com.google.common.collect.SetMultimap;
 
 public class EventSequences {

@@ -1,7 +1,5 @@
 package de.jlab.scales.rhythm;
 
-import java.util.Arrays;
-
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
