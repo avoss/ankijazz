@@ -19,12 +19,10 @@ import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class ScaleModel implements WithDifficulty, WithAssets {
+public class ScaleModel {
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
   private KeySignature keySignature;
-  private String lilyString;
-  private String lilyId;
   private Direction direction;
   private Clef clef;
   private Note instrument;
@@ -44,8 +42,10 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     this.instrument = instrument;
     this.keySignature = modeInfo.getKeySignature();
     this.parentInfo = modeInfo.getParentInfo();
-    this.lilyString = new LilyScale(modeInfo, direction, clef, instrument).toLily();
-    this.lilyId = Utils.assetId(lilyString);
+  }
+
+  public LilyScale getLilyScale() {
+    return new LilyScale(modeInfo, direction, clef, instrument);
   }
   
   public String getClef() {
@@ -80,19 +80,6 @@ public class ScaleModel implements WithDifficulty, WithAssets {
     return keySignature.notate(parentInfo.getScale().getRoot());
   }
 
-  public String getModePng() {
-    return format("%s.png", lilyId);
-  }
-
-  public String getModeMp3() {
-    return format("%s.mp3",  lilyId);
-  }
-  
-  public String getLilyName() {
-    return format("%s.ly", lilyId);
-  }
-  
-  @Override
   public int getDifficulty() {
     int difficulty = modeInfo.getKeySignature().getNumberOfAccidentals();
     difficulty += modeInfo.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
@@ -102,16 +89,6 @@ public class ScaleModel implements WithDifficulty, WithAssets {
   
   public String getNotationKey() {
     return keySignature.notationKey();
-  }
-
-  @Override
-  public void writeAssets(Path dir) {
-    try {
-      Path path = dir.resolve(getLilyName());
-      Files.write(path, asList(lilyString));
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    }
   }
 
   public String getInstrument() {

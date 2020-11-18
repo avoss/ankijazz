@@ -1,8 +1,6 @@
 package de.jlab.scales.anki;
 
-import java.nio.file.Path;
-
-public class TestModel implements WithDifficulty, WithAssets {
+public class TestModel {
 
   private final String front = "A < B?";
   private final String back = "Yes";
@@ -20,12 +18,4 @@ public class TestModel implements WithDifficulty, WithAssets {
     return tags;
   }
   
-  @Override
-  public int getDifficulty() {
-    return 0;
-  }
-
-  @Override
-  public void writeAssets(Path directory) {
-  }
 }

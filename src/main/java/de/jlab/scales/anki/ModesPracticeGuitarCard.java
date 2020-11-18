@@ -4,12 +4,16 @@ import static java.lang.String.format;
 
 import de.jlab.scales.Utils;
 
-public class ModesPracticeGuitarCard extends MustacheCardWithModel<ScaleModel> {
+public class ModesPracticeGuitarCard extends LilyCard {
 
   private FretboardPosition position;
+  private int difficulty;
+  private ScaleModel model;
 
   public ModesPracticeGuitarCard(ScaleModel model, FretboardPosition position) {
-    super(model);
+    super(model.getLilyScale().toLily());
+    this.model = model;
+    this.difficulty = model.getDifficulty();
     this.position = position;
   }
   
@@ -25,6 +29,15 @@ public class ModesPracticeGuitarCard extends MustacheCardWithModel<ScaleModel> {
         format("Clef %s", model.getClef()),
         format("Instrument %s", model.getInstrument()),
         format("Position %s", position.getLabel()));
+  }
+
+  @Override
+  public int getDifficulty() {
+    return difficulty;
+  }
+  
+  public ScaleModel getModel() {
+    return model;
   }
   
 }

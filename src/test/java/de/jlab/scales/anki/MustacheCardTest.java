@@ -2,11 +2,14 @@ package de.jlab.scales.anki;
 
 import static org.junit.Assert.assertEquals;
 
+import java.nio.file.Path;
+
 import org.junit.Test;
 
 public class MustacheCardTest {
 
-  private Card card = new MustacheCardWithModel<TestModel>(new TestModel());
+  private Card card = new TestCard();
+
   
   @Test
   public void testToCsv() {
