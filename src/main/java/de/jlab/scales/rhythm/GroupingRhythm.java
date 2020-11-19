@@ -9,6 +9,10 @@ public class GroupingRhythm extends AbstractRhythm {
   private int length;
   private int position;
 
+  public GroupingRhythm(int length, List<Quarter> quarters) {
+    this(length, 0, quarters);
+  }
+  
   protected GroupingRhythm(int length, int position, List<Quarter> quarters) {
     super(quarters);
     this.length = length;
@@ -25,11 +29,11 @@ public class GroupingRhythm extends AbstractRhythm {
     return "Grouping";
   }
 
-  public GroupingRhythm transpose() {
-    Function<List<Quarter>, GroupingRhythm> factory = seqs -> {
-      return new GroupingRhythm(length, (position + 1) % length, seqs);
+  public GroupingRhythm transpose(int distance) {
+    Function<List<Quarter>, GroupingRhythm> factory = quarters -> {
+      return new GroupingRhythm(length, (position + distance + length) % length, quarters);
     };
-    return super.transpose(factory);
+    return super.transpose(distance, factory);
   }
 
 }

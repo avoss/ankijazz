@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.apache.commons.math3.fraction.Fraction;
 
@@ -26,18 +27,14 @@ public class Quarter {
     this(false, events);
   }
 
-  private Quarter(boolean tied, List<Event> events) {
+  public Quarter(boolean tied, List<Event> events) {
     this.tied = tied;
     // TODO use internalAdd instead
     this.events.addAll(events);
   }
   
   public Fraction getLength() {
-    Fraction result = Fraction.ZERO;
-    for (Event event: events) {
-      result = result.add(event.getLength());
-    }
-    return result;
+    return events.stream().map(Event::getLength).collect(Collectors.reducing(Fraction.ZERO, (a,b) -> a.add(b)));
   }
 
   public Quarter add(Event event) {

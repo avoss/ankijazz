@@ -9,7 +9,7 @@ public class RhythmDeckTest {
   @Test
   public void test() {
     Deck deck = new RhythmDeck();
-    deck.shuffle(0);
+    //deck.shuffle(0);
     deck.writeTo(Paths.get("build/anki"));
   }
 

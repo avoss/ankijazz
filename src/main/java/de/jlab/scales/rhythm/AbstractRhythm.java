@@ -3,11 +3,16 @@ package de.jlab.scales.rhythm;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toSet;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.function.BiFunction;
+import java.util.function.BinaryOperator;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import org.apache.commons.math3.fraction.Fraction;
 
 public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
   
@@ -38,6 +43,10 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
     return quarters;
   }
   
+  public int getLength() {
+    return quarters.stream().map(Quarter::getLength).collect(Collectors.reducing(Fraction.ZERO, (a,b) -> a.add(b))).intValue();
+  }
+  
   public boolean hasTies() {
     return Quarter.hasTies(quarters);
   }
@@ -51,12 +60,12 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
 
   public abstract String getTypeName();
 
-  public <T extends AbstractRhythm> T transpose(Function<List<Quarter>, T> factory) {
-    
-    // TODO Auto-generated method stub
-    return null;
+  public <T extends AbstractRhythm> T transpose(int distance, Function<List<Quarter>, T> factory) {
+    List<Quarter> transposed = new RhythmTransformer().transpose(getQuarters(), distance);
+    return factory.apply(transposed);
   }
-  
+
+
   @Override
   public String toString() {
     return quarters.stream().map(s -> s.toString()).collect(joining(" "));

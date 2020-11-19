@@ -71,4 +71,9 @@ public enum Event {
   public boolean isTriplet() {
     return false;
   }
+
+  public static Event find(boolean beat, int length) {
+    Fraction fractionLength = new Fraction(length);
+    return List.of(Event.values()).stream().filter(e -> e.isBeat() == beat && e.getLength().equals(fractionLength)).findAny().orElseThrow();
+  }
 }

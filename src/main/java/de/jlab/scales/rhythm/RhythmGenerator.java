@@ -114,11 +114,11 @@ public class RhythmGenerator {
   
   public List<AbstractRhythm> generate() {
     List<AbstractRhythm> result = new ArrayList<>();
-    result.addAll(basicRhythms(new NoTies()));
-    result.addAll(basicRhythms(new AllTies()));
-    result.addAll(standardRhythms());
-//    result.addAll(groupingRhythms());
-    result.addAll(randomRhythms(result.size()));
+//    result.addAll(basicRhythms(new NoTies()));
+//    result.addAll(basicRhythms(new AllTies()));
+//    result.addAll(standardRhythms());
+    result.addAll(groupingRhythms());
+//    result.addAll(randomRhythms(result.size()));
     return result;
   }
 
@@ -127,13 +127,13 @@ public class RhythmGenerator {
     List<AbstractRhythm> result = new ArrayList<>();
     Quarter q1 = q(b3, b1).tie();
     Quarter q2 = q(b2, b2).tie();
-    Quarter q3 = q(b1, b3).tie();
+    Quarter q3 = q(b1, b3);
     Quarter q4 = q(b3, b1);
     
-    GroupingRhythm rhythm = new GroupingRhythm(0, 0, repeat(4, q1, q2, q3, q4));
-    for (int i = 0; i < 3; i++) {
+    GroupingRhythm rhythm = new GroupingRhythm(3, repeat(4, q1, q2, q3, q4));
+    for (int i = 0; i < 16; i++) {
       result.add(rhythm);
-      rhythm = rhythm.transpose();
+      rhythm = rhythm.transpose(1);
     }
     return result;
   }
