@@ -19,8 +19,6 @@ import java.util.List;
 import java.util.Set;
 
 import de.jlab.scales.anki.Deck;
-import de.jlab.scales.rhythm.Event;
-import de.jlab.scales.rhythm.Quarter;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 

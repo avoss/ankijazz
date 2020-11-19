@@ -5,13 +5,11 @@ import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.r2;
 import static de.jlab.scales.rhythm.Quarter.q;
-import static java.util.Collections.singleton;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
 import de.jlab.scales.rhythm.AbstractRhythm;
 import de.jlab.scales.rhythm.Quarter;
 import de.jlab.scales.rhythm.StandardRhythm;

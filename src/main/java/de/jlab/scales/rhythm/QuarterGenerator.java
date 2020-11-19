@@ -2,7 +2,9 @@ package de.jlab.scales.rhythm;
 
 import static java.util.Arrays.asList;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
 
@@ -15,7 +17,7 @@ public class QuarterGenerator {
 
   private final Fraction ticksPerQuarter;
   private SetMultimap<QuarterCategory,Quarter> result = LinkedHashMultimap.create();
-  private Collection<Event> events;
+  private List<Event> events = new ArrayList<>();
   private final Predicate<Quarter> filter;
 
   public QuarterGenerator() {
@@ -25,7 +27,7 @@ public class QuarterGenerator {
   public QuarterGenerator(int ticksPerQuarter, Collection<Event> events, Predicate<Quarter> filter) {
     this.filter = filter;
     this.ticksPerQuarter = new Fraction(ticksPerQuarter, 1);
-    this.events = events;
+    this.events.addAll(events);
     recurse(new Quarter());
   }
 

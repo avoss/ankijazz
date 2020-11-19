@@ -1,12 +1,11 @@
 package de.jlab.scales.rhythm;
 
-import static de.jlab.scales.rhythm.Event.*;
+import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Quarter.q;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
-import java.util.Set;
 
 import org.junit.Test;
 

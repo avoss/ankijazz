@@ -4,7 +4,6 @@ import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.r2;
 import static de.jlab.scales.rhythm.Quarter.q;
-import static java.util.Collections.singleton;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;

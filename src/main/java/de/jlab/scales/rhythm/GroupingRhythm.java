@@ -1,8 +1,6 @@
 package de.jlab.scales.rhythm;
 
 import java.util.List;
-import java.util.Set;
-import java.util.function.BiFunction;
 import java.util.function.Function;
 
 public class GroupingRhythm extends AbstractRhythm {

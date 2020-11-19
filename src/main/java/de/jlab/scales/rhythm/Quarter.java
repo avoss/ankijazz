@@ -1,5 +1,6 @@
 package de.jlab.scales.rhythm;
 
+import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;
@@ -13,10 +14,12 @@ import org.apache.commons.math3.fraction.Fraction;
 @lombok.EqualsAndHashCode
 public class Quarter {
   
-  private List<Event> events = new ArrayList<>();
-  private boolean tied;
+  private final List<Event> events = new ArrayList<>();
+  private final boolean tied;
+  private final int difficulty;
   
   public Quarter() {
+    this(emptyList());
   }
 
   public Quarter(Event ... events) {
@@ -29,8 +32,8 @@ public class Quarter {
 
   public Quarter(boolean tied, List<Event> events) {
     this.tied = tied;
-    // TODO use internalAdd instead
-    this.events.addAll(events);
+    events.stream().forEach(this::internalAdd);
+    this.difficulty = computeDifficulty();
   }
   
   public Fraction getLength() {
@@ -82,22 +85,32 @@ public class Quarter {
   }
 
   public int getDifficulty() {
-    Fraction time = Fraction.ZERO;
-    int difficulty = 0;
-    for (Event e : events) {
-      difficulty += difficulty(time);
-      difficulty += e.isBeat() ? 0 : 1;  // syncopation is more difficult than a beat
-      time = time.add(e.getLength());
-    }
     return difficulty;
   }
+  
+  private int computeDifficulty() {
+    Fraction time = Fraction.ZERO;
+    double difficulty = 0;
+    for (Event e : events) {
+      difficulty += difficulty(time) * difficulty(e);
+      time = time.add(e.getLength());
+    }
+    return (int)(difficulty + 0.5);
+  }
 
-  int difficulty(Fraction time) {
+  private double difficulty(Event e) {
+    return e.isBeat() ? 1 : 1.5;
+  }
+
+  private double difficulty(Fraction time) {
     if (isDividable(time, 4)) {
       return 1;
     }
     if (isDividable(time, 2)) {
       return 2;
+    }
+    if (isDividable(time, 3)) {
+      return 8;
     }
     return 3;
   }
@@ -131,10 +144,16 @@ public class Quarter {
   public Quarter tie() {
     return new Quarter(true, events);
   }
-
-  public static boolean hasTies(Collection<? extends Quarter> sequences) {
-    return sequences.stream().filter(Quarter::isTied).findAny().isPresent();
+  
+  public boolean isSyncopated() {
+    int numberOfRests = (int) events.stream().filter(e -> !e.isBeat()).count();
+    return numberOfRests == 1 && !startsWithBeat();
   }
+
+  public static boolean hasTies(Collection<? extends Quarter> quarters) {
+    return quarters.stream().filter(Quarter::isTied).findAny().isPresent();
+  }
+
   /**
    * return events of a quarter note typically
    */

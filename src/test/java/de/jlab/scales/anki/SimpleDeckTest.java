@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-public class DeckTest {
+public class SimpleDeckTest {
   
   @Test
   public void testWriteCsv() throws IOException {
@@ -19,7 +19,7 @@ public class DeckTest {
     deck.add(3,  "E", "F", "T3");
     deck.add(2,  "C", "D", "T2");
     deck.shuffle(0);
-    Path dir = Paths.get("build");
+    Path dir = Paths.get("build/SimpleDeckTest");
     deck.writeTo(dir);
     
     String actual = Files.readAllLines(dir.resolve("SimpleDeck.txt")).stream().collect(Collectors.joining("\n"));

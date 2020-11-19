@@ -3,14 +3,10 @@ package de.jlab.scales.rhythm;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toSet;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
-import java.util.function.BiFunction;
-import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.apache.commons.math3.fraction.Fraction;
 
@@ -27,7 +23,8 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
 
   public int computeDifficulty() {
     double difficulty = getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty() * (q.isTied() ? 2 : 1)).sum();
-    difficulty += 2 * getUniqueQuarters().stream().map(q -> q.isTriplet()).count();
+    difficulty *= getUniqueQuarters().stream().count() % 2 == 0 ? 1.0 : 2.0;
+    difficulty *= 1 +  getUniqueQuarters().stream().map(q -> q.isTriplet()).count();
     return (int) difficulty;
   }
   

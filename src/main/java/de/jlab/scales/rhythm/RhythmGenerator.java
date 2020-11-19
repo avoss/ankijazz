@@ -6,19 +6,16 @@ import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.b3;
 import static de.jlab.scales.rhythm.Event.r1;
 import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Event.r4;
+import static de.jlab.scales.rhythm.Event.*;
 import static de.jlab.scales.rhythm.Quarter.q;
-import static java.util.Collections.emptySet;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -114,12 +111,38 @@ public class RhythmGenerator {
   
   public List<AbstractRhythm> generate() {
     List<AbstractRhythm> result = new ArrayList<>();
-    result.addAll(basicRhythms(new NoTies()));
-    result.addAll(basicRhythms(new AllTies()));
+    result.addAll(basicRhythms());
+//    result.addAll(basicRhythms(new NoTies()));
+//    result.addAll(basicRhythms(new AllTies()));
     result.addAll(standardRhythms());
     result.addAll(group3Rhythms());
     result.addAll(group5Rhythms());
     result.addAll(randomRhythms(result.size()));
+    return result;
+  }
+
+
+  private Collection<? extends AbstractRhythm> basicRhythms() {
+    List<AbstractRhythm> result = new ArrayList<>();
+    result.add(new BasicRhythm(repeat(16, q(b2, b2))));
+    result.add(new BasicRhythm(repeat(16, q(b1, b1, b1, b1))));
+    result.add(new BasicRhythm(repeat(16, q(b1, b1, b2))));
+    result.add(new BasicRhythm(repeat(16, q(b2, b1, b1))));
+    result.add(new BasicRhythm(repeat(16, q(b1, b2, b1))));
+    result.add(new BasicRhythm(repeat(16, q(b1, b3))));
+    result.add(new BasicRhythm(repeat(16, q(b3, b1))));
+    result.add(new BasicRhythm(repeat(16, q(bt, bt, bt))));
+    
+    result.add(new BasicRhythm(repeat(16, q(r2, b2))));
+    result.add(new BasicRhythm(repeat(16, q(r1, b1, b1, b1))));
+    result.add(new BasicRhythm(repeat(16, q(r1, b1, b2))));
+    result.add(new BasicRhythm(repeat(16, q(r2, b1, b1))));
+    result.add(new BasicRhythm(repeat(16, q(r1, b2, b1))));
+    result.add(new BasicRhythm(repeat(16, q(r1, b3))));
+    result.add(new BasicRhythm(repeat(16, q(r3, b1))));
+    result.add(new BasicRhythm(repeat(16, q(rt, bt, bt))));
+
+    result.add(new StandardRhythm("Shuffle", repeat(16, q(bt, rt, bt))));
     return result;
   }
 
@@ -155,8 +178,9 @@ public class RhythmGenerator {
     Iterator<QuarterCategory> categoryIterator = Utils.randomLoopIterator(quarterMap.keySet());
     int numberOfRhythmsToCreate = numberOfRhythms - rhythmsSoFar;
     for (int i = 0; i < numberOfRhythmsToCreate; i++) {
-      double difficulty = (double)i / (double)numberOfRhythmsToCreate;
-      int numberOfCategories = 2 + (int)((numberOfQuarters/2 - 1) * difficulty);
+      double minCategories = 4;
+      double maxCategories = 9;
+      int numberOfCategories = (int)(minCategories + (maxCategories - minCategories) * i / numberOfRhythmsToCreate);
       Collection<QuarterCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
       List<Quarter> quarters = chooseQuarters(categories);
       Optional<RandomRhythm> optionalRhythm = randomTies.apply(quarters);

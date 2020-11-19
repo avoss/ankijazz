@@ -1,7 +1,6 @@
 package de.jlab.scales.rhythm;
 
 import java.util.List;
-import java.util.Set;
 
 public class RandomRhythm extends AbstractRhythm {
 
