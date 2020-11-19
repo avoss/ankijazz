@@ -31,7 +31,7 @@ public class GroupingRhythm extends AbstractRhythm {
 
   public GroupingRhythm transpose(int distance) {
     Function<List<Quarter>, GroupingRhythm> factory = quarters -> {
-      return new GroupingRhythm(length, (position + distance + length) % length, quarters);
+      return new GroupingRhythm(length, (position + getLength() + distance) % getLength(), quarters);
     };
     return super.transpose(distance, factory);
   }

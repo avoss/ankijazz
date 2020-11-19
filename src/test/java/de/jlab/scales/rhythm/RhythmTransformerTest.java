@@ -24,6 +24,19 @@ public class RhythmTransformerTest {
   }
   
   @Test
+  public void noExtraBeatsShouldBeCreated() {
+    assertTransform(2, "r2b1b1", b1, b3);
+    assertTransform(1, "r3b1", r2, b2);
+    assertTransform(1, "r1b2b1", b2, b2);
+  }
+  
+  private void assertTransform(int distance, String expected, Event ... events) {
+    RhythmTransformer t = new RhythmTransformer();
+    List<Quarter> actual = t.transpose(List.of(q(events)), distance);
+    assertEquals(expected, actual.get(0).toString());
+  }
+
+  @Test
   public void testDisassembleAssemble() {
     RhythmTransformer transformer = new RhythmTransformer();
     List<Quarter> origin = origin();
@@ -38,18 +51,6 @@ public class RhythmTransformerTest {
     assertEquals("[b1b2b1 ~, b2b2, b3b1 ~, b1b1r2]", transformer.assemble(ticks, 4).toString());
   }
 
-  @Test
-  public void testMultipleDistances() {
-    RhythmTransformer transformer = new RhythmTransformer();
-    List<Quarter> origin = origin();
-    for (int i = 0; i < origin.size(); i++) {
-      List<Quarter> transposed = transformer.transpose(origin, i);
-      transposed = transformer.transpose(transposed,  -i);
-      assertFalse(origin.get(transposed.size()-1).isTied());
-      assertEquals(origin, transposed);
-     }
-  }
-  
   private String toString(List<Tick> ticks) {
     StringBuilder sb = new StringBuilder();
     for (Tick tick : ticks) {

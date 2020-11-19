@@ -117,27 +117,38 @@ public class RhythmGenerator {
 //    result.addAll(basicRhythms(new NoTies()));
 //    result.addAll(basicRhythms(new AllTies()));
 //    result.addAll(standardRhythms());
-    result.addAll(groupingRhythms());
+//    result.addAll(group3Rhythms());
+    result.addAll(group5Rhythms());
 //    result.addAll(randomRhythms(result.size()));
     return result;
   }
 
 
-  private Collection<? extends AbstractRhythm> groupingRhythms() {
-    List<AbstractRhythm> result = new ArrayList<>();
+  private Collection<? extends AbstractRhythm> group3Rhythms() {
     Quarter q1 = q(b3, b1).tie();
     Quarter q2 = q(b2, b2).tie();
     Quarter q3 = q(b1, b3);
     Quarter q4 = q(b3, b1);
-    
-    GroupingRhythm rhythm = new GroupingRhythm(3, repeat(4, q1, q2, q3, q4));
-    for (int i = 0; i < 16; i++) {
-      result.add(rhythm);
-      rhythm = rhythm.transpose(1);
+    return transpose(new GroupingRhythm(3, repeat(4, q1, q2, q3, q4)));
+  }
+
+  private Collection<? extends AbstractRhythm> group5Rhythms() {
+    Quarter q1 = q(b2, b2).tie();
+    Quarter q2 = q(b1, b2, b1).tie();
+    Quarter q3 = q(b2, b2);
+    Quarter q4 = q(b3, r1);
+    return transpose(new GroupingRhythm(5, repeat(4, q1, q2, q3, q4)));
+  }
+
+  private Collection<? extends AbstractRhythm> transpose(GroupingRhythm rhythm) {
+    List<AbstractRhythm> result = new ArrayList<>();
+    result.add(rhythm);
+    for (int i = 1; i < 16; i++) {
+      result.add(rhythm.transpose(i));
     }
     return result;
   }
-
+  
   private Collection<? extends AbstractRhythm> randomRhythms(int rhythmsSoFar) {
     List<AbstractRhythm> result = new ArrayList<>();
     RandomTies randomTies = new RandomTies();

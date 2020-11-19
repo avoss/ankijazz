@@ -27,7 +27,30 @@ public class RhythmTransformer {
     int ticksPerQuarter = ticksPerQuarter(quarters);
     List<Tick> ticks = disassemble(quarters);
     Collections.rotate(ticks, distance);
+    removeExtraBeats(ticks);
     return assemble(ticks, ticksPerQuarter);
+  }
+
+  private void removeExtraBeats(List<Tick> ticks) {
+    Tick last = ticks.get(ticks.size()-1);
+    if (!last.isTied()) {
+      return;
+    }
+    last.setTied(false);
+    
+    Iterator<Tick> iter = ticks.iterator();
+    Tick prev = iter.next();
+    while (iter.hasNext()) {
+      Tick next = iter.next();
+      prev.setBeat(false);
+      if (!prev.isTied()) {
+        if (!next.isBeat()) {
+          prev.setTied(true);
+        }
+        return;
+      }
+      prev = next;
+    }
   }
 
   List<Quarter> assemble(List<Tick> ticks, int ticksPerQuarter) {
