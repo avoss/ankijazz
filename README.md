@@ -12,6 +12,9 @@
 
 Title:
 practice *efficiently* scales and more
+learn jazz efficiently
+
+website shows preview only (json + Angular), not full deck
 
 ## Rhythm
 12/8 Bembe Bell Pattern, 6/8 Clave, 

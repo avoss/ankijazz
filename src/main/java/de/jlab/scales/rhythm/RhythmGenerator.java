@@ -30,7 +30,7 @@ import de.jlab.scales.Utils;
 public class RhythmGenerator {
 
   private final Map<QuarterCategory, Collection<Quarter>> quarterMap;
-  private final int numberOfRhythms = 300;
+  private final int numberOfRhythms = 200;
   private final int numberOfQuarters = 16;
 
   public RhythmGenerator() {
@@ -114,12 +114,12 @@ public class RhythmGenerator {
   
   public List<AbstractRhythm> generate() {
     List<AbstractRhythm> result = new ArrayList<>();
-//    result.addAll(basicRhythms(new NoTies()));
-//    result.addAll(basicRhythms(new AllTies()));
-//    result.addAll(standardRhythms());
-//    result.addAll(group3Rhythms());
+    result.addAll(basicRhythms(new NoTies()));
+    result.addAll(basicRhythms(new AllTies()));
+    result.addAll(standardRhythms());
+    result.addAll(group3Rhythms());
     result.addAll(group5Rhythms());
-//    result.addAll(randomRhythms(result.size()));
+    result.addAll(randomRhythms(result.size()));
     return result;
   }
 
@@ -153,9 +153,10 @@ public class RhythmGenerator {
     List<AbstractRhythm> result = new ArrayList<>();
     RandomTies randomTies = new RandomTies();
     Iterator<QuarterCategory> categoryIterator = Utils.randomLoopIterator(quarterMap.keySet());
-    int numberOfRandomRhythms = numberOfRhythms - rhythmsSoFar;
-    for (int i = 0; i < numberOfRandomRhythms; i++) {
-      int numberOfCategories = 2 + (int)((double)numberOfQuarters * (double)i / (double)numberOfRandomRhythms);
+    int numberOfRhythmsToCreate = numberOfRhythms - rhythmsSoFar;
+    for (int i = 0; i < numberOfRhythmsToCreate; i++) {
+      double difficulty = (double)i / (double)numberOfRhythmsToCreate;
+      int numberOfCategories = 2 + (int)((numberOfQuarters/2 - 1) * difficulty);
       Collection<QuarterCategory> categories = chooseCategories(numberOfCategories, categoryIterator);
       List<Quarter> quarters = chooseQuarters(categories);
       Optional<RandomRhythm> optionalRhythm = randomTies.apply(quarters);

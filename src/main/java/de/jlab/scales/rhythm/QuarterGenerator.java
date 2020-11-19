@@ -29,7 +29,6 @@ public class QuarterGenerator {
     recurse(new Quarter());
   }
 
-
   private void recurse(Quarter current) {
     if (current.getLength().equals(ticksPerQuarter)) {
       if (filter.test(current)) {
