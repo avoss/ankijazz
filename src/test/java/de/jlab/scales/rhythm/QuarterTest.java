@@ -57,10 +57,10 @@ public class QuarterTest {
     f = f.divide(4);
     assertEquals(1, f.getDenominator());
     assertDifficulty(2, r4);
-    assertDifficulty(3, b2, b2);
-    assertDifficulty(4, b1, b3);
-    assertDifficulty(8, b1, b2, r1);
-    assertDifficulty(7, bt, bt, bt);
+    assertDifficulty(9, b2, b2);
+    assertDifficulty(12, b1, b3);
+    assertDifficulty(79, b1, b2, r1);
+    assertDifficulty(32, bt, bt, bt);
   }
   
   private void assertDifficulty(int expected, Event ... events) {

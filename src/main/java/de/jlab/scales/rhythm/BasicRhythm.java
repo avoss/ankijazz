@@ -4,16 +4,29 @@ import java.util.List;
 
 public class BasicRhythm extends AbstractRhythm {
 
-  private final String title;
-  private final String type;
-  private final boolean syncopated;
-  
-  public BasicRhythm(List<Quarter> quarters) {
-    super(quarters);
-    this.syncopated = quarters.stream().filter(Quarter::isSyncopated).findAny().isPresent();
-    this.title = syncopated ? "Syncopated Building Blocks" : "Basic Building Blocks";
-    this.type = syncopated ? "Syncopated" : "Basic";
+  public enum Type {
+    BASIC("Basic"),
+    SYNCOPATED("Syncopated"),
+    TIED("Tied");
+
+    private String label;
+
+    Type(String label) {
+      this.label = label;
+    }
     
+    public String getLabel() {
+      return label;
+    }
+  }
+  
+  private final String title;
+  private final String typeName;
+  
+  public BasicRhythm(Type type, List<Quarter> quarters) {
+    super(quarters);
+    this.title = String.format("%s Building Blocks", type.getLabel());
+    this.typeName = type.getLabel();
   }
 
   @Override
@@ -23,6 +36,6 @@ public class BasicRhythm extends AbstractRhythm {
 
   @Override
   public String getTypeName() {
-    return type;
+    return typeName;
   }
 }

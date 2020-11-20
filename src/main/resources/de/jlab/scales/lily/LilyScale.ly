@@ -28,7 +28,8 @@ midiChord = \relative e' { ${midiChord} }
 	  }
   >>
   \layout {
-    indent = 0.0 
+    indent = 0.0
+    \context { \Score \omit BarNumber }
   }
 }
 

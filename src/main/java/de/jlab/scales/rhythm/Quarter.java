@@ -99,7 +99,8 @@ public class Quarter {
   }
 
   private double difficulty(Event e) {
-    return e.isBeat() ? 1 : 1.5;
+    double factor = e.isBeat() ? 1.5 : 2;
+    return factor * getLength().divide(e.getLength()).doubleValue();
   }
 
   private double difficulty(Fraction time) {

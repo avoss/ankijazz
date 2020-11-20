@@ -6,6 +6,9 @@ import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.b3;
 import static de.jlab.scales.rhythm.Event.r1;
 import static de.jlab.scales.rhythm.Event.r2;
+import static de.jlab.scales.rhythm.BasicRhythm.Type.BASIC;
+import static de.jlab.scales.rhythm.BasicRhythm.Type.SYNCOPATED;
+import static de.jlab.scales.rhythm.BasicRhythm.Type.TIED;
 import static de.jlab.scales.rhythm.Event.*;
 import static de.jlab.scales.rhythm.Quarter.q;
 import static java.util.stream.Collectors.toList;
@@ -27,7 +30,7 @@ import de.jlab.scales.Utils;
 public class RhythmGenerator {
 
   private final Map<QuarterCategory, Collection<Quarter>> quarterMap;
-  private final int numberOfRhythms = 200;
+  private final int numberOfRhythms = 150;
   private final int numberOfQuarters = 16;
 
   public RhythmGenerator() {
@@ -124,24 +127,33 @@ public class RhythmGenerator {
 
   private Collection<? extends AbstractRhythm> basicRhythms() {
     List<AbstractRhythm> result = new ArrayList<>();
-    result.add(new BasicRhythm(repeat(16, q(b2, b2))));
-    result.add(new BasicRhythm(repeat(16, q(b1, b1, b1, b1))));
-    result.add(new BasicRhythm(repeat(16, q(b1, b1, b2))));
-    result.add(new BasicRhythm(repeat(16, q(b2, b1, b1))));
-    result.add(new BasicRhythm(repeat(16, q(b1, b2, b1))));
-    result.add(new BasicRhythm(repeat(16, q(b1, b3))));
-    result.add(new BasicRhythm(repeat(16, q(b3, b1))));
-    result.add(new BasicRhythm(repeat(16, q(bt, bt, bt))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b2, b2))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b1, b1, b1, b1))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b1, b1, b2))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b2, b1, b1))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b1, b2, b1))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b1, b3))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(b3, b1))));
+    result.add(new BasicRhythm(BASIC, repeat(16, q(bt, bt, bt))));
     
-    result.add(new BasicRhythm(repeat(16, q(r2, b2))));
-    result.add(new BasicRhythm(repeat(16, q(r1, b1, b1, b1))));
-    result.add(new BasicRhythm(repeat(16, q(r1, b1, b2))));
-    result.add(new BasicRhythm(repeat(16, q(r2, b1, b1))));
-    result.add(new BasicRhythm(repeat(16, q(r1, b2, b1))));
-    result.add(new BasicRhythm(repeat(16, q(r1, b3))));
-    result.add(new BasicRhythm(repeat(16, q(r3, b1))));
-    result.add(new BasicRhythm(repeat(16, q(rt, bt, bt))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r2, b2))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r1, b1, b1, b1))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r1, b1, b2))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r2, b1, b1))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r1, b2, b1))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r1, b3))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(r3, b1))));
+    result.add(new BasicRhythm(SYNCOPATED, repeat(16, q(rt, bt, bt))));
 
+    result.add(new BasicRhythm(TIED, repeat(16, q(b2, b2).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(b1, b1, b1, b1).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(b1, b1, b2).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(b2, b1, b1).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(b1, b2, b1).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(b1, b3).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(b3, b1).tie())));
+    result.add(new BasicRhythm(TIED, repeat(16, q(bt, bt, bt).tie())));
+    
     result.add(new StandardRhythm("Shuffle", repeat(16, q(bt, rt, bt))));
     return result;
   }

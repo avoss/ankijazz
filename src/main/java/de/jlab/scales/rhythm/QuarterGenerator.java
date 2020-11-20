@@ -57,7 +57,7 @@ public class QuarterGenerator {
     for (QuarterCategory category : map.keySet()) {
       sb.append("Category: ").append(category.getBeatPositions()).append("\n");
       for (Quarter quarter : map.get(category)) {
-        sb.append(String.format("  %3d %s\n", quarter.getDifficulty(), quarter.getEvents()));
+        sb.append(String.format("  %s\n", quarter.getEvents()));
       }
     }
     return sb.toString();

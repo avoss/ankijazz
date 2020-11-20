@@ -10,6 +10,13 @@
 
 # Anki
 
+                       AnkiJazz
+                       
+                     Practice Jazz
+                  (and other styles)
+                      EFFICIENTLY
+                      with Anki
+
 Title:
 practice *efficiently* scales and more
 learn jazz efficiently

@@ -10,7 +10,7 @@
 }
 
 
-scaleNotes = \relative e' { ${scaleNotes} }
+scaleNotes = \relative e' { r16 a8. a8. a16 a8. a16 ~ a8 a8 ~ a16 a8. a8. a16 a8. a16 ~ a8 a8 ~ a16 a8. a8. a16 a8. a16 ~ a8 a8 ~ a16 a8. a8. a16 a8. a16 ~ a8 a8 }
 
 midiChord = \relative e' { <g c e a>1 <fs' c e a>1 }
 bassNotes = \relative e, { a2. a4 d2. d4 }
@@ -28,7 +28,7 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
     }
   >>
   \layout {
-    indent = 0.0
+    indent = 0.0 
     \context { \Score \omit BarNumber }
   }
 }
