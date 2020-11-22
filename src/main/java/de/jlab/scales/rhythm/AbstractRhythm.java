@@ -21,7 +21,7 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
     this.difficulty = computeDifficulty();
   }
 
-  public int computeDifficulty() {
+  private int computeDifficulty() {
     double difficulty = getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty() * (q.isTied() ? 2 : 1)).sum();
     difficulty *= getUniqueQuarters().stream().count() % 2 == 0 ? 1.0 : 2.0;
     difficulty *= 1 +  getUniqueQuarters().stream().map(q -> q.isTriplet()).count();

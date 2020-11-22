@@ -2,8 +2,8 @@ package de.jlab.scales.anki;
 
 import static java.lang.String.format;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.lily.LilyRhythm;
@@ -19,9 +19,9 @@ public class RhythmCard extends LilyCard {
   }
   
   public String getTags() {
-    List<String> tags = new ArrayList<>();
+    Set<String> tags = new LinkedHashSet<>();
     if (rhythm.hasTies()) {
-      tags.add("Rhythm with ties");
+      tags.add("Rhythm Tied");
     }
     tags.add(format("Rhythm %d", rhythm.getUniqueQuarters().size()));
     tags.add(format("Rhythm %s", rhythm.getTypeName()));    

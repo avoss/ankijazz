@@ -74,7 +74,7 @@ public final class Utils {
     return tags(List.of(tags));
   }
   
-  public static String tags(List<String> tags) {
+  public static String tags(Collection<String> tags) {
     return tags.stream().map(s -> s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
   }
   

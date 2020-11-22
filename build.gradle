@@ -39,9 +39,7 @@ jar {
 
 task copyAssets(type:Copy) {
   from ('src/assets') {
-    include '*.png'
-    include '*.mp3'
-    include '*.ly'
+    include ('*.png', '*.mp3', '*.ly')
   } 
   into 'build/anki'
 }
