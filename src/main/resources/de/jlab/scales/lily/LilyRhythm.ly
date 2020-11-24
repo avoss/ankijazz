@@ -66,6 +66,6 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
     }
   >>
   \midi {
-    \tempo 4 = 70
+    \tempo 4 = ${bpm}
   }
 }

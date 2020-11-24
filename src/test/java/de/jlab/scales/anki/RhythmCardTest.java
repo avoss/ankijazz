@@ -18,7 +18,7 @@ public class RhythmCardTest {
 
   @Test
   public void testRhythmCard() {
-    Card card = new RhythmCard(rhythm());
+    Card card = new RhythmCard(rhythm(), 70);
     assertFileContentMatches(card.getCsv(), getClass(), "RhythmCardTest.csv.txt");
     assertFileContentMatches(card.getHtml(), getClass(), "RhythmCardTest.html.txt");
   }

@@ -1,15 +1,18 @@
 package de.jlab.scales.rhythm;
 
 import static de.jlab.scales.Utils.repeat;
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.b3;
-import static de.jlab.scales.rhythm.Event.r1;
-import static de.jlab.scales.rhythm.Event.r2;
 import static de.jlab.scales.rhythm.BasicRhythm.Type.BASIC;
 import static de.jlab.scales.rhythm.BasicRhythm.Type.SYNCOPATED;
 import static de.jlab.scales.rhythm.BasicRhythm.Type.TIED;
-import static de.jlab.scales.rhythm.Event.*;
+import static de.jlab.scales.rhythm.Event.b1;
+import static de.jlab.scales.rhythm.Event.b2;
+import static de.jlab.scales.rhythm.Event.b3;
+import static de.jlab.scales.rhythm.Event.bt;
+import static de.jlab.scales.rhythm.Event.r1;
+import static de.jlab.scales.rhythm.Event.r2;
+import static de.jlab.scales.rhythm.Event.r3;
+import static de.jlab.scales.rhythm.Event.r4;
+import static de.jlab.scales.rhythm.Event.rt;
 import static de.jlab.scales.rhythm.Quarter.q;
 import static java.util.stream.Collectors.toList;
 
@@ -115,8 +118,8 @@ public class RhythmGenerator {
   public List<AbstractRhythm> generate() {
     List<AbstractRhythm> result = new ArrayList<>();
     result.addAll(basicRhythms());
-//    result.addAll(basicRhythms(new NoTies()));
-//    result.addAll(basicRhythms(new AllTies()));
+//    result.addAll(basicRhythms(new NoTies())); // ?? 
+//    result.addAll(basicRhythms(new AllTies())); // ??
     result.addAll(standardRhythms());
     result.addAll(group3Rhythms());
     result.addAll(group5Rhythms());
@@ -154,7 +157,6 @@ public class RhythmGenerator {
     result.add(new BasicRhythm(TIED, repeat(16, q(b3, b1).tie())));
     result.add(new BasicRhythm(TIED, repeat(16, q(bt, bt, bt).tie())));
     
-    result.add(new StandardRhythm("Shuffle", repeat(16, q(bt, rt, bt))));
     return result;
   }
 
@@ -205,6 +207,7 @@ public class RhythmGenerator {
 
   private Collection<? extends AbstractRhythm> standardRhythms() {
     List<AbstractRhythm> result = new ArrayList<>();
+    result.add(shuffle());
     result.addAll(claves());
     result.add(charleston());
     result.addAll(bossas());
@@ -213,6 +216,10 @@ public class RhythmGenerator {
     result.addAll(montunos());
     result.addAll(cascara());
     return result;
+  }
+
+  private StandardRhythm shuffle() {
+    return new StandardRhythm("Shuffle", repeat(16, q(bt, rt, bt)));
   }
   
   private Collection<? extends AbstractRhythm> cascara() {

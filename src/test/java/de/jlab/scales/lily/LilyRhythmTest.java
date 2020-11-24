@@ -17,7 +17,7 @@ public class LilyRhythmTest {
 
   @Test
   public void test() {
-    LilyRhythm lily = new LilyRhythm(rhythm());
+    LilyRhythm lily = new LilyRhythm(rhythm(), 70);
     assertThat(lily.toLily()).contains("r8 a8 ~ a16 a16 r8");
   }
 

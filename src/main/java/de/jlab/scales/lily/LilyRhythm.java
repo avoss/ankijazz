@@ -14,13 +14,22 @@ import de.jlab.scales.rhythm.Quarter;
 public class LilyRhythm {
   
   private AbstractRhythm rhythm;
+  private int bpm;
 
-  public LilyRhythm(AbstractRhythm rhythm) {
+  public LilyRhythm(AbstractRhythm rhythm, int bpm) {
     this.rhythm = rhythm;
+    this.bpm = bpm;
   }
 
   public String toLily() {
-    return readTemplate().replace("${scaleNotes}", scaleNotes());
+    return readTemplate()
+        .replace("${scaleNotes}", scaleNotes())
+        .replace("${bpm}", Integer.toString(getBpm()))
+    ;
+  }
+
+  public int getBpm() {
+    return bpm;
   }
 
   private CharSequence scaleNotes() {

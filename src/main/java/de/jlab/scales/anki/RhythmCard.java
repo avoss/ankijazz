@@ -11,11 +11,13 @@ import de.jlab.scales.rhythm.AbstractRhythm;
 
 public class RhythmCard extends LilyCard {
 
-  private AbstractRhythm rhythm;
+  private final AbstractRhythm rhythm;
+  private final int bpm;
 
-  public RhythmCard(AbstractRhythm rhythm) {
-    super(new LilyRhythm(rhythm).toLily());
+  public RhythmCard(AbstractRhythm rhythm, int bpm) {
+    super(new LilyRhythm(rhythm, bpm).toLily());
     this.rhythm = rhythm;
+    this.bpm = bpm;
   }
   
   public String getTags() {
@@ -34,7 +36,7 @@ public class RhythmCard extends LilyCard {
   }
 
   public String getMetronomeMp3Name() {
-    return "AnkiJazz-Metronome70.mp3";
+    return String.format("AnkiJazz-Metronome%d.mp3", bpm);
   }
   
   public String getTitle() {
