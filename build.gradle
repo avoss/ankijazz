@@ -48,4 +48,21 @@ task copyAssets(type:Copy) {
 
 build.finalizedBy(copyAssets)
 
+task deleteAnki {
+  delete "${ankiProfile}"
+}
 
+task initAnki(type: Copy) {
+  dependsOn copyAssets
+  dependsOn deleteAnki
+  from zipTree("src/assets/build.zip")
+  into "${ankiProfile}"
+}
+
+task copyAnki(type: Copy) {
+  dependsOn initAnki
+  from ("build/anki") {
+    include ('*.png', '*.mp3')
+  }
+  into "${ankiProfile}/collection.media"
+}
