@@ -23,6 +23,7 @@ learn jazz efficiently
 
 website shows preview only (json + Angular), not full deck
 
+
 ## Rhythm
 12/8 Bembe Bell Pattern, 6/8 Clave, 
 transpose (3, 5 Marcus)
@@ -39,7 +40,18 @@ Pitch_squash_engraver = Guitar strumming notation
 
 **Schnipsel anzeigen** also aus welchen Bausteinen besteht ein Rhythmus.
 
+## Business - buymeacoffee.com
+
+
+Create a robot liking on ankiweb ...?
+youtube video?
+mturk?
+
 ## Decks
+
+Money
+- "Advanced Pentatonics"
+
 
 Text
 - learn enharmonics Ab -> G# etc
@@ -54,16 +66,12 @@ Text
 Lily
 - intervals
 - chords
-- notation of rhythms
-- scales
-- bass clef?
 
 Sheets
 - know your fretboard: single note, natural, flat, sharps, all keys. 
 - triads in 251 progressions
 - 7th chords
 - melody snippets for site reading training
-
 
 ## Anki Scheduler:
 - preferences -> scheduling: use new 2.1 scheduler and select "show new cards after review" to make sure repetition is completed even if you don't have time for new cards on a certain day
