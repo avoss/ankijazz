@@ -32,7 +32,7 @@ public class ModesTheoryDeck extends AbstractDeck {
 
   private void addEnharmonics() {
     final String pattern = "<div>What is the <b>enharmonic</b> equivalent of <b>%s</b>?</div>"; 
-    final String tags = Utils.tags("Enharmonics");
+    final String tags = Utils.tags("Task Enharmonics");
     for (Note note : Note.values()) {
       if (!CMajor.contains(note)) {
         add(0, format(pattern, note.getName(SHARP)), note.getName(FLAT), tags);
@@ -47,7 +47,7 @@ public class ModesTheoryDeck extends AbstractDeck {
       ScaleInfo info = MODES.info(scale);
       String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", info.getTypeName());
       String back = divb(analyzer.analyze(scale).toString());
-      add(difficulty(info), front, back, Utils.tags("ModeIntervals", info.getTypeName()));
+      add(difficulty(info), front, back, Utils.tags("Task ModeIntervals", info.getTypeName()));
     }
   }
 

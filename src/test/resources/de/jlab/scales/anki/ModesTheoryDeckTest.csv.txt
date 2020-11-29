@@ -388,18 +388,18 @@
 <div>What are the <b>notes</b> of <b>B Phrygian Dominant</b>?</div>;<div><b>B C D# E F# G A</b></div>;Task-SpellNotes Mode-Phrygian-Dominant KeyOf-B
 <div>What is the <b>parent</b> scale of <b>B Phrygian Dominant</b>?</div>;<div><b>E Harmonic Minor</b></div>;Task-NameParent Mode-Phrygian-Dominant KeyOf-B
 <div>What is <b>mode 5</b> of <b>E Harmonic Minor</b>?</div>;<div><b>B Phrygian Dominant</b></div>;Task-NameMode Mode-Harmonic-Minor KeyOf-E
-<div>What are the <b>intervals</b> of <b>Major Scale</b>?</div>;<div><b>1 2 3 4 5 6 7</b></div>;ModeIntervals Major-Scale
-<div>What are the <b>intervals</b> of <b>Dorian</b>?</div>;<div><b>1 2 b3 4 5 6 b7</b></div>;ModeIntervals Dorian
-<div>What are the <b>intervals</b> of <b>Phrygian</b>?</div>;<div><b>1 b2 b3 4 5 b6 b7</b></div>;ModeIntervals Phrygian
-<div>What are the <b>intervals</b> of <b>Lydian</b>?</div>;<div><b>1 2 3 #4 5 6 7</b></div>;ModeIntervals Lydian
-<div>What are the <b>intervals</b> of <b>Mixolydian</b>?</div>;<div><b>1 2 3 4 5 6 b7</b></div>;ModeIntervals Mixolydian
-<div>What are the <b>intervals</b> of <b>Aeolean</b>?</div>;<div><b>1 2 b3 4 5 b6 b7</b></div>;ModeIntervals Aeolean
-<div>What are the <b>intervals</b> of <b>Locrian</b>?</div>;<div><b>1 b2 b3 4 b5 b6 b7</b></div>;ModeIntervals Locrian
-<div>What are the <b>intervals</b> of <b>Melodic Minor</b>?</div>;<div><b>1 2 b3 4 5 6 7</b></div>;ModeIntervals Melodic-Minor
-<div>What are the <b>intervals</b> of <b>Lydian Dominant</b>?</div>;<div><b>1 2 3 #4 5 6 b7</b></div>;ModeIntervals Lydian-Dominant
-<div>What are the <b>intervals</b> of <b>Altered</b>?</div>;<div><b>1 b2 b3 b4 b5 b6 b7</b></div>;ModeIntervals Altered
-<div>What are the <b>intervals</b> of <b>Harmonic Minor</b>?</div>;<div><b>1 2 b3 4 5 b6 7</b></div>;ModeIntervals Harmonic-Minor
-<div>What are the <b>intervals</b> of <b>Phrygian Dominant</b>?</div>;<div><b>1 b2 3 4 5 b6 b7</b></div>;ModeIntervals Phrygian-Dominant
-<div>What are the <b>intervals</b> of <b>Whole Tone</b>?</div>;<div><b>1 2 3 #4 #5 b7</b></div>;ModeIntervals Whole-Tone
-<div>What are the <b>intervals</b> of <b>Diminished Half/Whole</b>?</div>;<div><b>1 b2 b3 3 b5 5 6 b7</b></div>;ModeIntervals Diminished-Half-Whole
-<div>What are the <b>intervals</b> of <b>Diminished Whole/Half</b>?</div>;<div><b>1 2 b3 4 b5 b6 6 7</b></div>;ModeIntervals Diminished-Whole-Half
+<div>What are the <b>intervals</b> of <b>Major Scale</b>?</div>;<div><b>1 2 3 4 5 6 7</b></div>;Task-ModeIntervals Major-Scale
+<div>What are the <b>intervals</b> of <b>Dorian</b>?</div>;<div><b>1 2 b3 4 5 6 b7</b></div>;Task-ModeIntervals Dorian
+<div>What are the <b>intervals</b> of <b>Phrygian</b>?</div>;<div><b>1 b2 b3 4 5 b6 b7</b></div>;Task-ModeIntervals Phrygian
+<div>What are the <b>intervals</b> of <b>Lydian</b>?</div>;<div><b>1 2 3 #4 5 6 7</b></div>;Task-ModeIntervals Lydian
+<div>What are the <b>intervals</b> of <b>Mixolydian</b>?</div>;<div><b>1 2 3 4 5 6 b7</b></div>;Task-ModeIntervals Mixolydian
+<div>What are the <b>intervals</b> of <b>Aeolean</b>?</div>;<div><b>1 2 b3 4 5 b6 b7</b></div>;Task-ModeIntervals Aeolean
+<div>What are the <b>intervals</b> of <b>Locrian</b>?</div>;<div><b>1 b2 b3 4 b5 b6 b7</b></div>;Task-ModeIntervals Locrian
+<div>What are the <b>intervals</b> of <b>Melodic Minor</b>?</div>;<div><b>1 2 b3 4 5 6 7</b></div>;Task-ModeIntervals Melodic-Minor
+<div>What are the <b>intervals</b> of <b>Lydian Dominant</b>?</div>;<div><b>1 2 3 #4 5 6 b7</b></div>;Task-ModeIntervals Lydian-Dominant
+<div>What are the <b>intervals</b> of <b>Altered</b>?</div>;<div><b>1 b2 b3 b4 b5 b6 b7</b></div>;Task-ModeIntervals Altered
+<div>What are the <b>intervals</b> of <b>Harmonic Minor</b>?</div>;<div><b>1 2 b3 4 5 b6 7</b></div>;Task-ModeIntervals Harmonic-Minor
+<div>What are the <b>intervals</b> of <b>Phrygian Dominant</b>?</div>;<div><b>1 b2 3 4 5 b6 b7</b></div>;Task-ModeIntervals Phrygian-Dominant
+<div>What are the <b>intervals</b> of <b>Whole Tone</b>?</div>;<div><b>1 2 3 #4 #5 b7</b></div>;Task-ModeIntervals Whole-Tone
+<div>What are the <b>intervals</b> of <b>Diminished Half/Whole</b>?</div>;<div><b>1 b2 b3 3 b5 5 6 b7</b></div>;Task-ModeIntervals Diminished-Half-Whole
+<div>What are the <b>intervals</b> of <b>Diminished Whole/Half</b>?</div>;<div><b>1 2 b3 4 b5 b6 6 7</b></div>;Task-ModeIntervals Diminished-Whole-Half
