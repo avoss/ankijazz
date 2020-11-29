@@ -44,10 +44,14 @@ public abstract class AbstractDeck implements Deck {
 
   @Override
   public void writeTo(Path dir) {
+    writeTo(dir, 0);
+  }
+  public void writeTo(Path dir, int shuffle) {
     try {
       Files.createDirectories(dir);
-      writeCsv(dir);
       writeHtml(dir);
+      shuffle(shuffle);
+      writeCsv(dir);
       cards.forEach(c -> c.writeAssets(dir));
     } catch (IOException e) {
       throw new UncheckedIOException(e);
