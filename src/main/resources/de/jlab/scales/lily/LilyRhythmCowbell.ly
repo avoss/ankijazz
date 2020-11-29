@@ -1,7 +1,7 @@
 \version "2.20.0"
 \include "english.ly"
 
-#(set! paper-alist (cons '("anki-png" . (cons (* 130 mm) (* 50 mm))) paper-alist))
+#(set! paper-alist (cons '("anki-png" . (cons (* 140 mm) (* 50 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
 \header {
