@@ -4,9 +4,12 @@
 #(set! paper-alist (cons '("anki-png" . (cons (* 100 mm) (* 32 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
+% http://lilypond.org/doc/v2.18/Documentation/notation/other
+% http://lilypond.org/doc/v2.18/Documentation/notation/list-of-colors
+
 \header {
   title = \markup{ \small { "${title}" }}
-  tagline = \markup { \teeny "(C) 2020 AnkiJazz.com - Anki Shared Deck License" }
+  tagline = \markup { \teeny { \with-color #grey { "(C) 2020 AnkiJazz.com - Anki Shared Deck License" } } }
 }
 
 

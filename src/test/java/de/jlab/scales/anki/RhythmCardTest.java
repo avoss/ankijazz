@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import de.jlab.scales.lily.LilyRhythm;
 import de.jlab.scales.rhythm.AbstractRhythm;
 import de.jlab.scales.rhythm.Quarter;
 import de.jlab.scales.rhythm.StandardRhythm;
@@ -18,7 +19,7 @@ public class RhythmCardTest {
 
   @Test
   public void testRhythmCard() {
-    Card card = new RhythmCard(rhythm(), 70);
+    Card card = new RhythmCard(rhythm(), LilyRhythm.Tempo.MEDIUM, LilyRhythm.Type.PIANO);
     assertFileContentMatches(card.getCsv(), getClass(), "RhythmCardTest.csv.txt");
     assertFileContentMatches(card.getHtml(), getClass(), "RhythmCardTest.html.txt");
   }

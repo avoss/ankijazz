@@ -1,5 +1,7 @@
 package de.jlab.scales.lily;
 
+import static de.jlab.scales.lily.LilyRhythm.Tempo.MEDIUM;
+import static de.jlab.scales.lily.LilyRhythm.Type.PIANO;
 import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.r2;
@@ -17,7 +19,7 @@ public class LilyRhythmTest {
 
   @Test
   public void test() {
-    LilyRhythm lily = new LilyRhythm(rhythm(), 70);
+    LilyRhythm lily = new LilyRhythm(rhythm(), MEDIUM, PIANO);
     assertThat(lily.toLily()).contains("r8 a8 ~ a16 a16 r8");
   }
 

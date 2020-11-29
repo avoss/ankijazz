@@ -10,14 +10,14 @@ import de.jlab.scales.lily.LilyRhythm;
 import de.jlab.scales.rhythm.AbstractRhythm;
 
 public class RhythmCard extends LilyCard {
-
+  
   private final AbstractRhythm rhythm;
   private final int bpm;
 
-  public RhythmCard(AbstractRhythm rhythm, int bpm) {
-    super(new LilyRhythm(rhythm, bpm).toLily());
+  public RhythmCard(AbstractRhythm rhythm, LilyRhythm.Tempo tempo, LilyRhythm.Type type) {
+    super(new LilyRhythm(rhythm, tempo, type).toLily());
     this.rhythm = rhythm;
-    this.bpm = bpm;
+    this.bpm = tempo.getBpm();
   }
   
   public String getTags() {

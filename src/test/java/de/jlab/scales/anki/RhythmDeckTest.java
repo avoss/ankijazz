@@ -5,15 +5,19 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.RhythmDeck.Tempo;
+import de.jlab.scales.lily.LilyRhythm.Tempo;
+import de.jlab.scales.lily.LilyRhythm.Type;
 
 public class RhythmDeckTest {
 
   @Test
   public void test() {
     Path dir = Paths.get("build/anki");
-    new RhythmDeck(Tempo.SLOW).writeTo(dir);
-    new RhythmDeck(Tempo.MEDIUM).writeTo(dir);
+    for (Tempo tempo: Tempo.values()) {
+      for (Type type : Type.values()) {
+        new RhythmDeck(tempo, type).writeTo(dir, 20);
+      }
+    }
   }
 
 }
