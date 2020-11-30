@@ -18,7 +18,7 @@ public class SimpleDeckTest {
     deck.add(1,  "A", "B", "T1");
     deck.add(3,  "E", "F", "T3");
     deck.add(2,  "C", "D", "T2");
-    deck.shuffle(0);
+    deck.sort(0);
     Path dir = Paths.get("build/SimpleDeckTest");
     deck.writeTo(dir);
     

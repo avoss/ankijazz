@@ -11,11 +11,12 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
+
+import de.jlab.scales.difficulty.DifficultyCollection;
 
 public abstract class AbstractDeck implements Deck {
   
@@ -44,13 +45,8 @@ public abstract class AbstractDeck implements Deck {
 
   @Override
   public void writeTo(Path dir) {
-    writeTo(dir, 0);
-  }
-  public void writeTo(Path dir, int shuffle) {
     try {
       Files.createDirectories(dir);
-      writeHtml(dir);
-      shuffle(shuffle);
       writeCsv(dir);
       cards.forEach(c -> c.writeAssets(dir));
     } catch (IOException e) {
@@ -58,14 +54,20 @@ public abstract class AbstractDeck implements Deck {
     }
   }
 
-  private void writeHtml(Path dir) throws IOException {
-    Path path = dir.resolve(outputFileName.concat(".html"));
-    Files.write(path, Collections.singleton(getHtml()));
-  }
-
   private void writeCsv(Path dir) throws IOException {
     Path path = dir.resolve(outputFileName.concat(".txt"));
     Files.write(path, getCsv());
+  }
+
+  @Override
+  public void writeHtml(Path dir) {
+    try {
+      Files.createDirectories(dir);
+      Path path = dir.resolve(outputFileName.concat(".html"));
+      Files.write(path, Collections.singleton(getHtml()));
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
   }
   
   @Override
@@ -83,31 +85,9 @@ public abstract class AbstractDeck implements Deck {
     return cards.stream().map(Card::getCsv).collect(toList());
   }
   
-  private static class RandomDifficultyCard implements Comparable<RandomDifficultyCard> {
-    private final Card card;
-    private final int difficulty;
-    RandomDifficultyCard(Card card, int randomness) {
-      this.card = card;
-      this.difficulty = card.getDifficulty() + ThreadLocalRandom.current().nextInt(randomness);
-    }
-    
-    @Override
-    public int compareTo(RandomDifficultyCard that) {
-      return Integer.compare(this.difficulty, that.difficulty);
-    }
-  }
-  
   @Override
-  public void shuffle(int randomness) {
-    if (randomness <= 0) {
-      Collections.sort(cards);
-      return;
-    }
-    List<RandomDifficultyCard> temp = new ArrayList<>();
-    this.cards.stream().map(c -> new RandomDifficultyCard(c, randomness)).forEach (r -> temp.add(r));
-    Collections.shuffle(temp);
-    Collections.sort(temp);
-    this.cards = temp.stream().map(r -> r.card).collect(toList()); 
+  public void sort(double randomness) {
+    DifficultyCollection.sort(cards, randomness);
   }
 
   @Override

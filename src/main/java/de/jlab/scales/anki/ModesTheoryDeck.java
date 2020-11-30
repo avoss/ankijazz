@@ -21,7 +21,7 @@ public class ModesTheoryDeck extends AbstractDeck {
     
     for (Scale scale : allKeys(commonModes(false))) {
       for (ScaleInfo info : MODES.infos(scale)) {
-        int difficulty = difficulty(info);
+        double difficulty = computeDifficulty(info);
         spellNotes(difficulty, info);
         nameParent(difficulty, info);
         nameMode(difficulty, info);
@@ -47,11 +47,11 @@ public class ModesTheoryDeck extends AbstractDeck {
       ScaleInfo info = MODES.info(scale);
       String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", info.getTypeName());
       String back = divb(analyzer.analyze(scale).toString());
-      add(difficulty(info), front, back, Utils.tags("Task ModeIntervals", info.getTypeName()));
+      add(computeDifficulty(info), front, back, Utils.tags("Task ModeIntervals", info.getTypeName()));
     }
   }
 
-  private void nameMode(int difficulty, ScaleInfo modeInfo) {
+  private void nameMode(double difficulty, ScaleInfo modeInfo) {
     if (!modeInfo.isInversion()) {
       return;
     }
@@ -63,7 +63,7 @@ public class ModesTheoryDeck extends AbstractDeck {
     add(difficulty, front, back, tags);
   }
 
-  private void nameParent(int difficulty, ScaleInfo scaleInfo) {
+  private void nameParent(double difficulty, ScaleInfo scaleInfo) {
     if (!scaleInfo.isInversion()) {
       return;
     }
@@ -74,7 +74,7 @@ public class ModesTheoryDeck extends AbstractDeck {
     add(difficulty, front, back, tags);
   }
 
-  private void spellNotes(int difficulty, ScaleInfo info) {
+  private void spellNotes(double difficulty, ScaleInfo info) {
     String front = format("<div>What are the <b>notes</b> of <b>%s</b>?</div>", info.getScaleName());
     String back = divb(info.getKeySignature().toString(info.getScale()));
     String tags = tags("SpellNotes", info);
@@ -94,7 +94,7 @@ public class ModesTheoryDeck extends AbstractDeck {
     return back;
   }
  
-  private int difficulty(ScaleInfo info) {
+  private double computeDifficulty(ScaleInfo info) {
     ScaleModel model = new ScaleModel(info);
     return model.getDifficulty();
   }

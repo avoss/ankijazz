@@ -3,16 +3,14 @@ package de.jlab.scales.difficulty;
 import java.util.HashSet;
 import java.util.Set;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import lombok.ToString;
 
 
 @RequiredArgsConstructor
+@ToString
 public class DifficultyModel implements WithDifficulty {
   
   public interface Factor extends WithDifficulty {
@@ -20,11 +18,9 @@ public class DifficultyModel implements WithDifficulty {
   }
 
   @Getter 
-  @Setter 
-  @AllArgsConstructor 
+  @RequiredArgsConstructor 
   @ToString 
   @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-  @Builder
   public static class DoubleFactor implements Factor {
     @EqualsAndHashCode.Include
     private final double min;
@@ -52,32 +48,45 @@ public class DifficultyModel implements WithDifficulty {
   }
 
   @Getter 
-  @Setter 
-  @AllArgsConstructor 
+  @RequiredArgsConstructor 
   @ToString 
   @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-  @Builder
   public static class BooleanFactor implements Factor {
     @EqualsAndHashCode.Include
     private final double weight;
-    @EqualsAndHashCode.Include
-    private final boolean difficultValue;
     private double difficulty;
     
     public BooleanFactor update(boolean value) {
-      difficulty = (value == difficultValue) ? 1 : 0;
+      difficulty = value ? 1 : 0;
       return this;
     }
   }
 
   private final Set<Factor> factors = new HashSet<>();
   
+  @Override
   public double getDifficulty() {
     double totalWeight = factors.stream().mapToDouble(f -> f.getWeight()).sum();
     double totalValues = factors.stream().map(f -> f.getWeight() * f.getDifficulty()).mapToDouble(d -> d).sum();
-    return totalValues / totalWeight;
+    double difficulty = totalValues / totalWeight;
+    if (difficulty > 1.0) {
+      throw new IllegalStateException("cannot have difficulty > 1.0: " + toString());
+    }
+    return difficulty;
   }
 
+  public DoubleFactor doubleFactor(double min, double max, double weight) {
+    DoubleFactor factor = new DoubleFactor(min, max, weight);
+    register(factor);
+    return factor;
+  }
+  
+  public BooleanFactor booleanFactor(double weight) {
+    BooleanFactor factor = new BooleanFactor(weight);
+    register(factor);
+    return factor;
+  }
+  
   public DifficultyModel register(Factor factor) {
     factors.add(factor);
     return this;

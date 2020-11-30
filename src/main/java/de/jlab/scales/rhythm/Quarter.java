@@ -11,12 +11,16 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.math3.fraction.Fraction;
 
+import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.difficulty.WithDifficulty;
+
 @lombok.EqualsAndHashCode
-public class Quarter {
+public class Quarter implements WithDifficulty {
   
+  private static final double MAX_BEATS = 4;
   private final List<Event> events = new ArrayList<>();
   private final boolean tied;
-  private final int difficulty;
+  private final double difficulty;
   
   public Quarter() {
     this(emptyList());
@@ -84,26 +88,26 @@ public class Quarter {
     return new QuarterCategory(beatPositions);
   }
 
-  public int getDifficulty() {
+  public double getDifficulty() {
     return difficulty;
   }
   
-  private int computeDifficulty() {
+  private double computeDifficulty() {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleFactor(1, MAX_BEATS, 250).update(getNumberOfEvents());
+    model.booleanFactor(200).update(isTriplet());
+    model.booleanFactor(70).update(isTied());
+    model.booleanFactor(40).update(isSyncopated());
     Fraction time = Fraction.ZERO;
-    double difficulty = 0;
     for (Event e : events) {
-      difficulty += difficulty(time) * difficulty(e);
+      model.doubleFactor(1, 8, 200).update(difficulty(time));
+      model.booleanFactor(10).update(!e.isBeat());
       time = time.add(e.getLength());
     }
-    return (int)(difficulty + 0.5);
+    return model.getDifficulty();
   }
 
-  private double difficulty(Event e) {
-    double factor = e.isBeat() ? 1.5 : 2;
-    return factor * getLength().divide(e.getLength()).doubleValue();
-  }
-
-  private double difficulty(Fraction time) {
+  private int difficulty(Fraction time) {
     if (isDividable(time, 4)) {
       return 1;
     }

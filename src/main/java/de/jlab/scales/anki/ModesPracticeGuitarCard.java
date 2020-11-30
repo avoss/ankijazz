@@ -7,7 +7,7 @@ import de.jlab.scales.Utils;
 public class ModesPracticeGuitarCard extends LilyCard {
 
   private FretboardPosition position;
-  private int difficulty;
+  private double difficulty;
   private ScaleModel model;
 
   public ModesPracticeGuitarCard(ScaleModel model, FretboardPosition position) {
@@ -32,7 +32,7 @@ public class ModesPracticeGuitarCard extends LilyCard {
   }
 
   @Override
-  public int getDifficulty() {
+  public double getDifficulty() {
     return difficulty;
   }
   

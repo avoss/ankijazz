@@ -26,7 +26,7 @@ public class GnCard extends MustacheCard {
   }
 
   @Override
-  public int getDifficulty() {
+  public double getDifficulty() {
     return 0;
   }
 

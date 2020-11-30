@@ -1,6 +1,6 @@
 package de.jlab.scales.rhythm;
 
-import static de.jlab.scales.rhythm.Event.b1;
+import static de.jlab.scales.rhythm.Event.*;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.b3;
 import static de.jlab.scales.rhythm.Event.bt;
@@ -9,6 +9,7 @@ import static de.jlab.scales.rhythm.Event.r3;
 import static de.jlab.scales.rhythm.Event.r4;
 import static de.jlab.scales.rhythm.Event.rt;
 import static de.jlab.scales.rhythm.Quarter.q;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
@@ -16,6 +17,7 @@ import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertTrue;
 
 import org.apache.commons.math3.fraction.Fraction;
+import org.assertj.core.data.Offset;
 import org.junit.Test;
 
 public class QuarterTest {
@@ -50,22 +52,16 @@ public class QuarterTest {
     assertEquals(new Fraction(7), q.getLength());
     assertEquals(3, q.getNumberOfEvents());
   }
-  
-  @Test 
+
+  @Test
   public void testDifficulty() {
     Fraction f = new Fraction(16, 4);
     f = f.divide(4);
     assertEquals(1, f.getDenominator());
-    assertDifficulty(2, r4);
-    assertDifficulty(9, b2, b2);
-    assertDifficulty(12, b1, b3);
-    assertDifficulty(79, b1, b2, r1);
-    assertDifficulty(32, bt, bt, bt);
-  }
-  
-  private void assertDifficulty(int expected, Event ... events) {
-    Quarter quarter = q(events);
-    assertEquals(expected, quarter.getDifficulty());
+    assertThat(q(b4).getDifficulty()).isLessThan(q(b2, b2).getDifficulty());
+    assertThat(q(b1, b2, b1).getDifficulty()).isGreaterThan(q(b2, b2).getDifficulty());
+    assertThat(q(r1, b2, b1).getDifficulty()).isGreaterThan(q(b1, b2, b1).getDifficulty());
+    assertThat(q(b2, b2).tie().getDifficulty()).isGreaterThan((q(b2, b2).getDifficulty()));
   }
 
   @Test
@@ -81,25 +77,25 @@ public class QuarterTest {
     q = new Quarter(r1);
     assertFalse(q.startsWithBeat());
     assertFalse(q.endsWithBeat());
-    
-    q = new Quarter(b1,r1);
+
+    q = new Quarter(b1, r1);
     assertTrue(q.startsWithBeat());
     assertFalse(q.endsWithBeat());
-    
-    q = new Quarter(r1,b1);
+
+    q = new Quarter(r1, b1);
     assertFalse(q.startsWithBeat());
     assertTrue(q.endsWithBeat());
   }
-  
+
   @Test
   public void testEventSequenceCategory() {
-    Quarter q1 = new Quarter(r1,b1);
-    Quarter q2 = new Quarter(r1,b2,r3);
+    Quarter q1 = new Quarter(r1, b1);
+    Quarter q2 = new Quarter(r1, b2, r3);
     assertEquals(q1.getCategory(), q2.getCategory());
     q2 = q2.add(b1);
     assertNotEquals(q1.getCategory(), q2.getCategory());
   }
-  
+
   @Test
   public void testHashEquals() {
     Quarter q1 = new Quarter();

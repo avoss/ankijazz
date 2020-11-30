@@ -2,6 +2,8 @@ package de.jlab.scales.anki;
 
 import static de.jlab.scales.lily.Direction.ASCENDING;
 
+import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.difficulty.WithDifficulty;
 import de.jlab.scales.lily.Clef;
 import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;
@@ -11,14 +13,15 @@ import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class ScaleModel {
+public class ScaleModel implements WithDifficulty {
   private final ScaleInfo modeInfo;
   private final ScaleInfo parentInfo;
   private KeySignature keySignature;
   private Direction direction;
   private Clef clef;
   private Note instrument;
-
+  private final double difficulty;
+  
   public ScaleModel(ScaleInfo info) {
     this(info, ASCENDING);
   }
@@ -34,6 +37,7 @@ public class ScaleModel {
     this.instrument = instrument;
     this.keySignature = modeInfo.getKeySignature();
     this.parentInfo = modeInfo.getParentInfo();
+    this.difficulty = computeDifficulty();
   }
 
   public LilyScale getLilyScale() {
@@ -72,11 +76,17 @@ public class ScaleModel {
     return keySignature.notate(parentInfo.getScale().getRoot());
   }
 
-  public int getDifficulty() {
-    int difficulty = modeInfo.getKeySignature().getNumberOfAccidentals();
-    difficulty += modeInfo.getScaleType() == BuiltInScaleTypes.Major ? 0 : 4;
-    difficulty += modeInfo.isInversion() ? 3 : 0;
+  @Override
+  public double getDifficulty() {
     return difficulty;
+  }
+  
+  private double computeDifficulty() {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleFactor(0, 6, 100).update(modeInfo.getKeySignature().getNumberOfAccidentals());
+    model.booleanFactor(50).update(modeInfo.getScaleType() != BuiltInScaleTypes.Major);
+    model.booleanFactor(25).update(modeInfo.isInversion());
+    return model.getDifficulty();
   }
   
   public String getNotationKey() {

@@ -96,11 +96,12 @@ public class TestUtils {
     return "// " + markers.stream().collect(joining(", "));
   }
 
-  
-  public static void checkAndWrite(Deck deck, Class<?> testClass) {
-    assertFileContentMatches(deck.getCsv(), testClass, deck.getClass().getSimpleName());
-    deck.shuffle(3);
-    deck.writeTo(Paths.get("build/anki"));
+  public static void writeTo(Deck deck, double randomness) {
+    Path dir = Paths.get("build/anki");
+    //deck.sort(randomness); // TODO
+    deck.sort(0);
+    deck.writeHtml(dir); // TODO write in order
+    deck.writeTo(dir);
   }
  
 }

@@ -7,7 +7,7 @@ public class TestCard extends MustacheCard {
   private TestModel model = new TestModel();
 
   @Override
-  public int getDifficulty() {
+  public double getDifficulty() {
     return 0;
   }
 

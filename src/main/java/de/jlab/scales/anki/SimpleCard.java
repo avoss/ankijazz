@@ -3,12 +3,12 @@ package de.jlab.scales.anki;
 import java.nio.file.Path;
 
 public class SimpleCard extends MustacheCard {
-  private final int difficulty;
+  private final double difficulty;
   private final String front;
   private final String back;
   private final String tags;
 
-  public SimpleCard(int difficulty, String front, String back, String tags) {
+  public SimpleCard(double difficulty, String front, String back, String tags) {
     this.difficulty = difficulty;
     this.front = front;
     this.back = back;
@@ -16,7 +16,7 @@ public class SimpleCard extends MustacheCard {
   }
 
   @Override
-  public int getDifficulty() {
+  public double getDifficulty() {
     return difficulty;
   }
 

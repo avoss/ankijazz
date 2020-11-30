@@ -10,10 +10,13 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
+import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.difficulty.WithDifficulty;
+
+public abstract class AbstractRhythm implements Comparable<AbstractRhythm>, WithDifficulty {
   
   private List<Quarter> quarters;
-  private int difficulty;
+  private double difficulty;
 
   
   protected AbstractRhythm(List<Quarter> quarters) {
@@ -21,14 +24,16 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
     this.difficulty = computeDifficulty();
   }
 
-  private int computeDifficulty() {
-    double difficulty = getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty() * (q.isTied() ? 2 : 1)).sum();
-    difficulty *= getUniqueQuarters().stream().count() % 2 == 0 ? 1.0 : 2.0;
-    difficulty *= 1 +  getUniqueQuarters().stream().map(q -> q.isTriplet()).count();
-    return (int) difficulty;
+  private double computeDifficulty() {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleFactor(0, quarters.size(), 300).update(getUniqueQuarters().stream().count());
+    model.doubleFactor(0, quarters.size(), 100).update(getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty()).sum());
+    model.booleanFactor(5).update(getUniqueQuarters().stream().count() % 2 != 0);
+    return model.getDifficulty();
   }
   
-  public int getDifficulty() {
+  @Override
+  public double getDifficulty() {
     return difficulty;
   }
 
@@ -50,7 +55,7 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm> {
 
   @Override
   public int compareTo(AbstractRhythm other) {
-    return Integer.compare(computeDifficulty(), other.computeDifficulty());
+    return Double.compare(getDifficulty(), other.getDifficulty());
   }
   
   public abstract String getTitle();

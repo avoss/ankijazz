@@ -6,7 +6,7 @@ import de.jlab.scales.Utils;
 
 public class ModesPracticeCard extends LilyCard {
 
-  private int difficulty;
+  private double difficulty;
   private ScaleModel model;
 
   public ModesPracticeCard(ScaleModel model) {
@@ -26,7 +26,7 @@ public class ModesPracticeCard extends LilyCard {
   }
   
   @Override
-  public int getDifficulty() {
+  public double getDifficulty() {
     return difficulty;
   }
   

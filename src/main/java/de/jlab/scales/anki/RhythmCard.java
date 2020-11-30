@@ -31,7 +31,7 @@ public class RhythmCard extends LilyCard {
   }
 
   @Override
-  public int getDifficulty() {
+  public double getDifficulty() {
     return rhythm.getDifficulty();
   }
 
