@@ -25,7 +25,6 @@ public class RhythmDeckTest {
 
   @Test
   public void testSome() {
-    Path dir = Paths.get("build/anki");
     Deck deck = new RhythmDeck(Tempo.MEDIUM, Type.PIANO);
     TestUtils.writeTo(deck, 0);
   }

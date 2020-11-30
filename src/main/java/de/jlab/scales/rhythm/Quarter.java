@@ -76,18 +76,6 @@ public class Quarter implements WithDifficulty {
     return events.stream().map(Event::name).collect(joining()).concat(isTied() ? " ~" : "");
   }
 
-  public QuarterCategory getCategory() {
-    Fraction time = Fraction.ZERO;
-    List<Fraction> beatPositions = new ArrayList<>();
-    for (Event e : events) {
-      if (e.isBeat()) {
-        beatPositions.add(time);
-      }
-      time = time.add(e.getLength());
-    }
-    return new QuarterCategory(beatPositions);
-  }
-
   public double getDifficulty() {
     return difficulty;
   }

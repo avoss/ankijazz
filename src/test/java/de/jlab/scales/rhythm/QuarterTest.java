@@ -62,6 +62,7 @@ public class QuarterTest {
     assertThat(q(b1, b2, b1).getDifficulty()).isGreaterThan(q(b2, b2).getDifficulty());
     assertThat(q(r1, b2, b1).getDifficulty()).isGreaterThan(q(b1, b2, b1).getDifficulty());
     assertThat(q(b2, b2).tie().getDifficulty()).isGreaterThan((q(b2, b2).getDifficulty()));
+    assertThat(q(rt, bt, bt).getDifficulty()).isGreaterThan((q(bt, bt, bt).getDifficulty()));
   }
 
   @Test
@@ -85,15 +86,6 @@ public class QuarterTest {
     q = new Quarter(r1, b1);
     assertFalse(q.startsWithBeat());
     assertTrue(q.endsWithBeat());
-  }
-
-  @Test
-  public void testEventSequenceCategory() {
-    Quarter q1 = new Quarter(r1, b1);
-    Quarter q2 = new Quarter(r1, b2, r3);
-    assertEquals(q1.getCategory(), q2.getCategory());
-    q2 = q2.add(b1);
-    assertNotEquals(q1.getCategory(), q2.getCategory());
   }
 
   @Test

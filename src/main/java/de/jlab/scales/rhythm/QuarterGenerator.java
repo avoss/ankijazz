@@ -5,18 +5,14 @@ import static java.util.Arrays.asList;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
 import java.util.function.Predicate;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-import com.google.common.collect.LinkedHashMultimap;
-import com.google.common.collect.SetMultimap;
-
 public class QuarterGenerator {
 
   private final Fraction ticksPerQuarter;
-  private SetMultimap<QuarterCategory,Quarter> result = LinkedHashMultimap.create();
+  private List<Quarter> quarters = new ArrayList<>();
   private List<Event> events = new ArrayList<>();
   private final Predicate<Quarter> filter;
 
@@ -34,7 +30,7 @@ public class QuarterGenerator {
   private void recurse(Quarter current) {
     if (current.getLength().equals(ticksPerQuarter)) {
       if (filter.test(current)) {
-        result.put(current.getCategory(), current);
+        quarters.add(current);
       }
       return;
     }
@@ -46,19 +42,15 @@ public class QuarterGenerator {
     }
   }
   
-  public Map<QuarterCategory, Collection<Quarter>> getQuarterMap() {
-    return result.asMap();
+  public List<Quarter> getQuarters() {
+    return quarters;
   }
   
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    Map<QuarterCategory, Collection<Quarter>> map = result.asMap();
-    for (QuarterCategory category : map.keySet()) {
-      sb.append("Category: ").append(category.getBeatPositions()).append("\n");
-      for (Quarter quarter : map.get(category)) {
-        sb.append(String.format("  %s\n", quarter.getEvents()));
-      }
+    for (Quarter quarter : quarters) {
+      sb.append(String.format("  %s\n", quarter.getEvents()));
     }
     return sb.toString();
   }

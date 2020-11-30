@@ -98,9 +98,8 @@ public class TestUtils {
 
   public static void writeTo(Deck deck, double randomness) {
     Path dir = Paths.get("build/anki");
-    //deck.sort(randomness); // TODO
-    deck.sort(0);
-    deck.writeHtml(dir); // TODO write in order
+    deck.writeHtml(dir); 
+    deck.sort(randomness);
     deck.writeTo(dir);
   }
  
