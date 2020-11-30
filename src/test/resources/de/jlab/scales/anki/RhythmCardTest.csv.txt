@@ -1,1 +1,1 @@
-<div> <p> Play Test </p> </div> <div><p><img src="AnkiJazz-efc319ee0d.png"></p></div> <div><p>[sound:AnkiJazz-Metronome70.mp3]</p></div>;<div><p>[sound:AnkiJazz-efc319ee0d.mp3]</p></div>;Rhythm-Tied Rhythm-2 Rhythm-Standard
+<div> <p> Play Test (80 bpm) </p> </div> <div><p><img src="AnkiJazz-f269a497f2.png"></p></div> <div><p>[sound:AnkiJazz-dd03b886a9.mp3]</p></div>;<div><p>[sound:AnkiJazz-f269a497f2.mp3]</p></div>;Rhythm-Tied Rhythm-2 Rhythm-Standard

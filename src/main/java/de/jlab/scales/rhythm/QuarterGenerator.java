@@ -50,7 +50,7 @@ public class QuarterGenerator {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     for (Quarter quarter : quarters) {
-      sb.append(String.format("  %s\n", quarter.getEvents()));
+      sb.append(String.format("%s\n", quarter.getEvents()));
     }
     return sb.toString();
   }

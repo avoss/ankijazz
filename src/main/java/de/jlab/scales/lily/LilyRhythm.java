@@ -13,19 +13,6 @@ import de.jlab.scales.rhythm.Quarter;
 
 public class LilyRhythm {
 
-  public enum Tempo {
-    SLOW(55), MEDIUM(70);
-
-    private int bpm;
-
-    Tempo(int bpm) {
-      this.bpm = bpm;
-    }
-    public int getBpm() {
-      return bpm;
-    }
-  }
-  
   public enum Type {
     COWBELL("Cowbell", "LilyRhythmCowbell.ly", "cb"), PIANO("Piano", "LilyRhythmPiano.ly", "a");
 
@@ -51,13 +38,13 @@ public class LilyRhythm {
     }
   }
   
-  private AbstractRhythm rhythm;
-  private Tempo tempo;
-  private Type type;
+  private final AbstractRhythm rhythm;
+  private final Type type;
+  private final int bpm;
 
-  public LilyRhythm(AbstractRhythm rhythm, Tempo tempo, Type type) {
+  public LilyRhythm(AbstractRhythm rhythm, int bpm, Type type) {
     this.rhythm = rhythm;
-    this.tempo = tempo;
+    this.bpm = bpm;
     this.type = type;
   }
 
@@ -65,12 +52,12 @@ public class LilyRhythm {
     return readTemplate()
         .replace("${scaleNotes}", scaleNotes(Type.PIANO))
         .replace("${cowbellNotes}", scaleNotes(Type.COWBELL))
-        .replace("${bpm}", Integer.toString(getBpm()))
+        .replace("${bpm}", Integer.toString(bpm))
     ;
   }
 
   public int getBpm() {
-    return tempo.getBpm();
+    return bpm;
   }
 
   private CharSequence scaleNotes(Type type) {

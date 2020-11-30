@@ -44,7 +44,7 @@ public abstract class AbstractDeck implements Deck {
   }
 
   @Override
-  public void writeTo(Path dir) {
+  public void writeAssets(Path dir) {
     try {
       Files.createDirectories(dir);
       writeCsv(dir);

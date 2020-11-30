@@ -20,7 +20,7 @@ public class SimpleDeckTest {
     deck.add(2,  "C", "D", "T2");
     deck.sort(0);
     Path dir = Paths.get("build/SimpleDeckTest");
-    deck.writeTo(dir);
+    deck.writeAssets(dir);
     
     String actual = Files.readAllLines(dir.resolve("SimpleDeck.txt")).stream().collect(Collectors.joining("\n"));
     assertEquals("A;B;T1\nC;D;T2\nE;F;T3", actual);

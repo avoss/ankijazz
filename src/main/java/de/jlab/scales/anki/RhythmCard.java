@@ -6,18 +6,22 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.lily.LilyMetronome.Tempo;
 import de.jlab.scales.lily.LilyRhythm;
 import de.jlab.scales.rhythm.AbstractRhythm;
 
 public class RhythmCard extends LilyCard {
   
   private final AbstractRhythm rhythm;
-  private final int bpm;
+  private final Tempo tempo;
+  private double difficulty;
 
-  public RhythmCard(AbstractRhythm rhythm, LilyRhythm.Tempo tempo, LilyRhythm.Type type) {
-    super(new LilyRhythm(rhythm, tempo, type).toLily());
+  public RhythmCard(AbstractRhythm rhythm, Tempo tempo, LilyRhythm.Type type) {
+    super(new LilyRhythm(rhythm, tempo.getBpm(), type).toLily());
     this.rhythm = rhythm;
-    this.bpm = tempo.getBpm();
+    this.tempo = tempo;
+    this.difficulty = computeDifficulty();
   }
   
   public String getTags() {
@@ -32,15 +36,22 @@ public class RhythmCard extends LilyCard {
 
   @Override
   public double getDifficulty() {
-    return rhythm.getDifficulty();
+    return difficulty;
+  }
+  
+  private double computeDifficulty() {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleTerm(0, 1, 60).update(rhythm.getDifficulty());
+    model.doubleTerm(tempo.getMinBpm(), tempo.getMaxBpm(), 40).update(tempo.getBpm());
+    return model.getDifficulty();
   }
 
   public String getMetronomeMp3Name() {
-    return String.format("AnkiJazz-Metronome%d.mp3", bpm);
+    return tempo.getMp3Name();
   }
   
   public String getTitle() {
-    return rhythm.getTitle();
+    return String.format("%s (%d bpm)", rhythm.getTitle(), tempo.getBpm());
   }
   
 

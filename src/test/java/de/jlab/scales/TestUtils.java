@@ -13,7 +13,6 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,7 +25,7 @@ public class TestUtils {
   static boolean disabled = false;
   
   public static void assertFileContentMatches(String actualString, Class<?> testClass, String fileName) {
-    assertFileContentMatches(Collections.singletonList(actualString), testClass, fileName);
+    assertFileContentMatches(List.of(actualString.split("\n")), testClass, fileName);
   }
   
   public static void assertFileContentMatches(List<String> actualLines, Class<?> testClass, String fileName) {
@@ -70,7 +69,8 @@ public class TestUtils {
   private static List<String> sanitize(Collection<String> lines) {
     return lines.stream()
         .map(s -> s.replaceAll("AnkiJazz-\\w+", "AnkiJazz-XXXX"))
-        .map(s -> s.replaceAll("\r", ""))
+        .map(s -> s.replaceAll("[\r\n]", ""))
+        .filter(s -> !(s.isBlank() || s.isEmpty()))
         .collect(toList());
   }
   
@@ -100,7 +100,7 @@ public class TestUtils {
     Path dir = Paths.get("build/anki");
     deck.writeHtml(dir); 
     deck.sort(randomness);
-    deck.writeTo(dir);
+    deck.writeAssets(dir);
   }
  
 }
