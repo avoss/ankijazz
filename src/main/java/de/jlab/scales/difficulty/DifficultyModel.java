@@ -13,7 +13,7 @@ import lombok.ToString;
 @ToString
 public class DifficultyModel implements WithDifficulty {
   
-  public interface Factor extends WithDifficulty {
+  public interface Term extends WithDifficulty {
     double getWeight();
   }
 
@@ -21,7 +21,7 @@ public class DifficultyModel implements WithDifficulty {
   @RequiredArgsConstructor 
   @ToString 
   @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-  public static class DoubleFactor implements Factor {
+  public static class DoubleTerm implements Term {
     @EqualsAndHashCode.Include
     private final double min;
     @EqualsAndHashCode.Include
@@ -30,7 +30,7 @@ public class DifficultyModel implements WithDifficulty {
     private final double weight;
     private double difficulty;
     
-    public DoubleFactor update(double value) {
+    public DoubleTerm update(double value) {
       double clipped = clip(value);
       this.difficulty = (clipped - min) / (max - min);
       return this;
@@ -51,23 +51,23 @@ public class DifficultyModel implements WithDifficulty {
   @RequiredArgsConstructor 
   @ToString 
   @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-  public static class BooleanFactor implements Factor {
+  public static class BooleanTerm implements Term {
     @EqualsAndHashCode.Include
     private final double weight;
     private double difficulty;
     
-    public BooleanFactor update(boolean value) {
+    public BooleanTerm update(boolean value) {
       difficulty = value ? 1 : 0;
       return this;
     }
   }
 
-  private final Set<Factor> factors = new HashSet<>();
+  private final Set<Term> terms = new HashSet<>();
   
   @Override
   public double getDifficulty() {
-    double totalWeight = factors.stream().mapToDouble(f -> f.getWeight()).sum();
-    double totalValues = factors.stream().map(f -> f.getWeight() * f.getDifficulty()).mapToDouble(d -> d).sum();
+    double totalWeight = terms.stream().mapToDouble(f -> f.getWeight()).sum();
+    double totalValues = terms.stream().map(f -> f.getWeight() * f.getDifficulty()).mapToDouble(d -> d).sum();
     double difficulty = totalValues / totalWeight;
     if (difficulty > 1.0) {
       throw new IllegalStateException("cannot have difficulty > 1.0: " + toString());
@@ -75,20 +75,20 @@ public class DifficultyModel implements WithDifficulty {
     return difficulty;
   }
 
-  public DoubleFactor doubleFactor(double min, double max, double weight) {
-    DoubleFactor factor = new DoubleFactor(min, max, weight);
+  public DoubleTerm doubleTerm(double min, double max, double weight) {
+    DoubleTerm factor = new DoubleTerm(min, max, weight);
     register(factor);
     return factor;
   }
   
-  public BooleanFactor booleanFactor(double weight) {
-    BooleanFactor factor = new BooleanFactor(weight);
+  public BooleanTerm booleanTerm(double weight) {
+    BooleanTerm factor = new BooleanTerm(weight);
     register(factor);
     return factor;
   }
   
-  public DifficultyModel register(Factor factor) {
-    factors.add(factor);
+  public DifficultyModel register(Term term) {
+    terms.add(term);
     return this;
   }
 

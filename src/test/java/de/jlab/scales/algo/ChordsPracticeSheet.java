@@ -189,7 +189,7 @@ public class ChordsPracticeSheet {
       printer.add(chord);
     }
     Files.write(printer.toString(), new File(name + ".txt"), Charsets.UTF_8);
-    System.out.println(printer.toString());
+    //System.out.println(printer.toString());
   }
   
 }

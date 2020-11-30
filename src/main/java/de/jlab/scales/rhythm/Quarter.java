@@ -94,14 +94,14 @@ public class Quarter implements WithDifficulty {
   
   private double computeDifficulty() {
     DifficultyModel model = new DifficultyModel();
-    model.doubleFactor(1, MAX_BEATS, 250).update(getNumberOfEvents());
-    model.booleanFactor(200).update(isTriplet());
-    model.booleanFactor(70).update(isTied());
-    model.booleanFactor(40).update(isSyncopated());
+    model.doubleTerm(1, MAX_BEATS, 250).update(getNumberOfEvents());
+    model.booleanTerm(500).update(isTriplet());
+    model.booleanTerm(70).update(isTied());
+    model.booleanTerm(40).update(isSyncopated());
     Fraction time = Fraction.ZERO;
     for (Event e : events) {
-      model.doubleFactor(1, 8, 200).update(difficulty(time));
-      model.booleanFactor(10).update(!e.isBeat());
+      model.doubleTerm(1, 8, 200).update(difficulty(time));
+      model.booleanTerm(10).update(!e.isBeat());
       time = time.add(e.getLength());
     }
     return model.getDifficulty();

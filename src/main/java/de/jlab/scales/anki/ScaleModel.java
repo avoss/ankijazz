@@ -83,9 +83,9 @@ public class ScaleModel implements WithDifficulty {
   
   private double computeDifficulty() {
     DifficultyModel model = new DifficultyModel();
-    model.doubleFactor(0, 6, 100).update(modeInfo.getKeySignature().getNumberOfAccidentals());
-    model.booleanFactor(50).update(modeInfo.getScaleType() != BuiltInScaleTypes.Major);
-    model.booleanFactor(25).update(modeInfo.isInversion());
+    model.doubleTerm(0, 6, 100).update(modeInfo.getKeySignature().getNumberOfAccidentals());
+    model.booleanTerm(50).update(modeInfo.getScaleType() != BuiltInScaleTypes.Major);
+    model.booleanTerm(25).update(modeInfo.isInversion());
     return model.getDifficulty();
   }
   

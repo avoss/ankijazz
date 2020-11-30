@@ -9,6 +9,7 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class TestLoadMidi {
@@ -22,6 +23,7 @@ public class TestLoadMidi {
   public static final String[] NOTE_NAMES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
 
   @Test
+  @Ignore
   public void testPrintFile() throws Exception {
       Sequence sequence = MidiSystem.getSequence(new File("src/midi/DDorianGroove.mid"));
       System.out.println("PPQ: " + sequence.getResolution());

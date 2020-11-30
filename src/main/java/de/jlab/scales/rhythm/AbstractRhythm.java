@@ -26,9 +26,9 @@ public abstract class AbstractRhythm implements Comparable<AbstractRhythm>, With
 
   private double computeDifficulty() {
     DifficultyModel model = new DifficultyModel();
-    model.doubleFactor(0, quarters.size(), 300).update(getUniqueQuarters().stream().count());
-    model.doubleFactor(0, quarters.size(), 100).update(getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty()).sum());
-    model.booleanFactor(5).update(getUniqueQuarters().stream().count() % 2 != 0);
+    model.doubleTerm(0, quarters.size(), 300).update(getUniqueQuarters().stream().count());
+    model.doubleTerm(0, quarters.size(), 100).update(getUniqueQuarters().stream().mapToDouble(q -> q.getDifficulty()).sum());
+    model.booleanTerm(5).update(getUniqueQuarters().stream().count() % 2 != 0);
     return model.getDifficulty();
   }
   

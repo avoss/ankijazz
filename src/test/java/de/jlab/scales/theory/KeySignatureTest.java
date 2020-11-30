@@ -98,7 +98,6 @@ public class KeySignatureTest {
   @Test
   public void testAMelodicMinorBug() {
     KeySignature keySignature = fromScale(CMelodicMinor.transpose(A), B, SHARP);
-    System.out.println(keySignature);
     assertEquals("G#", keySignature.notate(Ab));
   }
   

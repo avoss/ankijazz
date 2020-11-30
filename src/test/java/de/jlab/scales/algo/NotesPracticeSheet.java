@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import de.jlab.scales.theory.Accidental;
@@ -74,6 +75,7 @@ public class NotesPracticeSheet {
   int col = 0;
   
   @Test
+  @Ignore
   public void leadSheetRandomSmall() {
     // 10 rows, 16 cols = 160 notes in total
     // 7 notes + 5 sharps + 5 flats = 17 notes to practice

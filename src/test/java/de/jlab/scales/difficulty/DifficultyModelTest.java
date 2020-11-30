@@ -7,8 +7,8 @@ import static org.junit.Assert.assertNotEquals;
 import org.assertj.core.data.Offset;
 import org.junit.Test;
 
-import de.jlab.scales.difficulty.DifficultyModel.BooleanFactor;
-import de.jlab.scales.difficulty.DifficultyModel.DoubleFactor;
+import de.jlab.scales.difficulty.DifficultyModel.BooleanTerm;
+import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 
 public class DifficultyModelTest {
 
@@ -25,50 +25,50 @@ public class DifficultyModelTest {
   }
 
   private void assertDoubleFactor(int value, double expected) {
-    DoubleFactor factor = new DoubleFactor(20, 40, value);
-    assertThat(factor.update(value).getDifficulty()).isCloseTo(expected, EPS);
+    DoubleTerm term = new DoubleTerm(20, 40, value);
+    assertThat(term.update(value).getDifficulty()).isCloseTo(expected, EPS);
   }
 
   @Test
   public void testDoubleFactorEquals() {
-    DoubleFactor f1 = new DoubleFactor(20, 40, 20);
-    DoubleFactor f2 = new DoubleFactor(20, 40, 20);
-    assertEquals(f1, f2);
-    f1.update(10);
-    f2.update(20);
-    assertEquals(f1, f2);
+    DoubleTerm t1 = new DoubleTerm(20, 40, 20);
+    DoubleTerm t2 = new DoubleTerm(20, 40, 20);
+    assertEquals(t1, t2);
+    t1.update(10);
+    t2.update(20);
+    assertEquals(t1, t2);
     
-    DoubleFactor f3 = new DoubleFactor(10, 40, 20);
-    assertNotEquals(f1, f3);
+    DoubleTerm t3 = new DoubleTerm(10, 40, 20);
+    assertNotEquals(t1, t3);
   }
   
   @Test
   public void testBooleanFactorDifficulty() {
-    BooleanFactor factor = new BooleanFactor(10);
-    assertThat(factor.update(true).getDifficulty()).isCloseTo(1, EPS);
-    assertThat(factor.update(false).getDifficulty()).isCloseTo(0, EPS);
+    BooleanTerm term = new BooleanTerm(10);
+    assertThat(term.update(true).getDifficulty()).isCloseTo(1, EPS);
+    assertThat(term.update(false).getDifficulty()).isCloseTo(0, EPS);
   }
 
   @Test
   public void testBooleanFactorEquals() {
-    BooleanFactor f1 = new BooleanFactor(10);
-    BooleanFactor f2 = new BooleanFactor(10);
-    assertEquals(f1, f2);
-    f1.update(true);
-    f2.update(false);
-    assertEquals(f1, f2);
-    BooleanFactor f3 = new BooleanFactor(20);
-    assertNotEquals(f2, f3);
+    BooleanTerm t1 = new BooleanTerm(10);
+    BooleanTerm t2 = new BooleanTerm(10);
+    assertEquals(t1, t2);
+    t1.update(true);
+    t2.update(false);
+    assertEquals(t1, t2);
+    BooleanTerm t3 = new BooleanTerm(20);
+    assertNotEquals(t2, t3);
   }
   
   @Test
   public void testCombined() {
     DifficultyModel model = new DifficultyModel();
-    BooleanFactor booleanFactor = model.booleanFactor(10);
-    DoubleFactor doubleFactor = model.doubleFactor(20, 40, 20);
-    booleanFactor.update(true);
+    BooleanTerm booleanTerm = model.booleanTerm(10);
+    DoubleTerm doubleTerm = model.doubleTerm(20, 40, 20);
+    booleanTerm.update(true);
     assertThat(model.getDifficulty()).isCloseTo(0.333, EPS);
-    doubleFactor.update(30);
+    doubleTerm.update(30);
     assertThat(model.getDifficulty()).isCloseTo(0.666, EPS);
   }
 }
