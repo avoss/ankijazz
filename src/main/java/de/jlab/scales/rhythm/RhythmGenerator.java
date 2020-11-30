@@ -30,6 +30,7 @@ import com.google.common.base.Optional;
 import com.google.common.collect.Lists;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.Interpolator;
 
 public class RhythmGenerator {
 
@@ -149,10 +150,9 @@ public class RhythmGenerator {
   private Collection<? extends AbstractRhythm> randomRhythms(int rhythmsSoFar) {
     List<AbstractRhythm> result = new ArrayList<>();
     int numberOfRhythmsToCreate = numberOfRhythms - rhythmsSoFar;
+    Interpolator uniqueQuartersInterpolator = Utils.interpolator(0, numberOfRhythmsToCreate, 2, 9);
     for (int i = 0; i < numberOfRhythmsToCreate; i++) {
-      double minCategories = 2;
-      double maxCategories = 9;
-      int numberOfUniqueQuarters = (int)(minCategories + (maxCategories - minCategories) * i / numberOfRhythmsToCreate);
+      int numberOfUniqueQuarters = uniqueQuartersInterpolator.apply(i);
       List<Quarter> quarters = chooseQuarters(numberOfUniqueQuarters);
       result.add(new RandomRhythm(quarters));
     }

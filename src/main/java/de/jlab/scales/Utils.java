@@ -15,6 +15,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
+import java.util.function.Function;
+import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Charsets;
@@ -115,5 +117,16 @@ public final class Utils {
     return result;
   }
 
+  public interface Interpolator {
+    int apply(int value);
+  }
+  
+  public static Interpolator interpolator(int inputMin, int inputMax, int outputMin, int outputMax) {
+    return (input) -> {
+      input = Math.max(inputMin, input);
+      input = Math.min(inputMax, input);
+      return outputMin + (outputMax - outputMin) * (input - inputMin) / (inputMax - inputMin);
+    };
+  }
 
 }

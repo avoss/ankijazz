@@ -12,9 +12,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.IntFunction;
 
 import org.junit.Test;
 
+import de.jlab.scales.Utils.Interpolator;
 import de.jlab.scales.theory.Scale;
 
 public class UtilsTest {
@@ -46,4 +48,13 @@ public class UtilsTest {
     }
   }
   
+  @Test
+  public void testInterpolator() {
+    Interpolator interpolator = Utils.interpolator(5, 10, 20, 40);
+    assertEquals(20, interpolator.apply(4));
+    assertEquals(20, interpolator.apply(5));
+    assertEquals(28, interpolator.apply(7));
+    assertEquals(40, interpolator.apply(10));
+    assertEquals(40, interpolator.apply(20));
+  }
 }
