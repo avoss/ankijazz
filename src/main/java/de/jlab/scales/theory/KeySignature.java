@@ -35,7 +35,8 @@ public class KeySignature {
   }
 
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
-    if (scale.length() != CMajor.length())  {
+    // TODO should work for non-major scales like AmMaj7?
+    if (scale.getNumberOfNotes() != CMajor.getNumberOfNotes())  {
       return fallback(scale, notationKey, accidental);
     }
     Analyzer analyzer = new Analyzer();

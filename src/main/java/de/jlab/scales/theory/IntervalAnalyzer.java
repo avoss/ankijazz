@@ -38,7 +38,7 @@ public class IntervalAnalyzer {
   }
 
   private void computeIntervalsRelativeToMajorScale(Result result, Set<Note> scaleNotes, Scale major) {
-    for (int i = 0; i < major.length(); i++) {
+    for (int i = 0; i < major.getNumberOfNotes(); i++) {
       Note cMajorNote = major.getNote(i);
       String intervalName = Integer.toString(i + 1);
       if (i > 0 && scaleNotes.contains(cMajorNote.transpose(-1))) {

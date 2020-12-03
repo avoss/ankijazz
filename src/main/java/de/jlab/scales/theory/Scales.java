@@ -12,16 +12,19 @@ import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
+import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Stream;
 
 import de.jlab.scales.Utils;
 
 public class Scales {
 
+  // FIXME BuiltinScaleType and BuiltinChordType .... should be Scales and Chords (and base class modes?)
   public static final Scale CMajor = new Scale(C, D, E, F, G, A, B);
   public static final Scale CMelodicMinor = new Scale(C, D, Eb, F, G, A, B);
   public static final Scale CHarmonicMinor = new Scale(C, D, Eb, F, G, Ab, B);
@@ -58,8 +61,20 @@ public class Scales {
   public static final Scale CminTriad = new Scale(C, Eb, G);
   public static final Scale CdimTriad = new Scale(C, Eb, Gb);
   public static final Scale CaugTriad = new Scale(C, E, Ab);
-  public static final Scale CsusTriad = new Scale(C, F, G);
+  public static final Scale Csus4Triad = new Scale(C, F, G);
 
+  public static List<Scale> seventhChords() {
+    return List.of(Cmaj7, Cm7, Cm6, C7, Cm7b5, Cdim7, Cmmaj7, Cmaj7Sharp5, Cmaj7Sharp11, C7sus4, C7flat9, C7sharp9, C7flat5, C7sharp5, C7flat5flat9, C7sharp5flat9, C7flat5sharp9, C7sharp5sharp9);
+  }
+
+  public static List<Scale> triads() {
+    return List.of(CmajTriad, CminTriad, CdimTriad, CaugTriad, Csus4Triad);
+  }
+  
+  public static List<Scale> allChords() {
+    return Stream.concat(seventhChords().stream(), triads().stream()).collect(toList());
+  }
+  
   public static Scale parseChord(String name) {
     return ChordParser.parseChord(name);
   }

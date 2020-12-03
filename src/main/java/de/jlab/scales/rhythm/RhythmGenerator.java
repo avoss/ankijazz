@@ -14,24 +14,19 @@ import static de.jlab.scales.rhythm.Event.r3;
 import static de.jlab.scales.rhythm.Event.r4;
 import static de.jlab.scales.rhythm.Event.rt;
 import static de.jlab.scales.rhythm.Quarter.q;
-import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
-import java.util.stream.Collectors;
-
-import com.google.common.base.Optional;
-import com.google.common.collect.Lists;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
 
+// FIXME RhythmGenerator has no tests
 public class RhythmGenerator {
 
   private static class RandomTies implements Function<List<Quarter>, List<Quarter>> {

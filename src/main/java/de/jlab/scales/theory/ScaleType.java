@@ -7,4 +7,5 @@ public interface ScaleType {
   String getTypeName();
   String[] getModeNames();
   Function<Note, Note> notationKey();
+  boolean isChord();
 }

@@ -88,7 +88,7 @@ public class LilyScale {
   }
 
   private String lilyNotesWithExtendedOctave() {
-    switch (scale.length()) {
+    switch (scale.getNumberOfNotes()) {
     case 5:
       return format("%s %s2.", lilyNotes(), lilyRoot());
     case 6:
@@ -98,7 +98,7 @@ public class LilyScale {
     case 8:
       return format("%s %s1", lilyNotes(), lilyRoot());
     default:
-      throw new IllegalStateException(format("Scales with %d notes not implemented", scale.length()));
+      throw new IllegalStateException(format("Scales with %d notes not implemented", scale.getNumberOfNotes()));
 
     }
       

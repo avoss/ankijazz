@@ -62,6 +62,7 @@ public class DifficultyModel implements WithDifficulty {
     }
   }
 
+
   private final Set<Term> terms = new HashSet<>();
   
   @Override
@@ -90,6 +91,12 @@ public class DifficultyModel implements WithDifficulty {
   public DifficultyModel register(Term term) {
     terms.add(term);
     return this;
+  }
+
+  public DoubleTerm doubleTerm(double weight) {
+    DoubleTerm factor = new DoubleTerm(0, 1, weight);
+    register(factor);
+    return factor;
   }
 
 }

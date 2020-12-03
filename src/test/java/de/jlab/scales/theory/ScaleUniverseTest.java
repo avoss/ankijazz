@@ -2,7 +2,7 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedTriad;
+import static de.jlab.scales.theory.BuiltInChordTypes.DiminishedTriad;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
@@ -56,8 +56,8 @@ import de.jlab.scales.TestUtils;
 
 public class ScaleUniverseTest {
 
-  private static ScaleUniverse allScales = new ScaleUniverse(true);
-  private static ScaleUniverse jazz = new ScaleUniverse(true, Major, MelodicMinor, HarmonicMinor);
+  private static ScaleUniverse allScales = new ScaleUniverse(true, ScaleUniverse.ALL_TYPES);
+  private static ScaleUniverse jazz = new ScaleUniverse(true, List.of(Major, MelodicMinor, HarmonicMinor));
 
   class ScaleInfoComparator implements Comparator<ScaleInfo> {
     List<ScaleType> types = Arrays.asList(BuiltInScaleTypes.values());
@@ -139,7 +139,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testSuperScales() {
-    ScaleUniverse universe = new ScaleUniverse(false, Major, Minor7Pentatonic);
+    ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, Minor7Pentatonic));
     for (Scale scale : universe) {
       // System.out.println(scale.getName());
       ScaleInfo info = universe.info(scale);
@@ -174,7 +174,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testOrdering1() {
-    ScaleUniverse universe = new ScaleUniverse(Major, MelodicMinor);
+    ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, MelodicMinor));
     List<Scale> expected = Scales.allKeys(asList(CMajor, CMelodicMinor));
     List<Scale> actual = Lists.newArrayList(universe.iterator());
     assertThat(actual).isEqualTo(expected);
@@ -184,7 +184,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testOrdering2() {
-    ScaleUniverse universe = new ScaleUniverse(MelodicMinor, Major);
+    ScaleUniverse universe = new ScaleUniverse(false, List.of(MelodicMinor, Major));
     List<Scale> expected = Scales.allKeys(asList(CMelodicMinor, CMajor));
     List<Scale> actual = Lists.newArrayList(universe.iterator());
     assertThat(expected).isEqualTo(actual);
@@ -195,7 +195,7 @@ public class ScaleUniverseTest {
   
   @Test
   public void testMatchingScalesForChordNotInUniverse() {
-    ScaleUniverse universe = new ScaleUniverse(false, Major, MelodicMinor, DiminishedTriad);
+    ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, MelodicMinor, DiminishedTriad));
     ScaleInfo info = universe.info(Cm7b5.transpose(B));
     assertThat(info.getSuperScales()).containsExactlyInAnyOrder(CMajor, CMelodicMinor, CMelodicMinor.transpose(D));
     assertThat(info.getSubScales()).containsExactlyInAnyOrder(CdimTriad.transpose(B));
@@ -245,12 +245,12 @@ public class ScaleUniverseTest {
   public void testMultipleInfos() {
     Collection<ScaleInfo> infos = allScales.infos(Cm7b5);
     assertThat(infos.size()).isGreaterThan(1);
-    assertInfo(Cm7b5, Cm7b5, "Cø");
+    assertInfo(Cm7b5, Cm7b5, "Cm7b5");
   }
   
   @Test
   public void testModeInUniverseWithoutModes() {
-    ScaleUniverse universe = new ScaleUniverse(false, BuiltInScaleTypes.Major);
+    ScaleUniverse universe = new ScaleUniverse(false, List.of(Major));
     Scale dDorianScale = CMajor.superimpose(D);
     ScaleInfo dDorianInfo = universe.info(dDorianScale);
     assertThat(dDorianInfo.getScaleName()).isNotEqualTo("D Dorian");

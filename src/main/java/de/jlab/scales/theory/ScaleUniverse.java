@@ -1,17 +1,11 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.Utils.isSymmetricalDuplicate;
-import static de.jlab.scales.theory.BuiltInScaleTypes.DiminishedHalfWhole;
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMajor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
-import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Minor6Pentatonic;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
-import static de.jlab.scales.theory.BuiltInScaleTypes.WholeTone;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -25,7 +19,12 @@ import com.google.common.collect.MultimapBuilder;
 
 public class ScaleUniverse implements Iterable<Scale> {
 
-  public static final ScaleUniverse MODES = new ScaleUniverse(true, Major, HarmonicMinor, MelodicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone, Minor7Pentatonic, Minor6Pentatonic);
+  public static List<ScaleType> SCALE_TYPES = List.of(BuiltInScaleTypes.values());
+  public static List<ScaleType> CHORD_TYPES = List.of(BuiltInChordTypes.values());
+  public static List<ScaleType> ALL_TYPES = Stream.of(BuiltInScaleTypes.values(), BuiltInChordTypes.values()).flatMap(Arrays::stream).collect(toList());
+
+  public static final ScaleUniverse MODES = new ScaleUniverse(true, SCALE_TYPES);
+  public static final ScaleUniverse CHORDS = new ScaleUniverse(false, CHORD_TYPES);
   
   /**
    * TODO:
@@ -43,6 +42,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     private final String[] modeNames;
 
     public String name(int index, Note oldRoot, Note newRoot, KeySignature keySignature) {
+
       String oldRootName = keySignature.notate(oldRoot);
       String newRootName = keySignature.notate(newRoot);
       String modeName = internalModeName(index);
@@ -71,38 +71,20 @@ public class ScaleUniverse implements Iterable<Scale> {
   private Set<Scale> scales = new LinkedHashSet<>();
   private boolean includeModes;
 
-  public ScaleUniverse() {
-    this(false);
-  }
-
-  public ScaleUniverse(boolean includeModes) {
-    this(includeModes, BuiltInScaleTypes.values());
-  }
-
-  public ScaleUniverse(ScaleType... scaleTypes) {
-    this(false, scaleTypes);
-  }
-
-  public ScaleUniverse(boolean includeModes, ScaleType... scaleTypes) {
+  public ScaleUniverse(boolean includeModes, Collection<? extends ScaleType> scaleTypes) {
     this.includeModes = includeModes;
-    Stream.of(scaleTypes).forEachOrdered(this::add);
+    scaleTypes.stream().forEachOrdered(this::add);
     initializeSubScales();
-    // TODO: initializeKeySignatures() now because parent scale is available
   }
 
   private void add(ScaleType scaleType) {
-    // TODO: Chord and Scale extend Mode
-    if (isChord(scaleType.getPrototype())) {
+    if (scaleType.isChord()) {
       chord(scaleType);
     } else {
       scale(scaleType);
     }
   }
 
-  // TODO: move to scaleType?
-  private boolean isChord(Scale scale) {
-    return scale.length() < 5;
-  }
 
   private void scale(ScaleType scaleType) {
     Namer namer = Namer.builder()
@@ -140,7 +122,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void addModes(ScaleType scaleType, Scale parent, Namer namer, KeySignature keySignature) {
     Note oldRoot = parent.getRoot();
     
-    int numberOfModes = this.includeModes ? parent.length() : 1;
+    int numberOfModes = this.includeModes ? parent.getNumberOfNotes() : 1;
     ScaleInfo parentInfo = null;
     for (int i = 0; i < numberOfModes; i++) {
       Note newRoot = parent.getNote(i);
@@ -175,6 +157,7 @@ public class ScaleUniverse implements Iterable<Scale> {
 
   public ScaleInfo info(Scale scale) {
     return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
+//    return infos(scale).stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Scale not found: " + scale));
   }
 
   // FIXME too much guesswork here ...
@@ -198,6 +181,11 @@ public class ScaleUniverse implements Iterable<Scale> {
 
   private String scaleName(Scale scale, KeySignature signature) {
     return isChord(scale) ? scale.asChord(signature.getAccidental()) : signature.toString(scale);
+  }
+  
+  // FIXME - isChord() is a method of scale info
+  private boolean isChord(Scale scale) {
+    return scale.getNumberOfNotes() < 5;
   }
 
   private void initializeDefaultInfoSuperAndSubScales(ScaleInfo info) {

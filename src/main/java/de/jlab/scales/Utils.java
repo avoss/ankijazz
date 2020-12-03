@@ -15,8 +15,6 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
-import java.util.function.Function;
-import java.util.function.IntFunction;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Charsets;
@@ -77,7 +75,7 @@ public final class Utils {
   }
   
   public static String tags(Collection<String> tags) {
-    return tags.stream().map(s -> s.trim().replaceAll("[^\\w#]", "-")).collect(Collectors.joining(" "));
+    return tags.stream().map(s -> s.trim().replaceAll("[^\\w#Δø\\+=]", "-")).collect(Collectors.joining(" "));
   }
   
   

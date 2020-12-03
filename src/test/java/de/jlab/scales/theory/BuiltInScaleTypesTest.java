@@ -1,6 +1,6 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.BuiltInScaleTypes.Dominant7;
+import static de.jlab.scales.theory.BuiltInChordTypes.Dominant7;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;

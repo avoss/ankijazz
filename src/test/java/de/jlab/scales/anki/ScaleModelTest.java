@@ -1,6 +1,5 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Scales.CMajor;
@@ -19,12 +18,10 @@ import de.jlab.scales.theory.ScaleUniverse;
 
 public class ScaleModelTest {
   
-  static ScaleUniverse universe = new ScaleUniverse(true, Major);
-  
   @Test
   public void testWriteAssets() throws IOException {
     Scale bb7 = CMajor.transpose(Eb).superimpose(Bb);
-    ScaleModel model = new ScaleModel(universe.info(bb7));
+    ScaleModel model = new ScaleModel(ScaleUniverse.MODES.info(bb7));
     LilyCard card = new ModesPracticeCard(model);
     Path dir = Paths.get("build/lily");
     Files.createDirectories(dir);

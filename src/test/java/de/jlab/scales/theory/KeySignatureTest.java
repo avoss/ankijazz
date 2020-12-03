@@ -111,7 +111,7 @@ public class KeySignatureTest {
 
   private void assertNoDuplicateNotesExist(Scale scale, KeySignature signature) {
     Set<String> set = signature.notate(scale).stream().map(s -> s.replaceAll("x|#|b", "")).collect(Collectors.toSet());
-    assertEquals(signature.toString(scale), Math.min(scale.length(), CMajor.length()), set.size());
+    assertEquals(signature.toString(scale), Math.min(scale.getNumberOfNotes(), CMajor.getNumberOfNotes()), set.size());
   }
 
 }

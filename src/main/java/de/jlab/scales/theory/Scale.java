@@ -125,7 +125,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
 
   public List<Note> asList() {
     List<Note> list = new ArrayList<>();
-    for (int i = 0; i < length(); i++) {
+    for (int i = 0; i < getNumberOfNotes(); i++) {
       list.add(this.getNote(i));
     }
     return list;
@@ -138,7 +138,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   public Iterator<Note> iterator() {
     return new Iterator<Note>() {
       int index = 0;
-      Note note = root;  // TODO: note = root.transpose(-1);
+      Note note = root; 
 
       @Override
       public boolean hasNext() {
@@ -282,7 +282,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return index % notes.size();
   }
 
-  public int length() {
+  public int getNumberOfNotes() {
     return notes.size();
   }
 

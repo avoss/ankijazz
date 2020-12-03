@@ -5,6 +5,7 @@
 - migrate to junit 5
 - rename methods to getX, setX
 - scales free, modes commercial?
+- guitar tabulator
 
 --------------------------------------------------------------------------------------------
 
@@ -23,6 +24,13 @@ learn jazz efficiently
 
 website shows preview only (json + Angular), not full deck
 
+## chords
+
+key signature:
+- m6 -> dorian
+- minor -> aeolean
+- major -> ionian
+- dominant -> mixolydian
 
 ## Rhythm
 12/8 Bembe Bell Pattern, 6/8 Clave, 
