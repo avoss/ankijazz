@@ -51,7 +51,7 @@ public class ModesTheoryDeck extends AbstractDeck {
       }
     }
     modeIntervals();
-    spellChords();
+    //spellChords();
   }
 
 

@@ -57,5 +57,13 @@ public class AnalyzerTest {
     r.initialize();
     assertEquals(expectedRoot, r.getNotationKey());
   }
+  
+  @Test
+  public void assertBug() {
+    Scale fsmaj = CMajor.transpose(Gb);
+    Analyzer a = new Analyzer();
+    Result result = a.analyze(fsmaj, Accidental.SHARP);
+    assertEquals("F#", result.getNotationMap().get(Gb));
+  }
 
 }
