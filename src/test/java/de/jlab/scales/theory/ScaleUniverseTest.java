@@ -1,7 +1,6 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
-import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinChordType.DiminishedTriad;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
@@ -48,15 +47,12 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 
 public class ScaleUniverseTest {
 
@@ -331,5 +327,12 @@ public class ScaleUniverseTest {
     assertThat(info.getScaleName()).isEqualTo(name);
     assertEquals(info.getScale(), scale);
     assertEquals(info.getParentInfo().getScale(), parent);
+  }
+  
+  @Test
+  public void testFindScalesContaining() {
+    List<ScaleInfo> infos = new ScaleUniverse(false, List.of(Major, MelodicMinor)).findScalesContaining(Scales.Cm7.asSet());
+    List<String> names = infos.stream().map(ScaleInfo::getScaleName).collect(Collectors.toList());
+    assertEquals("[Eb Major Scale, Ab Major Scale, Bb Major Scale, Bb Melodic Minor]", names.toString());
   }
 }

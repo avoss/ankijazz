@@ -2,6 +2,7 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.TestUtils.reviewMarker;
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
@@ -11,7 +12,9 @@ import static de.jlab.scales.theory.KeySignature.fromScale;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
@@ -77,6 +80,21 @@ public class KeySignatureTest {
       }
     }
     assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");
+  }
+  
+  @Test
+  public void testInverse() {
+    Scale GbMajor = CMajor.transpose(Gb);
+    KeySignature sharpKeySignature = KeySignature.fromScale(GbMajor, Gb, SHARP);
+    KeySignature flatKeySignature = KeySignature.fromScale(GbMajor, Gb, FLAT);
+    String sharpNotes = "F# G# A# B C# D# E#";
+    String flatNotes = "Gb Ab Bb Cb Db Eb F";
+
+    assertEquals(sharpNotes, sharpKeySignature.toString(GbMajor));
+    assertEquals(flatNotes, sharpKeySignature.inverse().toString(GbMajor));
+
+    assertEquals(flatNotes, flatKeySignature.toString(GbMajor));
+    assertEquals(sharpNotes, flatKeySignature.inverse().toString(GbMajor));
   }
   
   @Test

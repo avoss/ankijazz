@@ -12,6 +12,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.google.common.collect.ListMultimap;
@@ -114,7 +115,7 @@ public class ScaleUniverse implements Iterable<Scale> {
       KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
       addModes(scaleType, parent, namer, keySignature);
       if (majorRoot == Note.Gb) {
-        addModes(scaleType, parent, namer, KeySignature.fromScale(parent, majorRoot, accidental.inverse()));
+        addModes(scaleType, parent, namer, keySignature.inverse());
       }
     }
   }
@@ -155,11 +156,21 @@ public class ScaleUniverse implements Iterable<Scale> {
     return infos.get(scale).stream().sorted(infoQuality).collect(toList());
   }
 
+  // TODO rename to findFirstOrElseDefault
   public ScaleInfo info(Scale scale) {
     return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
 //    return infos(scale).stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Scale not found: " + scale));
   }
 
+  public List<ScaleInfo> findScalesContaining(Set<Note> notes) {
+    return scales.stream()
+       .filter(scale -> scale.asSet().containsAll(notes))
+       .flatMap(scale -> infos(scale).stream())
+       .sorted(infoQuality)
+       .collect(Collectors.toList());
+    
+  }
+  
   // FIXME too much guesswork here ...
   private ScaleInfo defaultInfo(Scale scale) {
     ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).build();
@@ -183,7 +194,6 @@ public class ScaleUniverse implements Iterable<Scale> {
     return isChord(scale) ? scale.asChord(signature.getAccidental()) : signature.toString(scale);
   }
   
-  // FIXME - isChord() is a method of scale info
   private boolean isChord(Scale scale) {
     return scale.getNumberOfNotes() < 5;
   }
@@ -222,5 +232,6 @@ public class ScaleUniverse implements Iterable<Scale> {
   public Iterator<Scale> iterator() {
     return scales.iterator();
   }
+
 
 }

@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import de.jlab.scales.theory.Analyzer.Result;
+import lombok.*;
 
 /**
  * TODO: 
@@ -18,18 +19,23 @@ import de.jlab.scales.theory.Analyzer.Result;
  * @author andreas
  *
  */
-@lombok.RequiredArgsConstructor
-@lombok.Getter 
-@lombok.EqualsAndHashCode
-@lombok.ToString
+@RequiredArgsConstructor
+@Getter 
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@ToString
 public class KeySignature {
+  private final Scale scale;
+  @EqualsAndHashCode.Include
   private final Note notationKey;
+  @EqualsAndHashCode.Include
   private final Accidental accidental;
+  @EqualsAndHashCode.Include
   private final Map<Note, String> notationMap;
+  @EqualsAndHashCode.Include
   private boolean suppressStaffSignature = false;
   
   public KeySignature suppressStaffSignature() {
-    KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap);
+    KeySignature keySignature = new KeySignature(scale, Note.C, accidental, notationMap);
     keySignature.suppressStaffSignature = true;
     return keySignature;
   }
@@ -44,9 +50,13 @@ public class KeySignature {
     if (!result.getRemainingScaleNotes().isEmpty()) {
       return fallback(scale, notationKey, accidental);
     }
-    return toKeySignature(result, notationKey);
+    return toKeySignature(scale, result, notationKey);
   }
-
+  
+  public KeySignature inverse() {
+    return fromScale(scale, notationKey, accidental.inverse());
+  }
+  
   /**
    * according to Frank Sikora's book, every minor scale is notated using the key signature 
    * of relative major.
@@ -61,11 +71,11 @@ public class KeySignature {
   }
   
   public static KeySignature fallback(Scale scale, Note notationKey, Accidental accidental) {
-    return toKeySignature(new Analyzer().fallback(scale, accidental), notationKey);
+    return toKeySignature(scale, new Analyzer().fallback(scale, accidental), notationKey);
   }
 
-  private static KeySignature toKeySignature(Result result, Note notationKey) {
-    return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap());
+  private static KeySignature toKeySignature(Scale scale, Result result, Note notationKey) {
+    return new KeySignature(scale, notationKey, result.getAccidental(), result.getNotationMap());
   }
 
   public String notationKey() {
