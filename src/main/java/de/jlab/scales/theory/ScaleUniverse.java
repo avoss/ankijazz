@@ -164,6 +164,7 @@ public class ScaleUniverse implements Iterable<Scale> {
     }
 
     private int indexOf(ScaleInfo info) {
+      @SuppressWarnings("unlikely-arg-type")
       int index = types.indexOf(info);
       return index >= 0 ? index : 1000;
     }

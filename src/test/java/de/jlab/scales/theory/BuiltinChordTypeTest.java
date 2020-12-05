@@ -21,7 +21,7 @@ public class BuiltinChordTypeTest {
     for (ScaleType chordType : BuiltinChordType.values()) {
       Scale chord = chordType.getPrototype();
       ScaleInfo info = scales.findScalesContaining(chord.asSet()).get(0);
-      System.out.println(format("%5s is contained in %s", chordType.getTypeName(), info.getScaleName()));
+      System.out.println(format("%5s is contained in %2s %s", chordType.getTypeName(), info.getScale().getRoot().getName(FLAT), info.getTypeName()));
     }
   }
 
