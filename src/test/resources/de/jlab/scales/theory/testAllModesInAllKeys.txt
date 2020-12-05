@@ -415,41 +415,41 @@
              G Aeolean b1, Signature:  B (5#), Notation: G A# B C# D# E F# 
             A# Locrian b7, Signature:  B (5#), Notation: A# B C# D# E F# G 
 
-  C Diminished Half/Whole, Signature:  C (0b), Notation: C Db Eb E Gb G A Bb 
- Db Diminished Whole/Half, Signature:  C (0b), Notation: Db Eb E Gb G A Bb C 
+  C Diminished Half/Whole, Signature:  C (0b), Notation: C Db Eb E Gb G A Bb // duplicate note
+ Db Diminished Whole/Half, Signature:  C (0b), Notation: Db Eb E Gb G A Bb C // duplicate note
 
- Db Diminished Half/Whole, Signature:  C (0b), Notation: Db D E F G Ab Bb B 
-  D Diminished Whole/Half, Signature:  C (0b), Notation: D E F G Ab Bb B Db 
+ Db Diminished Half/Whole, Signature:  C (0b), Notation: Db D E F G Ab Bb B // duplicate note
+  D Diminished Whole/Half, Signature:  C (0b), Notation: D E F G Ab Bb B Db // duplicate note
 
-  D Diminished Half/Whole, Signature:  C (0b), Notation: D Eb F Gb Ab A B C 
- Eb Diminished Whole/Half, Signature:  C (0b), Notation: Eb F Gb Ab A B C D 
+  D Diminished Half/Whole, Signature:  C (0b), Notation: D Eb F Gb Ab A B C // duplicate note
+ Eb Diminished Whole/Half, Signature:  C (0b), Notation: Eb F Gb Ab A B C D // duplicate note
 
- Eb Diminished Half/Whole, Signature:  C (0b), Notation: Eb E Gb G A Bb C Db 
-  E Diminished Whole/Half, Signature:  C (0b), Notation: E Gb G A Bb C Db Eb 
+ Eb Diminished Half/Whole, Signature:  C (0b), Notation: Eb E Gb G A Bb C Db // duplicate note
+  E Diminished Whole/Half, Signature:  C (0b), Notation: E Gb G A Bb C Db Eb // duplicate note
 
-  E Diminished Half/Whole, Signature:  C (0b), Notation: E F G Ab Bb B Db D 
-  F Diminished Whole/Half, Signature:  C (0b), Notation: F G Ab Bb B Db D E 
+  E Diminished Half/Whole, Signature:  C (0b), Notation: E F G Ab Bb B Db D // duplicate note
+  F Diminished Whole/Half, Signature:  C (0b), Notation: F G Ab Bb B Db D E // duplicate note
 
-  F Diminished Half/Whole, Signature:  C (0b), Notation: F Gb Ab A B C D Eb 
- Gb Diminished Whole/Half, Signature:  C (0b), Notation: Gb Ab A B C D Eb F 
+  F Diminished Half/Whole, Signature:  C (0b), Notation: F Gb Ab A B C D Eb // duplicate note
+ Gb Diminished Whole/Half, Signature:  C (0b), Notation: Gb Ab A B C D Eb F // duplicate note
 
- Gb Diminished Half/Whole, Signature:  C (0b), Notation: Gb G A Bb C Db Eb E 
-  G Diminished Whole/Half, Signature:  C (0b), Notation: G A Bb C Db Eb E Gb 
+ Gb Diminished Half/Whole, Signature:  C (0b), Notation: Gb G A Bb C Db Eb E // duplicate note
+  G Diminished Whole/Half, Signature:  C (0b), Notation: G A Bb C Db Eb E Gb // duplicate note
 
-  G Diminished Half/Whole, Signature:  C (0b), Notation: G Ab Bb B Db D E F 
- Ab Diminished Whole/Half, Signature:  C (0b), Notation: Ab Bb B Db D E F G 
+  G Diminished Half/Whole, Signature:  C (0b), Notation: G Ab Bb B Db D E F // duplicate note
+ Ab Diminished Whole/Half, Signature:  C (0b), Notation: Ab Bb B Db D E F G // duplicate note
 
- Ab Diminished Half/Whole, Signature:  C (0b), Notation: Ab A B C D Eb F Gb 
-  A Diminished Whole/Half, Signature:  C (0b), Notation: A B C D Eb F Gb Ab 
+ Ab Diminished Half/Whole, Signature:  C (0b), Notation: Ab A B C D Eb F Gb // duplicate note
+  A Diminished Whole/Half, Signature:  C (0b), Notation: A B C D Eb F Gb Ab // duplicate note
 
-  A Diminished Half/Whole, Signature:  C (0b), Notation: A Bb C Db Eb E Gb G 
- Bb Diminished Whole/Half, Signature:  C (0b), Notation: Bb C Db Eb E Gb G A 
+  A Diminished Half/Whole, Signature:  C (0b), Notation: A Bb C Db Eb E Gb G // duplicate note
+ Bb Diminished Whole/Half, Signature:  C (0b), Notation: Bb C Db Eb E Gb G A // duplicate note
 
- Bb Diminished Half/Whole, Signature:  C (0b), Notation: Bb B Db D E F G Ab 
-  B Diminished Whole/Half, Signature:  C (0b), Notation: B Db D E F G Ab Bb 
+ Bb Diminished Half/Whole, Signature:  C (0b), Notation: Bb B Db D E F G Ab // duplicate note
+  B Diminished Whole/Half, Signature:  C (0b), Notation: B Db D E F G Ab Bb // duplicate note
 
-  B Diminished Half/Whole, Signature:  C (0b), Notation: B C D Eb F Gb Ab A 
-  C Diminished Whole/Half, Signature:  C (0b), Notation: C D Eb F Gb Ab A B 
+  B Diminished Half/Whole, Signature:  C (0b), Notation: B C D Eb F Gb Ab A // duplicate note
+  C Diminished Whole/Half, Signature:  C (0b), Notation: C D Eb F Gb Ab A B // duplicate note
 
              C Whole Tone, Signature:  C (0b), Notation: C D E Gb Ab Bb 
 

@@ -1,6 +1,7 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltInChordTypes.DiminishedTriad;
 import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
@@ -47,12 +48,15 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.junit.Test;
 
 import com.google.common.collect.Lists;
 
 import de.jlab.scales.TestUtils;
+import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 
 public class ScaleUniverseTest {
 
@@ -83,6 +87,21 @@ public class ScaleUniverseTest {
     }
   }
 
+  @Test
+  public void testChordTypes() {
+    List<String> actual = new ArrayList<>();
+    for (Scale chord : allKeys(Scales.allChords())) {
+      for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
+        String marker = TestUtils.reviewMarker(chord, info.getKeySignature());
+        String line = String.format("%s %s %s", info.getScaleName(), info.getKeySignature().toString(chord), marker);
+        System.out.println(line);
+        actual.add(line);
+      }
+    }
+    // FIXME AmΔ7 A C E Ab
+    assertFileContentMatches(actual, ScaleUniverseTest.class, "testChordTypes.txt");
+  }
+    
   @Test
   public void testAllModesInAllKeys() {
     List<ScaleInfo> scaleInfos = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CWholeTone, CDiminishedHalfWhole)))

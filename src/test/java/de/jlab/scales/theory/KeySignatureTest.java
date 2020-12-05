@@ -46,7 +46,7 @@ public class KeySignatureTest {
         actual.add(format("## %s %s", signature.notate(scale.getRoot()), type.getTypeName()));
         for (Scale chord : scale.getChords(4)) {
           String message = format("%10s %s", chord.asChord(signature.getAccidental()), signature.toString(chord));
-          System.out.println(message);
+          //System.out.println(message);
           actual.add(message);
           
         }

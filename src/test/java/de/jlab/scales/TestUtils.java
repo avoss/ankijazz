@@ -12,10 +12,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import de.jlab.scales.anki.Deck;
 import de.jlab.scales.theory.KeySignature;
@@ -90,10 +92,19 @@ public class TestUtils {
     if (rootNotation.contains("Cb") || rootNotation.contains("Fb") || rootNotation.contains("B#") || rootNotation.contains("E#")) {
       markers.add("enharmonic root");
     }
+    if (containsDuplicate(scale, scaleNotation)) {
+      markers.add("duplicate note");
+    }
     if (markers.isEmpty()) {
       return "";
     }
     return "// " + markers.stream().collect(joining(", "));
+  }
+
+  private static boolean containsDuplicate(Scale scale, String notation) {
+    String[] notes = notation.replace("#", "").replace("b", "").split(" ");
+    Set<String> uniqueNotes = Arrays.stream(notes).collect(Collectors.toSet());
+    return uniqueNotes.size() < scale.asList().size();
   }
 
   public static void writeTo(Deck deck, double randomness) {

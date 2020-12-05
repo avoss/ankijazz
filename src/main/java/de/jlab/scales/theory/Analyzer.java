@@ -1,13 +1,18 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Arrays;
@@ -63,8 +68,31 @@ public class Analyzer {
     private void completeNotationMap() {
       for (Note note : Note.values()) {
         notationMap.putIfAbsent(note, note.getName(accidental));
+        // notationMap.putIfAbsent(note, defaultNoteName(note, accidental));
       }
     }
+    
+//    private String defaultNoteName(Note note, Accidental accidental) {
+//      if (accidental == SHARP) {
+//        if (note == F && scale.contains(Gb) && !scale.contains(E)) {
+//          return "E#";
+//        }
+//        if (note == C && scale.contains(Db) && !scale.contains(B)) {
+//          return "B#";
+//        }
+//      }
+//
+//      if (accidental == FLAT) {
+//        if (note == B && scale.contains(Bb) && !scale.contains(C)) {
+//          return "Cb";
+//        }
+//        if (note == E && scale.contains(Eb) && !scale.contains(F)) {
+//          return "Fb";
+//        }
+//      }
+//      return note.getName(accidental);
+//    }
+//    
     
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
       notationKey = C;
