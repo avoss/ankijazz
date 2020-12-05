@@ -331,8 +331,9 @@ public class ScaleUniverseTest {
   
   @Test
   public void testFindScalesContaining() {
-    List<ScaleInfo> infos = new ScaleUniverse(false, List.of(Major, MelodicMinor)).findScalesContaining(Scales.Cm7.asSet());
+    //List<ScaleInfo> infos = new ScaleUniverse(false, List.of(Major, MelodicMinor)).findScalesContaining(Scales.Cm7.asSet());
+    List<ScaleInfo> infos = jazz.findScalesContaining(Scales.Cm7.asSet());
     List<String> names = infos.stream().map(ScaleInfo::getScaleName).collect(Collectors.toList());
-    assertEquals("[Eb Major Scale, Ab Major Scale, Bb Major Scale, Bb Melodic Minor]", names.toString());
+    assertEquals("[Bb Major Scale, Eb Major Scale, Ab Major Scale, Bb Melodic Minor, G Harmonic Minor]", names.toString());
   }
 }

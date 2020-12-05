@@ -1,6 +1,7 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.Utils.isSymmetricalDuplicate;
+import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
@@ -110,11 +111,11 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void addAll(ScaleType scaleType, Namer namer) {
     Scale prototype = scaleType.getPrototype();
     for (Scale parent : Scales.allKeys(prototype)) {
-      Note majorRoot = scaleType.notationKey().apply(parent.getRoot());
-      Accidental accidental = Accidental.preferredAccidentalForMajorKey(majorRoot);
-      KeySignature keySignature = KeySignature.fromScale(parent, majorRoot, accidental);
+      Note notationKey = scaleType.notationKey().apply(parent.getRoot());
+      Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
+      KeySignature keySignature = KeySignature.fromScale(parent, notationKey, accidental);
       addModes(scaleType, parent, namer, keySignature);
-      if (majorRoot == Note.Gb) {
+      if (notationKey == Note.Gb) {
         addModes(scaleType, parent, namer, keySignature.inverse());
       }
     }
@@ -148,12 +149,28 @@ public class ScaleUniverse implements Iterable<Scale> {
     }
   }
 
-  private final Comparator<ScaleInfo> infoQuality = (a, b) -> {
-    return a.isInversion() == b.isInversion() ? 0 : (a.isInversion() ? 1 : -1);
+  private final Comparator<ScaleInfo> difficulty = new Comparator<ScaleInfo>() {
+    private final List<ScaleType> types = List.of(Major, MelodicMinor, HarmonicMinor, WholeTone, DiminishedHalfWhole, HarmonicMajor);
+
+    @Override
+    public int compare(ScaleInfo a, ScaleInfo b) {
+      if (a.isInversion() != b.isInversion()) {
+        return a.isInversion() ? 1 : -1;
+      }
+      if (a.getScaleType() != b.getScaleType()) {
+        return Integer.compare(indexOf(a), indexOf(b));
+      }
+      return Integer.compare(a.getKeySignature().getNumberOfAccidentals(), b.getKeySignature().getNumberOfAccidentals()); 
+    }
+
+    private int indexOf(ScaleInfo info) {
+      int index = types.indexOf(info);
+      return index >= 0 ? index : 1000;
+    }
   };
 
   public List<ScaleInfo> infos(Scale scale) {
-    return infos.get(scale).stream().sorted(infoQuality).collect(toList());
+    return infos.get(scale).stream().sorted(difficulty).collect(toList());
   }
 
   // TODO rename to findFirstOrElseDefault
@@ -166,7 +183,8 @@ public class ScaleUniverse implements Iterable<Scale> {
     return scales.stream()
        .filter(scale -> scale.asSet().containsAll(notes))
        .flatMap(scale -> infos(scale).stream())
-       .sorted(infoQuality)
+       .filter(info -> !info.isInversion())
+       .sorted(difficulty)
        .collect(Collectors.toList());
     
   }
