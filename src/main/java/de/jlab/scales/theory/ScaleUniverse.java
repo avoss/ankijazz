@@ -115,7 +115,7 @@ public class ScaleUniverse implements Iterable<Scale> {
       Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
       KeySignature keySignature = KeySignature.fromScale(parent, notationKey, accidental);
       addModes(scaleType, parent, namer, keySignature);
-      if (notationKey == Note.Gb) {
+      if (keySignature.getNotationKey() == Note.Gb) {
         addModes(scaleType, parent, namer, keySignature.inverse());
       }
     }

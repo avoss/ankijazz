@@ -20,11 +20,11 @@ import lombok.*;
  *
  */
 @RequiredArgsConstructor
-@Getter 
+@Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class KeySignature {
-  private final Scale scale;
+  private final Scale constructionScale;
   @EqualsAndHashCode.Include
   private final Note notationKey;
   @EqualsAndHashCode.Include
@@ -35,7 +35,7 @@ public class KeySignature {
   private boolean suppressStaffSignature = false;
   
   public KeySignature suppressStaffSignature() {
-    KeySignature keySignature = new KeySignature(scale, Note.C, accidental, notationMap);
+    KeySignature keySignature = new KeySignature(constructionScale, Note.C, accidental, notationMap);
     keySignature.suppressStaffSignature = true;
     return keySignature;
   }
@@ -54,7 +54,7 @@ public class KeySignature {
   }
   
   public KeySignature inverse() {
-    return fromScale(scale, notationKey, accidental.inverse());
+    return fromScale(constructionScale, notationKey, accidental.inverse());
   }
   
   /**
