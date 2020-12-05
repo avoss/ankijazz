@@ -1,9 +1,9 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.BuiltInChordTypes.Dominant7;
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
-import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
+import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.Major;
+import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;

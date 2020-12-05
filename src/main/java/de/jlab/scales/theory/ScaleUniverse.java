@@ -19,9 +19,9 @@ import com.google.common.collect.MultimapBuilder;
 
 public class ScaleUniverse implements Iterable<Scale> {
 
-  public static List<ScaleType> SCALE_TYPES = List.of(BuiltInScaleTypes.values());
-  public static List<ScaleType> CHORD_TYPES = List.of(BuiltInChordTypes.values());
-  public static List<ScaleType> ALL_TYPES = Stream.of(BuiltInScaleTypes.values(), BuiltInChordTypes.values()).flatMap(Arrays::stream).collect(toList());
+  public static List<ScaleType> SCALE_TYPES = List.of(BuiltinScaleType.values());
+  public static List<ScaleType> CHORD_TYPES = List.of(BuiltinChordType.values());
+  public static List<ScaleType> ALL_TYPES = Stream.of(BuiltinScaleType.values(), BuiltinChordType.values()).flatMap(Arrays::stream).collect(toList());
 
   public static final ScaleUniverse MODES = new ScaleUniverse(true, SCALE_TYPES);
   public static final ScaleUniverse CHORDS = new ScaleUniverse(false, CHORD_TYPES);

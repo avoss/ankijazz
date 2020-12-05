@@ -8,7 +8,7 @@ import de.jlab.scales.lily.Clef;
 import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;
 import de.jlab.scales.theory.Accidental;
-import de.jlab.scales.theory.BuiltInScaleTypes;
+import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.ScaleInfo;
@@ -84,7 +84,7 @@ public class ScaleModel implements WithDifficulty {
   private double computeDifficulty() {
     DifficultyModel model = new DifficultyModel();
     model.doubleTerm(0, 6, 100).update(modeInfo.getKeySignature().getNumberOfAccidentals());
-    model.booleanTerm(50).update(modeInfo.getScaleType() != BuiltInScaleTypes.Major);
+    model.booleanTerm(50).update(modeInfo.getScaleType() != BuiltinScaleType.Major);
     model.booleanTerm(25).update(modeInfo.isInversion());
     return model.getDifficulty();
   }

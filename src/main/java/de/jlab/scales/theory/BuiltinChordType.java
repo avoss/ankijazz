@@ -34,7 +34,7 @@ import static de.jlab.scales.theory.Scales.Csus4Triad;
 import java.util.function.Function;
 
 
-public enum BuiltInChordTypes implements ScaleType {
+public enum BuiltinChordType implements ScaleType {
   Major7(Cmaj7, "Δ7", C),
   Major7Sharp11(Cmaj7Sharp11, "Δ7#11", G),
   Minor7(Cm7, "m7", Bb),
@@ -65,7 +65,7 @@ public enum BuiltInChordTypes implements ScaleType {
   private final String typeName;
   private final Function<Note, Note> notationKey;
   
-  BuiltInChordTypes(Scale prototype, String typeName, Note modeKey) {
+  BuiltinChordType(Scale prototype, String typeName, Note modeKey) {
     this.prototype = prototype;
     this.typeName = typeName;
     this.notationKey = (n) -> n.transpose(modeKey.ordinal());

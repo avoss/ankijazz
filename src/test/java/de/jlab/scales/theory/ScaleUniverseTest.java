@@ -3,11 +3,11 @@ package de.jlab.scales.theory;
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.BuiltInChordTypes.DiminishedTriad;
-import static de.jlab.scales.theory.BuiltInScaleTypes.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Major;
-import static de.jlab.scales.theory.BuiltInScaleTypes.MelodicMinor;
-import static de.jlab.scales.theory.BuiltInScaleTypes.Minor7Pentatonic;
+import static de.jlab.scales.theory.BuiltinChordType.DiminishedTriad;
+import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.Major;
+import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;
@@ -64,7 +64,7 @@ public class ScaleUniverseTest {
   private static ScaleUniverse jazz = new ScaleUniverse(true, List.of(Major, MelodicMinor, HarmonicMinor));
 
   class ScaleInfoComparator implements Comparator<ScaleInfo> {
-    List<ScaleType> types = Arrays.asList(BuiltInScaleTypes.values());
+    List<ScaleType> types = Arrays.asList(BuiltinScaleType.values());
     List<Note> roots = Arrays.asList(Note.values());
     @Override
     public int compare(ScaleInfo a, ScaleInfo b) {

@@ -15,7 +15,7 @@ import static de.jlab.scales.theory.Scales.CWholeTone;
 import java.util.function.Function;
 
 
-public enum BuiltInScaleTypes implements ScaleType {
+public enum BuiltinScaleType implements ScaleType {
   Major(CMajor, "Major Scale", C, "Major Scale", "Dorian", "Phrygian", "Lydian", "Mixolydian", "Aeolean", "Locrian"),
   MelodicMinor(CMelodicMinor,  "Melodic Minor", D, "Melodic Minor", "Dorian b2", "Lydian Augmented", "Lydian Dominant", "Mixolydian b6", "Locrian natural 2", "Altered"),
   HarmonicMinor(CHarmonicMinor, "Harmonic Minor", A, "Harmonic Minor", "Locrian #6", "Ionian #5", "Dorian #4", "Phrygian Dominant", "Lydian #2", "Mixolydian #1"),
@@ -33,14 +33,14 @@ public enum BuiltInScaleTypes implements ScaleType {
   private final String[] modeNames;
   private final Function<Note, Note> notationKey;
   
-  BuiltInScaleTypes(Scale prototype, String typeName, Note modeKey, String ... modeNames) {
+  BuiltinScaleType(Scale prototype, String typeName, Note modeKey, String ... modeNames) {
     this.prototype = prototype;
     this.typeName = typeName;
     this.notationKey = (n) -> n.transpose(-modeKey.ordinal());
     this.modeNames = modeNames;
   }
 
-  BuiltInScaleTypes(Scale prototype, String typeName, String ... modeNames) {
+  BuiltinScaleType(Scale prototype, String typeName, String ... modeNames) {
     this.prototype = prototype;
     this.typeName = typeName;
     this.notationKey = (n) -> Note.C;
