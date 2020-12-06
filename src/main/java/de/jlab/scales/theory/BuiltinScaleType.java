@@ -62,13 +62,19 @@ public enum BuiltinScaleType implements ScaleType {
     return typeName;
   }
 
-  @Override
-  public Function<Note, Note> notationKey() {
+  Function<Note, Note> notationKey() {
     return notationKey;
   }
 
   @Override
   public boolean isChord() {
     return false;
+  }
+
+  @Override
+  public KeySignature getKeySignature(Note root) {
+    Note notationKey = notationKey().apply(root);
+    Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
+    return KeySignature.fromScale(prototype.transpose(root), notationKey, accidental);
   }
 }

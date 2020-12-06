@@ -8,6 +8,7 @@ import java.text.MessageFormat;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -25,6 +26,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   public static List<ScaleType> CHORD_TYPES = List.of(BuiltinChordType.values());
   public static List<ScaleType> ALL_TYPES = Stream.of(BuiltinScaleType.values(), BuiltinChordType.values()).flatMap(Arrays::stream).collect(toList());
 
+  public static final ScaleUniverse SCALES = new ScaleUniverse(false, SCALE_TYPES);
   public static final ScaleUniverse MODES = new ScaleUniverse(true, SCALE_TYPES);
   public static final ScaleUniverse CHORDS = new ScaleUniverse(false, CHORD_TYPES);
   
@@ -111,9 +113,7 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void addAll(ScaleType scaleType, Namer namer) {
     Scale prototype = scaleType.getPrototype();
     for (Scale parent : Scales.allKeys(prototype)) {
-      Note notationKey = scaleType.notationKey().apply(parent.getRoot());
-      Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
-      KeySignature keySignature = KeySignature.fromScale(parent, notationKey, accidental);
+      KeySignature keySignature = scaleType.getKeySignature(parent.getRoot());
       addModes(scaleType, parent, namer, keySignature);
       if (keySignature.getNotationKey() == Note.Gb) {
         addModes(scaleType, parent, namer, keySignature.inverse());
@@ -149,27 +149,8 @@ public class ScaleUniverse implements Iterable<Scale> {
     }
   }
 
-  private final Comparator<ScaleInfo> difficulty = new Comparator<ScaleInfo>() {
-    private final List<ScaleType> types = List.of(Major, MelodicMinor, HarmonicMinor, WholeTone, DiminishedHalfWhole, HarmonicMajor);
-
-    @Override
-    public int compare(ScaleInfo a, ScaleInfo b) {
-      if (a.isInversion() != b.isInversion()) {
-        return a.isInversion() ? 1 : -1;
-      }
-      if (a.getScaleType() != b.getScaleType()) {
-        return Integer.compare(indexOf(a), indexOf(b));
-      }
-      return Integer.compare(a.getKeySignature().getNumberOfAccidentals(), b.getKeySignature().getNumberOfAccidentals()); 
-    }
-
-    private int indexOf(ScaleInfo info) {
-      @SuppressWarnings("unlikely-arg-type")
-      int index = types.indexOf(info);
-      return index >= 0 ? index : 1000;
-    }
-  };
-
+  private final Comparator<ScaleInfo> difficulty = new ScalesDifficultyComparator(); 
+      
   public List<ScaleInfo> infos(Scale scale) {
     return infos.get(scale).stream().sorted(difficulty).collect(toList());
   }
@@ -181,11 +162,14 @@ public class ScaleUniverse implements Iterable<Scale> {
   }
 
   public List<ScaleInfo> findScalesContaining(Set<Note> notes) {
+    Set<Set<Note>> seenBefore = new HashSet<>();
     return scales.stream()
        .filter(scale -> scale.asSet().containsAll(notes))
        .flatMap(scale -> infos(scale).stream())
        .filter(info -> !info.isInversion())
        .sorted(difficulty)
+       .filter(info -> !seenBefore.contains(info.getScale().asSet()))
+       .map(info -> {seenBefore.add(info.getScale().asSet()); return info; })
        .collect(Collectors.toList());
     
   }

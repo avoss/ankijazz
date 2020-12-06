@@ -12,7 +12,6 @@ import static de.jlab.scales.theory.KeySignature.fromScale;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
@@ -44,11 +43,10 @@ public class KeySignatureTest {
     for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor)) {
       actual.add(format("# %s", type.getTypeName()));
       for (Scale scale : allKeys(type.getPrototype())) {
-        Note majorKey = type.notationKey().apply(scale.getRoot());
-        KeySignature signature = fromScale(scale, majorKey, Accidental.preferredAccidentalForMajorKey(majorKey));
-        actual.add(format("## %s %s", signature.notate(scale.getRoot()), type.getTypeName()));
+        KeySignature keySignature = type.getKeySignature(scale.getRoot());
+        actual.add(format("## %s %s", keySignature.notate(scale.getRoot()), type.getTypeName()));
         for (Scale chord : scale.getChords(4)) {
-          String message = format("%10s %s", chord.asChord(signature.getAccidental()), signature.toString(chord));
+          String message = format("%10s %s", chord.asChord(keySignature.getAccidental()), keySignature.toString(chord));
           //System.out.println(message);
           actual.add(message);
           
@@ -68,15 +66,14 @@ public class KeySignatureTest {
     for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor)) {
       actual.add("# " + type.getTypeName());
       for (Scale scale : allKeys(type.getPrototype())) {
-        Note majorKey = type.notationKey().apply(scale.getRoot());
-        KeySignature signature = fromScale(scale, majorKey, Accidental.preferredAccidentalForMajorKey(majorKey));
-        String reviewMarker = reviewMarker(scale, signature);
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", signature.notate(scale.getRoot()), type.getTypeName(), signature.notationKey(), 
-            signature.getNumberOfAccidentals(), signature.getAccidental().symbol(), signature.toString(scale), reviewMarker);
+        KeySignature keySignature = type.getKeySignature(scale.getRoot());
+        String reviewMarker = reviewMarker(scale, keySignature);
+        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", keySignature.notate(scale.getRoot()), type.getTypeName(), keySignature.notationKey(), 
+            keySignature.getNumberOfAccidentals(), keySignature.getAccidental().symbol(), keySignature.toString(scale), reviewMarker);
         actual.add(message);
         //System.out.println(message);
-        assertNoDuplicateNotesExist(scale, signature);
-        assertNoDuplicateNotationExist(scale, signature);
+        assertNoDuplicateNotesExist(scale, keySignature);
+        assertNoDuplicateNotationExist(scale, keySignature);
       }
     }
     assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");

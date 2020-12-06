@@ -3,6 +3,7 @@ package de.jlab.scales.theory;
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinChordType.DiminishedTriad;
+import static de.jlab.scales.theory.BuiltinScaleType.DiminishedHalfWhole;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
 import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
@@ -57,7 +58,7 @@ import de.jlab.scales.TestUtils;
 public class ScaleUniverseTest {
 
   private static ScaleUniverse allScales = new ScaleUniverse(true, ScaleUniverse.ALL_TYPES);
-  private static ScaleUniverse jazz = new ScaleUniverse(true, List.of(Major, MelodicMinor, HarmonicMinor));
+  private static ScaleUniverse jazz = new ScaleUniverse(true, List.of(Major, MelodicMinor, HarmonicMinor, DiminishedHalfWhole));
 
   class ScaleInfoComparator implements Comparator<ScaleInfo> {
     List<ScaleType> types = Arrays.asList(BuiltinScaleType.values());
@@ -332,8 +333,14 @@ public class ScaleUniverseTest {
   @Test
   public void testFindScalesContaining() {
     //List<ScaleInfo> infos = new ScaleUniverse(false, List.of(Major, MelodicMinor)).findScalesContaining(Scales.Cm7.asSet());
-    List<ScaleInfo> infos = jazz.findScalesContaining(Scales.Cm7.asSet());
+    assertScaleContaining(Scales.Cm7, "[Bb Major Scale, Eb Major Scale, Ab Major Scale, Bb Melodic Minor, G Harmonic Minor, C Diminished Half/Whole]");
+    assertScaleContaining(Scales.Cm6, "[Bb Major Scale, C Melodic Minor, Bb Melodic Minor, E Harmonic Minor, G Harmonic Minor, C Diminished Half/Whole]");
+    assertScaleContaining(Scales.Cdim7, "[E Harmonic Minor, G Harmonic Minor, C# Harmonic Minor, Bb Harmonic Minor, C Diminished Half/Whole, D Diminished Half/Whole]");
+  }
+
+  private void assertScaleContaining(Scale chord, String expected) {
+    List<ScaleInfo> infos = jazz.findScalesContaining(chord.asSet());
     List<String> names = infos.stream().map(ScaleInfo::getScaleName).collect(Collectors.toList());
-    assertEquals("[Bb Major Scale, Eb Major Scale, Ab Major Scale, Bb Melodic Minor, G Harmonic Minor]", names.toString());
+    assertEquals(expected, names.toString());
   }
 }
