@@ -41,15 +41,8 @@ public class KeySignature {
   }
 
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
-    // TODO should work for non-major scales like AmMaj7?
-    if (scale.getNumberOfNotes() != CMajor.getNumberOfNotes())  {
-      return fallback(scale, notationKey, accidental);
-    }
     Analyzer analyzer = new Analyzer();
-    Result result = analyzer.analyze(scale, accidental);
-    if (!result.getRemainingScaleNotes().isEmpty()) {
-      return fallback(scale, notationKey, accidental);
-    }
+    Result result = analyzer.analyzeScale(scale, accidental);
     return toKeySignature(scale, result, notationKey);
   }
   
@@ -63,17 +56,24 @@ public class KeySignature {
    */
   public static KeySignature fromScale(Scale scale) {
     Note notationKey = scale.isMinor() ? scale.getRoot().transpose(3) : scale.getRoot();
-    return fromScale(scale, notationKey, Accidental.preferredAccidentalForMajorKey(notationKey));
+    Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
+    return fromScale(scale, notationKey, accidental);
   }
   
-  public static KeySignature fallback(Scale scale) {
-    return fallback(scale, Note.C, FLAT);
+  public static KeySignature fromChord(Scale chord, Note notationKey) {
+    //Note notationKey = chord.isMinor() ? chord.getRoot().transpose(3) : chord.getRoot();
+    Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
+    Analyzer analyzer = new Analyzer();
+    Result result = analyzer.analyzeChord(chord, accidental);
+    if (!result.getRemainingScaleNotes().isEmpty()) {
+      result = analyzer.analyzeChord(chord, accidental.inverse());
+    }
+    if (!result.getRemainingScaleNotes().isEmpty()) {
+      result = analyzer.fallback(chord, accidental);
+    }
+    return toKeySignature(chord, result, notationKey).suppressStaffSignature();
   }
   
-  public static KeySignature fallback(Scale scale, Note notationKey, Accidental accidental) {
-    return toKeySignature(scale, new Analyzer().fallback(scale, accidental), notationKey);
-  }
-
   private static KeySignature toKeySignature(Scale scale, Result result, Note notationKey) {
     return new KeySignature(scale, notationKey, result.getAccidental(), result.getNotationMap());
   }

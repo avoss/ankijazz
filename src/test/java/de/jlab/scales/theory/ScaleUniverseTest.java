@@ -95,7 +95,6 @@ public class ScaleUniverseTest {
         actual.add(line);
       }
     }
-    // FIXME AmΔ7 A C E Ab
     assertFileContentMatches(actual, ScaleUniverseTest.class, "testChordTypes.txt");
   }
     

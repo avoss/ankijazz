@@ -17,6 +17,7 @@ import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -110,7 +111,10 @@ public class Analyzer {
   }
 
   // TODO feature envy, move to Result
-  public Result analyze(Scale scale, Accidental accidental) {
+  public Result analyzeScale(Scale scale, Accidental accidental) {
+    if (scale.getNumberOfNotes() != CMajor.getNumberOfNotes())  {
+      return fallback(scale, accidental);
+    }
     Result result = new Result(scale, accidental);
     Note majorRoot = cMajorStartNote(scale, accidental);
     List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
@@ -144,6 +148,43 @@ public class Analyzer {
     return result;
   }
 
+  public Result analyzeChord(Scale chord, Accidental accidental) {
+    Result result = new Result(chord, accidental);
+    Note majorRoot = cMajorStartNote(chord, accidental);
+    List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
+    List<Note> scaleNotes = chord.asList();
+    result.remainingScaleNotes.addAll(scaleNotes);
+
+    Iterator<Note> iter = scaleNotes.iterator();
+    Note scaleNote = iter.next();
+    for (int i = 0; i < cmajorNotes.size(); i++) {
+      Note cmajorNote = cmajorNotes.get(i);
+      if (cmajorNote == scaleNote) {
+        result.majorNotesWithoutAccidental.add(cmajorNote);
+        result.remainingScaleNotes.remove(scaleNote);
+        result.notationMap.put(scaleNote, cmajorNote.name());
+        if (iter.hasNext()) {
+          scaleNote = iter.next();
+        } else {
+          break;
+        }
+      } else if (accidental.apply(cmajorNote) == scaleNote) {
+        result.majorNotesWithAccidental.add(cmajorNote);
+        result.remainingScaleNotes.remove(scaleNote);
+        result.notationMap.put(scaleNote, cmajorNote.name() + accidental.symbol());
+        if (iter.hasNext()) {
+          scaleNote = iter.next();
+        } else {
+          break;
+        }
+      } else {
+        result.remainingMajorNotes.add(cmajorNote);
+      }
+    }
+    result.initialize();
+    return result;
+  }
+  
   private Note cMajorStartNote(Scale scale, Accidental accidental) {
     Note note = scale.getRoot();
     if (!CMajor.contains(note)) {

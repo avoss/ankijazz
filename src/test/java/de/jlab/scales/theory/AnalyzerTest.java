@@ -62,7 +62,7 @@ public class AnalyzerTest {
   public void assertBug() {
     Scale fsmaj = CMajor.transpose(Gb);
     Analyzer a = new Analyzer();
-    Result result = a.analyze(fsmaj, Accidental.SHARP);
+    Result result = a.analyzeScale(fsmaj, Accidental.SHARP);
     assertEquals("F#", result.getNotationMap().get(Gb));
   }
 

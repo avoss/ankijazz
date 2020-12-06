@@ -99,7 +99,8 @@ public enum BuiltinChordType implements ScaleType {
 
   @Override
   public KeySignature getKeySignature(Note root) {
-    return scaleType.getKeySignature(scaleRoot.transpose(root));
+    //return scaleType.getKeySignature(scaleRoot.transpose(root));
+    return KeySignature.fromChord(prototype.transpose(root), scaleRoot.transpose(root));
   }
 
 }
