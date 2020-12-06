@@ -24,7 +24,6 @@ import lombok.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
 public class KeySignature {
-  private final Scale constructionScale;
   @EqualsAndHashCode.Include
   private final Note notationKey;
   @EqualsAndHashCode.Include
@@ -33,9 +32,11 @@ public class KeySignature {
   private final Map<Note, String> notationMap;
   @EqualsAndHashCode.Include
   private boolean suppressStaffSignature = false;
+  @EqualsAndHashCode.Include
+  private final int numberOfAccidentals;
   
   public KeySignature suppressStaffSignature() {
-    KeySignature keySignature = new KeySignature(constructionScale, Note.C, accidental, notationMap);
+    KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap, numberOfAccidentals);
     keySignature.suppressStaffSignature = true;
     return keySignature;
   }
@@ -44,10 +45,6 @@ public class KeySignature {
     Analyzer analyzer = new Analyzer();
     Result result = analyzer.analyzeScale(scale, accidental);
     return toKeySignature(scale, result, notationKey);
-  }
-  
-  public KeySignature inverse() {
-    return fromScale(constructionScale, notationKey, accidental.inverse());
   }
   
   /**
@@ -60,9 +57,7 @@ public class KeySignature {
     return fromScale(scale, notationKey, accidental);
   }
   
-  public static KeySignature fromChord(Scale chord, Note notationKey) {
-    //Note notationKey = chord.isMinor() ? chord.getRoot().transpose(3) : chord.getRoot();
-    Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
+  public static KeySignature fromChord(Scale chord, Accidental accidental) {
     Analyzer analyzer = new Analyzer();
     Result result = analyzer.analyzeChord(chord, accidental);
     if (!result.getRemainingScaleNotes().isEmpty()) {
@@ -71,11 +66,15 @@ public class KeySignature {
     if (!result.getRemainingScaleNotes().isEmpty()) {
       result = analyzer.fallback(chord, accidental);
     }
-    return toKeySignature(chord, result, notationKey).suppressStaffSignature();
+    return toKeySignature(chord, result, Note.C).suppressStaffSignature();
   }
   
   private static KeySignature toKeySignature(Scale scale, Result result, Note notationKey) {
-    return new KeySignature(scale, notationKey, result.getAccidental(), result.getNotationMap());
+    int numberOfAccidentals = 
+        result.getMajorNotesWithAccidental().size() 
+        + result.getMajorNotesWithInverseAccidental().size()
+        + result.getMajorNotesWithDoubleAccidental().size() * 2;
+    return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap(), numberOfAccidentals);
   }
 
   public String notationKey() {
@@ -98,7 +97,7 @@ public class KeySignature {
   }
 
   public int getNumberOfAccidentals() {
-    return accidental.numberOfAccidentals(notationKey);
+    return numberOfAccidentals;
   }
 
 

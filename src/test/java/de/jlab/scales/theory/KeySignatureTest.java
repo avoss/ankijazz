@@ -12,7 +12,9 @@ import static de.jlab.scales.theory.KeySignature.fromScale;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
@@ -38,60 +40,23 @@ public class KeySignatureTest {
 
  
   @Test
-  public void testChordNotation() throws IOException {
-    List<String> actual = new ArrayList<>();
-    for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor)) {
-      actual.add(format("# %s", type.getTypeName()));
-      for (Scale scale : allKeys(type.getPrototype())) {
-        KeySignature keySignature = type.getKeySignature(scale.getRoot());
-        actual.add(format("## %s %s", keySignature.notate(scale.getRoot()), type.getTypeName()));
-        for (Scale chord : scale.getChords(4)) {
-          String message = format("%10s %s", chord.asChord(keySignature.getAccidental()), keySignature.toString(chord));
-          //System.out.println(message);
-          actual.add(message);
-          
-        }
-      }
-    }
-    assertFileContentMatches(actual, KeySignatureTest.class, "testChordNotation.txt");
-  }
-
-  /**
-   * TODO: test DiminishedHalfWhole, WholeTone, pentatonics
-   */
-  
-  @Test
   public void testScaleNotation() throws IOException {
     List<String> actual = new ArrayList<>();
     for (ScaleType type : asList(Major, MelodicMinor, HarmonicMinor, HarmonicMajor)) {
       actual.add("# " + type.getTypeName());
       for (Scale scale : allKeys(type.getPrototype())) {
-        KeySignature keySignature = type.getKeySignature(scale.getRoot());
-        String reviewMarker = reviewMarker(scale, keySignature);
-        String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", keySignature.notate(scale.getRoot()), type.getTypeName(), keySignature.notationKey(), 
-            keySignature.getNumberOfAccidentals(), keySignature.getAccidental().symbol(), keySignature.toString(scale), reviewMarker);
-        actual.add(message);
-        //System.out.println(message);
-        assertNoDuplicateNotesExist(scale, keySignature);
-        assertNoDuplicateNotationExist(scale, keySignature);
+        for (KeySignature keySignature : type.getKeySignatures(scale.getRoot())) {
+          String reviewMarker = reviewMarker(scale, keySignature);
+          String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", keySignature.notate(scale.getRoot()), type.getTypeName(), keySignature.notationKey(), 
+              keySignature.getNumberOfAccidentals(), keySignature.getAccidental().symbol(), keySignature.toString(scale), reviewMarker);
+          actual.add(message);
+          //System.out.println(message);
+          assertNoDuplicateNotesExist(scale, keySignature);
+          assertNoDuplicateNotationExist(scale, keySignature);
+        }
       }
     }
     assertFileContentMatches(actual, KeySignatureTest.class, "testScaleNotation.txt");
-  }
-  
-  @Test
-  public void testInverse() {
-    Scale GbMajor = CMajor.transpose(Gb);
-    KeySignature sharpKeySignature = KeySignature.fromScale(GbMajor, Gb, SHARP);
-    KeySignature flatKeySignature = KeySignature.fromScale(GbMajor, Gb, FLAT);
-    String sharpNotes = "F# G# A# B C# D# E#";
-    String flatNotes = "Gb Ab Bb Cb Db Eb F";
-
-    assertEquals(sharpNotes, sharpKeySignature.toString(GbMajor));
-    assertEquals(flatNotes, sharpKeySignature.inverse().toString(GbMajor));
-
-    assertEquals(flatNotes, flatKeySignature.toString(GbMajor));
-    assertEquals(sharpNotes, flatKeySignature.inverse().toString(GbMajor));
   }
   
   @Test
@@ -129,4 +94,22 @@ public class KeySignatureTest {
     assertEquals(signature.toString(scale), Math.min(scale.getNumberOfNotes(), CMajor.getNumberOfNotes()), set.size());
   }
 
+  @Test
+  public void testChords() {
+    Scale dmaj7 = Scales.Cmaj7.transpose(D);
+    assertEquals("D F# A C#", KeySignature.fromChord(dmaj7, SHARP).toString(dmaj7));
+    //assertEquals("D Gb A Db", KeySignature.fromChord(dmaj7, FLAT).toString(dmaj7));
+    
+    Scale dbm6 = Scales.Cm6.transpose(Db);
+    assertEquals("C# E G# A#", KeySignature.fromChord(dbm6, SHARP).toString(dbm6));
+    assertEquals("Db E Ab Bb", KeySignature.fromChord(dbm6, FLAT).toString(dbm6));
+    
+    Scale gmaj7 = Scales.Cmaj7.transpose(G);
+    assertEquals("G B D F#", KeySignature.fromChord(gmaj7, SHARP).toString(gmaj7));
+    //assertEquals("G B D Gb", KeySignature.fromChord(gmaj7, FLAT).toString(gmaj7));
+    
+    Scale gsm6 = Scales.Cm6.transpose(Ab);
+    assertEquals("G# B D# F", KeySignature.fromChord(gsm6, SHARP).toString(gsm6));
+  }
+ 
 }

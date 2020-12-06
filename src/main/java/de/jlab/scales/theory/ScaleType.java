@@ -1,9 +1,13 @@
 package de.jlab.scales.theory;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Set;
+
 public interface ScaleType {
   Scale getPrototype();
   String getTypeName();
   String[] getModeNames();
   boolean isChord();
-  KeySignature getKeySignature(Note root);
+  Set<? extends KeySignature> getKeySignatures(Note root);
 }

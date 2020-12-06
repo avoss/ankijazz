@@ -12,6 +12,10 @@ import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
 import static de.jlab.scales.theory.Scales.CMinorPentatonic;
 import static de.jlab.scales.theory.Scales.CWholeTone;
 
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.function.Function;
 
 
@@ -72,9 +76,15 @@ public enum BuiltinScaleType implements ScaleType {
   }
 
   @Override
-  public KeySignature getKeySignature(Note root) {
+  public Set<KeySignature> getKeySignatures(Note root) {
     Note notationKey = notationKey().apply(root);
     Accidental accidental = Accidental.preferredAccidentalForMajorKey(notationKey);
-    return KeySignature.fromScale(prototype.transpose(root), notationKey, accidental);
+    Set<KeySignature> result = new LinkedHashSet<>();
+    KeySignature keySignature = KeySignature.fromScale(prototype.transpose(root), notationKey, accidental);
+    result.add(keySignature);
+    if (notationKey == Note.Gb) {
+      result.add(KeySignature.fromScale(prototype.transpose(root), notationKey, accidental.inverse()));
+    }
+    return result;
   }
 }

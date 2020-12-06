@@ -113,10 +113,8 @@ public class ScaleUniverse implements Iterable<Scale> {
   private void addAll(ScaleType scaleType, Namer namer) {
     Scale prototype = scaleType.getPrototype();
     for (Scale parent : Scales.allKeys(prototype)) {
-      KeySignature keySignature = scaleType.getKeySignature(parent.getRoot());
-      addModes(scaleType, parent, namer, keySignature);
-      if (keySignature.getNotationKey() == Note.Gb) {
-        addModes(scaleType, parent, namer, keySignature.inverse());
+      for (KeySignature keySignature : scaleType.getKeySignatures(parent.getRoot())) {
+        addModes(scaleType, parent, namer, keySignature);
       }
     }
   }

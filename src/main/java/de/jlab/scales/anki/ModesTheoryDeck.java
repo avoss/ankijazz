@@ -12,6 +12,7 @@ import de.jlab.scales.Utils;
 import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 import de.jlab.scales.theory.IntervalAnalyzer;
+import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -19,7 +20,7 @@ import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
 /**
- * Ankie fields??
+ * Anki fields??
  * <ul>
  * <li>front</li>
  * <li>back</li>
@@ -115,13 +116,26 @@ public class ModesTheoryDeck extends AbstractDeck {
       for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
         numberOfAccidentalsDifficulty.update(info.getKeySignature().getNumberOfAccidentals());
         numberOfNotesDifficulty.update(chord.getNumberOfNotes());
-        String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s?</div>", info.getScaleName(), chord.getNumberOfNotes() == 3 ? "Triad" : "Chord");
+        Object chordLabel = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
+        String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s%s?</div>", info.getScaleName(), chordLabel, chordSignature(info));
         String back = divb(info.getKeySignature().toString(info.getScale()));
         String tags = chordTags("SpellChord", info);
         add(model.getDifficulty(), front, back, tags);
       }
     }
   }
+
+  private String chordSignature(ScaleInfo info) {
+    if (!Scales.CMajor.contains(info.getScale().getRoot())) {
+      return "";
+    }
+    KeySignature keySignature = info.getKeySignature();
+    if (keySignature.getNumberOfAccidentals() == 0) {
+      return "";
+    }
+    return format(" (using <b>%s</b>)", keySignature.getAccidental() == FLAT ? "flats" : "sharps");
+  }
+
 
   private String scaleTags(String task, ScaleInfo info) {
     return tags("Mode", task, info); 
@@ -139,13 +153,11 @@ public class ModesTheoryDeck extends AbstractDeck {
   }
   
   private String divb(String x) {
-    String back = format("<div><b>%s</b></div>", x);
-    return back;
+    return format("<div><b>%s</b></div>", x);
   }
  
   private double computeDifficulty(ScaleInfo info) {
-    ScaleModel model = new ScaleModel(info);
-    return model.getDifficulty();
+    return new ScaleModel(info).getDifficulty();
   }
   
 }

@@ -246,7 +246,6 @@ public class ScaleUniverseTest {
 
   @Test
   public void testChordInversion() {
-    assertInfo(Cmaj7, Cmaj7, "CΔ7", KeySignature.fromScale(CMajor));
     assertInfo(Cmaj7.superimpose(E), Cmaj7, "CΔ7/E");
   }
 
@@ -334,7 +333,7 @@ public class ScaleUniverseTest {
     //List<ScaleInfo> infos = new ScaleUniverse(false, List.of(Major, MelodicMinor)).findScalesContaining(Scales.Cm7.asSet());
     assertScaleContaining(Scales.Cm7, "[Bb Major Scale, Eb Major Scale, Ab Major Scale, Bb Melodic Minor, G Harmonic Minor, C Diminished Half/Whole]");
     assertScaleContaining(Scales.Cm6, "[Bb Major Scale, C Melodic Minor, Bb Melodic Minor, E Harmonic Minor, G Harmonic Minor, C Diminished Half/Whole]");
-    assertScaleContaining(Scales.Cdim7, "[E Harmonic Minor, G Harmonic Minor, C# Harmonic Minor, Bb Harmonic Minor, C Diminished Half/Whole, D Diminished Half/Whole]");
+    assertScaleContaining(Scales.Cdim7, "[E Harmonic Minor, G Harmonic Minor, Bb Harmonic Minor, C# Harmonic Minor, C Diminished Half/Whole, D Diminished Half/Whole]");
   }
 
   private void assertScaleContaining(Scale chord, String expected) {

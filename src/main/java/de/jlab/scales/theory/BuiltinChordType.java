@@ -1,5 +1,7 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
@@ -35,6 +37,14 @@ import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
 import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.Csus4Triad;
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collector;
+import java.util.stream.Stream;
 
 
 public enum BuiltinChordType implements ScaleType {
@@ -67,14 +77,14 @@ public enum BuiltinChordType implements ScaleType {
   
   private final Scale prototype;
   private final String typeName;
-  private final Note scaleRoot;
-  private final ScaleType scaleType;
+  private final Note containingScaleRoot;
+  private final ScaleType containingScaleType;
   
   BuiltinChordType(Scale prototype, String typeName, Note scaleRoot, ScaleType scaleType) {
     this.prototype = prototype;
     this.typeName = typeName;
-    this.scaleRoot = scaleRoot;
-    this.scaleType = scaleType;
+    this.containingScaleRoot = scaleRoot;
+    this.containingScaleType = scaleType;
   }
 
   @Override
@@ -98,9 +108,10 @@ public enum BuiltinChordType implements ScaleType {
   }
 
   @Override
-  public KeySignature getKeySignature(Note root) {
-    //return scaleType.getKeySignature(scaleRoot.transpose(root));
-    return KeySignature.fromChord(prototype.transpose(root), scaleRoot.transpose(root));
+  public Set<KeySignature> getKeySignatures(Note root) {
+    Scale chord = prototype.transpose(root);
+    Set<Accidental> accidentals = containingScaleType.getKeySignatures(containingScaleRoot.transpose(root)).stream().map(KeySignature::getAccidental).collect(toSet());
+    return accidentals.stream().map(accidental -> KeySignature.fromChord(chord, accidental)).collect(toSet());
   }
 
 }

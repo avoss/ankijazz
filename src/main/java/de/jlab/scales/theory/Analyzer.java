@@ -1,10 +1,10 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.*;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
@@ -168,7 +168,7 @@ public class Analyzer {
         } else {
           break;
         }
-      } else if (accidental.apply(cmajorNote) == scaleNote) {
+      } else if (!invalidAccidental(cmajorNote, accidental) && accidental.apply(cmajorNote) == scaleNote) {
         result.majorNotesWithAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
         result.notationMap.put(scaleNote, cmajorNote.name() + accidental.symbol());
@@ -183,6 +183,11 @@ public class Analyzer {
     }
     result.initialize();
     return result;
+  }
+
+  private boolean invalidAccidental(Note note, Accidental accidental) {
+    return (accidental == SHARP && (note == E || note == B))
+        || (accidental == FLAT && (note == F || note == C));
   }
   
   private Note cMajorStartNote(Scale scale, Accidental accidental) {

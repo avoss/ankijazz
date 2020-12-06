@@ -32,9 +32,7 @@ public class TestUtils {
   
   public static void assertFileContentMatches(List<String> actualLines, Class<?> testClass, String fileName) {
     try (InputStream inputStream = testClass.getResourceAsStream(fileName)) {
-      Path dir = Paths.get("build", testClass.getSimpleName());
-      Files.createDirectories(dir);
-      Files.write(dir.resolve(fileName), actualLines);
+      writeActual(actualLines, testClass, fileName);
       if (disabled) return;
       if (inputStream == null) {
         fail("Resource not found: " + fileName);
@@ -48,11 +46,15 @@ public class TestUtils {
     }
   }
 
+  private static void writeActual(List<String> actualLines, Class<?> testClass, String fileName) throws IOException {
+    Path dir = Paths.get("build", testClass.getPackage().getName().replace('.', '/'));
+    Files.createDirectories(dir);
+    Files.write(dir.resolve(fileName), actualLines);
+  }
+
   public static void assertFileContentMatchesInAnyOrder(List<String> actualLines, Class<?> testClass, String fileName) {
     try {
-      Path dir = Paths.get("build", testClass.getSimpleName());
-      Files.createDirectories(dir);
-      Files.write(dir.resolve(fileName), actualLines);
+      writeActual(actualLines, testClass, fileName);
       if (disabled) return;
       List<String> expectedLines = Utils.readLines(testClass.getResourceAsStream(fileName));
       Set<String> expected = new LinkedHashSet<>(sanitize(expectedLines));
