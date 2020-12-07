@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
+import static de.jlab.scales.anki.AnkiUtils.ankiPng;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
@@ -71,9 +73,9 @@ public class RhythmCard extends LilyCard {
     return Stream.of(
         getTitle(),
         getTypeName(),
-        getPngName(),
-        getMp3Name(),
-        getMetronomeMp3Name(),
+        ankiPng(getPngName()),
+        ankiMp3(getMp3Name()),
+        ankiMp3(getMetronomeMp3Name()),
         hasTies(),
         hasSyncopation(),
         Integer.toString(getNumberOfUniqueQuarters()),

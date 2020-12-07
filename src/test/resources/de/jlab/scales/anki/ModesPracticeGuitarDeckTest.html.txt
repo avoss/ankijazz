@@ -32,11 +32,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: C Major Scale</li>
-            <li>ModeTypeName: Major Scale</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Major Scale</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-7f48f8b009.mp3</li>
             <li>ModeImage: AnkiJazz-7f48f8b009.png</li>
             <li>Direction: Descending</li>
@@ -58,11 +58,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: D Major Scale</li>
-            <li>ModeTypeName: Major Scale</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Major Scale</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-07267828cb.mp3</li>
             <li>ModeImage: AnkiJazz-07267828cb.png</li>
             <li>Direction: Ascending</li>
@@ -84,11 +84,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: E Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: E</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: E</li>
             <li>ModeName: E Major Scale</li>
-            <li>ModeTypeName: Major Scale</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Major Scale</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-f0927e229d.mp3</li>
             <li>ModeImage: AnkiJazz-f0927e229d.png</li>
             <li>Direction: Descending</li>
@@ -110,11 +110,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Gb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Gb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Gb</li>
             <li>ModeName: Gb Major Scale</li>
-            <li>ModeTypeName: Major Scale</li>
-            <li>ModeRootName: Gb</li>
+            <li>ModeType: Major Scale</li>
+            <li>ModeRoot: Gb</li>
             <li>ModeAudio: AnkiJazz-e597d5387b.mp3</li>
             <li>ModeImage: AnkiJazz-e597d5387b.png</li>
             <li>Direction: Ascending</li>
@@ -136,11 +136,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: G Major Scale</li>
-            <li>ModeTypeName: Major Scale</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Major Scale</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-d0f60cdca3.mp3</li>
             <li>ModeImage: AnkiJazz-d0f60cdca3.png</li>
             <li>Direction: Descending</li>
@@ -162,11 +162,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: A Major Scale</li>
-            <li>ModeTypeName: Major Scale</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Major Scale</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-ffbdabc23e.mp3</li>
             <li>ModeImage: AnkiJazz-ffbdabc23e.png</li>
             <li>Direction: Ascending</li>
@@ -188,11 +188,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: C Dorian</li>
-            <li>ModeTypeName: Dorian</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Dorian</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-4d31d57286.mp3</li>
             <li>ModeImage: AnkiJazz-4d31d57286.png</li>
             <li>Direction: Descending</li>
@@ -214,11 +214,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: D Dorian</li>
-            <li>ModeTypeName: Dorian</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Dorian</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-83e6e558f9.mp3</li>
             <li>ModeImage: AnkiJazz-83e6e558f9.png</li>
             <li>Direction: Ascending</li>
@@ -240,11 +240,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: E Dorian</li>
-            <li>ModeTypeName: Dorian</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Dorian</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-e463e8a71b.mp3</li>
             <li>ModeImage: AnkiJazz-e463e8a71b.png</li>
             <li>Direction: Descending</li>
@@ -266,11 +266,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: E Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: E</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: E</li>
             <li>ModeName: F# Dorian</li>
-            <li>ModeTypeName: Dorian</li>
-            <li>ModeRootName: F#</li>
+            <li>ModeType: Dorian</li>
+            <li>ModeRoot: F#</li>
             <li>ModeAudio: AnkiJazz-5dd8a44916.mp3</li>
             <li>ModeImage: AnkiJazz-5dd8a44916.png</li>
             <li>Direction: Ascending</li>
@@ -292,11 +292,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Gb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Gb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Gb</li>
             <li>ModeName: Ab Dorian</li>
-            <li>ModeTypeName: Dorian</li>
-            <li>ModeRootName: Ab</li>
+            <li>ModeType: Dorian</li>
+            <li>ModeRoot: Ab</li>
             <li>ModeAudio: AnkiJazz-fbfaa5eee9.mp3</li>
             <li>ModeImage: AnkiJazz-fbfaa5eee9.png</li>
             <li>Direction: Descending</li>
@@ -318,11 +318,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: A Dorian</li>
-            <li>ModeTypeName: Dorian</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Dorian</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-db7c1258bd.mp3</li>
             <li>ModeImage: AnkiJazz-db7c1258bd.png</li>
             <li>Direction: Ascending</li>
@@ -344,11 +344,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Ab Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Ab</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Ab</li>
             <li>ModeName: C Phrygian</li>
-            <li>ModeTypeName: Phrygian</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Phrygian</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-61de541c30.mp3</li>
             <li>ModeImage: AnkiJazz-61de541c30.png</li>
             <li>Direction: Descending</li>
@@ -370,11 +370,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: D Phrygian</li>
-            <li>ModeTypeName: Phrygian</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Phrygian</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-bf921c10b2.mp3</li>
             <li>ModeImage: AnkiJazz-bf921c10b2.png</li>
             <li>Direction: Ascending</li>
@@ -396,11 +396,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: E Phrygian</li>
-            <li>ModeTypeName: Phrygian</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Phrygian</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-d055e961aa.mp3</li>
             <li>ModeImage: AnkiJazz-d055e961aa.png</li>
             <li>Direction: Descending</li>
@@ -422,11 +422,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: F# Phrygian</li>
-            <li>ModeTypeName: Phrygian</li>
-            <li>ModeRootName: F#</li>
+            <li>ModeType: Phrygian</li>
+            <li>ModeRoot: F#</li>
             <li>ModeAudio: AnkiJazz-433573beab.mp3</li>
             <li>ModeImage: AnkiJazz-433573beab.png</li>
             <li>Direction: Ascending</li>
@@ -448,11 +448,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: E Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: E</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: E</li>
             <li>ModeName: G# Phrygian</li>
-            <li>ModeTypeName: Phrygian</li>
-            <li>ModeRootName: G#</li>
+            <li>ModeType: Phrygian</li>
+            <li>ModeRoot: G#</li>
             <li>ModeAudio: AnkiJazz-a05142f168.mp3</li>
             <li>ModeImage: AnkiJazz-a05142f168.png</li>
             <li>Direction: Descending</li>
@@ -474,11 +474,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Gb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Gb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Gb</li>
             <li>ModeName: Bb Phrygian</li>
-            <li>ModeTypeName: Phrygian</li>
-            <li>ModeRootName: Bb</li>
+            <li>ModeType: Phrygian</li>
+            <li>ModeRoot: Bb</li>
             <li>ModeAudio: AnkiJazz-5929b821d2.mp3</li>
             <li>ModeImage: AnkiJazz-5929b821d2.png</li>
             <li>Direction: Ascending</li>
@@ -500,11 +500,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: C Lydian</li>
-            <li>ModeTypeName: Lydian</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Lydian</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-7d4e6c5405.mp3</li>
             <li>ModeImage: AnkiJazz-7d4e6c5405.png</li>
             <li>Direction: Descending</li>
@@ -526,11 +526,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: D Lydian</li>
-            <li>ModeTypeName: Lydian</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Lydian</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-ae9c664188.mp3</li>
             <li>ModeImage: AnkiJazz-ae9c664188.png</li>
             <li>Direction: Ascending</li>
@@ -552,11 +552,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: B Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: B</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: B</li>
             <li>ModeName: E Lydian</li>
-            <li>ModeTypeName: Lydian</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Lydian</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-48a5941a3a.mp3</li>
             <li>ModeImage: AnkiJazz-48a5941a3a.png</li>
             <li>Direction: Descending</li>
@@ -578,11 +578,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Db Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Db</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Db</li>
             <li>ModeName: Gb Lydian</li>
-            <li>ModeTypeName: Lydian</li>
-            <li>ModeRootName: Gb</li>
+            <li>ModeType: Lydian</li>
+            <li>ModeRoot: Gb</li>
             <li>ModeAudio: AnkiJazz-220d3ce1db.mp3</li>
             <li>ModeImage: AnkiJazz-220d3ce1db.png</li>
             <li>Direction: Ascending</li>
@@ -604,11 +604,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: Ab Lydian</li>
-            <li>ModeTypeName: Lydian</li>
-            <li>ModeRootName: Ab</li>
+            <li>ModeType: Lydian</li>
+            <li>ModeRoot: Ab</li>
             <li>ModeAudio: AnkiJazz-f152a30233.mp3</li>
             <li>ModeImage: AnkiJazz-f152a30233.png</li>
             <li>Direction: Descending</li>
@@ -630,11 +630,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: Bb Lydian</li>
-            <li>ModeTypeName: Lydian</li>
-            <li>ModeRootName: Bb</li>
+            <li>ModeType: Lydian</li>
+            <li>ModeRoot: Bb</li>
             <li>ModeAudio: AnkiJazz-33373e892a.mp3</li>
             <li>ModeImage: AnkiJazz-33373e892a.png</li>
             <li>Direction: Ascending</li>
@@ -656,11 +656,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: C Mixolydian</li>
-            <li>ModeTypeName: Mixolydian</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Mixolydian</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-217f678c6a.mp3</li>
             <li>ModeImage: AnkiJazz-217f678c6a.png</li>
             <li>Direction: Descending</li>
@@ -682,11 +682,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F# Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F#</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F#</li>
             <li>ModeName: C# Mixolydian</li>
-            <li>ModeTypeName: Mixolydian</li>
-            <li>ModeRootName: C#</li>
+            <li>ModeType: Mixolydian</li>
+            <li>ModeRoot: C#</li>
             <li>ModeAudio: AnkiJazz-8d178db14c.mp3</li>
             <li>ModeImage: AnkiJazz-8d178db14c.png</li>
             <li>Direction: Ascending</li>
@@ -708,11 +708,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Ab Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Ab</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Ab</li>
             <li>ModeName: Eb Mixolydian</li>
-            <li>ModeTypeName: Mixolydian</li>
-            <li>ModeRootName: Eb</li>
+            <li>ModeType: Mixolydian</li>
+            <li>ModeRoot: Eb</li>
             <li>ModeAudio: AnkiJazz-61d171fbae.mp3</li>
             <li>ModeImage: AnkiJazz-61d171fbae.png</li>
             <li>Direction: Descending</li>
@@ -734,11 +734,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: F Mixolydian</li>
-            <li>ModeTypeName: Mixolydian</li>
-            <li>ModeRootName: F</li>
+            <li>ModeType: Mixolydian</li>
+            <li>ModeRoot: F</li>
             <li>ModeAudio: AnkiJazz-c7b8c0cc66.mp3</li>
             <li>ModeImage: AnkiJazz-c7b8c0cc66.png</li>
             <li>Direction: Ascending</li>
@@ -760,11 +760,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: G Mixolydian</li>
-            <li>ModeTypeName: Mixolydian</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Mixolydian</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-398c2cf297.mp3</li>
             <li>ModeImage: AnkiJazz-398c2cf297.png</li>
             <li>Direction: Descending</li>
@@ -786,11 +786,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: A Mixolydian</li>
-            <li>ModeTypeName: Mixolydian</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Mixolydian</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-a5f61a2fb2.mp3</li>
             <li>ModeImage: AnkiJazz-a5f61a2fb2.png</li>
             <li>Direction: Ascending</li>
@@ -812,11 +812,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: C Aeolean</li>
-            <li>ModeTypeName: Aeolean</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Aeolean</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-ee368f852f.mp3</li>
             <li>ModeImage: AnkiJazz-ee368f852f.png</li>
             <li>Direction: Descending</li>
@@ -838,11 +838,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: D Aeolean</li>
-            <li>ModeTypeName: Aeolean</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Aeolean</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-0b9b51b491.mp3</li>
             <li>ModeImage: AnkiJazz-0b9b51b491.png</li>
             <li>Direction: Ascending</li>
@@ -864,11 +864,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F# Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F#</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F#</li>
             <li>ModeName: D# Aeolean</li>
-            <li>ModeTypeName: Aeolean</li>
-            <li>ModeRootName: D#</li>
+            <li>ModeType: Aeolean</li>
+            <li>ModeRoot: D#</li>
             <li>ModeAudio: AnkiJazz-af6f8dcc21.mp3</li>
             <li>ModeImage: AnkiJazz-af6f8dcc21.png</li>
             <li>Direction: Descending</li>
@@ -890,11 +890,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Ab Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Ab</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Ab</li>
             <li>ModeName: F Aeolean</li>
-            <li>ModeTypeName: Aeolean</li>
-            <li>ModeRootName: F</li>
+            <li>ModeType: Aeolean</li>
+            <li>ModeRoot: F</li>
             <li>ModeAudio: AnkiJazz-d5ec288808.mp3</li>
             <li>ModeImage: AnkiJazz-d5ec288808.png</li>
             <li>Direction: Ascending</li>
@@ -916,11 +916,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: G Aeolean</li>
-            <li>ModeTypeName: Aeolean</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Aeolean</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-ccf1018e6f.mp3</li>
             <li>ModeImage: AnkiJazz-ccf1018e6f.png</li>
             <li>Direction: Descending</li>
@@ -942,11 +942,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: A Aeolean</li>
-            <li>ModeTypeName: Aeolean</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Aeolean</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-93eb9ecab9.mp3</li>
             <li>ModeImage: AnkiJazz-93eb9ecab9.png</li>
             <li>Direction: Ascending</li>
@@ -968,11 +968,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Db Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Db</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Db</li>
             <li>ModeName: C Locrian</li>
-            <li>ModeTypeName: Locrian</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Locrian</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-038b5ee1e0.mp3</li>
             <li>ModeImage: AnkiJazz-038b5ee1e0.png</li>
             <li>Direction: Descending</li>
@@ -994,11 +994,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: D Locrian</li>
-            <li>ModeTypeName: Locrian</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Locrian</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-d592055a02.mp3</li>
             <li>ModeImage: AnkiJazz-d592055a02.png</li>
             <li>Direction: Ascending</li>
@@ -1020,11 +1020,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: E Locrian</li>
-            <li>ModeTypeName: Locrian</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Locrian</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-0237b2076c.mp3</li>
             <li>ModeImage: AnkiJazz-0237b2076c.png</li>
             <li>Direction: Descending</li>
@@ -1046,11 +1046,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F# Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: F#</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: F#</li>
             <li>ModeName: E# Locrian</li>
-            <li>ModeTypeName: Locrian</li>
-            <li>ModeRootName: E#</li>
+            <li>ModeType: Locrian</li>
+            <li>ModeRoot: E#</li>
             <li>ModeAudio: AnkiJazz-c96bde9a82.mp3</li>
             <li>ModeImage: AnkiJazz-c96bde9a82.png</li>
             <li>Direction: Ascending</li>
@@ -1072,11 +1072,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Ab Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Ab</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Ab</li>
             <li>ModeName: G Locrian</li>
-            <li>ModeTypeName: Locrian</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Locrian</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-c1cc436952.mp3</li>
             <li>ModeImage: AnkiJazz-c1cc436952.png</li>
             <li>Direction: Descending</li>
@@ -1098,11 +1098,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Major Scale</li>
-            <li>ParentTypeName: Major Scale</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Major Scale</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: A Locrian</li>
-            <li>ModeTypeName: Locrian</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Locrian</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-868d97e46d.mp3</li>
             <li>ModeImage: AnkiJazz-868d97e46d.png</li>
             <li>Direction: Ascending</li>
@@ -1124,11 +1124,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: C Melodic Minor</li>
-            <li>ModeTypeName: Melodic Minor</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Melodic Minor</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-fd229c4446.mp3</li>
             <li>ModeImage: AnkiJazz-fd229c4446.png</li>
             <li>Direction: Descending</li>
@@ -1150,11 +1150,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: D Melodic Minor</li>
-            <li>ModeTypeName: Melodic Minor</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Melodic Minor</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-913200d511.mp3</li>
             <li>ModeImage: AnkiJazz-913200d511.png</li>
             <li>Direction: Ascending</li>
@@ -1176,11 +1176,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: E Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: E</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: E</li>
             <li>ModeName: E Melodic Minor</li>
-            <li>ModeTypeName: Melodic Minor</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Melodic Minor</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-48f0006c8d.mp3</li>
             <li>ModeImage: AnkiJazz-48f0006c8d.png</li>
             <li>Direction: Descending</li>
@@ -1202,11 +1202,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F# Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: F#</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: F#</li>
             <li>ModeName: F# Melodic Minor</li>
-            <li>ModeTypeName: Melodic Minor</li>
-            <li>ModeRootName: F#</li>
+            <li>ModeType: Melodic Minor</li>
+            <li>ModeRoot: F#</li>
             <li>ModeAudio: AnkiJazz-3de0ba2139.mp3</li>
             <li>ModeImage: AnkiJazz-3de0ba2139.png</li>
             <li>Direction: Ascending</li>
@@ -1228,11 +1228,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Ab Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: Ab</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: Ab</li>
             <li>ModeName: Ab Melodic Minor</li>
-            <li>ModeTypeName: Melodic Minor</li>
-            <li>ModeRootName: Ab</li>
+            <li>ModeType: Melodic Minor</li>
+            <li>ModeRoot: Ab</li>
             <li>ModeAudio: AnkiJazz-494f3af839.mp3</li>
             <li>ModeImage: AnkiJazz-494f3af839.png</li>
             <li>Direction: Descending</li>
@@ -1254,11 +1254,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: A Melodic Minor</li>
-            <li>ModeTypeName: Melodic Minor</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Melodic Minor</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-89024d421f.mp3</li>
             <li>ModeImage: AnkiJazz-89024d421f.png</li>
             <li>Direction: Ascending</li>
@@ -1280,11 +1280,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: C Lydian Dominant</li>
-            <li>ModeTypeName: Lydian Dominant</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Lydian Dominant</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-2fc387b984.mp3</li>
             <li>ModeImage: AnkiJazz-2fc387b984.png</li>
             <li>Direction: Descending</li>
@@ -1306,11 +1306,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G# Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: G#</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: G#</li>
             <li>ModeName: C# Lydian Dominant</li>
-            <li>ModeTypeName: Lydian Dominant</li>
-            <li>ModeRootName: C#</li>
+            <li>ModeType: Lydian Dominant</li>
+            <li>ModeRoot: C#</li>
             <li>ModeAudio: AnkiJazz-8985f05e77.mp3</li>
             <li>ModeImage: AnkiJazz-8985f05e77.png</li>
             <li>Direction: Ascending</li>
@@ -1332,11 +1332,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: Eb Lydian Dominant</li>
-            <li>ModeTypeName: Lydian Dominant</li>
-            <li>ModeRootName: Eb</li>
+            <li>ModeType: Lydian Dominant</li>
+            <li>ModeRoot: Eb</li>
             <li>ModeAudio: AnkiJazz-cb9e201683.mp3</li>
             <li>ModeImage: AnkiJazz-cb9e201683.png</li>
             <li>Direction: Descending</li>
@@ -1358,11 +1358,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: F Lydian Dominant</li>
-            <li>ModeTypeName: Lydian Dominant</li>
-            <li>ModeRootName: F</li>
+            <li>ModeType: Lydian Dominant</li>
+            <li>ModeRoot: F</li>
             <li>ModeAudio: AnkiJazz-e4d0a19d44.mp3</li>
             <li>ModeImage: AnkiJazz-e4d0a19d44.png</li>
             <li>Direction: Ascending</li>
@@ -1384,11 +1384,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: G Lydian Dominant</li>
-            <li>ModeTypeName: Lydian Dominant</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Lydian Dominant</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-2fb1cdeef9.mp3</li>
             <li>ModeImage: AnkiJazz-2fb1cdeef9.png</li>
             <li>Direction: Descending</li>
@@ -1410,11 +1410,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: E Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: E</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: E</li>
             <li>ModeName: A Lydian Dominant</li>
-            <li>ModeTypeName: Lydian Dominant</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Lydian Dominant</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-468d54d383.mp3</li>
             <li>ModeImage: AnkiJazz-468d54d383.png</li>
             <li>Direction: Ascending</li>
@@ -1436,11 +1436,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C# Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: C#</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: C#</li>
             <li>ModeName: B# Altered</li>
-            <li>ModeTypeName: Altered</li>
-            <li>ModeRootName: B#</li>
+            <li>ModeType: Altered</li>
+            <li>ModeRoot: B#</li>
             <li>ModeAudio: AnkiJazz-57546ab4be.mp3</li>
             <li>ModeImage: AnkiJazz-57546ab4be.png</li>
             <li>Direction: Descending</li>
@@ -1462,11 +1462,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: D Altered</li>
-            <li>ModeTypeName: Altered</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Altered</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-44771d4b69.mp3</li>
             <li>ModeImage: AnkiJazz-44771d4b69.png</li>
             <li>Direction: Ascending</li>
@@ -1488,11 +1488,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: E Altered</li>
-            <li>ModeTypeName: Altered</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Altered</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-032faba904.mp3</li>
             <li>ModeImage: AnkiJazz-032faba904.png</li>
             <li>Direction: Descending</li>
@@ -1514,11 +1514,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: F# Altered</li>
-            <li>ModeTypeName: Altered</li>
-            <li>ModeRootName: F#</li>
+            <li>ModeType: Altered</li>
+            <li>ModeRoot: F#</li>
             <li>ModeAudio: AnkiJazz-7922c356f7.mp3</li>
             <li>ModeImage: AnkiJazz-7922c356f7.png</li>
             <li>Direction: Ascending</li>
@@ -1540,11 +1540,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G# Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: G#</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: G#</li>
             <li>ModeName: Fx Altered</li>
-            <li>ModeTypeName: Altered</li>
-            <li>ModeRootName: Fx</li>
+            <li>ModeType: Altered</li>
+            <li>ModeRoot: Fx</li>
             <li>ModeAudio: AnkiJazz-4fcd9a94b6.mp3</li>
             <li>ModeImage: AnkiJazz-4fcd9a94b6.png</li>
             <li>Direction: Descending</li>
@@ -1566,11 +1566,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Melodic Minor</li>
-            <li>ParentTypeName: Melodic Minor</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Melodic Minor</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: A Altered</li>
-            <li>ModeTypeName: Altered</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Altered</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-7fbaf888ad.mp3</li>
             <li>ModeImage: AnkiJazz-7fbaf888ad.png</li>
             <li>Direction: Ascending</li>
@@ -1592,11 +1592,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: C Harmonic Minor</li>
-            <li>ModeTypeName: Harmonic Minor</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Harmonic Minor</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-1dfac3d951.mp3</li>
             <li>ModeImage: AnkiJazz-1dfac3d951.png</li>
             <li>Direction: Descending</li>
@@ -1618,11 +1618,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: D Harmonic Minor</li>
-            <li>ModeTypeName: Harmonic Minor</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Harmonic Minor</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-1c61d63dd0.mp3</li>
             <li>ModeImage: AnkiJazz-1c61d63dd0.png</li>
             <li>Direction: Ascending</li>
@@ -1644,11 +1644,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D# Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: D#</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: D#</li>
             <li>ModeName: D# Harmonic Minor</li>
-            <li>ModeTypeName: Harmonic Minor</li>
-            <li>ModeRootName: D#</li>
+            <li>ModeType: Harmonic Minor</li>
+            <li>ModeRoot: D#</li>
             <li>ModeAudio: AnkiJazz-4919f4e0cf.mp3</li>
             <li>ModeImage: AnkiJazz-4919f4e0cf.png</li>
             <li>Direction: Descending</li>
@@ -1670,11 +1670,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: F Harmonic Minor</li>
-            <li>ModeTypeName: Harmonic Minor</li>
-            <li>ModeRootName: F</li>
+            <li>ModeType: Harmonic Minor</li>
+            <li>ModeRoot: F</li>
             <li>ModeAudio: AnkiJazz-c828d12edb.mp3</li>
             <li>ModeImage: AnkiJazz-c828d12edb.png</li>
             <li>Direction: Ascending</li>
@@ -1696,11 +1696,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: G Harmonic Minor</li>
-            <li>ModeTypeName: Harmonic Minor</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Harmonic Minor</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-ad11a820b8.mp3</li>
             <li>ModeImage: AnkiJazz-ad11a820b8.png</li>
             <li>Direction: Descending</li>
@@ -1722,11 +1722,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: A Harmonic Minor</li>
-            <li>ModeTypeName: Harmonic Minor</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Harmonic Minor</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-728edbb286.mp3</li>
             <li>ModeImage: AnkiJazz-728edbb286.png</li>
             <li>Direction: Ascending</li>
@@ -1748,11 +1748,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: C Phrygian Dominant</li>
-            <li>ModeTypeName: Phrygian Dominant</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Phrygian Dominant</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-757a9eaaa5.mp3</li>
             <li>ModeImage: AnkiJazz-757a9eaaa5.png</li>
             <li>Direction: Descending</li>
@@ -1774,11 +1774,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: D Phrygian Dominant</li>
-            <li>ModeTypeName: Phrygian Dominant</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Phrygian Dominant</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-28c368cf44.mp3</li>
             <li>ModeImage: AnkiJazz-28c368cf44.png</li>
             <li>Direction: Ascending</li>
@@ -1800,11 +1800,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: E Phrygian Dominant</li>
-            <li>ModeTypeName: Phrygian Dominant</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Phrygian Dominant</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-c11f1a6946.mp3</li>
             <li>ModeImage: AnkiJazz-c11f1a6946.png</li>
             <li>Direction: Descending</li>
@@ -1826,11 +1826,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: B Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: B</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: B</li>
             <li>ModeName: F# Phrygian Dominant</li>
-            <li>ModeTypeName: Phrygian Dominant</li>
-            <li>ModeRootName: F#</li>
+            <li>ModeType: Phrygian Dominant</li>
+            <li>ModeRoot: F#</li>
             <li>ModeAudio: AnkiJazz-4ab8d28e47.mp3</li>
             <li>ModeImage: AnkiJazz-4ab8d28e47.png</li>
             <li>Direction: Ascending</li>
@@ -1852,11 +1852,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C# Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: C#</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: C#</li>
             <li>ModeName: G# Phrygian Dominant</li>
-            <li>ModeTypeName: Phrygian Dominant</li>
-            <li>ModeRootName: G#</li>
+            <li>ModeType: Phrygian Dominant</li>
+            <li>ModeRoot: G#</li>
             <li>ModeAudio: AnkiJazz-3c9220398f.mp3</li>
             <li>ModeImage: AnkiJazz-3c9220398f.png</li>
             <li>Direction: Descending</li>
@@ -1878,11 +1878,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Harmonic Minor</li>
-            <li>ParentTypeName: Harmonic Minor</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Harmonic Minor</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: Bb Phrygian Dominant</li>
-            <li>ModeTypeName: Phrygian Dominant</li>
-            <li>ModeRootName: Bb</li>
+            <li>ModeType: Phrygian Dominant</li>
+            <li>ModeRoot: Bb</li>
             <li>ModeAudio: AnkiJazz-bbccaec564.mp3</li>
             <li>ModeImage: AnkiJazz-bbccaec564.png</li>
             <li>Direction: Ascending</li>
@@ -1904,11 +1904,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: C Whole Tone</li>
-            <li>ParentTypeName: Whole Tone</li>
-            <li>ParentRootName: C</li>
+            <li>ParentType: Whole Tone</li>
+            <li>ParentRoot: C</li>
             <li>ModeName: C Whole Tone</li>
-            <li>ModeTypeName: Whole Tone</li>
-            <li>ModeRootName: C</li>
+            <li>ModeType: Whole Tone</li>
+            <li>ModeRoot: C</li>
             <li>ModeAudio: AnkiJazz-22e40e668d.mp3</li>
             <li>ModeImage: AnkiJazz-22e40e668d.png</li>
             <li>Direction: Descending</li>
@@ -1930,11 +1930,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: D Whole Tone</li>
-            <li>ParentTypeName: Whole Tone</li>
-            <li>ParentRootName: D</li>
+            <li>ParentType: Whole Tone</li>
+            <li>ParentRoot: D</li>
             <li>ModeName: D Whole Tone</li>
-            <li>ModeTypeName: Whole Tone</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Whole Tone</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-8f3a8a6e32.mp3</li>
             <li>ModeImage: AnkiJazz-8f3a8a6e32.png</li>
             <li>Direction: Ascending</li>
@@ -1956,11 +1956,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: E Whole Tone</li>
-            <li>ParentTypeName: Whole Tone</li>
-            <li>ParentRootName: E</li>
+            <li>ParentType: Whole Tone</li>
+            <li>ParentRoot: E</li>
             <li>ModeName: E Whole Tone</li>
-            <li>ModeTypeName: Whole Tone</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Whole Tone</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-b671bc52f6.mp3</li>
             <li>ModeImage: AnkiJazz-b671bc52f6.png</li>
             <li>Direction: Descending</li>
@@ -1982,11 +1982,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Gb Whole Tone</li>
-            <li>ParentTypeName: Whole Tone</li>
-            <li>ParentRootName: Gb</li>
+            <li>ParentType: Whole Tone</li>
+            <li>ParentRoot: Gb</li>
             <li>ModeName: Gb Whole Tone</li>
-            <li>ModeTypeName: Whole Tone</li>
-            <li>ModeRootName: Gb</li>
+            <li>ModeType: Whole Tone</li>
+            <li>ModeRoot: Gb</li>
             <li>ModeAudio: AnkiJazz-5f40f2921b.mp3</li>
             <li>ModeImage: AnkiJazz-5f40f2921b.png</li>
             <li>Direction: Ascending</li>
@@ -2008,11 +2008,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Ab Whole Tone</li>
-            <li>ParentTypeName: Whole Tone</li>
-            <li>ParentRootName: Ab</li>
+            <li>ParentType: Whole Tone</li>
+            <li>ParentRoot: Ab</li>
             <li>ModeName: Ab Whole Tone</li>
-            <li>ModeTypeName: Whole Tone</li>
-            <li>ModeRootName: Ab</li>
+            <li>ModeType: Whole Tone</li>
+            <li>ModeRoot: Ab</li>
             <li>ModeAudio: AnkiJazz-49b408db16.mp3</li>
             <li>ModeImage: AnkiJazz-49b408db16.png</li>
             <li>Direction: Descending</li>
@@ -2034,11 +2034,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Bb Whole Tone</li>
-            <li>ParentTypeName: Whole Tone</li>
-            <li>ParentRootName: Bb</li>
+            <li>ParentType: Whole Tone</li>
+            <li>ParentRoot: Bb</li>
             <li>ModeName: Bb Whole Tone</li>
-            <li>ModeTypeName: Whole Tone</li>
-            <li>ModeRootName: Bb</li>
+            <li>ModeType: Whole Tone</li>
+            <li>ModeRoot: Bb</li>
             <li>ModeAudio: AnkiJazz-ac9ba28a8a.mp3</li>
             <li>ModeImage: AnkiJazz-ac9ba28a8a.png</li>
             <li>Direction: Ascending</li>
@@ -2060,11 +2060,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Db Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: Db</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: Db</li>
             <li>ModeName: Db Diminished Half/Whole</li>
-            <li>ModeTypeName: Diminished Half/Whole</li>
-            <li>ModeRootName: Db</li>
+            <li>ModeType: Diminished Half/Whole</li>
+            <li>ModeRoot: Db</li>
             <li>ModeAudio: AnkiJazz-c188596719.mp3</li>
             <li>ModeImage: AnkiJazz-c188596719.png</li>
             <li>Direction: Descending</li>
@@ -2086,11 +2086,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: Eb Diminished Half/Whole</li>
-            <li>ModeTypeName: Diminished Half/Whole</li>
-            <li>ModeRootName: Eb</li>
+            <li>ModeType: Diminished Half/Whole</li>
+            <li>ModeRoot: Eb</li>
             <li>ModeAudio: AnkiJazz-34539a893a.mp3</li>
             <li>ModeImage: AnkiJazz-34539a893a.png</li>
             <li>Direction: Ascending</li>
@@ -2112,11 +2112,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: F Diminished Half/Whole</li>
-            <li>ModeTypeName: Diminished Half/Whole</li>
-            <li>ModeRootName: F</li>
+            <li>ModeType: Diminished Half/Whole</li>
+            <li>ModeRoot: F</li>
             <li>ModeAudio: AnkiJazz-660dfc859c.mp3</li>
             <li>ModeImage: AnkiJazz-660dfc859c.png</li>
             <li>Direction: Descending</li>
@@ -2138,11 +2138,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: G Diminished Half/Whole</li>
-            <li>ModeTypeName: Diminished Half/Whole</li>
-            <li>ModeRootName: G</li>
+            <li>ModeType: Diminished Half/Whole</li>
+            <li>ModeRoot: G</li>
             <li>ModeAudio: AnkiJazz-438e5f4aa5.mp3</li>
             <li>ModeImage: AnkiJazz-438e5f4aa5.png</li>
             <li>Direction: Ascending</li>
@@ -2164,11 +2164,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: A Diminished Half/Whole</li>
-            <li>ModeTypeName: Diminished Half/Whole</li>
-            <li>ModeRootName: A</li>
+            <li>ModeType: Diminished Half/Whole</li>
+            <li>ModeRoot: A</li>
             <li>ModeAudio: AnkiJazz-d56e15d561.mp3</li>
             <li>ModeImage: AnkiJazz-d56e15d561.png</li>
             <li>Direction: Descending</li>
@@ -2190,11 +2190,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: B Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: B</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: B</li>
             <li>ModeName: B Diminished Half/Whole</li>
-            <li>ModeTypeName: Diminished Half/Whole</li>
-            <li>ModeRootName: B</li>
+            <li>ModeType: Diminished Half/Whole</li>
+            <li>ModeRoot: B</li>
             <li>ModeAudio: AnkiJazz-d42198a903.mp3</li>
             <li>ModeImage: AnkiJazz-d42198a903.png</li>
             <li>Direction: Ascending</li>
@@ -2216,11 +2216,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Db Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: Db</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: Db</li>
             <li>ModeName: D Diminished Whole/Half</li>
-            <li>ModeTypeName: Diminished Whole/Half</li>
-            <li>ModeRootName: D</li>
+            <li>ModeType: Diminished Whole/Half</li>
+            <li>ModeRoot: D</li>
             <li>ModeAudio: AnkiJazz-36e55c777c.mp3</li>
             <li>ModeImage: AnkiJazz-36e55c777c.png</li>
             <li>Direction: Descending</li>
@@ -2242,11 +2242,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: Eb Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: Eb</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: Eb</li>
             <li>ModeName: E Diminished Whole/Half</li>
-            <li>ModeTypeName: Diminished Whole/Half</li>
-            <li>ModeRootName: E</li>
+            <li>ModeType: Diminished Whole/Half</li>
+            <li>ModeRoot: E</li>
             <li>ModeAudio: AnkiJazz-f041e49b85.mp3</li>
             <li>ModeImage: AnkiJazz-f041e49b85.png</li>
             <li>Direction: Ascending</li>
@@ -2268,11 +2268,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: F Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: F</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: F</li>
             <li>ModeName: Gb Diminished Whole/Half</li>
-            <li>ModeTypeName: Diminished Whole/Half</li>
-            <li>ModeRootName: Gb</li>
+            <li>ModeType: Diminished Whole/Half</li>
+            <li>ModeRoot: Gb</li>
             <li>ModeAudio: AnkiJazz-b6c03be2ba.mp3</li>
             <li>ModeImage: AnkiJazz-b6c03be2ba.png</li>
             <li>Direction: Descending</li>
@@ -2294,11 +2294,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: G Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: G</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: G</li>
             <li>ModeName: Ab Diminished Whole/Half</li>
-            <li>ModeTypeName: Diminished Whole/Half</li>
-            <li>ModeRootName: Ab</li>
+            <li>ModeType: Diminished Whole/Half</li>
+            <li>ModeRoot: Ab</li>
             <li>ModeAudio: AnkiJazz-2fa61279fe.mp3</li>
             <li>ModeImage: AnkiJazz-2fa61279fe.png</li>
             <li>Direction: Ascending</li>
@@ -2320,11 +2320,11 @@
           <p class="card-text">Fields:</p>
           <ul>
             <li>ParentName: A Diminished Half/Whole</li>
-            <li>ParentTypeName: Diminished Half/Whole</li>
-            <li>ParentRootName: A</li>
+            <li>ParentType: Diminished Half/Whole</li>
+            <li>ParentRoot: A</li>
             <li>ModeName: Bb Diminished Whole/Half</li>
-            <li>ModeTypeName: Diminished Whole/Half</li>
-            <li>ModeRootName: Bb</li>
+            <li>ModeType: Diminished Whole/Half</li>
+            <li>ModeRoot: Bb</li>
             <li>ModeAudio: AnkiJazz-9bbc6623d4.mp3</li>
             <li>ModeImage: AnkiJazz-9bbc6623d4.png</li>
             <li>Direction: Descending</li>

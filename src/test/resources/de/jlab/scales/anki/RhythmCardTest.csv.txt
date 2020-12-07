@@ -1,1 +1,1 @@
-Test (80 bpm);Standard;AnkiJazz-551cd3b584.png;AnkiJazz-551cd3b584.mp3;AnkiJazz-dd03b886a9.mp3;Yes;Yes;2;80
+Test (80 bpm);Standard;<img src="AnkiJazz-551cd3b584.png">;[sound:AnkiJazz-551cd3b584.mp3];[sound:AnkiJazz-dd03b886a9.mp3];Yes;Yes;2;80

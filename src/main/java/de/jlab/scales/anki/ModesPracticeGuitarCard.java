@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
+import static de.jlab.scales.anki.AnkiUtils.ankiPng;
 import static java.lang.String.format;
 
 import java.util.stream.Collectors;
@@ -42,8 +44,8 @@ public class ModesPracticeGuitarCard extends LilyCard {
         model.getModeName(),
         model.getModeTypeName(),
         model.getModeRootName(),
-        super.getMp3Name(),
-        super.getPngName(),
+        ankiMp3(super.getMp3Name()),
+        ankiPng(super.getPngName()),
         model.getDirection(),
         position.getLabel(),
         position.getImage()).collect(Collectors.joining(";"));
