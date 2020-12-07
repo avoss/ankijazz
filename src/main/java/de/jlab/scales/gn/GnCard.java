@@ -1,11 +1,12 @@
 package de.jlab.scales.gn;
 
 import java.nio.file.Path;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.anki.MustacheCard;
+import de.jlab.scales.anki.Card;
 
-public class GnCard extends MustacheCard {
+public class GnCard implements Card {
 
   private final GnSong song;
   private final Type type;
@@ -34,8 +35,10 @@ public class GnCard extends MustacheCard {
   public void writeAssets(Path directory) {
 
   }
-  
-  public String getTags() {
-    return Utils.tags(type.name(), instrument.name());    
+
+  @Override
+  public String getCsv() {
+    return Stream.of(getTitle(), getMp3Name()).collect(Collectors.joining(";"));
   }
+  
 }

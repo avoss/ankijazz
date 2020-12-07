@@ -12,7 +12,20 @@
       This deck contains the setlist of Groovin-Nana band.
     </p>
     {{#cards}}
-      {{{html}}}
+			<div class="card mb-3">
+			  <h4 class="card-header">
+			    Play <b>{{title}}</b>
+			  </h4>
+			  <div class="card-body">
+			    <div class="card-text">
+			      <div class="container">
+			        <div class="row">
+			          <div class="col"><audio controls src="{{mp3Name}}"></audio></div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
     {{/cards}}
   </div>
 </body>

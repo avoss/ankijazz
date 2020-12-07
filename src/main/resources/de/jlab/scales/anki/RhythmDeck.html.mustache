@@ -4,9 +4,8 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    img {
-      width:1102px;
-      height:394px;
+    .card {
+       max-width: 40rem;
     }
   </style>
   <title>{{title}}</title>
@@ -18,7 +17,40 @@
       This deck contains training for reading and playing rhythms. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>
     </p>
     {{#cards}}
-      {{{html}}}
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play {{title}}
+			  </h4>
+			  <div class="card-body">
+			    <img class="card-img-top" src="{{pngName}}">
+			
+			    <div class="card-text">
+			      <div class="container">
+			        <div class="row mt-2">
+			          <div class="col">Play Metronome</div>
+			          <div class="col"><audio controls src="{{metronomeMp3Name}}"></audio></div>
+			        </div>
+			        <div class="row mt-2">
+			          <div class="col">Play Rhythm</div>
+			          <div class="col"><audio controls src="{{mp3Name}}"></audio></div>
+			        </div>
+			      </div>
+			    </div>
+			    
+			    <p class="card-text">Fields:</p>
+			    <ul>
+			      <li>Title: {{title}}</li>
+			      <li>Type: {{typeName}}</li>
+			      <li>RhythmImage: {{pngName}}</li>
+			      <li>RhythmAudio: {{mp3Name}}</li>
+			      <li>MetronomeAudio: {{metronomeMp3Name}}</li>
+			      <li>HasTies: {{hasTies}}</li>
+			      <li>HasSyncopation: {{hasSyncopation}}</li>
+			      <li>NumberOfUniqueQuarters: {{numberOfUniqueQuarters}}</li>
+			      <li>Tempo: {{bpm}}</li>
+			    </ul>
+			  </div>
+			</div>
     {{/cards}}
   </div>
 </body>

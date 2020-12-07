@@ -2,6 +2,9 @@ package de.jlab.scales.anki;
 
 import static java.lang.String.format;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import de.jlab.scales.Utils;
 
 public class ModesPracticeGuitarCard extends LilyCard {
@@ -21,16 +24,6 @@ public class ModesPracticeGuitarCard extends LilyCard {
     return position;
   }
 
-  public String getTags() {
-    return Utils.tags(
-        format("KeyOf %s", model.getModeRootName()), 
-        format("Mode %s", model.getModeTypeName()), 
-        format("Direction %s", model.getDirection()),
-        format("Clef %s", model.getClef()),
-        format("Instrument %s", model.getInstrument()),
-        format("Position %s", position.getLabel()));
-  }
-
   @Override
   public double getDifficulty() {
     return difficulty;
@@ -39,5 +32,21 @@ public class ModesPracticeGuitarCard extends LilyCard {
   public ScaleModel getModel() {
     return model;
   }
-  
+
+  @Override
+  public String getCsv() {
+    return Stream.of(
+        model.getParentName(),
+        model.getParentTypeName(),
+        model.getParentRootName(),
+        model.getModeName(),
+        model.getModeTypeName(),
+        model.getModeRootName(),
+        super.getMp3Name(),
+        super.getPngName(),
+        model.getDirection(),
+        position.getLabel(),
+        position.getImage()).collect(Collectors.joining(";"));
+  }
+
 }

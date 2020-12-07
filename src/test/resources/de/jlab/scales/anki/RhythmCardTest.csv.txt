@@ -1,1 +1,1 @@
-<div> <p> Play Test (80 bpm) </p> </div> <div><p><img src="AnkiJazz-f269a497f2.png"></p></div> <div><p>[sound:AnkiJazz-dd03b886a9.mp3]</p></div>;<div><p>[sound:AnkiJazz-f269a497f2.mp3]</p></div>;Rhythm-Tied Rhythm-2 Rhythm-Standard
+Test (80 bpm);Standard;AnkiJazz-551cd3b584.png;AnkiJazz-551cd3b584.mp3;AnkiJazz-dd03b886a9.mp3;Yes;Yes;2;80

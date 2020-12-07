@@ -1,384 +1,384 @@
-<div> <p> Play <b>C Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3e83ad34b1.png"></p></div> <div><p>[sound:AnkiJazz-3e83ad34b1.mp3]</p></div>;KeyOf-C Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c3543d739e.png"></p></div> <div><p>[sound:AnkiJazz-c3543d739e.mp3]</p></div>;KeyOf-C Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-cdc1522ce1.png"></p></div> <div><p>[sound:AnkiJazz-cdc1522ce1.mp3]</p></div>;KeyOf-Db Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b7623fda9b.png"></p></div> <div><p>[sound:AnkiJazz-b7623fda9b.mp3]</p></div>;KeyOf-Db Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e996a5adcf.png"></p></div> <div><p>[sound:AnkiJazz-e996a5adcf.mp3]</p></div>;KeyOf-D Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-edbdfa7d09.png"></p></div> <div><p>[sound:AnkiJazz-edbdfa7d09.mp3]</p></div>;KeyOf-D Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6f5b9ca3d8.png"></p></div> <div><p>[sound:AnkiJazz-6f5b9ca3d8.mp3]</p></div>;KeyOf-Eb Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ef2b5f4916.png"></p></div> <div><p>[sound:AnkiJazz-ef2b5f4916.mp3]</p></div>;KeyOf-Eb Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1676db9584.png"></p></div> <div><p>[sound:AnkiJazz-1676db9584.mp3]</p></div>;KeyOf-E Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c6d0ec1f0f.png"></p></div> <div><p>[sound:AnkiJazz-c6d0ec1f0f.mp3]</p></div>;KeyOf-E Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-138c259eaf.png"></p></div> <div><p>[sound:AnkiJazz-138c259eaf.mp3]</p></div>;KeyOf-F Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f31793e7b7.png"></p></div> <div><p>[sound:AnkiJazz-f31793e7b7.mp3]</p></div>;KeyOf-F Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ceb0d36f92.png"></p></div> <div><p>[sound:AnkiJazz-ceb0d36f92.mp3]</p></div>;KeyOf-Gb Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3591885ef5.png"></p></div> <div><p>[sound:AnkiJazz-3591885ef5.mp3]</p></div>;KeyOf-Gb Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7dd99155b3.png"></p></div> <div><p>[sound:AnkiJazz-7dd99155b3.mp3]</p></div>;KeyOf-F# Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e6f67dce07.png"></p></div> <div><p>[sound:AnkiJazz-e6f67dce07.mp3]</p></div>;KeyOf-F# Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-83ee45bba0.png"></p></div> <div><p>[sound:AnkiJazz-83ee45bba0.mp3]</p></div>;KeyOf-G Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e9c7fa6e2f.png"></p></div> <div><p>[sound:AnkiJazz-e9c7fa6e2f.mp3]</p></div>;KeyOf-G Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2f2c5c446d.png"></p></div> <div><p>[sound:AnkiJazz-2f2c5c446d.mp3]</p></div>;KeyOf-Ab Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-285317a376.png"></p></div> <div><p>[sound:AnkiJazz-285317a376.mp3]</p></div>;KeyOf-Ab Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7d733daafc.png"></p></div> <div><p>[sound:AnkiJazz-7d733daafc.mp3]</p></div>;KeyOf-A Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9cc83ca544.png"></p></div> <div><p>[sound:AnkiJazz-9cc83ca544.mp3]</p></div>;KeyOf-A Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e556c231ef.png"></p></div> <div><p>[sound:AnkiJazz-e556c231ef.mp3]</p></div>;KeyOf-Bb Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6e7b40b598.png"></p></div> <div><p>[sound:AnkiJazz-6e7b40b598.mp3]</p></div>;KeyOf-Bb Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Major Scale</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e9a247ae77.png"></p></div> <div><p>[sound:AnkiJazz-e9a247ae77.mp3]</p></div>;KeyOf-B Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Major Scale</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e594035a1a.png"></p></div> <div><p>[sound:AnkiJazz-e594035a1a.mp3]</p></div>;KeyOf-B Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f655997e25.png"></p></div> <div><p>[sound:AnkiJazz-f655997e25.mp3]</p></div>;KeyOf-C Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bd0f76e363.png"></p></div> <div><p>[sound:AnkiJazz-bd0f76e363.mp3]</p></div>;KeyOf-C Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f6a851928b.png"></p></div> <div><p>[sound:AnkiJazz-f6a851928b.mp3]</p></div>;KeyOf-C# Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0da0ee9000.png"></p></div> <div><p>[sound:AnkiJazz-0da0ee9000.mp3]</p></div>;KeyOf-C# Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e15371f9da.png"></p></div> <div><p>[sound:AnkiJazz-e15371f9da.mp3]</p></div>;KeyOf-D Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9a1fccb92b.png"></p></div> <div><p>[sound:AnkiJazz-9a1fccb92b.mp3]</p></div>;KeyOf-D Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e0cfb9c403.png"></p></div> <div><p>[sound:AnkiJazz-e0cfb9c403.mp3]</p></div>;KeyOf-Eb Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-61c685dde2.png"></p></div> <div><p>[sound:AnkiJazz-61c685dde2.mp3]</p></div>;KeyOf-Eb Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-97f9387ea0.png"></p></div> <div><p>[sound:AnkiJazz-97f9387ea0.mp3]</p></div>;KeyOf-E Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5d21545b80.png"></p></div> <div><p>[sound:AnkiJazz-5d21545b80.mp3]</p></div>;KeyOf-E Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e134d6b09c.png"></p></div> <div><p>[sound:AnkiJazz-e134d6b09c.mp3]</p></div>;KeyOf-F Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bb8e4697f6.png"></p></div> <div><p>[sound:AnkiJazz-bb8e4697f6.mp3]</p></div>;KeyOf-F Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-afc63c403b.png"></p></div> <div><p>[sound:AnkiJazz-afc63c403b.mp3]</p></div>;KeyOf-F# Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a651718a02.png"></p></div> <div><p>[sound:AnkiJazz-a651718a02.mp3]</p></div>;KeyOf-F# Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2fa2de6b8c.png"></p></div> <div><p>[sound:AnkiJazz-2fa2de6b8c.mp3]</p></div>;KeyOf-G Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1ad0168c39.png"></p></div> <div><p>[sound:AnkiJazz-1ad0168c39.mp3]</p></div>;KeyOf-G Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-eb0b314776.png"></p></div> <div><p>[sound:AnkiJazz-eb0b314776.mp3]</p></div>;KeyOf-Ab Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4f51ecdef2.png"></p></div> <div><p>[sound:AnkiJazz-4f51ecdef2.mp3]</p></div>;KeyOf-Ab Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-77b147df50.png"></p></div> <div><p>[sound:AnkiJazz-77b147df50.mp3]</p></div>;KeyOf-G# Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-29d71ad108.png"></p></div> <div><p>[sound:AnkiJazz-29d71ad108.mp3]</p></div>;KeyOf-G# Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-898c9e68e1.png"></p></div> <div><p>[sound:AnkiJazz-898c9e68e1.mp3]</p></div>;KeyOf-A Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3a24b3f8c0.png"></p></div> <div><p>[sound:AnkiJazz-3a24b3f8c0.mp3]</p></div>;KeyOf-A Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-38478a4f0d.png"></p></div> <div><p>[sound:AnkiJazz-38478a4f0d.mp3]</p></div>;KeyOf-Bb Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5979fd037e.png"></p></div> <div><p>[sound:AnkiJazz-5979fd037e.mp3]</p></div>;KeyOf-Bb Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Dorian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-02aa2afcca.png"></p></div> <div><p>[sound:AnkiJazz-02aa2afcca.mp3]</p></div>;KeyOf-B Mode-Dorian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Dorian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e46f7277e8.png"></p></div> <div><p>[sound:AnkiJazz-e46f7277e8.mp3]</p></div>;KeyOf-B Mode-Dorian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7266a90790.png"></p></div> <div><p>[sound:AnkiJazz-7266a90790.mp3]</p></div>;KeyOf-C Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f5a9667319.png"></p></div> <div><p>[sound:AnkiJazz-f5a9667319.mp3]</p></div>;KeyOf-C Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3416d8a1b7.png"></p></div> <div><p>[sound:AnkiJazz-3416d8a1b7.mp3]</p></div>;KeyOf-C# Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b746bfc718.png"></p></div> <div><p>[sound:AnkiJazz-b746bfc718.mp3]</p></div>;KeyOf-C# Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5b5a9bd996.png"></p></div> <div><p>[sound:AnkiJazz-5b5a9bd996.mp3]</p></div>;KeyOf-D Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9b06c6a9af.png"></p></div> <div><p>[sound:AnkiJazz-9b06c6a9af.mp3]</p></div>;KeyOf-D Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8490896e37.png"></p></div> <div><p>[sound:AnkiJazz-8490896e37.mp3]</p></div>;KeyOf-D# Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c81eed1e1b.png"></p></div> <div><p>[sound:AnkiJazz-c81eed1e1b.mp3]</p></div>;KeyOf-D# Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a515a7def3.png"></p></div> <div><p>[sound:AnkiJazz-a515a7def3.mp3]</p></div>;KeyOf-E Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6054ca5a1f.png"></p></div> <div><p>[sound:AnkiJazz-6054ca5a1f.mp3]</p></div>;KeyOf-E Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-562e0e9686.png"></p></div> <div><p>[sound:AnkiJazz-562e0e9686.mp3]</p></div>;KeyOf-F Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-43cbcf7189.png"></p></div> <div><p>[sound:AnkiJazz-43cbcf7189.mp3]</p></div>;KeyOf-F Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-decc2c8625.png"></p></div> <div><p>[sound:AnkiJazz-decc2c8625.mp3]</p></div>;KeyOf-F# Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a03f96f3fe.png"></p></div> <div><p>[sound:AnkiJazz-a03f96f3fe.mp3]</p></div>;KeyOf-F# Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-44666eef38.png"></p></div> <div><p>[sound:AnkiJazz-44666eef38.mp3]</p></div>;KeyOf-G Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-19628dda60.png"></p></div> <div><p>[sound:AnkiJazz-19628dda60.mp3]</p></div>;KeyOf-G Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bb64868cd8.png"></p></div> <div><p>[sound:AnkiJazz-bb64868cd8.mp3]</p></div>;KeyOf-G# Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a3cce7751e.png"></p></div> <div><p>[sound:AnkiJazz-a3cce7751e.mp3]</p></div>;KeyOf-G# Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d9a086e063.png"></p></div> <div><p>[sound:AnkiJazz-d9a086e063.mp3]</p></div>;KeyOf-A Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-701a7a895b.png"></p></div> <div><p>[sound:AnkiJazz-701a7a895b.mp3]</p></div>;KeyOf-A Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f72e3faa2c.png"></p></div> <div><p>[sound:AnkiJazz-f72e3faa2c.mp3]</p></div>;KeyOf-Bb Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5389337062.png"></p></div> <div><p>[sound:AnkiJazz-5389337062.mp3]</p></div>;KeyOf-Bb Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-51eb5cf21d.png"></p></div> <div><p>[sound:AnkiJazz-51eb5cf21d.mp3]</p></div>;KeyOf-A# Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c96fe2a53d.png"></p></div> <div><p>[sound:AnkiJazz-c96fe2a53d.mp3]</p></div>;KeyOf-A# Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Phrygian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ebd95f823f.png"></p></div> <div><p>[sound:AnkiJazz-ebd95f823f.mp3]</p></div>;KeyOf-B Mode-Phrygian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Phrygian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8613db63be.png"></p></div> <div><p>[sound:AnkiJazz-8613db63be.mp3]</p></div>;KeyOf-B Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2e4ee16a25.png"></p></div> <div><p>[sound:AnkiJazz-2e4ee16a25.mp3]</p></div>;KeyOf-C Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b3a7cd9ba2.png"></p></div> <div><p>[sound:AnkiJazz-b3a7cd9ba2.mp3]</p></div>;KeyOf-C Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f1fce316cd.png"></p></div> <div><p>[sound:AnkiJazz-f1fce316cd.mp3]</p></div>;KeyOf-Db Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0213c7eacc.png"></p></div> <div><p>[sound:AnkiJazz-0213c7eacc.mp3]</p></div>;KeyOf-Db Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-49be37561d.png"></p></div> <div><p>[sound:AnkiJazz-49be37561d.mp3]</p></div>;KeyOf-D Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f6eabe8270.png"></p></div> <div><p>[sound:AnkiJazz-f6eabe8270.mp3]</p></div>;KeyOf-D Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-886689dea5.png"></p></div> <div><p>[sound:AnkiJazz-886689dea5.mp3]</p></div>;KeyOf-Eb Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-dcb4ad684b.png"></p></div> <div><p>[sound:AnkiJazz-dcb4ad684b.mp3]</p></div>;KeyOf-Eb Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2eddb42ea7.png"></p></div> <div><p>[sound:AnkiJazz-2eddb42ea7.mp3]</p></div>;KeyOf-E Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e9fb71c621.png"></p></div> <div><p>[sound:AnkiJazz-e9fb71c621.mp3]</p></div>;KeyOf-E Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0ab6075ca9.png"></p></div> <div><p>[sound:AnkiJazz-0ab6075ca9.mp3]</p></div>;KeyOf-F Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f0baa728fe.png"></p></div> <div><p>[sound:AnkiJazz-f0baa728fe.mp3]</p></div>;KeyOf-F Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7bb2ecb034.png"></p></div> <div><p>[sound:AnkiJazz-7bb2ecb034.mp3]</p></div>;KeyOf-Gb Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4d6b54a05f.png"></p></div> <div><p>[sound:AnkiJazz-4d6b54a05f.mp3]</p></div>;KeyOf-Gb Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b9b6d220fe.png"></p></div> <div><p>[sound:AnkiJazz-b9b6d220fe.mp3]</p></div>;KeyOf-G Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a97d900c0f.png"></p></div> <div><p>[sound:AnkiJazz-a97d900c0f.mp3]</p></div>;KeyOf-G Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-32492a9b0c.png"></p></div> <div><p>[sound:AnkiJazz-32492a9b0c.mp3]</p></div>;KeyOf-Ab Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7eeace45a3.png"></p></div> <div><p>[sound:AnkiJazz-7eeace45a3.mp3]</p></div>;KeyOf-Ab Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4e4a9b49dc.png"></p></div> <div><p>[sound:AnkiJazz-4e4a9b49dc.mp3]</p></div>;KeyOf-A Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7f23912687.png"></p></div> <div><p>[sound:AnkiJazz-7f23912687.mp3]</p></div>;KeyOf-A Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-aeaa58075a.png"></p></div> <div><p>[sound:AnkiJazz-aeaa58075a.mp3]</p></div>;KeyOf-Bb Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b67601bef9.png"></p></div> <div><p>[sound:AnkiJazz-b67601bef9.mp3]</p></div>;KeyOf-Bb Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Cb Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6be517f33b.png"></p></div> <div><p>[sound:AnkiJazz-6be517f33b.mp3]</p></div>;KeyOf-Cb Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Cb Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9d52deed38.png"></p></div> <div><p>[sound:AnkiJazz-9d52deed38.mp3]</p></div>;KeyOf-Cb Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Lydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f78483b645.png"></p></div> <div><p>[sound:AnkiJazz-f78483b645.mp3]</p></div>;KeyOf-B Mode-Lydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Lydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-af0cececd5.png"></p></div> <div><p>[sound:AnkiJazz-af0cececd5.mp3]</p></div>;KeyOf-B Mode-Lydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9196b41d96.png"></p></div> <div><p>[sound:AnkiJazz-9196b41d96.mp3]</p></div>;KeyOf-C Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-59b82ec456.png"></p></div> <div><p>[sound:AnkiJazz-59b82ec456.mp3]</p></div>;KeyOf-C Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b96641214b.png"></p></div> <div><p>[sound:AnkiJazz-b96641214b.mp3]</p></div>;KeyOf-Db Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-51b8421d49.png"></p></div> <div><p>[sound:AnkiJazz-51b8421d49.mp3]</p></div>;KeyOf-Db Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-efc1e7b5c0.png"></p></div> <div><p>[sound:AnkiJazz-efc1e7b5c0.mp3]</p></div>;KeyOf-C# Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4e83b5a6e1.png"></p></div> <div><p>[sound:AnkiJazz-4e83b5a6e1.mp3]</p></div>;KeyOf-C# Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-395388c42a.png"></p></div> <div><p>[sound:AnkiJazz-395388c42a.mp3]</p></div>;KeyOf-D Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-84594153f2.png"></p></div> <div><p>[sound:AnkiJazz-84594153f2.mp3]</p></div>;KeyOf-D Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-539f572073.png"></p></div> <div><p>[sound:AnkiJazz-539f572073.mp3]</p></div>;KeyOf-Eb Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9cb030a914.png"></p></div> <div><p>[sound:AnkiJazz-9cb030a914.mp3]</p></div>;KeyOf-Eb Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3e98431046.png"></p></div> <div><p>[sound:AnkiJazz-3e98431046.mp3]</p></div>;KeyOf-E Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-54ab56a437.png"></p></div> <div><p>[sound:AnkiJazz-54ab56a437.mp3]</p></div>;KeyOf-E Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bf186c399d.png"></p></div> <div><p>[sound:AnkiJazz-bf186c399d.mp3]</p></div>;KeyOf-F Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-63d1cac3ff.png"></p></div> <div><p>[sound:AnkiJazz-63d1cac3ff.mp3]</p></div>;KeyOf-F Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ccba4a57a0.png"></p></div> <div><p>[sound:AnkiJazz-ccba4a57a0.mp3]</p></div>;KeyOf-F# Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e9ef2971a5.png"></p></div> <div><p>[sound:AnkiJazz-e9ef2971a5.mp3]</p></div>;KeyOf-F# Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2792bae929.png"></p></div> <div><p>[sound:AnkiJazz-2792bae929.mp3]</p></div>;KeyOf-G Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-017d0e7dec.png"></p></div> <div><p>[sound:AnkiJazz-017d0e7dec.mp3]</p></div>;KeyOf-G Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-abc9471a1b.png"></p></div> <div><p>[sound:AnkiJazz-abc9471a1b.mp3]</p></div>;KeyOf-Ab Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a4e5d9940a.png"></p></div> <div><p>[sound:AnkiJazz-a4e5d9940a.mp3]</p></div>;KeyOf-Ab Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-14078c00a7.png"></p></div> <div><p>[sound:AnkiJazz-14078c00a7.mp3]</p></div>;KeyOf-A Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5963f2f41f.png"></p></div> <div><p>[sound:AnkiJazz-5963f2f41f.mp3]</p></div>;KeyOf-A Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-23c9c325e1.png"></p></div> <div><p>[sound:AnkiJazz-23c9c325e1.mp3]</p></div>;KeyOf-Bb Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-cd74f3b648.png"></p></div> <div><p>[sound:AnkiJazz-cd74f3b648.mp3]</p></div>;KeyOf-Bb Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Mixolydian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f6e6e974e8.png"></p></div> <div><p>[sound:AnkiJazz-f6e6e974e8.mp3]</p></div>;KeyOf-B Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Mixolydian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7396432e26.png"></p></div> <div><p>[sound:AnkiJazz-7396432e26.mp3]</p></div>;KeyOf-B Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f28b904c68.png"></p></div> <div><p>[sound:AnkiJazz-f28b904c68.mp3]</p></div>;KeyOf-C Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0559e865f8.png"></p></div> <div><p>[sound:AnkiJazz-0559e865f8.mp3]</p></div>;KeyOf-C Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8fa7b329fe.png"></p></div> <div><p>[sound:AnkiJazz-8fa7b329fe.mp3]</p></div>;KeyOf-C# Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-de4ccc509d.png"></p></div> <div><p>[sound:AnkiJazz-de4ccc509d.mp3]</p></div>;KeyOf-C# Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-66cfd3ff98.png"></p></div> <div><p>[sound:AnkiJazz-66cfd3ff98.mp3]</p></div>;KeyOf-D Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c179428030.png"></p></div> <div><p>[sound:AnkiJazz-c179428030.mp3]</p></div>;KeyOf-D Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1d8a202b98.png"></p></div> <div><p>[sound:AnkiJazz-1d8a202b98.mp3]</p></div>;KeyOf-Eb Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6483b1c4bc.png"></p></div> <div><p>[sound:AnkiJazz-6483b1c4bc.mp3]</p></div>;KeyOf-Eb Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-389542b511.png"></p></div> <div><p>[sound:AnkiJazz-389542b511.mp3]</p></div>;KeyOf-D# Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4dff3787f6.png"></p></div> <div><p>[sound:AnkiJazz-4dff3787f6.mp3]</p></div>;KeyOf-D# Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9a63c79540.png"></p></div> <div><p>[sound:AnkiJazz-9a63c79540.mp3]</p></div>;KeyOf-E Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-52a2e96921.png"></p></div> <div><p>[sound:AnkiJazz-52a2e96921.mp3]</p></div>;KeyOf-E Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a38227043c.png"></p></div> <div><p>[sound:AnkiJazz-a38227043c.mp3]</p></div>;KeyOf-F Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2c7b0c55b4.png"></p></div> <div><p>[sound:AnkiJazz-2c7b0c55b4.mp3]</p></div>;KeyOf-F Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-136d8337d3.png"></p></div> <div><p>[sound:AnkiJazz-136d8337d3.mp3]</p></div>;KeyOf-F# Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-25389eeb6b.png"></p></div> <div><p>[sound:AnkiJazz-25389eeb6b.mp3]</p></div>;KeyOf-F# Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a2ede33187.png"></p></div> <div><p>[sound:AnkiJazz-a2ede33187.mp3]</p></div>;KeyOf-G Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c2231be43d.png"></p></div> <div><p>[sound:AnkiJazz-c2231be43d.mp3]</p></div>;KeyOf-G Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-988673f008.png"></p></div> <div><p>[sound:AnkiJazz-988673f008.mp3]</p></div>;KeyOf-G# Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7d8c4fcb70.png"></p></div> <div><p>[sound:AnkiJazz-7d8c4fcb70.mp3]</p></div>;KeyOf-G# Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-83299c55a0.png"></p></div> <div><p>[sound:AnkiJazz-83299c55a0.mp3]</p></div>;KeyOf-A Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-272f9af698.png"></p></div> <div><p>[sound:AnkiJazz-272f9af698.mp3]</p></div>;KeyOf-A Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4061781754.png"></p></div> <div><p>[sound:AnkiJazz-4061781754.mp3]</p></div>;KeyOf-Bb Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c25590df09.png"></p></div> <div><p>[sound:AnkiJazz-c25590df09.mp3]</p></div>;KeyOf-Bb Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Aeolean</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-326a280cf6.png"></p></div> <div><p>[sound:AnkiJazz-326a280cf6.mp3]</p></div>;KeyOf-B Mode-Aeolean Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Aeolean</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b98feeac74.png"></p></div> <div><p>[sound:AnkiJazz-b98feeac74.mp3]</p></div>;KeyOf-B Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-01937cd194.png"></p></div> <div><p>[sound:AnkiJazz-01937cd194.mp3]</p></div>;KeyOf-C Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-190f37eafe.png"></p></div> <div><p>[sound:AnkiJazz-190f37eafe.mp3]</p></div>;KeyOf-C Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3c98d9c5a4.png"></p></div> <div><p>[sound:AnkiJazz-3c98d9c5a4.mp3]</p></div>;KeyOf-C# Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bdd506f814.png"></p></div> <div><p>[sound:AnkiJazz-bdd506f814.mp3]</p></div>;KeyOf-C# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f1132b9765.png"></p></div> <div><p>[sound:AnkiJazz-f1132b9765.mp3]</p></div>;KeyOf-D Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b35982d6e4.png"></p></div> <div><p>[sound:AnkiJazz-b35982d6e4.mp3]</p></div>;KeyOf-D Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-34f26e5038.png"></p></div> <div><p>[sound:AnkiJazz-34f26e5038.mp3]</p></div>;KeyOf-D# Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7dd215b25f.png"></p></div> <div><p>[sound:AnkiJazz-7dd215b25f.mp3]</p></div>;KeyOf-D# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a45eb62189.png"></p></div> <div><p>[sound:AnkiJazz-a45eb62189.mp3]</p></div>;KeyOf-E Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3024d824b6.png"></p></div> <div><p>[sound:AnkiJazz-3024d824b6.mp3]</p></div>;KeyOf-E Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5a0f05da31.png"></p></div> <div><p>[sound:AnkiJazz-5a0f05da31.mp3]</p></div>;KeyOf-F Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0933c323a9.png"></p></div> <div><p>[sound:AnkiJazz-0933c323a9.mp3]</p></div>;KeyOf-F Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E# Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d4226ceabb.png"></p></div> <div><p>[sound:AnkiJazz-d4226ceabb.mp3]</p></div>;KeyOf-E# Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E# Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e42d963760.png"></p></div> <div><p>[sound:AnkiJazz-e42d963760.mp3]</p></div>;KeyOf-E# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f9857ad1a4.png"></p></div> <div><p>[sound:AnkiJazz-f9857ad1a4.mp3]</p></div>;KeyOf-F# Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d08320733d.png"></p></div> <div><p>[sound:AnkiJazz-d08320733d.mp3]</p></div>;KeyOf-F# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d239f0ac36.png"></p></div> <div><p>[sound:AnkiJazz-d239f0ac36.mp3]</p></div>;KeyOf-G Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e082cbda22.png"></p></div> <div><p>[sound:AnkiJazz-e082cbda22.mp3]</p></div>;KeyOf-G Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-05d3bcaeb9.png"></p></div> <div><p>[sound:AnkiJazz-05d3bcaeb9.mp3]</p></div>;KeyOf-G# Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1b7a6ca78d.png"></p></div> <div><p>[sound:AnkiJazz-1b7a6ca78d.mp3]</p></div>;KeyOf-G# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0df0048792.png"></p></div> <div><p>[sound:AnkiJazz-0df0048792.mp3]</p></div>;KeyOf-A Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-75c73a435d.png"></p></div> <div><p>[sound:AnkiJazz-75c73a435d.mp3]</p></div>;KeyOf-A Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-91035ce9b9.png"></p></div> <div><p>[sound:AnkiJazz-91035ce9b9.mp3]</p></div>;KeyOf-A# Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-28f17ac66c.png"></p></div> <div><p>[sound:AnkiJazz-28f17ac66c.mp3]</p></div>;KeyOf-A# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Locrian</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e229d99a21.png"></p></div> <div><p>[sound:AnkiJazz-e229d99a21.mp3]</p></div>;KeyOf-B Mode-Locrian Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Locrian</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a98b65acc4.png"></p></div> <div><p>[sound:AnkiJazz-a98b65acc4.mp3]</p></div>;KeyOf-B Mode-Locrian Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-48bf58722b.png"></p></div> <div><p>[sound:AnkiJazz-48bf58722b.mp3]</p></div>;KeyOf-C Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c44520b302.png"></p></div> <div><p>[sound:AnkiJazz-c44520b302.mp3]</p></div>;KeyOf-C Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-32f1928d2a.png"></p></div> <div><p>[sound:AnkiJazz-32f1928d2a.mp3]</p></div>;KeyOf-C# Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f34c6c0508.png"></p></div> <div><p>[sound:AnkiJazz-f34c6c0508.mp3]</p></div>;KeyOf-C# Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8bf8862ff7.png"></p></div> <div><p>[sound:AnkiJazz-8bf8862ff7.mp3]</p></div>;KeyOf-D Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-63b0598c8c.png"></p></div> <div><p>[sound:AnkiJazz-63b0598c8c.mp3]</p></div>;KeyOf-D Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c443cebd68.png"></p></div> <div><p>[sound:AnkiJazz-c443cebd68.mp3]</p></div>;KeyOf-Eb Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-000c60847d.png"></p></div> <div><p>[sound:AnkiJazz-000c60847d.mp3]</p></div>;KeyOf-Eb Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-85f93510bc.png"></p></div> <div><p>[sound:AnkiJazz-85f93510bc.mp3]</p></div>;KeyOf-E Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9483b11f02.png"></p></div> <div><p>[sound:AnkiJazz-9483b11f02.mp3]</p></div>;KeyOf-E Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4a264ba2c0.png"></p></div> <div><p>[sound:AnkiJazz-4a264ba2c0.mp3]</p></div>;KeyOf-F Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a2fc791ce0.png"></p></div> <div><p>[sound:AnkiJazz-a2fc791ce0.mp3]</p></div>;KeyOf-F Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-33c7131fa0.png"></p></div> <div><p>[sound:AnkiJazz-33c7131fa0.mp3]</p></div>;KeyOf-F# Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c5df724763.png"></p></div> <div><p>[sound:AnkiJazz-c5df724763.mp3]</p></div>;KeyOf-F# Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-11412fa05f.png"></p></div> <div><p>[sound:AnkiJazz-11412fa05f.mp3]</p></div>;KeyOf-G Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-00abab6ded.png"></p></div> <div><p>[sound:AnkiJazz-00abab6ded.mp3]</p></div>;KeyOf-G Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8c358f55e9.png"></p></div> <div><p>[sound:AnkiJazz-8c358f55e9.mp3]</p></div>;KeyOf-Ab Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d6c412db31.png"></p></div> <div><p>[sound:AnkiJazz-d6c412db31.mp3]</p></div>;KeyOf-Ab Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-160a392949.png"></p></div> <div><p>[sound:AnkiJazz-160a392949.mp3]</p></div>;KeyOf-G# Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ffae887732.png"></p></div> <div><p>[sound:AnkiJazz-ffae887732.mp3]</p></div>;KeyOf-G# Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e02d9b2ec7.png"></p></div> <div><p>[sound:AnkiJazz-e02d9b2ec7.mp3]</p></div>;KeyOf-A Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e77c6b0fb1.png"></p></div> <div><p>[sound:AnkiJazz-e77c6b0fb1.mp3]</p></div>;KeyOf-A Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5f38ec079e.png"></p></div> <div><p>[sound:AnkiJazz-5f38ec079e.mp3]</p></div>;KeyOf-Bb Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0b3641aafa.png"></p></div> <div><p>[sound:AnkiJazz-0b3641aafa.mp3]</p></div>;KeyOf-Bb Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Melodic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ae81f3b1bb.png"></p></div> <div><p>[sound:AnkiJazz-ae81f3b1bb.mp3]</p></div>;KeyOf-B Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Melodic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c28a336fba.png"></p></div> <div><p>[sound:AnkiJazz-c28a336fba.mp3]</p></div>;KeyOf-B Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-864831f2a8.png"></p></div> <div><p>[sound:AnkiJazz-864831f2a8.mp3]</p></div>;KeyOf-C Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0b0f0291a6.png"></p></div> <div><p>[sound:AnkiJazz-0b0f0291a6.mp3]</p></div>;KeyOf-C Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-93ddd77103.png"></p></div> <div><p>[sound:AnkiJazz-93ddd77103.mp3]</p></div>;KeyOf-Db Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-11ad7389b7.png"></p></div> <div><p>[sound:AnkiJazz-11ad7389b7.mp3]</p></div>;KeyOf-Db Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0a267893f9.png"></p></div> <div><p>[sound:AnkiJazz-0a267893f9.mp3]</p></div>;KeyOf-C# Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f55c383ff6.png"></p></div> <div><p>[sound:AnkiJazz-f55c383ff6.mp3]</p></div>;KeyOf-C# Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bb0602105c.png"></p></div> <div><p>[sound:AnkiJazz-bb0602105c.mp3]</p></div>;KeyOf-D Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2a7d7c605d.png"></p></div> <div><p>[sound:AnkiJazz-2a7d7c605d.mp3]</p></div>;KeyOf-D Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3b45d10384.png"></p></div> <div><p>[sound:AnkiJazz-3b45d10384.mp3]</p></div>;KeyOf-Eb Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2728cc5546.png"></p></div> <div><p>[sound:AnkiJazz-2728cc5546.mp3]</p></div>;KeyOf-Eb Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1f6ce13b1c.png"></p></div> <div><p>[sound:AnkiJazz-1f6ce13b1c.mp3]</p></div>;KeyOf-E Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5394fbe4c1.png"></p></div> <div><p>[sound:AnkiJazz-5394fbe4c1.mp3]</p></div>;KeyOf-E Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2b94832168.png"></p></div> <div><p>[sound:AnkiJazz-2b94832168.mp3]</p></div>;KeyOf-F Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7f67c106f7.png"></p></div> <div><p>[sound:AnkiJazz-7f67c106f7.mp3]</p></div>;KeyOf-F Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-73e7a7d29e.png"></p></div> <div><p>[sound:AnkiJazz-73e7a7d29e.mp3]</p></div>;KeyOf-F# Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b14c6034cb.png"></p></div> <div><p>[sound:AnkiJazz-b14c6034cb.mp3]</p></div>;KeyOf-F# Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a22a59667a.png"></p></div> <div><p>[sound:AnkiJazz-a22a59667a.mp3]</p></div>;KeyOf-G Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-cd98da5779.png"></p></div> <div><p>[sound:AnkiJazz-cd98da5779.mp3]</p></div>;KeyOf-G Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4bc4acd255.png"></p></div> <div><p>[sound:AnkiJazz-4bc4acd255.mp3]</p></div>;KeyOf-Ab Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-31c58cb73f.png"></p></div> <div><p>[sound:AnkiJazz-31c58cb73f.mp3]</p></div>;KeyOf-Ab Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9b062fc999.png"></p></div> <div><p>[sound:AnkiJazz-9b062fc999.mp3]</p></div>;KeyOf-A Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-cbdc0d3165.png"></p></div> <div><p>[sound:AnkiJazz-cbdc0d3165.mp3]</p></div>;KeyOf-A Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d62e8c3c52.png"></p></div> <div><p>[sound:AnkiJazz-d62e8c3c52.mp3]</p></div>;KeyOf-Bb Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-781ebc2c2e.png"></p></div> <div><p>[sound:AnkiJazz-781ebc2c2e.mp3]</p></div>;KeyOf-Bb Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Lydian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-004d560bcc.png"></p></div> <div><p>[sound:AnkiJazz-004d560bcc.mp3]</p></div>;KeyOf-B Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Lydian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d281ba3541.png"></p></div> <div><p>[sound:AnkiJazz-d281ba3541.mp3]</p></div>;KeyOf-B Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8e5a8d4027.png"></p></div> <div><p>[sound:AnkiJazz-8e5a8d4027.mp3]</p></div>;KeyOf-B# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ebb8e7b34b.png"></p></div> <div><p>[sound:AnkiJazz-ebb8e7b34b.mp3]</p></div>;KeyOf-B# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-75327d6a53.png"></p></div> <div><p>[sound:AnkiJazz-75327d6a53.mp3]</p></div>;KeyOf-C# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9bc7813f67.png"></p></div> <div><p>[sound:AnkiJazz-9bc7813f67.mp3]</p></div>;KeyOf-C# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4d43bee1a3.png"></p></div> <div><p>[sound:AnkiJazz-4d43bee1a3.mp3]</p></div>;KeyOf-D Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-509de0973c.png"></p></div> <div><p>[sound:AnkiJazz-509de0973c.mp3]</p></div>;KeyOf-D Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bb7ad7c738.png"></p></div> <div><p>[sound:AnkiJazz-bb7ad7c738.mp3]</p></div>;KeyOf-D# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6f2191c0af.png"></p></div> <div><p>[sound:AnkiJazz-6f2191c0af.mp3]</p></div>;KeyOf-D# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3372a0cec0.png"></p></div> <div><p>[sound:AnkiJazz-3372a0cec0.mp3]</p></div>;KeyOf-E Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-85134eb592.png"></p></div> <div><p>[sound:AnkiJazz-85134eb592.mp3]</p></div>;KeyOf-E Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-75f771d790.png"></p></div> <div><p>[sound:AnkiJazz-75f771d790.mp3]</p></div>;KeyOf-E# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-18032a58bf.png"></p></div> <div><p>[sound:AnkiJazz-18032a58bf.mp3]</p></div>;KeyOf-E# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ef71786a8f.png"></p></div> <div><p>[sound:AnkiJazz-ef71786a8f.mp3]</p></div>;KeyOf-F# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c6e30744af.png"></p></div> <div><p>[sound:AnkiJazz-c6e30744af.mp3]</p></div>;KeyOf-F# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-da3f77f2c6.png"></p></div> <div><p>[sound:AnkiJazz-da3f77f2c6.mp3]</p></div>;KeyOf-G Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5dea85e199.png"></p></div> <div><p>[sound:AnkiJazz-5dea85e199.mp3]</p></div>;KeyOf-G Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Fx Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7c6d5ce58a.png"></p></div> <div><p>[sound:AnkiJazz-7c6d5ce58a.mp3]</p></div>;KeyOf-Fx Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Fx Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-450daa774e.png"></p></div> <div><p>[sound:AnkiJazz-450daa774e.mp3]</p></div>;KeyOf-Fx Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2d85769026.png"></p></div> <div><p>[sound:AnkiJazz-2d85769026.mp3]</p></div>;KeyOf-G# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b9e7d6f820.png"></p></div> <div><p>[sound:AnkiJazz-b9e7d6f820.mp3]</p></div>;KeyOf-G# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f798700c26.png"></p></div> <div><p>[sound:AnkiJazz-f798700c26.mp3]</p></div>;KeyOf-A Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-70b3bd284d.png"></p></div> <div><p>[sound:AnkiJazz-70b3bd284d.mp3]</p></div>;KeyOf-A Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c804108d43.png"></p></div> <div><p>[sound:AnkiJazz-c804108d43.mp3]</p></div>;KeyOf-A# Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e4fde33437.png"></p></div> <div><p>[sound:AnkiJazz-e4fde33437.mp3]</p></div>;KeyOf-A# Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Altered</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-696ccb4863.png"></p></div> <div><p>[sound:AnkiJazz-696ccb4863.mp3]</p></div>;KeyOf-B Mode-Altered Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Altered</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-df88cdff69.png"></p></div> <div><p>[sound:AnkiJazz-df88cdff69.mp3]</p></div>;KeyOf-B Mode-Altered Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-eb7e8c214a.png"></p></div> <div><p>[sound:AnkiJazz-eb7e8c214a.mp3]</p></div>;KeyOf-C Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-95a2455801.png"></p></div> <div><p>[sound:AnkiJazz-95a2455801.mp3]</p></div>;KeyOf-C Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-132f82c5ab.png"></p></div> <div><p>[sound:AnkiJazz-132f82c5ab.mp3]</p></div>;KeyOf-C# Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-31052428bf.png"></p></div> <div><p>[sound:AnkiJazz-31052428bf.mp3]</p></div>;KeyOf-C# Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0e4321d205.png"></p></div> <div><p>[sound:AnkiJazz-0e4321d205.mp3]</p></div>;KeyOf-D Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-cefa8c1057.png"></p></div> <div><p>[sound:AnkiJazz-cefa8c1057.mp3]</p></div>;KeyOf-D Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-86c5f70858.png"></p></div> <div><p>[sound:AnkiJazz-86c5f70858.mp3]</p></div>;KeyOf-Eb Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8bf66dd190.png"></p></div> <div><p>[sound:AnkiJazz-8bf66dd190.mp3]</p></div>;KeyOf-Eb Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6cc930cf80.png"></p></div> <div><p>[sound:AnkiJazz-6cc930cf80.mp3]</p></div>;KeyOf-D# Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-42cc1187be.png"></p></div> <div><p>[sound:AnkiJazz-42cc1187be.mp3]</p></div>;KeyOf-D# Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-239f97af32.png"></p></div> <div><p>[sound:AnkiJazz-239f97af32.mp3]</p></div>;KeyOf-E Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5263204909.png"></p></div> <div><p>[sound:AnkiJazz-5263204909.mp3]</p></div>;KeyOf-E Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-89f71e262f.png"></p></div> <div><p>[sound:AnkiJazz-89f71e262f.mp3]</p></div>;KeyOf-F Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7aa4186b98.png"></p></div> <div><p>[sound:AnkiJazz-7aa4186b98.mp3]</p></div>;KeyOf-F Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-19df8c4afe.png"></p></div> <div><p>[sound:AnkiJazz-19df8c4afe.mp3]</p></div>;KeyOf-F# Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6c4f74f673.png"></p></div> <div><p>[sound:AnkiJazz-6c4f74f673.mp3]</p></div>;KeyOf-F# Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-545dfc3efd.png"></p></div> <div><p>[sound:AnkiJazz-545dfc3efd.mp3]</p></div>;KeyOf-G Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9e3067be85.png"></p></div> <div><p>[sound:AnkiJazz-9e3067be85.mp3]</p></div>;KeyOf-G Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-96c0d7cedb.png"></p></div> <div><p>[sound:AnkiJazz-96c0d7cedb.mp3]</p></div>;KeyOf-G# Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d125768e2b.png"></p></div> <div><p>[sound:AnkiJazz-d125768e2b.mp3]</p></div>;KeyOf-G# Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a733f6e6dd.png"></p></div> <div><p>[sound:AnkiJazz-a733f6e6dd.mp3]</p></div>;KeyOf-A Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ce1c7fe6f2.png"></p></div> <div><p>[sound:AnkiJazz-ce1c7fe6f2.mp3]</p></div>;KeyOf-A Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5c358f5509.png"></p></div> <div><p>[sound:AnkiJazz-5c358f5509.mp3]</p></div>;KeyOf-Bb Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c9555a8d93.png"></p></div> <div><p>[sound:AnkiJazz-c9555a8d93.mp3]</p></div>;KeyOf-Bb Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Harmonic Minor</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-722dc277f1.png"></p></div> <div><p>[sound:AnkiJazz-722dc277f1.mp3]</p></div>;KeyOf-B Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Harmonic Minor</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8d20d758d9.png"></p></div> <div><p>[sound:AnkiJazz-8d20d758d9.mp3]</p></div>;KeyOf-B Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-27ed091e85.png"></p></div> <div><p>[sound:AnkiJazz-27ed091e85.mp3]</p></div>;KeyOf-C Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2850530995.png"></p></div> <div><p>[sound:AnkiJazz-2850530995.mp3]</p></div>;KeyOf-C Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ac285c1165.png"></p></div> <div><p>[sound:AnkiJazz-ac285c1165.mp3]</p></div>;KeyOf-C# Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C# Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-25836a051b.png"></p></div> <div><p>[sound:AnkiJazz-25836a051b.mp3]</p></div>;KeyOf-C# Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-040663ca3e.png"></p></div> <div><p>[sound:AnkiJazz-040663ca3e.mp3]</p></div>;KeyOf-D Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-265b9f0bf6.png"></p></div> <div><p>[sound:AnkiJazz-265b9f0bf6.mp3]</p></div>;KeyOf-D Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e249d207fd.png"></p></div> <div><p>[sound:AnkiJazz-e249d207fd.mp3]</p></div>;KeyOf-D# Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D# Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5f5b818a34.png"></p></div> <div><p>[sound:AnkiJazz-5f5b818a34.mp3]</p></div>;KeyOf-D# Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c39b5a00eb.png"></p></div> <div><p>[sound:AnkiJazz-c39b5a00eb.mp3]</p></div>;KeyOf-E Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1b87a03dc2.png"></p></div> <div><p>[sound:AnkiJazz-1b87a03dc2.mp3]</p></div>;KeyOf-E Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-67bf54dd66.png"></p></div> <div><p>[sound:AnkiJazz-67bf54dd66.mp3]</p></div>;KeyOf-F Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9b10f72606.png"></p></div> <div><p>[sound:AnkiJazz-9b10f72606.mp3]</p></div>;KeyOf-F Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bb9c2cefcb.png"></p></div> <div><p>[sound:AnkiJazz-bb9c2cefcb.mp3]</p></div>;KeyOf-F# Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F# Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7c52c6b0c4.png"></p></div> <div><p>[sound:AnkiJazz-7c52c6b0c4.mp3]</p></div>;KeyOf-F# Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3fc435fe8f.png"></p></div> <div><p>[sound:AnkiJazz-3fc435fe8f.mp3]</p></div>;KeyOf-G Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e3cbc7fb33.png"></p></div> <div><p>[sound:AnkiJazz-e3cbc7fb33.mp3]</p></div>;KeyOf-G Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-02781774c5.png"></p></div> <div><p>[sound:AnkiJazz-02781774c5.mp3]</p></div>;KeyOf-G# Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G# Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f89216efa8.png"></p></div> <div><p>[sound:AnkiJazz-f89216efa8.mp3]</p></div>;KeyOf-G# Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2a08d839ed.png"></p></div> <div><p>[sound:AnkiJazz-2a08d839ed.mp3]</p></div>;KeyOf-A Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7d527f8a18.png"></p></div> <div><p>[sound:AnkiJazz-7d527f8a18.mp3]</p></div>;KeyOf-A Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-61bee6e5ec.png"></p></div> <div><p>[sound:AnkiJazz-61bee6e5ec.mp3]</p></div>;KeyOf-Bb Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-876191a4ed.png"></p></div> <div><p>[sound:AnkiJazz-876191a4ed.mp3]</p></div>;KeyOf-Bb Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c744c9037f.png"></p></div> <div><p>[sound:AnkiJazz-c744c9037f.mp3]</p></div>;KeyOf-A# Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A# Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d86328f4bb.png"></p></div> <div><p>[sound:AnkiJazz-d86328f4bb.mp3]</p></div>;KeyOf-A# Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Phrygian Dominant</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-82f766b13e.png"></p></div> <div><p>[sound:AnkiJazz-82f766b13e.mp3]</p></div>;KeyOf-B Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Phrygian Dominant</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e202fca3c4.png"></p></div> <div><p>[sound:AnkiJazz-e202fca3c4.mp3]</p></div>;KeyOf-B Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a88edc75dd.png"></p></div> <div><p>[sound:AnkiJazz-a88edc75dd.mp3]</p></div>;KeyOf-C Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-092bff4fd7.png"></p></div> <div><p>[sound:AnkiJazz-092bff4fd7.mp3]</p></div>;KeyOf-C Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e55fef9189.png"></p></div> <div><p>[sound:AnkiJazz-e55fef9189.mp3]</p></div>;KeyOf-Db Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f3017ce402.png"></p></div> <div><p>[sound:AnkiJazz-f3017ce402.mp3]</p></div>;KeyOf-Db Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ec094faea2.png"></p></div> <div><p>[sound:AnkiJazz-ec094faea2.mp3]</p></div>;KeyOf-D Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-781d1bffe0.png"></p></div> <div><p>[sound:AnkiJazz-781d1bffe0.mp3]</p></div>;KeyOf-D Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-446fd795e5.png"></p></div> <div><p>[sound:AnkiJazz-446fd795e5.mp3]</p></div>;KeyOf-Eb Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-73719b3aa1.png"></p></div> <div><p>[sound:AnkiJazz-73719b3aa1.mp3]</p></div>;KeyOf-Eb Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e43bdb3153.png"></p></div> <div><p>[sound:AnkiJazz-e43bdb3153.mp3]</p></div>;KeyOf-E Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-66765baada.png"></p></div> <div><p>[sound:AnkiJazz-66765baada.mp3]</p></div>;KeyOf-E Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9cc666032d.png"></p></div> <div><p>[sound:AnkiJazz-9cc666032d.mp3]</p></div>;KeyOf-F Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-ae16a554a4.png"></p></div> <div><p>[sound:AnkiJazz-ae16a554a4.mp3]</p></div>;KeyOf-F Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-66a3a476c9.png"></p></div> <div><p>[sound:AnkiJazz-66a3a476c9.mp3]</p></div>;KeyOf-Gb Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7e781cc036.png"></p></div> <div><p>[sound:AnkiJazz-7e781cc036.mp3]</p></div>;KeyOf-Gb Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-cabf6a81fd.png"></p></div> <div><p>[sound:AnkiJazz-cabf6a81fd.mp3]</p></div>;KeyOf-G Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8de4cece5c.png"></p></div> <div><p>[sound:AnkiJazz-8de4cece5c.mp3]</p></div>;KeyOf-G Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-79efc19e3d.png"></p></div> <div><p>[sound:AnkiJazz-79efc19e3d.mp3]</p></div>;KeyOf-Ab Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-2339f687cf.png"></p></div> <div><p>[sound:AnkiJazz-2339f687cf.mp3]</p></div>;KeyOf-Ab Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e77c36c16a.png"></p></div> <div><p>[sound:AnkiJazz-e77c36c16a.mp3]</p></div>;KeyOf-A Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-82d5b75dad.png"></p></div> <div><p>[sound:AnkiJazz-82d5b75dad.mp3]</p></div>;KeyOf-A Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-3411908436.png"></p></div> <div><p>[sound:AnkiJazz-3411908436.mp3]</p></div>;KeyOf-Bb Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5e9ebf7287.png"></p></div> <div><p>[sound:AnkiJazz-5e9ebf7287.mp3]</p></div>;KeyOf-Bb Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Whole Tone</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5690a21fa7.png"></p></div> <div><p>[sound:AnkiJazz-5690a21fa7.mp3]</p></div>;KeyOf-B Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Whole Tone</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f46fbf4f41.png"></p></div> <div><p>[sound:AnkiJazz-f46fbf4f41.mp3]</p></div>;KeyOf-B Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b6c5cf7204.png"></p></div> <div><p>[sound:AnkiJazz-b6c5cf7204.mp3]</p></div>;KeyOf-C Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-953405867d.png"></p></div> <div><p>[sound:AnkiJazz-953405867d.mp3]</p></div>;KeyOf-C Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-68f784984c.png"></p></div> <div><p>[sound:AnkiJazz-68f784984c.mp3]</p></div>;KeyOf-Db Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e549dbb634.png"></p></div> <div><p>[sound:AnkiJazz-e549dbb634.mp3]</p></div>;KeyOf-Db Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8a22c8fa1f.png"></p></div> <div><p>[sound:AnkiJazz-8a22c8fa1f.mp3]</p></div>;KeyOf-D Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6997eed2cd.png"></p></div> <div><p>[sound:AnkiJazz-6997eed2cd.mp3]</p></div>;KeyOf-D Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-bfc55fc868.png"></p></div> <div><p>[sound:AnkiJazz-bfc55fc868.mp3]</p></div>;KeyOf-Eb Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-62a4d7ead1.png"></p></div> <div><p>[sound:AnkiJazz-62a4d7ead1.mp3]</p></div>;KeyOf-Eb Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5b237fb2a2.png"></p></div> <div><p>[sound:AnkiJazz-5b237fb2a2.mp3]</p></div>;KeyOf-E Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e74d667df7.png"></p></div> <div><p>[sound:AnkiJazz-e74d667df7.mp3]</p></div>;KeyOf-E Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-69819cbd15.png"></p></div> <div><p>[sound:AnkiJazz-69819cbd15.mp3]</p></div>;KeyOf-F Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6f9ccd95a9.png"></p></div> <div><p>[sound:AnkiJazz-6f9ccd95a9.mp3]</p></div>;KeyOf-F Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1af0a834cd.png"></p></div> <div><p>[sound:AnkiJazz-1af0a834cd.mp3]</p></div>;KeyOf-Gb Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-e643d39a01.png"></p></div> <div><p>[sound:AnkiJazz-e643d39a01.mp3]</p></div>;KeyOf-Gb Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b969c13434.png"></p></div> <div><p>[sound:AnkiJazz-b969c13434.mp3]</p></div>;KeyOf-G Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c922b80362.png"></p></div> <div><p>[sound:AnkiJazz-c922b80362.mp3]</p></div>;KeyOf-G Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9e36121263.png"></p></div> <div><p>[sound:AnkiJazz-9e36121263.mp3]</p></div>;KeyOf-Ab Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d0ba9ebf76.png"></p></div> <div><p>[sound:AnkiJazz-d0ba9ebf76.mp3]</p></div>;KeyOf-Ab Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-346e7983f0.png"></p></div> <div><p>[sound:AnkiJazz-346e7983f0.mp3]</p></div>;KeyOf-A Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-aa32caac70.png"></p></div> <div><p>[sound:AnkiJazz-aa32caac70.mp3]</p></div>;KeyOf-A Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-424d224138.png"></p></div> <div><p>[sound:AnkiJazz-424d224138.mp3]</p></div>;KeyOf-Bb Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-45839c425d.png"></p></div> <div><p>[sound:AnkiJazz-45839c425d.mp3]</p></div>;KeyOf-Bb Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Diminished Half/Whole</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-7861cddfec.png"></p></div> <div><p>[sound:AnkiJazz-7861cddfec.mp3]</p></div>;KeyOf-B Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Diminished Half/Whole</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a435ce3f13.png"></p></div> <div><p>[sound:AnkiJazz-a435ce3f13.mp3]</p></div>;KeyOf-B Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>C Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-6adda36e58.png"></p></div> <div><p>[sound:AnkiJazz-6adda36e58.mp3]</p></div>;KeyOf-C Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>C Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a02343c216.png"></p></div> <div><p>[sound:AnkiJazz-a02343c216.mp3]</p></div>;KeyOf-C Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5816b53750.png"></p></div> <div><p>[sound:AnkiJazz-5816b53750.mp3]</p></div>;KeyOf-Db Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Db Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d3f61f543a.png"></p></div> <div><p>[sound:AnkiJazz-d3f61f543a.mp3]</p></div>;KeyOf-Db Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>D Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-5516a49208.png"></p></div> <div><p>[sound:AnkiJazz-5516a49208.mp3]</p></div>;KeyOf-D Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>D Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-b5acb51338.png"></p></div> <div><p>[sound:AnkiJazz-b5acb51338.mp3]</p></div>;KeyOf-D Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-c74e94c890.png"></p></div> <div><p>[sound:AnkiJazz-c74e94c890.mp3]</p></div>;KeyOf-Eb Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Eb Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-20bf8629a2.png"></p></div> <div><p>[sound:AnkiJazz-20bf8629a2.mp3]</p></div>;KeyOf-Eb Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>E Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8e1282d218.png"></p></div> <div><p>[sound:AnkiJazz-8e1282d218.mp3]</p></div>;KeyOf-E Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>E Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-d574340ff5.png"></p></div> <div><p>[sound:AnkiJazz-d574340ff5.mp3]</p></div>;KeyOf-E Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>F Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4b70f4f61c.png"></p></div> <div><p>[sound:AnkiJazz-4b70f4f61c.mp3]</p></div>;KeyOf-F Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>F Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-79db23b7ab.png"></p></div> <div><p>[sound:AnkiJazz-79db23b7ab.mp3]</p></div>;KeyOf-F Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a96b5fc7c6.png"></p></div> <div><p>[sound:AnkiJazz-a96b5fc7c6.mp3]</p></div>;KeyOf-Gb Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Gb Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a40f2c6f94.png"></p></div> <div><p>[sound:AnkiJazz-a40f2c6f94.mp3]</p></div>;KeyOf-Gb Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>G Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-8931cc72ae.png"></p></div> <div><p>[sound:AnkiJazz-8931cc72ae.mp3]</p></div>;KeyOf-G Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>G Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-f693624bad.png"></p></div> <div><p>[sound:AnkiJazz-f693624bad.mp3]</p></div>;KeyOf-G Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-618448ee0d.png"></p></div> <div><p>[sound:AnkiJazz-618448ee0d.mp3]</p></div>;KeyOf-Ab Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Ab Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-a77806f2ad.png"></p></div> <div><p>[sound:AnkiJazz-a77806f2ad.mp3]</p></div>;KeyOf-Ab Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>A Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-1baac45241.png"></p></div> <div><p>[sound:AnkiJazz-1baac45241.mp3]</p></div>;KeyOf-A Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>A Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-86ea3634e0.png"></p></div> <div><p>[sound:AnkiJazz-86ea3634e0.mp3]</p></div>;KeyOf-A Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-0b567a955a.png"></p></div> <div><p>[sound:AnkiJazz-0b567a955a.mp3]</p></div>;KeyOf-Bb Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>Bb Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-dfe75c7ba7.png"></p></div> <div><p>[sound:AnkiJazz-dfe75c7ba7.mp3]</p></div>;KeyOf-Bb Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
-<div> <p> Play <b>B Diminished Whole/Half</b> in <b>Descending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-9b174f5c87.png"></p></div> <div><p>[sound:AnkiJazz-9b174f5c87.mp3]</p></div>;KeyOf-B Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C
-<div> <p> Play <b>B Diminished Whole/Half</b> in <b>Ascending</b> Direction </p> </div>;<div><p><img src="AnkiJazz-4339e6510d.png"></p></div> <div><p>[sound:AnkiJazz-4339e6510d.mp3]</p></div>;KeyOf-B Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C
+C Major Scale;Major Scale;C;C Major Scale;Major Scale;C;AnkiJazz-7f48f8b009.mp3;AnkiJazz-7f48f8b009.png;Descending
+C Major Scale;Major Scale;C;C Major Scale;Major Scale;C;AnkiJazz-c1ff2e1fe7.mp3;AnkiJazz-c1ff2e1fe7.png;Ascending
+Db Major Scale;Major Scale;Db;Db Major Scale;Major Scale;Db;AnkiJazz-299caecf4b.mp3;AnkiJazz-299caecf4b.png;Descending
+Db Major Scale;Major Scale;Db;Db Major Scale;Major Scale;Db;AnkiJazz-440e69227c.mp3;AnkiJazz-440e69227c.png;Ascending
+D Major Scale;Major Scale;D;D Major Scale;Major Scale;D;AnkiJazz-67767c44bb.mp3;AnkiJazz-67767c44bb.png;Descending
+D Major Scale;Major Scale;D;D Major Scale;Major Scale;D;AnkiJazz-07267828cb.mp3;AnkiJazz-07267828cb.png;Ascending
+Eb Major Scale;Major Scale;Eb;Eb Major Scale;Major Scale;Eb;AnkiJazz-05ec23e60d.mp3;AnkiJazz-05ec23e60d.png;Descending
+Eb Major Scale;Major Scale;Eb;Eb Major Scale;Major Scale;Eb;AnkiJazz-1aa89b07e4.mp3;AnkiJazz-1aa89b07e4.png;Ascending
+E Major Scale;Major Scale;E;E Major Scale;Major Scale;E;AnkiJazz-f0927e229d.mp3;AnkiJazz-f0927e229d.png;Descending
+E Major Scale;Major Scale;E;E Major Scale;Major Scale;E;AnkiJazz-2e800c738c.mp3;AnkiJazz-2e800c738c.png;Ascending
+F Major Scale;Major Scale;F;F Major Scale;Major Scale;F;AnkiJazz-c4dfdc5719.mp3;AnkiJazz-c4dfdc5719.png;Descending
+F Major Scale;Major Scale;F;F Major Scale;Major Scale;F;AnkiJazz-7de2b71ea9.mp3;AnkiJazz-7de2b71ea9.png;Ascending
+Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb;AnkiJazz-09fd2b9d2d.mp3;AnkiJazz-09fd2b9d2d.png;Descending
+Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb;AnkiJazz-e597d5387b.mp3;AnkiJazz-e597d5387b.png;Ascending
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;AnkiJazz-aea057dc90.mp3;AnkiJazz-aea057dc90.png;Descending
+F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#;AnkiJazz-bec8eced83.mp3;AnkiJazz-bec8eced83.png;Ascending
+G Major Scale;Major Scale;G;G Major Scale;Major Scale;G;AnkiJazz-d0f60cdca3.mp3;AnkiJazz-d0f60cdca3.png;Descending
+G Major Scale;Major Scale;G;G Major Scale;Major Scale;G;AnkiJazz-c8c9c0d3ba.mp3;AnkiJazz-c8c9c0d3ba.png;Ascending
+Ab Major Scale;Major Scale;Ab;Ab Major Scale;Major Scale;Ab;AnkiJazz-1bd276b18a.mp3;AnkiJazz-1bd276b18a.png;Descending
+Ab Major Scale;Major Scale;Ab;Ab Major Scale;Major Scale;Ab;AnkiJazz-29fa9bc24e.mp3;AnkiJazz-29fa9bc24e.png;Ascending
+A Major Scale;Major Scale;A;A Major Scale;Major Scale;A;AnkiJazz-bdc7b0e062.mp3;AnkiJazz-bdc7b0e062.png;Descending
+A Major Scale;Major Scale;A;A Major Scale;Major Scale;A;AnkiJazz-ffbdabc23e.mp3;AnkiJazz-ffbdabc23e.png;Ascending
+Bb Major Scale;Major Scale;Bb;Bb Major Scale;Major Scale;Bb;AnkiJazz-105f7d3eea.mp3;AnkiJazz-105f7d3eea.png;Descending
+Bb Major Scale;Major Scale;Bb;Bb Major Scale;Major Scale;Bb;AnkiJazz-12154d03ef.mp3;AnkiJazz-12154d03ef.png;Ascending
+B Major Scale;Major Scale;B;B Major Scale;Major Scale;B;AnkiJazz-436c0b70a1.mp3;AnkiJazz-436c0b70a1.png;Descending
+B Major Scale;Major Scale;B;B Major Scale;Major Scale;B;AnkiJazz-09e368da2f.mp3;AnkiJazz-09e368da2f.png;Ascending
+Bb Major Scale;Major Scale;Bb;C Dorian;Dorian;C;AnkiJazz-4d31d57286.mp3;AnkiJazz-4d31d57286.png;Descending
+Bb Major Scale;Major Scale;Bb;C Dorian;Dorian;C;AnkiJazz-9684c20da4.mp3;AnkiJazz-9684c20da4.png;Ascending
+B Major Scale;Major Scale;B;C# Dorian;Dorian;C#;AnkiJazz-d3c4dee33a.mp3;AnkiJazz-d3c4dee33a.png;Descending
+B Major Scale;Major Scale;B;C# Dorian;Dorian;C#;AnkiJazz-9667fade71.mp3;AnkiJazz-9667fade71.png;Ascending
+C Major Scale;Major Scale;C;D Dorian;Dorian;D;AnkiJazz-a81dab5e42.mp3;AnkiJazz-a81dab5e42.png;Descending
+C Major Scale;Major Scale;C;D Dorian;Dorian;D;AnkiJazz-83e6e558f9.mp3;AnkiJazz-83e6e558f9.png;Ascending
+Db Major Scale;Major Scale;Db;Eb Dorian;Dorian;Eb;AnkiJazz-b6dc445fc4.mp3;AnkiJazz-b6dc445fc4.png;Descending
+Db Major Scale;Major Scale;Db;Eb Dorian;Dorian;Eb;AnkiJazz-5ac642fddd.mp3;AnkiJazz-5ac642fddd.png;Ascending
+D Major Scale;Major Scale;D;E Dorian;Dorian;E;AnkiJazz-e463e8a71b.mp3;AnkiJazz-e463e8a71b.png;Descending
+D Major Scale;Major Scale;D;E Dorian;Dorian;E;AnkiJazz-92bbb19f8d.mp3;AnkiJazz-92bbb19f8d.png;Ascending
+Eb Major Scale;Major Scale;Eb;F Dorian;Dorian;F;AnkiJazz-fb6fd0e954.mp3;AnkiJazz-fb6fd0e954.png;Descending
+Eb Major Scale;Major Scale;Eb;F Dorian;Dorian;F;AnkiJazz-64f5d4e304.mp3;AnkiJazz-64f5d4e304.png;Ascending
+E Major Scale;Major Scale;E;F# Dorian;Dorian;F#;AnkiJazz-2019a72017.mp3;AnkiJazz-2019a72017.png;Descending
+E Major Scale;Major Scale;E;F# Dorian;Dorian;F#;AnkiJazz-5dd8a44916.mp3;AnkiJazz-5dd8a44916.png;Ascending
+F Major Scale;Major Scale;F;G Dorian;Dorian;G;AnkiJazz-d5c24cc8a4.mp3;AnkiJazz-d5c24cc8a4.png;Descending
+F Major Scale;Major Scale;F;G Dorian;Dorian;G;AnkiJazz-0a42a48642.mp3;AnkiJazz-0a42a48642.png;Ascending
+Gb Major Scale;Major Scale;Gb;Ab Dorian;Dorian;Ab;AnkiJazz-fbfaa5eee9.mp3;AnkiJazz-fbfaa5eee9.png;Descending
+Gb Major Scale;Major Scale;Gb;Ab Dorian;Dorian;Ab;AnkiJazz-8c936d72dc.mp3;AnkiJazz-8c936d72dc.png;Ascending
+F# Major Scale;Major Scale;F#;G# Dorian;Dorian;G#;AnkiJazz-c6d1eb6af8.mp3;AnkiJazz-c6d1eb6af8.png;Descending
+F# Major Scale;Major Scale;F#;G# Dorian;Dorian;G#;AnkiJazz-f4a939bb5a.mp3;AnkiJazz-f4a939bb5a.png;Ascending
+G Major Scale;Major Scale;G;A Dorian;Dorian;A;AnkiJazz-2625f47043.mp3;AnkiJazz-2625f47043.png;Descending
+G Major Scale;Major Scale;G;A Dorian;Dorian;A;AnkiJazz-db7c1258bd.mp3;AnkiJazz-db7c1258bd.png;Ascending
+Ab Major Scale;Major Scale;Ab;Bb Dorian;Dorian;Bb;AnkiJazz-7581972863.mp3;AnkiJazz-7581972863.png;Descending
+Ab Major Scale;Major Scale;Ab;Bb Dorian;Dorian;Bb;AnkiJazz-62db4213d2.mp3;AnkiJazz-62db4213d2.png;Ascending
+A Major Scale;Major Scale;A;B Dorian;Dorian;B;AnkiJazz-589782bd2f.mp3;AnkiJazz-589782bd2f.png;Descending
+A Major Scale;Major Scale;A;B Dorian;Dorian;B;AnkiJazz-90f1b3dcf1.mp3;AnkiJazz-90f1b3dcf1.png;Ascending
+Ab Major Scale;Major Scale;Ab;C Phrygian;Phrygian;C;AnkiJazz-61de541c30.mp3;AnkiJazz-61de541c30.png;Descending
+Ab Major Scale;Major Scale;Ab;C Phrygian;Phrygian;C;AnkiJazz-49d829e44b.mp3;AnkiJazz-49d829e44b.png;Ascending
+A Major Scale;Major Scale;A;C# Phrygian;Phrygian;C#;AnkiJazz-205a773a55.mp3;AnkiJazz-205a773a55.png;Descending
+A Major Scale;Major Scale;A;C# Phrygian;Phrygian;C#;AnkiJazz-0bb9a55c1c.mp3;AnkiJazz-0bb9a55c1c.png;Ascending
+Bb Major Scale;Major Scale;Bb;D Phrygian;Phrygian;D;AnkiJazz-44550460f5.mp3;AnkiJazz-44550460f5.png;Descending
+Bb Major Scale;Major Scale;Bb;D Phrygian;Phrygian;D;AnkiJazz-bf921c10b2.mp3;AnkiJazz-bf921c10b2.png;Ascending
+B Major Scale;Major Scale;B;D# Phrygian;Phrygian;D#;AnkiJazz-7171d19111.mp3;AnkiJazz-7171d19111.png;Descending
+B Major Scale;Major Scale;B;D# Phrygian;Phrygian;D#;AnkiJazz-165dad1c98.mp3;AnkiJazz-165dad1c98.png;Ascending
+C Major Scale;Major Scale;C;E Phrygian;Phrygian;E;AnkiJazz-d055e961aa.mp3;AnkiJazz-d055e961aa.png;Descending
+C Major Scale;Major Scale;C;E Phrygian;Phrygian;E;AnkiJazz-a59dd14171.mp3;AnkiJazz-a59dd14171.png;Ascending
+Db Major Scale;Major Scale;Db;F Phrygian;Phrygian;F;AnkiJazz-f1a5dd9281.mp3;AnkiJazz-f1a5dd9281.png;Descending
+Db Major Scale;Major Scale;Db;F Phrygian;Phrygian;F;AnkiJazz-4ae7c93184.mp3;AnkiJazz-4ae7c93184.png;Ascending
+D Major Scale;Major Scale;D;F# Phrygian;Phrygian;F#;AnkiJazz-7d52e7bcee.mp3;AnkiJazz-7d52e7bcee.png;Descending
+D Major Scale;Major Scale;D;F# Phrygian;Phrygian;F#;AnkiJazz-433573beab.mp3;AnkiJazz-433573beab.png;Ascending
+Eb Major Scale;Major Scale;Eb;G Phrygian;Phrygian;G;AnkiJazz-12f0ad880b.mp3;AnkiJazz-12f0ad880b.png;Descending
+Eb Major Scale;Major Scale;Eb;G Phrygian;Phrygian;G;AnkiJazz-e065d93050.mp3;AnkiJazz-e065d93050.png;Ascending
+E Major Scale;Major Scale;E;G# Phrygian;Phrygian;G#;AnkiJazz-a05142f168.mp3;AnkiJazz-a05142f168.png;Descending
+E Major Scale;Major Scale;E;G# Phrygian;Phrygian;G#;AnkiJazz-7976c90efe.mp3;AnkiJazz-7976c90efe.png;Ascending
+F Major Scale;Major Scale;F;A Phrygian;Phrygian;A;AnkiJazz-9165d8bf89.mp3;AnkiJazz-9165d8bf89.png;Descending
+F Major Scale;Major Scale;F;A Phrygian;Phrygian;A;AnkiJazz-b7f5d6708e.mp3;AnkiJazz-b7f5d6708e.png;Ascending
+Gb Major Scale;Major Scale;Gb;Bb Phrygian;Phrygian;Bb;AnkiJazz-f7deb24b01.mp3;AnkiJazz-f7deb24b01.png;Descending
+Gb Major Scale;Major Scale;Gb;Bb Phrygian;Phrygian;Bb;AnkiJazz-5929b821d2.mp3;AnkiJazz-5929b821d2.png;Ascending
+F# Major Scale;Major Scale;F#;A# Phrygian;Phrygian;A#;AnkiJazz-09cc48b1ba.mp3;AnkiJazz-09cc48b1ba.png;Descending
+F# Major Scale;Major Scale;F#;A# Phrygian;Phrygian;A#;AnkiJazz-fc3d7771e0.mp3;AnkiJazz-fc3d7771e0.png;Ascending
+G Major Scale;Major Scale;G;B Phrygian;Phrygian;B;AnkiJazz-ab34d86254.mp3;AnkiJazz-ab34d86254.png;Descending
+G Major Scale;Major Scale;G;B Phrygian;Phrygian;B;AnkiJazz-3603e65744.mp3;AnkiJazz-3603e65744.png;Ascending
+G Major Scale;Major Scale;G;C Lydian;Lydian;C;AnkiJazz-7d4e6c5405.mp3;AnkiJazz-7d4e6c5405.png;Descending
+G Major Scale;Major Scale;G;C Lydian;Lydian;C;AnkiJazz-eff6e04ffd.mp3;AnkiJazz-eff6e04ffd.png;Ascending
+Ab Major Scale;Major Scale;Ab;Db Lydian;Lydian;Db;AnkiJazz-2bac373164.mp3;AnkiJazz-2bac373164.png;Descending
+Ab Major Scale;Major Scale;Ab;Db Lydian;Lydian;Db;AnkiJazz-4fc3f9fd2c.mp3;AnkiJazz-4fc3f9fd2c.png;Ascending
+A Major Scale;Major Scale;A;D Lydian;Lydian;D;AnkiJazz-f95295f481.mp3;AnkiJazz-f95295f481.png;Descending
+A Major Scale;Major Scale;A;D Lydian;Lydian;D;AnkiJazz-ae9c664188.mp3;AnkiJazz-ae9c664188.png;Ascending
+Bb Major Scale;Major Scale;Bb;Eb Lydian;Lydian;Eb;AnkiJazz-c93791f1cd.mp3;AnkiJazz-c93791f1cd.png;Descending
+Bb Major Scale;Major Scale;Bb;Eb Lydian;Lydian;Eb;AnkiJazz-024c82a0fa.mp3;AnkiJazz-024c82a0fa.png;Ascending
+B Major Scale;Major Scale;B;E Lydian;Lydian;E;AnkiJazz-48a5941a3a.mp3;AnkiJazz-48a5941a3a.png;Descending
+B Major Scale;Major Scale;B;E Lydian;Lydian;E;AnkiJazz-a928622040.mp3;AnkiJazz-a928622040.png;Ascending
+C Major Scale;Major Scale;C;F Lydian;Lydian;F;AnkiJazz-9e2bfae57e.mp3;AnkiJazz-9e2bfae57e.png;Descending
+C Major Scale;Major Scale;C;F Lydian;Lydian;F;AnkiJazz-ba1d6a20cc.mp3;AnkiJazz-ba1d6a20cc.png;Ascending
+Db Major Scale;Major Scale;Db;Gb Lydian;Lydian;Gb;AnkiJazz-644d623526.mp3;AnkiJazz-644d623526.png;Descending
+Db Major Scale;Major Scale;Db;Gb Lydian;Lydian;Gb;AnkiJazz-220d3ce1db.mp3;AnkiJazz-220d3ce1db.png;Ascending
+D Major Scale;Major Scale;D;G Lydian;Lydian;G;AnkiJazz-24b3667e41.mp3;AnkiJazz-24b3667e41.png;Descending
+D Major Scale;Major Scale;D;G Lydian;Lydian;G;AnkiJazz-1772f03c4e.mp3;AnkiJazz-1772f03c4e.png;Ascending
+Eb Major Scale;Major Scale;Eb;Ab Lydian;Lydian;Ab;AnkiJazz-f152a30233.mp3;AnkiJazz-f152a30233.png;Descending
+Eb Major Scale;Major Scale;Eb;Ab Lydian;Lydian;Ab;AnkiJazz-7efd9f9880.mp3;AnkiJazz-7efd9f9880.png;Ascending
+E Major Scale;Major Scale;E;A Lydian;Lydian;A;AnkiJazz-42ccff78f7.mp3;AnkiJazz-42ccff78f7.png;Descending
+E Major Scale;Major Scale;E;A Lydian;Lydian;A;AnkiJazz-9a3290c7b2.mp3;AnkiJazz-9a3290c7b2.png;Ascending
+F Major Scale;Major Scale;F;Bb Lydian;Lydian;Bb;AnkiJazz-c772ce1de3.mp3;AnkiJazz-c772ce1de3.png;Descending
+F Major Scale;Major Scale;F;Bb Lydian;Lydian;Bb;AnkiJazz-33373e892a.mp3;AnkiJazz-33373e892a.png;Ascending
+Gb Major Scale;Major Scale;Gb;Cb Lydian;Lydian;Cb;AnkiJazz-e51f5aab67.mp3;AnkiJazz-e51f5aab67.png;Descending
+Gb Major Scale;Major Scale;Gb;Cb Lydian;Lydian;Cb;AnkiJazz-61c8a163ff.mp3;AnkiJazz-61c8a163ff.png;Ascending
+F# Major Scale;Major Scale;F#;B Lydian;Lydian;B;AnkiJazz-22080dbe0f.mp3;AnkiJazz-22080dbe0f.png;Descending
+F# Major Scale;Major Scale;F#;B Lydian;Lydian;B;AnkiJazz-a4fbc15ab0.mp3;AnkiJazz-a4fbc15ab0.png;Ascending
+F Major Scale;Major Scale;F;C Mixolydian;Mixolydian;C;AnkiJazz-217f678c6a.mp3;AnkiJazz-217f678c6a.png;Descending
+F Major Scale;Major Scale;F;C Mixolydian;Mixolydian;C;AnkiJazz-2f39d84ce3.mp3;AnkiJazz-2f39d84ce3.png;Ascending
+Gb Major Scale;Major Scale;Gb;Db Mixolydian;Mixolydian;Db;AnkiJazz-84701977d6.mp3;AnkiJazz-84701977d6.png;Descending
+Gb Major Scale;Major Scale;Gb;Db Mixolydian;Mixolydian;Db;AnkiJazz-7900eeccc5.mp3;AnkiJazz-7900eeccc5.png;Ascending
+F# Major Scale;Major Scale;F#;C# Mixolydian;Mixolydian;C#;AnkiJazz-6aa3ea22d0.mp3;AnkiJazz-6aa3ea22d0.png;Descending
+F# Major Scale;Major Scale;F#;C# Mixolydian;Mixolydian;C#;AnkiJazz-8d178db14c.mp3;AnkiJazz-8d178db14c.png;Ascending
+G Major Scale;Major Scale;G;D Mixolydian;Mixolydian;D;AnkiJazz-ac57f3786c.mp3;AnkiJazz-ac57f3786c.png;Descending
+G Major Scale;Major Scale;G;D Mixolydian;Mixolydian;D;AnkiJazz-065e7221a1.mp3;AnkiJazz-065e7221a1.png;Ascending
+Ab Major Scale;Major Scale;Ab;Eb Mixolydian;Mixolydian;Eb;AnkiJazz-61d171fbae.mp3;AnkiJazz-61d171fbae.png;Descending
+Ab Major Scale;Major Scale;Ab;Eb Mixolydian;Mixolydian;Eb;AnkiJazz-70c275ba91.mp3;AnkiJazz-70c275ba91.png;Ascending
+A Major Scale;Major Scale;A;E Mixolydian;Mixolydian;E;AnkiJazz-2250aba1d2.mp3;AnkiJazz-2250aba1d2.png;Descending
+A Major Scale;Major Scale;A;E Mixolydian;Mixolydian;E;AnkiJazz-9782c6c696.mp3;AnkiJazz-9782c6c696.png;Ascending
+Bb Major Scale;Major Scale;Bb;F Mixolydian;Mixolydian;F;AnkiJazz-f6e415ef64.mp3;AnkiJazz-f6e415ef64.png;Descending
+Bb Major Scale;Major Scale;Bb;F Mixolydian;Mixolydian;F;AnkiJazz-c7b8c0cc66.mp3;AnkiJazz-c7b8c0cc66.png;Ascending
+B Major Scale;Major Scale;B;F# Mixolydian;Mixolydian;F#;AnkiJazz-abca627a8a.mp3;AnkiJazz-abca627a8a.png;Descending
+B Major Scale;Major Scale;B;F# Mixolydian;Mixolydian;F#;AnkiJazz-c572c52a75.mp3;AnkiJazz-c572c52a75.png;Ascending
+C Major Scale;Major Scale;C;G Mixolydian;Mixolydian;G;AnkiJazz-398c2cf297.mp3;AnkiJazz-398c2cf297.png;Descending
+C Major Scale;Major Scale;C;G Mixolydian;Mixolydian;G;AnkiJazz-b02da89645.mp3;AnkiJazz-b02da89645.png;Ascending
+Db Major Scale;Major Scale;Db;Ab Mixolydian;Mixolydian;Ab;AnkiJazz-f68b3d2df0.mp3;AnkiJazz-f68b3d2df0.png;Descending
+Db Major Scale;Major Scale;Db;Ab Mixolydian;Mixolydian;Ab;AnkiJazz-95c7738e9d.mp3;AnkiJazz-95c7738e9d.png;Ascending
+D Major Scale;Major Scale;D;A Mixolydian;Mixolydian;A;AnkiJazz-8a1cc49bc1.mp3;AnkiJazz-8a1cc49bc1.png;Descending
+D Major Scale;Major Scale;D;A Mixolydian;Mixolydian;A;AnkiJazz-a5f61a2fb2.mp3;AnkiJazz-a5f61a2fb2.png;Ascending
+Eb Major Scale;Major Scale;Eb;Bb Mixolydian;Mixolydian;Bb;AnkiJazz-71fbfcad21.mp3;AnkiJazz-71fbfcad21.png;Descending
+Eb Major Scale;Major Scale;Eb;Bb Mixolydian;Mixolydian;Bb;AnkiJazz-2a1b97b6c4.mp3;AnkiJazz-2a1b97b6c4.png;Ascending
+E Major Scale;Major Scale;E;B Mixolydian;Mixolydian;B;AnkiJazz-317feeea86.mp3;AnkiJazz-317feeea86.png;Descending
+E Major Scale;Major Scale;E;B Mixolydian;Mixolydian;B;AnkiJazz-25d16dd7a1.mp3;AnkiJazz-25d16dd7a1.png;Ascending
+Eb Major Scale;Major Scale;Eb;C Aeolean;Aeolean;C;AnkiJazz-ee368f852f.mp3;AnkiJazz-ee368f852f.png;Descending
+Eb Major Scale;Major Scale;Eb;C Aeolean;Aeolean;C;AnkiJazz-1882f9892a.mp3;AnkiJazz-1882f9892a.png;Ascending
+E Major Scale;Major Scale;E;C# Aeolean;Aeolean;C#;AnkiJazz-6a2434f40d.mp3;AnkiJazz-6a2434f40d.png;Descending
+E Major Scale;Major Scale;E;C# Aeolean;Aeolean;C#;AnkiJazz-6e89e76aab.mp3;AnkiJazz-6e89e76aab.png;Ascending
+F Major Scale;Major Scale;F;D Aeolean;Aeolean;D;AnkiJazz-85b7dabd4a.mp3;AnkiJazz-85b7dabd4a.png;Descending
+F Major Scale;Major Scale;F;D Aeolean;Aeolean;D;AnkiJazz-0b9b51b491.mp3;AnkiJazz-0b9b51b491.png;Ascending
+Gb Major Scale;Major Scale;Gb;Eb Aeolean;Aeolean;Eb;AnkiJazz-d48553f97d.mp3;AnkiJazz-d48553f97d.png;Descending
+Gb Major Scale;Major Scale;Gb;Eb Aeolean;Aeolean;Eb;AnkiJazz-1d2c038357.mp3;AnkiJazz-1d2c038357.png;Ascending
+F# Major Scale;Major Scale;F#;D# Aeolean;Aeolean;D#;AnkiJazz-af6f8dcc21.mp3;AnkiJazz-af6f8dcc21.png;Descending
+F# Major Scale;Major Scale;F#;D# Aeolean;Aeolean;D#;AnkiJazz-61ef97787b.mp3;AnkiJazz-61ef97787b.png;Ascending
+G Major Scale;Major Scale;G;E Aeolean;Aeolean;E;AnkiJazz-889efcd50c.mp3;AnkiJazz-889efcd50c.png;Descending
+G Major Scale;Major Scale;G;E Aeolean;Aeolean;E;AnkiJazz-ea9888f47d.mp3;AnkiJazz-ea9888f47d.png;Ascending
+Ab Major Scale;Major Scale;Ab;F Aeolean;Aeolean;F;AnkiJazz-f10913c9b9.mp3;AnkiJazz-f10913c9b9.png;Descending
+Ab Major Scale;Major Scale;Ab;F Aeolean;Aeolean;F;AnkiJazz-d5ec288808.mp3;AnkiJazz-d5ec288808.png;Ascending
+A Major Scale;Major Scale;A;F# Aeolean;Aeolean;F#;AnkiJazz-8a86492859.mp3;AnkiJazz-8a86492859.png;Descending
+A Major Scale;Major Scale;A;F# Aeolean;Aeolean;F#;AnkiJazz-2dfc8bc421.mp3;AnkiJazz-2dfc8bc421.png;Ascending
+Bb Major Scale;Major Scale;Bb;G Aeolean;Aeolean;G;AnkiJazz-ccf1018e6f.mp3;AnkiJazz-ccf1018e6f.png;Descending
+Bb Major Scale;Major Scale;Bb;G Aeolean;Aeolean;G;AnkiJazz-3aabd24af8.mp3;AnkiJazz-3aabd24af8.png;Ascending
+B Major Scale;Major Scale;B;G# Aeolean;Aeolean;G#;AnkiJazz-f5130512c4.mp3;AnkiJazz-f5130512c4.png;Descending
+B Major Scale;Major Scale;B;G# Aeolean;Aeolean;G#;AnkiJazz-8a6fb9dde8.mp3;AnkiJazz-8a6fb9dde8.png;Ascending
+C Major Scale;Major Scale;C;A Aeolean;Aeolean;A;AnkiJazz-25a8924e83.mp3;AnkiJazz-25a8924e83.png;Descending
+C Major Scale;Major Scale;C;A Aeolean;Aeolean;A;AnkiJazz-93eb9ecab9.mp3;AnkiJazz-93eb9ecab9.png;Ascending
+Db Major Scale;Major Scale;Db;Bb Aeolean;Aeolean;Bb;AnkiJazz-8bfe56137a.mp3;AnkiJazz-8bfe56137a.png;Descending
+Db Major Scale;Major Scale;Db;Bb Aeolean;Aeolean;Bb;AnkiJazz-8f597ec0d8.mp3;AnkiJazz-8f597ec0d8.png;Ascending
+D Major Scale;Major Scale;D;B Aeolean;Aeolean;B;AnkiJazz-41484b4872.mp3;AnkiJazz-41484b4872.png;Descending
+D Major Scale;Major Scale;D;B Aeolean;Aeolean;B;AnkiJazz-b920944e80.mp3;AnkiJazz-b920944e80.png;Ascending
+Db Major Scale;Major Scale;Db;C Locrian;Locrian;C;AnkiJazz-038b5ee1e0.mp3;AnkiJazz-038b5ee1e0.png;Descending
+Db Major Scale;Major Scale;Db;C Locrian;Locrian;C;AnkiJazz-f2352773a7.mp3;AnkiJazz-f2352773a7.png;Ascending
+D Major Scale;Major Scale;D;C# Locrian;Locrian;C#;AnkiJazz-cabbc628a1.mp3;AnkiJazz-cabbc628a1.png;Descending
+D Major Scale;Major Scale;D;C# Locrian;Locrian;C#;AnkiJazz-99505e8eb6.mp3;AnkiJazz-99505e8eb6.png;Ascending
+Eb Major Scale;Major Scale;Eb;D Locrian;Locrian;D;AnkiJazz-1cfbacf8a1.mp3;AnkiJazz-1cfbacf8a1.png;Descending
+Eb Major Scale;Major Scale;Eb;D Locrian;Locrian;D;AnkiJazz-d592055a02.mp3;AnkiJazz-d592055a02.png;Ascending
+E Major Scale;Major Scale;E;D# Locrian;Locrian;D#;AnkiJazz-c895e1e69a.mp3;AnkiJazz-c895e1e69a.png;Descending
+E Major Scale;Major Scale;E;D# Locrian;Locrian;D#;AnkiJazz-a4388458d9.mp3;AnkiJazz-a4388458d9.png;Ascending
+F Major Scale;Major Scale;F;E Locrian;Locrian;E;AnkiJazz-0237b2076c.mp3;AnkiJazz-0237b2076c.png;Descending
+F Major Scale;Major Scale;F;E Locrian;Locrian;E;AnkiJazz-fa8623af90.mp3;AnkiJazz-fa8623af90.png;Ascending
+Gb Major Scale;Major Scale;Gb;F Locrian;Locrian;F;AnkiJazz-b431738933.mp3;AnkiJazz-b431738933.png;Descending
+Gb Major Scale;Major Scale;Gb;F Locrian;Locrian;F;AnkiJazz-b91a043496.mp3;AnkiJazz-b91a043496.png;Ascending
+F# Major Scale;Major Scale;F#;E# Locrian;Locrian;E#;AnkiJazz-861feced39.mp3;AnkiJazz-861feced39.png;Descending
+F# Major Scale;Major Scale;F#;E# Locrian;Locrian;E#;AnkiJazz-c96bde9a82.mp3;AnkiJazz-c96bde9a82.png;Ascending
+G Major Scale;Major Scale;G;F# Locrian;Locrian;F#;AnkiJazz-2f9f6c9150.mp3;AnkiJazz-2f9f6c9150.png;Descending
+G Major Scale;Major Scale;G;F# Locrian;Locrian;F#;AnkiJazz-0a94072a76.mp3;AnkiJazz-0a94072a76.png;Ascending
+Ab Major Scale;Major Scale;Ab;G Locrian;Locrian;G;AnkiJazz-c1cc436952.mp3;AnkiJazz-c1cc436952.png;Descending
+Ab Major Scale;Major Scale;Ab;G Locrian;Locrian;G;AnkiJazz-76ab4ddbbd.mp3;AnkiJazz-76ab4ddbbd.png;Ascending
+A Major Scale;Major Scale;A;G# Locrian;Locrian;G#;AnkiJazz-99636e512f.mp3;AnkiJazz-99636e512f.png;Descending
+A Major Scale;Major Scale;A;G# Locrian;Locrian;G#;AnkiJazz-f2f4859db5.mp3;AnkiJazz-f2f4859db5.png;Ascending
+Bb Major Scale;Major Scale;Bb;A Locrian;Locrian;A;AnkiJazz-cb37fbd51d.mp3;AnkiJazz-cb37fbd51d.png;Descending
+Bb Major Scale;Major Scale;Bb;A Locrian;Locrian;A;AnkiJazz-868d97e46d.mp3;AnkiJazz-868d97e46d.png;Ascending
+B Major Scale;Major Scale;B;A# Locrian;Locrian;A#;AnkiJazz-6860afe08d.mp3;AnkiJazz-6860afe08d.png;Descending
+B Major Scale;Major Scale;B;A# Locrian;Locrian;A#;AnkiJazz-2fa6af7517.mp3;AnkiJazz-2fa6af7517.png;Ascending
+C Major Scale;Major Scale;C;B Locrian;Locrian;B;AnkiJazz-967be1ef21.mp3;AnkiJazz-967be1ef21.png;Descending
+C Major Scale;Major Scale;C;B Locrian;Locrian;B;AnkiJazz-2a64f15658.mp3;AnkiJazz-2a64f15658.png;Ascending
+C Melodic Minor;Melodic Minor;C;C Melodic Minor;Melodic Minor;C;AnkiJazz-fd229c4446.mp3;AnkiJazz-fd229c4446.png;Descending
+C Melodic Minor;Melodic Minor;C;C Melodic Minor;Melodic Minor;C;AnkiJazz-0d3a161fd8.mp3;AnkiJazz-0d3a161fd8.png;Ascending
+C# Melodic Minor;Melodic Minor;C#;C# Melodic Minor;Melodic Minor;C#;AnkiJazz-29e5a3b4da.mp3;AnkiJazz-29e5a3b4da.png;Descending
+C# Melodic Minor;Melodic Minor;C#;C# Melodic Minor;Melodic Minor;C#;AnkiJazz-e33cf54e82.mp3;AnkiJazz-e33cf54e82.png;Ascending
+D Melodic Minor;Melodic Minor;D;D Melodic Minor;Melodic Minor;D;AnkiJazz-848fffc8d0.mp3;AnkiJazz-848fffc8d0.png;Descending
+D Melodic Minor;Melodic Minor;D;D Melodic Minor;Melodic Minor;D;AnkiJazz-913200d511.mp3;AnkiJazz-913200d511.png;Ascending
+Eb Melodic Minor;Melodic Minor;Eb;Eb Melodic Minor;Melodic Minor;Eb;AnkiJazz-df6f3066df.mp3;AnkiJazz-df6f3066df.png;Descending
+Eb Melodic Minor;Melodic Minor;Eb;Eb Melodic Minor;Melodic Minor;Eb;AnkiJazz-a6e0cac063.mp3;AnkiJazz-a6e0cac063.png;Ascending
+E Melodic Minor;Melodic Minor;E;E Melodic Minor;Melodic Minor;E;AnkiJazz-48f0006c8d.mp3;AnkiJazz-48f0006c8d.png;Descending
+E Melodic Minor;Melodic Minor;E;E Melodic Minor;Melodic Minor;E;AnkiJazz-a8c66db551.mp3;AnkiJazz-a8c66db551.png;Ascending
+F Melodic Minor;Melodic Minor;F;F Melodic Minor;Melodic Minor;F;AnkiJazz-d1585df3f4.mp3;AnkiJazz-d1585df3f4.png;Descending
+F Melodic Minor;Melodic Minor;F;F Melodic Minor;Melodic Minor;F;AnkiJazz-5b4d8ab718.mp3;AnkiJazz-5b4d8ab718.png;Ascending
+F# Melodic Minor;Melodic Minor;F#;F# Melodic Minor;Melodic Minor;F#;AnkiJazz-72f60e2679.mp3;AnkiJazz-72f60e2679.png;Descending
+F# Melodic Minor;Melodic Minor;F#;F# Melodic Minor;Melodic Minor;F#;AnkiJazz-3de0ba2139.mp3;AnkiJazz-3de0ba2139.png;Ascending
+G Melodic Minor;Melodic Minor;G;G Melodic Minor;Melodic Minor;G;AnkiJazz-f99ca8103f.mp3;AnkiJazz-f99ca8103f.png;Descending
+G Melodic Minor;Melodic Minor;G;G Melodic Minor;Melodic Minor;G;AnkiJazz-9f889dba29.mp3;AnkiJazz-9f889dba29.png;Ascending
+Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab;AnkiJazz-494f3af839.mp3;AnkiJazz-494f3af839.png;Descending
+Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab;AnkiJazz-a923f2a656.mp3;AnkiJazz-a923f2a656.png;Ascending
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;AnkiJazz-11c355aff6.mp3;AnkiJazz-11c355aff6.png;Descending
+G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#;AnkiJazz-4d4f94f5c6.mp3;AnkiJazz-4d4f94f5c6.png;Ascending
+A Melodic Minor;Melodic Minor;A;A Melodic Minor;Melodic Minor;A;AnkiJazz-39061a4d03.mp3;AnkiJazz-39061a4d03.png;Descending
+A Melodic Minor;Melodic Minor;A;A Melodic Minor;Melodic Minor;A;AnkiJazz-89024d421f.mp3;AnkiJazz-89024d421f.png;Ascending
+Bb Melodic Minor;Melodic Minor;Bb;Bb Melodic Minor;Melodic Minor;Bb;AnkiJazz-42e0fddaac.mp3;AnkiJazz-42e0fddaac.png;Descending
+Bb Melodic Minor;Melodic Minor;Bb;Bb Melodic Minor;Melodic Minor;Bb;AnkiJazz-b51e28cd4e.mp3;AnkiJazz-b51e28cd4e.png;Ascending
+B Melodic Minor;Melodic Minor;B;B Melodic Minor;Melodic Minor;B;AnkiJazz-46edab89dc.mp3;AnkiJazz-46edab89dc.png;Descending
+B Melodic Minor;Melodic Minor;B;B Melodic Minor;Melodic Minor;B;AnkiJazz-a415784c24.mp3;AnkiJazz-a415784c24.png;Ascending
+G Melodic Minor;Melodic Minor;G;C Lydian Dominant;Lydian Dominant;C;AnkiJazz-2fc387b984.mp3;AnkiJazz-2fc387b984.png;Descending
+G Melodic Minor;Melodic Minor;G;C Lydian Dominant;Lydian Dominant;C;AnkiJazz-ec669987ab.mp3;AnkiJazz-ec669987ab.png;Ascending
+Ab Melodic Minor;Melodic Minor;Ab;Db Lydian Dominant;Lydian Dominant;Db;AnkiJazz-cb9fcc899c.mp3;AnkiJazz-cb9fcc899c.png;Descending
+Ab Melodic Minor;Melodic Minor;Ab;Db Lydian Dominant;Lydian Dominant;Db;AnkiJazz-111d048238.mp3;AnkiJazz-111d048238.png;Ascending
+G# Melodic Minor;Melodic Minor;G#;C# Lydian Dominant;Lydian Dominant;C#;AnkiJazz-65ab364ff9.mp3;AnkiJazz-65ab364ff9.png;Descending
+G# Melodic Minor;Melodic Minor;G#;C# Lydian Dominant;Lydian Dominant;C#;AnkiJazz-8985f05e77.mp3;AnkiJazz-8985f05e77.png;Ascending
+A Melodic Minor;Melodic Minor;A;D Lydian Dominant;Lydian Dominant;D;AnkiJazz-f7d55df9fe.mp3;AnkiJazz-f7d55df9fe.png;Descending
+A Melodic Minor;Melodic Minor;A;D Lydian Dominant;Lydian Dominant;D;AnkiJazz-61fe282da7.mp3;AnkiJazz-61fe282da7.png;Ascending
+Bb Melodic Minor;Melodic Minor;Bb;Eb Lydian Dominant;Lydian Dominant;Eb;AnkiJazz-cb9e201683.mp3;AnkiJazz-cb9e201683.png;Descending
+Bb Melodic Minor;Melodic Minor;Bb;Eb Lydian Dominant;Lydian Dominant;Eb;AnkiJazz-37d3a68637.mp3;AnkiJazz-37d3a68637.png;Ascending
+B Melodic Minor;Melodic Minor;B;E Lydian Dominant;Lydian Dominant;E;AnkiJazz-bd0b2a3243.mp3;AnkiJazz-bd0b2a3243.png;Descending
+B Melodic Minor;Melodic Minor;B;E Lydian Dominant;Lydian Dominant;E;AnkiJazz-420547995f.mp3;AnkiJazz-420547995f.png;Ascending
+C Melodic Minor;Melodic Minor;C;F Lydian Dominant;Lydian Dominant;F;AnkiJazz-75d8773baf.mp3;AnkiJazz-75d8773baf.png;Descending
+C Melodic Minor;Melodic Minor;C;F Lydian Dominant;Lydian Dominant;F;AnkiJazz-e4d0a19d44.mp3;AnkiJazz-e4d0a19d44.png;Ascending
+C# Melodic Minor;Melodic Minor;C#;F# Lydian Dominant;Lydian Dominant;F#;AnkiJazz-c76c94ce14.mp3;AnkiJazz-c76c94ce14.png;Descending
+C# Melodic Minor;Melodic Minor;C#;F# Lydian Dominant;Lydian Dominant;F#;AnkiJazz-8304067d54.mp3;AnkiJazz-8304067d54.png;Ascending
+D Melodic Minor;Melodic Minor;D;G Lydian Dominant;Lydian Dominant;G;AnkiJazz-2fb1cdeef9.mp3;AnkiJazz-2fb1cdeef9.png;Descending
+D Melodic Minor;Melodic Minor;D;G Lydian Dominant;Lydian Dominant;G;AnkiJazz-1704b79b76.mp3;AnkiJazz-1704b79b76.png;Ascending
+Eb Melodic Minor;Melodic Minor;Eb;Ab Lydian Dominant;Lydian Dominant;Ab;AnkiJazz-e1af021e86.mp3;AnkiJazz-e1af021e86.png;Descending
+Eb Melodic Minor;Melodic Minor;Eb;Ab Lydian Dominant;Lydian Dominant;Ab;AnkiJazz-cc272a3c49.mp3;AnkiJazz-cc272a3c49.png;Ascending
+E Melodic Minor;Melodic Minor;E;A Lydian Dominant;Lydian Dominant;A;AnkiJazz-2cb3932f9e.mp3;AnkiJazz-2cb3932f9e.png;Descending
+E Melodic Minor;Melodic Minor;E;A Lydian Dominant;Lydian Dominant;A;AnkiJazz-468d54d383.mp3;AnkiJazz-468d54d383.png;Ascending
+F Melodic Minor;Melodic Minor;F;Bb Lydian Dominant;Lydian Dominant;Bb;AnkiJazz-c12d0a0e56.mp3;AnkiJazz-c12d0a0e56.png;Descending
+F Melodic Minor;Melodic Minor;F;Bb Lydian Dominant;Lydian Dominant;Bb;AnkiJazz-d4c022f298.mp3;AnkiJazz-d4c022f298.png;Ascending
+F# Melodic Minor;Melodic Minor;F#;B Lydian Dominant;Lydian Dominant;B;AnkiJazz-500563862e.mp3;AnkiJazz-500563862e.png;Descending
+F# Melodic Minor;Melodic Minor;F#;B Lydian Dominant;Lydian Dominant;B;AnkiJazz-a5b7d4c09d.mp3;AnkiJazz-a5b7d4c09d.png;Ascending
+C# Melodic Minor;Melodic Minor;C#;B# Altered;Altered;B#;AnkiJazz-57546ab4be.mp3;AnkiJazz-57546ab4be.png;Descending
+C# Melodic Minor;Melodic Minor;C#;B# Altered;Altered;B#;AnkiJazz-03200dde93.mp3;AnkiJazz-03200dde93.png;Ascending
+D Melodic Minor;Melodic Minor;D;C# Altered;Altered;C#;AnkiJazz-aaed6e16e5.mp3;AnkiJazz-aaed6e16e5.png;Descending
+D Melodic Minor;Melodic Minor;D;C# Altered;Altered;C#;AnkiJazz-192a1f1d21.mp3;AnkiJazz-192a1f1d21.png;Ascending
+Eb Melodic Minor;Melodic Minor;Eb;D Altered;Altered;D;AnkiJazz-7f04966979.mp3;AnkiJazz-7f04966979.png;Descending
+Eb Melodic Minor;Melodic Minor;Eb;D Altered;Altered;D;AnkiJazz-44771d4b69.mp3;AnkiJazz-44771d4b69.png;Ascending
+E Melodic Minor;Melodic Minor;E;D# Altered;Altered;D#;AnkiJazz-bb1e8b9463.mp3;AnkiJazz-bb1e8b9463.png;Descending
+E Melodic Minor;Melodic Minor;E;D# Altered;Altered;D#;AnkiJazz-57a51b6a76.mp3;AnkiJazz-57a51b6a76.png;Ascending
+F Melodic Minor;Melodic Minor;F;E Altered;Altered;E;AnkiJazz-032faba904.mp3;AnkiJazz-032faba904.png;Descending
+F Melodic Minor;Melodic Minor;F;E Altered;Altered;E;AnkiJazz-723569640c.mp3;AnkiJazz-723569640c.png;Ascending
+F# Melodic Minor;Melodic Minor;F#;E# Altered;Altered;E#;AnkiJazz-abbfad58b3.mp3;AnkiJazz-abbfad58b3.png;Descending
+F# Melodic Minor;Melodic Minor;F#;E# Altered;Altered;E#;AnkiJazz-8d90f5a9b2.mp3;AnkiJazz-8d90f5a9b2.png;Ascending
+G Melodic Minor;Melodic Minor;G;F# Altered;Altered;F#;AnkiJazz-bad8839f97.mp3;AnkiJazz-bad8839f97.png;Descending
+G Melodic Minor;Melodic Minor;G;F# Altered;Altered;F#;AnkiJazz-7922c356f7.mp3;AnkiJazz-7922c356f7.png;Ascending
+Ab Melodic Minor;Melodic Minor;Ab;G Altered;Altered;G;AnkiJazz-587c913472.mp3;AnkiJazz-587c913472.png;Descending
+Ab Melodic Minor;Melodic Minor;Ab;G Altered;Altered;G;AnkiJazz-f2fb66c458.mp3;AnkiJazz-f2fb66c458.png;Ascending
+G# Melodic Minor;Melodic Minor;G#;Fx Altered;Altered;Fx;AnkiJazz-4fcd9a94b6.mp3;AnkiJazz-4fcd9a94b6.png;Descending
+G# Melodic Minor;Melodic Minor;G#;Fx Altered;Altered;Fx;AnkiJazz-0694cc9c37.mp3;AnkiJazz-0694cc9c37.png;Ascending
+A Melodic Minor;Melodic Minor;A;G# Altered;Altered;G#;AnkiJazz-341381e232.mp3;AnkiJazz-341381e232.png;Descending
+A Melodic Minor;Melodic Minor;A;G# Altered;Altered;G#;AnkiJazz-58cedbb14c.mp3;AnkiJazz-58cedbb14c.png;Ascending
+Bb Melodic Minor;Melodic Minor;Bb;A Altered;Altered;A;AnkiJazz-5a389fb930.mp3;AnkiJazz-5a389fb930.png;Descending
+Bb Melodic Minor;Melodic Minor;Bb;A Altered;Altered;A;AnkiJazz-7fbaf888ad.mp3;AnkiJazz-7fbaf888ad.png;Ascending
+B Melodic Minor;Melodic Minor;B;A# Altered;Altered;A#;AnkiJazz-0fb13a6cab.mp3;AnkiJazz-0fb13a6cab.png;Descending
+B Melodic Minor;Melodic Minor;B;A# Altered;Altered;A#;AnkiJazz-d4b2c3613a.mp3;AnkiJazz-d4b2c3613a.png;Ascending
+C Melodic Minor;Melodic Minor;C;B Altered;Altered;B;AnkiJazz-bd70b4e24b.mp3;AnkiJazz-bd70b4e24b.png;Descending
+C Melodic Minor;Melodic Minor;C;B Altered;Altered;B;AnkiJazz-3b7df499b1.mp3;AnkiJazz-3b7df499b1.png;Ascending
+C Harmonic Minor;Harmonic Minor;C;C Harmonic Minor;Harmonic Minor;C;AnkiJazz-1dfac3d951.mp3;AnkiJazz-1dfac3d951.png;Descending
+C Harmonic Minor;Harmonic Minor;C;C Harmonic Minor;Harmonic Minor;C;AnkiJazz-f3f580e284.mp3;AnkiJazz-f3f580e284.png;Ascending
+C# Harmonic Minor;Harmonic Minor;C#;C# Harmonic Minor;Harmonic Minor;C#;AnkiJazz-a27f05e0be.mp3;AnkiJazz-a27f05e0be.png;Descending
+C# Harmonic Minor;Harmonic Minor;C#;C# Harmonic Minor;Harmonic Minor;C#;AnkiJazz-0878f0db18.mp3;AnkiJazz-0878f0db18.png;Ascending
+D Harmonic Minor;Harmonic Minor;D;D Harmonic Minor;Harmonic Minor;D;AnkiJazz-e052e6cb57.mp3;AnkiJazz-e052e6cb57.png;Descending
+D Harmonic Minor;Harmonic Minor;D;D Harmonic Minor;Harmonic Minor;D;AnkiJazz-1c61d63dd0.mp3;AnkiJazz-1c61d63dd0.png;Ascending
+Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb;AnkiJazz-8d1ce11a06.mp3;AnkiJazz-8d1ce11a06.png;Descending
+Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb;AnkiJazz-65a980257d.mp3;AnkiJazz-65a980257d.png;Ascending
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;AnkiJazz-4919f4e0cf.mp3;AnkiJazz-4919f4e0cf.png;Descending
+D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#;AnkiJazz-3cf74b5115.mp3;AnkiJazz-3cf74b5115.png;Ascending
+E Harmonic Minor;Harmonic Minor;E;E Harmonic Minor;Harmonic Minor;E;AnkiJazz-3458b8863a.mp3;AnkiJazz-3458b8863a.png;Descending
+E Harmonic Minor;Harmonic Minor;E;E Harmonic Minor;Harmonic Minor;E;AnkiJazz-ad6bb8da83.mp3;AnkiJazz-ad6bb8da83.png;Ascending
+F Harmonic Minor;Harmonic Minor;F;F Harmonic Minor;Harmonic Minor;F;AnkiJazz-37c6d7bcb4.mp3;AnkiJazz-37c6d7bcb4.png;Descending
+F Harmonic Minor;Harmonic Minor;F;F Harmonic Minor;Harmonic Minor;F;AnkiJazz-c828d12edb.mp3;AnkiJazz-c828d12edb.png;Ascending
+F# Harmonic Minor;Harmonic Minor;F#;F# Harmonic Minor;Harmonic Minor;F#;AnkiJazz-5dd2f40987.mp3;AnkiJazz-5dd2f40987.png;Descending
+F# Harmonic Minor;Harmonic Minor;F#;F# Harmonic Minor;Harmonic Minor;F#;AnkiJazz-e9bbceae2c.mp3;AnkiJazz-e9bbceae2c.png;Ascending
+G Harmonic Minor;Harmonic Minor;G;G Harmonic Minor;Harmonic Minor;G;AnkiJazz-ad11a820b8.mp3;AnkiJazz-ad11a820b8.png;Descending
+G Harmonic Minor;Harmonic Minor;G;G Harmonic Minor;Harmonic Minor;G;AnkiJazz-be423f5e82.mp3;AnkiJazz-be423f5e82.png;Ascending
+G# Harmonic Minor;Harmonic Minor;G#;G# Harmonic Minor;Harmonic Minor;G#;AnkiJazz-4abf58bbaf.mp3;AnkiJazz-4abf58bbaf.png;Descending
+G# Harmonic Minor;Harmonic Minor;G#;G# Harmonic Minor;Harmonic Minor;G#;AnkiJazz-59a7c73a0c.mp3;AnkiJazz-59a7c73a0c.png;Ascending
+A Harmonic Minor;Harmonic Minor;A;A Harmonic Minor;Harmonic Minor;A;AnkiJazz-dddec7b8d1.mp3;AnkiJazz-dddec7b8d1.png;Descending
+A Harmonic Minor;Harmonic Minor;A;A Harmonic Minor;Harmonic Minor;A;AnkiJazz-728edbb286.mp3;AnkiJazz-728edbb286.png;Ascending
+Bb Harmonic Minor;Harmonic Minor;Bb;Bb Harmonic Minor;Harmonic Minor;Bb;AnkiJazz-d8de3a1bcb.mp3;AnkiJazz-d8de3a1bcb.png;Descending
+Bb Harmonic Minor;Harmonic Minor;Bb;Bb Harmonic Minor;Harmonic Minor;Bb;AnkiJazz-a2336143f3.mp3;AnkiJazz-a2336143f3.png;Ascending
+B Harmonic Minor;Harmonic Minor;B;B Harmonic Minor;Harmonic Minor;B;AnkiJazz-1f1c7dda66.mp3;AnkiJazz-1f1c7dda66.png;Descending
+B Harmonic Minor;Harmonic Minor;B;B Harmonic Minor;Harmonic Minor;B;AnkiJazz-3809264cba.mp3;AnkiJazz-3809264cba.png;Ascending
+F Harmonic Minor;Harmonic Minor;F;C Phrygian Dominant;Phrygian Dominant;C;AnkiJazz-757a9eaaa5.mp3;AnkiJazz-757a9eaaa5.png;Descending
+F Harmonic Minor;Harmonic Minor;F;C Phrygian Dominant;Phrygian Dominant;C;AnkiJazz-01fbfb76d8.mp3;AnkiJazz-01fbfb76d8.png;Ascending
+F# Harmonic Minor;Harmonic Minor;F#;C# Phrygian Dominant;Phrygian Dominant;C#;AnkiJazz-8a76f5e5aa.mp3;AnkiJazz-8a76f5e5aa.png;Descending
+F# Harmonic Minor;Harmonic Minor;F#;C# Phrygian Dominant;Phrygian Dominant;C#;AnkiJazz-e0709651ad.mp3;AnkiJazz-e0709651ad.png;Ascending
+G Harmonic Minor;Harmonic Minor;G;D Phrygian Dominant;Phrygian Dominant;D;AnkiJazz-9aa6ffc190.mp3;AnkiJazz-9aa6ffc190.png;Descending
+G Harmonic Minor;Harmonic Minor;G;D Phrygian Dominant;Phrygian Dominant;D;AnkiJazz-28c368cf44.mp3;AnkiJazz-28c368cf44.png;Ascending
+G# Harmonic Minor;Harmonic Minor;G#;D# Phrygian Dominant;Phrygian Dominant;D#;AnkiJazz-744f43b599.mp3;AnkiJazz-744f43b599.png;Descending
+G# Harmonic Minor;Harmonic Minor;G#;D# Phrygian Dominant;Phrygian Dominant;D#;AnkiJazz-d8944f9abb.mp3;AnkiJazz-d8944f9abb.png;Ascending
+A Harmonic Minor;Harmonic Minor;A;E Phrygian Dominant;Phrygian Dominant;E;AnkiJazz-c11f1a6946.mp3;AnkiJazz-c11f1a6946.png;Descending
+A Harmonic Minor;Harmonic Minor;A;E Phrygian Dominant;Phrygian Dominant;E;AnkiJazz-43f9f0d350.mp3;AnkiJazz-43f9f0d350.png;Ascending
+Bb Harmonic Minor;Harmonic Minor;Bb;F Phrygian Dominant;Phrygian Dominant;F;AnkiJazz-46198f309b.mp3;AnkiJazz-46198f309b.png;Descending
+Bb Harmonic Minor;Harmonic Minor;Bb;F Phrygian Dominant;Phrygian Dominant;F;AnkiJazz-be2cac57a8.mp3;AnkiJazz-be2cac57a8.png;Ascending
+B Harmonic Minor;Harmonic Minor;B;F# Phrygian Dominant;Phrygian Dominant;F#;AnkiJazz-c554729970.mp3;AnkiJazz-c554729970.png;Descending
+B Harmonic Minor;Harmonic Minor;B;F# Phrygian Dominant;Phrygian Dominant;F#;AnkiJazz-4ab8d28e47.mp3;AnkiJazz-4ab8d28e47.png;Ascending
+C Harmonic Minor;Harmonic Minor;C;G Phrygian Dominant;Phrygian Dominant;G;AnkiJazz-ee3bf15fb6.mp3;AnkiJazz-ee3bf15fb6.png;Descending
+C Harmonic Minor;Harmonic Minor;C;G Phrygian Dominant;Phrygian Dominant;G;AnkiJazz-48a6f5197b.mp3;AnkiJazz-48a6f5197b.png;Ascending
+C# Harmonic Minor;Harmonic Minor;C#;G# Phrygian Dominant;Phrygian Dominant;G#;AnkiJazz-3c9220398f.mp3;AnkiJazz-3c9220398f.png;Descending
+C# Harmonic Minor;Harmonic Minor;C#;G# Phrygian Dominant;Phrygian Dominant;G#;AnkiJazz-3e3b8623e9.mp3;AnkiJazz-3e3b8623e9.png;Ascending
+D Harmonic Minor;Harmonic Minor;D;A Phrygian Dominant;Phrygian Dominant;A;AnkiJazz-63245f8098.mp3;AnkiJazz-63245f8098.png;Descending
+D Harmonic Minor;Harmonic Minor;D;A Phrygian Dominant;Phrygian Dominant;A;AnkiJazz-971d04bb58.mp3;AnkiJazz-971d04bb58.png;Ascending
+Eb Harmonic Minor;Harmonic Minor;Eb;Bb Phrygian Dominant;Phrygian Dominant;Bb;AnkiJazz-490fb693f0.mp3;AnkiJazz-490fb693f0.png;Descending
+Eb Harmonic Minor;Harmonic Minor;Eb;Bb Phrygian Dominant;Phrygian Dominant;Bb;AnkiJazz-bbccaec564.mp3;AnkiJazz-bbccaec564.png;Ascending
+D# Harmonic Minor;Harmonic Minor;D#;A# Phrygian Dominant;Phrygian Dominant;A#;AnkiJazz-2727ab1e05.mp3;AnkiJazz-2727ab1e05.png;Descending
+D# Harmonic Minor;Harmonic Minor;D#;A# Phrygian Dominant;Phrygian Dominant;A#;AnkiJazz-33819f0574.mp3;AnkiJazz-33819f0574.png;Ascending
+E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B;AnkiJazz-560550f2f5.mp3;AnkiJazz-560550f2f5.png;Descending
+E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B;AnkiJazz-80bb4f4a8c.mp3;AnkiJazz-80bb4f4a8c.png;Ascending
+C Whole Tone;Whole Tone;C;C Whole Tone;Whole Tone;C;AnkiJazz-22e40e668d.mp3;AnkiJazz-22e40e668d.png;Descending
+C Whole Tone;Whole Tone;C;C Whole Tone;Whole Tone;C;AnkiJazz-71725d3eb2.mp3;AnkiJazz-71725d3eb2.png;Ascending
+Db Whole Tone;Whole Tone;Db;Db Whole Tone;Whole Tone;Db;AnkiJazz-41b5039da8.mp3;AnkiJazz-41b5039da8.png;Descending
+Db Whole Tone;Whole Tone;Db;Db Whole Tone;Whole Tone;Db;AnkiJazz-8fbbdb4c2c.mp3;AnkiJazz-8fbbdb4c2c.png;Ascending
+D Whole Tone;Whole Tone;D;D Whole Tone;Whole Tone;D;AnkiJazz-ccb0e99fe1.mp3;AnkiJazz-ccb0e99fe1.png;Descending
+D Whole Tone;Whole Tone;D;D Whole Tone;Whole Tone;D;AnkiJazz-8f3a8a6e32.mp3;AnkiJazz-8f3a8a6e32.png;Ascending
+Eb Whole Tone;Whole Tone;Eb;Eb Whole Tone;Whole Tone;Eb;AnkiJazz-0ab624e7fd.mp3;AnkiJazz-0ab624e7fd.png;Descending
+Eb Whole Tone;Whole Tone;Eb;Eb Whole Tone;Whole Tone;Eb;AnkiJazz-073d4bd9bd.mp3;AnkiJazz-073d4bd9bd.png;Ascending
+E Whole Tone;Whole Tone;E;E Whole Tone;Whole Tone;E;AnkiJazz-b671bc52f6.mp3;AnkiJazz-b671bc52f6.png;Descending
+E Whole Tone;Whole Tone;E;E Whole Tone;Whole Tone;E;AnkiJazz-8a38215bdc.mp3;AnkiJazz-8a38215bdc.png;Ascending
+F Whole Tone;Whole Tone;F;F Whole Tone;Whole Tone;F;AnkiJazz-f3f4eebe9d.mp3;AnkiJazz-f3f4eebe9d.png;Descending
+F Whole Tone;Whole Tone;F;F Whole Tone;Whole Tone;F;AnkiJazz-e42ece3f4f.mp3;AnkiJazz-e42ece3f4f.png;Ascending
+Gb Whole Tone;Whole Tone;Gb;Gb Whole Tone;Whole Tone;Gb;AnkiJazz-74b220de61.mp3;AnkiJazz-74b220de61.png;Descending
+Gb Whole Tone;Whole Tone;Gb;Gb Whole Tone;Whole Tone;Gb;AnkiJazz-5f40f2921b.mp3;AnkiJazz-5f40f2921b.png;Ascending
+G Whole Tone;Whole Tone;G;G Whole Tone;Whole Tone;G;AnkiJazz-849cf9573d.mp3;AnkiJazz-849cf9573d.png;Descending
+G Whole Tone;Whole Tone;G;G Whole Tone;Whole Tone;G;AnkiJazz-c75f5f9b6a.mp3;AnkiJazz-c75f5f9b6a.png;Ascending
+Ab Whole Tone;Whole Tone;Ab;Ab Whole Tone;Whole Tone;Ab;AnkiJazz-49b408db16.mp3;AnkiJazz-49b408db16.png;Descending
+Ab Whole Tone;Whole Tone;Ab;Ab Whole Tone;Whole Tone;Ab;AnkiJazz-902105c14a.mp3;AnkiJazz-902105c14a.png;Ascending
+A Whole Tone;Whole Tone;A;A Whole Tone;Whole Tone;A;AnkiJazz-031ddb692f.mp3;AnkiJazz-031ddb692f.png;Descending
+A Whole Tone;Whole Tone;A;A Whole Tone;Whole Tone;A;AnkiJazz-1e66969b24.mp3;AnkiJazz-1e66969b24.png;Ascending
+Bb Whole Tone;Whole Tone;Bb;Bb Whole Tone;Whole Tone;Bb;AnkiJazz-430fa2ddb9.mp3;AnkiJazz-430fa2ddb9.png;Descending
+Bb Whole Tone;Whole Tone;Bb;Bb Whole Tone;Whole Tone;Bb;AnkiJazz-ac9ba28a8a.mp3;AnkiJazz-ac9ba28a8a.png;Ascending
+B Whole Tone;Whole Tone;B;B Whole Tone;Whole Tone;B;AnkiJazz-b48a8eee3f.mp3;AnkiJazz-b48a8eee3f.png;Descending
+B Whole Tone;Whole Tone;B;B Whole Tone;Whole Tone;B;AnkiJazz-39cdd990ca.mp3;AnkiJazz-39cdd990ca.png;Ascending
+C Diminished Half/Whole;Diminished Half/Whole;C;C Diminished Half/Whole;Diminished Half/Whole;C;AnkiJazz-ffc809465f.mp3;AnkiJazz-ffc809465f.png;Descending
+C Diminished Half/Whole;Diminished Half/Whole;C;C Diminished Half/Whole;Diminished Half/Whole;C;AnkiJazz-4212692ad2.mp3;AnkiJazz-4212692ad2.png;Ascending
+Db Diminished Half/Whole;Diminished Half/Whole;Db;Db Diminished Half/Whole;Diminished Half/Whole;Db;AnkiJazz-c188596719.mp3;AnkiJazz-c188596719.png;Descending
+Db Diminished Half/Whole;Diminished Half/Whole;Db;Db Diminished Half/Whole;Diminished Half/Whole;Db;AnkiJazz-9498e33366.mp3;AnkiJazz-9498e33366.png;Ascending
+D Diminished Half/Whole;Diminished Half/Whole;D;D Diminished Half/Whole;Diminished Half/Whole;D;AnkiJazz-bca1db6bf3.mp3;AnkiJazz-bca1db6bf3.png;Descending
+D Diminished Half/Whole;Diminished Half/Whole;D;D Diminished Half/Whole;Diminished Half/Whole;D;AnkiJazz-027caefc48.mp3;AnkiJazz-027caefc48.png;Ascending
+Eb Diminished Half/Whole;Diminished Half/Whole;Eb;Eb Diminished Half/Whole;Diminished Half/Whole;Eb;AnkiJazz-2e5ca513ae.mp3;AnkiJazz-2e5ca513ae.png;Descending
+Eb Diminished Half/Whole;Diminished Half/Whole;Eb;Eb Diminished Half/Whole;Diminished Half/Whole;Eb;AnkiJazz-34539a893a.mp3;AnkiJazz-34539a893a.png;Ascending
+E Diminished Half/Whole;Diminished Half/Whole;E;E Diminished Half/Whole;Diminished Half/Whole;E;AnkiJazz-d20656c20d.mp3;AnkiJazz-d20656c20d.png;Descending
+E Diminished Half/Whole;Diminished Half/Whole;E;E Diminished Half/Whole;Diminished Half/Whole;E;AnkiJazz-6ee25def51.mp3;AnkiJazz-6ee25def51.png;Ascending
+F Diminished Half/Whole;Diminished Half/Whole;F;F Diminished Half/Whole;Diminished Half/Whole;F;AnkiJazz-660dfc859c.mp3;AnkiJazz-660dfc859c.png;Descending
+F Diminished Half/Whole;Diminished Half/Whole;F;F Diminished Half/Whole;Diminished Half/Whole;F;AnkiJazz-0df8987a45.mp3;AnkiJazz-0df8987a45.png;Ascending
+Gb Diminished Half/Whole;Diminished Half/Whole;Gb;Gb Diminished Half/Whole;Diminished Half/Whole;Gb;AnkiJazz-04ca5f7e19.mp3;AnkiJazz-04ca5f7e19.png;Descending
+Gb Diminished Half/Whole;Diminished Half/Whole;Gb;Gb Diminished Half/Whole;Diminished Half/Whole;Gb;AnkiJazz-dce6da0f65.mp3;AnkiJazz-dce6da0f65.png;Ascending
+G Diminished Half/Whole;Diminished Half/Whole;G;G Diminished Half/Whole;Diminished Half/Whole;G;AnkiJazz-866b9a0562.mp3;AnkiJazz-866b9a0562.png;Descending
+G Diminished Half/Whole;Diminished Half/Whole;G;G Diminished Half/Whole;Diminished Half/Whole;G;AnkiJazz-438e5f4aa5.mp3;AnkiJazz-438e5f4aa5.png;Ascending
+Ab Diminished Half/Whole;Diminished Half/Whole;Ab;Ab Diminished Half/Whole;Diminished Half/Whole;Ab;AnkiJazz-45a8f7ecb8.mp3;AnkiJazz-45a8f7ecb8.png;Descending
+Ab Diminished Half/Whole;Diminished Half/Whole;Ab;Ab Diminished Half/Whole;Diminished Half/Whole;Ab;AnkiJazz-43336bf801.mp3;AnkiJazz-43336bf801.png;Ascending
+A Diminished Half/Whole;Diminished Half/Whole;A;A Diminished Half/Whole;Diminished Half/Whole;A;AnkiJazz-d56e15d561.mp3;AnkiJazz-d56e15d561.png;Descending
+A Diminished Half/Whole;Diminished Half/Whole;A;A Diminished Half/Whole;Diminished Half/Whole;A;AnkiJazz-639f3c00ad.mp3;AnkiJazz-639f3c00ad.png;Ascending
+Bb Diminished Half/Whole;Diminished Half/Whole;Bb;Bb Diminished Half/Whole;Diminished Half/Whole;Bb;AnkiJazz-2acb7eeeab.mp3;AnkiJazz-2acb7eeeab.png;Descending
+Bb Diminished Half/Whole;Diminished Half/Whole;Bb;Bb Diminished Half/Whole;Diminished Half/Whole;Bb;AnkiJazz-0a0bbe8bc5.mp3;AnkiJazz-0a0bbe8bc5.png;Ascending
+B Diminished Half/Whole;Diminished Half/Whole;B;B Diminished Half/Whole;Diminished Half/Whole;B;AnkiJazz-68cdc94543.mp3;AnkiJazz-68cdc94543.png;Descending
+B Diminished Half/Whole;Diminished Half/Whole;B;B Diminished Half/Whole;Diminished Half/Whole;B;AnkiJazz-d42198a903.mp3;AnkiJazz-d42198a903.png;Ascending
+B Diminished Half/Whole;Diminished Half/Whole;B;C Diminished Whole/Half;Diminished Whole/Half;C;AnkiJazz-3bb5b71d6b.mp3;AnkiJazz-3bb5b71d6b.png;Descending
+B Diminished Half/Whole;Diminished Half/Whole;B;C Diminished Whole/Half;Diminished Whole/Half;C;AnkiJazz-3b8a68a893.mp3;AnkiJazz-3b8a68a893.png;Ascending
+C Diminished Half/Whole;Diminished Half/Whole;C;Db Diminished Whole/Half;Diminished Whole/Half;Db;AnkiJazz-b53cb1fc23.mp3;AnkiJazz-b53cb1fc23.png;Descending
+C Diminished Half/Whole;Diminished Half/Whole;C;Db Diminished Whole/Half;Diminished Whole/Half;Db;AnkiJazz-688f094256.mp3;AnkiJazz-688f094256.png;Ascending
+Db Diminished Half/Whole;Diminished Half/Whole;Db;D Diminished Whole/Half;Diminished Whole/Half;D;AnkiJazz-36e55c777c.mp3;AnkiJazz-36e55c777c.png;Descending
+Db Diminished Half/Whole;Diminished Half/Whole;Db;D Diminished Whole/Half;Diminished Whole/Half;D;AnkiJazz-59550789be.mp3;AnkiJazz-59550789be.png;Ascending
+D Diminished Half/Whole;Diminished Half/Whole;D;Eb Diminished Whole/Half;Diminished Whole/Half;Eb;AnkiJazz-2ff39c4e42.mp3;AnkiJazz-2ff39c4e42.png;Descending
+D Diminished Half/Whole;Diminished Half/Whole;D;Eb Diminished Whole/Half;Diminished Whole/Half;Eb;AnkiJazz-bf7e102c77.mp3;AnkiJazz-bf7e102c77.png;Ascending
+Eb Diminished Half/Whole;Diminished Half/Whole;Eb;E Diminished Whole/Half;Diminished Whole/Half;E;AnkiJazz-97b2d07f4b.mp3;AnkiJazz-97b2d07f4b.png;Descending
+Eb Diminished Half/Whole;Diminished Half/Whole;Eb;E Diminished Whole/Half;Diminished Whole/Half;E;AnkiJazz-f041e49b85.mp3;AnkiJazz-f041e49b85.png;Ascending
+E Diminished Half/Whole;Diminished Half/Whole;E;F Diminished Whole/Half;Diminished Whole/Half;F;AnkiJazz-3d30ca9446.mp3;AnkiJazz-3d30ca9446.png;Descending
+E Diminished Half/Whole;Diminished Half/Whole;E;F Diminished Whole/Half;Diminished Whole/Half;F;AnkiJazz-0b1f44fcd6.mp3;AnkiJazz-0b1f44fcd6.png;Ascending
+F Diminished Half/Whole;Diminished Half/Whole;F;Gb Diminished Whole/Half;Diminished Whole/Half;Gb;AnkiJazz-b6c03be2ba.mp3;AnkiJazz-b6c03be2ba.png;Descending
+F Diminished Half/Whole;Diminished Half/Whole;F;Gb Diminished Whole/Half;Diminished Whole/Half;Gb;AnkiJazz-093e56bd7f.mp3;AnkiJazz-093e56bd7f.png;Ascending
+Gb Diminished Half/Whole;Diminished Half/Whole;Gb;G Diminished Whole/Half;Diminished Whole/Half;G;AnkiJazz-95da7fc0c0.mp3;AnkiJazz-95da7fc0c0.png;Descending
+Gb Diminished Half/Whole;Diminished Half/Whole;Gb;G Diminished Whole/Half;Diminished Whole/Half;G;AnkiJazz-daa9b7147f.mp3;AnkiJazz-daa9b7147f.png;Ascending
+G Diminished Half/Whole;Diminished Half/Whole;G;Ab Diminished Whole/Half;Diminished Whole/Half;Ab;AnkiJazz-cd5cc60f5f.mp3;AnkiJazz-cd5cc60f5f.png;Descending
+G Diminished Half/Whole;Diminished Half/Whole;G;Ab Diminished Whole/Half;Diminished Whole/Half;Ab;AnkiJazz-2fa61279fe.mp3;AnkiJazz-2fa61279fe.png;Ascending
+Ab Diminished Half/Whole;Diminished Half/Whole;Ab;A Diminished Whole/Half;Diminished Whole/Half;A;AnkiJazz-139353089f.mp3;AnkiJazz-139353089f.png;Descending
+Ab Diminished Half/Whole;Diminished Half/Whole;Ab;A Diminished Whole/Half;Diminished Whole/Half;A;AnkiJazz-bffec4a61d.mp3;AnkiJazz-bffec4a61d.png;Ascending
+A Diminished Half/Whole;Diminished Half/Whole;A;Bb Diminished Whole/Half;Diminished Whole/Half;Bb;AnkiJazz-9bbc6623d4.mp3;AnkiJazz-9bbc6623d4.png;Descending
+A Diminished Half/Whole;Diminished Half/Whole;A;Bb Diminished Whole/Half;Diminished Whole/Half;Bb;AnkiJazz-466b4a1bc1.mp3;AnkiJazz-466b4a1bc1.png;Ascending
+Bb Diminished Half/Whole;Diminished Half/Whole;Bb;B Diminished Whole/Half;Diminished Whole/Half;B;AnkiJazz-58e613378e.mp3;AnkiJazz-58e613378e.png;Descending
+Bb Diminished Half/Whole;Diminished Half/Whole;Bb;B Diminished Whole/Half;Diminished Whole/Half;B;AnkiJazz-572274d83e.mp3;AnkiJazz-572274d83e.png;Ascending

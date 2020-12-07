@@ -1,108 +1,2338 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>AnkiJazz - Modes Practice (Guitar)</title>
-</head>
-<body>
-  <div class="container">
-    <h1>AnkiJazz - Modes Practice (Guitar)</h1>
-    <p>
-      This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>.
-    </p>
-    <p>
-      Only a subset of cards is shown (the full deck contains more than 1100 cards).
-    </p>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Major Scale in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-3e83ad34b1.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-3e83ad34b1.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Major Scale in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-edbdfa7d09.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-edbdfa7d09.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Major Scale in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-1676db9584.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-1676db9584.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Gb Major Scale in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-3591885ef5.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-3591885ef5.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Gb Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Major Scale in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-83ee45bba0.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-83ee45bba0.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Major-Scale Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Major Scale in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-9cc83ca544.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-9cc83ca544.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Major-Scale Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Dorian in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-f655997e25.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-f655997e25.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Dorian Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Dorian in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-9a1fccb92b.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-9a1fccb92b.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Dorian Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Dorian in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-97f9387ea0.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-97f9387ea0.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Dorian Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F# Dorian in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-a651718a02.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a651718a02.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F# Mode-Dorian Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Ab Dorian in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-eb0b314776.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-eb0b314776.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Ab Mode-Dorian Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Dorian in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-3a24b3f8c0.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-3a24b3f8c0.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Dorian Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Phrygian in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-7266a90790.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-7266a90790.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Phrygian Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Phrygian in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-9b06c6a9af.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-9b06c6a9af.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Phrygian in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-a515a7def3.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a515a7def3.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Phrygian Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F# Phrygian in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-a03f96f3fe.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a03f96f3fe.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F# Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G# Phrygian in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-bb64868cd8.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-bb64868cd8.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G# Mode-Phrygian Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Bb Phrygian in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-5389337062.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-5389337062.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Bb Mode-Phrygian Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Lydian in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-2e4ee16a25.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-2e4ee16a25.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Lydian Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Lydian in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-f6eabe8270.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-f6eabe8270.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Lydian Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Lydian in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-2eddb42ea7.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-2eddb42ea7.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Lydian Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Gb Lydian in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-4d6b54a05f.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-4d6b54a05f.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Gb Mode-Lydian Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Ab Lydian in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-32492a9b0c.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-32492a9b0c.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Ab Mode-Lydian Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Bb Lydian in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-b67601bef9.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-b67601bef9.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Bb Mode-Lydian Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Mixolydian in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-9196b41d96.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-9196b41d96.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C# Mixolydian in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-4e83b5a6e1.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-4e83b5a6e1.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C# Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Eb Mixolydian in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-539f572073.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-539f572073.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Eb Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F Mixolydian in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-63d1cac3ff.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-63d1cac3ff.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Mixolydian in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-2792bae929.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-2792bae929.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Mixolydian Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Mixolydian in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-5963f2f41f.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-5963f2f41f.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Mixolydian Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Aeolean in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-f28b904c68.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-f28b904c68.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Aeolean Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Aeolean in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-c179428030.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-c179428030.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D# Aeolean in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-389542b511.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-389542b511.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D# Mode-Aeolean Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F Aeolean in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-2c7b0c55b4.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-2c7b0c55b4.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Aeolean in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-a2ede33187.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a2ede33187.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Aeolean Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Aeolean in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-272f9af698.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-272f9af698.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Aeolean Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Locrian in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-01937cd194.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-01937cd194.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Locrian Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Locrian in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-b35982d6e4.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-b35982d6e4.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Locrian Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Locrian in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-a45eb62189.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a45eb62189.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Locrian Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E# Locrian in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-e42d963760.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-e42d963760.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E# Mode-Locrian Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Locrian in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-d239f0ac36.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-d239f0ac36.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Locrian Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Locrian in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-75c73a435d.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-75c73a435d.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Locrian Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Melodic Minor in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-48bf58722b.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-48bf58722b.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Melodic Minor in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-63b0598c8c.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-63b0598c8c.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Melodic Minor in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-85f93510bc.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-85f93510bc.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F# Melodic Minor in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-c5df724763.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-c5df724763.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F# Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Ab Melodic Minor in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-8c358f55e9.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-8c358f55e9.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Ab Mode-Melodic-Minor Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Melodic Minor in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-e77c6b0fb1.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-e77c6b0fb1.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Melodic-Minor Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Lydian Dominant in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-864831f2a8.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-864831f2a8.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C# Lydian Dominant in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-f55c383ff6.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-f55c383ff6.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C# Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Eb Lydian Dominant in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-3b45d10384.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-3b45d10384.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Eb Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F Lydian Dominant in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-7f67c106f7.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-7f67c106f7.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Lydian Dominant in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-a22a59667a.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a22a59667a.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Lydian-Dominant Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Lydian Dominant in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-cbdc0d3165.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-cbdc0d3165.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Lydian-Dominant Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play B# Altered in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-8e5a8d4027.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-8e5a8d4027.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-B# Mode-Altered Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Altered in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-509de0973c.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-509de0973c.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Altered Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Altered in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-3372a0cec0.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-3372a0cec0.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Altered Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F# Altered in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-c6e30744af.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-c6e30744af.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F# Mode-Altered Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Fx Altered in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-7c6d5ce58a.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-7c6d5ce58a.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Fx Mode-Altered Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Altered in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-70b3bd284d.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-70b3bd284d.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Altered Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Harmonic Minor in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-eb7e8c214a.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-eb7e8c214a.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Harmonic Minor in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-cefa8c1057.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-cefa8c1057.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D# Harmonic Minor in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-6cc930cf80.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-6cc930cf80.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D# Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F Harmonic Minor in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-7aa4186b98.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-7aa4186b98.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Harmonic Minor in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-545dfc3efd.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-545dfc3efd.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Harmonic-Minor Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Harmonic Minor in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-ce1c7fe6f2.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-ce1c7fe6f2.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Harmonic-Minor Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Phrygian Dominant in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-27ed091e85.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-27ed091e85.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Phrygian Dominant in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-265b9f0bf6.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-265b9f0bf6.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Phrygian Dominant in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-c39b5a00eb.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-c39b5a00eb.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F# Phrygian Dominant in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-7c52c6b0c4.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-7c52c6b0c4.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F# Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G# Phrygian Dominant in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-02781774c5.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-02781774c5.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G# Mode-Phrygian-Dominant Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Bb Phrygian Dominant in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-876191a4ed.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-876191a4ed.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Bb Mode-Phrygian-Dominant Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play C Whole Tone in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-a88edc75dd.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a88edc75dd.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-C Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Whole Tone in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-781d1bffe0.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-781d1bffe0.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Whole Tone in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-e43bdb3153.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-e43bdb3153.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Gb Whole Tone in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-7e781cc036.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-7e781cc036.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Gb Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Ab Whole Tone in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-79efc19e3d.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-79efc19e3d.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Ab Mode-Whole-Tone Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Bb Whole Tone in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-5e9ebf7287.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-5e9ebf7287.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Bb Mode-Whole-Tone Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Db Diminished Half/Whole in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-68f784984c.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-68f784984c.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Db Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Eb Diminished Half/Whole in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-62a4d7ead1.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-62a4d7ead1.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Eb Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play F Diminished Half/Whole in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-69819cbd15.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-69819cbd15.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-F Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play G Diminished Half/Whole in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-c922b80362.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-c922b80362.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-G Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play A Diminished Half/Whole in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-346e7983f0.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-346e7983f0.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-A Mode-Diminished-Half-Whole Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play B Diminished Half/Whole in Ascending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-a435ce3f13.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a435ce3f13.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-B Mode-Diminished-Half-Whole Direction-Ascending Clef-Treble Instrument-C Position-High</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play D Diminished Whole/Half in Descending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-5516a49208.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-5516a49208.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-D Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play E Diminished Whole/Half in Ascending Direction Low Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardLow.png"></p> <p><img class="card-img-top" src="AnkiJazz-d574340ff5.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-d574340ff5.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-E Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C Position-Low</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Gb Diminished Whole/Half in Descending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-a96b5fc7c6.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a96b5fc7c6.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Gb Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Ab Diminished Whole/Half in Ascending Direction Medium Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardMedium.png"></p> <p><img class="card-img-top" src="AnkiJazz-a77806f2ad.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-a77806f2ad.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Ab Mode-Diminished-Whole-Half Direction-Ascending Clef-Treble Instrument-C Position-Medium</p> </div> </div>
-      <div class="card mb-3"> <h4 class="card-header"> Play Bb Diminished Whole/Half in Descending Direction High Position </h4> <div class="card-body"> <p><img src="AnkiJazz-FretboardHigh.png"></p> <p><img class="card-img-top" src="AnkiJazz-0b567a955a.png"></p> <p class="card-text"> <audio controls src="AnkiJazz-0b567a955a.mp3"></audio> </p> <p class="card-text">Tags: KeyOf-Bb Mode-Diminished-Whole-Half Direction-Descending Clef-Treble Instrument-C Position-High</p> </div> </div>
-  </div>
-</body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>AnkiJazz - Modes Practice (Guitar)</title>
+  <style>
+    .card {
+      max-width: 40rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>AnkiJazz - Modes Practice (Guitar)</h1>
+    <p>
+      This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>.
+    </p>
+    <p>
+      Only a subset of cards is shown (the full deck contains more than 1100 cards).
+    </p>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Major Scale in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-7f48f8b009.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-7f48f8b009.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: C Major Scale</li>
+            <li>ModeTypeName: Major Scale</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-7f48f8b009.mp3</li>
+            <li>ModeImage: AnkiJazz-7f48f8b009.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Major Scale in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-07267828cb.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-07267828cb.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: D Major Scale</li>
+            <li>ModeTypeName: Major Scale</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-07267828cb.mp3</li>
+            <li>ModeImage: AnkiJazz-07267828cb.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Major Scale in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-f0927e229d.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-f0927e229d.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: E Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: E</li>
+            <li>ModeName: E Major Scale</li>
+            <li>ModeTypeName: Major Scale</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-f0927e229d.mp3</li>
+            <li>ModeImage: AnkiJazz-f0927e229d.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Gb Major Scale in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-e597d5387b.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-e597d5387b.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Gb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Gb</li>
+            <li>ModeName: Gb Major Scale</li>
+            <li>ModeTypeName: Major Scale</li>
+            <li>ModeRootName: Gb</li>
+            <li>ModeAudio: AnkiJazz-e597d5387b.mp3</li>
+            <li>ModeImage: AnkiJazz-e597d5387b.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Major Scale in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-d0f60cdca3.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-d0f60cdca3.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: G Major Scale</li>
+            <li>ModeTypeName: Major Scale</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-d0f60cdca3.mp3</li>
+            <li>ModeImage: AnkiJazz-d0f60cdca3.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Major Scale in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-ffbdabc23e.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-ffbdabc23e.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: A Major Scale</li>
+            <li>ModeTypeName: Major Scale</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-ffbdabc23e.mp3</li>
+            <li>ModeImage: AnkiJazz-ffbdabc23e.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Dorian in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-4d31d57286.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-4d31d57286.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: C Dorian</li>
+            <li>ModeTypeName: Dorian</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-4d31d57286.mp3</li>
+            <li>ModeImage: AnkiJazz-4d31d57286.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Dorian in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-83e6e558f9.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-83e6e558f9.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: D Dorian</li>
+            <li>ModeTypeName: Dorian</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-83e6e558f9.mp3</li>
+            <li>ModeImage: AnkiJazz-83e6e558f9.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Dorian in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-e463e8a71b.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-e463e8a71b.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: E Dorian</li>
+            <li>ModeTypeName: Dorian</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-e463e8a71b.mp3</li>
+            <li>ModeImage: AnkiJazz-e463e8a71b.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F# Dorian in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-5dd8a44916.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-5dd8a44916.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: E Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: E</li>
+            <li>ModeName: F# Dorian</li>
+            <li>ModeTypeName: Dorian</li>
+            <li>ModeRootName: F#</li>
+            <li>ModeAudio: AnkiJazz-5dd8a44916.mp3</li>
+            <li>ModeImage: AnkiJazz-5dd8a44916.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Ab Dorian in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-fbfaa5eee9.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-fbfaa5eee9.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Gb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Gb</li>
+            <li>ModeName: Ab Dorian</li>
+            <li>ModeTypeName: Dorian</li>
+            <li>ModeRootName: Ab</li>
+            <li>ModeAudio: AnkiJazz-fbfaa5eee9.mp3</li>
+            <li>ModeImage: AnkiJazz-fbfaa5eee9.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Dorian in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-db7c1258bd.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-db7c1258bd.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: A Dorian</li>
+            <li>ModeTypeName: Dorian</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-db7c1258bd.mp3</li>
+            <li>ModeImage: AnkiJazz-db7c1258bd.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Phrygian in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-61de541c30.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-61de541c30.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Ab Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Ab</li>
+            <li>ModeName: C Phrygian</li>
+            <li>ModeTypeName: Phrygian</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-61de541c30.mp3</li>
+            <li>ModeImage: AnkiJazz-61de541c30.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Phrygian in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-bf921c10b2.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-bf921c10b2.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: D Phrygian</li>
+            <li>ModeTypeName: Phrygian</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-bf921c10b2.mp3</li>
+            <li>ModeImage: AnkiJazz-bf921c10b2.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Phrygian in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-d055e961aa.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-d055e961aa.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: E Phrygian</li>
+            <li>ModeTypeName: Phrygian</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-d055e961aa.mp3</li>
+            <li>ModeImage: AnkiJazz-d055e961aa.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F# Phrygian in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-433573beab.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-433573beab.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: F# Phrygian</li>
+            <li>ModeTypeName: Phrygian</li>
+            <li>ModeRootName: F#</li>
+            <li>ModeAudio: AnkiJazz-433573beab.mp3</li>
+            <li>ModeImage: AnkiJazz-433573beab.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G# Phrygian in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-a05142f168.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-a05142f168.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: E Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: E</li>
+            <li>ModeName: G# Phrygian</li>
+            <li>ModeTypeName: Phrygian</li>
+            <li>ModeRootName: G#</li>
+            <li>ModeAudio: AnkiJazz-a05142f168.mp3</li>
+            <li>ModeImage: AnkiJazz-a05142f168.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Bb Phrygian in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-5929b821d2.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-5929b821d2.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Gb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Gb</li>
+            <li>ModeName: Bb Phrygian</li>
+            <li>ModeTypeName: Phrygian</li>
+            <li>ModeRootName: Bb</li>
+            <li>ModeAudio: AnkiJazz-5929b821d2.mp3</li>
+            <li>ModeImage: AnkiJazz-5929b821d2.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Lydian in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-7d4e6c5405.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-7d4e6c5405.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: C Lydian</li>
+            <li>ModeTypeName: Lydian</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-7d4e6c5405.mp3</li>
+            <li>ModeImage: AnkiJazz-7d4e6c5405.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Lydian in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-ae9c664188.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-ae9c664188.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: D Lydian</li>
+            <li>ModeTypeName: Lydian</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-ae9c664188.mp3</li>
+            <li>ModeImage: AnkiJazz-ae9c664188.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Lydian in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-48a5941a3a.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-48a5941a3a.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: B Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: B</li>
+            <li>ModeName: E Lydian</li>
+            <li>ModeTypeName: Lydian</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-48a5941a3a.mp3</li>
+            <li>ModeImage: AnkiJazz-48a5941a3a.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Gb Lydian in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-220d3ce1db.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-220d3ce1db.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Db Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Db</li>
+            <li>ModeName: Gb Lydian</li>
+            <li>ModeTypeName: Lydian</li>
+            <li>ModeRootName: Gb</li>
+            <li>ModeAudio: AnkiJazz-220d3ce1db.mp3</li>
+            <li>ModeImage: AnkiJazz-220d3ce1db.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Ab Lydian in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-f152a30233.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-f152a30233.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: Ab Lydian</li>
+            <li>ModeTypeName: Lydian</li>
+            <li>ModeRootName: Ab</li>
+            <li>ModeAudio: AnkiJazz-f152a30233.mp3</li>
+            <li>ModeImage: AnkiJazz-f152a30233.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Bb Lydian in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-33373e892a.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-33373e892a.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: Bb Lydian</li>
+            <li>ModeTypeName: Lydian</li>
+            <li>ModeRootName: Bb</li>
+            <li>ModeAudio: AnkiJazz-33373e892a.mp3</li>
+            <li>ModeImage: AnkiJazz-33373e892a.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Mixolydian in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-217f678c6a.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-217f678c6a.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: C Mixolydian</li>
+            <li>ModeTypeName: Mixolydian</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-217f678c6a.mp3</li>
+            <li>ModeImage: AnkiJazz-217f678c6a.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C# Mixolydian in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-8d178db14c.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-8d178db14c.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F# Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F#</li>
+            <li>ModeName: C# Mixolydian</li>
+            <li>ModeTypeName: Mixolydian</li>
+            <li>ModeRootName: C#</li>
+            <li>ModeAudio: AnkiJazz-8d178db14c.mp3</li>
+            <li>ModeImage: AnkiJazz-8d178db14c.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Eb Mixolydian in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-61d171fbae.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-61d171fbae.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Ab Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Ab</li>
+            <li>ModeName: Eb Mixolydian</li>
+            <li>ModeTypeName: Mixolydian</li>
+            <li>ModeRootName: Eb</li>
+            <li>ModeAudio: AnkiJazz-61d171fbae.mp3</li>
+            <li>ModeImage: AnkiJazz-61d171fbae.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F Mixolydian in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-c7b8c0cc66.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-c7b8c0cc66.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: F Mixolydian</li>
+            <li>ModeTypeName: Mixolydian</li>
+            <li>ModeRootName: F</li>
+            <li>ModeAudio: AnkiJazz-c7b8c0cc66.mp3</li>
+            <li>ModeImage: AnkiJazz-c7b8c0cc66.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Mixolydian in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-398c2cf297.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-398c2cf297.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: G Mixolydian</li>
+            <li>ModeTypeName: Mixolydian</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-398c2cf297.mp3</li>
+            <li>ModeImage: AnkiJazz-398c2cf297.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Mixolydian in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-a5f61a2fb2.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-a5f61a2fb2.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: A Mixolydian</li>
+            <li>ModeTypeName: Mixolydian</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-a5f61a2fb2.mp3</li>
+            <li>ModeImage: AnkiJazz-a5f61a2fb2.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Aeolean in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-ee368f852f.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-ee368f852f.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: C Aeolean</li>
+            <li>ModeTypeName: Aeolean</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-ee368f852f.mp3</li>
+            <li>ModeImage: AnkiJazz-ee368f852f.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Aeolean in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-0b9b51b491.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-0b9b51b491.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: D Aeolean</li>
+            <li>ModeTypeName: Aeolean</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-0b9b51b491.mp3</li>
+            <li>ModeImage: AnkiJazz-0b9b51b491.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D# Aeolean in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-af6f8dcc21.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-af6f8dcc21.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F# Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F#</li>
+            <li>ModeName: D# Aeolean</li>
+            <li>ModeTypeName: Aeolean</li>
+            <li>ModeRootName: D#</li>
+            <li>ModeAudio: AnkiJazz-af6f8dcc21.mp3</li>
+            <li>ModeImage: AnkiJazz-af6f8dcc21.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F Aeolean in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-d5ec288808.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-d5ec288808.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Ab Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Ab</li>
+            <li>ModeName: F Aeolean</li>
+            <li>ModeTypeName: Aeolean</li>
+            <li>ModeRootName: F</li>
+            <li>ModeAudio: AnkiJazz-d5ec288808.mp3</li>
+            <li>ModeImage: AnkiJazz-d5ec288808.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Aeolean in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-ccf1018e6f.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-ccf1018e6f.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: G Aeolean</li>
+            <li>ModeTypeName: Aeolean</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-ccf1018e6f.mp3</li>
+            <li>ModeImage: AnkiJazz-ccf1018e6f.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Aeolean in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-93eb9ecab9.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-93eb9ecab9.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: A Aeolean</li>
+            <li>ModeTypeName: Aeolean</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-93eb9ecab9.mp3</li>
+            <li>ModeImage: AnkiJazz-93eb9ecab9.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Locrian in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-038b5ee1e0.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-038b5ee1e0.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Db Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Db</li>
+            <li>ModeName: C Locrian</li>
+            <li>ModeTypeName: Locrian</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-038b5ee1e0.mp3</li>
+            <li>ModeImage: AnkiJazz-038b5ee1e0.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Locrian in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-d592055a02.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-d592055a02.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: D Locrian</li>
+            <li>ModeTypeName: Locrian</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-d592055a02.mp3</li>
+            <li>ModeImage: AnkiJazz-d592055a02.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Locrian in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-0237b2076c.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-0237b2076c.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: E Locrian</li>
+            <li>ModeTypeName: Locrian</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-0237b2076c.mp3</li>
+            <li>ModeImage: AnkiJazz-0237b2076c.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E# Locrian in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-c96bde9a82.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-c96bde9a82.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F# Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: F#</li>
+            <li>ModeName: E# Locrian</li>
+            <li>ModeTypeName: Locrian</li>
+            <li>ModeRootName: E#</li>
+            <li>ModeAudio: AnkiJazz-c96bde9a82.mp3</li>
+            <li>ModeImage: AnkiJazz-c96bde9a82.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Locrian in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-c1cc436952.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-c1cc436952.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Ab Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Ab</li>
+            <li>ModeName: G Locrian</li>
+            <li>ModeTypeName: Locrian</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-c1cc436952.mp3</li>
+            <li>ModeImage: AnkiJazz-c1cc436952.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Locrian in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-868d97e46d.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-868d97e46d.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Major Scale</li>
+            <li>ParentTypeName: Major Scale</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: A Locrian</li>
+            <li>ModeTypeName: Locrian</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-868d97e46d.mp3</li>
+            <li>ModeImage: AnkiJazz-868d97e46d.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Melodic Minor in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-fd229c4446.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-fd229c4446.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: C Melodic Minor</li>
+            <li>ModeTypeName: Melodic Minor</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-fd229c4446.mp3</li>
+            <li>ModeImage: AnkiJazz-fd229c4446.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Melodic Minor in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-913200d511.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-913200d511.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: D Melodic Minor</li>
+            <li>ModeTypeName: Melodic Minor</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-913200d511.mp3</li>
+            <li>ModeImage: AnkiJazz-913200d511.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Melodic Minor in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-48f0006c8d.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-48f0006c8d.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: E Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: E</li>
+            <li>ModeName: E Melodic Minor</li>
+            <li>ModeTypeName: Melodic Minor</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-48f0006c8d.mp3</li>
+            <li>ModeImage: AnkiJazz-48f0006c8d.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F# Melodic Minor in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-3de0ba2139.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-3de0ba2139.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F# Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: F#</li>
+            <li>ModeName: F# Melodic Minor</li>
+            <li>ModeTypeName: Melodic Minor</li>
+            <li>ModeRootName: F#</li>
+            <li>ModeAudio: AnkiJazz-3de0ba2139.mp3</li>
+            <li>ModeImage: AnkiJazz-3de0ba2139.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Ab Melodic Minor in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-494f3af839.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-494f3af839.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Ab Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: Ab</li>
+            <li>ModeName: Ab Melodic Minor</li>
+            <li>ModeTypeName: Melodic Minor</li>
+            <li>ModeRootName: Ab</li>
+            <li>ModeAudio: AnkiJazz-494f3af839.mp3</li>
+            <li>ModeImage: AnkiJazz-494f3af839.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Melodic Minor in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-89024d421f.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-89024d421f.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: A Melodic Minor</li>
+            <li>ModeTypeName: Melodic Minor</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-89024d421f.mp3</li>
+            <li>ModeImage: AnkiJazz-89024d421f.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Lydian Dominant in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-2fc387b984.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-2fc387b984.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: C Lydian Dominant</li>
+            <li>ModeTypeName: Lydian Dominant</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-2fc387b984.mp3</li>
+            <li>ModeImage: AnkiJazz-2fc387b984.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C# Lydian Dominant in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-8985f05e77.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-8985f05e77.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G# Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: G#</li>
+            <li>ModeName: C# Lydian Dominant</li>
+            <li>ModeTypeName: Lydian Dominant</li>
+            <li>ModeRootName: C#</li>
+            <li>ModeAudio: AnkiJazz-8985f05e77.mp3</li>
+            <li>ModeImage: AnkiJazz-8985f05e77.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Eb Lydian Dominant in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-cb9e201683.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-cb9e201683.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: Eb Lydian Dominant</li>
+            <li>ModeTypeName: Lydian Dominant</li>
+            <li>ModeRootName: Eb</li>
+            <li>ModeAudio: AnkiJazz-cb9e201683.mp3</li>
+            <li>ModeImage: AnkiJazz-cb9e201683.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F Lydian Dominant in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-e4d0a19d44.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-e4d0a19d44.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: F Lydian Dominant</li>
+            <li>ModeTypeName: Lydian Dominant</li>
+            <li>ModeRootName: F</li>
+            <li>ModeAudio: AnkiJazz-e4d0a19d44.mp3</li>
+            <li>ModeImage: AnkiJazz-e4d0a19d44.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Lydian Dominant in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-2fb1cdeef9.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-2fb1cdeef9.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: G Lydian Dominant</li>
+            <li>ModeTypeName: Lydian Dominant</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-2fb1cdeef9.mp3</li>
+            <li>ModeImage: AnkiJazz-2fb1cdeef9.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Lydian Dominant in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-468d54d383.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-468d54d383.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: E Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: E</li>
+            <li>ModeName: A Lydian Dominant</li>
+            <li>ModeTypeName: Lydian Dominant</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-468d54d383.mp3</li>
+            <li>ModeImage: AnkiJazz-468d54d383.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play B# Altered in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-57546ab4be.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-57546ab4be.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C# Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: C#</li>
+            <li>ModeName: B# Altered</li>
+            <li>ModeTypeName: Altered</li>
+            <li>ModeRootName: B#</li>
+            <li>ModeAudio: AnkiJazz-57546ab4be.mp3</li>
+            <li>ModeImage: AnkiJazz-57546ab4be.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Altered in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-44771d4b69.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-44771d4b69.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: D Altered</li>
+            <li>ModeTypeName: Altered</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-44771d4b69.mp3</li>
+            <li>ModeImage: AnkiJazz-44771d4b69.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Altered in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-032faba904.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-032faba904.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: E Altered</li>
+            <li>ModeTypeName: Altered</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-032faba904.mp3</li>
+            <li>ModeImage: AnkiJazz-032faba904.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F# Altered in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-7922c356f7.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-7922c356f7.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: F# Altered</li>
+            <li>ModeTypeName: Altered</li>
+            <li>ModeRootName: F#</li>
+            <li>ModeAudio: AnkiJazz-7922c356f7.mp3</li>
+            <li>ModeImage: AnkiJazz-7922c356f7.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Fx Altered in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-4fcd9a94b6.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-4fcd9a94b6.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G# Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: G#</li>
+            <li>ModeName: Fx Altered</li>
+            <li>ModeTypeName: Altered</li>
+            <li>ModeRootName: Fx</li>
+            <li>ModeAudio: AnkiJazz-4fcd9a94b6.mp3</li>
+            <li>ModeImage: AnkiJazz-4fcd9a94b6.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Altered in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-7fbaf888ad.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-7fbaf888ad.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Melodic Minor</li>
+            <li>ParentTypeName: Melodic Minor</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: A Altered</li>
+            <li>ModeTypeName: Altered</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-7fbaf888ad.mp3</li>
+            <li>ModeImage: AnkiJazz-7fbaf888ad.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Harmonic Minor in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-1dfac3d951.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-1dfac3d951.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: C Harmonic Minor</li>
+            <li>ModeTypeName: Harmonic Minor</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-1dfac3d951.mp3</li>
+            <li>ModeImage: AnkiJazz-1dfac3d951.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Harmonic Minor in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-1c61d63dd0.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-1c61d63dd0.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: D Harmonic Minor</li>
+            <li>ModeTypeName: Harmonic Minor</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-1c61d63dd0.mp3</li>
+            <li>ModeImage: AnkiJazz-1c61d63dd0.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D# Harmonic Minor in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-4919f4e0cf.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-4919f4e0cf.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D# Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: D#</li>
+            <li>ModeName: D# Harmonic Minor</li>
+            <li>ModeTypeName: Harmonic Minor</li>
+            <li>ModeRootName: D#</li>
+            <li>ModeAudio: AnkiJazz-4919f4e0cf.mp3</li>
+            <li>ModeImage: AnkiJazz-4919f4e0cf.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F Harmonic Minor in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-c828d12edb.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-c828d12edb.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: F Harmonic Minor</li>
+            <li>ModeTypeName: Harmonic Minor</li>
+            <li>ModeRootName: F</li>
+            <li>ModeAudio: AnkiJazz-c828d12edb.mp3</li>
+            <li>ModeImage: AnkiJazz-c828d12edb.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Harmonic Minor in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-ad11a820b8.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-ad11a820b8.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: G Harmonic Minor</li>
+            <li>ModeTypeName: Harmonic Minor</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-ad11a820b8.mp3</li>
+            <li>ModeImage: AnkiJazz-ad11a820b8.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Harmonic Minor in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-728edbb286.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-728edbb286.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: A Harmonic Minor</li>
+            <li>ModeTypeName: Harmonic Minor</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-728edbb286.mp3</li>
+            <li>ModeImage: AnkiJazz-728edbb286.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Phrygian Dominant in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-757a9eaaa5.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-757a9eaaa5.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: C Phrygian Dominant</li>
+            <li>ModeTypeName: Phrygian Dominant</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-757a9eaaa5.mp3</li>
+            <li>ModeImage: AnkiJazz-757a9eaaa5.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Phrygian Dominant in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-28c368cf44.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-28c368cf44.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: D Phrygian Dominant</li>
+            <li>ModeTypeName: Phrygian Dominant</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-28c368cf44.mp3</li>
+            <li>ModeImage: AnkiJazz-28c368cf44.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Phrygian Dominant in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-c11f1a6946.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-c11f1a6946.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: E Phrygian Dominant</li>
+            <li>ModeTypeName: Phrygian Dominant</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-c11f1a6946.mp3</li>
+            <li>ModeImage: AnkiJazz-c11f1a6946.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F# Phrygian Dominant in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-4ab8d28e47.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-4ab8d28e47.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: B Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: B</li>
+            <li>ModeName: F# Phrygian Dominant</li>
+            <li>ModeTypeName: Phrygian Dominant</li>
+            <li>ModeRootName: F#</li>
+            <li>ModeAudio: AnkiJazz-4ab8d28e47.mp3</li>
+            <li>ModeImage: AnkiJazz-4ab8d28e47.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G# Phrygian Dominant in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-3c9220398f.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-3c9220398f.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C# Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: C#</li>
+            <li>ModeName: G# Phrygian Dominant</li>
+            <li>ModeTypeName: Phrygian Dominant</li>
+            <li>ModeRootName: G#</li>
+            <li>ModeAudio: AnkiJazz-3c9220398f.mp3</li>
+            <li>ModeImage: AnkiJazz-3c9220398f.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Bb Phrygian Dominant in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-bbccaec564.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-bbccaec564.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Harmonic Minor</li>
+            <li>ParentTypeName: Harmonic Minor</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: Bb Phrygian Dominant</li>
+            <li>ModeTypeName: Phrygian Dominant</li>
+            <li>ModeRootName: Bb</li>
+            <li>ModeAudio: AnkiJazz-bbccaec564.mp3</li>
+            <li>ModeImage: AnkiJazz-bbccaec564.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play C Whole Tone in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-22e40e668d.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-22e40e668d.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: C Whole Tone</li>
+            <li>ParentTypeName: Whole Tone</li>
+            <li>ParentRootName: C</li>
+            <li>ModeName: C Whole Tone</li>
+            <li>ModeTypeName: Whole Tone</li>
+            <li>ModeRootName: C</li>
+            <li>ModeAudio: AnkiJazz-22e40e668d.mp3</li>
+            <li>ModeImage: AnkiJazz-22e40e668d.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Whole Tone in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-8f3a8a6e32.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-8f3a8a6e32.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: D Whole Tone</li>
+            <li>ParentTypeName: Whole Tone</li>
+            <li>ParentRootName: D</li>
+            <li>ModeName: D Whole Tone</li>
+            <li>ModeTypeName: Whole Tone</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-8f3a8a6e32.mp3</li>
+            <li>ModeImage: AnkiJazz-8f3a8a6e32.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Whole Tone in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-b671bc52f6.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-b671bc52f6.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: E Whole Tone</li>
+            <li>ParentTypeName: Whole Tone</li>
+            <li>ParentRootName: E</li>
+            <li>ModeName: E Whole Tone</li>
+            <li>ModeTypeName: Whole Tone</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-b671bc52f6.mp3</li>
+            <li>ModeImage: AnkiJazz-b671bc52f6.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Gb Whole Tone in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-5f40f2921b.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-5f40f2921b.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Gb Whole Tone</li>
+            <li>ParentTypeName: Whole Tone</li>
+            <li>ParentRootName: Gb</li>
+            <li>ModeName: Gb Whole Tone</li>
+            <li>ModeTypeName: Whole Tone</li>
+            <li>ModeRootName: Gb</li>
+            <li>ModeAudio: AnkiJazz-5f40f2921b.mp3</li>
+            <li>ModeImage: AnkiJazz-5f40f2921b.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Ab Whole Tone in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-49b408db16.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-49b408db16.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Ab Whole Tone</li>
+            <li>ParentTypeName: Whole Tone</li>
+            <li>ParentRootName: Ab</li>
+            <li>ModeName: Ab Whole Tone</li>
+            <li>ModeTypeName: Whole Tone</li>
+            <li>ModeRootName: Ab</li>
+            <li>ModeAudio: AnkiJazz-49b408db16.mp3</li>
+            <li>ModeImage: AnkiJazz-49b408db16.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Bb Whole Tone in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-ac9ba28a8a.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-ac9ba28a8a.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Bb Whole Tone</li>
+            <li>ParentTypeName: Whole Tone</li>
+            <li>ParentRootName: Bb</li>
+            <li>ModeName: Bb Whole Tone</li>
+            <li>ModeTypeName: Whole Tone</li>
+            <li>ModeRootName: Bb</li>
+            <li>ModeAudio: AnkiJazz-ac9ba28a8a.mp3</li>
+            <li>ModeImage: AnkiJazz-ac9ba28a8a.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Db Diminished Half/Whole in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-c188596719.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-c188596719.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Db Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: Db</li>
+            <li>ModeName: Db Diminished Half/Whole</li>
+            <li>ModeTypeName: Diminished Half/Whole</li>
+            <li>ModeRootName: Db</li>
+            <li>ModeAudio: AnkiJazz-c188596719.mp3</li>
+            <li>ModeImage: AnkiJazz-c188596719.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Eb Diminished Half/Whole in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-34539a893a.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-34539a893a.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: Eb Diminished Half/Whole</li>
+            <li>ModeTypeName: Diminished Half/Whole</li>
+            <li>ModeRootName: Eb</li>
+            <li>ModeAudio: AnkiJazz-34539a893a.mp3</li>
+            <li>ModeImage: AnkiJazz-34539a893a.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play F Diminished Half/Whole in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-660dfc859c.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-660dfc859c.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: F Diminished Half/Whole</li>
+            <li>ModeTypeName: Diminished Half/Whole</li>
+            <li>ModeRootName: F</li>
+            <li>ModeAudio: AnkiJazz-660dfc859c.mp3</li>
+            <li>ModeImage: AnkiJazz-660dfc859c.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play G Diminished Half/Whole in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-438e5f4aa5.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-438e5f4aa5.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: G Diminished Half/Whole</li>
+            <li>ModeTypeName: Diminished Half/Whole</li>
+            <li>ModeRootName: G</li>
+            <li>ModeAudio: AnkiJazz-438e5f4aa5.mp3</li>
+            <li>ModeImage: AnkiJazz-438e5f4aa5.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play A Diminished Half/Whole in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-d56e15d561.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-d56e15d561.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: A Diminished Half/Whole</li>
+            <li>ModeTypeName: Diminished Half/Whole</li>
+            <li>ModeRootName: A</li>
+            <li>ModeAudio: AnkiJazz-d56e15d561.mp3</li>
+            <li>ModeImage: AnkiJazz-d56e15d561.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play B Diminished Half/Whole in Ascending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-d42198a903.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-d42198a903.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: B Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: B</li>
+            <li>ModeName: B Diminished Half/Whole</li>
+            <li>ModeTypeName: Diminished Half/Whole</li>
+            <li>ModeRootName: B</li>
+            <li>ModeAudio: AnkiJazz-d42198a903.mp3</li>
+            <li>ModeImage: AnkiJazz-d42198a903.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play D Diminished Whole/Half in Descending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-36e55c777c.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-36e55c777c.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Db Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: Db</li>
+            <li>ModeName: D Diminished Whole/Half</li>
+            <li>ModeTypeName: Diminished Whole/Half</li>
+            <li>ModeRootName: D</li>
+            <li>ModeAudio: AnkiJazz-36e55c777c.mp3</li>
+            <li>ModeImage: AnkiJazz-36e55c777c.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play E Diminished Whole/Half in Ascending Direction Low Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardLow.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-f041e49b85.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-f041e49b85.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: Eb Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: Eb</li>
+            <li>ModeName: E Diminished Whole/Half</li>
+            <li>ModeTypeName: Diminished Whole/Half</li>
+            <li>ModeRootName: E</li>
+            <li>ModeAudio: AnkiJazz-f041e49b85.mp3</li>
+            <li>ModeImage: AnkiJazz-f041e49b85.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Low</li>
+            <li>PositionImage: AnkiJazz-FretboardLow.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Gb Diminished Whole/Half in Descending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-b6c03be2ba.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-b6c03be2ba.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: F Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: F</li>
+            <li>ModeName: Gb Diminished Whole/Half</li>
+            <li>ModeTypeName: Diminished Whole/Half</li>
+            <li>ModeRootName: Gb</li>
+            <li>ModeAudio: AnkiJazz-b6c03be2ba.mp3</li>
+            <li>ModeImage: AnkiJazz-b6c03be2ba.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Ab Diminished Whole/Half in Ascending Direction Medium Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardMedium.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-2fa61279fe.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-2fa61279fe.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: G Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: G</li>
+            <li>ModeName: Ab Diminished Whole/Half</li>
+            <li>ModeTypeName: Diminished Whole/Half</li>
+            <li>ModeRootName: Ab</li>
+            <li>ModeAudio: AnkiJazz-2fa61279fe.mp3</li>
+            <li>ModeImage: AnkiJazz-2fa61279fe.png</li>
+            <li>Direction: Ascending</li>
+            <li>PositionLabel: Medium</li>
+            <li>PositionImage: AnkiJazz-FretboardMedium.png</li>
+          </ul>
+			  </div>
+			</div>
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play Bb Diminished Whole/Half in Descending Direction High Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="AnkiJazz-FretboardHigh.png"></p>
+			    <p><img class="card-img-top" src="AnkiJazz-9bbc6623d4.png"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="AnkiJazz-9bbc6623d4.mp3"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: A Diminished Half/Whole</li>
+            <li>ParentTypeName: Diminished Half/Whole</li>
+            <li>ParentRootName: A</li>
+            <li>ModeName: Bb Diminished Whole/Half</li>
+            <li>ModeTypeName: Diminished Whole/Half</li>
+            <li>ModeRootName: Bb</li>
+            <li>ModeAudio: AnkiJazz-9bbc6623d4.mp3</li>
+            <li>ModeImage: AnkiJazz-9bbc6623d4.png</li>
+            <li>Direction: Descending</li>
+            <li>PositionLabel: High</li>
+            <li>PositionImage: AnkiJazz-FretboardHigh.png</li>
+          </ul>
+			  </div>
+			</div>
+  </div>
+</body>
 </html>

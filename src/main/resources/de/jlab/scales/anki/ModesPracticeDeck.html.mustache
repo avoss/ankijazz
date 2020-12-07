@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>{{title}}</title>
+  <style>
+    .card {
+      max-width: 40rem;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -12,7 +17,29 @@
       This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>
     </p>
     {{#cards}}
-      {{{html}}}
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play {{model.modeName}} in {{model.direction}} Direction
+			  </h4>
+			  <div class="card-body">
+			    <img class="card-img-top" src="{{pngName}}">
+			    <p class="card-text text-center">
+			      <audio controls src="{{mp3Name}}"></audio>
+			    </p>
+			    <p class="card-text">Fields:</p>
+			    <ul>
+			      <li>ParentName: {{model.parentName}}</li>
+			      <li>ParentTypeName: {{model.parentTypeName}}</li>
+			      <li>ParentRootName: {{model.parentRootName}}</li>
+			      <li>ModeName: {{model.modeName}}</li>
+			      <li>ModeTypeName: {{model.modeTypeName}}</li>
+			      <li>ModeRootName: {{model.modeRootName}}</li>
+			      <li>ModeAudio: {{mp3Name}}</li>
+			      <li>ModeImage: {{pngName}}</li>
+			      <li>Direction: {{model.direction}}</li>
+			    </ul>
+			  </div>
+			</div>
     {{/cards}}
   </div>
 </body>

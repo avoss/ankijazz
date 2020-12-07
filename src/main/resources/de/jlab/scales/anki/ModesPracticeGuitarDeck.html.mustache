@@ -4,6 +4,11 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <title>{{title}}</title>
+  <style>
+    .card {
+      max-width: 40rem;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -15,7 +20,32 @@
       Only a subset of cards is shown (the full deck contains more than 1100 cards).
     </p>
     {{#htmlCards}}
-      {{{html}}}
+			<div class="card border-secondary mb-3">
+			  <h4 class="card-header">
+			    Play {{model.modeName}} in {{model.direction}} Direction {{position.label}} Position
+			  </h4>
+			  <div class="card-body">
+			    <p><img src="{{position.image}}"></p>
+			    <p><img class="card-img-top" src="{{pngName}}"></p>
+			    <p class="card-text text-center">
+			      <audio controls src="{{mp3Name}}"></audio>
+			    </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>ParentName: {{model.parentName}}</li>
+            <li>ParentTypeName: {{model.parentTypeName}}</li>
+            <li>ParentRootName: {{model.parentRootName}}</li>
+            <li>ModeName: {{model.modeName}}</li>
+            <li>ModeTypeName: {{model.modeTypeName}}</li>
+            <li>ModeRootName: {{model.modeRootName}}</li>
+            <li>ModeAudio: {{mp3Name}}</li>
+            <li>ModeImage: {{pngName}}</li>
+            <li>Direction: {{model.direction}}</li>
+            <li>PositionLabel: {{position.label}}</li>
+            <li>PositionImage: {{position.image}}</li>
+          </ul>
+			  </div>
+			</div>
     {{/htmlCards}}
   </div>
 </body>

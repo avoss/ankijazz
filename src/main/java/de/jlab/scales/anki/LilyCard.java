@@ -10,7 +10,7 @@ import java.nio.file.Path;
 
 import de.jlab.scales.Utils;
 
-public abstract class LilyCard extends MustacheCard {
+public abstract class LilyCard implements Card {
 
   private String lilyString;
   private String lilyId;

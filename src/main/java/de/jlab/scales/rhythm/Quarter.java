@@ -143,10 +143,6 @@ public class Quarter implements WithDifficulty {
     return numberOfRests == 1 && !startsWithBeat();
   }
 
-  public static boolean hasTies(Collection<? extends Quarter> quarters) {
-    return quarters.stream().filter(Quarter::isTied).findAny().isPresent();
-  }
-
   /**
    * return events of a quarter note typically
    */
