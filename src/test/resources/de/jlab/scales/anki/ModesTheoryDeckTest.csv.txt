@@ -403,3 +403,292 @@
 <div>What are the <b>intervals</b> of <b>Whole Tone</b>?</div>;<div><b>1 2 3 #4 #5 b7</b></div>;Task=ModeIntervals Mode=Whole-Tone
 <div>What are the <b>intervals</b> of <b>Diminished Half/Whole</b>?</div>;<div><b>1 b2 b3 3 b5 5 6 b7</b></div>;Task=ModeIntervals Mode=Diminished-Half-Whole
 <div>What are the <b>intervals</b> of <b>Diminished Whole/Half</b>?</div>;<div><b>1 2 b3 4 b5 b6 6 7</b></div>;Task=ModeIntervals Mode=Diminished-Whole-Half
+<div>What are the <b>notes</b> of <b>CΔ7</b> Chord?</div>;<div><b>C E G B</b></div>;Task=SpellChord Chord=Δ7 Root=C
+<div>What are the <b>notes</b> of <b>DbΔ7</b> Chord?</div>;<div><b>Db F Ab C</b></div>;Task=SpellChord Chord=Δ7 Root=Db
+<div>What are the <b>notes</b> of <b>DΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A C#</b></div>;Task=SpellChord Chord=Δ7 Root=D
+<div>What are the <b>notes</b> of <b>EbΔ7</b> Chord?</div>;<div><b>Eb G Bb D</b></div>;Task=SpellChord Chord=Δ7 Root=Eb
+<div>What are the <b>notes</b> of <b>EΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# B D#</b></div>;Task=SpellChord Chord=Δ7 Root=E
+<div>What are the <b>notes</b> of <b>FΔ7</b> Chord?</div>;<div><b>F A C E</b></div>;Task=SpellChord Chord=Δ7 Root=F
+<div>What are the <b>notes</b> of <b>GbΔ7</b> Chord?</div>;<div><b>Gb Bb Db F</b></div>;Task=SpellChord Chord=Δ7 Root=Gb
+<div>What are the <b>notes</b> of <b>GΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B D F#</b></div>;Task=SpellChord Chord=Δ7 Root=G
+<div>What are the <b>notes</b> of <b>AbΔ7</b> Chord?</div>;<div><b>Ab C Eb G</b></div>;Task=SpellChord Chord=Δ7 Root=Ab
+<div>What are the <b>notes</b> of <b>AΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# E G#</b></div>;Task=SpellChord Chord=Δ7 Root=A
+<div>What are the <b>notes</b> of <b>BbΔ7</b> Chord?</div>;<div><b>Bb D F A</b></div>;Task=SpellChord Chord=Δ7 Root=Bb
+<div>What are the <b>notes</b> of <b>BΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F# A#</b></div>;Task=SpellChord Chord=Δ7 Root=B
+<div>What are the <b>notes</b> of <b>Cm7</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G Bb</b></div>;Task=SpellChord Chord=m7 Root=C
+<div>What are the <b>notes</b> of <b>C#m7</b> Chord?</div>;<div><b>C# E G# B</b></div>;Task=SpellChord Chord=m7 Root=C#
+<div>What are the <b>notes</b> of <b>Dm7</b> Chord?</div>;<div><b>D F A C</b></div>;Task=SpellChord Chord=m7 Root=D
+<div>What are the <b>notes</b> of <b>Ebm7</b> Chord?</div>;<div><b>Eb Gb Bb Db</b></div>;Task=SpellChord Chord=m7 Root=Eb
+<div>What are the <b>notes</b> of <b>D#m7</b> Chord?</div>;<div><b>D# F# A# C#</b></div>;Task=SpellChord Chord=m7 Root=D#
+<div>What are the <b>notes</b> of <b>Em7</b> Chord?</div>;<div><b>E G B D</b></div>;Task=SpellChord Chord=m7 Root=E
+<div>What are the <b>notes</b> of <b>Fm7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C Eb</b></div>;Task=SpellChord Chord=m7 Root=F
+<div>What are the <b>notes</b> of <b>F#m7</b> Chord?</div>;<div><b>F# A C# E</b></div>;Task=SpellChord Chord=m7 Root=F#
+<div>What are the <b>notes</b> of <b>Gm7</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb D F</b></div>;Task=SpellChord Chord=m7 Root=G
+<div>What are the <b>notes</b> of <b>G#m7</b> Chord?</div>;<div><b>G# B D# F#</b></div>;Task=SpellChord Chord=m7 Root=G#
+<div>What are the <b>notes</b> of <b>Am7</b> Chord?</div>;<div><b>A C E G</b></div>;Task=SpellChord Chord=m7 Root=A
+<div>What are the <b>notes</b> of <b>Bbm7</b> Chord?</div>;<div><b>Bb Db F Ab</b></div>;Task=SpellChord Chord=m7 Root=Bb
+<div>What are the <b>notes</b> of <b>Bm7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# A</b></div>;Task=SpellChord Chord=m7 Root=B
+<div>What are the <b>notes</b> of <b>Cm6</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G A</b></div>;Task=SpellChord Chord=m6 Root=C
+<div>What are the <b>notes</b> of <b>C#m6</b> Chord?</div>;<div><b>C# E G# A#</b></div>;Task=SpellChord Chord=m6 Root=C#
+<div>What are the <b>notes</b> of <b>Dm6</b> Chord?</div>;<div><b>D F A B</b></div>;Task=SpellChord Chord=m6 Root=D
+<div>What are the <b>notes</b> of <b>Ebm6</b> Chord?</div>;<div><b>Eb Gb Bb C</b></div>;Task=SpellChord Chord=m6 Root=Eb
+<div>What are the <b>notes</b> of <b>Em6</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G B C#</b></div>;Task=SpellChord Chord=m6 Root=E
+<div>What are the <b>notes</b> of <b>Fm6</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C D</b></div>;Task=SpellChord Chord=m6 Root=F
+<div>What are the <b>notes</b> of <b>F#m6</b> Chord?</div>;<div><b>F# A C# D#</b></div>;Task=SpellChord Chord=m6 Root=F#
+<div>What are the <b>notes</b> of <b>Gm6</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb D E</b></div>;Task=SpellChord Chord=m6 Root=G
+<div>What are the <b>notes</b> of <b>Abm6</b> Chord?</div>;<div><b>Ab B Eb F</b></div>;Task=SpellChord Chord=m6 Root=Ab
+<div>What are the <b>notes</b> of <b>G#m6</b> Chord?</div>;<div><b>G# B D# F</b></div>;Task=SpellChord Chord=m6 Root=G#
+<div>What are the <b>notes</b> of <b>Am6</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C E F#</b></div>;Task=SpellChord Chord=m6 Root=A
+<div>What are the <b>notes</b> of <b>Bbm6</b> Chord?</div>;<div><b>Bb Db F G</b></div>;Task=SpellChord Chord=m6 Root=Bb
+<div>What are the <b>notes</b> of <b>Bm6</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# G#</b></div>;Task=SpellChord Chord=m6 Root=B
+<div>What are the <b>notes</b> of <b>C7</b> Chord (using <b>flats</b>)?</div>;<div><b>C E G Bb</b></div>;Task=SpellChord Chord=7 Root=C
+<div>What are the <b>notes</b> of <b>Db7</b> Chord?</div>;<div><b>Db F Ab B</b></div>;Task=SpellChord Chord=7 Root=Db
+<div>What are the <b>notes</b> of <b>C#7</b> Chord?</div>;<div><b>C# F G# B</b></div>;Task=SpellChord Chord=7 Root=C#
+<div>What are the <b>notes</b> of <b>D7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A C</b></div>;Task=SpellChord Chord=7 Root=D
+<div>What are the <b>notes</b> of <b>Eb7</b> Chord?</div>;<div><b>Eb G Bb Db</b></div>;Task=SpellChord Chord=7 Root=Eb
+<div>What are the <b>notes</b> of <b>E7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# B D</b></div>;Task=SpellChord Chord=7 Root=E
+<div>What are the <b>notes</b> of <b>F7</b> Chord (using <b>flats</b>)?</div>;<div><b>F A C Eb</b></div>;Task=SpellChord Chord=7 Root=F
+<div>What are the <b>notes</b> of <b>F#7</b> Chord?</div>;<div><b>F# A# C# E</b></div>;Task=SpellChord Chord=7 Root=F#
+<div>What are the <b>notes</b> of <b>G7</b> Chord?</div>;<div><b>G B D F</b></div>;Task=SpellChord Chord=7 Root=G
+<div>What are the <b>notes</b> of <b>Ab7</b> Chord?</div>;<div><b>Ab C Eb Gb</b></div>;Task=SpellChord Chord=7 Root=Ab
+<div>What are the <b>notes</b> of <b>A7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# E G</b></div>;Task=SpellChord Chord=7 Root=A
+<div>What are the <b>notes</b> of <b>Bb7</b> Chord?</div>;<div><b>Bb D F Ab</b></div>;Task=SpellChord Chord=7 Root=Bb
+<div>What are the <b>notes</b> of <b>B7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F# A</b></div>;Task=SpellChord Chord=7 Root=B
+<div>What are the <b>notes</b> of <b>Cm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb Gb Bb</b></div>;Task=SpellChord Chord=m7b5 Root=C
+<div>What are the <b>notes</b> of <b>C#m7b5</b> Chord?</div>;<div><b>C# E G B</b></div>;Task=SpellChord Chord=m7b5 Root=C#
+<div>What are the <b>notes</b> of <b>Dm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Ab C</b></div>;Task=SpellChord Chord=m7b5 Root=D
+<div>What are the <b>notes</b> of <b>D#m7b5</b> Chord?</div>;<div><b>D# F# A C#</b></div>;Task=SpellChord Chord=m7b5 Root=D#
+<div>What are the <b>notes</b> of <b>Em7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Bb D</b></div>;Task=SpellChord Chord=m7b5 Root=E
+<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab B Eb</b></div>;Task=SpellChord Chord=m7b5 Root=F
+<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# B D#</b></div>;Task=SpellChord Chord=m7b5 Root=F
+<div>What are the <b>notes</b> of <b>F#m7b5</b> Chord?</div>;<div><b>F# A C E</b></div>;Task=SpellChord Chord=m7b5 Root=F#
+<div>What are the <b>notes</b> of <b>Gm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb Db F</b></div>;Task=SpellChord Chord=m7b5 Root=G
+<div>What are the <b>notes</b> of <b>G#m7b5</b> Chord?</div>;<div><b>G# B D F#</b></div>;Task=SpellChord Chord=m7b5 Root=G#
+<div>What are the <b>notes</b> of <b>Am7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Eb G</b></div>;Task=SpellChord Chord=m7b5 Root=A
+<div>What are the <b>notes</b> of <b>A#m7b5</b> Chord?</div>;<div><b>A# C# E G#</b></div>;Task=SpellChord Chord=m7b5 Root=A#
+<div>What are the <b>notes</b> of <b>Bm7b5</b> Chord?</div>;<div><b>B D F A</b></div>;Task=SpellChord Chord=m7b5 Root=B
+<div>What are the <b>notes</b> of <b>Cdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# F# A</b></div>;Task=SpellChord Chord=dim7 Root=C
+<div>What are the <b>notes</b> of <b>Dbdim7</b> Chord?</div>;<div><b>Db E G Bb</b></div>;Task=SpellChord Chord=dim7 Root=Db
+<div>What are the <b>notes</b> of <b>Ddim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F G# B</b></div>;Task=SpellChord Chord=dim7 Root=D
+<div>What are the <b>notes</b> of <b>Ebdim7</b> Chord?</div>;<div><b>Eb Gb A C</b></div>;Task=SpellChord Chord=dim7 Root=Eb
+<div>What are the <b>notes</b> of <b>Edim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G A# C#</b></div>;Task=SpellChord Chord=dim7 Root=E
+<div>What are the <b>notes</b> of <b>Fdim7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab B D</b></div>;Task=SpellChord Chord=dim7 Root=F
+<div>What are the <b>notes</b> of <b>Gbdim7</b> Chord?</div>;<div><b>Gb A C Eb</b></div>;Task=SpellChord Chord=dim7 Root=Gb
+<div>What are the <b>notes</b> of <b>Gdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# C# E</b></div>;Task=SpellChord Chord=dim7 Root=G
+<div>What are the <b>notes</b> of <b>Abdim7</b> Chord?</div>;<div><b>Ab B D F</b></div>;Task=SpellChord Chord=dim7 Root=Ab
+<div>What are the <b>notes</b> of <b>Adim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C D# F#</b></div>;Task=SpellChord Chord=dim7 Root=A
+<div>What are the <b>notes</b> of <b>Bbdim7</b> Chord?</div>;<div><b>Bb Db E G</b></div>;Task=SpellChord Chord=dim7 Root=Bb
+<div>What are the <b>notes</b> of <b>Bdim7</b> Chord (using <b>flats</b>)?</div>;<div><b>B D F Ab</b></div>;Task=SpellChord Chord=dim7 Root=B
+<div>What are the <b>notes</b> of <b>Bdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F G#</b></div>;Task=SpellChord Chord=dim7 Root=B
+<div>What are the <b>notes</b> of <b>CmΔ7</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G B</b></div>;Task=SpellChord Chord=mΔ7 Root=C
+<div>What are the <b>notes</b> of <b>DbmΔ7</b> Chord?</div>;<div><b>Db E Ab C</b></div>;Task=SpellChord Chord=mΔ7 Root=Db
+<div>What are the <b>notes</b> of <b>DmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F A C#</b></div>;Task=SpellChord Chord=mΔ7 Root=D
+<div>What are the <b>notes</b> of <b>EbmΔ7</b> Chord?</div>;<div><b>Eb Gb Bb D</b></div>;Task=SpellChord Chord=mΔ7 Root=Eb
+<div>What are the <b>notes</b> of <b>EmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G B D#</b></div>;Task=SpellChord Chord=mΔ7 Root=E
+<div>What are the <b>notes</b> of <b>FmΔ7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C E</b></div>;Task=SpellChord Chord=mΔ7 Root=F
+<div>What are the <b>notes</b> of <b>GbmΔ7</b> Chord?</div>;<div><b>Gb A Db F</b></div>;Task=SpellChord Chord=mΔ7 Root=Gb
+<div>What are the <b>notes</b> of <b>GmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# D F#</b></div>;Task=SpellChord Chord=mΔ7 Root=G
+<div>What are the <b>notes</b> of <b>AbmΔ7</b> Chord?</div>;<div><b>Ab B Eb G</b></div>;Task=SpellChord Chord=mΔ7 Root=Ab
+<div>What are the <b>notes</b> of <b>AmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C E G#</b></div>;Task=SpellChord Chord=mΔ7 Root=A
+<div>What are the <b>notes</b> of <b>BbmΔ7</b> Chord?</div>;<div><b>Bb Db F A</b></div>;Task=SpellChord Chord=mΔ7 Root=Bb
+<div>What are the <b>notes</b> of <b>BmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# A#</b></div>;Task=SpellChord Chord=mΔ7 Root=B
+<div>What are the <b>notes</b> of <b>CΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>C E G# B</b></div>;Task=SpellChord Chord=Δ7#5 Root=C
+<div>What are the <b>notes</b> of <b>DbΔ7#5</b> Chord?</div>;<div><b>Db F A C</b></div>;Task=SpellChord Chord=Δ7#5 Root=Db
+<div>What are the <b>notes</b> of <b>DΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A# C#</b></div>;Task=SpellChord Chord=Δ7#5 Root=D
+<div>What are the <b>notes</b> of <b>EbΔ7#5</b> Chord?</div>;<div><b>Eb G B D</b></div>;Task=SpellChord Chord=Δ7#5 Root=Eb
+<div>What are the <b>notes</b> of <b>EΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# C D#</b></div>;Task=SpellChord Chord=Δ7#5 Root=E
+<div>What are the <b>notes</b> of <b>FΔ7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A Db E</b></div>;Task=SpellChord Chord=Δ7#5 Root=F
+<div>What are the <b>notes</b> of <b>GbΔ7#5</b> Chord?</div>;<div><b>Gb Bb D F</b></div>;Task=SpellChord Chord=Δ7#5 Root=Gb
+<div>What are the <b>notes</b> of <b>GΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B D# F#</b></div>;Task=SpellChord Chord=Δ7#5 Root=G
+<div>What are the <b>notes</b> of <b>AbΔ7#5</b> Chord?</div>;<div><b>Ab C E G</b></div>;Task=SpellChord Chord=Δ7#5 Root=Ab
+<div>What are the <b>notes</b> of <b>AΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# F G#</b></div>;Task=SpellChord Chord=Δ7#5 Root=A
+<div>What are the <b>notes</b> of <b>BbΔ7#5</b> Chord?</div>;<div><b>Bb D Gb A</b></div>;Task=SpellChord Chord=Δ7#5 Root=Bb
+<div>What are the <b>notes</b> of <b>BΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# G A#</b></div>;Task=SpellChord Chord=Δ7#5 Root=B
+<div>What are the <b>notes</b> of <b>CΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>C E F# B</b></div>;Task=SpellChord Chord=Δ7#11 Root=C
+<div>What are the <b>notes</b> of <b>DbΔ7#11</b> Chord?</div>;<div><b>Db F G C</b></div>;Task=SpellChord Chord=Δ7#11 Root=Db
+<div>What are the <b>notes</b> of <b>DΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# G# C#</b></div>;Task=SpellChord Chord=Δ7#11 Root=D
+<div>What are the <b>notes</b> of <b>EbΔ7#11</b> Chord?</div>;<div><b>Eb G A D</b></div>;Task=SpellChord Chord=Δ7#11 Root=Eb
+<div>What are the <b>notes</b> of <b>EΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# A# D#</b></div>;Task=SpellChord Chord=Δ7#11 Root=E
+<div>What are the <b>notes</b> of <b>FΔ7#11</b> Chord?</div>;<div><b>F A B E</b></div>;Task=SpellChord Chord=Δ7#11 Root=F
+<div>What are the <b>notes</b> of <b>GbΔ7#11</b> Chord?</div>;<div><b>Gb Bb C F</b></div>;Task=SpellChord Chord=Δ7#11 Root=Gb
+<div>What are the <b>notes</b> of <b>GΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B C# F#</b></div>;Task=SpellChord Chord=Δ7#11 Root=G
+<div>What are the <b>notes</b> of <b>AbΔ7#11</b> Chord?</div>;<div><b>Ab C D G</b></div>;Task=SpellChord Chord=Δ7#11 Root=Ab
+<div>What are the <b>notes</b> of <b>AΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# D# G#</b></div>;Task=SpellChord Chord=Δ7#11 Root=A
+<div>What are the <b>notes</b> of <b>BbΔ7#11</b> Chord?</div>;<div><b>Bb D E A</b></div>;Task=SpellChord Chord=Δ7#11 Root=Bb
+<div>What are the <b>notes</b> of <b>BΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F A#</b></div>;Task=SpellChord Chord=Δ7#11 Root=B
+<div>What are the <b>notes</b> of <b>C7sus4</b> Chord (using <b>flats</b>)?</div>;<div><b>C F G Bb</b></div>;Task=SpellChord Chord=7sus4 Root=C
+<div>What are the <b>notes</b> of <b>Db7sus4</b> Chord?</div>;<div><b>Db Gb Ab B</b></div>;Task=SpellChord Chord=7sus4 Root=Db
+<div>What are the <b>notes</b> of <b>C#7sus4</b> Chord?</div>;<div><b>C# F# G# B</b></div>;Task=SpellChord Chord=7sus4 Root=C#
+<div>What are the <b>notes</b> of <b>D7sus4</b> Chord?</div>;<div><b>D G A C</b></div>;Task=SpellChord Chord=7sus4 Root=D
+<div>What are the <b>notes</b> of <b>Eb7sus4</b> Chord?</div>;<div><b>Eb Ab Bb Db</b></div>;Task=SpellChord Chord=7sus4 Root=Eb
+<div>What are the <b>notes</b> of <b>E7sus4</b> Chord?</div>;<div><b>E A B D</b></div>;Task=SpellChord Chord=7sus4 Root=E
+<div>What are the <b>notes</b> of <b>F7sus4</b> Chord (using <b>flats</b>)?</div>;<div><b>F Bb C Eb</b></div>;Task=SpellChord Chord=7sus4 Root=F
+<div>What are the <b>notes</b> of <b>F#7sus4</b> Chord?</div>;<div><b>F# B C# E</b></div>;Task=SpellChord Chord=7sus4 Root=F#
+<div>What are the <b>notes</b> of <b>G7sus4</b> Chord?</div>;<div><b>G C D F</b></div>;Task=SpellChord Chord=7sus4 Root=G
+<div>What are the <b>notes</b> of <b>Ab7sus4</b> Chord?</div>;<div><b>Ab Db Eb Gb</b></div>;Task=SpellChord Chord=7sus4 Root=Ab
+<div>What are the <b>notes</b> of <b>A7sus4</b> Chord?</div>;<div><b>A D E G</b></div>;Task=SpellChord Chord=7sus4 Root=A
+<div>What are the <b>notes</b> of <b>Bb7sus4</b> Chord?</div>;<div><b>Bb Eb F Ab</b></div>;Task=SpellChord Chord=7sus4 Root=Bb
+<div>What are the <b>notes</b> of <b>B7sus4</b> Chord (using <b>sharps</b>)?</div>;<div><b>B E F# A</b></div>;Task=SpellChord Chord=7sus4 Root=B
+<div>What are the <b>notes</b> of <b>C7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E G Bb</b></div>;Task=SpellChord Chord=7b9 Root=C
+<div>What are the <b>notes</b> of <b>C#7b9</b> Chord?</div>;<div><b>C# D F G# B</b></div>;Task=SpellChord Chord=7b9 Root=C#
+<div>What are the <b>notes</b> of <b>D7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb A C</b></div>;Task=SpellChord Chord=7b9 Root=D
+<div>What are the <b>notes</b> of <b>D#7b9</b> Chord?</div>;<div><b>D# E G A# C#</b></div>;Task=SpellChord Chord=7b9 Root=D#
+<div>What are the <b>notes</b> of <b>E7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab B D</b></div>;Task=SpellChord Chord=7b9 Root=E
+<div>What are the <b>notes</b> of <b>F7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A C Eb</b></div>;Task=SpellChord Chord=7b9 Root=F
+<div>What are the <b>notes</b> of <b>F#7b9</b> Chord?</div>;<div><b>F# G A# C# E</b></div>;Task=SpellChord Chord=7b9 Root=F#
+<div>What are the <b>notes</b> of <b>G7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B D F</b></div>;Task=SpellChord Chord=7b9 Root=G
+<div>What are the <b>notes</b> of <b>G#7b9</b> Chord?</div>;<div><b>G# A C D# F#</b></div>;Task=SpellChord Chord=7b9 Root=G#
+<div>What are the <b>notes</b> of <b>A7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db E G</b></div>;Task=SpellChord Chord=7b9 Root=A
+<div>What are the <b>notes</b> of <b>A#7b9</b> Chord?</div>;<div><b>A# B D F G#</b></div>;Task=SpellChord Chord=7b9 Root=A#
+<div>What are the <b>notes</b> of <b>B7b9</b> Chord (using <b>sharps</b>)?</div>;<div><b>B C D# F# A</b></div>;Task=SpellChord Chord=7b9 Root=B
+<div>What are the <b>notes</b> of <b>C7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E G A#</b></div>;Task=SpellChord Chord=7#9 Root=C
+<div>What are the <b>notes</b> of <b>Db7#9</b> Chord?</div>;<div><b>Db E F Ab B</b></div>;Task=SpellChord Chord=7#9 Root=Db
+<div>What are the <b>notes</b> of <b>D7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb A C</b></div>;Task=SpellChord Chord=7#9 Root=D
+<div>What are the <b>notes</b> of <b>D#7#9</b> Chord?</div>;<div><b>D# F# G A# C#</b></div>;Task=SpellChord Chord=7#9 Root=D#
+<div>What are the <b>notes</b> of <b>E7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab B D</b></div>;Task=SpellChord Chord=7#9 Root=E
+<div>What are the <b>notes</b> of <b>F7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A C D#</b></div>;Task=SpellChord Chord=7#9 Root=F
+<div>What are the <b>notes</b> of <b>Gb7#9</b> Chord?</div>;<div><b>Gb A Bb Db E</b></div>;Task=SpellChord Chord=7#9 Root=Gb
+<div>What are the <b>notes</b> of <b>G7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B D F</b></div>;Task=SpellChord Chord=7#9 Root=G
+<div>What are the <b>notes</b> of <b>Ab7#9</b> Chord?</div>;<div><b>Ab B C Eb Gb</b></div>;Task=SpellChord Chord=7#9 Root=Ab
+<div>What are the <b>notes</b> of <b>A7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db E G</b></div>;Task=SpellChord Chord=7#9 Root=A
+<div>What are the <b>notes</b> of <b>A#7#9</b> Chord?</div>;<div><b>A# C# D F G#</b></div>;Task=SpellChord Chord=7#9 Root=A#
+<div>What are the <b>notes</b> of <b>B7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb Gb A</b></div>;Task=SpellChord Chord=7#9 Root=B
+<div>What are the <b>notes</b> of <b>C7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>C E Gb Bb</b></div>;Task=SpellChord Chord=7b5 Root=C
+<div>What are the <b>notes</b> of <b>Db7b5</b> Chord?</div>;<div><b>Db F G B</b></div>;Task=SpellChord Chord=7b5 Root=Db
+<div>What are the <b>notes</b> of <b>C#7b5</b> Chord?</div>;<div><b>C# F G B</b></div>;Task=SpellChord Chord=7b5 Root=C#
+<div>What are the <b>notes</b> of <b>D7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# G# C</b></div>;Task=SpellChord Chord=7b5 Root=D
+<div>What are the <b>notes</b> of <b>Eb7b5</b> Chord?</div>;<div><b>Eb G A Db</b></div>;Task=SpellChord Chord=7b5 Root=Eb
+<div>What are the <b>notes</b> of <b>E7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# A# D</b></div>;Task=SpellChord Chord=7b5 Root=E
+<div>What are the <b>notes</b> of <b>F7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A B Eb</b></div>;Task=SpellChord Chord=7b5 Root=F
+<div>What are the <b>notes</b> of <b>F#7b5</b> Chord?</div>;<div><b>F# A# C E</b></div>;Task=SpellChord Chord=7b5 Root=F#
+<div>What are the <b>notes</b> of <b>G7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>G B Db F</b></div>;Task=SpellChord Chord=7b5 Root=G
+<div>What are the <b>notes</b> of <b>Ab7b5</b> Chord?</div>;<div><b>Ab C D Gb</b></div>;Task=SpellChord Chord=7b5 Root=Ab
+<div>What are the <b>notes</b> of <b>A7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# D# G</b></div>;Task=SpellChord Chord=7b5 Root=A
+<div>What are the <b>notes</b> of <b>Bb7b5</b> Chord?</div>;<div><b>Bb D E Ab</b></div>;Task=SpellChord Chord=7b5 Root=Bb
+<div>What are the <b>notes</b> of <b>B7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F A</b></div>;Task=SpellChord Chord=7b5 Root=B
+<div>What are the <b>notes</b> of <b>C7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>C E Ab Bb</b></div>;Task=SpellChord Chord=7#5 Root=C
+<div>What are the <b>notes</b> of <b>C#7#5</b> Chord?</div>;<div><b>C# F A B</b></div>;Task=SpellChord Chord=7#5 Root=C#
+<div>What are the <b>notes</b> of <b>D7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>D Gb Bb C</b></div>;Task=SpellChord Chord=7#5 Root=D
+<div>What are the <b>notes</b> of <b>Eb7#5</b> Chord?</div>;<div><b>Eb G B Db</b></div>;Task=SpellChord Chord=7#5 Root=Eb
+<div>What are the <b>notes</b> of <b>D#7#5</b> Chord?</div>;<div><b>D# G B C#</b></div>;Task=SpellChord Chord=7#5 Root=D#
+<div>What are the <b>notes</b> of <b>E7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# C D</b></div>;Task=SpellChord Chord=7#5 Root=E
+<div>What are the <b>notes</b> of <b>F7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A Db Eb</b></div>;Task=SpellChord Chord=7#5 Root=F
+<div>What are the <b>notes</b> of <b>F#7#5</b> Chord?</div>;<div><b>F# A# D E</b></div>;Task=SpellChord Chord=7#5 Root=F#
+<div>What are the <b>notes</b> of <b>G7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>G B Eb F</b></div>;Task=SpellChord Chord=7#5 Root=G
+<div>What are the <b>notes</b> of <b>G#7#5</b> Chord?</div>;<div><b>G# C E F#</b></div>;Task=SpellChord Chord=7#5 Root=G#
+<div>What are the <b>notes</b> of <b>A7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>A Db F G</b></div>;Task=SpellChord Chord=7#5 Root=A
+<div>What are the <b>notes</b> of <b>Bb7#5</b> Chord?</div>;<div><b>Bb D Gb Ab</b></div>;Task=SpellChord Chord=7#5 Root=Bb
+<div>What are the <b>notes</b> of <b>B7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# G A</b></div>;Task=SpellChord Chord=7#5 Root=B
+<div>What are the <b>notes</b> of <b>C7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E Gb Bb</b></div>;Task=SpellChord Chord=7b5b9 Root=C
+<div>What are the <b>notes</b> of <b>C#7b5b9</b> Chord?</div>;<div><b>C# D F G B</b></div>;Task=SpellChord Chord=7b5b9 Root=C#
+<div>What are the <b>notes</b> of <b>D7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb Ab C</b></div>;Task=SpellChord Chord=7b5b9 Root=D
+<div>What are the <b>notes</b> of <b>D#7b5b9</b> Chord?</div>;<div><b>D# E G A C#</b></div>;Task=SpellChord Chord=7b5b9 Root=D#
+<div>What are the <b>notes</b> of <b>E7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab Bb D</b></div>;Task=SpellChord Chord=7b5b9 Root=E
+<div>What are the <b>notes</b> of <b>F7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A B Eb</b></div>;Task=SpellChord Chord=7b5b9 Root=F
+<div>What are the <b>notes</b> of <b>F#7b5b9</b> Chord?</div>;<div><b>F# G A# C E</b></div>;Task=SpellChord Chord=7b5b9 Root=F#
+<div>What are the <b>notes</b> of <b>G7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B Db F</b></div>;Task=SpellChord Chord=7b5b9 Root=G
+<div>What are the <b>notes</b> of <b>G#7b5b9</b> Chord?</div>;<div><b>G# A C D F#</b></div>;Task=SpellChord Chord=7b5b9 Root=G#
+<div>What are the <b>notes</b> of <b>A7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db Eb G</b></div>;Task=SpellChord Chord=7b5b9 Root=A
+<div>What are the <b>notes</b> of <b>A#7b5b9</b> Chord?</div>;<div><b>A# B D E G#</b></div>;Task=SpellChord Chord=7b5b9 Root=A#
+<div>What are the <b>notes</b> of <b>B7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>B C Eb F A</b></div>;Task=SpellChord Chord=7b5b9 Root=B
+<div>What are the <b>notes</b> of <b>C7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E Ab Bb</b></div>;Task=SpellChord Chord=7#5b9 Root=C
+<div>What are the <b>notes</b> of <b>C#7#5b9</b> Chord?</div>;<div><b>C# D F A B</b></div>;Task=SpellChord Chord=7#5b9 Root=C#
+<div>What are the <b>notes</b> of <b>D7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb Bb C</b></div>;Task=SpellChord Chord=7#5b9 Root=D
+<div>What are the <b>notes</b> of <b>D#7#5b9</b> Chord?</div>;<div><b>D# E G B C#</b></div>;Task=SpellChord Chord=7#5b9 Root=D#
+<div>What are the <b>notes</b> of <b>E7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab C D</b></div>;Task=SpellChord Chord=7#5b9 Root=E
+<div>What are the <b>notes</b> of <b>F7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A Db Eb</b></div>;Task=SpellChord Chord=7#5b9 Root=F
+<div>What are the <b>notes</b> of <b>F#7#5b9</b> Chord?</div>;<div><b>F# G A# D E</b></div>;Task=SpellChord Chord=7#5b9 Root=F#
+<div>What are the <b>notes</b> of <b>G7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B Eb F</b></div>;Task=SpellChord Chord=7#5b9 Root=G
+<div>What are the <b>notes</b> of <b>G#7#5b9</b> Chord?</div>;<div><b>G# A C E F#</b></div>;Task=SpellChord Chord=7#5b9 Root=G#
+<div>What are the <b>notes</b> of <b>A7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db F G</b></div>;Task=SpellChord Chord=7#5b9 Root=A
+<div>What are the <b>notes</b> of <b>A#7#5b9</b> Chord?</div>;<div><b>A# B D F# G#</b></div>;Task=SpellChord Chord=7#5b9 Root=A#
+<div>What are the <b>notes</b> of <b>B7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>B C Eb G A</b></div>;Task=SpellChord Chord=7#5b9 Root=B
+<div>What are the <b>notes</b> of <b>C7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E F# A#</b></div>;Task=SpellChord Chord=7b5#9 Root=C
+<div>What are the <b>notes</b> of <b>Db7b5#9</b> Chord?</div>;<div><b>Db E F G B</b></div>;Task=SpellChord Chord=7b5#9 Root=Db
+<div>What are the <b>notes</b> of <b>D7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb Ab C</b></div>;Task=SpellChord Chord=7b5#9 Root=D
+<div>What are the <b>notes</b> of <b>D#7b5#9</b> Chord?</div>;<div><b>D# F# G A C#</b></div>;Task=SpellChord Chord=7b5#9 Root=D#
+<div>What are the <b>notes</b> of <b>E7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab Bb D</b></div>;Task=SpellChord Chord=7b5#9 Root=E
+<div>What are the <b>notes</b> of <b>F7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A B D#</b></div>;Task=SpellChord Chord=7b5#9 Root=F
+<div>What are the <b>notes</b> of <b>Gb7b5#9</b> Chord?</div>;<div><b>Gb A Bb C E</b></div>;Task=SpellChord Chord=7b5#9 Root=Gb
+<div>What are the <b>notes</b> of <b>G7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B C# F</b></div>;Task=SpellChord Chord=7b5#9 Root=G
+<div>What are the <b>notes</b> of <b>G#7b5#9</b> Chord?</div>;<div><b>G# B C D F#</b></div>;Task=SpellChord Chord=7b5#9 Root=G#
+<div>What are the <b>notes</b> of <b>A7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db Eb G</b></div>;Task=SpellChord Chord=7b5#9 Root=A
+<div>What are the <b>notes</b> of <b>A#7b5#9</b> Chord?</div>;<div><b>A# C# D E G#</b></div>;Task=SpellChord Chord=7b5#9 Root=A#
+<div>What are the <b>notes</b> of <b>B7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb F A</b></div>;Task=SpellChord Chord=7b5#9 Root=B
+<div>What are the <b>notes</b> of <b>C7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E G# A#</b></div>;Task=SpellChord Chord=7#5#9 Root=C
+<div>What are the <b>notes</b> of <b>Db7#5#9</b> Chord?</div>;<div><b>Db E F A B</b></div>;Task=SpellChord Chord=7#5#9 Root=Db
+<div>What are the <b>notes</b> of <b>D7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb Bb C</b></div>;Task=SpellChord Chord=7#5#9 Root=D
+<div>What are the <b>notes</b> of <b>D#7#5#9</b> Chord?</div>;<div><b>D# F# G B C#</b></div>;Task=SpellChord Chord=7#5#9 Root=D#
+<div>What are the <b>notes</b> of <b>E7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab C D</b></div>;Task=SpellChord Chord=7#5#9 Root=E
+<div>What are the <b>notes</b> of <b>F7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A C# D#</b></div>;Task=SpellChord Chord=7#5#9 Root=F
+<div>What are the <b>notes</b> of <b>Gb7#5#9</b> Chord?</div>;<div><b>Gb A Bb D E</b></div>;Task=SpellChord Chord=7#5#9 Root=Gb
+<div>What are the <b>notes</b> of <b>G7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B D# F</b></div>;Task=SpellChord Chord=7#5#9 Root=G
+<div>What are the <b>notes</b> of <b>G#7#5#9</b> Chord?</div>;<div><b>G# B C E F#</b></div>;Task=SpellChord Chord=7#5#9 Root=G#
+<div>What are the <b>notes</b> of <b>A7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db F G</b></div>;Task=SpellChord Chord=7#5#9 Root=A
+<div>What are the <b>notes</b> of <b>A#7#5#9</b> Chord?</div>;<div><b>A# C# D F# G#</b></div>;Task=SpellChord Chord=7#5#9 Root=A#
+<div>What are the <b>notes</b> of <b>B7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb G A</b></div>;Task=SpellChord Chord=7#5#9 Root=B
+<div>What are the <b>notes</b> of <b>C</b> Triad?</div>;<div><b>C E G</b></div>;Task=SpellChord Chord= Root=C
+<div>What are the <b>notes</b> of <b>Db</b> Triad?</div>;<div><b>Db F Ab</b></div>;Task=SpellChord Chord= Root=Db
+<div>What are the <b>notes</b> of <b>D</b> Triad (using <b>sharps</b>)?</div>;<div><b>D F# A</b></div>;Task=SpellChord Chord= Root=D
+<div>What are the <b>notes</b> of <b>Eb</b> Triad?</div>;<div><b>Eb G Bb</b></div>;Task=SpellChord Chord= Root=Eb
+<div>What are the <b>notes</b> of <b>E</b> Triad (using <b>sharps</b>)?</div>;<div><b>E G# B</b></div>;Task=SpellChord Chord= Root=E
+<div>What are the <b>notes</b> of <b>F</b> Triad?</div>;<div><b>F A C</b></div>;Task=SpellChord Chord= Root=F
+<div>What are the <b>notes</b> of <b>Gb</b> Triad?</div>;<div><b>Gb Bb Db</b></div>;Task=SpellChord Chord= Root=Gb
+<div>What are the <b>notes</b> of <b>F#</b> Triad?</div>;<div><b>F# A# C#</b></div>;Task=SpellChord Chord= Root=F#
+<div>What are the <b>notes</b> of <b>G</b> Triad?</div>;<div><b>G B D</b></div>;Task=SpellChord Chord= Root=G
+<div>What are the <b>notes</b> of <b>Ab</b> Triad?</div>;<div><b>Ab C Eb</b></div>;Task=SpellChord Chord= Root=Ab
+<div>What are the <b>notes</b> of <b>A</b> Triad (using <b>sharps</b>)?</div>;<div><b>A C# E</b></div>;Task=SpellChord Chord= Root=A
+<div>What are the <b>notes</b> of <b>Bb</b> Triad?</div>;<div><b>Bb D F</b></div>;Task=SpellChord Chord= Root=Bb
+<div>What are the <b>notes</b> of <b>B</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D# F#</b></div>;Task=SpellChord Chord= Root=B
+<div>What are the <b>notes</b> of <b>Cm</b> Triad (using <b>flats</b>)?</div>;<div><b>C Eb G</b></div>;Task=SpellChord Chord=m Root=C
+<div>What are the <b>notes</b> of <b>C#m</b> Triad?</div>;<div><b>C# E G#</b></div>;Task=SpellChord Chord=m Root=C#
+<div>What are the <b>notes</b> of <b>Dm</b> Triad?</div>;<div><b>D F A</b></div>;Task=SpellChord Chord=m Root=D
+<div>What are the <b>notes</b> of <b>Ebm</b> Triad?</div>;<div><b>Eb Gb Bb</b></div>;Task=SpellChord Chord=m Root=Eb
+<div>What are the <b>notes</b> of <b>D#m</b> Triad?</div>;<div><b>D# F# A#</b></div>;Task=SpellChord Chord=m Root=D#
+<div>What are the <b>notes</b> of <b>Em</b> Triad?</div>;<div><b>E G B</b></div>;Task=SpellChord Chord=m Root=E
+<div>What are the <b>notes</b> of <b>Fm</b> Triad (using <b>flats</b>)?</div>;<div><b>F Ab C</b></div>;Task=SpellChord Chord=m Root=F
+<div>What are the <b>notes</b> of <b>F#m</b> Triad?</div>;<div><b>F# A C#</b></div>;Task=SpellChord Chord=m Root=F#
+<div>What are the <b>notes</b> of <b>Gm</b> Triad (using <b>flats</b>)?</div>;<div><b>G Bb D</b></div>;Task=SpellChord Chord=m Root=G
+<div>What are the <b>notes</b> of <b>G#m</b> Triad?</div>;<div><b>G# B D#</b></div>;Task=SpellChord Chord=m Root=G#
+<div>What are the <b>notes</b> of <b>Am</b> Triad?</div>;<div><b>A C E</b></div>;Task=SpellChord Chord=m Root=A
+<div>What are the <b>notes</b> of <b>Bbm</b> Triad?</div>;<div><b>Bb Db F</b></div>;Task=SpellChord Chord=m Root=Bb
+<div>What are the <b>notes</b> of <b>Bm</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D F#</b></div>;Task=SpellChord Chord=m Root=B
+<div>What are the <b>notes</b> of <b>Cdim</b> Triad (using <b>flats</b>)?</div>;<div><b>C Eb Gb</b></div>;Task=SpellChord Chord=dim Root=C
+<div>What are the <b>notes</b> of <b>C#dim</b> Triad?</div>;<div><b>C# E G</b></div>;Task=SpellChord Chord=dim Root=C#
+<div>What are the <b>notes</b> of <b>Ddim</b> Triad (using <b>flats</b>)?</div>;<div><b>D F Ab</b></div>;Task=SpellChord Chord=dim Root=D
+<div>What are the <b>notes</b> of <b>D#dim</b> Triad?</div>;<div><b>D# F# A</b></div>;Task=SpellChord Chord=dim Root=D#
+<div>What are the <b>notes</b> of <b>Edim</b> Triad (using <b>flats</b>)?</div>;<div><b>E G Bb</b></div>;Task=SpellChord Chord=dim Root=E
+<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>flats</b>)?</div>;<div><b>F Ab B</b></div>;Task=SpellChord Chord=dim Root=F
+<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>sharps</b>)?</div>;<div><b>F G# B</b></div>;Task=SpellChord Chord=dim Root=F
+<div>What are the <b>notes</b> of <b>F#dim</b> Triad?</div>;<div><b>F# A C</b></div>;Task=SpellChord Chord=dim Root=F#
+<div>What are the <b>notes</b> of <b>Gdim</b> Triad (using <b>flats</b>)?</div>;<div><b>G Bb Db</b></div>;Task=SpellChord Chord=dim Root=G
+<div>What are the <b>notes</b> of <b>G#dim</b> Triad?</div>;<div><b>G# B D</b></div>;Task=SpellChord Chord=dim Root=G#
+<div>What are the <b>notes</b> of <b>Adim</b> Triad (using <b>flats</b>)?</div>;<div><b>A C Eb</b></div>;Task=SpellChord Chord=dim Root=A
+<div>What are the <b>notes</b> of <b>A#dim</b> Triad?</div>;<div><b>A# C# E</b></div>;Task=SpellChord Chord=dim Root=A#
+<div>What are the <b>notes</b> of <b>Bdim</b> Triad?</div>;<div><b>B D F</b></div>;Task=SpellChord Chord=dim Root=B
+<div>What are the <b>notes</b> of <b>Caug</b> Triad (using <b>sharps</b>)?</div>;<div><b>C E G#</b></div>;Task=SpellChord Chord=aug Root=C
+<div>What are the <b>notes</b> of <b>Dbaug</b> Triad?</div>;<div><b>Db F A</b></div>;Task=SpellChord Chord=aug Root=Db
+<div>What are the <b>notes</b> of <b>Daug</b> Triad (using <b>sharps</b>)?</div>;<div><b>D F# A#</b></div>;Task=SpellChord Chord=aug Root=D
+<div>What are the <b>notes</b> of <b>Ebaug</b> Triad?</div>;<div><b>Eb G B</b></div>;Task=SpellChord Chord=aug Root=Eb
+<div>What are the <b>notes</b> of <b>Eaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>E G# C</b></div>;Task=SpellChord Chord=aug Root=E
+<div>What are the <b>notes</b> of <b>Faug</b> Triad (using <b>flats</b>)?</div>;<div><b>F A Db</b></div>;Task=SpellChord Chord=aug Root=F
+<div>What are the <b>notes</b> of <b>Gbaug</b> Triad?</div>;<div><b>Gb Bb D</b></div>;Task=SpellChord Chord=aug Root=Gb
+<div>What are the <b>notes</b> of <b>Gaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>G B D#</b></div>;Task=SpellChord Chord=aug Root=G
+<div>What are the <b>notes</b> of <b>Abaug</b> Triad?</div>;<div><b>Ab C E</b></div>;Task=SpellChord Chord=aug Root=Ab
+<div>What are the <b>notes</b> of <b>Aaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>A C# F</b></div>;Task=SpellChord Chord=aug Root=A
+<div>What are the <b>notes</b> of <b>Bbaug</b> Triad?</div>;<div><b>Bb D Gb</b></div>;Task=SpellChord Chord=aug Root=Bb
+<div>What are the <b>notes</b> of <b>Baug</b> Triad (using <b>flats</b>)?</div>;<div><b>B Eb G</b></div>;Task=SpellChord Chord=aug Root=B
+<div>What are the <b>notes</b> of <b>Baug</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D# G</b></div>;Task=SpellChord Chord=aug Root=B
+<div>What are the <b>notes</b> of <b>Csus4</b> Triad?</div>;<div><b>C F G</b></div>;Task=SpellChord Chord=sus4 Root=C
+<div>What are the <b>notes</b> of <b>Dbsus4</b> Triad?</div>;<div><b>Db Gb Ab</b></div>;Task=SpellChord Chord=sus4 Root=Db
+<div>What are the <b>notes</b> of <b>Dsus4</b> Triad?</div>;<div><b>D G A</b></div>;Task=SpellChord Chord=sus4 Root=D
+<div>What are the <b>notes</b> of <b>Ebsus4</b> Triad?</div>;<div><b>Eb Ab Bb</b></div>;Task=SpellChord Chord=sus4 Root=Eb
+<div>What are the <b>notes</b> of <b>Esus4</b> Triad?</div>;<div><b>E A B</b></div>;Task=SpellChord Chord=sus4 Root=E
+<div>What are the <b>notes</b> of <b>Fsus4</b> Triad (using <b>flats</b>)?</div>;<div><b>F Bb C</b></div>;Task=SpellChord Chord=sus4 Root=F
+<div>What are the <b>notes</b> of <b>Gbsus4</b> Triad?</div>;<div><b>Gb B Db</b></div>;Task=SpellChord Chord=sus4 Root=Gb
+<div>What are the <b>notes</b> of <b>F#sus4</b> Triad?</div>;<div><b>F# B C#</b></div>;Task=SpellChord Chord=sus4 Root=F#
+<div>What are the <b>notes</b> of <b>Gsus4</b> Triad?</div>;<div><b>G C D</b></div>;Task=SpellChord Chord=sus4 Root=G
+<div>What are the <b>notes</b> of <b>Absus4</b> Triad?</div>;<div><b>Ab Db Eb</b></div>;Task=SpellChord Chord=sus4 Root=Ab
+<div>What are the <b>notes</b> of <b>Asus4</b> Triad?</div>;<div><b>A D E</b></div>;Task=SpellChord Chord=sus4 Root=A
+<div>What are the <b>notes</b> of <b>Bbsus4</b> Triad?</div>;<div><b>Bb Eb F</b></div>;Task=SpellChord Chord=sus4 Root=Bb
+<div>What are the <b>notes</b> of <b>Bsus4</b> Triad (using <b>sharps</b>)?</div>;<div><b>B E F#</b></div>;Task=SpellChord Chord=sus4 Root=B

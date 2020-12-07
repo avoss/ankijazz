@@ -5,7 +5,6 @@ EbΔ7 Eb G Bb D
 EΔ7 E G# B D# 
 FΔ7 F A C E 
 GbΔ7 Gb Bb Db F 
-F#Δ7 F# A# C# F // duplicate note!!!
 GΔ7 G B D F# 
 AbΔ7 Ab C Eb G 
 AΔ7 A C# E G# 
@@ -63,53 +62,50 @@ G#m7b5 G# B D F#
 Am7b5 A C Eb G 
 A#m7b5 A# C# E G# 
 Bm7b5 B D F A 
-Cdim7 C Eb Gb A 
+Cdim7 C D# F# A 
 Dbdim7 Db E G Bb 
-C#dim7 C# E G A# 
 Ddim7 D F G# B 
 Ebdim7 Eb Gb A C 
 Edim7 E G A# C# 
 Fdim7 F Ab B D 
-F#dim7 F# A C D# 
-Gdim7 G Bb Db E 
+Gbdim7 Gb A C Eb 
+Gdim7 G A# C# E 
 Abdim7 Ab B D F 
 Adim7 A C D# F# 
 Bbdim7 Bb Db E G 
+Bdim7 B D F Ab 
 Bdim7 B D F G# 
 CmΔ7 C Eb G B 
-C#mΔ7 C# E G# C // duplicate note!!!
-DmΔ7 D F A Db // duplicate note!!!
+DbmΔ7 Db E Ab C 
+DmΔ7 D F A C# 
 EbmΔ7 Eb Gb Bb D 
-D#mΔ7 D# F# A# D // duplicate note!!!
 EmΔ7 E G B D# 
 FmΔ7 F Ab C E 
-F#mΔ7 F# A C# F // duplicate note!!!
-GmΔ7 G Bb D Gb // duplicate note!!!
-G#mΔ7 G# B D# G // duplicate note!!!
-AmΔ7 A C E Ab // duplicate note!!!
+GbmΔ7 Gb A Db F 
+GmΔ7 G A# D F# 
+AbmΔ7 Ab B Eb G 
+AmΔ7 A C E G# 
 BbmΔ7 Bb Db F A 
 BmΔ7 B D F# A# 
-CΔ7#5 C E Ab B 
+CΔ7#5 C E G# B 
 DbΔ7#5 Db F A C 
 DΔ7#5 D F# A# C# 
 EbΔ7#5 Eb G B D 
 EΔ7#5 E G# C D# 
 FΔ7#5 F A Db E 
 GbΔ7#5 Gb Bb D F 
-F#Δ7#5 F# A# D F // duplicate note!!!
 GΔ7#5 G B D# F# 
 AbΔ7#5 Ab C E G 
 AΔ7#5 A C# F G# 
 BbΔ7#5 Bb D Gb A 
 BΔ7#5 B D# G A# 
-CΔ7#11 C E Gb B 
+CΔ7#11 C E F# B 
 DbΔ7#11 Db F G C 
 DΔ7#11 D F# G# C# 
 EbΔ7#11 Eb G A D 
 EΔ7#11 E G# A# D# 
 FΔ7#11 F A B E 
 GbΔ7#11 Gb Bb C F 
-F#Δ7#11 F# A# C F // duplicate note!!!
 GΔ7#11 G B C# F# 
 AbΔ7#11 Ab C D G 
 AΔ7#11 A C# D# G# 
@@ -129,31 +125,29 @@ A7sus4 A D E G
 Bb7sus4 Bb Eb F Ab 
 B7sus4 B E F# A 
 C7b9 C Db E G Bb 
-Db7b9 Db D F Ab B // duplicate note!!!
 C#7b9 C# D F G# B 
-D7b9 D D# F# A C // duplicate note!!!
-Eb7b9 Eb E G Bb Db // duplicate note!!!
-E7b9 E F G# B D 
+D7b9 D Eb Gb A C 
+D#7b9 D# E G A# C# 
+E7b9 E F Ab B D 
 F7b9 F Gb A C Eb 
 F#7b9 F# G A# C# E 
 G7b9 G Ab B D F 
-Ab7b9 Ab A C Eb Gb // duplicate note!!!
-A7b9 A A# C# E G // duplicate note!!!
-Bb7b9 Bb B D F Ab // duplicate note!!!
+G#7b9 G# A C D# F# 
+A7b9 A Bb Db E G 
+A#7b9 A# B D F G# 
 B7b9 B C D# F# A 
-C7#9 C Eb E G Bb // duplicate note!!!
+C7#9 C D# E G A# 
 Db7#9 Db E F Ab B 
-C#7#9 C# E F G# B 
-D7#9 D F F# A C // duplicate note!!!
-Eb7#9 Eb Gb G Bb Db // duplicate note!!!
-E7#9 E G G# B D // duplicate note!!!
-F7#9 F Ab A C Eb // duplicate note!!!
-F#7#9 F# A A# C# E // duplicate note!!!
-G7#9 G Bb B D F // duplicate note!!!
+D7#9 D F Gb A C 
+D#7#9 D# F# G A# C# 
+E7#9 E G Ab B D 
+F7#9 F G# A C D# 
+Gb7#9 Gb A Bb Db E 
+G7#9 G A# B D F 
 Ab7#9 Ab B C Eb Gb 
-A7#9 A C C# E G // duplicate note!!!
-Bb7#9 Bb Db D F Ab // duplicate note!!!
-B7#9 B D D# F# A // duplicate note!!!
+A7#9 A C Db E G 
+A#7#9 A# C# D F G# 
+B7#9 B D Eb Gb A 
 C7b5 C E Gb Bb 
 Db7b5 Db F G B 
 C#7b5 C# F G B 
@@ -168,70 +162,66 @@ A7b5 A C# D# G
 Bb7b5 Bb D E Ab 
 B7b5 B D# F A 
 C7#5 C E Ab Bb 
-Db7#5 Db F A B 
 C#7#5 C# F A B 
-D7#5 D F# A# C 
+D7#5 D Gb Bb C 
 Eb7#5 Eb G B Db 
+D#7#5 D# G B C# 
 E7#5 E G# C D 
 F7#5 F A Db Eb 
 F#7#5 F# A# D E 
 G7#5 G B Eb F 
-Ab7#5 Ab C E Gb 
-A7#5 A C# F G 
+G#7#5 G# C E F# 
+A7#5 A Db F G 
 Bb7#5 Bb D Gb Ab 
 B7#5 B D# G A 
 C7b5b9 C Db E Gb Bb 
-Db7b5b9 Db D F G B // duplicate note!!!
 C#7b5b9 C# D F G B 
-D7b5b9 D D# F# G# C // duplicate note!!!
-Eb7b5b9 Eb E G A Db // duplicate note!!!
-E7b5b9 E F G# A# D 
+D7b5b9 D Eb Gb Ab C 
+D#7b5b9 D# E G A C# 
+E7b5b9 E F Ab Bb D 
 F7b5b9 F Gb A B Eb 
 F#7b5b9 F# G A# C E 
 G7b5b9 G Ab B Db F 
-Ab7b5b9 Ab A C D Gb // duplicate note!!!
-A7b5b9 A A# C# D# G // duplicate note!!!
-Bb7b5b9 Bb B D E Ab // duplicate note!!!
-B7b5b9 B C D# F A 
+G#7b5b9 G# A C D F# 
+A7b5b9 A Bb Db Eb G 
+A#7b5b9 A# B D E G# 
+B7b5b9 B C Eb F A 
 C7#5b9 C Db E Ab Bb 
-Db7#5b9 Db D F A B // duplicate note!!!
 C#7#5b9 C# D F A B 
-D7#5b9 D D# F# A# C // duplicate note!!!
-Eb7#5b9 Eb E G B Db // duplicate note!!!
-E7#5b9 E F G# C D 
+D7#5b9 D Eb Gb Bb C 
+D#7#5b9 D# E G B C# 
+E7#5b9 E F Ab C D 
 F7#5b9 F Gb A Db Eb 
 F#7#5b9 F# G A# D E 
 G7#5b9 G Ab B Eb F 
-Ab7#5b9 Ab A C E Gb // duplicate note!!!
-A7#5b9 A A# C# F G // duplicate note!!!
-Bb7#5b9 Bb B D Gb Ab // duplicate note!!!
-B7#5b9 B C D# G A 
-C7b5#9 C Eb E Gb Bb // duplicate note!!!
+G#7#5b9 G# A C E F# 
+A7#5b9 A Bb Db F G 
+A#7#5b9 A# B D F# G# 
+B7#5b9 B C Eb G A 
+C7b5#9 C D# E F# A# 
 Db7b5#9 Db E F G B 
-C#7b5#9 C# E F G B 
-D7b5#9 D F F# G# C // duplicate note!!!
-Eb7b5#9 Eb Gb G A Db // duplicate note!!!
-E7b5#9 E G G# A# D // duplicate note!!!
-F7b5#9 F Ab A B Eb // duplicate note!!!
-F#7b5#9 F# A A# C E // duplicate note!!!
-G7b5#9 G Bb B Db F // duplicate note!!!
-Ab7b5#9 Ab B C D Gb 
-A7b5#9 A C C# D# G // duplicate note!!!
-Bb7b5#9 Bb Db D E Ab // duplicate note!!!
-B7b5#9 B D D# F A // duplicate note!!!
-C7#5#9 C Eb E Ab Bb // duplicate note!!!
+D7b5#9 D F Gb Ab C 
+D#7b5#9 D# F# G A C# 
+E7b5#9 E G Ab Bb D 
+F7b5#9 F G# A B D# 
+Gb7b5#9 Gb A Bb C E 
+G7b5#9 G A# B C# F 
+G#7b5#9 G# B C D F# 
+A7b5#9 A C Db Eb G 
+A#7b5#9 A# C# D E G# 
+B7b5#9 B D Eb F A 
+C7#5#9 C D# E G# A# 
 Db7#5#9 Db E F A B 
-C#7#5#9 C# E F A B 
-D7#5#9 D F F# A# C // duplicate note!!!
-Eb7#5#9 Eb Gb G B Db // duplicate note!!!
-E7#5#9 E G G# C D // duplicate note!!!
-F7#5#9 F Ab A Db Eb // duplicate note!!!
-F#7#5#9 F# A A# D E // duplicate note!!!
-G7#5#9 G Bb B Eb F // duplicate note!!!
-Ab7#5#9 Ab B C E Gb 
-A7#5#9 A C C# F G // duplicate note!!!
-Bb7#5#9 Bb Db D Gb Ab // duplicate note!!!
-B7#5#9 B D D# G A // duplicate note!!!
+D7#5#9 D F Gb Bb C 
+D#7#5#9 D# F# G B C# 
+E7#5#9 E G Ab C D 
+F7#5#9 F G# A C# D# 
+Gb7#5#9 Gb A Bb D E 
+G7#5#9 G A# B D# F 
+G#7#5#9 G# B C E F# 
+A7#5#9 A C Db F G 
+A#7#5#9 A# C# D F# G# 
+B7#5#9 B D Eb G A 
 C C E G 
 Db Db F Ab 
 D D F# A 
@@ -271,26 +261,26 @@ G#dim G# B D
 Adim A C Eb 
 A#dim A# C# E 
 Bdim B D F 
-Caug C E Ab 
+Caug C E G# 
 Dbaug Db F A 
-C#aug C# F A 
 Daug D F# A# 
 Ebaug Eb G B 
 Eaug E G# C 
 Faug F A Db 
-F#aug F# A# D 
-Gaug G B Eb 
+Gbaug Gb Bb D 
+Gaug G B D# 
 Abaug Ab C E 
 Aaug A C# F 
 Bbaug Bb D Gb 
+Baug B Eb G 
 Baug B D# G 
 Csus4 C F G 
 Dbsus4 Db Gb Ab 
-C#sus4 C# F# G# 
 Dsus4 D G A 
 Ebsus4 Eb Ab Bb 
 Esus4 E A B 
 Fsus4 F Bb C 
+Gbsus4 Gb B Db 
 F#sus4 F# B C# 
 Gsus4 G C D 
 Absus4 Ab Db Eb 

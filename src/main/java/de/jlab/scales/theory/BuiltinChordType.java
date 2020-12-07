@@ -37,10 +37,12 @@ import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
 import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.Csus4Triad;
+import static java.util.stream.Collectors.toCollection;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collector;
@@ -110,8 +112,8 @@ public enum BuiltinChordType implements ScaleType {
   @Override
   public Set<KeySignature> getKeySignatures(Note root) {
     Scale chord = prototype.transpose(root);
-    Set<Accidental> accidentals = containingScaleType.getKeySignatures(containingScaleRoot.transpose(root)).stream().map(KeySignature::getAccidental).collect(toSet());
-    return accidentals.stream().map(accidental -> KeySignature.fromChord(chord, accidental)).collect(toSet());
+    Set<Accidental> accidentals = containingScaleType.getKeySignatures(containingScaleRoot.transpose(root)).stream().map(KeySignature::getAccidental).collect(toCollection(LinkedHashSet::new));
+    return accidentals.stream().map(accidental -> KeySignature.fromChord(chord, accidental)).collect(toCollection(LinkedHashSet::new));
   }
 
 }

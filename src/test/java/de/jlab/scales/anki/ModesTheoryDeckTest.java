@@ -13,7 +13,7 @@ public class ModesTheoryDeckTest {
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesTheoryDeckTest.csv.txt");
     TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesTheoryDeckTest.html.txt");
 
-    TestUtils.writeTo(deck, 0.05);
+    TestUtils.writeTo(deck, 0.10);
   }
 
 }
