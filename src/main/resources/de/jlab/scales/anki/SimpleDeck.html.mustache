@@ -9,7 +9,13 @@
   <div class="container">
     <h1>{{title}}</h1>
     {{#cards}}
-      {{{html}}}
+			<div class="card mb-3">
+			  <h5 class="card-header">{{{fields.front}}}</h5>
+			  <div class="card-body">
+			    <p class="card-text">{{{fields.back}}}</p>
+			    <p class="card-text">Tags: {{fields.tags}}</p>
+			  </div>
+			</div>
     {{/cards}}
   </div>
 </body>

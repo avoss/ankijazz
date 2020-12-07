@@ -20,49 +20,71 @@ import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
 /**
- * Anki fields??
- * <ul>
- * <li>front</li>
- * <li>back</li>
- * <li>task, e.g. SpellScale, SpellChord, NameMode, NameParent, ...</li>
- * <li>modeName, e.g. D-Dorian or Dm7</li>
- * <li>modeType, e.g. Dorian or m7</li>
- * <li>modeRoot, e.g. D</li>
- * <li>parentName, e.g. C-Major or notation-root for chords?</li>
- * <li>parentType, e.g. Major or major for chords even if chord is subset of melodic minor???</li>
- * <li>parentRoot, e.g. C</li>
- * <li>accidental: flat or sharp or none (for key of C)?
- * <li></li>
- * <li></li>
- * <li></li>
- * </ul>
- *
+Fields are for filtered decks only
+- front
+- back
+- task: one of Enharmonics, ModeIntervals, NameParent, NameMode, SpellScale, SpellChord
+- parentName - name of parent scale (only for tasks NameParent, NameMode, SpellScale)
+- parentType
+- parentRoot
+- modeName
+- modeType
+- modeRoot
  */
 public class ModesTheoryDeck extends AbstractDeck {
+
+  private static final String FRONT = "front";
+  private static final String BACK = "back";
+  private static final String TASK = "task";
+  private static final String PARENT_NAME = "parentName";
+  private static final String PARENT_TYPE = "parentType";
+  private static final String PARENT_ROOT = "parentRoot";
+  private static final String MODE_NAME = "modeName";
+  private static final String MODE_TYPE = "modeType";
+  private static final String MODE_ROOT = "modeRoot";
 
   protected ModesTheoryDeck() {
     super("Modes Theory");
     
     for (Scale scale : allKeys(commonModes(false))) {
       for (ScaleInfo info : MODES.infos(scale)) {
-        double difficulty = computeDifficulty(info);
+        double difficulty = computeScaleDifficulty(info);
         spellScales(difficulty, info);
         nameParent(difficulty, info);
         nameMode(difficulty, info);
       }
     }
+    enharmonics();
     modeIntervals();
     spellChords();
   }
 
+  private SimpleCard card(double difficulty, String task, String front, String back) {
+    SimpleCard card = new SimpleCard(difficulty, FRONT, BACK, TASK, PARENT_NAME, PARENT_TYPE, PARENT_ROOT, MODE_NAME, MODE_TYPE, MODE_ROOT);
+    card.put(FRONT, front);
+    card.put(BACK, back);
+    card.put(TASK, task);
+    return card;
+  }
 
+  private SimpleCard card(double difficulty, String task, String front, String back, ScaleInfo modeInfo) {
+    SimpleCard card = card(difficulty, task, front, back);
+    ScaleInfo parentInfo = modeInfo.getParentInfo();
+    card.put(PARENT_NAME, parentInfo.getScaleName());
+    card.put(PARENT_TYPE, parentInfo.getTypeName());
+    card.put(PARENT_ROOT, parentInfo.getKeySignature().notate(parentInfo.getScale().getRoot()));
+    card.put(MODE_NAME, modeInfo.getScaleName());
+    card.put(MODE_TYPE, modeInfo.getTypeName());
+    card.put(MODE_ROOT, modeInfo.getKeySignature().notate(modeInfo.getScale().getRoot()));
+    return card;
+  }
+  
   private void enharmonics() {
     final String pattern = "<div>What is the <b>enharmonic</b> equivalent of <b>%s</b>?</div>"; 
-    final String tags = Utils.tags("Task=Enharmonics");
     for (Note note : Note.values()) {
       if (!CMajor.contains(note)) {
-        add(0, format(pattern, note.getName(SHARP)), note.getName(FLAT), tags);
-        add(0, format(pattern, note.getName(FLAT)), note.getName(SHARP), tags);
+        add(card(0, "Enharmonics", format(pattern, note.getName(SHARP)), format(pattern, note.getName(FLAT))));
+        add(card(0, "Enharmonics", format(pattern, note.getName(FLAT)), format(pattern, note.getName(SHARP))));
       }
     }
   }
@@ -70,10 +92,13 @@ public class ModesTheoryDeck extends AbstractDeck {
   void modeIntervals() {
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
-      ScaleInfo info = MODES.info(scale);
-      String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", info.getTypeName());
+      ScaleInfo modeInfo = MODES.info(scale);
+      String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", modeInfo.getTypeName());
       String back = divb(analyzer.analyze(scale).toString());
-      add(computeDifficulty(info), front, back, Utils.tags("Task=ModeIntervals", "Mode=" + info.getTypeName()));
+      SimpleCard card = card(computeScaleDifficulty(modeInfo), "ModeIntervals", front, back);
+      card.put(MODE_TYPE, modeInfo.getTypeName());
+      card.put(PARENT_TYPE, modeInfo.getParentInfo().getTypeName());
+      add(card);
     }
   }
 
@@ -85,26 +110,23 @@ public class ModesTheoryDeck extends AbstractDeck {
     int modeIndex = modeInfo.getModeIndex() + 1;
     String front = format("<div>What is <b>mode %d</b> of <b>%s</b>?</div>", modeIndex, parentInfo.getScaleName());
     String back = divb(modeInfo.getScaleName());
-    String tags = scaleTags("NameMode", parentInfo);
-    add(difficulty, front, back, tags);
+    add(card(difficulty, "NameMode", front, back, modeInfo));
   }
 
-  private void nameParent(double difficulty, ScaleInfo scaleInfo) {
-    if (!scaleInfo.isInversion()) {
+  private void nameParent(double difficulty, ScaleInfo modeInfo) {
+    if (!modeInfo.isInversion()) {
       return;
     }
-    ScaleInfo parentInfo = scaleInfo.getParentInfo();
-    String front = format("<div>What is the <b>parent</b> scale of <b>%s</b>?</div>", scaleInfo.getScaleName());
+    ScaleInfo parentInfo = modeInfo.getParentInfo();
+    String front = format("<div>What is the <b>parent</b> scale of <b>%s</b>?</div>", modeInfo.getScaleName());
     String back = divb(parentInfo.getScaleName());
-    String tags = scaleTags("NameParent", scaleInfo);
-    add(difficulty, front, back, tags);
+    add(card(difficulty, "NameParent", front, back, modeInfo));
   }
 
-  private void spellScales(double difficulty, ScaleInfo info) {
-    String front = format("<div>What are the <b>notes</b> of <b>%s</b>?</div>", info.getScaleName());
-    String back = divb(info.getKeySignature().toString(info.getScale()));
-    String tags = scaleTags("SpellScale", info);
-    add(difficulty, front, back, tags);
+  private void spellScales(double difficulty, ScaleInfo modeInfo) {
+    String front = format("<div>What are the <b>notes</b> of <b>%s</b>?</div>", modeInfo.getScaleName());
+    String back = divb(modeInfo.getKeySignature().toString(modeInfo.getScale()));
+    add(card(difficulty, "SpellScale", front, back, modeInfo));
   }
 
   private void spellChords() {
@@ -113,14 +135,17 @@ public class ModesTheoryDeck extends AbstractDeck {
     DoubleTerm numberOfNotesDifficulty = model.doubleTerm(3, 5, 50);
     model.doubleTerm(30).update(1);
     for (Scale chord : allKeys(Scales.allChords())) {
-      for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
-        numberOfAccidentalsDifficulty.update(info.getKeySignature().getNumberOfAccidentals());
+      for (ScaleInfo chordInfo : ScaleUniverse.CHORDS.infos(chord)) {
+        numberOfAccidentalsDifficulty.update(chordInfo.getKeySignature().getNumberOfAccidentals());
         numberOfNotesDifficulty.update(chord.getNumberOfNotes());
         Object chordLabel = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
-        String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s%s?</div>", info.getScaleName(), chordLabel, chordSignature(info));
-        String back = divb(info.getKeySignature().toString(info.getScale()));
-        String tags = chordTags("SpellChord", info);
-        add(model.getDifficulty(), front, back, tags);
+        String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s%s?</div>", chordInfo.getScaleName(), chordLabel, chordSignature(chordInfo));
+        String back = divb(chordInfo.getKeySignature().toString(chordInfo.getScale()));
+        SimpleCard card = card(model.getDifficulty(), "SpellChord", front, back);
+        card.put(MODE_NAME, chordInfo.getScaleName());
+        card.put(MODE_TYPE, chordInfo.getTypeName());
+        card.put(MODE_ROOT, chordInfo.getKeySignature().notate(chordInfo.getScale().getRoot()));
+        add(card);
       }
     }
   }
@@ -136,27 +161,11 @@ public class ModesTheoryDeck extends AbstractDeck {
     return format(" (using <b>%s</b>)", keySignature.getAccidental() == FLAT ? "flats" : "sharps");
   }
 
-
-  private String scaleTags(String task, ScaleInfo info) {
-    return tags("Mode", task, info); 
-  }
-
-  private String chordTags(String task, ScaleInfo info) {
-    return tags("Chord", task, info); 
-  }
-
-  private String tags(String scaleType, String task, ScaleInfo info) {
-    return Utils.tags(
-        format("Task=%s", task),
-        format("%s=%s", scaleType, info.getTypeName()), 
-        format("Root=%s", info.getKeySignature().notate(info.getScale().getRoot())));
-  }
-  
   private String divb(String x) {
     return format("<div><b>%s</b></div>", x);
   }
- 
-  private double computeDifficulty(ScaleInfo info) {
+
+  private double computeScaleDifficulty(ScaleInfo info) {
     return new ScaleModel(info).getDifficulty();
   }
   

@@ -1,694 +1,704 @@
-<div>What are the <b>notes</b> of <b>C Major Scale</b>?</div>;<div><b>C D E F G A B</b></div>;Task=SpellScale Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>Db Major Scale</b>?</div>;<div><b>Db Eb F Gb Ab Bb C</b></div>;Task=SpellScale Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>D Major Scale</b>?</div>;<div><b>D E F# G A B C#</b></div>;Task=SpellScale Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>Eb Major Scale</b>?</div>;<div><b>Eb F G Ab Bb C D</b></div>;Task=SpellScale Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>E Major Scale</b>?</div>;<div><b>E F# G# A B C# D#</b></div>;Task=SpellScale Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>F Major Scale</b>?</div>;<div><b>F G A Bb C D E</b></div>;Task=SpellScale Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>Gb Major Scale</b>?</div>;<div><b>Gb Ab Bb Cb Db Eb F</b></div>;Task=SpellScale Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>F# Major Scale</b>?</div>;<div><b>F# G# A# B C# D# E#</b></div>;Task=SpellScale Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>G Major Scale</b>?</div>;<div><b>G A B C D E F#</b></div>;Task=SpellScale Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>Ab Major Scale</b>?</div>;<div><b>Ab Bb C Db Eb F G</b></div>;Task=SpellScale Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>A Major Scale</b>?</div>;<div><b>A B C# D E F# G#</b></div>;Task=SpellScale Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>Bb Major Scale</b>?</div>;<div><b>Bb C D Eb F G A</b></div>;Task=SpellScale Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>B Major Scale</b>?</div>;<div><b>B C# D# E F# G# A#</b></div>;Task=SpellScale Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>C Dorian</b>?</div>;<div><b>C D Eb F G A Bb</b></div>;Task=SpellScale Mode=Dorian Root=C
-<div>What is the <b>parent</b> scale of <b>C Dorian</b>?</div>;<div><b>Bb Major Scale</b></div>;Task=NameParent Mode=Dorian Root=C
-<div>What is <b>mode 2</b> of <b>Bb Major Scale</b>?</div>;<div><b>C Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>C# Dorian</b>?</div>;<div><b>C# D# E F# G# A# B</b></div>;Task=SpellScale Mode=Dorian Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Dorian</b>?</div>;<div><b>B Major Scale</b></div>;Task=NameParent Mode=Dorian Root=C#
-<div>What is <b>mode 2</b> of <b>B Major Scale</b>?</div>;<div><b>C# Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>D Dorian</b>?</div>;<div><b>D E F G A B C</b></div>;Task=SpellScale Mode=Dorian Root=D
-<div>What is the <b>parent</b> scale of <b>D Dorian</b>?</div>;<div><b>C Major Scale</b></div>;Task=NameParent Mode=Dorian Root=D
-<div>What is <b>mode 2</b> of <b>C Major Scale</b>?</div>;<div><b>D Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>Eb Dorian</b>?</div>;<div><b>Eb F Gb Ab Bb C Db</b></div>;Task=SpellScale Mode=Dorian Root=Eb
-<div>What is the <b>parent</b> scale of <b>Eb Dorian</b>?</div>;<div><b>Db Major Scale</b></div>;Task=NameParent Mode=Dorian Root=Eb
-<div>What is <b>mode 2</b> of <b>Db Major Scale</b>?</div>;<div><b>Eb Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>E Dorian</b>?</div>;<div><b>E F# G A B C# D</b></div>;Task=SpellScale Mode=Dorian Root=E
-<div>What is the <b>parent</b> scale of <b>E Dorian</b>?</div>;<div><b>D Major Scale</b></div>;Task=NameParent Mode=Dorian Root=E
-<div>What is <b>mode 2</b> of <b>D Major Scale</b>?</div>;<div><b>E Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>F Dorian</b>?</div>;<div><b>F G Ab Bb C D Eb</b></div>;Task=SpellScale Mode=Dorian Root=F
-<div>What is the <b>parent</b> scale of <b>F Dorian</b>?</div>;<div><b>Eb Major Scale</b></div>;Task=NameParent Mode=Dorian Root=F
-<div>What is <b>mode 2</b> of <b>Eb Major Scale</b>?</div>;<div><b>F Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>F# Dorian</b>?</div>;<div><b>F# G# A B C# D# E</b></div>;Task=SpellScale Mode=Dorian Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Dorian</b>?</div>;<div><b>E Major Scale</b></div>;Task=NameParent Mode=Dorian Root=F#
-<div>What is <b>mode 2</b> of <b>E Major Scale</b>?</div>;<div><b>F# Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>G Dorian</b>?</div>;<div><b>G A Bb C D E F</b></div>;Task=SpellScale Mode=Dorian Root=G
-<div>What is the <b>parent</b> scale of <b>G Dorian</b>?</div>;<div><b>F Major Scale</b></div>;Task=NameParent Mode=Dorian Root=G
-<div>What is <b>mode 2</b> of <b>F Major Scale</b>?</div>;<div><b>G Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>Ab Dorian</b>?</div>;<div><b>Ab Bb Cb Db Eb F Gb</b></div>;Task=SpellScale Mode=Dorian Root=Ab
-<div>What is the <b>parent</b> scale of <b>Ab Dorian</b>?</div>;<div><b>Gb Major Scale</b></div>;Task=NameParent Mode=Dorian Root=Ab
-<div>What is <b>mode 2</b> of <b>Gb Major Scale</b>?</div>;<div><b>Ab Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>G# Dorian</b>?</div>;<div><b>G# A# B C# D# E# F#</b></div>;Task=SpellScale Mode=Dorian Root=G#
-<div>What is the <b>parent</b> scale of <b>G# Dorian</b>?</div>;<div><b>F# Major Scale</b></div>;Task=NameParent Mode=Dorian Root=G#
-<div>What is <b>mode 2</b> of <b>F# Major Scale</b>?</div>;<div><b>G# Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>A Dorian</b>?</div>;<div><b>A B C D E F# G</b></div>;Task=SpellScale Mode=Dorian Root=A
-<div>What is the <b>parent</b> scale of <b>A Dorian</b>?</div>;<div><b>G Major Scale</b></div>;Task=NameParent Mode=Dorian Root=A
-<div>What is <b>mode 2</b> of <b>G Major Scale</b>?</div>;<div><b>A Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>Bb Dorian</b>?</div>;<div><b>Bb C Db Eb F G Ab</b></div>;Task=SpellScale Mode=Dorian Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Dorian</b>?</div>;<div><b>Ab Major Scale</b></div>;Task=NameParent Mode=Dorian Root=Bb
-<div>What is <b>mode 2</b> of <b>Ab Major Scale</b>?</div>;<div><b>Bb Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>B Dorian</b>?</div>;<div><b>B C# D E F# G# A</b></div>;Task=SpellScale Mode=Dorian Root=B
-<div>What is the <b>parent</b> scale of <b>B Dorian</b>?</div>;<div><b>A Major Scale</b></div>;Task=NameParent Mode=Dorian Root=B
-<div>What is <b>mode 2</b> of <b>A Major Scale</b>?</div>;<div><b>B Dorian</b></div>;Task=NameMode Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>C Phrygian</b>?</div>;<div><b>C Db Eb F G Ab Bb</b></div>;Task=SpellScale Mode=Phrygian Root=C
-<div>What is the <b>parent</b> scale of <b>C Phrygian</b>?</div>;<div><b>Ab Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=C
-<div>What is <b>mode 3</b> of <b>Ab Major Scale</b>?</div>;<div><b>C Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>C# Phrygian</b>?</div>;<div><b>C# D E F# G# A B</b></div>;Task=SpellScale Mode=Phrygian Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Phrygian</b>?</div>;<div><b>A Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=C#
-<div>What is <b>mode 3</b> of <b>A Major Scale</b>?</div>;<div><b>C# Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>D Phrygian</b>?</div>;<div><b>D Eb F G A Bb C</b></div>;Task=SpellScale Mode=Phrygian Root=D
-<div>What is the <b>parent</b> scale of <b>D Phrygian</b>?</div>;<div><b>Bb Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=D
-<div>What is <b>mode 3</b> of <b>Bb Major Scale</b>?</div>;<div><b>D Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>D# Phrygian</b>?</div>;<div><b>D# E F# G# A# B C#</b></div>;Task=SpellScale Mode=Phrygian Root=D#
-<div>What is the <b>parent</b> scale of <b>D# Phrygian</b>?</div>;<div><b>B Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=D#
-<div>What is <b>mode 3</b> of <b>B Major Scale</b>?</div>;<div><b>D# Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>E Phrygian</b>?</div>;<div><b>E F G A B C D</b></div>;Task=SpellScale Mode=Phrygian Root=E
-<div>What is the <b>parent</b> scale of <b>E Phrygian</b>?</div>;<div><b>C Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=E
-<div>What is <b>mode 3</b> of <b>C Major Scale</b>?</div>;<div><b>E Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>F Phrygian</b>?</div>;<div><b>F Gb Ab Bb C Db Eb</b></div>;Task=SpellScale Mode=Phrygian Root=F
-<div>What is the <b>parent</b> scale of <b>F Phrygian</b>?</div>;<div><b>Db Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=F
-<div>What is <b>mode 3</b> of <b>Db Major Scale</b>?</div>;<div><b>F Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>F# Phrygian</b>?</div>;<div><b>F# G A B C# D E</b></div>;Task=SpellScale Mode=Phrygian Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Phrygian</b>?</div>;<div><b>D Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=F#
-<div>What is <b>mode 3</b> of <b>D Major Scale</b>?</div>;<div><b>F# Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>G Phrygian</b>?</div>;<div><b>G Ab Bb C D Eb F</b></div>;Task=SpellScale Mode=Phrygian Root=G
-<div>What is the <b>parent</b> scale of <b>G Phrygian</b>?</div>;<div><b>Eb Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=G
-<div>What is <b>mode 3</b> of <b>Eb Major Scale</b>?</div>;<div><b>G Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>G# Phrygian</b>?</div>;<div><b>G# A B C# D# E F#</b></div>;Task=SpellScale Mode=Phrygian Root=G#
-<div>What is the <b>parent</b> scale of <b>G# Phrygian</b>?</div>;<div><b>E Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=G#
-<div>What is <b>mode 3</b> of <b>E Major Scale</b>?</div>;<div><b>G# Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>A Phrygian</b>?</div>;<div><b>A Bb C D E F G</b></div>;Task=SpellScale Mode=Phrygian Root=A
-<div>What is the <b>parent</b> scale of <b>A Phrygian</b>?</div>;<div><b>F Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=A
-<div>What is <b>mode 3</b> of <b>F Major Scale</b>?</div>;<div><b>A Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>Bb Phrygian</b>?</div>;<div><b>Bb Cb Db Eb F Gb Ab</b></div>;Task=SpellScale Mode=Phrygian Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Phrygian</b>?</div>;<div><b>Gb Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=Bb
-<div>What is <b>mode 3</b> of <b>Gb Major Scale</b>?</div>;<div><b>Bb Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>A# Phrygian</b>?</div>;<div><b>A# B C# D# E# F# G#</b></div>;Task=SpellScale Mode=Phrygian Root=A#
-<div>What is the <b>parent</b> scale of <b>A# Phrygian</b>?</div>;<div><b>F# Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=A#
-<div>What is <b>mode 3</b> of <b>F# Major Scale</b>?</div>;<div><b>A# Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>B Phrygian</b>?</div>;<div><b>B C D E F# G A</b></div>;Task=SpellScale Mode=Phrygian Root=B
-<div>What is the <b>parent</b> scale of <b>B Phrygian</b>?</div>;<div><b>G Major Scale</b></div>;Task=NameParent Mode=Phrygian Root=B
-<div>What is <b>mode 3</b> of <b>G Major Scale</b>?</div>;<div><b>B Phrygian</b></div>;Task=NameMode Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>C Lydian</b>?</div>;<div><b>C D E F# G A B</b></div>;Task=SpellScale Mode=Lydian Root=C
-<div>What is the <b>parent</b> scale of <b>C Lydian</b>?</div>;<div><b>G Major Scale</b></div>;Task=NameParent Mode=Lydian Root=C
-<div>What is <b>mode 4</b> of <b>G Major Scale</b>?</div>;<div><b>C Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>Db Lydian</b>?</div>;<div><b>Db Eb F G Ab Bb C</b></div>;Task=SpellScale Mode=Lydian Root=Db
-<div>What is the <b>parent</b> scale of <b>Db Lydian</b>?</div>;<div><b>Ab Major Scale</b></div>;Task=NameParent Mode=Lydian Root=Db
-<div>What is <b>mode 4</b> of <b>Ab Major Scale</b>?</div>;<div><b>Db Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>D Lydian</b>?</div>;<div><b>D E F# G# A B C#</b></div>;Task=SpellScale Mode=Lydian Root=D
-<div>What is the <b>parent</b> scale of <b>D Lydian</b>?</div>;<div><b>A Major Scale</b></div>;Task=NameParent Mode=Lydian Root=D
-<div>What is <b>mode 4</b> of <b>A Major Scale</b>?</div>;<div><b>D Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>Eb Lydian</b>?</div>;<div><b>Eb F G A Bb C D</b></div>;Task=SpellScale Mode=Lydian Root=Eb
-<div>What is the <b>parent</b> scale of <b>Eb Lydian</b>?</div>;<div><b>Bb Major Scale</b></div>;Task=NameParent Mode=Lydian Root=Eb
-<div>What is <b>mode 4</b> of <b>Bb Major Scale</b>?</div>;<div><b>Eb Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>E Lydian</b>?</div>;<div><b>E F# G# A# B C# D#</b></div>;Task=SpellScale Mode=Lydian Root=E
-<div>What is the <b>parent</b> scale of <b>E Lydian</b>?</div>;<div><b>B Major Scale</b></div>;Task=NameParent Mode=Lydian Root=E
-<div>What is <b>mode 4</b> of <b>B Major Scale</b>?</div>;<div><b>E Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>F Lydian</b>?</div>;<div><b>F G A B C D E</b></div>;Task=SpellScale Mode=Lydian Root=F
-<div>What is the <b>parent</b> scale of <b>F Lydian</b>?</div>;<div><b>C Major Scale</b></div>;Task=NameParent Mode=Lydian Root=F
-<div>What is <b>mode 4</b> of <b>C Major Scale</b>?</div>;<div><b>F Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>Gb Lydian</b>?</div>;<div><b>Gb Ab Bb C Db Eb F</b></div>;Task=SpellScale Mode=Lydian Root=Gb
-<div>What is the <b>parent</b> scale of <b>Gb Lydian</b>?</div>;<div><b>Db Major Scale</b></div>;Task=NameParent Mode=Lydian Root=Gb
-<div>What is <b>mode 4</b> of <b>Db Major Scale</b>?</div>;<div><b>Gb Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>G Lydian</b>?</div>;<div><b>G A B C# D E F#</b></div>;Task=SpellScale Mode=Lydian Root=G
-<div>What is the <b>parent</b> scale of <b>G Lydian</b>?</div>;<div><b>D Major Scale</b></div>;Task=NameParent Mode=Lydian Root=G
-<div>What is <b>mode 4</b> of <b>D Major Scale</b>?</div>;<div><b>G Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>Ab Lydian</b>?</div>;<div><b>Ab Bb C D Eb F G</b></div>;Task=SpellScale Mode=Lydian Root=Ab
-<div>What is the <b>parent</b> scale of <b>Ab Lydian</b>?</div>;<div><b>Eb Major Scale</b></div>;Task=NameParent Mode=Lydian Root=Ab
-<div>What is <b>mode 4</b> of <b>Eb Major Scale</b>?</div>;<div><b>Ab Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>A Lydian</b>?</div>;<div><b>A B C# D# E F# G#</b></div>;Task=SpellScale Mode=Lydian Root=A
-<div>What is the <b>parent</b> scale of <b>A Lydian</b>?</div>;<div><b>E Major Scale</b></div>;Task=NameParent Mode=Lydian Root=A
-<div>What is <b>mode 4</b> of <b>E Major Scale</b>?</div>;<div><b>A Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>Bb Lydian</b>?</div>;<div><b>Bb C D E F G A</b></div>;Task=SpellScale Mode=Lydian Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Lydian</b>?</div>;<div><b>F Major Scale</b></div>;Task=NameParent Mode=Lydian Root=Bb
-<div>What is <b>mode 4</b> of <b>F Major Scale</b>?</div>;<div><b>Bb Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>Cb Lydian</b>?</div>;<div><b>Cb Db Eb F Gb Ab Bb</b></div>;Task=SpellScale Mode=Lydian Root=Cb
-<div>What is the <b>parent</b> scale of <b>Cb Lydian</b>?</div>;<div><b>Gb Major Scale</b></div>;Task=NameParent Mode=Lydian Root=Cb
-<div>What is <b>mode 4</b> of <b>Gb Major Scale</b>?</div>;<div><b>Cb Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>B Lydian</b>?</div>;<div><b>B C# D# E# F# G# A#</b></div>;Task=SpellScale Mode=Lydian Root=B
-<div>What is the <b>parent</b> scale of <b>B Lydian</b>?</div>;<div><b>F# Major Scale</b></div>;Task=NameParent Mode=Lydian Root=B
-<div>What is <b>mode 4</b> of <b>F# Major Scale</b>?</div>;<div><b>B Lydian</b></div>;Task=NameMode Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>C Mixolydian</b>?</div>;<div><b>C D E F G A Bb</b></div>;Task=SpellScale Mode=Mixolydian Root=C
-<div>What is the <b>parent</b> scale of <b>C Mixolydian</b>?</div>;<div><b>F Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=C
-<div>What is <b>mode 5</b> of <b>F Major Scale</b>?</div>;<div><b>C Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>Db Mixolydian</b>?</div>;<div><b>Db Eb F Gb Ab Bb Cb</b></div>;Task=SpellScale Mode=Mixolydian Root=Db
-<div>What is the <b>parent</b> scale of <b>Db Mixolydian</b>?</div>;<div><b>Gb Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=Db
-<div>What is <b>mode 5</b> of <b>Gb Major Scale</b>?</div>;<div><b>Db Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>C# Mixolydian</b>?</div>;<div><b>C# D# E# F# G# A# B</b></div>;Task=SpellScale Mode=Mixolydian Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Mixolydian</b>?</div>;<div><b>F# Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=C#
-<div>What is <b>mode 5</b> of <b>F# Major Scale</b>?</div>;<div><b>C# Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>D Mixolydian</b>?</div>;<div><b>D E F# G A B C</b></div>;Task=SpellScale Mode=Mixolydian Root=D
-<div>What is the <b>parent</b> scale of <b>D Mixolydian</b>?</div>;<div><b>G Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=D
-<div>What is <b>mode 5</b> of <b>G Major Scale</b>?</div>;<div><b>D Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>Eb Mixolydian</b>?</div>;<div><b>Eb F G Ab Bb C Db</b></div>;Task=SpellScale Mode=Mixolydian Root=Eb
-<div>What is the <b>parent</b> scale of <b>Eb Mixolydian</b>?</div>;<div><b>Ab Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=Eb
-<div>What is <b>mode 5</b> of <b>Ab Major Scale</b>?</div>;<div><b>Eb Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>E Mixolydian</b>?</div>;<div><b>E F# G# A B C# D</b></div>;Task=SpellScale Mode=Mixolydian Root=E
-<div>What is the <b>parent</b> scale of <b>E Mixolydian</b>?</div>;<div><b>A Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=E
-<div>What is <b>mode 5</b> of <b>A Major Scale</b>?</div>;<div><b>E Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>F Mixolydian</b>?</div>;<div><b>F G A Bb C D Eb</b></div>;Task=SpellScale Mode=Mixolydian Root=F
-<div>What is the <b>parent</b> scale of <b>F Mixolydian</b>?</div>;<div><b>Bb Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=F
-<div>What is <b>mode 5</b> of <b>Bb Major Scale</b>?</div>;<div><b>F Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>F# Mixolydian</b>?</div>;<div><b>F# G# A# B C# D# E</b></div>;Task=SpellScale Mode=Mixolydian Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Mixolydian</b>?</div>;<div><b>B Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=F#
-<div>What is <b>mode 5</b> of <b>B Major Scale</b>?</div>;<div><b>F# Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>G Mixolydian</b>?</div>;<div><b>G A B C D E F</b></div>;Task=SpellScale Mode=Mixolydian Root=G
-<div>What is the <b>parent</b> scale of <b>G Mixolydian</b>?</div>;<div><b>C Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=G
-<div>What is <b>mode 5</b> of <b>C Major Scale</b>?</div>;<div><b>G Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>Ab Mixolydian</b>?</div>;<div><b>Ab Bb C Db Eb F Gb</b></div>;Task=SpellScale Mode=Mixolydian Root=Ab
-<div>What is the <b>parent</b> scale of <b>Ab Mixolydian</b>?</div>;<div><b>Db Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=Ab
-<div>What is <b>mode 5</b> of <b>Db Major Scale</b>?</div>;<div><b>Ab Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>A Mixolydian</b>?</div>;<div><b>A B C# D E F# G</b></div>;Task=SpellScale Mode=Mixolydian Root=A
-<div>What is the <b>parent</b> scale of <b>A Mixolydian</b>?</div>;<div><b>D Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=A
-<div>What is <b>mode 5</b> of <b>D Major Scale</b>?</div>;<div><b>A Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>Bb Mixolydian</b>?</div>;<div><b>Bb C D Eb F G Ab</b></div>;Task=SpellScale Mode=Mixolydian Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Mixolydian</b>?</div>;<div><b>Eb Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=Bb
-<div>What is <b>mode 5</b> of <b>Eb Major Scale</b>?</div>;<div><b>Bb Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>B Mixolydian</b>?</div>;<div><b>B C# D# E F# G# A</b></div>;Task=SpellScale Mode=Mixolydian Root=B
-<div>What is the <b>parent</b> scale of <b>B Mixolydian</b>?</div>;<div><b>E Major Scale</b></div>;Task=NameParent Mode=Mixolydian Root=B
-<div>What is <b>mode 5</b> of <b>E Major Scale</b>?</div>;<div><b>B Mixolydian</b></div>;Task=NameMode Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>C Aeolean</b>?</div>;<div><b>C D Eb F G Ab Bb</b></div>;Task=SpellScale Mode=Aeolean Root=C
-<div>What is the <b>parent</b> scale of <b>C Aeolean</b>?</div>;<div><b>Eb Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=C
-<div>What is <b>mode 6</b> of <b>Eb Major Scale</b>?</div>;<div><b>C Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>C# Aeolean</b>?</div>;<div><b>C# D# E F# G# A B</b></div>;Task=SpellScale Mode=Aeolean Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Aeolean</b>?</div>;<div><b>E Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=C#
-<div>What is <b>mode 6</b> of <b>E Major Scale</b>?</div>;<div><b>C# Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>D Aeolean</b>?</div>;<div><b>D E F G A Bb C</b></div>;Task=SpellScale Mode=Aeolean Root=D
-<div>What is the <b>parent</b> scale of <b>D Aeolean</b>?</div>;<div><b>F Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=D
-<div>What is <b>mode 6</b> of <b>F Major Scale</b>?</div>;<div><b>D Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>Eb Aeolean</b>?</div>;<div><b>Eb F Gb Ab Bb Cb Db</b></div>;Task=SpellScale Mode=Aeolean Root=Eb
-<div>What is the <b>parent</b> scale of <b>Eb Aeolean</b>?</div>;<div><b>Gb Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=Eb
-<div>What is <b>mode 6</b> of <b>Gb Major Scale</b>?</div>;<div><b>Eb Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>D# Aeolean</b>?</div>;<div><b>D# E# F# G# A# B C#</b></div>;Task=SpellScale Mode=Aeolean Root=D#
-<div>What is the <b>parent</b> scale of <b>D# Aeolean</b>?</div>;<div><b>F# Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=D#
-<div>What is <b>mode 6</b> of <b>F# Major Scale</b>?</div>;<div><b>D# Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>E Aeolean</b>?</div>;<div><b>E F# G A B C D</b></div>;Task=SpellScale Mode=Aeolean Root=E
-<div>What is the <b>parent</b> scale of <b>E Aeolean</b>?</div>;<div><b>G Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=E
-<div>What is <b>mode 6</b> of <b>G Major Scale</b>?</div>;<div><b>E Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>F Aeolean</b>?</div>;<div><b>F G Ab Bb C Db Eb</b></div>;Task=SpellScale Mode=Aeolean Root=F
-<div>What is the <b>parent</b> scale of <b>F Aeolean</b>?</div>;<div><b>Ab Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=F
-<div>What is <b>mode 6</b> of <b>Ab Major Scale</b>?</div>;<div><b>F Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>F# Aeolean</b>?</div>;<div><b>F# G# A B C# D E</b></div>;Task=SpellScale Mode=Aeolean Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Aeolean</b>?</div>;<div><b>A Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=F#
-<div>What is <b>mode 6</b> of <b>A Major Scale</b>?</div>;<div><b>F# Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>G Aeolean</b>?</div>;<div><b>G A Bb C D Eb F</b></div>;Task=SpellScale Mode=Aeolean Root=G
-<div>What is the <b>parent</b> scale of <b>G Aeolean</b>?</div>;<div><b>Bb Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=G
-<div>What is <b>mode 6</b> of <b>Bb Major Scale</b>?</div>;<div><b>G Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>G# Aeolean</b>?</div>;<div><b>G# A# B C# D# E F#</b></div>;Task=SpellScale Mode=Aeolean Root=G#
-<div>What is the <b>parent</b> scale of <b>G# Aeolean</b>?</div>;<div><b>B Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=G#
-<div>What is <b>mode 6</b> of <b>B Major Scale</b>?</div>;<div><b>G# Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>A Aeolean</b>?</div>;<div><b>A B C D E F G</b></div>;Task=SpellScale Mode=Aeolean Root=A
-<div>What is the <b>parent</b> scale of <b>A Aeolean</b>?</div>;<div><b>C Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=A
-<div>What is <b>mode 6</b> of <b>C Major Scale</b>?</div>;<div><b>A Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>Bb Aeolean</b>?</div>;<div><b>Bb C Db Eb F Gb Ab</b></div>;Task=SpellScale Mode=Aeolean Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Aeolean</b>?</div>;<div><b>Db Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=Bb
-<div>What is <b>mode 6</b> of <b>Db Major Scale</b>?</div>;<div><b>Bb Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>B Aeolean</b>?</div>;<div><b>B C# D E F# G A</b></div>;Task=SpellScale Mode=Aeolean Root=B
-<div>What is the <b>parent</b> scale of <b>B Aeolean</b>?</div>;<div><b>D Major Scale</b></div>;Task=NameParent Mode=Aeolean Root=B
-<div>What is <b>mode 6</b> of <b>D Major Scale</b>?</div>;<div><b>B Aeolean</b></div>;Task=NameMode Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>C Locrian</b>?</div>;<div><b>C Db Eb F Gb Ab Bb</b></div>;Task=SpellScale Mode=Locrian Root=C
-<div>What is the <b>parent</b> scale of <b>C Locrian</b>?</div>;<div><b>Db Major Scale</b></div>;Task=NameParent Mode=Locrian Root=C
-<div>What is <b>mode 7</b> of <b>Db Major Scale</b>?</div>;<div><b>C Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=Db
-<div>What are the <b>notes</b> of <b>C# Locrian</b>?</div>;<div><b>C# D E F# G A B</b></div>;Task=SpellScale Mode=Locrian Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Locrian</b>?</div>;<div><b>D Major Scale</b></div>;Task=NameParent Mode=Locrian Root=C#
-<div>What is <b>mode 7</b> of <b>D Major Scale</b>?</div>;<div><b>C# Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=D
-<div>What are the <b>notes</b> of <b>D Locrian</b>?</div>;<div><b>D Eb F G Ab Bb C</b></div>;Task=SpellScale Mode=Locrian Root=D
-<div>What is the <b>parent</b> scale of <b>D Locrian</b>?</div>;<div><b>Eb Major Scale</b></div>;Task=NameParent Mode=Locrian Root=D
-<div>What is <b>mode 7</b> of <b>Eb Major Scale</b>?</div>;<div><b>D Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=Eb
-<div>What are the <b>notes</b> of <b>D# Locrian</b>?</div>;<div><b>D# E F# G# A B C#</b></div>;Task=SpellScale Mode=Locrian Root=D#
-<div>What is the <b>parent</b> scale of <b>D# Locrian</b>?</div>;<div><b>E Major Scale</b></div>;Task=NameParent Mode=Locrian Root=D#
-<div>What is <b>mode 7</b> of <b>E Major Scale</b>?</div>;<div><b>D# Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=E
-<div>What are the <b>notes</b> of <b>E Locrian</b>?</div>;<div><b>E F G A Bb C D</b></div>;Task=SpellScale Mode=Locrian Root=E
-<div>What is the <b>parent</b> scale of <b>E Locrian</b>?</div>;<div><b>F Major Scale</b></div>;Task=NameParent Mode=Locrian Root=E
-<div>What is <b>mode 7</b> of <b>F Major Scale</b>?</div>;<div><b>E Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=F
-<div>What are the <b>notes</b> of <b>F Locrian</b>?</div>;<div><b>F Gb Ab Bb Cb Db Eb</b></div>;Task=SpellScale Mode=Locrian Root=F
-<div>What is the <b>parent</b> scale of <b>F Locrian</b>?</div>;<div><b>Gb Major Scale</b></div>;Task=NameParent Mode=Locrian Root=F
-<div>What is <b>mode 7</b> of <b>Gb Major Scale</b>?</div>;<div><b>F Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=Gb
-<div>What are the <b>notes</b> of <b>E# Locrian</b>?</div>;<div><b>E# F# G# A# B C# D#</b></div>;Task=SpellScale Mode=Locrian Root=E#
-<div>What is the <b>parent</b> scale of <b>E# Locrian</b>?</div>;<div><b>F# Major Scale</b></div>;Task=NameParent Mode=Locrian Root=E#
-<div>What is <b>mode 7</b> of <b>F# Major Scale</b>?</div>;<div><b>E# Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=F#
-<div>What are the <b>notes</b> of <b>F# Locrian</b>?</div>;<div><b>F# G A B C D E</b></div>;Task=SpellScale Mode=Locrian Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Locrian</b>?</div>;<div><b>G Major Scale</b></div>;Task=NameParent Mode=Locrian Root=F#
-<div>What is <b>mode 7</b> of <b>G Major Scale</b>?</div>;<div><b>F# Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=G
-<div>What are the <b>notes</b> of <b>G Locrian</b>?</div>;<div><b>G Ab Bb C Db Eb F</b></div>;Task=SpellScale Mode=Locrian Root=G
-<div>What is the <b>parent</b> scale of <b>G Locrian</b>?</div>;<div><b>Ab Major Scale</b></div>;Task=NameParent Mode=Locrian Root=G
-<div>What is <b>mode 7</b> of <b>Ab Major Scale</b>?</div>;<div><b>G Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=Ab
-<div>What are the <b>notes</b> of <b>G# Locrian</b>?</div>;<div><b>G# A B C# D E F#</b></div>;Task=SpellScale Mode=Locrian Root=G#
-<div>What is the <b>parent</b> scale of <b>G# Locrian</b>?</div>;<div><b>A Major Scale</b></div>;Task=NameParent Mode=Locrian Root=G#
-<div>What is <b>mode 7</b> of <b>A Major Scale</b>?</div>;<div><b>G# Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=A
-<div>What are the <b>notes</b> of <b>A Locrian</b>?</div>;<div><b>A Bb C D Eb F G</b></div>;Task=SpellScale Mode=Locrian Root=A
-<div>What is the <b>parent</b> scale of <b>A Locrian</b>?</div>;<div><b>Bb Major Scale</b></div>;Task=NameParent Mode=Locrian Root=A
-<div>What is <b>mode 7</b> of <b>Bb Major Scale</b>?</div>;<div><b>A Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=Bb
-<div>What are the <b>notes</b> of <b>A# Locrian</b>?</div>;<div><b>A# B C# D# E F# G#</b></div>;Task=SpellScale Mode=Locrian Root=A#
-<div>What is the <b>parent</b> scale of <b>A# Locrian</b>?</div>;<div><b>B Major Scale</b></div>;Task=NameParent Mode=Locrian Root=A#
-<div>What is <b>mode 7</b> of <b>B Major Scale</b>?</div>;<div><b>A# Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=B
-<div>What are the <b>notes</b> of <b>B Locrian</b>?</div>;<div><b>B C D E F G A</b></div>;Task=SpellScale Mode=Locrian Root=B
-<div>What is the <b>parent</b> scale of <b>B Locrian</b>?</div>;<div><b>C Major Scale</b></div>;Task=NameParent Mode=Locrian Root=B
-<div>What is <b>mode 7</b> of <b>C Major Scale</b>?</div>;<div><b>B Locrian</b></div>;Task=NameMode Mode=Major-Scale Root=C
-<div>What are the <b>notes</b> of <b>C Melodic Minor</b>?</div>;<div><b>C D Eb F G A B</b></div>;Task=SpellScale Mode=Melodic-Minor Root=C
-<div>What are the <b>notes</b> of <b>C# Melodic Minor</b>?</div>;<div><b>C# D# E F# G# A# B#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=C#
-<div>What are the <b>notes</b> of <b>D Melodic Minor</b>?</div>;<div><b>D E F G A B C#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=D
-<div>What are the <b>notes</b> of <b>Eb Melodic Minor</b>?</div>;<div><b>Eb F Gb Ab Bb C D</b></div>;Task=SpellScale Mode=Melodic-Minor Root=Eb
-<div>What are the <b>notes</b> of <b>E Melodic Minor</b>?</div>;<div><b>E F# G A B C# D#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=E
-<div>What are the <b>notes</b> of <b>F Melodic Minor</b>?</div>;<div><b>F G Ab Bb C D E</b></div>;Task=SpellScale Mode=Melodic-Minor Root=F
-<div>What are the <b>notes</b> of <b>F# Melodic Minor</b>?</div>;<div><b>F# G# A B C# D# E#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=F#
-<div>What are the <b>notes</b> of <b>G Melodic Minor</b>?</div>;<div><b>G A Bb C D E F#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=G
-<div>What are the <b>notes</b> of <b>Ab Melodic Minor</b>?</div>;<div><b>Ab Bb Cb Db Eb F G</b></div>;Task=SpellScale Mode=Melodic-Minor Root=Ab
-<div>What are the <b>notes</b> of <b>G# Melodic Minor</b>?</div>;<div><b>G# A# B C# D# E# Fx</b></div>;Task=SpellScale Mode=Melodic-Minor Root=G#
-<div>What are the <b>notes</b> of <b>A Melodic Minor</b>?</div>;<div><b>A B C D E F# G#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=A
-<div>What are the <b>notes</b> of <b>Bb Melodic Minor</b>?</div>;<div><b>Bb C Db Eb F G A</b></div>;Task=SpellScale Mode=Melodic-Minor Root=Bb
-<div>What are the <b>notes</b> of <b>B Melodic Minor</b>?</div>;<div><b>B C# D E F# G# A#</b></div>;Task=SpellScale Mode=Melodic-Minor Root=B
-<div>What are the <b>notes</b> of <b>C Lydian Dominant</b>?</div>;<div><b>C D E F# G A Bb</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=C
-<div>What is the <b>parent</b> scale of <b>C Lydian Dominant</b>?</div>;<div><b>G Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=C
-<div>What is <b>mode 4</b> of <b>G Melodic Minor</b>?</div>;<div><b>C Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=G
-<div>What are the <b>notes</b> of <b>Db Lydian Dominant</b>?</div>;<div><b>Db Eb F G Ab Bb Cb</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=Db
-<div>What is the <b>parent</b> scale of <b>Db Lydian Dominant</b>?</div>;<div><b>Ab Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=Db
-<div>What is <b>mode 4</b> of <b>Ab Melodic Minor</b>?</div>;<div><b>Db Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=Ab
-<div>What are the <b>notes</b> of <b>C# Lydian Dominant</b>?</div>;<div><b>C# D# E# Fx G# A# B</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Lydian Dominant</b>?</div>;<div><b>G# Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=C#
-<div>What is <b>mode 4</b> of <b>G# Melodic Minor</b>?</div>;<div><b>C# Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=G#
-<div>What are the <b>notes</b> of <b>D Lydian Dominant</b>?</div>;<div><b>D E F# G# A B C</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=D
-<div>What is the <b>parent</b> scale of <b>D Lydian Dominant</b>?</div>;<div><b>A Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=D
-<div>What is <b>mode 4</b> of <b>A Melodic Minor</b>?</div>;<div><b>D Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=A
-<div>What are the <b>notes</b> of <b>Eb Lydian Dominant</b>?</div>;<div><b>Eb F G A Bb C Db</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=Eb
-<div>What is the <b>parent</b> scale of <b>Eb Lydian Dominant</b>?</div>;<div><b>Bb Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=Eb
-<div>What is <b>mode 4</b> of <b>Bb Melodic Minor</b>?</div>;<div><b>Eb Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=Bb
-<div>What are the <b>notes</b> of <b>E Lydian Dominant</b>?</div>;<div><b>E F# G# A# B C# D</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=E
-<div>What is the <b>parent</b> scale of <b>E Lydian Dominant</b>?</div>;<div><b>B Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=E
-<div>What is <b>mode 4</b> of <b>B Melodic Minor</b>?</div>;<div><b>E Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=B
-<div>What are the <b>notes</b> of <b>F Lydian Dominant</b>?</div>;<div><b>F G A B C D Eb</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=F
-<div>What is the <b>parent</b> scale of <b>F Lydian Dominant</b>?</div>;<div><b>C Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=F
-<div>What is <b>mode 4</b> of <b>C Melodic Minor</b>?</div>;<div><b>F Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=C
-<div>What are the <b>notes</b> of <b>F# Lydian Dominant</b>?</div>;<div><b>F# G# A# B# C# D# E</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Lydian Dominant</b>?</div>;<div><b>C# Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=F#
-<div>What is <b>mode 4</b> of <b>C# Melodic Minor</b>?</div>;<div><b>F# Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=C#
-<div>What are the <b>notes</b> of <b>G Lydian Dominant</b>?</div>;<div><b>G A B C# D E F</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=G
-<div>What is the <b>parent</b> scale of <b>G Lydian Dominant</b>?</div>;<div><b>D Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=G
-<div>What is <b>mode 4</b> of <b>D Melodic Minor</b>?</div>;<div><b>G Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=D
-<div>What are the <b>notes</b> of <b>Ab Lydian Dominant</b>?</div>;<div><b>Ab Bb C D Eb F Gb</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=Ab
-<div>What is the <b>parent</b> scale of <b>Ab Lydian Dominant</b>?</div>;<div><b>Eb Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=Ab
-<div>What is <b>mode 4</b> of <b>Eb Melodic Minor</b>?</div>;<div><b>Ab Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=Eb
-<div>What are the <b>notes</b> of <b>A Lydian Dominant</b>?</div>;<div><b>A B C# D# E F# G</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=A
-<div>What is the <b>parent</b> scale of <b>A Lydian Dominant</b>?</div>;<div><b>E Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=A
-<div>What is <b>mode 4</b> of <b>E Melodic Minor</b>?</div>;<div><b>A Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=E
-<div>What are the <b>notes</b> of <b>Bb Lydian Dominant</b>?</div>;<div><b>Bb C D E F G Ab</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Lydian Dominant</b>?</div>;<div><b>F Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=Bb
-<div>What is <b>mode 4</b> of <b>F Melodic Minor</b>?</div>;<div><b>Bb Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=F
-<div>What are the <b>notes</b> of <b>B Lydian Dominant</b>?</div>;<div><b>B C# D# E# F# G# A</b></div>;Task=SpellScale Mode=Lydian-Dominant Root=B
-<div>What is the <b>parent</b> scale of <b>B Lydian Dominant</b>?</div>;<div><b>F# Melodic Minor</b></div>;Task=NameParent Mode=Lydian-Dominant Root=B
-<div>What is <b>mode 4</b> of <b>F# Melodic Minor</b>?</div>;<div><b>B Lydian Dominant</b></div>;Task=NameMode Mode=Melodic-Minor Root=F#
-<div>What are the <b>notes</b> of <b>B# Altered</b>?</div>;<div><b>B# C# D# E F# G# A#</b></div>;Task=SpellScale Mode=Altered Root=B#
-<div>What is the <b>parent</b> scale of <b>B# Altered</b>?</div>;<div><b>C# Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=B#
-<div>What is <b>mode 7</b> of <b>C# Melodic Minor</b>?</div>;<div><b>B# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=C#
-<div>What are the <b>notes</b> of <b>C# Altered</b>?</div>;<div><b>C# D E F G A B</b></div>;Task=SpellScale Mode=Altered Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Altered</b>?</div>;<div><b>D Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=C#
-<div>What is <b>mode 7</b> of <b>D Melodic Minor</b>?</div>;<div><b>C# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=D
-<div>What are the <b>notes</b> of <b>D Altered</b>?</div>;<div><b>D Eb F Gb Ab Bb C</b></div>;Task=SpellScale Mode=Altered Root=D
-<div>What is the <b>parent</b> scale of <b>D Altered</b>?</div>;<div><b>Eb Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=D
-<div>What is <b>mode 7</b> of <b>Eb Melodic Minor</b>?</div>;<div><b>D Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=Eb
-<div>What are the <b>notes</b> of <b>D# Altered</b>?</div>;<div><b>D# E F# G A B C#</b></div>;Task=SpellScale Mode=Altered Root=D#
-<div>What is the <b>parent</b> scale of <b>D# Altered</b>?</div>;<div><b>E Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=D#
-<div>What is <b>mode 7</b> of <b>E Melodic Minor</b>?</div>;<div><b>D# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=E
-<div>What are the <b>notes</b> of <b>E Altered</b>?</div>;<div><b>E F G Ab Bb C D</b></div>;Task=SpellScale Mode=Altered Root=E
-<div>What is the <b>parent</b> scale of <b>E Altered</b>?</div>;<div><b>F Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=E
-<div>What is <b>mode 7</b> of <b>F Melodic Minor</b>?</div>;<div><b>E Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=F
-<div>What are the <b>notes</b> of <b>E# Altered</b>?</div>;<div><b>E# F# G# A B C# D#</b></div>;Task=SpellScale Mode=Altered Root=E#
-<div>What is the <b>parent</b> scale of <b>E# Altered</b>?</div>;<div><b>F# Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=E#
-<div>What is <b>mode 7</b> of <b>F# Melodic Minor</b>?</div>;<div><b>E# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=F#
-<div>What are the <b>notes</b> of <b>F# Altered</b>?</div>;<div><b>F# G A Bb C D E</b></div>;Task=SpellScale Mode=Altered Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Altered</b>?</div>;<div><b>G Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=F#
-<div>What is <b>mode 7</b> of <b>G Melodic Minor</b>?</div>;<div><b>F# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=G
-<div>What are the <b>notes</b> of <b>G Altered</b>?</div>;<div><b>G Ab Bb Cb Db Eb F</b></div>;Task=SpellScale Mode=Altered Root=G
-<div>What is the <b>parent</b> scale of <b>G Altered</b>?</div>;<div><b>Ab Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=G
-<div>What is <b>mode 7</b> of <b>Ab Melodic Minor</b>?</div>;<div><b>G Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=Ab
-<div>What are the <b>notes</b> of <b>Fx Altered</b>?</div>;<div><b>Fx G# A# B C# D# E#</b></div>;Task=SpellScale Mode=Altered Root=Fx
-<div>What is the <b>parent</b> scale of <b>Fx Altered</b>?</div>;<div><b>G# Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=Fx
-<div>What is <b>mode 7</b> of <b>G# Melodic Minor</b>?</div>;<div><b>Fx Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=G#
-<div>What are the <b>notes</b> of <b>G# Altered</b>?</div>;<div><b>G# A B C D E F#</b></div>;Task=SpellScale Mode=Altered Root=G#
-<div>What is the <b>parent</b> scale of <b>G# Altered</b>?</div>;<div><b>A Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=G#
-<div>What is <b>mode 7</b> of <b>A Melodic Minor</b>?</div>;<div><b>G# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=A
-<div>What are the <b>notes</b> of <b>A Altered</b>?</div>;<div><b>A Bb C Db Eb F G</b></div>;Task=SpellScale Mode=Altered Root=A
-<div>What is the <b>parent</b> scale of <b>A Altered</b>?</div>;<div><b>Bb Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=A
-<div>What is <b>mode 7</b> of <b>Bb Melodic Minor</b>?</div>;<div><b>A Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=Bb
-<div>What are the <b>notes</b> of <b>A# Altered</b>?</div>;<div><b>A# B C# D E F# G#</b></div>;Task=SpellScale Mode=Altered Root=A#
-<div>What is the <b>parent</b> scale of <b>A# Altered</b>?</div>;<div><b>B Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=A#
-<div>What is <b>mode 7</b> of <b>B Melodic Minor</b>?</div>;<div><b>A# Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=B
-<div>What are the <b>notes</b> of <b>B Altered</b>?</div>;<div><b>B C D Eb F G A</b></div>;Task=SpellScale Mode=Altered Root=B
-<div>What is the <b>parent</b> scale of <b>B Altered</b>?</div>;<div><b>C Melodic Minor</b></div>;Task=NameParent Mode=Altered Root=B
-<div>What is <b>mode 7</b> of <b>C Melodic Minor</b>?</div>;<div><b>B Altered</b></div>;Task=NameMode Mode=Melodic-Minor Root=C
-<div>What are the <b>notes</b> of <b>C Harmonic Minor</b>?</div>;<div><b>C D Eb F G Ab B</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=C
-<div>What are the <b>notes</b> of <b>C# Harmonic Minor</b>?</div>;<div><b>C# D# E F# G# A B#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=C#
-<div>What are the <b>notes</b> of <b>D Harmonic Minor</b>?</div>;<div><b>D E F G A Bb C#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=D
-<div>What are the <b>notes</b> of <b>Eb Harmonic Minor</b>?</div>;<div><b>Eb F Gb Ab Bb Cb D</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=Eb
-<div>What are the <b>notes</b> of <b>D# Harmonic Minor</b>?</div>;<div><b>D# E# F# G# A# B Cx</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=D#
-<div>What are the <b>notes</b> of <b>E Harmonic Minor</b>?</div>;<div><b>E F# G A B C D#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=E
-<div>What are the <b>notes</b> of <b>F Harmonic Minor</b>?</div>;<div><b>F G Ab Bb C Db E</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=F
-<div>What are the <b>notes</b> of <b>F# Harmonic Minor</b>?</div>;<div><b>F# G# A B C# D E#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=F#
-<div>What are the <b>notes</b> of <b>G Harmonic Minor</b>?</div>;<div><b>G A Bb C D Eb F#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=G
-<div>What are the <b>notes</b> of <b>G# Harmonic Minor</b>?</div>;<div><b>G# A# B C# D# E Fx</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=G#
-<div>What are the <b>notes</b> of <b>A Harmonic Minor</b>?</div>;<div><b>A B C D E F G#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=A
-<div>What are the <b>notes</b> of <b>Bb Harmonic Minor</b>?</div>;<div><b>Bb C Db Eb F Gb A</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=Bb
-<div>What are the <b>notes</b> of <b>B Harmonic Minor</b>?</div>;<div><b>B C# D E F# G A#</b></div>;Task=SpellScale Mode=Harmonic-Minor Root=B
-<div>What are the <b>notes</b> of <b>C Phrygian Dominant</b>?</div>;<div><b>C Db E F G Ab Bb</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=C
-<div>What is the <b>parent</b> scale of <b>C Phrygian Dominant</b>?</div>;<div><b>F Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=C
-<div>What is <b>mode 5</b> of <b>F Harmonic Minor</b>?</div>;<div><b>C Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=F
-<div>What are the <b>notes</b> of <b>C# Phrygian Dominant</b>?</div>;<div><b>C# D E# F# G# A B</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=C#
-<div>What is the <b>parent</b> scale of <b>C# Phrygian Dominant</b>?</div>;<div><b>F# Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=C#
-<div>What is <b>mode 5</b> of <b>F# Harmonic Minor</b>?</div>;<div><b>C# Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=F#
-<div>What are the <b>notes</b> of <b>D Phrygian Dominant</b>?</div>;<div><b>D Eb F# G A Bb C</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=D
-<div>What is the <b>parent</b> scale of <b>D Phrygian Dominant</b>?</div>;<div><b>G Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=D
-<div>What is <b>mode 5</b> of <b>G Harmonic Minor</b>?</div>;<div><b>D Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=G
-<div>What are the <b>notes</b> of <b>D# Phrygian Dominant</b>?</div>;<div><b>D# E Fx G# A# B C#</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=D#
-<div>What is the <b>parent</b> scale of <b>D# Phrygian Dominant</b>?</div>;<div><b>G# Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=D#
-<div>What is <b>mode 5</b> of <b>G# Harmonic Minor</b>?</div>;<div><b>D# Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=G#
-<div>What are the <b>notes</b> of <b>E Phrygian Dominant</b>?</div>;<div><b>E F G# A B C D</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=E
-<div>What is the <b>parent</b> scale of <b>E Phrygian Dominant</b>?</div>;<div><b>A Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=E
-<div>What is <b>mode 5</b> of <b>A Harmonic Minor</b>?</div>;<div><b>E Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=A
-<div>What are the <b>notes</b> of <b>F Phrygian Dominant</b>?</div>;<div><b>F Gb A Bb C Db Eb</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=F
-<div>What is the <b>parent</b> scale of <b>F Phrygian Dominant</b>?</div>;<div><b>Bb Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=F
-<div>What is <b>mode 5</b> of <b>Bb Harmonic Minor</b>?</div>;<div><b>F Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=Bb
-<div>What are the <b>notes</b> of <b>F# Phrygian Dominant</b>?</div>;<div><b>F# G A# B C# D E</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=F#
-<div>What is the <b>parent</b> scale of <b>F# Phrygian Dominant</b>?</div>;<div><b>B Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=F#
-<div>What is <b>mode 5</b> of <b>B Harmonic Minor</b>?</div>;<div><b>F# Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=B
-<div>What are the <b>notes</b> of <b>G Phrygian Dominant</b>?</div>;<div><b>G Ab B C D Eb F</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=G
-<div>What is the <b>parent</b> scale of <b>G Phrygian Dominant</b>?</div>;<div><b>C Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=G
-<div>What is <b>mode 5</b> of <b>C Harmonic Minor</b>?</div>;<div><b>G Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=C
-<div>What are the <b>notes</b> of <b>G# Phrygian Dominant</b>?</div>;<div><b>G# A B# C# D# E F#</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=G#
-<div>What is the <b>parent</b> scale of <b>G# Phrygian Dominant</b>?</div>;<div><b>C# Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=G#
-<div>What is <b>mode 5</b> of <b>C# Harmonic Minor</b>?</div>;<div><b>G# Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=C#
-<div>What are the <b>notes</b> of <b>A Phrygian Dominant</b>?</div>;<div><b>A Bb C# D E F G</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=A
-<div>What is the <b>parent</b> scale of <b>A Phrygian Dominant</b>?</div>;<div><b>D Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=A
-<div>What is <b>mode 5</b> of <b>D Harmonic Minor</b>?</div>;<div><b>A Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=D
-<div>What are the <b>notes</b> of <b>Bb Phrygian Dominant</b>?</div>;<div><b>Bb Cb D Eb F Gb Ab</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=Bb
-<div>What is the <b>parent</b> scale of <b>Bb Phrygian Dominant</b>?</div>;<div><b>Eb Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=Bb
-<div>What is <b>mode 5</b> of <b>Eb Harmonic Minor</b>?</div>;<div><b>Bb Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=Eb
-<div>What are the <b>notes</b> of <b>A# Phrygian Dominant</b>?</div>;<div><b>A# B Cx D# E# F# G#</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=A#
-<div>What is the <b>parent</b> scale of <b>A# Phrygian Dominant</b>?</div>;<div><b>D# Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=A#
-<div>What is <b>mode 5</b> of <b>D# Harmonic Minor</b>?</div>;<div><b>A# Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=D#
-<div>What are the <b>notes</b> of <b>B Phrygian Dominant</b>?</div>;<div><b>B C D# E F# G A</b></div>;Task=SpellScale Mode=Phrygian-Dominant Root=B
-<div>What is the <b>parent</b> scale of <b>B Phrygian Dominant</b>?</div>;<div><b>E Harmonic Minor</b></div>;Task=NameParent Mode=Phrygian-Dominant Root=B
-<div>What is <b>mode 5</b> of <b>E Harmonic Minor</b>?</div>;<div><b>B Phrygian Dominant</b></div>;Task=NameMode Mode=Harmonic-Minor Root=E
-<div>What are the <b>intervals</b> of <b>Major Scale</b>?</div>;<div><b>1 2 3 4 5 6 7</b></div>;Task=ModeIntervals Mode=Major-Scale
-<div>What are the <b>intervals</b> of <b>Dorian</b>?</div>;<div><b>1 2 b3 4 5 6 b7</b></div>;Task=ModeIntervals Mode=Dorian
-<div>What are the <b>intervals</b> of <b>Phrygian</b>?</div>;<div><b>1 b2 b3 4 5 b6 b7</b></div>;Task=ModeIntervals Mode=Phrygian
-<div>What are the <b>intervals</b> of <b>Lydian</b>?</div>;<div><b>1 2 3 #4 5 6 7</b></div>;Task=ModeIntervals Mode=Lydian
-<div>What are the <b>intervals</b> of <b>Mixolydian</b>?</div>;<div><b>1 2 3 4 5 6 b7</b></div>;Task=ModeIntervals Mode=Mixolydian
-<div>What are the <b>intervals</b> of <b>Aeolean</b>?</div>;<div><b>1 2 b3 4 5 b6 b7</b></div>;Task=ModeIntervals Mode=Aeolean
-<div>What are the <b>intervals</b> of <b>Locrian</b>?</div>;<div><b>1 b2 b3 4 b5 b6 b7</b></div>;Task=ModeIntervals Mode=Locrian
-<div>What are the <b>intervals</b> of <b>Melodic Minor</b>?</div>;<div><b>1 2 b3 4 5 6 7</b></div>;Task=ModeIntervals Mode=Melodic-Minor
-<div>What are the <b>intervals</b> of <b>Lydian Dominant</b>?</div>;<div><b>1 2 3 #4 5 6 b7</b></div>;Task=ModeIntervals Mode=Lydian-Dominant
-<div>What are the <b>intervals</b> of <b>Altered</b>?</div>;<div><b>1 b2 b3 b4 b5 b6 b7</b></div>;Task=ModeIntervals Mode=Altered
-<div>What are the <b>intervals</b> of <b>Harmonic Minor</b>?</div>;<div><b>1 2 b3 4 5 b6 7</b></div>;Task=ModeIntervals Mode=Harmonic-Minor
-<div>What are the <b>intervals</b> of <b>Phrygian Dominant</b>?</div>;<div><b>1 b2 3 4 5 b6 b7</b></div>;Task=ModeIntervals Mode=Phrygian-Dominant
-<div>What are the <b>intervals</b> of <b>Whole Tone</b>?</div>;<div><b>1 2 3 #4 #5 b7</b></div>;Task=ModeIntervals Mode=Whole-Tone
-<div>What are the <b>intervals</b> of <b>Diminished Half/Whole</b>?</div>;<div><b>1 b2 b3 3 b5 5 6 b7</b></div>;Task=ModeIntervals Mode=Diminished-Half-Whole
-<div>What are the <b>intervals</b> of <b>Diminished Whole/Half</b>?</div>;<div><b>1 2 b3 4 b5 b6 6 7</b></div>;Task=ModeIntervals Mode=Diminished-Whole-Half
-<div>What are the <b>notes</b> of <b>CΔ7</b> Chord?</div>;<div><b>C E G B</b></div>;Task=SpellChord Chord=Δ7 Root=C
-<div>What are the <b>notes</b> of <b>DbΔ7</b> Chord?</div>;<div><b>Db F Ab C</b></div>;Task=SpellChord Chord=Δ7 Root=Db
-<div>What are the <b>notes</b> of <b>DΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A C#</b></div>;Task=SpellChord Chord=Δ7 Root=D
-<div>What are the <b>notes</b> of <b>EbΔ7</b> Chord?</div>;<div><b>Eb G Bb D</b></div>;Task=SpellChord Chord=Δ7 Root=Eb
-<div>What are the <b>notes</b> of <b>EΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# B D#</b></div>;Task=SpellChord Chord=Δ7 Root=E
-<div>What are the <b>notes</b> of <b>FΔ7</b> Chord?</div>;<div><b>F A C E</b></div>;Task=SpellChord Chord=Δ7 Root=F
-<div>What are the <b>notes</b> of <b>GbΔ7</b> Chord?</div>;<div><b>Gb Bb Db F</b></div>;Task=SpellChord Chord=Δ7 Root=Gb
-<div>What are the <b>notes</b> of <b>GΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B D F#</b></div>;Task=SpellChord Chord=Δ7 Root=G
-<div>What are the <b>notes</b> of <b>AbΔ7</b> Chord?</div>;<div><b>Ab C Eb G</b></div>;Task=SpellChord Chord=Δ7 Root=Ab
-<div>What are the <b>notes</b> of <b>AΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# E G#</b></div>;Task=SpellChord Chord=Δ7 Root=A
-<div>What are the <b>notes</b> of <b>BbΔ7</b> Chord?</div>;<div><b>Bb D F A</b></div>;Task=SpellChord Chord=Δ7 Root=Bb
-<div>What are the <b>notes</b> of <b>BΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F# A#</b></div>;Task=SpellChord Chord=Δ7 Root=B
-<div>What are the <b>notes</b> of <b>Cm7</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G Bb</b></div>;Task=SpellChord Chord=m7 Root=C
-<div>What are the <b>notes</b> of <b>C#m7</b> Chord?</div>;<div><b>C# E G# B</b></div>;Task=SpellChord Chord=m7 Root=C#
-<div>What are the <b>notes</b> of <b>Dm7</b> Chord?</div>;<div><b>D F A C</b></div>;Task=SpellChord Chord=m7 Root=D
-<div>What are the <b>notes</b> of <b>Ebm7</b> Chord?</div>;<div><b>Eb Gb Bb Db</b></div>;Task=SpellChord Chord=m7 Root=Eb
-<div>What are the <b>notes</b> of <b>D#m7</b> Chord?</div>;<div><b>D# F# A# C#</b></div>;Task=SpellChord Chord=m7 Root=D#
-<div>What are the <b>notes</b> of <b>Em7</b> Chord?</div>;<div><b>E G B D</b></div>;Task=SpellChord Chord=m7 Root=E
-<div>What are the <b>notes</b> of <b>Fm7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C Eb</b></div>;Task=SpellChord Chord=m7 Root=F
-<div>What are the <b>notes</b> of <b>F#m7</b> Chord?</div>;<div><b>F# A C# E</b></div>;Task=SpellChord Chord=m7 Root=F#
-<div>What are the <b>notes</b> of <b>Gm7</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb D F</b></div>;Task=SpellChord Chord=m7 Root=G
-<div>What are the <b>notes</b> of <b>G#m7</b> Chord?</div>;<div><b>G# B D# F#</b></div>;Task=SpellChord Chord=m7 Root=G#
-<div>What are the <b>notes</b> of <b>Am7</b> Chord?</div>;<div><b>A C E G</b></div>;Task=SpellChord Chord=m7 Root=A
-<div>What are the <b>notes</b> of <b>Bbm7</b> Chord?</div>;<div><b>Bb Db F Ab</b></div>;Task=SpellChord Chord=m7 Root=Bb
-<div>What are the <b>notes</b> of <b>Bm7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# A</b></div>;Task=SpellChord Chord=m7 Root=B
-<div>What are the <b>notes</b> of <b>Cm6</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G A</b></div>;Task=SpellChord Chord=m6 Root=C
-<div>What are the <b>notes</b> of <b>C#m6</b> Chord?</div>;<div><b>C# E G# A#</b></div>;Task=SpellChord Chord=m6 Root=C#
-<div>What are the <b>notes</b> of <b>Dm6</b> Chord?</div>;<div><b>D F A B</b></div>;Task=SpellChord Chord=m6 Root=D
-<div>What are the <b>notes</b> of <b>Ebm6</b> Chord?</div>;<div><b>Eb Gb Bb C</b></div>;Task=SpellChord Chord=m6 Root=Eb
-<div>What are the <b>notes</b> of <b>Em6</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G B C#</b></div>;Task=SpellChord Chord=m6 Root=E
-<div>What are the <b>notes</b> of <b>Fm6</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C D</b></div>;Task=SpellChord Chord=m6 Root=F
-<div>What are the <b>notes</b> of <b>F#m6</b> Chord?</div>;<div><b>F# A C# D#</b></div>;Task=SpellChord Chord=m6 Root=F#
-<div>What are the <b>notes</b> of <b>Gm6</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb D E</b></div>;Task=SpellChord Chord=m6 Root=G
-<div>What are the <b>notes</b> of <b>Abm6</b> Chord?</div>;<div><b>Ab B Eb F</b></div>;Task=SpellChord Chord=m6 Root=Ab
-<div>What are the <b>notes</b> of <b>G#m6</b> Chord?</div>;<div><b>G# B D# F</b></div>;Task=SpellChord Chord=m6 Root=G#
-<div>What are the <b>notes</b> of <b>Am6</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C E F#</b></div>;Task=SpellChord Chord=m6 Root=A
-<div>What are the <b>notes</b> of <b>Bbm6</b> Chord?</div>;<div><b>Bb Db F G</b></div>;Task=SpellChord Chord=m6 Root=Bb
-<div>What are the <b>notes</b> of <b>Bm6</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# G#</b></div>;Task=SpellChord Chord=m6 Root=B
-<div>What are the <b>notes</b> of <b>C7</b> Chord (using <b>flats</b>)?</div>;<div><b>C E G Bb</b></div>;Task=SpellChord Chord=7 Root=C
-<div>What are the <b>notes</b> of <b>Db7</b> Chord?</div>;<div><b>Db F Ab B</b></div>;Task=SpellChord Chord=7 Root=Db
-<div>What are the <b>notes</b> of <b>C#7</b> Chord?</div>;<div><b>C# F G# B</b></div>;Task=SpellChord Chord=7 Root=C#
-<div>What are the <b>notes</b> of <b>D7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A C</b></div>;Task=SpellChord Chord=7 Root=D
-<div>What are the <b>notes</b> of <b>Eb7</b> Chord?</div>;<div><b>Eb G Bb Db</b></div>;Task=SpellChord Chord=7 Root=Eb
-<div>What are the <b>notes</b> of <b>E7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# B D</b></div>;Task=SpellChord Chord=7 Root=E
-<div>What are the <b>notes</b> of <b>F7</b> Chord (using <b>flats</b>)?</div>;<div><b>F A C Eb</b></div>;Task=SpellChord Chord=7 Root=F
-<div>What are the <b>notes</b> of <b>F#7</b> Chord?</div>;<div><b>F# A# C# E</b></div>;Task=SpellChord Chord=7 Root=F#
-<div>What are the <b>notes</b> of <b>G7</b> Chord?</div>;<div><b>G B D F</b></div>;Task=SpellChord Chord=7 Root=G
-<div>What are the <b>notes</b> of <b>Ab7</b> Chord?</div>;<div><b>Ab C Eb Gb</b></div>;Task=SpellChord Chord=7 Root=Ab
-<div>What are the <b>notes</b> of <b>A7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# E G</b></div>;Task=SpellChord Chord=7 Root=A
-<div>What are the <b>notes</b> of <b>Bb7</b> Chord?</div>;<div><b>Bb D F Ab</b></div>;Task=SpellChord Chord=7 Root=Bb
-<div>What are the <b>notes</b> of <b>B7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F# A</b></div>;Task=SpellChord Chord=7 Root=B
-<div>What are the <b>notes</b> of <b>Cm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb Gb Bb</b></div>;Task=SpellChord Chord=m7b5 Root=C
-<div>What are the <b>notes</b> of <b>C#m7b5</b> Chord?</div>;<div><b>C# E G B</b></div>;Task=SpellChord Chord=m7b5 Root=C#
-<div>What are the <b>notes</b> of <b>Dm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Ab C</b></div>;Task=SpellChord Chord=m7b5 Root=D
-<div>What are the <b>notes</b> of <b>D#m7b5</b> Chord?</div>;<div><b>D# F# A C#</b></div>;Task=SpellChord Chord=m7b5 Root=D#
-<div>What are the <b>notes</b> of <b>Em7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Bb D</b></div>;Task=SpellChord Chord=m7b5 Root=E
-<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab B Eb</b></div>;Task=SpellChord Chord=m7b5 Root=F
-<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# B D#</b></div>;Task=SpellChord Chord=m7b5 Root=F
-<div>What are the <b>notes</b> of <b>F#m7b5</b> Chord?</div>;<div><b>F# A C E</b></div>;Task=SpellChord Chord=m7b5 Root=F#
-<div>What are the <b>notes</b> of <b>Gm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb Db F</b></div>;Task=SpellChord Chord=m7b5 Root=G
-<div>What are the <b>notes</b> of <b>G#m7b5</b> Chord?</div>;<div><b>G# B D F#</b></div>;Task=SpellChord Chord=m7b5 Root=G#
-<div>What are the <b>notes</b> of <b>Am7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Eb G</b></div>;Task=SpellChord Chord=m7b5 Root=A
-<div>What are the <b>notes</b> of <b>A#m7b5</b> Chord?</div>;<div><b>A# C# E G#</b></div>;Task=SpellChord Chord=m7b5 Root=A#
-<div>What are the <b>notes</b> of <b>Bm7b5</b> Chord?</div>;<div><b>B D F A</b></div>;Task=SpellChord Chord=m7b5 Root=B
-<div>What are the <b>notes</b> of <b>Cdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# F# A</b></div>;Task=SpellChord Chord=dim7 Root=C
-<div>What are the <b>notes</b> of <b>Dbdim7</b> Chord?</div>;<div><b>Db E G Bb</b></div>;Task=SpellChord Chord=dim7 Root=Db
-<div>What are the <b>notes</b> of <b>Ddim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F G# B</b></div>;Task=SpellChord Chord=dim7 Root=D
-<div>What are the <b>notes</b> of <b>Ebdim7</b> Chord?</div>;<div><b>Eb Gb A C</b></div>;Task=SpellChord Chord=dim7 Root=Eb
-<div>What are the <b>notes</b> of <b>Edim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G A# C#</b></div>;Task=SpellChord Chord=dim7 Root=E
-<div>What are the <b>notes</b> of <b>Fdim7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab B D</b></div>;Task=SpellChord Chord=dim7 Root=F
-<div>What are the <b>notes</b> of <b>Gbdim7</b> Chord?</div>;<div><b>Gb A C Eb</b></div>;Task=SpellChord Chord=dim7 Root=Gb
-<div>What are the <b>notes</b> of <b>Gdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# C# E</b></div>;Task=SpellChord Chord=dim7 Root=G
-<div>What are the <b>notes</b> of <b>Abdim7</b> Chord?</div>;<div><b>Ab B D F</b></div>;Task=SpellChord Chord=dim7 Root=Ab
-<div>What are the <b>notes</b> of <b>Adim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C D# F#</b></div>;Task=SpellChord Chord=dim7 Root=A
-<div>What are the <b>notes</b> of <b>Bbdim7</b> Chord?</div>;<div><b>Bb Db E G</b></div>;Task=SpellChord Chord=dim7 Root=Bb
-<div>What are the <b>notes</b> of <b>Bdim7</b> Chord (using <b>flats</b>)?</div>;<div><b>B D F Ab</b></div>;Task=SpellChord Chord=dim7 Root=B
-<div>What are the <b>notes</b> of <b>Bdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F G#</b></div>;Task=SpellChord Chord=dim7 Root=B
-<div>What are the <b>notes</b> of <b>CmΔ7</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G B</b></div>;Task=SpellChord Chord=mΔ7 Root=C
-<div>What are the <b>notes</b> of <b>DbmΔ7</b> Chord?</div>;<div><b>Db E Ab C</b></div>;Task=SpellChord Chord=mΔ7 Root=Db
-<div>What are the <b>notes</b> of <b>DmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F A C#</b></div>;Task=SpellChord Chord=mΔ7 Root=D
-<div>What are the <b>notes</b> of <b>EbmΔ7</b> Chord?</div>;<div><b>Eb Gb Bb D</b></div>;Task=SpellChord Chord=mΔ7 Root=Eb
-<div>What are the <b>notes</b> of <b>EmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G B D#</b></div>;Task=SpellChord Chord=mΔ7 Root=E
-<div>What are the <b>notes</b> of <b>FmΔ7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C E</b></div>;Task=SpellChord Chord=mΔ7 Root=F
-<div>What are the <b>notes</b> of <b>GbmΔ7</b> Chord?</div>;<div><b>Gb A Db F</b></div>;Task=SpellChord Chord=mΔ7 Root=Gb
-<div>What are the <b>notes</b> of <b>GmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# D F#</b></div>;Task=SpellChord Chord=mΔ7 Root=G
-<div>What are the <b>notes</b> of <b>AbmΔ7</b> Chord?</div>;<div><b>Ab B Eb G</b></div>;Task=SpellChord Chord=mΔ7 Root=Ab
-<div>What are the <b>notes</b> of <b>AmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C E G#</b></div>;Task=SpellChord Chord=mΔ7 Root=A
-<div>What are the <b>notes</b> of <b>BbmΔ7</b> Chord?</div>;<div><b>Bb Db F A</b></div>;Task=SpellChord Chord=mΔ7 Root=Bb
-<div>What are the <b>notes</b> of <b>BmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# A#</b></div>;Task=SpellChord Chord=mΔ7 Root=B
-<div>What are the <b>notes</b> of <b>CΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>C E G# B</b></div>;Task=SpellChord Chord=Δ7#5 Root=C
-<div>What are the <b>notes</b> of <b>DbΔ7#5</b> Chord?</div>;<div><b>Db F A C</b></div>;Task=SpellChord Chord=Δ7#5 Root=Db
-<div>What are the <b>notes</b> of <b>DΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A# C#</b></div>;Task=SpellChord Chord=Δ7#5 Root=D
-<div>What are the <b>notes</b> of <b>EbΔ7#5</b> Chord?</div>;<div><b>Eb G B D</b></div>;Task=SpellChord Chord=Δ7#5 Root=Eb
-<div>What are the <b>notes</b> of <b>EΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# C D#</b></div>;Task=SpellChord Chord=Δ7#5 Root=E
-<div>What are the <b>notes</b> of <b>FΔ7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A Db E</b></div>;Task=SpellChord Chord=Δ7#5 Root=F
-<div>What are the <b>notes</b> of <b>GbΔ7#5</b> Chord?</div>;<div><b>Gb Bb D F</b></div>;Task=SpellChord Chord=Δ7#5 Root=Gb
-<div>What are the <b>notes</b> of <b>GΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B D# F#</b></div>;Task=SpellChord Chord=Δ7#5 Root=G
-<div>What are the <b>notes</b> of <b>AbΔ7#5</b> Chord?</div>;<div><b>Ab C E G</b></div>;Task=SpellChord Chord=Δ7#5 Root=Ab
-<div>What are the <b>notes</b> of <b>AΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# F G#</b></div>;Task=SpellChord Chord=Δ7#5 Root=A
-<div>What are the <b>notes</b> of <b>BbΔ7#5</b> Chord?</div>;<div><b>Bb D Gb A</b></div>;Task=SpellChord Chord=Δ7#5 Root=Bb
-<div>What are the <b>notes</b> of <b>BΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# G A#</b></div>;Task=SpellChord Chord=Δ7#5 Root=B
-<div>What are the <b>notes</b> of <b>CΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>C E F# B</b></div>;Task=SpellChord Chord=Δ7#11 Root=C
-<div>What are the <b>notes</b> of <b>DbΔ7#11</b> Chord?</div>;<div><b>Db F G C</b></div>;Task=SpellChord Chord=Δ7#11 Root=Db
-<div>What are the <b>notes</b> of <b>DΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# G# C#</b></div>;Task=SpellChord Chord=Δ7#11 Root=D
-<div>What are the <b>notes</b> of <b>EbΔ7#11</b> Chord?</div>;<div><b>Eb G A D</b></div>;Task=SpellChord Chord=Δ7#11 Root=Eb
-<div>What are the <b>notes</b> of <b>EΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# A# D#</b></div>;Task=SpellChord Chord=Δ7#11 Root=E
-<div>What are the <b>notes</b> of <b>FΔ7#11</b> Chord?</div>;<div><b>F A B E</b></div>;Task=SpellChord Chord=Δ7#11 Root=F
-<div>What are the <b>notes</b> of <b>GbΔ7#11</b> Chord?</div>;<div><b>Gb Bb C F</b></div>;Task=SpellChord Chord=Δ7#11 Root=Gb
-<div>What are the <b>notes</b> of <b>GΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B C# F#</b></div>;Task=SpellChord Chord=Δ7#11 Root=G
-<div>What are the <b>notes</b> of <b>AbΔ7#11</b> Chord?</div>;<div><b>Ab C D G</b></div>;Task=SpellChord Chord=Δ7#11 Root=Ab
-<div>What are the <b>notes</b> of <b>AΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# D# G#</b></div>;Task=SpellChord Chord=Δ7#11 Root=A
-<div>What are the <b>notes</b> of <b>BbΔ7#11</b> Chord?</div>;<div><b>Bb D E A</b></div>;Task=SpellChord Chord=Δ7#11 Root=Bb
-<div>What are the <b>notes</b> of <b>BΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F A#</b></div>;Task=SpellChord Chord=Δ7#11 Root=B
-<div>What are the <b>notes</b> of <b>C7sus4</b> Chord (using <b>flats</b>)?</div>;<div><b>C F G Bb</b></div>;Task=SpellChord Chord=7sus4 Root=C
-<div>What are the <b>notes</b> of <b>Db7sus4</b> Chord?</div>;<div><b>Db Gb Ab B</b></div>;Task=SpellChord Chord=7sus4 Root=Db
-<div>What are the <b>notes</b> of <b>C#7sus4</b> Chord?</div>;<div><b>C# F# G# B</b></div>;Task=SpellChord Chord=7sus4 Root=C#
-<div>What are the <b>notes</b> of <b>D7sus4</b> Chord?</div>;<div><b>D G A C</b></div>;Task=SpellChord Chord=7sus4 Root=D
-<div>What are the <b>notes</b> of <b>Eb7sus4</b> Chord?</div>;<div><b>Eb Ab Bb Db</b></div>;Task=SpellChord Chord=7sus4 Root=Eb
-<div>What are the <b>notes</b> of <b>E7sus4</b> Chord?</div>;<div><b>E A B D</b></div>;Task=SpellChord Chord=7sus4 Root=E
-<div>What are the <b>notes</b> of <b>F7sus4</b> Chord (using <b>flats</b>)?</div>;<div><b>F Bb C Eb</b></div>;Task=SpellChord Chord=7sus4 Root=F
-<div>What are the <b>notes</b> of <b>F#7sus4</b> Chord?</div>;<div><b>F# B C# E</b></div>;Task=SpellChord Chord=7sus4 Root=F#
-<div>What are the <b>notes</b> of <b>G7sus4</b> Chord?</div>;<div><b>G C D F</b></div>;Task=SpellChord Chord=7sus4 Root=G
-<div>What are the <b>notes</b> of <b>Ab7sus4</b> Chord?</div>;<div><b>Ab Db Eb Gb</b></div>;Task=SpellChord Chord=7sus4 Root=Ab
-<div>What are the <b>notes</b> of <b>A7sus4</b> Chord?</div>;<div><b>A D E G</b></div>;Task=SpellChord Chord=7sus4 Root=A
-<div>What are the <b>notes</b> of <b>Bb7sus4</b> Chord?</div>;<div><b>Bb Eb F Ab</b></div>;Task=SpellChord Chord=7sus4 Root=Bb
-<div>What are the <b>notes</b> of <b>B7sus4</b> Chord (using <b>sharps</b>)?</div>;<div><b>B E F# A</b></div>;Task=SpellChord Chord=7sus4 Root=B
-<div>What are the <b>notes</b> of <b>C7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E G Bb</b></div>;Task=SpellChord Chord=7b9 Root=C
-<div>What are the <b>notes</b> of <b>C#7b9</b> Chord?</div>;<div><b>C# D F G# B</b></div>;Task=SpellChord Chord=7b9 Root=C#
-<div>What are the <b>notes</b> of <b>D7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb A C</b></div>;Task=SpellChord Chord=7b9 Root=D
-<div>What are the <b>notes</b> of <b>D#7b9</b> Chord?</div>;<div><b>D# E G A# C#</b></div>;Task=SpellChord Chord=7b9 Root=D#
-<div>What are the <b>notes</b> of <b>E7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab B D</b></div>;Task=SpellChord Chord=7b9 Root=E
-<div>What are the <b>notes</b> of <b>F7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A C Eb</b></div>;Task=SpellChord Chord=7b9 Root=F
-<div>What are the <b>notes</b> of <b>F#7b9</b> Chord?</div>;<div><b>F# G A# C# E</b></div>;Task=SpellChord Chord=7b9 Root=F#
-<div>What are the <b>notes</b> of <b>G7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B D F</b></div>;Task=SpellChord Chord=7b9 Root=G
-<div>What are the <b>notes</b> of <b>G#7b9</b> Chord?</div>;<div><b>G# A C D# F#</b></div>;Task=SpellChord Chord=7b9 Root=G#
-<div>What are the <b>notes</b> of <b>A7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db E G</b></div>;Task=SpellChord Chord=7b9 Root=A
-<div>What are the <b>notes</b> of <b>A#7b9</b> Chord?</div>;<div><b>A# B D F G#</b></div>;Task=SpellChord Chord=7b9 Root=A#
-<div>What are the <b>notes</b> of <b>B7b9</b> Chord (using <b>sharps</b>)?</div>;<div><b>B C D# F# A</b></div>;Task=SpellChord Chord=7b9 Root=B
-<div>What are the <b>notes</b> of <b>C7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E G A#</b></div>;Task=SpellChord Chord=7#9 Root=C
-<div>What are the <b>notes</b> of <b>Db7#9</b> Chord?</div>;<div><b>Db E F Ab B</b></div>;Task=SpellChord Chord=7#9 Root=Db
-<div>What are the <b>notes</b> of <b>D7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb A C</b></div>;Task=SpellChord Chord=7#9 Root=D
-<div>What are the <b>notes</b> of <b>D#7#9</b> Chord?</div>;<div><b>D# F# G A# C#</b></div>;Task=SpellChord Chord=7#9 Root=D#
-<div>What are the <b>notes</b> of <b>E7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab B D</b></div>;Task=SpellChord Chord=7#9 Root=E
-<div>What are the <b>notes</b> of <b>F7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A C D#</b></div>;Task=SpellChord Chord=7#9 Root=F
-<div>What are the <b>notes</b> of <b>Gb7#9</b> Chord?</div>;<div><b>Gb A Bb Db E</b></div>;Task=SpellChord Chord=7#9 Root=Gb
-<div>What are the <b>notes</b> of <b>G7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B D F</b></div>;Task=SpellChord Chord=7#9 Root=G
-<div>What are the <b>notes</b> of <b>Ab7#9</b> Chord?</div>;<div><b>Ab B C Eb Gb</b></div>;Task=SpellChord Chord=7#9 Root=Ab
-<div>What are the <b>notes</b> of <b>A7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db E G</b></div>;Task=SpellChord Chord=7#9 Root=A
-<div>What are the <b>notes</b> of <b>A#7#9</b> Chord?</div>;<div><b>A# C# D F G#</b></div>;Task=SpellChord Chord=7#9 Root=A#
-<div>What are the <b>notes</b> of <b>B7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb Gb A</b></div>;Task=SpellChord Chord=7#9 Root=B
-<div>What are the <b>notes</b> of <b>C7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>C E Gb Bb</b></div>;Task=SpellChord Chord=7b5 Root=C
-<div>What are the <b>notes</b> of <b>Db7b5</b> Chord?</div>;<div><b>Db F G B</b></div>;Task=SpellChord Chord=7b5 Root=Db
-<div>What are the <b>notes</b> of <b>C#7b5</b> Chord?</div>;<div><b>C# F G B</b></div>;Task=SpellChord Chord=7b5 Root=C#
-<div>What are the <b>notes</b> of <b>D7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# G# C</b></div>;Task=SpellChord Chord=7b5 Root=D
-<div>What are the <b>notes</b> of <b>Eb7b5</b> Chord?</div>;<div><b>Eb G A Db</b></div>;Task=SpellChord Chord=7b5 Root=Eb
-<div>What are the <b>notes</b> of <b>E7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# A# D</b></div>;Task=SpellChord Chord=7b5 Root=E
-<div>What are the <b>notes</b> of <b>F7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A B Eb</b></div>;Task=SpellChord Chord=7b5 Root=F
-<div>What are the <b>notes</b> of <b>F#7b5</b> Chord?</div>;<div><b>F# A# C E</b></div>;Task=SpellChord Chord=7b5 Root=F#
-<div>What are the <b>notes</b> of <b>G7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>G B Db F</b></div>;Task=SpellChord Chord=7b5 Root=G
-<div>What are the <b>notes</b> of <b>Ab7b5</b> Chord?</div>;<div><b>Ab C D Gb</b></div>;Task=SpellChord Chord=7b5 Root=Ab
-<div>What are the <b>notes</b> of <b>A7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# D# G</b></div>;Task=SpellChord Chord=7b5 Root=A
-<div>What are the <b>notes</b> of <b>Bb7b5</b> Chord?</div>;<div><b>Bb D E Ab</b></div>;Task=SpellChord Chord=7b5 Root=Bb
-<div>What are the <b>notes</b> of <b>B7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F A</b></div>;Task=SpellChord Chord=7b5 Root=B
-<div>What are the <b>notes</b> of <b>C7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>C E Ab Bb</b></div>;Task=SpellChord Chord=7#5 Root=C
-<div>What are the <b>notes</b> of <b>C#7#5</b> Chord?</div>;<div><b>C# F A B</b></div>;Task=SpellChord Chord=7#5 Root=C#
-<div>What are the <b>notes</b> of <b>D7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>D Gb Bb C</b></div>;Task=SpellChord Chord=7#5 Root=D
-<div>What are the <b>notes</b> of <b>Eb7#5</b> Chord?</div>;<div><b>Eb G B Db</b></div>;Task=SpellChord Chord=7#5 Root=Eb
-<div>What are the <b>notes</b> of <b>D#7#5</b> Chord?</div>;<div><b>D# G B C#</b></div>;Task=SpellChord Chord=7#5 Root=D#
-<div>What are the <b>notes</b> of <b>E7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# C D</b></div>;Task=SpellChord Chord=7#5 Root=E
-<div>What are the <b>notes</b> of <b>F7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A Db Eb</b></div>;Task=SpellChord Chord=7#5 Root=F
-<div>What are the <b>notes</b> of <b>F#7#5</b> Chord?</div>;<div><b>F# A# D E</b></div>;Task=SpellChord Chord=7#5 Root=F#
-<div>What are the <b>notes</b> of <b>G7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>G B Eb F</b></div>;Task=SpellChord Chord=7#5 Root=G
-<div>What are the <b>notes</b> of <b>G#7#5</b> Chord?</div>;<div><b>G# C E F#</b></div>;Task=SpellChord Chord=7#5 Root=G#
-<div>What are the <b>notes</b> of <b>A7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>A Db F G</b></div>;Task=SpellChord Chord=7#5 Root=A
-<div>What are the <b>notes</b> of <b>Bb7#5</b> Chord?</div>;<div><b>Bb D Gb Ab</b></div>;Task=SpellChord Chord=7#5 Root=Bb
-<div>What are the <b>notes</b> of <b>B7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# G A</b></div>;Task=SpellChord Chord=7#5 Root=B
-<div>What are the <b>notes</b> of <b>C7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E Gb Bb</b></div>;Task=SpellChord Chord=7b5b9 Root=C
-<div>What are the <b>notes</b> of <b>C#7b5b9</b> Chord?</div>;<div><b>C# D F G B</b></div>;Task=SpellChord Chord=7b5b9 Root=C#
-<div>What are the <b>notes</b> of <b>D7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb Ab C</b></div>;Task=SpellChord Chord=7b5b9 Root=D
-<div>What are the <b>notes</b> of <b>D#7b5b9</b> Chord?</div>;<div><b>D# E G A C#</b></div>;Task=SpellChord Chord=7b5b9 Root=D#
-<div>What are the <b>notes</b> of <b>E7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab Bb D</b></div>;Task=SpellChord Chord=7b5b9 Root=E
-<div>What are the <b>notes</b> of <b>F7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A B Eb</b></div>;Task=SpellChord Chord=7b5b9 Root=F
-<div>What are the <b>notes</b> of <b>F#7b5b9</b> Chord?</div>;<div><b>F# G A# C E</b></div>;Task=SpellChord Chord=7b5b9 Root=F#
-<div>What are the <b>notes</b> of <b>G7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B Db F</b></div>;Task=SpellChord Chord=7b5b9 Root=G
-<div>What are the <b>notes</b> of <b>G#7b5b9</b> Chord?</div>;<div><b>G# A C D F#</b></div>;Task=SpellChord Chord=7b5b9 Root=G#
-<div>What are the <b>notes</b> of <b>A7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db Eb G</b></div>;Task=SpellChord Chord=7b5b9 Root=A
-<div>What are the <b>notes</b> of <b>A#7b5b9</b> Chord?</div>;<div><b>A# B D E G#</b></div>;Task=SpellChord Chord=7b5b9 Root=A#
-<div>What are the <b>notes</b> of <b>B7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>B C Eb F A</b></div>;Task=SpellChord Chord=7b5b9 Root=B
-<div>What are the <b>notes</b> of <b>C7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E Ab Bb</b></div>;Task=SpellChord Chord=7#5b9 Root=C
-<div>What are the <b>notes</b> of <b>C#7#5b9</b> Chord?</div>;<div><b>C# D F A B</b></div>;Task=SpellChord Chord=7#5b9 Root=C#
-<div>What are the <b>notes</b> of <b>D7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb Bb C</b></div>;Task=SpellChord Chord=7#5b9 Root=D
-<div>What are the <b>notes</b> of <b>D#7#5b9</b> Chord?</div>;<div><b>D# E G B C#</b></div>;Task=SpellChord Chord=7#5b9 Root=D#
-<div>What are the <b>notes</b> of <b>E7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab C D</b></div>;Task=SpellChord Chord=7#5b9 Root=E
-<div>What are the <b>notes</b> of <b>F7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A Db Eb</b></div>;Task=SpellChord Chord=7#5b9 Root=F
-<div>What are the <b>notes</b> of <b>F#7#5b9</b> Chord?</div>;<div><b>F# G A# D E</b></div>;Task=SpellChord Chord=7#5b9 Root=F#
-<div>What are the <b>notes</b> of <b>G7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B Eb F</b></div>;Task=SpellChord Chord=7#5b9 Root=G
-<div>What are the <b>notes</b> of <b>G#7#5b9</b> Chord?</div>;<div><b>G# A C E F#</b></div>;Task=SpellChord Chord=7#5b9 Root=G#
-<div>What are the <b>notes</b> of <b>A7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db F G</b></div>;Task=SpellChord Chord=7#5b9 Root=A
-<div>What are the <b>notes</b> of <b>A#7#5b9</b> Chord?</div>;<div><b>A# B D F# G#</b></div>;Task=SpellChord Chord=7#5b9 Root=A#
-<div>What are the <b>notes</b> of <b>B7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>B C Eb G A</b></div>;Task=SpellChord Chord=7#5b9 Root=B
-<div>What are the <b>notes</b> of <b>C7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E F# A#</b></div>;Task=SpellChord Chord=7b5#9 Root=C
-<div>What are the <b>notes</b> of <b>Db7b5#9</b> Chord?</div>;<div><b>Db E F G B</b></div>;Task=SpellChord Chord=7b5#9 Root=Db
-<div>What are the <b>notes</b> of <b>D7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb Ab C</b></div>;Task=SpellChord Chord=7b5#9 Root=D
-<div>What are the <b>notes</b> of <b>D#7b5#9</b> Chord?</div>;<div><b>D# F# G A C#</b></div>;Task=SpellChord Chord=7b5#9 Root=D#
-<div>What are the <b>notes</b> of <b>E7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab Bb D</b></div>;Task=SpellChord Chord=7b5#9 Root=E
-<div>What are the <b>notes</b> of <b>F7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A B D#</b></div>;Task=SpellChord Chord=7b5#9 Root=F
-<div>What are the <b>notes</b> of <b>Gb7b5#9</b> Chord?</div>;<div><b>Gb A Bb C E</b></div>;Task=SpellChord Chord=7b5#9 Root=Gb
-<div>What are the <b>notes</b> of <b>G7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B C# F</b></div>;Task=SpellChord Chord=7b5#9 Root=G
-<div>What are the <b>notes</b> of <b>G#7b5#9</b> Chord?</div>;<div><b>G# B C D F#</b></div>;Task=SpellChord Chord=7b5#9 Root=G#
-<div>What are the <b>notes</b> of <b>A7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db Eb G</b></div>;Task=SpellChord Chord=7b5#9 Root=A
-<div>What are the <b>notes</b> of <b>A#7b5#9</b> Chord?</div>;<div><b>A# C# D E G#</b></div>;Task=SpellChord Chord=7b5#9 Root=A#
-<div>What are the <b>notes</b> of <b>B7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb F A</b></div>;Task=SpellChord Chord=7b5#9 Root=B
-<div>What are the <b>notes</b> of <b>C7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E G# A#</b></div>;Task=SpellChord Chord=7#5#9 Root=C
-<div>What are the <b>notes</b> of <b>Db7#5#9</b> Chord?</div>;<div><b>Db E F A B</b></div>;Task=SpellChord Chord=7#5#9 Root=Db
-<div>What are the <b>notes</b> of <b>D7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb Bb C</b></div>;Task=SpellChord Chord=7#5#9 Root=D
-<div>What are the <b>notes</b> of <b>D#7#5#9</b> Chord?</div>;<div><b>D# F# G B C#</b></div>;Task=SpellChord Chord=7#5#9 Root=D#
-<div>What are the <b>notes</b> of <b>E7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab C D</b></div>;Task=SpellChord Chord=7#5#9 Root=E
-<div>What are the <b>notes</b> of <b>F7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A C# D#</b></div>;Task=SpellChord Chord=7#5#9 Root=F
-<div>What are the <b>notes</b> of <b>Gb7#5#9</b> Chord?</div>;<div><b>Gb A Bb D E</b></div>;Task=SpellChord Chord=7#5#9 Root=Gb
-<div>What are the <b>notes</b> of <b>G7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B D# F</b></div>;Task=SpellChord Chord=7#5#9 Root=G
-<div>What are the <b>notes</b> of <b>G#7#5#9</b> Chord?</div>;<div><b>G# B C E F#</b></div>;Task=SpellChord Chord=7#5#9 Root=G#
-<div>What are the <b>notes</b> of <b>A7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db F G</b></div>;Task=SpellChord Chord=7#5#9 Root=A
-<div>What are the <b>notes</b> of <b>A#7#5#9</b> Chord?</div>;<div><b>A# C# D F# G#</b></div>;Task=SpellChord Chord=7#5#9 Root=A#
-<div>What are the <b>notes</b> of <b>B7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb G A</b></div>;Task=SpellChord Chord=7#5#9 Root=B
-<div>What are the <b>notes</b> of <b>C</b> Triad?</div>;<div><b>C E G</b></div>;Task=SpellChord Chord= Root=C
-<div>What are the <b>notes</b> of <b>Db</b> Triad?</div>;<div><b>Db F Ab</b></div>;Task=SpellChord Chord= Root=Db
-<div>What are the <b>notes</b> of <b>D</b> Triad (using <b>sharps</b>)?</div>;<div><b>D F# A</b></div>;Task=SpellChord Chord= Root=D
-<div>What are the <b>notes</b> of <b>Eb</b> Triad?</div>;<div><b>Eb G Bb</b></div>;Task=SpellChord Chord= Root=Eb
-<div>What are the <b>notes</b> of <b>E</b> Triad (using <b>sharps</b>)?</div>;<div><b>E G# B</b></div>;Task=SpellChord Chord= Root=E
-<div>What are the <b>notes</b> of <b>F</b> Triad?</div>;<div><b>F A C</b></div>;Task=SpellChord Chord= Root=F
-<div>What are the <b>notes</b> of <b>Gb</b> Triad?</div>;<div><b>Gb Bb Db</b></div>;Task=SpellChord Chord= Root=Gb
-<div>What are the <b>notes</b> of <b>F#</b> Triad?</div>;<div><b>F# A# C#</b></div>;Task=SpellChord Chord= Root=F#
-<div>What are the <b>notes</b> of <b>G</b> Triad?</div>;<div><b>G B D</b></div>;Task=SpellChord Chord= Root=G
-<div>What are the <b>notes</b> of <b>Ab</b> Triad?</div>;<div><b>Ab C Eb</b></div>;Task=SpellChord Chord= Root=Ab
-<div>What are the <b>notes</b> of <b>A</b> Triad (using <b>sharps</b>)?</div>;<div><b>A C# E</b></div>;Task=SpellChord Chord= Root=A
-<div>What are the <b>notes</b> of <b>Bb</b> Triad?</div>;<div><b>Bb D F</b></div>;Task=SpellChord Chord= Root=Bb
-<div>What are the <b>notes</b> of <b>B</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D# F#</b></div>;Task=SpellChord Chord= Root=B
-<div>What are the <b>notes</b> of <b>Cm</b> Triad (using <b>flats</b>)?</div>;<div><b>C Eb G</b></div>;Task=SpellChord Chord=m Root=C
-<div>What are the <b>notes</b> of <b>C#m</b> Triad?</div>;<div><b>C# E G#</b></div>;Task=SpellChord Chord=m Root=C#
-<div>What are the <b>notes</b> of <b>Dm</b> Triad?</div>;<div><b>D F A</b></div>;Task=SpellChord Chord=m Root=D
-<div>What are the <b>notes</b> of <b>Ebm</b> Triad?</div>;<div><b>Eb Gb Bb</b></div>;Task=SpellChord Chord=m Root=Eb
-<div>What are the <b>notes</b> of <b>D#m</b> Triad?</div>;<div><b>D# F# A#</b></div>;Task=SpellChord Chord=m Root=D#
-<div>What are the <b>notes</b> of <b>Em</b> Triad?</div>;<div><b>E G B</b></div>;Task=SpellChord Chord=m Root=E
-<div>What are the <b>notes</b> of <b>Fm</b> Triad (using <b>flats</b>)?</div>;<div><b>F Ab C</b></div>;Task=SpellChord Chord=m Root=F
-<div>What are the <b>notes</b> of <b>F#m</b> Triad?</div>;<div><b>F# A C#</b></div>;Task=SpellChord Chord=m Root=F#
-<div>What are the <b>notes</b> of <b>Gm</b> Triad (using <b>flats</b>)?</div>;<div><b>G Bb D</b></div>;Task=SpellChord Chord=m Root=G
-<div>What are the <b>notes</b> of <b>G#m</b> Triad?</div>;<div><b>G# B D#</b></div>;Task=SpellChord Chord=m Root=G#
-<div>What are the <b>notes</b> of <b>Am</b> Triad?</div>;<div><b>A C E</b></div>;Task=SpellChord Chord=m Root=A
-<div>What are the <b>notes</b> of <b>Bbm</b> Triad?</div>;<div><b>Bb Db F</b></div>;Task=SpellChord Chord=m Root=Bb
-<div>What are the <b>notes</b> of <b>Bm</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D F#</b></div>;Task=SpellChord Chord=m Root=B
-<div>What are the <b>notes</b> of <b>Cdim</b> Triad (using <b>flats</b>)?</div>;<div><b>C Eb Gb</b></div>;Task=SpellChord Chord=dim Root=C
-<div>What are the <b>notes</b> of <b>C#dim</b> Triad?</div>;<div><b>C# E G</b></div>;Task=SpellChord Chord=dim Root=C#
-<div>What are the <b>notes</b> of <b>Ddim</b> Triad (using <b>flats</b>)?</div>;<div><b>D F Ab</b></div>;Task=SpellChord Chord=dim Root=D
-<div>What are the <b>notes</b> of <b>D#dim</b> Triad?</div>;<div><b>D# F# A</b></div>;Task=SpellChord Chord=dim Root=D#
-<div>What are the <b>notes</b> of <b>Edim</b> Triad (using <b>flats</b>)?</div>;<div><b>E G Bb</b></div>;Task=SpellChord Chord=dim Root=E
-<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>flats</b>)?</div>;<div><b>F Ab B</b></div>;Task=SpellChord Chord=dim Root=F
-<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>sharps</b>)?</div>;<div><b>F G# B</b></div>;Task=SpellChord Chord=dim Root=F
-<div>What are the <b>notes</b> of <b>F#dim</b> Triad?</div>;<div><b>F# A C</b></div>;Task=SpellChord Chord=dim Root=F#
-<div>What are the <b>notes</b> of <b>Gdim</b> Triad (using <b>flats</b>)?</div>;<div><b>G Bb Db</b></div>;Task=SpellChord Chord=dim Root=G
-<div>What are the <b>notes</b> of <b>G#dim</b> Triad?</div>;<div><b>G# B D</b></div>;Task=SpellChord Chord=dim Root=G#
-<div>What are the <b>notes</b> of <b>Adim</b> Triad (using <b>flats</b>)?</div>;<div><b>A C Eb</b></div>;Task=SpellChord Chord=dim Root=A
-<div>What are the <b>notes</b> of <b>A#dim</b> Triad?</div>;<div><b>A# C# E</b></div>;Task=SpellChord Chord=dim Root=A#
-<div>What are the <b>notes</b> of <b>Bdim</b> Triad?</div>;<div><b>B D F</b></div>;Task=SpellChord Chord=dim Root=B
-<div>What are the <b>notes</b> of <b>Caug</b> Triad (using <b>sharps</b>)?</div>;<div><b>C E G#</b></div>;Task=SpellChord Chord=aug Root=C
-<div>What are the <b>notes</b> of <b>Dbaug</b> Triad?</div>;<div><b>Db F A</b></div>;Task=SpellChord Chord=aug Root=Db
-<div>What are the <b>notes</b> of <b>Daug</b> Triad (using <b>sharps</b>)?</div>;<div><b>D F# A#</b></div>;Task=SpellChord Chord=aug Root=D
-<div>What are the <b>notes</b> of <b>Ebaug</b> Triad?</div>;<div><b>Eb G B</b></div>;Task=SpellChord Chord=aug Root=Eb
-<div>What are the <b>notes</b> of <b>Eaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>E G# C</b></div>;Task=SpellChord Chord=aug Root=E
-<div>What are the <b>notes</b> of <b>Faug</b> Triad (using <b>flats</b>)?</div>;<div><b>F A Db</b></div>;Task=SpellChord Chord=aug Root=F
-<div>What are the <b>notes</b> of <b>Gbaug</b> Triad?</div>;<div><b>Gb Bb D</b></div>;Task=SpellChord Chord=aug Root=Gb
-<div>What are the <b>notes</b> of <b>Gaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>G B D#</b></div>;Task=SpellChord Chord=aug Root=G
-<div>What are the <b>notes</b> of <b>Abaug</b> Triad?</div>;<div><b>Ab C E</b></div>;Task=SpellChord Chord=aug Root=Ab
-<div>What are the <b>notes</b> of <b>Aaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>A C# F</b></div>;Task=SpellChord Chord=aug Root=A
-<div>What are the <b>notes</b> of <b>Bbaug</b> Triad?</div>;<div><b>Bb D Gb</b></div>;Task=SpellChord Chord=aug Root=Bb
-<div>What are the <b>notes</b> of <b>Baug</b> Triad (using <b>flats</b>)?</div>;<div><b>B Eb G</b></div>;Task=SpellChord Chord=aug Root=B
-<div>What are the <b>notes</b> of <b>Baug</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D# G</b></div>;Task=SpellChord Chord=aug Root=B
-<div>What are the <b>notes</b> of <b>Csus4</b> Triad?</div>;<div><b>C F G</b></div>;Task=SpellChord Chord=sus4 Root=C
-<div>What are the <b>notes</b> of <b>Dbsus4</b> Triad?</div>;<div><b>Db Gb Ab</b></div>;Task=SpellChord Chord=sus4 Root=Db
-<div>What are the <b>notes</b> of <b>Dsus4</b> Triad?</div>;<div><b>D G A</b></div>;Task=SpellChord Chord=sus4 Root=D
-<div>What are the <b>notes</b> of <b>Ebsus4</b> Triad?</div>;<div><b>Eb Ab Bb</b></div>;Task=SpellChord Chord=sus4 Root=Eb
-<div>What are the <b>notes</b> of <b>Esus4</b> Triad?</div>;<div><b>E A B</b></div>;Task=SpellChord Chord=sus4 Root=E
-<div>What are the <b>notes</b> of <b>Fsus4</b> Triad (using <b>flats</b>)?</div>;<div><b>F Bb C</b></div>;Task=SpellChord Chord=sus4 Root=F
-<div>What are the <b>notes</b> of <b>Gbsus4</b> Triad?</div>;<div><b>Gb B Db</b></div>;Task=SpellChord Chord=sus4 Root=Gb
-<div>What are the <b>notes</b> of <b>F#sus4</b> Triad?</div>;<div><b>F# B C#</b></div>;Task=SpellChord Chord=sus4 Root=F#
-<div>What are the <b>notes</b> of <b>Gsus4</b> Triad?</div>;<div><b>G C D</b></div>;Task=SpellChord Chord=sus4 Root=G
-<div>What are the <b>notes</b> of <b>Absus4</b> Triad?</div>;<div><b>Ab Db Eb</b></div>;Task=SpellChord Chord=sus4 Root=Ab
-<div>What are the <b>notes</b> of <b>Asus4</b> Triad?</div>;<div><b>A D E</b></div>;Task=SpellChord Chord=sus4 Root=A
-<div>What are the <b>notes</b> of <b>Bbsus4</b> Triad?</div>;<div><b>Bb Eb F</b></div>;Task=SpellChord Chord=sus4 Root=Bb
-<div>What are the <b>notes</b> of <b>Bsus4</b> Triad (using <b>sharps</b>)?</div>;<div><b>B E F#</b></div>;Task=SpellChord Chord=sus4 Root=B
+<div>What are the <b>notes</b> of <b>C Major Scale</b>?</div>;<div><b>C D E F G A B</b></div>;SpellScale;C Major Scale;Major Scale;C;C Major Scale;Major Scale;C
+<div>What are the <b>notes</b> of <b>Db Major Scale</b>?</div>;<div><b>Db Eb F Gb Ab Bb C</b></div>;SpellScale;Db Major Scale;Major Scale;Db;Db Major Scale;Major Scale;Db
+<div>What are the <b>notes</b> of <b>D Major Scale</b>?</div>;<div><b>D E F# G A B C#</b></div>;SpellScale;D Major Scale;Major Scale;D;D Major Scale;Major Scale;D
+<div>What are the <b>notes</b> of <b>Eb Major Scale</b>?</div>;<div><b>Eb F G Ab Bb C D</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;Eb Major Scale;Major Scale;Eb
+<div>What are the <b>notes</b> of <b>E Major Scale</b>?</div>;<div><b>E F# G# A B C# D#</b></div>;SpellScale;E Major Scale;Major Scale;E;E Major Scale;Major Scale;E
+<div>What are the <b>notes</b> of <b>F Major Scale</b>?</div>;<div><b>F G A Bb C D E</b></div>;SpellScale;F Major Scale;Major Scale;F;F Major Scale;Major Scale;F
+<div>What are the <b>notes</b> of <b>Gb Major Scale</b>?</div>;<div><b>Gb Ab Bb Cb Db Eb F</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;Gb Major Scale;Major Scale;Gb
+<div>What are the <b>notes</b> of <b>F# Major Scale</b>?</div>;<div><b>F# G# A# B C# D# E#</b></div>;SpellScale;F# Major Scale;Major Scale;F#;F# Major Scale;Major Scale;F#
+<div>What are the <b>notes</b> of <b>G Major Scale</b>?</div>;<div><b>G A B C D E F#</b></div>;SpellScale;G Major Scale;Major Scale;G;G Major Scale;Major Scale;G
+<div>What are the <b>notes</b> of <b>Ab Major Scale</b>?</div>;<div><b>Ab Bb C Db Eb F G</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;Ab Major Scale;Major Scale;Ab
+<div>What are the <b>notes</b> of <b>A Major Scale</b>?</div>;<div><b>A B C# D E F# G#</b></div>;SpellScale;A Major Scale;Major Scale;A;A Major Scale;Major Scale;A
+<div>What are the <b>notes</b> of <b>Bb Major Scale</b>?</div>;<div><b>Bb C D Eb F G A</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;Bb Major Scale;Major Scale;Bb
+<div>What are the <b>notes</b> of <b>B Major Scale</b>?</div>;<div><b>B C# D# E F# G# A#</b></div>;SpellScale;B Major Scale;Major Scale;B;B Major Scale;Major Scale;B
+<div>What are the <b>notes</b> of <b>C Dorian</b>?</div>;<div><b>C D Eb F G A Bb</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;C Dorian;Dorian;C
+<div>What is the <b>parent</b> scale of <b>C Dorian</b>?</div>;<div><b>Bb Major Scale</b></div>;NameParent;Bb Major Scale;Major Scale;Bb;C Dorian;Dorian;C
+<div>What is <b>mode 2</b> of <b>Bb Major Scale</b>?</div>;<div><b>C Dorian</b></div>;NameMode;Bb Major Scale;Major Scale;Bb;C Dorian;Dorian;C
+<div>What are the <b>notes</b> of <b>C# Dorian</b>?</div>;<div><b>C# D# E F# G# A# B</b></div>;SpellScale;B Major Scale;Major Scale;B;C# Dorian;Dorian;C#
+<div>What is the <b>parent</b> scale of <b>C# Dorian</b>?</div>;<div><b>B Major Scale</b></div>;NameParent;B Major Scale;Major Scale;B;C# Dorian;Dorian;C#
+<div>What is <b>mode 2</b> of <b>B Major Scale</b>?</div>;<div><b>C# Dorian</b></div>;NameMode;B Major Scale;Major Scale;B;C# Dorian;Dorian;C#
+<div>What are the <b>notes</b> of <b>D Dorian</b>?</div>;<div><b>D E F G A B C</b></div>;SpellScale;C Major Scale;Major Scale;C;D Dorian;Dorian;D
+<div>What is the <b>parent</b> scale of <b>D Dorian</b>?</div>;<div><b>C Major Scale</b></div>;NameParent;C Major Scale;Major Scale;C;D Dorian;Dorian;D
+<div>What is <b>mode 2</b> of <b>C Major Scale</b>?</div>;<div><b>D Dorian</b></div>;NameMode;C Major Scale;Major Scale;C;D Dorian;Dorian;D
+<div>What are the <b>notes</b> of <b>Eb Dorian</b>?</div>;<div><b>Eb F Gb Ab Bb C Db</b></div>;SpellScale;Db Major Scale;Major Scale;Db;Eb Dorian;Dorian;Eb
+<div>What is the <b>parent</b> scale of <b>Eb Dorian</b>?</div>;<div><b>Db Major Scale</b></div>;NameParent;Db Major Scale;Major Scale;Db;Eb Dorian;Dorian;Eb
+<div>What is <b>mode 2</b> of <b>Db Major Scale</b>?</div>;<div><b>Eb Dorian</b></div>;NameMode;Db Major Scale;Major Scale;Db;Eb Dorian;Dorian;Eb
+<div>What are the <b>notes</b> of <b>E Dorian</b>?</div>;<div><b>E F# G A B C# D</b></div>;SpellScale;D Major Scale;Major Scale;D;E Dorian;Dorian;E
+<div>What is the <b>parent</b> scale of <b>E Dorian</b>?</div>;<div><b>D Major Scale</b></div>;NameParent;D Major Scale;Major Scale;D;E Dorian;Dorian;E
+<div>What is <b>mode 2</b> of <b>D Major Scale</b>?</div>;<div><b>E Dorian</b></div>;NameMode;D Major Scale;Major Scale;D;E Dorian;Dorian;E
+<div>What are the <b>notes</b> of <b>F Dorian</b>?</div>;<div><b>F G Ab Bb C D Eb</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;F Dorian;Dorian;F
+<div>What is the <b>parent</b> scale of <b>F Dorian</b>?</div>;<div><b>Eb Major Scale</b></div>;NameParent;Eb Major Scale;Major Scale;Eb;F Dorian;Dorian;F
+<div>What is <b>mode 2</b> of <b>Eb Major Scale</b>?</div>;<div><b>F Dorian</b></div>;NameMode;Eb Major Scale;Major Scale;Eb;F Dorian;Dorian;F
+<div>What are the <b>notes</b> of <b>F# Dorian</b>?</div>;<div><b>F# G# A B C# D# E</b></div>;SpellScale;E Major Scale;Major Scale;E;F# Dorian;Dorian;F#
+<div>What is the <b>parent</b> scale of <b>F# Dorian</b>?</div>;<div><b>E Major Scale</b></div>;NameParent;E Major Scale;Major Scale;E;F# Dorian;Dorian;F#
+<div>What is <b>mode 2</b> of <b>E Major Scale</b>?</div>;<div><b>F# Dorian</b></div>;NameMode;E Major Scale;Major Scale;E;F# Dorian;Dorian;F#
+<div>What are the <b>notes</b> of <b>G Dorian</b>?</div>;<div><b>G A Bb C D E F</b></div>;SpellScale;F Major Scale;Major Scale;F;G Dorian;Dorian;G
+<div>What is the <b>parent</b> scale of <b>G Dorian</b>?</div>;<div><b>F Major Scale</b></div>;NameParent;F Major Scale;Major Scale;F;G Dorian;Dorian;G
+<div>What is <b>mode 2</b> of <b>F Major Scale</b>?</div>;<div><b>G Dorian</b></div>;NameMode;F Major Scale;Major Scale;F;G Dorian;Dorian;G
+<div>What are the <b>notes</b> of <b>Ab Dorian</b>?</div>;<div><b>Ab Bb Cb Db Eb F Gb</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;Ab Dorian;Dorian;Ab
+<div>What is the <b>parent</b> scale of <b>Ab Dorian</b>?</div>;<div><b>Gb Major Scale</b></div>;NameParent;Gb Major Scale;Major Scale;Gb;Ab Dorian;Dorian;Ab
+<div>What is <b>mode 2</b> of <b>Gb Major Scale</b>?</div>;<div><b>Ab Dorian</b></div>;NameMode;Gb Major Scale;Major Scale;Gb;Ab Dorian;Dorian;Ab
+<div>What are the <b>notes</b> of <b>G# Dorian</b>?</div>;<div><b>G# A# B C# D# E# F#</b></div>;SpellScale;F# Major Scale;Major Scale;F#;G# Dorian;Dorian;G#
+<div>What is the <b>parent</b> scale of <b>G# Dorian</b>?</div>;<div><b>F# Major Scale</b></div>;NameParent;F# Major Scale;Major Scale;F#;G# Dorian;Dorian;G#
+<div>What is <b>mode 2</b> of <b>F# Major Scale</b>?</div>;<div><b>G# Dorian</b></div>;NameMode;F# Major Scale;Major Scale;F#;G# Dorian;Dorian;G#
+<div>What are the <b>notes</b> of <b>A Dorian</b>?</div>;<div><b>A B C D E F# G</b></div>;SpellScale;G Major Scale;Major Scale;G;A Dorian;Dorian;A
+<div>What is the <b>parent</b> scale of <b>A Dorian</b>?</div>;<div><b>G Major Scale</b></div>;NameParent;G Major Scale;Major Scale;G;A Dorian;Dorian;A
+<div>What is <b>mode 2</b> of <b>G Major Scale</b>?</div>;<div><b>A Dorian</b></div>;NameMode;G Major Scale;Major Scale;G;A Dorian;Dorian;A
+<div>What are the <b>notes</b> of <b>Bb Dorian</b>?</div>;<div><b>Bb C Db Eb F G Ab</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;Bb Dorian;Dorian;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Dorian</b>?</div>;<div><b>Ab Major Scale</b></div>;NameParent;Ab Major Scale;Major Scale;Ab;Bb Dorian;Dorian;Bb
+<div>What is <b>mode 2</b> of <b>Ab Major Scale</b>?</div>;<div><b>Bb Dorian</b></div>;NameMode;Ab Major Scale;Major Scale;Ab;Bb Dorian;Dorian;Bb
+<div>What are the <b>notes</b> of <b>B Dorian</b>?</div>;<div><b>B C# D E F# G# A</b></div>;SpellScale;A Major Scale;Major Scale;A;B Dorian;Dorian;B
+<div>What is the <b>parent</b> scale of <b>B Dorian</b>?</div>;<div><b>A Major Scale</b></div>;NameParent;A Major Scale;Major Scale;A;B Dorian;Dorian;B
+<div>What is <b>mode 2</b> of <b>A Major Scale</b>?</div>;<div><b>B Dorian</b></div>;NameMode;A Major Scale;Major Scale;A;B Dorian;Dorian;B
+<div>What are the <b>notes</b> of <b>C Phrygian</b>?</div>;<div><b>C Db Eb F G Ab Bb</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;C Phrygian;Phrygian;C
+<div>What is the <b>parent</b> scale of <b>C Phrygian</b>?</div>;<div><b>Ab Major Scale</b></div>;NameParent;Ab Major Scale;Major Scale;Ab;C Phrygian;Phrygian;C
+<div>What is <b>mode 3</b> of <b>Ab Major Scale</b>?</div>;<div><b>C Phrygian</b></div>;NameMode;Ab Major Scale;Major Scale;Ab;C Phrygian;Phrygian;C
+<div>What are the <b>notes</b> of <b>C# Phrygian</b>?</div>;<div><b>C# D E F# G# A B</b></div>;SpellScale;A Major Scale;Major Scale;A;C# Phrygian;Phrygian;C#
+<div>What is the <b>parent</b> scale of <b>C# Phrygian</b>?</div>;<div><b>A Major Scale</b></div>;NameParent;A Major Scale;Major Scale;A;C# Phrygian;Phrygian;C#
+<div>What is <b>mode 3</b> of <b>A Major Scale</b>?</div>;<div><b>C# Phrygian</b></div>;NameMode;A Major Scale;Major Scale;A;C# Phrygian;Phrygian;C#
+<div>What are the <b>notes</b> of <b>D Phrygian</b>?</div>;<div><b>D Eb F G A Bb C</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;D Phrygian;Phrygian;D
+<div>What is the <b>parent</b> scale of <b>D Phrygian</b>?</div>;<div><b>Bb Major Scale</b></div>;NameParent;Bb Major Scale;Major Scale;Bb;D Phrygian;Phrygian;D
+<div>What is <b>mode 3</b> of <b>Bb Major Scale</b>?</div>;<div><b>D Phrygian</b></div>;NameMode;Bb Major Scale;Major Scale;Bb;D Phrygian;Phrygian;D
+<div>What are the <b>notes</b> of <b>D# Phrygian</b>?</div>;<div><b>D# E F# G# A# B C#</b></div>;SpellScale;B Major Scale;Major Scale;B;D# Phrygian;Phrygian;D#
+<div>What is the <b>parent</b> scale of <b>D# Phrygian</b>?</div>;<div><b>B Major Scale</b></div>;NameParent;B Major Scale;Major Scale;B;D# Phrygian;Phrygian;D#
+<div>What is <b>mode 3</b> of <b>B Major Scale</b>?</div>;<div><b>D# Phrygian</b></div>;NameMode;B Major Scale;Major Scale;B;D# Phrygian;Phrygian;D#
+<div>What are the <b>notes</b> of <b>E Phrygian</b>?</div>;<div><b>E F G A B C D</b></div>;SpellScale;C Major Scale;Major Scale;C;E Phrygian;Phrygian;E
+<div>What is the <b>parent</b> scale of <b>E Phrygian</b>?</div>;<div><b>C Major Scale</b></div>;NameParent;C Major Scale;Major Scale;C;E Phrygian;Phrygian;E
+<div>What is <b>mode 3</b> of <b>C Major Scale</b>?</div>;<div><b>E Phrygian</b></div>;NameMode;C Major Scale;Major Scale;C;E Phrygian;Phrygian;E
+<div>What are the <b>notes</b> of <b>F Phrygian</b>?</div>;<div><b>F Gb Ab Bb C Db Eb</b></div>;SpellScale;Db Major Scale;Major Scale;Db;F Phrygian;Phrygian;F
+<div>What is the <b>parent</b> scale of <b>F Phrygian</b>?</div>;<div><b>Db Major Scale</b></div>;NameParent;Db Major Scale;Major Scale;Db;F Phrygian;Phrygian;F
+<div>What is <b>mode 3</b> of <b>Db Major Scale</b>?</div>;<div><b>F Phrygian</b></div>;NameMode;Db Major Scale;Major Scale;Db;F Phrygian;Phrygian;F
+<div>What are the <b>notes</b> of <b>F# Phrygian</b>?</div>;<div><b>F# G A B C# D E</b></div>;SpellScale;D Major Scale;Major Scale;D;F# Phrygian;Phrygian;F#
+<div>What is the <b>parent</b> scale of <b>F# Phrygian</b>?</div>;<div><b>D Major Scale</b></div>;NameParent;D Major Scale;Major Scale;D;F# Phrygian;Phrygian;F#
+<div>What is <b>mode 3</b> of <b>D Major Scale</b>?</div>;<div><b>F# Phrygian</b></div>;NameMode;D Major Scale;Major Scale;D;F# Phrygian;Phrygian;F#
+<div>What are the <b>notes</b> of <b>G Phrygian</b>?</div>;<div><b>G Ab Bb C D Eb F</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;G Phrygian;Phrygian;G
+<div>What is the <b>parent</b> scale of <b>G Phrygian</b>?</div>;<div><b>Eb Major Scale</b></div>;NameParent;Eb Major Scale;Major Scale;Eb;G Phrygian;Phrygian;G
+<div>What is <b>mode 3</b> of <b>Eb Major Scale</b>?</div>;<div><b>G Phrygian</b></div>;NameMode;Eb Major Scale;Major Scale;Eb;G Phrygian;Phrygian;G
+<div>What are the <b>notes</b> of <b>G# Phrygian</b>?</div>;<div><b>G# A B C# D# E F#</b></div>;SpellScale;E Major Scale;Major Scale;E;G# Phrygian;Phrygian;G#
+<div>What is the <b>parent</b> scale of <b>G# Phrygian</b>?</div>;<div><b>E Major Scale</b></div>;NameParent;E Major Scale;Major Scale;E;G# Phrygian;Phrygian;G#
+<div>What is <b>mode 3</b> of <b>E Major Scale</b>?</div>;<div><b>G# Phrygian</b></div>;NameMode;E Major Scale;Major Scale;E;G# Phrygian;Phrygian;G#
+<div>What are the <b>notes</b> of <b>A Phrygian</b>?</div>;<div><b>A Bb C D E F G</b></div>;SpellScale;F Major Scale;Major Scale;F;A Phrygian;Phrygian;A
+<div>What is the <b>parent</b> scale of <b>A Phrygian</b>?</div>;<div><b>F Major Scale</b></div>;NameParent;F Major Scale;Major Scale;F;A Phrygian;Phrygian;A
+<div>What is <b>mode 3</b> of <b>F Major Scale</b>?</div>;<div><b>A Phrygian</b></div>;NameMode;F Major Scale;Major Scale;F;A Phrygian;Phrygian;A
+<div>What are the <b>notes</b> of <b>Bb Phrygian</b>?</div>;<div><b>Bb Cb Db Eb F Gb Ab</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;Bb Phrygian;Phrygian;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Phrygian</b>?</div>;<div><b>Gb Major Scale</b></div>;NameParent;Gb Major Scale;Major Scale;Gb;Bb Phrygian;Phrygian;Bb
+<div>What is <b>mode 3</b> of <b>Gb Major Scale</b>?</div>;<div><b>Bb Phrygian</b></div>;NameMode;Gb Major Scale;Major Scale;Gb;Bb Phrygian;Phrygian;Bb
+<div>What are the <b>notes</b> of <b>A# Phrygian</b>?</div>;<div><b>A# B C# D# E# F# G#</b></div>;SpellScale;F# Major Scale;Major Scale;F#;A# Phrygian;Phrygian;A#
+<div>What is the <b>parent</b> scale of <b>A# Phrygian</b>?</div>;<div><b>F# Major Scale</b></div>;NameParent;F# Major Scale;Major Scale;F#;A# Phrygian;Phrygian;A#
+<div>What is <b>mode 3</b> of <b>F# Major Scale</b>?</div>;<div><b>A# Phrygian</b></div>;NameMode;F# Major Scale;Major Scale;F#;A# Phrygian;Phrygian;A#
+<div>What are the <b>notes</b> of <b>B Phrygian</b>?</div>;<div><b>B C D E F# G A</b></div>;SpellScale;G Major Scale;Major Scale;G;B Phrygian;Phrygian;B
+<div>What is the <b>parent</b> scale of <b>B Phrygian</b>?</div>;<div><b>G Major Scale</b></div>;NameParent;G Major Scale;Major Scale;G;B Phrygian;Phrygian;B
+<div>What is <b>mode 3</b> of <b>G Major Scale</b>?</div>;<div><b>B Phrygian</b></div>;NameMode;G Major Scale;Major Scale;G;B Phrygian;Phrygian;B
+<div>What are the <b>notes</b> of <b>C Lydian</b>?</div>;<div><b>C D E F# G A B</b></div>;SpellScale;G Major Scale;Major Scale;G;C Lydian;Lydian;C
+<div>What is the <b>parent</b> scale of <b>C Lydian</b>?</div>;<div><b>G Major Scale</b></div>;NameParent;G Major Scale;Major Scale;G;C Lydian;Lydian;C
+<div>What is <b>mode 4</b> of <b>G Major Scale</b>?</div>;<div><b>C Lydian</b></div>;NameMode;G Major Scale;Major Scale;G;C Lydian;Lydian;C
+<div>What are the <b>notes</b> of <b>Db Lydian</b>?</div>;<div><b>Db Eb F G Ab Bb C</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;Db Lydian;Lydian;Db
+<div>What is the <b>parent</b> scale of <b>Db Lydian</b>?</div>;<div><b>Ab Major Scale</b></div>;NameParent;Ab Major Scale;Major Scale;Ab;Db Lydian;Lydian;Db
+<div>What is <b>mode 4</b> of <b>Ab Major Scale</b>?</div>;<div><b>Db Lydian</b></div>;NameMode;Ab Major Scale;Major Scale;Ab;Db Lydian;Lydian;Db
+<div>What are the <b>notes</b> of <b>D Lydian</b>?</div>;<div><b>D E F# G# A B C#</b></div>;SpellScale;A Major Scale;Major Scale;A;D Lydian;Lydian;D
+<div>What is the <b>parent</b> scale of <b>D Lydian</b>?</div>;<div><b>A Major Scale</b></div>;NameParent;A Major Scale;Major Scale;A;D Lydian;Lydian;D
+<div>What is <b>mode 4</b> of <b>A Major Scale</b>?</div>;<div><b>D Lydian</b></div>;NameMode;A Major Scale;Major Scale;A;D Lydian;Lydian;D
+<div>What are the <b>notes</b> of <b>Eb Lydian</b>?</div>;<div><b>Eb F G A Bb C D</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;Eb Lydian;Lydian;Eb
+<div>What is the <b>parent</b> scale of <b>Eb Lydian</b>?</div>;<div><b>Bb Major Scale</b></div>;NameParent;Bb Major Scale;Major Scale;Bb;Eb Lydian;Lydian;Eb
+<div>What is <b>mode 4</b> of <b>Bb Major Scale</b>?</div>;<div><b>Eb Lydian</b></div>;NameMode;Bb Major Scale;Major Scale;Bb;Eb Lydian;Lydian;Eb
+<div>What are the <b>notes</b> of <b>E Lydian</b>?</div>;<div><b>E F# G# A# B C# D#</b></div>;SpellScale;B Major Scale;Major Scale;B;E Lydian;Lydian;E
+<div>What is the <b>parent</b> scale of <b>E Lydian</b>?</div>;<div><b>B Major Scale</b></div>;NameParent;B Major Scale;Major Scale;B;E Lydian;Lydian;E
+<div>What is <b>mode 4</b> of <b>B Major Scale</b>?</div>;<div><b>E Lydian</b></div>;NameMode;B Major Scale;Major Scale;B;E Lydian;Lydian;E
+<div>What are the <b>notes</b> of <b>F Lydian</b>?</div>;<div><b>F G A B C D E</b></div>;SpellScale;C Major Scale;Major Scale;C;F Lydian;Lydian;F
+<div>What is the <b>parent</b> scale of <b>F Lydian</b>?</div>;<div><b>C Major Scale</b></div>;NameParent;C Major Scale;Major Scale;C;F Lydian;Lydian;F
+<div>What is <b>mode 4</b> of <b>C Major Scale</b>?</div>;<div><b>F Lydian</b></div>;NameMode;C Major Scale;Major Scale;C;F Lydian;Lydian;F
+<div>What are the <b>notes</b> of <b>Gb Lydian</b>?</div>;<div><b>Gb Ab Bb C Db Eb F</b></div>;SpellScale;Db Major Scale;Major Scale;Db;Gb Lydian;Lydian;Gb
+<div>What is the <b>parent</b> scale of <b>Gb Lydian</b>?</div>;<div><b>Db Major Scale</b></div>;NameParent;Db Major Scale;Major Scale;Db;Gb Lydian;Lydian;Gb
+<div>What is <b>mode 4</b> of <b>Db Major Scale</b>?</div>;<div><b>Gb Lydian</b></div>;NameMode;Db Major Scale;Major Scale;Db;Gb Lydian;Lydian;Gb
+<div>What are the <b>notes</b> of <b>G Lydian</b>?</div>;<div><b>G A B C# D E F#</b></div>;SpellScale;D Major Scale;Major Scale;D;G Lydian;Lydian;G
+<div>What is the <b>parent</b> scale of <b>G Lydian</b>?</div>;<div><b>D Major Scale</b></div>;NameParent;D Major Scale;Major Scale;D;G Lydian;Lydian;G
+<div>What is <b>mode 4</b> of <b>D Major Scale</b>?</div>;<div><b>G Lydian</b></div>;NameMode;D Major Scale;Major Scale;D;G Lydian;Lydian;G
+<div>What are the <b>notes</b> of <b>Ab Lydian</b>?</div>;<div><b>Ab Bb C D Eb F G</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;Ab Lydian;Lydian;Ab
+<div>What is the <b>parent</b> scale of <b>Ab Lydian</b>?</div>;<div><b>Eb Major Scale</b></div>;NameParent;Eb Major Scale;Major Scale;Eb;Ab Lydian;Lydian;Ab
+<div>What is <b>mode 4</b> of <b>Eb Major Scale</b>?</div>;<div><b>Ab Lydian</b></div>;NameMode;Eb Major Scale;Major Scale;Eb;Ab Lydian;Lydian;Ab
+<div>What are the <b>notes</b> of <b>A Lydian</b>?</div>;<div><b>A B C# D# E F# G#</b></div>;SpellScale;E Major Scale;Major Scale;E;A Lydian;Lydian;A
+<div>What is the <b>parent</b> scale of <b>A Lydian</b>?</div>;<div><b>E Major Scale</b></div>;NameParent;E Major Scale;Major Scale;E;A Lydian;Lydian;A
+<div>What is <b>mode 4</b> of <b>E Major Scale</b>?</div>;<div><b>A Lydian</b></div>;NameMode;E Major Scale;Major Scale;E;A Lydian;Lydian;A
+<div>What are the <b>notes</b> of <b>Bb Lydian</b>?</div>;<div><b>Bb C D E F G A</b></div>;SpellScale;F Major Scale;Major Scale;F;Bb Lydian;Lydian;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Lydian</b>?</div>;<div><b>F Major Scale</b></div>;NameParent;F Major Scale;Major Scale;F;Bb Lydian;Lydian;Bb
+<div>What is <b>mode 4</b> of <b>F Major Scale</b>?</div>;<div><b>Bb Lydian</b></div>;NameMode;F Major Scale;Major Scale;F;Bb Lydian;Lydian;Bb
+<div>What are the <b>notes</b> of <b>Cb Lydian</b>?</div>;<div><b>Cb Db Eb F Gb Ab Bb</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;Cb Lydian;Lydian;Cb
+<div>What is the <b>parent</b> scale of <b>Cb Lydian</b>?</div>;<div><b>Gb Major Scale</b></div>;NameParent;Gb Major Scale;Major Scale;Gb;Cb Lydian;Lydian;Cb
+<div>What is <b>mode 4</b> of <b>Gb Major Scale</b>?</div>;<div><b>Cb Lydian</b></div>;NameMode;Gb Major Scale;Major Scale;Gb;Cb Lydian;Lydian;Cb
+<div>What are the <b>notes</b> of <b>B Lydian</b>?</div>;<div><b>B C# D# E# F# G# A#</b></div>;SpellScale;F# Major Scale;Major Scale;F#;B Lydian;Lydian;B
+<div>What is the <b>parent</b> scale of <b>B Lydian</b>?</div>;<div><b>F# Major Scale</b></div>;NameParent;F# Major Scale;Major Scale;F#;B Lydian;Lydian;B
+<div>What is <b>mode 4</b> of <b>F# Major Scale</b>?</div>;<div><b>B Lydian</b></div>;NameMode;F# Major Scale;Major Scale;F#;B Lydian;Lydian;B
+<div>What are the <b>notes</b> of <b>C Mixolydian</b>?</div>;<div><b>C D E F G A Bb</b></div>;SpellScale;F Major Scale;Major Scale;F;C Mixolydian;Mixolydian;C
+<div>What is the <b>parent</b> scale of <b>C Mixolydian</b>?</div>;<div><b>F Major Scale</b></div>;NameParent;F Major Scale;Major Scale;F;C Mixolydian;Mixolydian;C
+<div>What is <b>mode 5</b> of <b>F Major Scale</b>?</div>;<div><b>C Mixolydian</b></div>;NameMode;F Major Scale;Major Scale;F;C Mixolydian;Mixolydian;C
+<div>What are the <b>notes</b> of <b>Db Mixolydian</b>?</div>;<div><b>Db Eb F Gb Ab Bb Cb</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;Db Mixolydian;Mixolydian;Db
+<div>What is the <b>parent</b> scale of <b>Db Mixolydian</b>?</div>;<div><b>Gb Major Scale</b></div>;NameParent;Gb Major Scale;Major Scale;Gb;Db Mixolydian;Mixolydian;Db
+<div>What is <b>mode 5</b> of <b>Gb Major Scale</b>?</div>;<div><b>Db Mixolydian</b></div>;NameMode;Gb Major Scale;Major Scale;Gb;Db Mixolydian;Mixolydian;Db
+<div>What are the <b>notes</b> of <b>C# Mixolydian</b>?</div>;<div><b>C# D# E# F# G# A# B</b></div>;SpellScale;F# Major Scale;Major Scale;F#;C# Mixolydian;Mixolydian;C#
+<div>What is the <b>parent</b> scale of <b>C# Mixolydian</b>?</div>;<div><b>F# Major Scale</b></div>;NameParent;F# Major Scale;Major Scale;F#;C# Mixolydian;Mixolydian;C#
+<div>What is <b>mode 5</b> of <b>F# Major Scale</b>?</div>;<div><b>C# Mixolydian</b></div>;NameMode;F# Major Scale;Major Scale;F#;C# Mixolydian;Mixolydian;C#
+<div>What are the <b>notes</b> of <b>D Mixolydian</b>?</div>;<div><b>D E F# G A B C</b></div>;SpellScale;G Major Scale;Major Scale;G;D Mixolydian;Mixolydian;D
+<div>What is the <b>parent</b> scale of <b>D Mixolydian</b>?</div>;<div><b>G Major Scale</b></div>;NameParent;G Major Scale;Major Scale;G;D Mixolydian;Mixolydian;D
+<div>What is <b>mode 5</b> of <b>G Major Scale</b>?</div>;<div><b>D Mixolydian</b></div>;NameMode;G Major Scale;Major Scale;G;D Mixolydian;Mixolydian;D
+<div>What are the <b>notes</b> of <b>Eb Mixolydian</b>?</div>;<div><b>Eb F G Ab Bb C Db</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;Eb Mixolydian;Mixolydian;Eb
+<div>What is the <b>parent</b> scale of <b>Eb Mixolydian</b>?</div>;<div><b>Ab Major Scale</b></div>;NameParent;Ab Major Scale;Major Scale;Ab;Eb Mixolydian;Mixolydian;Eb
+<div>What is <b>mode 5</b> of <b>Ab Major Scale</b>?</div>;<div><b>Eb Mixolydian</b></div>;NameMode;Ab Major Scale;Major Scale;Ab;Eb Mixolydian;Mixolydian;Eb
+<div>What are the <b>notes</b> of <b>E Mixolydian</b>?</div>;<div><b>E F# G# A B C# D</b></div>;SpellScale;A Major Scale;Major Scale;A;E Mixolydian;Mixolydian;E
+<div>What is the <b>parent</b> scale of <b>E Mixolydian</b>?</div>;<div><b>A Major Scale</b></div>;NameParent;A Major Scale;Major Scale;A;E Mixolydian;Mixolydian;E
+<div>What is <b>mode 5</b> of <b>A Major Scale</b>?</div>;<div><b>E Mixolydian</b></div>;NameMode;A Major Scale;Major Scale;A;E Mixolydian;Mixolydian;E
+<div>What are the <b>notes</b> of <b>F Mixolydian</b>?</div>;<div><b>F G A Bb C D Eb</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;F Mixolydian;Mixolydian;F
+<div>What is the <b>parent</b> scale of <b>F Mixolydian</b>?</div>;<div><b>Bb Major Scale</b></div>;NameParent;Bb Major Scale;Major Scale;Bb;F Mixolydian;Mixolydian;F
+<div>What is <b>mode 5</b> of <b>Bb Major Scale</b>?</div>;<div><b>F Mixolydian</b></div>;NameMode;Bb Major Scale;Major Scale;Bb;F Mixolydian;Mixolydian;F
+<div>What are the <b>notes</b> of <b>F# Mixolydian</b>?</div>;<div><b>F# G# A# B C# D# E</b></div>;SpellScale;B Major Scale;Major Scale;B;F# Mixolydian;Mixolydian;F#
+<div>What is the <b>parent</b> scale of <b>F# Mixolydian</b>?</div>;<div><b>B Major Scale</b></div>;NameParent;B Major Scale;Major Scale;B;F# Mixolydian;Mixolydian;F#
+<div>What is <b>mode 5</b> of <b>B Major Scale</b>?</div>;<div><b>F# Mixolydian</b></div>;NameMode;B Major Scale;Major Scale;B;F# Mixolydian;Mixolydian;F#
+<div>What are the <b>notes</b> of <b>G Mixolydian</b>?</div>;<div><b>G A B C D E F</b></div>;SpellScale;C Major Scale;Major Scale;C;G Mixolydian;Mixolydian;G
+<div>What is the <b>parent</b> scale of <b>G Mixolydian</b>?</div>;<div><b>C Major Scale</b></div>;NameParent;C Major Scale;Major Scale;C;G Mixolydian;Mixolydian;G
+<div>What is <b>mode 5</b> of <b>C Major Scale</b>?</div>;<div><b>G Mixolydian</b></div>;NameMode;C Major Scale;Major Scale;C;G Mixolydian;Mixolydian;G
+<div>What are the <b>notes</b> of <b>Ab Mixolydian</b>?</div>;<div><b>Ab Bb C Db Eb F Gb</b></div>;SpellScale;Db Major Scale;Major Scale;Db;Ab Mixolydian;Mixolydian;Ab
+<div>What is the <b>parent</b> scale of <b>Ab Mixolydian</b>?</div>;<div><b>Db Major Scale</b></div>;NameParent;Db Major Scale;Major Scale;Db;Ab Mixolydian;Mixolydian;Ab
+<div>What is <b>mode 5</b> of <b>Db Major Scale</b>?</div>;<div><b>Ab Mixolydian</b></div>;NameMode;Db Major Scale;Major Scale;Db;Ab Mixolydian;Mixolydian;Ab
+<div>What are the <b>notes</b> of <b>A Mixolydian</b>?</div>;<div><b>A B C# D E F# G</b></div>;SpellScale;D Major Scale;Major Scale;D;A Mixolydian;Mixolydian;A
+<div>What is the <b>parent</b> scale of <b>A Mixolydian</b>?</div>;<div><b>D Major Scale</b></div>;NameParent;D Major Scale;Major Scale;D;A Mixolydian;Mixolydian;A
+<div>What is <b>mode 5</b> of <b>D Major Scale</b>?</div>;<div><b>A Mixolydian</b></div>;NameMode;D Major Scale;Major Scale;D;A Mixolydian;Mixolydian;A
+<div>What are the <b>notes</b> of <b>Bb Mixolydian</b>?</div>;<div><b>Bb C D Eb F G Ab</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;Bb Mixolydian;Mixolydian;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Mixolydian</b>?</div>;<div><b>Eb Major Scale</b></div>;NameParent;Eb Major Scale;Major Scale;Eb;Bb Mixolydian;Mixolydian;Bb
+<div>What is <b>mode 5</b> of <b>Eb Major Scale</b>?</div>;<div><b>Bb Mixolydian</b></div>;NameMode;Eb Major Scale;Major Scale;Eb;Bb Mixolydian;Mixolydian;Bb
+<div>What are the <b>notes</b> of <b>B Mixolydian</b>?</div>;<div><b>B C# D# E F# G# A</b></div>;SpellScale;E Major Scale;Major Scale;E;B Mixolydian;Mixolydian;B
+<div>What is the <b>parent</b> scale of <b>B Mixolydian</b>?</div>;<div><b>E Major Scale</b></div>;NameParent;E Major Scale;Major Scale;E;B Mixolydian;Mixolydian;B
+<div>What is <b>mode 5</b> of <b>E Major Scale</b>?</div>;<div><b>B Mixolydian</b></div>;NameMode;E Major Scale;Major Scale;E;B Mixolydian;Mixolydian;B
+<div>What are the <b>notes</b> of <b>C Aeolean</b>?</div>;<div><b>C D Eb F G Ab Bb</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;C Aeolean;Aeolean;C
+<div>What is the <b>parent</b> scale of <b>C Aeolean</b>?</div>;<div><b>Eb Major Scale</b></div>;NameParent;Eb Major Scale;Major Scale;Eb;C Aeolean;Aeolean;C
+<div>What is <b>mode 6</b> of <b>Eb Major Scale</b>?</div>;<div><b>C Aeolean</b></div>;NameMode;Eb Major Scale;Major Scale;Eb;C Aeolean;Aeolean;C
+<div>What are the <b>notes</b> of <b>C# Aeolean</b>?</div>;<div><b>C# D# E F# G# A B</b></div>;SpellScale;E Major Scale;Major Scale;E;C# Aeolean;Aeolean;C#
+<div>What is the <b>parent</b> scale of <b>C# Aeolean</b>?</div>;<div><b>E Major Scale</b></div>;NameParent;E Major Scale;Major Scale;E;C# Aeolean;Aeolean;C#
+<div>What is <b>mode 6</b> of <b>E Major Scale</b>?</div>;<div><b>C# Aeolean</b></div>;NameMode;E Major Scale;Major Scale;E;C# Aeolean;Aeolean;C#
+<div>What are the <b>notes</b> of <b>D Aeolean</b>?</div>;<div><b>D E F G A Bb C</b></div>;SpellScale;F Major Scale;Major Scale;F;D Aeolean;Aeolean;D
+<div>What is the <b>parent</b> scale of <b>D Aeolean</b>?</div>;<div><b>F Major Scale</b></div>;NameParent;F Major Scale;Major Scale;F;D Aeolean;Aeolean;D
+<div>What is <b>mode 6</b> of <b>F Major Scale</b>?</div>;<div><b>D Aeolean</b></div>;NameMode;F Major Scale;Major Scale;F;D Aeolean;Aeolean;D
+<div>What are the <b>notes</b> of <b>Eb Aeolean</b>?</div>;<div><b>Eb F Gb Ab Bb Cb Db</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;Eb Aeolean;Aeolean;Eb
+<div>What is the <b>parent</b> scale of <b>Eb Aeolean</b>?</div>;<div><b>Gb Major Scale</b></div>;NameParent;Gb Major Scale;Major Scale;Gb;Eb Aeolean;Aeolean;Eb
+<div>What is <b>mode 6</b> of <b>Gb Major Scale</b>?</div>;<div><b>Eb Aeolean</b></div>;NameMode;Gb Major Scale;Major Scale;Gb;Eb Aeolean;Aeolean;Eb
+<div>What are the <b>notes</b> of <b>D# Aeolean</b>?</div>;<div><b>D# E# F# G# A# B C#</b></div>;SpellScale;F# Major Scale;Major Scale;F#;D# Aeolean;Aeolean;D#
+<div>What is the <b>parent</b> scale of <b>D# Aeolean</b>?</div>;<div><b>F# Major Scale</b></div>;NameParent;F# Major Scale;Major Scale;F#;D# Aeolean;Aeolean;D#
+<div>What is <b>mode 6</b> of <b>F# Major Scale</b>?</div>;<div><b>D# Aeolean</b></div>;NameMode;F# Major Scale;Major Scale;F#;D# Aeolean;Aeolean;D#
+<div>What are the <b>notes</b> of <b>E Aeolean</b>?</div>;<div><b>E F# G A B C D</b></div>;SpellScale;G Major Scale;Major Scale;G;E Aeolean;Aeolean;E
+<div>What is the <b>parent</b> scale of <b>E Aeolean</b>?</div>;<div><b>G Major Scale</b></div>;NameParent;G Major Scale;Major Scale;G;E Aeolean;Aeolean;E
+<div>What is <b>mode 6</b> of <b>G Major Scale</b>?</div>;<div><b>E Aeolean</b></div>;NameMode;G Major Scale;Major Scale;G;E Aeolean;Aeolean;E
+<div>What are the <b>notes</b> of <b>F Aeolean</b>?</div>;<div><b>F G Ab Bb C Db Eb</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;F Aeolean;Aeolean;F
+<div>What is the <b>parent</b> scale of <b>F Aeolean</b>?</div>;<div><b>Ab Major Scale</b></div>;NameParent;Ab Major Scale;Major Scale;Ab;F Aeolean;Aeolean;F
+<div>What is <b>mode 6</b> of <b>Ab Major Scale</b>?</div>;<div><b>F Aeolean</b></div>;NameMode;Ab Major Scale;Major Scale;Ab;F Aeolean;Aeolean;F
+<div>What are the <b>notes</b> of <b>F# Aeolean</b>?</div>;<div><b>F# G# A B C# D E</b></div>;SpellScale;A Major Scale;Major Scale;A;F# Aeolean;Aeolean;F#
+<div>What is the <b>parent</b> scale of <b>F# Aeolean</b>?</div>;<div><b>A Major Scale</b></div>;NameParent;A Major Scale;Major Scale;A;F# Aeolean;Aeolean;F#
+<div>What is <b>mode 6</b> of <b>A Major Scale</b>?</div>;<div><b>F# Aeolean</b></div>;NameMode;A Major Scale;Major Scale;A;F# Aeolean;Aeolean;F#
+<div>What are the <b>notes</b> of <b>G Aeolean</b>?</div>;<div><b>G A Bb C D Eb F</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;G Aeolean;Aeolean;G
+<div>What is the <b>parent</b> scale of <b>G Aeolean</b>?</div>;<div><b>Bb Major Scale</b></div>;NameParent;Bb Major Scale;Major Scale;Bb;G Aeolean;Aeolean;G
+<div>What is <b>mode 6</b> of <b>Bb Major Scale</b>?</div>;<div><b>G Aeolean</b></div>;NameMode;Bb Major Scale;Major Scale;Bb;G Aeolean;Aeolean;G
+<div>What are the <b>notes</b> of <b>G# Aeolean</b>?</div>;<div><b>G# A# B C# D# E F#</b></div>;SpellScale;B Major Scale;Major Scale;B;G# Aeolean;Aeolean;G#
+<div>What is the <b>parent</b> scale of <b>G# Aeolean</b>?</div>;<div><b>B Major Scale</b></div>;NameParent;B Major Scale;Major Scale;B;G# Aeolean;Aeolean;G#
+<div>What is <b>mode 6</b> of <b>B Major Scale</b>?</div>;<div><b>G# Aeolean</b></div>;NameMode;B Major Scale;Major Scale;B;G# Aeolean;Aeolean;G#
+<div>What are the <b>notes</b> of <b>A Aeolean</b>?</div>;<div><b>A B C D E F G</b></div>;SpellScale;C Major Scale;Major Scale;C;A Aeolean;Aeolean;A
+<div>What is the <b>parent</b> scale of <b>A Aeolean</b>?</div>;<div><b>C Major Scale</b></div>;NameParent;C Major Scale;Major Scale;C;A Aeolean;Aeolean;A
+<div>What is <b>mode 6</b> of <b>C Major Scale</b>?</div>;<div><b>A Aeolean</b></div>;NameMode;C Major Scale;Major Scale;C;A Aeolean;Aeolean;A
+<div>What are the <b>notes</b> of <b>Bb Aeolean</b>?</div>;<div><b>Bb C Db Eb F Gb Ab</b></div>;SpellScale;Db Major Scale;Major Scale;Db;Bb Aeolean;Aeolean;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Aeolean</b>?</div>;<div><b>Db Major Scale</b></div>;NameParent;Db Major Scale;Major Scale;Db;Bb Aeolean;Aeolean;Bb
+<div>What is <b>mode 6</b> of <b>Db Major Scale</b>?</div>;<div><b>Bb Aeolean</b></div>;NameMode;Db Major Scale;Major Scale;Db;Bb Aeolean;Aeolean;Bb
+<div>What are the <b>notes</b> of <b>B Aeolean</b>?</div>;<div><b>B C# D E F# G A</b></div>;SpellScale;D Major Scale;Major Scale;D;B Aeolean;Aeolean;B
+<div>What is the <b>parent</b> scale of <b>B Aeolean</b>?</div>;<div><b>D Major Scale</b></div>;NameParent;D Major Scale;Major Scale;D;B Aeolean;Aeolean;B
+<div>What is <b>mode 6</b> of <b>D Major Scale</b>?</div>;<div><b>B Aeolean</b></div>;NameMode;D Major Scale;Major Scale;D;B Aeolean;Aeolean;B
+<div>What are the <b>notes</b> of <b>C Locrian</b>?</div>;<div><b>C Db Eb F Gb Ab Bb</b></div>;SpellScale;Db Major Scale;Major Scale;Db;C Locrian;Locrian;C
+<div>What is the <b>parent</b> scale of <b>C Locrian</b>?</div>;<div><b>Db Major Scale</b></div>;NameParent;Db Major Scale;Major Scale;Db;C Locrian;Locrian;C
+<div>What is <b>mode 7</b> of <b>Db Major Scale</b>?</div>;<div><b>C Locrian</b></div>;NameMode;Db Major Scale;Major Scale;Db;C Locrian;Locrian;C
+<div>What are the <b>notes</b> of <b>C# Locrian</b>?</div>;<div><b>C# D E F# G A B</b></div>;SpellScale;D Major Scale;Major Scale;D;C# Locrian;Locrian;C#
+<div>What is the <b>parent</b> scale of <b>C# Locrian</b>?</div>;<div><b>D Major Scale</b></div>;NameParent;D Major Scale;Major Scale;D;C# Locrian;Locrian;C#
+<div>What is <b>mode 7</b> of <b>D Major Scale</b>?</div>;<div><b>C# Locrian</b></div>;NameMode;D Major Scale;Major Scale;D;C# Locrian;Locrian;C#
+<div>What are the <b>notes</b> of <b>D Locrian</b>?</div>;<div><b>D Eb F G Ab Bb C</b></div>;SpellScale;Eb Major Scale;Major Scale;Eb;D Locrian;Locrian;D
+<div>What is the <b>parent</b> scale of <b>D Locrian</b>?</div>;<div><b>Eb Major Scale</b></div>;NameParent;Eb Major Scale;Major Scale;Eb;D Locrian;Locrian;D
+<div>What is <b>mode 7</b> of <b>Eb Major Scale</b>?</div>;<div><b>D Locrian</b></div>;NameMode;Eb Major Scale;Major Scale;Eb;D Locrian;Locrian;D
+<div>What are the <b>notes</b> of <b>D# Locrian</b>?</div>;<div><b>D# E F# G# A B C#</b></div>;SpellScale;E Major Scale;Major Scale;E;D# Locrian;Locrian;D#
+<div>What is the <b>parent</b> scale of <b>D# Locrian</b>?</div>;<div><b>E Major Scale</b></div>;NameParent;E Major Scale;Major Scale;E;D# Locrian;Locrian;D#
+<div>What is <b>mode 7</b> of <b>E Major Scale</b>?</div>;<div><b>D# Locrian</b></div>;NameMode;E Major Scale;Major Scale;E;D# Locrian;Locrian;D#
+<div>What are the <b>notes</b> of <b>E Locrian</b>?</div>;<div><b>E F G A Bb C D</b></div>;SpellScale;F Major Scale;Major Scale;F;E Locrian;Locrian;E
+<div>What is the <b>parent</b> scale of <b>E Locrian</b>?</div>;<div><b>F Major Scale</b></div>;NameParent;F Major Scale;Major Scale;F;E Locrian;Locrian;E
+<div>What is <b>mode 7</b> of <b>F Major Scale</b>?</div>;<div><b>E Locrian</b></div>;NameMode;F Major Scale;Major Scale;F;E Locrian;Locrian;E
+<div>What are the <b>notes</b> of <b>F Locrian</b>?</div>;<div><b>F Gb Ab Bb Cb Db Eb</b></div>;SpellScale;Gb Major Scale;Major Scale;Gb;F Locrian;Locrian;F
+<div>What is the <b>parent</b> scale of <b>F Locrian</b>?</div>;<div><b>Gb Major Scale</b></div>;NameParent;Gb Major Scale;Major Scale;Gb;F Locrian;Locrian;F
+<div>What is <b>mode 7</b> of <b>Gb Major Scale</b>?</div>;<div><b>F Locrian</b></div>;NameMode;Gb Major Scale;Major Scale;Gb;F Locrian;Locrian;F
+<div>What are the <b>notes</b> of <b>E# Locrian</b>?</div>;<div><b>E# F# G# A# B C# D#</b></div>;SpellScale;F# Major Scale;Major Scale;F#;E# Locrian;Locrian;E#
+<div>What is the <b>parent</b> scale of <b>E# Locrian</b>?</div>;<div><b>F# Major Scale</b></div>;NameParent;F# Major Scale;Major Scale;F#;E# Locrian;Locrian;E#
+<div>What is <b>mode 7</b> of <b>F# Major Scale</b>?</div>;<div><b>E# Locrian</b></div>;NameMode;F# Major Scale;Major Scale;F#;E# Locrian;Locrian;E#
+<div>What are the <b>notes</b> of <b>F# Locrian</b>?</div>;<div><b>F# G A B C D E</b></div>;SpellScale;G Major Scale;Major Scale;G;F# Locrian;Locrian;F#
+<div>What is the <b>parent</b> scale of <b>F# Locrian</b>?</div>;<div><b>G Major Scale</b></div>;NameParent;G Major Scale;Major Scale;G;F# Locrian;Locrian;F#
+<div>What is <b>mode 7</b> of <b>G Major Scale</b>?</div>;<div><b>F# Locrian</b></div>;NameMode;G Major Scale;Major Scale;G;F# Locrian;Locrian;F#
+<div>What are the <b>notes</b> of <b>G Locrian</b>?</div>;<div><b>G Ab Bb C Db Eb F</b></div>;SpellScale;Ab Major Scale;Major Scale;Ab;G Locrian;Locrian;G
+<div>What is the <b>parent</b> scale of <b>G Locrian</b>?</div>;<div><b>Ab Major Scale</b></div>;NameParent;Ab Major Scale;Major Scale;Ab;G Locrian;Locrian;G
+<div>What is <b>mode 7</b> of <b>Ab Major Scale</b>?</div>;<div><b>G Locrian</b></div>;NameMode;Ab Major Scale;Major Scale;Ab;G Locrian;Locrian;G
+<div>What are the <b>notes</b> of <b>G# Locrian</b>?</div>;<div><b>G# A B C# D E F#</b></div>;SpellScale;A Major Scale;Major Scale;A;G# Locrian;Locrian;G#
+<div>What is the <b>parent</b> scale of <b>G# Locrian</b>?</div>;<div><b>A Major Scale</b></div>;NameParent;A Major Scale;Major Scale;A;G# Locrian;Locrian;G#
+<div>What is <b>mode 7</b> of <b>A Major Scale</b>?</div>;<div><b>G# Locrian</b></div>;NameMode;A Major Scale;Major Scale;A;G# Locrian;Locrian;G#
+<div>What are the <b>notes</b> of <b>A Locrian</b>?</div>;<div><b>A Bb C D Eb F G</b></div>;SpellScale;Bb Major Scale;Major Scale;Bb;A Locrian;Locrian;A
+<div>What is the <b>parent</b> scale of <b>A Locrian</b>?</div>;<div><b>Bb Major Scale</b></div>;NameParent;Bb Major Scale;Major Scale;Bb;A Locrian;Locrian;A
+<div>What is <b>mode 7</b> of <b>Bb Major Scale</b>?</div>;<div><b>A Locrian</b></div>;NameMode;Bb Major Scale;Major Scale;Bb;A Locrian;Locrian;A
+<div>What are the <b>notes</b> of <b>A# Locrian</b>?</div>;<div><b>A# B C# D# E F# G#</b></div>;SpellScale;B Major Scale;Major Scale;B;A# Locrian;Locrian;A#
+<div>What is the <b>parent</b> scale of <b>A# Locrian</b>?</div>;<div><b>B Major Scale</b></div>;NameParent;B Major Scale;Major Scale;B;A# Locrian;Locrian;A#
+<div>What is <b>mode 7</b> of <b>B Major Scale</b>?</div>;<div><b>A# Locrian</b></div>;NameMode;B Major Scale;Major Scale;B;A# Locrian;Locrian;A#
+<div>What are the <b>notes</b> of <b>B Locrian</b>?</div>;<div><b>B C D E F G A</b></div>;SpellScale;C Major Scale;Major Scale;C;B Locrian;Locrian;B
+<div>What is the <b>parent</b> scale of <b>B Locrian</b>?</div>;<div><b>C Major Scale</b></div>;NameParent;C Major Scale;Major Scale;C;B Locrian;Locrian;B
+<div>What is <b>mode 7</b> of <b>C Major Scale</b>?</div>;<div><b>B Locrian</b></div>;NameMode;C Major Scale;Major Scale;C;B Locrian;Locrian;B
+<div>What are the <b>notes</b> of <b>C Melodic Minor</b>?</div>;<div><b>C D Eb F G A B</b></div>;SpellScale;C Melodic Minor;Melodic Minor;C;C Melodic Minor;Melodic Minor;C
+<div>What are the <b>notes</b> of <b>C# Melodic Minor</b>?</div>;<div><b>C# D# E F# G# A# B#</b></div>;SpellScale;C# Melodic Minor;Melodic Minor;C#;C# Melodic Minor;Melodic Minor;C#
+<div>What are the <b>notes</b> of <b>D Melodic Minor</b>?</div>;<div><b>D E F G A B C#</b></div>;SpellScale;D Melodic Minor;Melodic Minor;D;D Melodic Minor;Melodic Minor;D
+<div>What are the <b>notes</b> of <b>Eb Melodic Minor</b>?</div>;<div><b>Eb F Gb Ab Bb C D</b></div>;SpellScale;Eb Melodic Minor;Melodic Minor;Eb;Eb Melodic Minor;Melodic Minor;Eb
+<div>What are the <b>notes</b> of <b>E Melodic Minor</b>?</div>;<div><b>E F# G A B C# D#</b></div>;SpellScale;E Melodic Minor;Melodic Minor;E;E Melodic Minor;Melodic Minor;E
+<div>What are the <b>notes</b> of <b>F Melodic Minor</b>?</div>;<div><b>F G Ab Bb C D E</b></div>;SpellScale;F Melodic Minor;Melodic Minor;F;F Melodic Minor;Melodic Minor;F
+<div>What are the <b>notes</b> of <b>F# Melodic Minor</b>?</div>;<div><b>F# G# A B C# D# E#</b></div>;SpellScale;F# Melodic Minor;Melodic Minor;F#;F# Melodic Minor;Melodic Minor;F#
+<div>What are the <b>notes</b> of <b>G Melodic Minor</b>?</div>;<div><b>G A Bb C D E F#</b></div>;SpellScale;G Melodic Minor;Melodic Minor;G;G Melodic Minor;Melodic Minor;G
+<div>What are the <b>notes</b> of <b>Ab Melodic Minor</b>?</div>;<div><b>Ab Bb Cb Db Eb F G</b></div>;SpellScale;Ab Melodic Minor;Melodic Minor;Ab;Ab Melodic Minor;Melodic Minor;Ab
+<div>What are the <b>notes</b> of <b>G# Melodic Minor</b>?</div>;<div><b>G# A# B C# D# E# Fx</b></div>;SpellScale;G# Melodic Minor;Melodic Minor;G#;G# Melodic Minor;Melodic Minor;G#
+<div>What are the <b>notes</b> of <b>A Melodic Minor</b>?</div>;<div><b>A B C D E F# G#</b></div>;SpellScale;A Melodic Minor;Melodic Minor;A;A Melodic Minor;Melodic Minor;A
+<div>What are the <b>notes</b> of <b>Bb Melodic Minor</b>?</div>;<div><b>Bb C Db Eb F G A</b></div>;SpellScale;Bb Melodic Minor;Melodic Minor;Bb;Bb Melodic Minor;Melodic Minor;Bb
+<div>What are the <b>notes</b> of <b>B Melodic Minor</b>?</div>;<div><b>B C# D E F# G# A#</b></div>;SpellScale;B Melodic Minor;Melodic Minor;B;B Melodic Minor;Melodic Minor;B
+<div>What are the <b>notes</b> of <b>C Lydian Dominant</b>?</div>;<div><b>C D E F# G A Bb</b></div>;SpellScale;G Melodic Minor;Melodic Minor;G;C Lydian Dominant;Lydian Dominant;C
+<div>What is the <b>parent</b> scale of <b>C Lydian Dominant</b>?</div>;<div><b>G Melodic Minor</b></div>;NameParent;G Melodic Minor;Melodic Minor;G;C Lydian Dominant;Lydian Dominant;C
+<div>What is <b>mode 4</b> of <b>G Melodic Minor</b>?</div>;<div><b>C Lydian Dominant</b></div>;NameMode;G Melodic Minor;Melodic Minor;G;C Lydian Dominant;Lydian Dominant;C
+<div>What are the <b>notes</b> of <b>Db Lydian Dominant</b>?</div>;<div><b>Db Eb F G Ab Bb Cb</b></div>;SpellScale;Ab Melodic Minor;Melodic Minor;Ab;Db Lydian Dominant;Lydian Dominant;Db
+<div>What is the <b>parent</b> scale of <b>Db Lydian Dominant</b>?</div>;<div><b>Ab Melodic Minor</b></div>;NameParent;Ab Melodic Minor;Melodic Minor;Ab;Db Lydian Dominant;Lydian Dominant;Db
+<div>What is <b>mode 4</b> of <b>Ab Melodic Minor</b>?</div>;<div><b>Db Lydian Dominant</b></div>;NameMode;Ab Melodic Minor;Melodic Minor;Ab;Db Lydian Dominant;Lydian Dominant;Db
+<div>What are the <b>notes</b> of <b>C# Lydian Dominant</b>?</div>;<div><b>C# D# E# Fx G# A# B</b></div>;SpellScale;G# Melodic Minor;Melodic Minor;G#;C# Lydian Dominant;Lydian Dominant;C#
+<div>What is the <b>parent</b> scale of <b>C# Lydian Dominant</b>?</div>;<div><b>G# Melodic Minor</b></div>;NameParent;G# Melodic Minor;Melodic Minor;G#;C# Lydian Dominant;Lydian Dominant;C#
+<div>What is <b>mode 4</b> of <b>G# Melodic Minor</b>?</div>;<div><b>C# Lydian Dominant</b></div>;NameMode;G# Melodic Minor;Melodic Minor;G#;C# Lydian Dominant;Lydian Dominant;C#
+<div>What are the <b>notes</b> of <b>D Lydian Dominant</b>?</div>;<div><b>D E F# G# A B C</b></div>;SpellScale;A Melodic Minor;Melodic Minor;A;D Lydian Dominant;Lydian Dominant;D
+<div>What is the <b>parent</b> scale of <b>D Lydian Dominant</b>?</div>;<div><b>A Melodic Minor</b></div>;NameParent;A Melodic Minor;Melodic Minor;A;D Lydian Dominant;Lydian Dominant;D
+<div>What is <b>mode 4</b> of <b>A Melodic Minor</b>?</div>;<div><b>D Lydian Dominant</b></div>;NameMode;A Melodic Minor;Melodic Minor;A;D Lydian Dominant;Lydian Dominant;D
+<div>What are the <b>notes</b> of <b>Eb Lydian Dominant</b>?</div>;<div><b>Eb F G A Bb C Db</b></div>;SpellScale;Bb Melodic Minor;Melodic Minor;Bb;Eb Lydian Dominant;Lydian Dominant;Eb
+<div>What is the <b>parent</b> scale of <b>Eb Lydian Dominant</b>?</div>;<div><b>Bb Melodic Minor</b></div>;NameParent;Bb Melodic Minor;Melodic Minor;Bb;Eb Lydian Dominant;Lydian Dominant;Eb
+<div>What is <b>mode 4</b> of <b>Bb Melodic Minor</b>?</div>;<div><b>Eb Lydian Dominant</b></div>;NameMode;Bb Melodic Minor;Melodic Minor;Bb;Eb Lydian Dominant;Lydian Dominant;Eb
+<div>What are the <b>notes</b> of <b>E Lydian Dominant</b>?</div>;<div><b>E F# G# A# B C# D</b></div>;SpellScale;B Melodic Minor;Melodic Minor;B;E Lydian Dominant;Lydian Dominant;E
+<div>What is the <b>parent</b> scale of <b>E Lydian Dominant</b>?</div>;<div><b>B Melodic Minor</b></div>;NameParent;B Melodic Minor;Melodic Minor;B;E Lydian Dominant;Lydian Dominant;E
+<div>What is <b>mode 4</b> of <b>B Melodic Minor</b>?</div>;<div><b>E Lydian Dominant</b></div>;NameMode;B Melodic Minor;Melodic Minor;B;E Lydian Dominant;Lydian Dominant;E
+<div>What are the <b>notes</b> of <b>F Lydian Dominant</b>?</div>;<div><b>F G A B C D Eb</b></div>;SpellScale;C Melodic Minor;Melodic Minor;C;F Lydian Dominant;Lydian Dominant;F
+<div>What is the <b>parent</b> scale of <b>F Lydian Dominant</b>?</div>;<div><b>C Melodic Minor</b></div>;NameParent;C Melodic Minor;Melodic Minor;C;F Lydian Dominant;Lydian Dominant;F
+<div>What is <b>mode 4</b> of <b>C Melodic Minor</b>?</div>;<div><b>F Lydian Dominant</b></div>;NameMode;C Melodic Minor;Melodic Minor;C;F Lydian Dominant;Lydian Dominant;F
+<div>What are the <b>notes</b> of <b>F# Lydian Dominant</b>?</div>;<div><b>F# G# A# B# C# D# E</b></div>;SpellScale;C# Melodic Minor;Melodic Minor;C#;F# Lydian Dominant;Lydian Dominant;F#
+<div>What is the <b>parent</b> scale of <b>F# Lydian Dominant</b>?</div>;<div><b>C# Melodic Minor</b></div>;NameParent;C# Melodic Minor;Melodic Minor;C#;F# Lydian Dominant;Lydian Dominant;F#
+<div>What is <b>mode 4</b> of <b>C# Melodic Minor</b>?</div>;<div><b>F# Lydian Dominant</b></div>;NameMode;C# Melodic Minor;Melodic Minor;C#;F# Lydian Dominant;Lydian Dominant;F#
+<div>What are the <b>notes</b> of <b>G Lydian Dominant</b>?</div>;<div><b>G A B C# D E F</b></div>;SpellScale;D Melodic Minor;Melodic Minor;D;G Lydian Dominant;Lydian Dominant;G
+<div>What is the <b>parent</b> scale of <b>G Lydian Dominant</b>?</div>;<div><b>D Melodic Minor</b></div>;NameParent;D Melodic Minor;Melodic Minor;D;G Lydian Dominant;Lydian Dominant;G
+<div>What is <b>mode 4</b> of <b>D Melodic Minor</b>?</div>;<div><b>G Lydian Dominant</b></div>;NameMode;D Melodic Minor;Melodic Minor;D;G Lydian Dominant;Lydian Dominant;G
+<div>What are the <b>notes</b> of <b>Ab Lydian Dominant</b>?</div>;<div><b>Ab Bb C D Eb F Gb</b></div>;SpellScale;Eb Melodic Minor;Melodic Minor;Eb;Ab Lydian Dominant;Lydian Dominant;Ab
+<div>What is the <b>parent</b> scale of <b>Ab Lydian Dominant</b>?</div>;<div><b>Eb Melodic Minor</b></div>;NameParent;Eb Melodic Minor;Melodic Minor;Eb;Ab Lydian Dominant;Lydian Dominant;Ab
+<div>What is <b>mode 4</b> of <b>Eb Melodic Minor</b>?</div>;<div><b>Ab Lydian Dominant</b></div>;NameMode;Eb Melodic Minor;Melodic Minor;Eb;Ab Lydian Dominant;Lydian Dominant;Ab
+<div>What are the <b>notes</b> of <b>A Lydian Dominant</b>?</div>;<div><b>A B C# D# E F# G</b></div>;SpellScale;E Melodic Minor;Melodic Minor;E;A Lydian Dominant;Lydian Dominant;A
+<div>What is the <b>parent</b> scale of <b>A Lydian Dominant</b>?</div>;<div><b>E Melodic Minor</b></div>;NameParent;E Melodic Minor;Melodic Minor;E;A Lydian Dominant;Lydian Dominant;A
+<div>What is <b>mode 4</b> of <b>E Melodic Minor</b>?</div>;<div><b>A Lydian Dominant</b></div>;NameMode;E Melodic Minor;Melodic Minor;E;A Lydian Dominant;Lydian Dominant;A
+<div>What are the <b>notes</b> of <b>Bb Lydian Dominant</b>?</div>;<div><b>Bb C D E F G Ab</b></div>;SpellScale;F Melodic Minor;Melodic Minor;F;Bb Lydian Dominant;Lydian Dominant;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Lydian Dominant</b>?</div>;<div><b>F Melodic Minor</b></div>;NameParent;F Melodic Minor;Melodic Minor;F;Bb Lydian Dominant;Lydian Dominant;Bb
+<div>What is <b>mode 4</b> of <b>F Melodic Minor</b>?</div>;<div><b>Bb Lydian Dominant</b></div>;NameMode;F Melodic Minor;Melodic Minor;F;Bb Lydian Dominant;Lydian Dominant;Bb
+<div>What are the <b>notes</b> of <b>B Lydian Dominant</b>?</div>;<div><b>B C# D# E# F# G# A</b></div>;SpellScale;F# Melodic Minor;Melodic Minor;F#;B Lydian Dominant;Lydian Dominant;B
+<div>What is the <b>parent</b> scale of <b>B Lydian Dominant</b>?</div>;<div><b>F# Melodic Minor</b></div>;NameParent;F# Melodic Minor;Melodic Minor;F#;B Lydian Dominant;Lydian Dominant;B
+<div>What is <b>mode 4</b> of <b>F# Melodic Minor</b>?</div>;<div><b>B Lydian Dominant</b></div>;NameMode;F# Melodic Minor;Melodic Minor;F#;B Lydian Dominant;Lydian Dominant;B
+<div>What are the <b>notes</b> of <b>B# Altered</b>?</div>;<div><b>B# C# D# E F# G# A#</b></div>;SpellScale;C# Melodic Minor;Melodic Minor;C#;B# Altered;Altered;B#
+<div>What is the <b>parent</b> scale of <b>B# Altered</b>?</div>;<div><b>C# Melodic Minor</b></div>;NameParent;C# Melodic Minor;Melodic Minor;C#;B# Altered;Altered;B#
+<div>What is <b>mode 7</b> of <b>C# Melodic Minor</b>?</div>;<div><b>B# Altered</b></div>;NameMode;C# Melodic Minor;Melodic Minor;C#;B# Altered;Altered;B#
+<div>What are the <b>notes</b> of <b>C# Altered</b>?</div>;<div><b>C# D E F G A B</b></div>;SpellScale;D Melodic Minor;Melodic Minor;D;C# Altered;Altered;C#
+<div>What is the <b>parent</b> scale of <b>C# Altered</b>?</div>;<div><b>D Melodic Minor</b></div>;NameParent;D Melodic Minor;Melodic Minor;D;C# Altered;Altered;C#
+<div>What is <b>mode 7</b> of <b>D Melodic Minor</b>?</div>;<div><b>C# Altered</b></div>;NameMode;D Melodic Minor;Melodic Minor;D;C# Altered;Altered;C#
+<div>What are the <b>notes</b> of <b>D Altered</b>?</div>;<div><b>D Eb F Gb Ab Bb C</b></div>;SpellScale;Eb Melodic Minor;Melodic Minor;Eb;D Altered;Altered;D
+<div>What is the <b>parent</b> scale of <b>D Altered</b>?</div>;<div><b>Eb Melodic Minor</b></div>;NameParent;Eb Melodic Minor;Melodic Minor;Eb;D Altered;Altered;D
+<div>What is <b>mode 7</b> of <b>Eb Melodic Minor</b>?</div>;<div><b>D Altered</b></div>;NameMode;Eb Melodic Minor;Melodic Minor;Eb;D Altered;Altered;D
+<div>What are the <b>notes</b> of <b>D# Altered</b>?</div>;<div><b>D# E F# G A B C#</b></div>;SpellScale;E Melodic Minor;Melodic Minor;E;D# Altered;Altered;D#
+<div>What is the <b>parent</b> scale of <b>D# Altered</b>?</div>;<div><b>E Melodic Minor</b></div>;NameParent;E Melodic Minor;Melodic Minor;E;D# Altered;Altered;D#
+<div>What is <b>mode 7</b> of <b>E Melodic Minor</b>?</div>;<div><b>D# Altered</b></div>;NameMode;E Melodic Minor;Melodic Minor;E;D# Altered;Altered;D#
+<div>What are the <b>notes</b> of <b>E Altered</b>?</div>;<div><b>E F G Ab Bb C D</b></div>;SpellScale;F Melodic Minor;Melodic Minor;F;E Altered;Altered;E
+<div>What is the <b>parent</b> scale of <b>E Altered</b>?</div>;<div><b>F Melodic Minor</b></div>;NameParent;F Melodic Minor;Melodic Minor;F;E Altered;Altered;E
+<div>What is <b>mode 7</b> of <b>F Melodic Minor</b>?</div>;<div><b>E Altered</b></div>;NameMode;F Melodic Minor;Melodic Minor;F;E Altered;Altered;E
+<div>What are the <b>notes</b> of <b>E# Altered</b>?</div>;<div><b>E# F# G# A B C# D#</b></div>;SpellScale;F# Melodic Minor;Melodic Minor;F#;E# Altered;Altered;E#
+<div>What is the <b>parent</b> scale of <b>E# Altered</b>?</div>;<div><b>F# Melodic Minor</b></div>;NameParent;F# Melodic Minor;Melodic Minor;F#;E# Altered;Altered;E#
+<div>What is <b>mode 7</b> of <b>F# Melodic Minor</b>?</div>;<div><b>E# Altered</b></div>;NameMode;F# Melodic Minor;Melodic Minor;F#;E# Altered;Altered;E#
+<div>What are the <b>notes</b> of <b>F# Altered</b>?</div>;<div><b>F# G A Bb C D E</b></div>;SpellScale;G Melodic Minor;Melodic Minor;G;F# Altered;Altered;F#
+<div>What is the <b>parent</b> scale of <b>F# Altered</b>?</div>;<div><b>G Melodic Minor</b></div>;NameParent;G Melodic Minor;Melodic Minor;G;F# Altered;Altered;F#
+<div>What is <b>mode 7</b> of <b>G Melodic Minor</b>?</div>;<div><b>F# Altered</b></div>;NameMode;G Melodic Minor;Melodic Minor;G;F# Altered;Altered;F#
+<div>What are the <b>notes</b> of <b>G Altered</b>?</div>;<div><b>G Ab Bb Cb Db Eb F</b></div>;SpellScale;Ab Melodic Minor;Melodic Minor;Ab;G Altered;Altered;G
+<div>What is the <b>parent</b> scale of <b>G Altered</b>?</div>;<div><b>Ab Melodic Minor</b></div>;NameParent;Ab Melodic Minor;Melodic Minor;Ab;G Altered;Altered;G
+<div>What is <b>mode 7</b> of <b>Ab Melodic Minor</b>?</div>;<div><b>G Altered</b></div>;NameMode;Ab Melodic Minor;Melodic Minor;Ab;G Altered;Altered;G
+<div>What are the <b>notes</b> of <b>Fx Altered</b>?</div>;<div><b>Fx G# A# B C# D# E#</b></div>;SpellScale;G# Melodic Minor;Melodic Minor;G#;Fx Altered;Altered;Fx
+<div>What is the <b>parent</b> scale of <b>Fx Altered</b>?</div>;<div><b>G# Melodic Minor</b></div>;NameParent;G# Melodic Minor;Melodic Minor;G#;Fx Altered;Altered;Fx
+<div>What is <b>mode 7</b> of <b>G# Melodic Minor</b>?</div>;<div><b>Fx Altered</b></div>;NameMode;G# Melodic Minor;Melodic Minor;G#;Fx Altered;Altered;Fx
+<div>What are the <b>notes</b> of <b>G# Altered</b>?</div>;<div><b>G# A B C D E F#</b></div>;SpellScale;A Melodic Minor;Melodic Minor;A;G# Altered;Altered;G#
+<div>What is the <b>parent</b> scale of <b>G# Altered</b>?</div>;<div><b>A Melodic Minor</b></div>;NameParent;A Melodic Minor;Melodic Minor;A;G# Altered;Altered;G#
+<div>What is <b>mode 7</b> of <b>A Melodic Minor</b>?</div>;<div><b>G# Altered</b></div>;NameMode;A Melodic Minor;Melodic Minor;A;G# Altered;Altered;G#
+<div>What are the <b>notes</b> of <b>A Altered</b>?</div>;<div><b>A Bb C Db Eb F G</b></div>;SpellScale;Bb Melodic Minor;Melodic Minor;Bb;A Altered;Altered;A
+<div>What is the <b>parent</b> scale of <b>A Altered</b>?</div>;<div><b>Bb Melodic Minor</b></div>;NameParent;Bb Melodic Minor;Melodic Minor;Bb;A Altered;Altered;A
+<div>What is <b>mode 7</b> of <b>Bb Melodic Minor</b>?</div>;<div><b>A Altered</b></div>;NameMode;Bb Melodic Minor;Melodic Minor;Bb;A Altered;Altered;A
+<div>What are the <b>notes</b> of <b>A# Altered</b>?</div>;<div><b>A# B C# D E F# G#</b></div>;SpellScale;B Melodic Minor;Melodic Minor;B;A# Altered;Altered;A#
+<div>What is the <b>parent</b> scale of <b>A# Altered</b>?</div>;<div><b>B Melodic Minor</b></div>;NameParent;B Melodic Minor;Melodic Minor;B;A# Altered;Altered;A#
+<div>What is <b>mode 7</b> of <b>B Melodic Minor</b>?</div>;<div><b>A# Altered</b></div>;NameMode;B Melodic Minor;Melodic Minor;B;A# Altered;Altered;A#
+<div>What are the <b>notes</b> of <b>B Altered</b>?</div>;<div><b>B C D Eb F G A</b></div>;SpellScale;C Melodic Minor;Melodic Minor;C;B Altered;Altered;B
+<div>What is the <b>parent</b> scale of <b>B Altered</b>?</div>;<div><b>C Melodic Minor</b></div>;NameParent;C Melodic Minor;Melodic Minor;C;B Altered;Altered;B
+<div>What is <b>mode 7</b> of <b>C Melodic Minor</b>?</div>;<div><b>B Altered</b></div>;NameMode;C Melodic Minor;Melodic Minor;C;B Altered;Altered;B
+<div>What are the <b>notes</b> of <b>C Harmonic Minor</b>?</div>;<div><b>C D Eb F G Ab B</b></div>;SpellScale;C Harmonic Minor;Harmonic Minor;C;C Harmonic Minor;Harmonic Minor;C
+<div>What are the <b>notes</b> of <b>C# Harmonic Minor</b>?</div>;<div><b>C# D# E F# G# A B#</b></div>;SpellScale;C# Harmonic Minor;Harmonic Minor;C#;C# Harmonic Minor;Harmonic Minor;C#
+<div>What are the <b>notes</b> of <b>D Harmonic Minor</b>?</div>;<div><b>D E F G A Bb C#</b></div>;SpellScale;D Harmonic Minor;Harmonic Minor;D;D Harmonic Minor;Harmonic Minor;D
+<div>What are the <b>notes</b> of <b>Eb Harmonic Minor</b>?</div>;<div><b>Eb F Gb Ab Bb Cb D</b></div>;SpellScale;Eb Harmonic Minor;Harmonic Minor;Eb;Eb Harmonic Minor;Harmonic Minor;Eb
+<div>What are the <b>notes</b> of <b>D# Harmonic Minor</b>?</div>;<div><b>D# E# F# G# A# B Cx</b></div>;SpellScale;D# Harmonic Minor;Harmonic Minor;D#;D# Harmonic Minor;Harmonic Minor;D#
+<div>What are the <b>notes</b> of <b>E Harmonic Minor</b>?</div>;<div><b>E F# G A B C D#</b></div>;SpellScale;E Harmonic Minor;Harmonic Minor;E;E Harmonic Minor;Harmonic Minor;E
+<div>What are the <b>notes</b> of <b>F Harmonic Minor</b>?</div>;<div><b>F G Ab Bb C Db E</b></div>;SpellScale;F Harmonic Minor;Harmonic Minor;F;F Harmonic Minor;Harmonic Minor;F
+<div>What are the <b>notes</b> of <b>F# Harmonic Minor</b>?</div>;<div><b>F# G# A B C# D E#</b></div>;SpellScale;F# Harmonic Minor;Harmonic Minor;F#;F# Harmonic Minor;Harmonic Minor;F#
+<div>What are the <b>notes</b> of <b>G Harmonic Minor</b>?</div>;<div><b>G A Bb C D Eb F#</b></div>;SpellScale;G Harmonic Minor;Harmonic Minor;G;G Harmonic Minor;Harmonic Minor;G
+<div>What are the <b>notes</b> of <b>G# Harmonic Minor</b>?</div>;<div><b>G# A# B C# D# E Fx</b></div>;SpellScale;G# Harmonic Minor;Harmonic Minor;G#;G# Harmonic Minor;Harmonic Minor;G#
+<div>What are the <b>notes</b> of <b>A Harmonic Minor</b>?</div>;<div><b>A B C D E F G#</b></div>;SpellScale;A Harmonic Minor;Harmonic Minor;A;A Harmonic Minor;Harmonic Minor;A
+<div>What are the <b>notes</b> of <b>Bb Harmonic Minor</b>?</div>;<div><b>Bb C Db Eb F Gb A</b></div>;SpellScale;Bb Harmonic Minor;Harmonic Minor;Bb;Bb Harmonic Minor;Harmonic Minor;Bb
+<div>What are the <b>notes</b> of <b>B Harmonic Minor</b>?</div>;<div><b>B C# D E F# G A#</b></div>;SpellScale;B Harmonic Minor;Harmonic Minor;B;B Harmonic Minor;Harmonic Minor;B
+<div>What are the <b>notes</b> of <b>C Phrygian Dominant</b>?</div>;<div><b>C Db E F G Ab Bb</b></div>;SpellScale;F Harmonic Minor;Harmonic Minor;F;C Phrygian Dominant;Phrygian Dominant;C
+<div>What is the <b>parent</b> scale of <b>C Phrygian Dominant</b>?</div>;<div><b>F Harmonic Minor</b></div>;NameParent;F Harmonic Minor;Harmonic Minor;F;C Phrygian Dominant;Phrygian Dominant;C
+<div>What is <b>mode 5</b> of <b>F Harmonic Minor</b>?</div>;<div><b>C Phrygian Dominant</b></div>;NameMode;F Harmonic Minor;Harmonic Minor;F;C Phrygian Dominant;Phrygian Dominant;C
+<div>What are the <b>notes</b> of <b>C# Phrygian Dominant</b>?</div>;<div><b>C# D E# F# G# A B</b></div>;SpellScale;F# Harmonic Minor;Harmonic Minor;F#;C# Phrygian Dominant;Phrygian Dominant;C#
+<div>What is the <b>parent</b> scale of <b>C# Phrygian Dominant</b>?</div>;<div><b>F# Harmonic Minor</b></div>;NameParent;F# Harmonic Minor;Harmonic Minor;F#;C# Phrygian Dominant;Phrygian Dominant;C#
+<div>What is <b>mode 5</b> of <b>F# Harmonic Minor</b>?</div>;<div><b>C# Phrygian Dominant</b></div>;NameMode;F# Harmonic Minor;Harmonic Minor;F#;C# Phrygian Dominant;Phrygian Dominant;C#
+<div>What are the <b>notes</b> of <b>D Phrygian Dominant</b>?</div>;<div><b>D Eb F# G A Bb C</b></div>;SpellScale;G Harmonic Minor;Harmonic Minor;G;D Phrygian Dominant;Phrygian Dominant;D
+<div>What is the <b>parent</b> scale of <b>D Phrygian Dominant</b>?</div>;<div><b>G Harmonic Minor</b></div>;NameParent;G Harmonic Minor;Harmonic Minor;G;D Phrygian Dominant;Phrygian Dominant;D
+<div>What is <b>mode 5</b> of <b>G Harmonic Minor</b>?</div>;<div><b>D Phrygian Dominant</b></div>;NameMode;G Harmonic Minor;Harmonic Minor;G;D Phrygian Dominant;Phrygian Dominant;D
+<div>What are the <b>notes</b> of <b>D# Phrygian Dominant</b>?</div>;<div><b>D# E Fx G# A# B C#</b></div>;SpellScale;G# Harmonic Minor;Harmonic Minor;G#;D# Phrygian Dominant;Phrygian Dominant;D#
+<div>What is the <b>parent</b> scale of <b>D# Phrygian Dominant</b>?</div>;<div><b>G# Harmonic Minor</b></div>;NameParent;G# Harmonic Minor;Harmonic Minor;G#;D# Phrygian Dominant;Phrygian Dominant;D#
+<div>What is <b>mode 5</b> of <b>G# Harmonic Minor</b>?</div>;<div><b>D# Phrygian Dominant</b></div>;NameMode;G# Harmonic Minor;Harmonic Minor;G#;D# Phrygian Dominant;Phrygian Dominant;D#
+<div>What are the <b>notes</b> of <b>E Phrygian Dominant</b>?</div>;<div><b>E F G# A B C D</b></div>;SpellScale;A Harmonic Minor;Harmonic Minor;A;E Phrygian Dominant;Phrygian Dominant;E
+<div>What is the <b>parent</b> scale of <b>E Phrygian Dominant</b>?</div>;<div><b>A Harmonic Minor</b></div>;NameParent;A Harmonic Minor;Harmonic Minor;A;E Phrygian Dominant;Phrygian Dominant;E
+<div>What is <b>mode 5</b> of <b>A Harmonic Minor</b>?</div>;<div><b>E Phrygian Dominant</b></div>;NameMode;A Harmonic Minor;Harmonic Minor;A;E Phrygian Dominant;Phrygian Dominant;E
+<div>What are the <b>notes</b> of <b>F Phrygian Dominant</b>?</div>;<div><b>F Gb A Bb C Db Eb</b></div>;SpellScale;Bb Harmonic Minor;Harmonic Minor;Bb;F Phrygian Dominant;Phrygian Dominant;F
+<div>What is the <b>parent</b> scale of <b>F Phrygian Dominant</b>?</div>;<div><b>Bb Harmonic Minor</b></div>;NameParent;Bb Harmonic Minor;Harmonic Minor;Bb;F Phrygian Dominant;Phrygian Dominant;F
+<div>What is <b>mode 5</b> of <b>Bb Harmonic Minor</b>?</div>;<div><b>F Phrygian Dominant</b></div>;NameMode;Bb Harmonic Minor;Harmonic Minor;Bb;F Phrygian Dominant;Phrygian Dominant;F
+<div>What are the <b>notes</b> of <b>F# Phrygian Dominant</b>?</div>;<div><b>F# G A# B C# D E</b></div>;SpellScale;B Harmonic Minor;Harmonic Minor;B;F# Phrygian Dominant;Phrygian Dominant;F#
+<div>What is the <b>parent</b> scale of <b>F# Phrygian Dominant</b>?</div>;<div><b>B Harmonic Minor</b></div>;NameParent;B Harmonic Minor;Harmonic Minor;B;F# Phrygian Dominant;Phrygian Dominant;F#
+<div>What is <b>mode 5</b> of <b>B Harmonic Minor</b>?</div>;<div><b>F# Phrygian Dominant</b></div>;NameMode;B Harmonic Minor;Harmonic Minor;B;F# Phrygian Dominant;Phrygian Dominant;F#
+<div>What are the <b>notes</b> of <b>G Phrygian Dominant</b>?</div>;<div><b>G Ab B C D Eb F</b></div>;SpellScale;C Harmonic Minor;Harmonic Minor;C;G Phrygian Dominant;Phrygian Dominant;G
+<div>What is the <b>parent</b> scale of <b>G Phrygian Dominant</b>?</div>;<div><b>C Harmonic Minor</b></div>;NameParent;C Harmonic Minor;Harmonic Minor;C;G Phrygian Dominant;Phrygian Dominant;G
+<div>What is <b>mode 5</b> of <b>C Harmonic Minor</b>?</div>;<div><b>G Phrygian Dominant</b></div>;NameMode;C Harmonic Minor;Harmonic Minor;C;G Phrygian Dominant;Phrygian Dominant;G
+<div>What are the <b>notes</b> of <b>G# Phrygian Dominant</b>?</div>;<div><b>G# A B# C# D# E F#</b></div>;SpellScale;C# Harmonic Minor;Harmonic Minor;C#;G# Phrygian Dominant;Phrygian Dominant;G#
+<div>What is the <b>parent</b> scale of <b>G# Phrygian Dominant</b>?</div>;<div><b>C# Harmonic Minor</b></div>;NameParent;C# Harmonic Minor;Harmonic Minor;C#;G# Phrygian Dominant;Phrygian Dominant;G#
+<div>What is <b>mode 5</b> of <b>C# Harmonic Minor</b>?</div>;<div><b>G# Phrygian Dominant</b></div>;NameMode;C# Harmonic Minor;Harmonic Minor;C#;G# Phrygian Dominant;Phrygian Dominant;G#
+<div>What are the <b>notes</b> of <b>A Phrygian Dominant</b>?</div>;<div><b>A Bb C# D E F G</b></div>;SpellScale;D Harmonic Minor;Harmonic Minor;D;A Phrygian Dominant;Phrygian Dominant;A
+<div>What is the <b>parent</b> scale of <b>A Phrygian Dominant</b>?</div>;<div><b>D Harmonic Minor</b></div>;NameParent;D Harmonic Minor;Harmonic Minor;D;A Phrygian Dominant;Phrygian Dominant;A
+<div>What is <b>mode 5</b> of <b>D Harmonic Minor</b>?</div>;<div><b>A Phrygian Dominant</b></div>;NameMode;D Harmonic Minor;Harmonic Minor;D;A Phrygian Dominant;Phrygian Dominant;A
+<div>What are the <b>notes</b> of <b>Bb Phrygian Dominant</b>?</div>;<div><b>Bb Cb D Eb F Gb Ab</b></div>;SpellScale;Eb Harmonic Minor;Harmonic Minor;Eb;Bb Phrygian Dominant;Phrygian Dominant;Bb
+<div>What is the <b>parent</b> scale of <b>Bb Phrygian Dominant</b>?</div>;<div><b>Eb Harmonic Minor</b></div>;NameParent;Eb Harmonic Minor;Harmonic Minor;Eb;Bb Phrygian Dominant;Phrygian Dominant;Bb
+<div>What is <b>mode 5</b> of <b>Eb Harmonic Minor</b>?</div>;<div><b>Bb Phrygian Dominant</b></div>;NameMode;Eb Harmonic Minor;Harmonic Minor;Eb;Bb Phrygian Dominant;Phrygian Dominant;Bb
+<div>What are the <b>notes</b> of <b>A# Phrygian Dominant</b>?</div>;<div><b>A# B Cx D# E# F# G#</b></div>;SpellScale;D# Harmonic Minor;Harmonic Minor;D#;A# Phrygian Dominant;Phrygian Dominant;A#
+<div>What is the <b>parent</b> scale of <b>A# Phrygian Dominant</b>?</div>;<div><b>D# Harmonic Minor</b></div>;NameParent;D# Harmonic Minor;Harmonic Minor;D#;A# Phrygian Dominant;Phrygian Dominant;A#
+<div>What is <b>mode 5</b> of <b>D# Harmonic Minor</b>?</div>;<div><b>A# Phrygian Dominant</b></div>;NameMode;D# Harmonic Minor;Harmonic Minor;D#;A# Phrygian Dominant;Phrygian Dominant;A#
+<div>What are the <b>notes</b> of <b>B Phrygian Dominant</b>?</div>;<div><b>B C D# E F# G A</b></div>;SpellScale;E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B
+<div>What is the <b>parent</b> scale of <b>B Phrygian Dominant</b>?</div>;<div><b>E Harmonic Minor</b></div>;NameParent;E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B
+<div>What is <b>mode 5</b> of <b>E Harmonic Minor</b>?</div>;<div><b>B Phrygian Dominant</b></div>;NameMode;E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B
+<div>What is the <b>enharmonic</b> equivalent of <b>C#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Db</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Db</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>C#</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>D#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Eb</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Eb</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>D#</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>F#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Gb</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Gb</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>F#</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>G#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Ab</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Ab</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>G#</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>A#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Bb</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Bb</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>A#</b>?</div>;Enharmonics;;;;;;
+<div>What are the <b>intervals</b> of <b>Major Scale</b>?</div>;<div><b>1 2 3 4 5 6 7</b></div>;ModeIntervals;;Major Scale;;;Major Scale;
+<div>What are the <b>intervals</b> of <b>Dorian</b>?</div>;<div><b>1 2 b3 4 5 6 b7</b></div>;ModeIntervals;;Major Scale;;;Dorian;
+<div>What are the <b>intervals</b> of <b>Phrygian</b>?</div>;<div><b>1 b2 b3 4 5 b6 b7</b></div>;ModeIntervals;;Major Scale;;;Phrygian;
+<div>What are the <b>intervals</b> of <b>Lydian</b>?</div>;<div><b>1 2 3 #4 5 6 7</b></div>;ModeIntervals;;Major Scale;;;Lydian;
+<div>What are the <b>intervals</b> of <b>Mixolydian</b>?</div>;<div><b>1 2 3 4 5 6 b7</b></div>;ModeIntervals;;Major Scale;;;Mixolydian;
+<div>What are the <b>intervals</b> of <b>Aeolean</b>?</div>;<div><b>1 2 b3 4 5 b6 b7</b></div>;ModeIntervals;;Major Scale;;;Aeolean;
+<div>What are the <b>intervals</b> of <b>Locrian</b>?</div>;<div><b>1 b2 b3 4 b5 b6 b7</b></div>;ModeIntervals;;Major Scale;;;Locrian;
+<div>What are the <b>intervals</b> of <b>Melodic Minor</b>?</div>;<div><b>1 2 b3 4 5 6 7</b></div>;ModeIntervals;;Melodic Minor;;;Melodic Minor;
+<div>What are the <b>intervals</b> of <b>Lydian Dominant</b>?</div>;<div><b>1 2 3 #4 5 6 b7</b></div>;ModeIntervals;;Melodic Minor;;;Lydian Dominant;
+<div>What are the <b>intervals</b> of <b>Altered</b>?</div>;<div><b>1 b2 b3 b4 b5 b6 b7</b></div>;ModeIntervals;;Melodic Minor;;;Altered;
+<div>What are the <b>intervals</b> of <b>Harmonic Minor</b>?</div>;<div><b>1 2 b3 4 5 b6 7</b></div>;ModeIntervals;;Harmonic Minor;;;Harmonic Minor;
+<div>What are the <b>intervals</b> of <b>Phrygian Dominant</b>?</div>;<div><b>1 b2 3 4 5 b6 b7</b></div>;ModeIntervals;;Harmonic Minor;;;Phrygian Dominant;
+<div>What are the <b>intervals</b> of <b>Whole Tone</b>?</div>;<div><b>1 2 3 #4 #5 b7</b></div>;ModeIntervals;;Whole Tone;;;Whole Tone;
+<div>What are the <b>intervals</b> of <b>Diminished Half/Whole</b>?</div>;<div><b>1 b2 b3 3 b5 5 6 b7</b></div>;ModeIntervals;;Diminished Half/Whole;;;Diminished Half/Whole;
+<div>What are the <b>intervals</b> of <b>Diminished Whole/Half</b>?</div>;<div><b>1 2 b3 4 b5 b6 6 7</b></div>;ModeIntervals;;Diminished Half/Whole;;;Diminished Whole/Half;
+<div>What are the <b>notes</b> of <b>CΔ7</b> Chord?</div>;<div><b>C E G B</b></div>;SpellChord;;;;CΔ7;Δ7;C
+<div>What are the <b>notes</b> of <b>DbΔ7</b> Chord?</div>;<div><b>Db F Ab C</b></div>;SpellChord;;;;DbΔ7;Δ7;Db
+<div>What are the <b>notes</b> of <b>DΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A C#</b></div>;SpellChord;;;;DΔ7;Δ7;D
+<div>What are the <b>notes</b> of <b>EbΔ7</b> Chord?</div>;<div><b>Eb G Bb D</b></div>;SpellChord;;;;EbΔ7;Δ7;Eb
+<div>What are the <b>notes</b> of <b>EΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# B D#</b></div>;SpellChord;;;;EΔ7;Δ7;E
+<div>What are the <b>notes</b> of <b>FΔ7</b> Chord?</div>;<div><b>F A C E</b></div>;SpellChord;;;;FΔ7;Δ7;F
+<div>What are the <b>notes</b> of <b>GbΔ7</b> Chord?</div>;<div><b>Gb Bb Db F</b></div>;SpellChord;;;;GbΔ7;Δ7;Gb
+<div>What are the <b>notes</b> of <b>GΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B D F#</b></div>;SpellChord;;;;GΔ7;Δ7;G
+<div>What are the <b>notes</b> of <b>AbΔ7</b> Chord?</div>;<div><b>Ab C Eb G</b></div>;SpellChord;;;;AbΔ7;Δ7;Ab
+<div>What are the <b>notes</b> of <b>AΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# E G#</b></div>;SpellChord;;;;AΔ7;Δ7;A
+<div>What are the <b>notes</b> of <b>BbΔ7</b> Chord?</div>;<div><b>Bb D F A</b></div>;SpellChord;;;;BbΔ7;Δ7;Bb
+<div>What are the <b>notes</b> of <b>BΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F# A#</b></div>;SpellChord;;;;BΔ7;Δ7;B
+<div>What are the <b>notes</b> of <b>Cm7</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G Bb</b></div>;SpellChord;;;;Cm7;m7;C
+<div>What are the <b>notes</b> of <b>C#m7</b> Chord?</div>;<div><b>C# E G# B</b></div>;SpellChord;;;;C#m7;m7;C#
+<div>What are the <b>notes</b> of <b>Dm7</b> Chord?</div>;<div><b>D F A C</b></div>;SpellChord;;;;Dm7;m7;D
+<div>What are the <b>notes</b> of <b>Ebm7</b> Chord?</div>;<div><b>Eb Gb Bb Db</b></div>;SpellChord;;;;Ebm7;m7;Eb
+<div>What are the <b>notes</b> of <b>D#m7</b> Chord?</div>;<div><b>D# F# A# C#</b></div>;SpellChord;;;;D#m7;m7;D#
+<div>What are the <b>notes</b> of <b>Em7</b> Chord?</div>;<div><b>E G B D</b></div>;SpellChord;;;;Em7;m7;E
+<div>What are the <b>notes</b> of <b>Fm7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C Eb</b></div>;SpellChord;;;;Fm7;m7;F
+<div>What are the <b>notes</b> of <b>F#m7</b> Chord?</div>;<div><b>F# A C# E</b></div>;SpellChord;;;;F#m7;m7;F#
+<div>What are the <b>notes</b> of <b>Gm7</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb D F</b></div>;SpellChord;;;;Gm7;m7;G
+<div>What are the <b>notes</b> of <b>G#m7</b> Chord?</div>;<div><b>G# B D# F#</b></div>;SpellChord;;;;G#m7;m7;G#
+<div>What are the <b>notes</b> of <b>Am7</b> Chord?</div>;<div><b>A C E G</b></div>;SpellChord;;;;Am7;m7;A
+<div>What are the <b>notes</b> of <b>Bbm7</b> Chord?</div>;<div><b>Bb Db F Ab</b></div>;SpellChord;;;;Bbm7;m7;Bb
+<div>What are the <b>notes</b> of <b>Bm7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# A</b></div>;SpellChord;;;;Bm7;m7;B
+<div>What are the <b>notes</b> of <b>Cm6</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G A</b></div>;SpellChord;;;;Cm6;m6;C
+<div>What are the <b>notes</b> of <b>C#m6</b> Chord?</div>;<div><b>C# E G# A#</b></div>;SpellChord;;;;C#m6;m6;C#
+<div>What are the <b>notes</b> of <b>Dm6</b> Chord?</div>;<div><b>D F A B</b></div>;SpellChord;;;;Dm6;m6;D
+<div>What are the <b>notes</b> of <b>Ebm6</b> Chord?</div>;<div><b>Eb Gb Bb C</b></div>;SpellChord;;;;Ebm6;m6;Eb
+<div>What are the <b>notes</b> of <b>Em6</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G B C#</b></div>;SpellChord;;;;Em6;m6;E
+<div>What are the <b>notes</b> of <b>Fm6</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C D</b></div>;SpellChord;;;;Fm6;m6;F
+<div>What are the <b>notes</b> of <b>F#m6</b> Chord?</div>;<div><b>F# A C# D#</b></div>;SpellChord;;;;F#m6;m6;F#
+<div>What are the <b>notes</b> of <b>Gm6</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb D E</b></div>;SpellChord;;;;Gm6;m6;G
+<div>What are the <b>notes</b> of <b>Abm6</b> Chord?</div>;<div><b>Ab B Eb F</b></div>;SpellChord;;;;Abm6;m6;Ab
+<div>What are the <b>notes</b> of <b>G#m6</b> Chord?</div>;<div><b>G# B D# F</b></div>;SpellChord;;;;G#m6;m6;G#
+<div>What are the <b>notes</b> of <b>Am6</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C E F#</b></div>;SpellChord;;;;Am6;m6;A
+<div>What are the <b>notes</b> of <b>Bbm6</b> Chord?</div>;<div><b>Bb Db F G</b></div>;SpellChord;;;;Bbm6;m6;Bb
+<div>What are the <b>notes</b> of <b>Bm6</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# G#</b></div>;SpellChord;;;;Bm6;m6;B
+<div>What are the <b>notes</b> of <b>C7</b> Chord (using <b>flats</b>)?</div>;<div><b>C E G Bb</b></div>;SpellChord;;;;C7;7;C
+<div>What are the <b>notes</b> of <b>Db7</b> Chord?</div>;<div><b>Db F Ab B</b></div>;SpellChord;;;;Db7;7;Db
+<div>What are the <b>notes</b> of <b>C#7</b> Chord?</div>;<div><b>C# F G# B</b></div>;SpellChord;;;;C#7;7;C#
+<div>What are the <b>notes</b> of <b>D7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A C</b></div>;SpellChord;;;;D7;7;D
+<div>What are the <b>notes</b> of <b>Eb7</b> Chord?</div>;<div><b>Eb G Bb Db</b></div>;SpellChord;;;;Eb7;7;Eb
+<div>What are the <b>notes</b> of <b>E7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# B D</b></div>;SpellChord;;;;E7;7;E
+<div>What are the <b>notes</b> of <b>F7</b> Chord (using <b>flats</b>)?</div>;<div><b>F A C Eb</b></div>;SpellChord;;;;F7;7;F
+<div>What are the <b>notes</b> of <b>F#7</b> Chord?</div>;<div><b>F# A# C# E</b></div>;SpellChord;;;;F#7;7;F#
+<div>What are the <b>notes</b> of <b>G7</b> Chord?</div>;<div><b>G B D F</b></div>;SpellChord;;;;G7;7;G
+<div>What are the <b>notes</b> of <b>Ab7</b> Chord?</div>;<div><b>Ab C Eb Gb</b></div>;SpellChord;;;;Ab7;7;Ab
+<div>What are the <b>notes</b> of <b>A7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# E G</b></div>;SpellChord;;;;A7;7;A
+<div>What are the <b>notes</b> of <b>Bb7</b> Chord?</div>;<div><b>Bb D F Ab</b></div>;SpellChord;;;;Bb7;7;Bb
+<div>What are the <b>notes</b> of <b>B7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F# A</b></div>;SpellChord;;;;B7;7;B
+<div>What are the <b>notes</b> of <b>Cm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb Gb Bb</b></div>;SpellChord;;;;Cm7b5;m7b5;C
+<div>What are the <b>notes</b> of <b>C#m7b5</b> Chord?</div>;<div><b>C# E G B</b></div>;SpellChord;;;;C#m7b5;m7b5;C#
+<div>What are the <b>notes</b> of <b>Dm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Ab C</b></div>;SpellChord;;;;Dm7b5;m7b5;D
+<div>What are the <b>notes</b> of <b>D#m7b5</b> Chord?</div>;<div><b>D# F# A C#</b></div>;SpellChord;;;;D#m7b5;m7b5;D#
+<div>What are the <b>notes</b> of <b>Em7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Bb D</b></div>;SpellChord;;;;Em7b5;m7b5;E
+<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab B Eb</b></div>;SpellChord;;;;Fm7b5;m7b5;F
+<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# B D#</b></div>;SpellChord;;;;Fm7b5;m7b5;F
+<div>What are the <b>notes</b> of <b>F#m7b5</b> Chord?</div>;<div><b>F# A C E</b></div>;SpellChord;;;;F#m7b5;m7b5;F#
+<div>What are the <b>notes</b> of <b>Gm7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>G Bb Db F</b></div>;SpellChord;;;;Gm7b5;m7b5;G
+<div>What are the <b>notes</b> of <b>G#m7b5</b> Chord?</div>;<div><b>G# B D F#</b></div>;SpellChord;;;;G#m7b5;m7b5;G#
+<div>What are the <b>notes</b> of <b>Am7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Eb G</b></div>;SpellChord;;;;Am7b5;m7b5;A
+<div>What are the <b>notes</b> of <b>A#m7b5</b> Chord?</div>;<div><b>A# C# E G#</b></div>;SpellChord;;;;A#m7b5;m7b5;A#
+<div>What are the <b>notes</b> of <b>Bm7b5</b> Chord?</div>;<div><b>B D F A</b></div>;SpellChord;;;;Bm7b5;m7b5;B
+<div>What are the <b>notes</b> of <b>Cdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# F# A</b></div>;SpellChord;;;;Cdim7;dim7;C
+<div>What are the <b>notes</b> of <b>Dbdim7</b> Chord?</div>;<div><b>Db E G Bb</b></div>;SpellChord;;;;Dbdim7;dim7;Db
+<div>What are the <b>notes</b> of <b>Ddim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F G# B</b></div>;SpellChord;;;;Ddim7;dim7;D
+<div>What are the <b>notes</b> of <b>Ebdim7</b> Chord?</div>;<div><b>Eb Gb A C</b></div>;SpellChord;;;;Ebdim7;dim7;Eb
+<div>What are the <b>notes</b> of <b>Edim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G A# C#</b></div>;SpellChord;;;;Edim7;dim7;E
+<div>What are the <b>notes</b> of <b>Fdim7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab B D</b></div>;SpellChord;;;;Fdim7;dim7;F
+<div>What are the <b>notes</b> of <b>Gbdim7</b> Chord?</div>;<div><b>Gb A C Eb</b></div>;SpellChord;;;;Gbdim7;dim7;Gb
+<div>What are the <b>notes</b> of <b>Gdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# C# E</b></div>;SpellChord;;;;Gdim7;dim7;G
+<div>What are the <b>notes</b> of <b>Abdim7</b> Chord?</div>;<div><b>Ab B D F</b></div>;SpellChord;;;;Abdim7;dim7;Ab
+<div>What are the <b>notes</b> of <b>Adim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C D# F#</b></div>;SpellChord;;;;Adim7;dim7;A
+<div>What are the <b>notes</b> of <b>Bbdim7</b> Chord?</div>;<div><b>Bb Db E G</b></div>;SpellChord;;;;Bbdim7;dim7;Bb
+<div>What are the <b>notes</b> of <b>Bdim7</b> Chord (using <b>flats</b>)?</div>;<div><b>B D F Ab</b></div>;SpellChord;;;;Bdim7;dim7;B
+<div>What are the <b>notes</b> of <b>Bdim7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F G#</b></div>;SpellChord;;;;Bdim7;dim7;B
+<div>What are the <b>notes</b> of <b>CmΔ7</b> Chord (using <b>flats</b>)?</div>;<div><b>C Eb G B</b></div>;SpellChord;;;;CmΔ7;mΔ7;C
+<div>What are the <b>notes</b> of <b>DbmΔ7</b> Chord?</div>;<div><b>Db E Ab C</b></div>;SpellChord;;;;DbmΔ7;mΔ7;Db
+<div>What are the <b>notes</b> of <b>DmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F A C#</b></div>;SpellChord;;;;DmΔ7;mΔ7;D
+<div>What are the <b>notes</b> of <b>EbmΔ7</b> Chord?</div>;<div><b>Eb Gb Bb D</b></div>;SpellChord;;;;EbmΔ7;mΔ7;Eb
+<div>What are the <b>notes</b> of <b>EmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G B D#</b></div>;SpellChord;;;;EmΔ7;mΔ7;E
+<div>What are the <b>notes</b> of <b>FmΔ7</b> Chord (using <b>flats</b>)?</div>;<div><b>F Ab C E</b></div>;SpellChord;;;;FmΔ7;mΔ7;F
+<div>What are the <b>notes</b> of <b>GbmΔ7</b> Chord?</div>;<div><b>Gb A Db F</b></div>;SpellChord;;;;GbmΔ7;mΔ7;Gb
+<div>What are the <b>notes</b> of <b>GmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# D F#</b></div>;SpellChord;;;;GmΔ7;mΔ7;G
+<div>What are the <b>notes</b> of <b>AbmΔ7</b> Chord?</div>;<div><b>Ab B Eb G</b></div>;SpellChord;;;;AbmΔ7;mΔ7;Ab
+<div>What are the <b>notes</b> of <b>AmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C E G#</b></div>;SpellChord;;;;AmΔ7;mΔ7;A
+<div>What are the <b>notes</b> of <b>BbmΔ7</b> Chord?</div>;<div><b>Bb Db F A</b></div>;SpellChord;;;;BbmΔ7;mΔ7;Bb
+<div>What are the <b>notes</b> of <b>BmΔ7</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D F# A#</b></div>;SpellChord;;;;BmΔ7;mΔ7;B
+<div>What are the <b>notes</b> of <b>CΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>C E G# B</b></div>;SpellChord;;;;CΔ7#5;Δ7#5;C
+<div>What are the <b>notes</b> of <b>DbΔ7#5</b> Chord?</div>;<div><b>Db F A C</b></div>;SpellChord;;;;DbΔ7#5;Δ7#5;Db
+<div>What are the <b>notes</b> of <b>DΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# A# C#</b></div>;SpellChord;;;;DΔ7#5;Δ7#5;D
+<div>What are the <b>notes</b> of <b>EbΔ7#5</b> Chord?</div>;<div><b>Eb G B D</b></div>;SpellChord;;;;EbΔ7#5;Δ7#5;Eb
+<div>What are the <b>notes</b> of <b>EΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# C D#</b></div>;SpellChord;;;;EΔ7#5;Δ7#5;E
+<div>What are the <b>notes</b> of <b>FΔ7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A Db E</b></div>;SpellChord;;;;FΔ7#5;Δ7#5;F
+<div>What are the <b>notes</b> of <b>GbΔ7#5</b> Chord?</div>;<div><b>Gb Bb D F</b></div>;SpellChord;;;;GbΔ7#5;Δ7#5;Gb
+<div>What are the <b>notes</b> of <b>GΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B D# F#</b></div>;SpellChord;;;;GΔ7#5;Δ7#5;G
+<div>What are the <b>notes</b> of <b>AbΔ7#5</b> Chord?</div>;<div><b>Ab C E G</b></div>;SpellChord;;;;AbΔ7#5;Δ7#5;Ab
+<div>What are the <b>notes</b> of <b>AΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# F G#</b></div>;SpellChord;;;;AΔ7#5;Δ7#5;A
+<div>What are the <b>notes</b> of <b>BbΔ7#5</b> Chord?</div>;<div><b>Bb D Gb A</b></div>;SpellChord;;;;BbΔ7#5;Δ7#5;Bb
+<div>What are the <b>notes</b> of <b>BΔ7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# G A#</b></div>;SpellChord;;;;BΔ7#5;Δ7#5;B
+<div>What are the <b>notes</b> of <b>CΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>C E F# B</b></div>;SpellChord;;;;CΔ7#11;Δ7#11;C
+<div>What are the <b>notes</b> of <b>DbΔ7#11</b> Chord?</div>;<div><b>Db F G C</b></div>;SpellChord;;;;DbΔ7#11;Δ7#11;Db
+<div>What are the <b>notes</b> of <b>DΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# G# C#</b></div>;SpellChord;;;;DΔ7#11;Δ7#11;D
+<div>What are the <b>notes</b> of <b>EbΔ7#11</b> Chord?</div>;<div><b>Eb G A D</b></div>;SpellChord;;;;EbΔ7#11;Δ7#11;Eb
+<div>What are the <b>notes</b> of <b>EΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# A# D#</b></div>;SpellChord;;;;EΔ7#11;Δ7#11;E
+<div>What are the <b>notes</b> of <b>FΔ7#11</b> Chord?</div>;<div><b>F A B E</b></div>;SpellChord;;;;FΔ7#11;Δ7#11;F
+<div>What are the <b>notes</b> of <b>GbΔ7#11</b> Chord?</div>;<div><b>Gb Bb C F</b></div>;SpellChord;;;;GbΔ7#11;Δ7#11;Gb
+<div>What are the <b>notes</b> of <b>GΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>G B C# F#</b></div>;SpellChord;;;;GΔ7#11;Δ7#11;G
+<div>What are the <b>notes</b> of <b>AbΔ7#11</b> Chord?</div>;<div><b>Ab C D G</b></div>;SpellChord;;;;AbΔ7#11;Δ7#11;Ab
+<div>What are the <b>notes</b> of <b>AΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# D# G#</b></div>;SpellChord;;;;AΔ7#11;Δ7#11;A
+<div>What are the <b>notes</b> of <b>BbΔ7#11</b> Chord?</div>;<div><b>Bb D E A</b></div>;SpellChord;;;;BbΔ7#11;Δ7#11;Bb
+<div>What are the <b>notes</b> of <b>BΔ7#11</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F A#</b></div>;SpellChord;;;;BΔ7#11;Δ7#11;B
+<div>What are the <b>notes</b> of <b>C7sus4</b> Chord (using <b>flats</b>)?</div>;<div><b>C F G Bb</b></div>;SpellChord;;;;C7sus4;7sus4;C
+<div>What are the <b>notes</b> of <b>Db7sus4</b> Chord?</div>;<div><b>Db Gb Ab B</b></div>;SpellChord;;;;Db7sus4;7sus4;Db
+<div>What are the <b>notes</b> of <b>C#7sus4</b> Chord?</div>;<div><b>C# F# G# B</b></div>;SpellChord;;;;C#7sus4;7sus4;C#
+<div>What are the <b>notes</b> of <b>D7sus4</b> Chord?</div>;<div><b>D G A C</b></div>;SpellChord;;;;D7sus4;7sus4;D
+<div>What are the <b>notes</b> of <b>Eb7sus4</b> Chord?</div>;<div><b>Eb Ab Bb Db</b></div>;SpellChord;;;;Eb7sus4;7sus4;Eb
+<div>What are the <b>notes</b> of <b>E7sus4</b> Chord?</div>;<div><b>E A B D</b></div>;SpellChord;;;;E7sus4;7sus4;E
+<div>What are the <b>notes</b> of <b>F7sus4</b> Chord (using <b>flats</b>)?</div>;<div><b>F Bb C Eb</b></div>;SpellChord;;;;F7sus4;7sus4;F
+<div>What are the <b>notes</b> of <b>F#7sus4</b> Chord?</div>;<div><b>F# B C# E</b></div>;SpellChord;;;;F#7sus4;7sus4;F#
+<div>What are the <b>notes</b> of <b>G7sus4</b> Chord?</div>;<div><b>G C D F</b></div>;SpellChord;;;;G7sus4;7sus4;G
+<div>What are the <b>notes</b> of <b>Ab7sus4</b> Chord?</div>;<div><b>Ab Db Eb Gb</b></div>;SpellChord;;;;Ab7sus4;7sus4;Ab
+<div>What are the <b>notes</b> of <b>A7sus4</b> Chord?</div>;<div><b>A D E G</b></div>;SpellChord;;;;A7sus4;7sus4;A
+<div>What are the <b>notes</b> of <b>Bb7sus4</b> Chord?</div>;<div><b>Bb Eb F Ab</b></div>;SpellChord;;;;Bb7sus4;7sus4;Bb
+<div>What are the <b>notes</b> of <b>B7sus4</b> Chord (using <b>sharps</b>)?</div>;<div><b>B E F# A</b></div>;SpellChord;;;;B7sus4;7sus4;B
+<div>What are the <b>notes</b> of <b>C7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E G Bb</b></div>;SpellChord;;;;C7b9;7b9;C
+<div>What are the <b>notes</b> of <b>C#7b9</b> Chord?</div>;<div><b>C# D F G# B</b></div>;SpellChord;;;;C#7b9;7b9;C#
+<div>What are the <b>notes</b> of <b>D7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb A C</b></div>;SpellChord;;;;D7b9;7b9;D
+<div>What are the <b>notes</b> of <b>D#7b9</b> Chord?</div>;<div><b>D# E G A# C#</b></div>;SpellChord;;;;D#7b9;7b9;D#
+<div>What are the <b>notes</b> of <b>E7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab B D</b></div>;SpellChord;;;;E7b9;7b9;E
+<div>What are the <b>notes</b> of <b>F7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A C Eb</b></div>;SpellChord;;;;F7b9;7b9;F
+<div>What are the <b>notes</b> of <b>F#7b9</b> Chord?</div>;<div><b>F# G A# C# E</b></div>;SpellChord;;;;F#7b9;7b9;F#
+<div>What are the <b>notes</b> of <b>G7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B D F</b></div>;SpellChord;;;;G7b9;7b9;G
+<div>What are the <b>notes</b> of <b>G#7b9</b> Chord?</div>;<div><b>G# A C D# F#</b></div>;SpellChord;;;;G#7b9;7b9;G#
+<div>What are the <b>notes</b> of <b>A7b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db E G</b></div>;SpellChord;;;;A7b9;7b9;A
+<div>What are the <b>notes</b> of <b>A#7b9</b> Chord?</div>;<div><b>A# B D F G#</b></div>;SpellChord;;;;A#7b9;7b9;A#
+<div>What are the <b>notes</b> of <b>B7b9</b> Chord (using <b>sharps</b>)?</div>;<div><b>B C D# F# A</b></div>;SpellChord;;;;B7b9;7b9;B
+<div>What are the <b>notes</b> of <b>C7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E G A#</b></div>;SpellChord;;;;C7#9;7#9;C
+<div>What are the <b>notes</b> of <b>Db7#9</b> Chord?</div>;<div><b>Db E F Ab B</b></div>;SpellChord;;;;Db7#9;7#9;Db
+<div>What are the <b>notes</b> of <b>D7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb A C</b></div>;SpellChord;;;;D7#9;7#9;D
+<div>What are the <b>notes</b> of <b>D#7#9</b> Chord?</div>;<div><b>D# F# G A# C#</b></div>;SpellChord;;;;D#7#9;7#9;D#
+<div>What are the <b>notes</b> of <b>E7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab B D</b></div>;SpellChord;;;;E7#9;7#9;E
+<div>What are the <b>notes</b> of <b>F7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A C D#</b></div>;SpellChord;;;;F7#9;7#9;F
+<div>What are the <b>notes</b> of <b>Gb7#9</b> Chord?</div>;<div><b>Gb A Bb Db E</b></div>;SpellChord;;;;Gb7#9;7#9;Gb
+<div>What are the <b>notes</b> of <b>G7#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B D F</b></div>;SpellChord;;;;G7#9;7#9;G
+<div>What are the <b>notes</b> of <b>Ab7#9</b> Chord?</div>;<div><b>Ab B C Eb Gb</b></div>;SpellChord;;;;Ab7#9;7#9;Ab
+<div>What are the <b>notes</b> of <b>A7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db E G</b></div>;SpellChord;;;;A7#9;7#9;A
+<div>What are the <b>notes</b> of <b>A#7#9</b> Chord?</div>;<div><b>A# C# D F G#</b></div>;SpellChord;;;;A#7#9;7#9;A#
+<div>What are the <b>notes</b> of <b>B7#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb Gb A</b></div>;SpellChord;;;;B7#9;7#9;B
+<div>What are the <b>notes</b> of <b>C7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>C E Gb Bb</b></div>;SpellChord;;;;C7b5;7b5;C
+<div>What are the <b>notes</b> of <b>Db7b5</b> Chord?</div>;<div><b>Db F G B</b></div>;SpellChord;;;;Db7b5;7b5;Db
+<div>What are the <b>notes</b> of <b>C#7b5</b> Chord?</div>;<div><b>C# F G B</b></div>;SpellChord;;;;C#7b5;7b5;C#
+<div>What are the <b>notes</b> of <b>D7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>D F# G# C</b></div>;SpellChord;;;;D7b5;7b5;D
+<div>What are the <b>notes</b> of <b>Eb7b5</b> Chord?</div>;<div><b>Eb G A Db</b></div>;SpellChord;;;;Eb7b5;7b5;Eb
+<div>What are the <b>notes</b> of <b>E7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# A# D</b></div>;SpellChord;;;;E7b5;7b5;E
+<div>What are the <b>notes</b> of <b>F7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A B Eb</b></div>;SpellChord;;;;F7b5;7b5;F
+<div>What are the <b>notes</b> of <b>F#7b5</b> Chord?</div>;<div><b>F# A# C E</b></div>;SpellChord;;;;F#7b5;7b5;F#
+<div>What are the <b>notes</b> of <b>G7b5</b> Chord (using <b>flats</b>)?</div>;<div><b>G B Db F</b></div>;SpellChord;;;;G7b5;7b5;G
+<div>What are the <b>notes</b> of <b>Ab7b5</b> Chord?</div>;<div><b>Ab C D Gb</b></div>;SpellChord;;;;Ab7b5;7b5;Ab
+<div>What are the <b>notes</b> of <b>A7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>A C# D# G</b></div>;SpellChord;;;;A7b5;7b5;A
+<div>What are the <b>notes</b> of <b>Bb7b5</b> Chord?</div>;<div><b>Bb D E Ab</b></div>;SpellChord;;;;Bb7b5;7b5;Bb
+<div>What are the <b>notes</b> of <b>B7b5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# F A</b></div>;SpellChord;;;;B7b5;7b5;B
+<div>What are the <b>notes</b> of <b>C7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>C E Ab Bb</b></div>;SpellChord;;;;C7#5;7#5;C
+<div>What are the <b>notes</b> of <b>C#7#5</b> Chord?</div>;<div><b>C# F A B</b></div>;SpellChord;;;;C#7#5;7#5;C#
+<div>What are the <b>notes</b> of <b>D7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>D Gb Bb C</b></div>;SpellChord;;;;D7#5;7#5;D
+<div>What are the <b>notes</b> of <b>Eb7#5</b> Chord?</div>;<div><b>Eb G B Db</b></div>;SpellChord;;;;Eb7#5;7#5;Eb
+<div>What are the <b>notes</b> of <b>D#7#5</b> Chord?</div>;<div><b>D# G B C#</b></div>;SpellChord;;;;D#7#5;7#5;D#
+<div>What are the <b>notes</b> of <b>E7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>E G# C D</b></div>;SpellChord;;;;E7#5;7#5;E
+<div>What are the <b>notes</b> of <b>F7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>F A Db Eb</b></div>;SpellChord;;;;F7#5;7#5;F
+<div>What are the <b>notes</b> of <b>F#7#5</b> Chord?</div>;<div><b>F# A# D E</b></div>;SpellChord;;;;F#7#5;7#5;F#
+<div>What are the <b>notes</b> of <b>G7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>G B Eb F</b></div>;SpellChord;;;;G7#5;7#5;G
+<div>What are the <b>notes</b> of <b>G#7#5</b> Chord?</div>;<div><b>G# C E F#</b></div>;SpellChord;;;;G#7#5;7#5;G#
+<div>What are the <b>notes</b> of <b>A7#5</b> Chord (using <b>flats</b>)?</div>;<div><b>A Db F G</b></div>;SpellChord;;;;A7#5;7#5;A
+<div>What are the <b>notes</b> of <b>Bb7#5</b> Chord?</div>;<div><b>Bb D Gb Ab</b></div>;SpellChord;;;;Bb7#5;7#5;Bb
+<div>What are the <b>notes</b> of <b>B7#5</b> Chord (using <b>sharps</b>)?</div>;<div><b>B D# G A</b></div>;SpellChord;;;;B7#5;7#5;B
+<div>What are the <b>notes</b> of <b>C7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E Gb Bb</b></div>;SpellChord;;;;C7b5b9;7b5b9;C
+<div>What are the <b>notes</b> of <b>C#7b5b9</b> Chord?</div>;<div><b>C# D F G B</b></div>;SpellChord;;;;C#7b5b9;7b5b9;C#
+<div>What are the <b>notes</b> of <b>D7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb Ab C</b></div>;SpellChord;;;;D7b5b9;7b5b9;D
+<div>What are the <b>notes</b> of <b>D#7b5b9</b> Chord?</div>;<div><b>D# E G A C#</b></div>;SpellChord;;;;D#7b5b9;7b5b9;D#
+<div>What are the <b>notes</b> of <b>E7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab Bb D</b></div>;SpellChord;;;;E7b5b9;7b5b9;E
+<div>What are the <b>notes</b> of <b>F7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A B Eb</b></div>;SpellChord;;;;F7b5b9;7b5b9;F
+<div>What are the <b>notes</b> of <b>F#7b5b9</b> Chord?</div>;<div><b>F# G A# C E</b></div>;SpellChord;;;;F#7b5b9;7b5b9;F#
+<div>What are the <b>notes</b> of <b>G7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B Db F</b></div>;SpellChord;;;;G7b5b9;7b5b9;G
+<div>What are the <b>notes</b> of <b>G#7b5b9</b> Chord?</div>;<div><b>G# A C D F#</b></div>;SpellChord;;;;G#7b5b9;7b5b9;G#
+<div>What are the <b>notes</b> of <b>A7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db Eb G</b></div>;SpellChord;;;;A7b5b9;7b5b9;A
+<div>What are the <b>notes</b> of <b>A#7b5b9</b> Chord?</div>;<div><b>A# B D E G#</b></div>;SpellChord;;;;A#7b5b9;7b5b9;A#
+<div>What are the <b>notes</b> of <b>B7b5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>B C Eb F A</b></div>;SpellChord;;;;B7b5b9;7b5b9;B
+<div>What are the <b>notes</b> of <b>C7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>C Db E Ab Bb</b></div>;SpellChord;;;;C7#5b9;7#5b9;C
+<div>What are the <b>notes</b> of <b>C#7#5b9</b> Chord?</div>;<div><b>C# D F A B</b></div>;SpellChord;;;;C#7#5b9;7#5b9;C#
+<div>What are the <b>notes</b> of <b>D7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>D Eb Gb Bb C</b></div>;SpellChord;;;;D7#5b9;7#5b9;D
+<div>What are the <b>notes</b> of <b>D#7#5b9</b> Chord?</div>;<div><b>D# E G B C#</b></div>;SpellChord;;;;D#7#5b9;7#5b9;D#
+<div>What are the <b>notes</b> of <b>E7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>E F Ab C D</b></div>;SpellChord;;;;E7#5b9;7#5b9;E
+<div>What are the <b>notes</b> of <b>F7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>F Gb A Db Eb</b></div>;SpellChord;;;;F7#5b9;7#5b9;F
+<div>What are the <b>notes</b> of <b>F#7#5b9</b> Chord?</div>;<div><b>F# G A# D E</b></div>;SpellChord;;;;F#7#5b9;7#5b9;F#
+<div>What are the <b>notes</b> of <b>G7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>G Ab B Eb F</b></div>;SpellChord;;;;G7#5b9;7#5b9;G
+<div>What are the <b>notes</b> of <b>G#7#5b9</b> Chord?</div>;<div><b>G# A C E F#</b></div>;SpellChord;;;;G#7#5b9;7#5b9;G#
+<div>What are the <b>notes</b> of <b>A7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>A Bb Db F G</b></div>;SpellChord;;;;A7#5b9;7#5b9;A
+<div>What are the <b>notes</b> of <b>A#7#5b9</b> Chord?</div>;<div><b>A# B D F# G#</b></div>;SpellChord;;;;A#7#5b9;7#5b9;A#
+<div>What are the <b>notes</b> of <b>B7#5b9</b> Chord (using <b>flats</b>)?</div>;<div><b>B C Eb G A</b></div>;SpellChord;;;;B7#5b9;7#5b9;B
+<div>What are the <b>notes</b> of <b>C7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E F# A#</b></div>;SpellChord;;;;C7b5#9;7b5#9;C
+<div>What are the <b>notes</b> of <b>Db7b5#9</b> Chord?</div>;<div><b>Db E F G B</b></div>;SpellChord;;;;Db7b5#9;7b5#9;Db
+<div>What are the <b>notes</b> of <b>D7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb Ab C</b></div>;SpellChord;;;;D7b5#9;7b5#9;D
+<div>What are the <b>notes</b> of <b>D#7b5#9</b> Chord?</div>;<div><b>D# F# G A C#</b></div>;SpellChord;;;;D#7b5#9;7b5#9;D#
+<div>What are the <b>notes</b> of <b>E7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab Bb D</b></div>;SpellChord;;;;E7b5#9;7b5#9;E
+<div>What are the <b>notes</b> of <b>F7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A B D#</b></div>;SpellChord;;;;F7b5#9;7b5#9;F
+<div>What are the <b>notes</b> of <b>Gb7b5#9</b> Chord?</div>;<div><b>Gb A Bb C E</b></div>;SpellChord;;;;Gb7b5#9;7b5#9;Gb
+<div>What are the <b>notes</b> of <b>G7b5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B C# F</b></div>;SpellChord;;;;G7b5#9;7b5#9;G
+<div>What are the <b>notes</b> of <b>G#7b5#9</b> Chord?</div>;<div><b>G# B C D F#</b></div>;SpellChord;;;;G#7b5#9;7b5#9;G#
+<div>What are the <b>notes</b> of <b>A7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db Eb G</b></div>;SpellChord;;;;A7b5#9;7b5#9;A
+<div>What are the <b>notes</b> of <b>A#7b5#9</b> Chord?</div>;<div><b>A# C# D E G#</b></div>;SpellChord;;;;A#7b5#9;7b5#9;A#
+<div>What are the <b>notes</b> of <b>B7b5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb F A</b></div>;SpellChord;;;;B7b5#9;7b5#9;B
+<div>What are the <b>notes</b> of <b>C7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>C D# E G# A#</b></div>;SpellChord;;;;C7#5#9;7#5#9;C
+<div>What are the <b>notes</b> of <b>Db7#5#9</b> Chord?</div>;<div><b>Db E F A B</b></div>;SpellChord;;;;Db7#5#9;7#5#9;Db
+<div>What are the <b>notes</b> of <b>D7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>D F Gb Bb C</b></div>;SpellChord;;;;D7#5#9;7#5#9;D
+<div>What are the <b>notes</b> of <b>D#7#5#9</b> Chord?</div>;<div><b>D# F# G B C#</b></div>;SpellChord;;;;D#7#5#9;7#5#9;D#
+<div>What are the <b>notes</b> of <b>E7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>E G Ab C D</b></div>;SpellChord;;;;E7#5#9;7#5#9;E
+<div>What are the <b>notes</b> of <b>F7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>F G# A C# D#</b></div>;SpellChord;;;;F7#5#9;7#5#9;F
+<div>What are the <b>notes</b> of <b>Gb7#5#9</b> Chord?</div>;<div><b>Gb A Bb D E</b></div>;SpellChord;;;;Gb7#5#9;7#5#9;Gb
+<div>What are the <b>notes</b> of <b>G7#5#9</b> Chord (using <b>sharps</b>)?</div>;<div><b>G A# B D# F</b></div>;SpellChord;;;;G7#5#9;7#5#9;G
+<div>What are the <b>notes</b> of <b>G#7#5#9</b> Chord?</div>;<div><b>G# B C E F#</b></div>;SpellChord;;;;G#7#5#9;7#5#9;G#
+<div>What are the <b>notes</b> of <b>A7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>A C Db F G</b></div>;SpellChord;;;;A7#5#9;7#5#9;A
+<div>What are the <b>notes</b> of <b>A#7#5#9</b> Chord?</div>;<div><b>A# C# D F# G#</b></div>;SpellChord;;;;A#7#5#9;7#5#9;A#
+<div>What are the <b>notes</b> of <b>B7#5#9</b> Chord (using <b>flats</b>)?</div>;<div><b>B D Eb G A</b></div>;SpellChord;;;;B7#5#9;7#5#9;B
+<div>What are the <b>notes</b> of <b>C</b> Triad?</div>;<div><b>C E G</b></div>;SpellChord;;;;C;;C
+<div>What are the <b>notes</b> of <b>Db</b> Triad?</div>;<div><b>Db F Ab</b></div>;SpellChord;;;;Db;;Db
+<div>What are the <b>notes</b> of <b>D</b> Triad (using <b>sharps</b>)?</div>;<div><b>D F# A</b></div>;SpellChord;;;;D;;D
+<div>What are the <b>notes</b> of <b>Eb</b> Triad?</div>;<div><b>Eb G Bb</b></div>;SpellChord;;;;Eb;;Eb
+<div>What are the <b>notes</b> of <b>E</b> Triad (using <b>sharps</b>)?</div>;<div><b>E G# B</b></div>;SpellChord;;;;E;;E
+<div>What are the <b>notes</b> of <b>F</b> Triad?</div>;<div><b>F A C</b></div>;SpellChord;;;;F;;F
+<div>What are the <b>notes</b> of <b>Gb</b> Triad?</div>;<div><b>Gb Bb Db</b></div>;SpellChord;;;;Gb;;Gb
+<div>What are the <b>notes</b> of <b>F#</b> Triad?</div>;<div><b>F# A# C#</b></div>;SpellChord;;;;F#;;F#
+<div>What are the <b>notes</b> of <b>G</b> Triad?</div>;<div><b>G B D</b></div>;SpellChord;;;;G;;G
+<div>What are the <b>notes</b> of <b>Ab</b> Triad?</div>;<div><b>Ab C Eb</b></div>;SpellChord;;;;Ab;;Ab
+<div>What are the <b>notes</b> of <b>A</b> Triad (using <b>sharps</b>)?</div>;<div><b>A C# E</b></div>;SpellChord;;;;A;;A
+<div>What are the <b>notes</b> of <b>Bb</b> Triad?</div>;<div><b>Bb D F</b></div>;SpellChord;;;;Bb;;Bb
+<div>What are the <b>notes</b> of <b>B</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D# F#</b></div>;SpellChord;;;;B;;B
+<div>What are the <b>notes</b> of <b>Cm</b> Triad (using <b>flats</b>)?</div>;<div><b>C Eb G</b></div>;SpellChord;;;;Cm;m;C
+<div>What are the <b>notes</b> of <b>C#m</b> Triad?</div>;<div><b>C# E G#</b></div>;SpellChord;;;;C#m;m;C#
+<div>What are the <b>notes</b> of <b>Dm</b> Triad?</div>;<div><b>D F A</b></div>;SpellChord;;;;Dm;m;D
+<div>What are the <b>notes</b> of <b>Ebm</b> Triad?</div>;<div><b>Eb Gb Bb</b></div>;SpellChord;;;;Ebm;m;Eb
+<div>What are the <b>notes</b> of <b>D#m</b> Triad?</div>;<div><b>D# F# A#</b></div>;SpellChord;;;;D#m;m;D#
+<div>What are the <b>notes</b> of <b>Em</b> Triad?</div>;<div><b>E G B</b></div>;SpellChord;;;;Em;m;E
+<div>What are the <b>notes</b> of <b>Fm</b> Triad (using <b>flats</b>)?</div>;<div><b>F Ab C</b></div>;SpellChord;;;;Fm;m;F
+<div>What are the <b>notes</b> of <b>F#m</b> Triad?</div>;<div><b>F# A C#</b></div>;SpellChord;;;;F#m;m;F#
+<div>What are the <b>notes</b> of <b>Gm</b> Triad (using <b>flats</b>)?</div>;<div><b>G Bb D</b></div>;SpellChord;;;;Gm;m;G
+<div>What are the <b>notes</b> of <b>G#m</b> Triad?</div>;<div><b>G# B D#</b></div>;SpellChord;;;;G#m;m;G#
+<div>What are the <b>notes</b> of <b>Am</b> Triad?</div>;<div><b>A C E</b></div>;SpellChord;;;;Am;m;A
+<div>What are the <b>notes</b> of <b>Bbm</b> Triad?</div>;<div><b>Bb Db F</b></div>;SpellChord;;;;Bbm;m;Bb
+<div>What are the <b>notes</b> of <b>Bm</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D F#</b></div>;SpellChord;;;;Bm;m;B
+<div>What are the <b>notes</b> of <b>Cdim</b> Triad (using <b>flats</b>)?</div>;<div><b>C Eb Gb</b></div>;SpellChord;;;;Cdim;dim;C
+<div>What are the <b>notes</b> of <b>C#dim</b> Triad?</div>;<div><b>C# E G</b></div>;SpellChord;;;;C#dim;dim;C#
+<div>What are the <b>notes</b> of <b>Ddim</b> Triad (using <b>flats</b>)?</div>;<div><b>D F Ab</b></div>;SpellChord;;;;Ddim;dim;D
+<div>What are the <b>notes</b> of <b>D#dim</b> Triad?</div>;<div><b>D# F# A</b></div>;SpellChord;;;;D#dim;dim;D#
+<div>What are the <b>notes</b> of <b>Edim</b> Triad (using <b>flats</b>)?</div>;<div><b>E G Bb</b></div>;SpellChord;;;;Edim;dim;E
+<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>flats</b>)?</div>;<div><b>F Ab B</b></div>;SpellChord;;;;Fdim;dim;F
+<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>sharps</b>)?</div>;<div><b>F G# B</b></div>;SpellChord;;;;Fdim;dim;F
+<div>What are the <b>notes</b> of <b>F#dim</b> Triad?</div>;<div><b>F# A C</b></div>;SpellChord;;;;F#dim;dim;F#
+<div>What are the <b>notes</b> of <b>Gdim</b> Triad (using <b>flats</b>)?</div>;<div><b>G Bb Db</b></div>;SpellChord;;;;Gdim;dim;G
+<div>What are the <b>notes</b> of <b>G#dim</b> Triad?</div>;<div><b>G# B D</b></div>;SpellChord;;;;G#dim;dim;G#
+<div>What are the <b>notes</b> of <b>Adim</b> Triad (using <b>flats</b>)?</div>;<div><b>A C Eb</b></div>;SpellChord;;;;Adim;dim;A
+<div>What are the <b>notes</b> of <b>A#dim</b> Triad?</div>;<div><b>A# C# E</b></div>;SpellChord;;;;A#dim;dim;A#
+<div>What are the <b>notes</b> of <b>Bdim</b> Triad?</div>;<div><b>B D F</b></div>;SpellChord;;;;Bdim;dim;B
+<div>What are the <b>notes</b> of <b>Caug</b> Triad (using <b>sharps</b>)?</div>;<div><b>C E G#</b></div>;SpellChord;;;;Caug;aug;C
+<div>What are the <b>notes</b> of <b>Dbaug</b> Triad?</div>;<div><b>Db F A</b></div>;SpellChord;;;;Dbaug;aug;Db
+<div>What are the <b>notes</b> of <b>Daug</b> Triad (using <b>sharps</b>)?</div>;<div><b>D F# A#</b></div>;SpellChord;;;;Daug;aug;D
+<div>What are the <b>notes</b> of <b>Ebaug</b> Triad?</div>;<div><b>Eb G B</b></div>;SpellChord;;;;Ebaug;aug;Eb
+<div>What are the <b>notes</b> of <b>Eaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>E G# C</b></div>;SpellChord;;;;Eaug;aug;E
+<div>What are the <b>notes</b> of <b>Faug</b> Triad (using <b>flats</b>)?</div>;<div><b>F A Db</b></div>;SpellChord;;;;Faug;aug;F
+<div>What are the <b>notes</b> of <b>Gbaug</b> Triad?</div>;<div><b>Gb Bb D</b></div>;SpellChord;;;;Gbaug;aug;Gb
+<div>What are the <b>notes</b> of <b>Gaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>G B D#</b></div>;SpellChord;;;;Gaug;aug;G
+<div>What are the <b>notes</b> of <b>Abaug</b> Triad?</div>;<div><b>Ab C E</b></div>;SpellChord;;;;Abaug;aug;Ab
+<div>What are the <b>notes</b> of <b>Aaug</b> Triad (using <b>sharps</b>)?</div>;<div><b>A C# F</b></div>;SpellChord;;;;Aaug;aug;A
+<div>What are the <b>notes</b> of <b>Bbaug</b> Triad?</div>;<div><b>Bb D Gb</b></div>;SpellChord;;;;Bbaug;aug;Bb
+<div>What are the <b>notes</b> of <b>Baug</b> Triad (using <b>flats</b>)?</div>;<div><b>B Eb G</b></div>;SpellChord;;;;Baug;aug;B
+<div>What are the <b>notes</b> of <b>Baug</b> Triad (using <b>sharps</b>)?</div>;<div><b>B D# G</b></div>;SpellChord;;;;Baug;aug;B
+<div>What are the <b>notes</b> of <b>Csus4</b> Triad?</div>;<div><b>C F G</b></div>;SpellChord;;;;Csus4;sus4;C
+<div>What are the <b>notes</b> of <b>Dbsus4</b> Triad?</div>;<div><b>Db Gb Ab</b></div>;SpellChord;;;;Dbsus4;sus4;Db
+<div>What are the <b>notes</b> of <b>Dsus4</b> Triad?</div>;<div><b>D G A</b></div>;SpellChord;;;;Dsus4;sus4;D
+<div>What are the <b>notes</b> of <b>Ebsus4</b> Triad?</div>;<div><b>Eb Ab Bb</b></div>;SpellChord;;;;Ebsus4;sus4;Eb
+<div>What are the <b>notes</b> of <b>Esus4</b> Triad?</div>;<div><b>E A B</b></div>;SpellChord;;;;Esus4;sus4;E
+<div>What are the <b>notes</b> of <b>Fsus4</b> Triad (using <b>flats</b>)?</div>;<div><b>F Bb C</b></div>;SpellChord;;;;Fsus4;sus4;F
+<div>What are the <b>notes</b> of <b>Gbsus4</b> Triad?</div>;<div><b>Gb B Db</b></div>;SpellChord;;;;Gbsus4;sus4;Gb
+<div>What are the <b>notes</b> of <b>F#sus4</b> Triad?</div>;<div><b>F# B C#</b></div>;SpellChord;;;;F#sus4;sus4;F#
+<div>What are the <b>notes</b> of <b>Gsus4</b> Triad?</div>;<div><b>G C D</b></div>;SpellChord;;;;Gsus4;sus4;G
+<div>What are the <b>notes</b> of <b>Absus4</b> Triad?</div>;<div><b>Ab Db Eb</b></div>;SpellChord;;;;Absus4;sus4;Ab
+<div>What are the <b>notes</b> of <b>Asus4</b> Triad?</div>;<div><b>A D E</b></div>;SpellChord;;;;Asus4;sus4;A
+<div>What are the <b>notes</b> of <b>Bbsus4</b> Triad?</div>;<div><b>Bb Eb F</b></div>;SpellChord;;;;Bbsus4;sus4;Bb
+<div>What are the <b>notes</b> of <b>Bsus4</b> Triad (using <b>sharps</b>)?</div>;<div><b>B E F#</b></div>;SpellChord;;;;Bsus4;sus4;B

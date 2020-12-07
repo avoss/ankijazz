@@ -15,7 +15,7 @@ import de.jlab.scales.rhythm.RhythmGenerator;
 
 public class RhythmDeck extends AbstractDeck {
 
-  private static final int MIN_BPM = 50;
+  private static final int MIN_BPM = 55;
   private static final int MAX_BPM = 75;
   private LilyMetronome metronome = new LilyMetronome(5, MIN_BPM, MAX_BPM);
   

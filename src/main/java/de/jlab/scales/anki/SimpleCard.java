@@ -1,44 +1,49 @@
 package de.jlab.scales.anki;
 
 import java.nio.file.Path;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-public class SimpleCard extends MustacheCard {
+public class SimpleCard implements Card {
   private final double difficulty;
-  private final String front;
-  private final String back;
-  private final String tags;
+  private final Map<String, String> fields = new LinkedHashMap<>();
+  private final Set<String> fieldNames;
 
-  public SimpleCard(double difficulty, String front, String back, String tags) {
+
+  public SimpleCard(double difficulty, String ... fieldNames) {
     this.difficulty = difficulty;
-    this.front = front;
-    this.back = back;
-    this.tags = tags;
+    this.fieldNames = Set.of(fieldNames);
+    for (String fieldName : fieldNames) {
+      fields.put(fieldName, "");
+    }
   }
 
   @Override
   public double getDifficulty() {
     return difficulty;
   }
+  
+  public void put(String name, String value) {
+    if (!fieldNames.contains(name)) {
+      throw new IllegalArgumentException("unknown field: " + name);
+    }
+    fields.put(name, value);
+  }
 
   @Override
   public String getCsv() {
-    return String.format("%s;%s;%s", front, back, tags);
+    return fields.values().stream().map(v -> v.replace(';', '_')).collect(Collectors.joining(";"));
   }
   
-  public String getFront() {
-    return front;
+  public Map<String, String> getFields() {
+    return fields;
   }
   
-  public String getBack() {
-    return back;
-  }
-  
-  public String getTags() {
-    return tags;
-  }
 
   @Override
   public void writeAssets(Path directory) {
   }
-
 }

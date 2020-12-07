@@ -9,10 +9,26 @@
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>
+      This deck contains the scales, modes and chords that are most commonly used in Jazz.  
+      For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>
     </p>
     {{#cards}}
-      {{{html}}}
+      <div class="card mb-3">
+        <h5 class="card-header">{{{fields.front}}}</h5>
+        <div class="card-body">
+          <p class="card-text">{{{fields.back}}}</p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>task: {{fields.task}}</li>
+            <li>parentName: {{fields.parentName}}</li>
+            <li>parentType: {{fields.parentType}}</li>
+            <li>parentRoot: {{fields.parentRoot}}</li>
+            <li>modeName: {{fields.modeName}}</li>
+            <li>modeType: {{fields.modeType}}</li>
+            <li>modeRoot: {{fields.modeRoot}}</li>
+          </ul>
+        </div>
+      </div>
     {{/cards}}
   </div>
 </body>

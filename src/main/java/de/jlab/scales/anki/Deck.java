@@ -5,10 +5,6 @@ import java.util.List;
 
 public interface Deck extends WithAssets {
 
-  default void add(double difficulty, String front, String back, String tags) {
-    add(new SimpleCard(difficulty, front, back, tags));
-  }
-
   void add(Card card);
 
   void writeHtml(Path dir);

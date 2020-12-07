@@ -6,7 +6,7 @@ import org.junit.Test;
 
 public class MustacheCardTest {
 
-  private Card card = new TestCard();
+  private TestCard card = new TestCard();
 
   
   @Test

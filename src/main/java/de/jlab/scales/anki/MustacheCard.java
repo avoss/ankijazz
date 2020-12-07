@@ -15,7 +15,6 @@ public abstract class MustacheCard implements Card {
     return transform(TemplateType.CSV).replaceAll("\\s*-----[-]+\\s*", ";");
   }
 
-  @Override
   public String getHtml() {
     return transform(TemplateType.HTML);
   }
