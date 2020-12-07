@@ -48,7 +48,7 @@ public class ModesPracticeGuitarCard extends LilyCard {
         ankiPng(super.getPngName()),
         model.getDirection(),
         position.getLabel(),
-        position.getImage()).collect(Collectors.joining(";"));
+        ankiPng(position.getImage())).collect(Collectors.joining(";"));
   }
 
 }

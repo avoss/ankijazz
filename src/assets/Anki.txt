@@ -35,19 +35,19 @@ Back:
 
 # AnkiJazz - Play Modes
 
-ModeName
-ModeType
-ModeRoot
 ParentName
 ParentType
 ParentRoot
-ModePng
-ModeMp3
+ModeName
+ModeType
+ModeRoot
+ModeAudio
+ModeImage
 Direction
 
 Front:
 
-<div>Play <b>{{ModeName}}</b></div>
+<div>Play <b>{{ModeName}}</b> in <b>{{Direction}}</b> order</div>
 
 Back:
 
@@ -55,29 +55,29 @@ Back:
 
 <hr id=answer>
 
-<div>{{ModePng}}</div>
-<div>{{ModeMp3}}</div>
+<div>{{ModeImage}}</div>
+<div>{{ModeAudio}}</div>
 <div><small>(Same notes as {{ParentName}})</small></div>
 
 
 # AnkiJazz - Play Modes (Guitar)
 
-ModeName
-ModeType
-ModeRoot
 ParentName
 ParentType
 ParentRoot
-ModePng
-ModeMp3
+ModeName
+ModeType
+ModeRoot
+ModeAudio
+ModeImage
 Direction
-Position
-PositionPng
+PositionLabel
+PositionImage
 
 Front:
 
-<div>Play <b>{{ModeName}}</b> in <b>{{Direction}}</b> order in <b>{{Position}}</b> position</div>
-<div>{{PositionPng}}</div>
+<div>Play <b>{{ModeName}}</b> in <b>{{Direction}}</b> order in <b>{{PositionLabel}}</b> position</div>
+<div>{{PositionImage}}</div>
 
 Back:
 
@@ -85,7 +85,6 @@ Back:
 
 <hr id=answer>
 
-<div>{{ModePng}}</div>
-<div>{{ModeMp3}}</div>
-<div><small>(Same notes as {{ParentName}})</small></div>
+<div>{{ModeImage}}</div>
+<div>{{ModeAudio}}</div>
 
