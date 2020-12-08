@@ -112,6 +112,7 @@ public enum BuiltinChordType implements ScaleType {
   @Override
   public Set<KeySignature> getKeySignatures(Note root) {
     Scale chord = prototype.transpose(root);
+    // TODO should use all containing scale types, not just one
     Set<Accidental> accidentals = containingScaleType.getKeySignatures(containingScaleRoot.transpose(root)).stream().map(KeySignature::getAccidental).collect(toCollection(LinkedHashSet::new));
     return accidentals.stream().map(accidental -> KeySignature.fromChord(chord, accidental)).collect(toCollection(LinkedHashSet::new));
   }
