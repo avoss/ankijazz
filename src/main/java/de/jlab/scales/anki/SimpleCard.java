@@ -37,13 +37,17 @@ public class SimpleCard implements Card {
   public String getCsv() {
     return fields.values().stream().map(v -> v.replace(';', '_')).collect(Collectors.joining(";"));
   }
+
+  @Override
+  public Map<String, Object> getJson() {
+    return new LinkedHashMap<String, Object>(fields);
+  }
+  
+  @Override
+  public void writeAssets(Path directory) {
+  }
   
   public Map<String, String> getFields() {
     return fields;
-  }
-  
-
-  @Override
-  public void writeAssets(Path directory) {
   }
 }

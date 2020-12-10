@@ -23,7 +23,7 @@ public class SimpleDeckTest {
     deck.sort(0);
    
     Path dir = Paths.get("build/SimpleDeckTest");
-    deck.writeAssets(dir);
+    deck.writeAnki(dir);
     deck.writeHtml(dir);
     
     String actual = Files.readAllLines(dir.resolve("SimpleDeck.txt")).stream().collect(Collectors.joining("\n"));

@@ -16,10 +16,7 @@
     <p>
       This deck contains the scales and modes that are most commonly used in Jazz. For details visit <a href="https://www.ankijazz.com">AnkiJazz</a>.
     </p>
-    <p>
-      Only a subset of cards is shown (the full deck contains more than 1100 cards).
-    </p>
-    {{#htmlCards}}
+    {{#cards}}
 			<div class="card border-secondary mb-3">
 			  <h4 class="card-header">
 			    Play {{model.modeName}} in {{model.direction}} Direction {{position.label}} Position
@@ -46,7 +43,7 @@
           </ul>
 			  </div>
 			</div>
-    {{/htmlCards}}
+    {{/cards}}
   </div>
 </body>
 </html>

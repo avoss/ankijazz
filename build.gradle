@@ -18,6 +18,7 @@ dependencies {
     compile 'com.google.inject.extensions:guice-assistedinject:3.0'
     compile 'com.google.inject.extensions:guice-multibindings:3.0'
     compile 'com.github.spullara.mustache.java:compiler:0.9.4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.0.1'
     compile 'org.apache.commons:commons-math3:3.6.1'    
     
     //compile fileTree(dir: 'lib', include: '*.jar')
@@ -46,7 +47,15 @@ task copyAssets(type:Copy) {
   into 'build/anki'
 }
 
-build.finalizedBy(copyAssets)
+task copyExamples(type:Copy) {
+  from ('src/assets') {
+    include ('*.png', '*.mp3', '*.ly')
+  } 
+  into 'build/examples'
+}
+
+build.dependsOn(copyAssets)
+build.dependsOn(copyExamples)
 
 task deleteAnki {
   delete "${ankiProfile}"

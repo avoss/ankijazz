@@ -80,11 +80,11 @@ public class ModesTheoryDeck extends AbstractDeck {
   }
   
   private void enharmonics() {
-    final String pattern = "<div>What is the <b>enharmonic</b> equivalent of <b>%s</b>?</div>"; 
+    final String question = "<div>What is the <b>enharmonic</b> equivalent of <b>%s</b>?</div>"; 
     for (Note note : Note.values()) {
       if (!CMajor.contains(note)) {
-        add(card(0, "Enharmonics", format(pattern, note.getName(SHARP)), format(pattern, note.getName(FLAT))));
-        add(card(0, "Enharmonics", format(pattern, note.getName(FLAT)), format(pattern, note.getName(SHARP))));
+        add(card(0, "Enharmonics", format(question, note.getName(SHARP)), divb(note.getName(FLAT))));
+        add(card(0, "Enharmonics", format(question, note.getName(FLAT)), divb(note.getName(SHARP))));
       }
     }
   }

@@ -388,16 +388,16 @@
 <div>What are the <b>notes</b> of <b>B Phrygian Dominant</b>?</div>;<div><b>B C D# E F# G A</b></div>;SpellScale;E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B
 <div>What is the <b>parent</b> scale of <b>B Phrygian Dominant</b>?</div>;<div><b>E Harmonic Minor</b></div>;NameParent;E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B
 <div>What is <b>mode 5</b> of <b>E Harmonic Minor</b>?</div>;<div><b>B Phrygian Dominant</b></div>;NameMode;E Harmonic Minor;Harmonic Minor;E;B Phrygian Dominant;Phrygian Dominant;B
-<div>What is the <b>enharmonic</b> equivalent of <b>C#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Db</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>Db</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>C#</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>D#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Eb</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>Eb</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>D#</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>F#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Gb</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>Gb</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>F#</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>G#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Ab</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>Ab</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>G#</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>A#</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>Bb</b>?</div>;Enharmonics;;;;;;
-<div>What is the <b>enharmonic</b> equivalent of <b>Bb</b>?</div>;<div>What is the <b>enharmonic</b> equivalent of <b>A#</b>?</div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>C#</b>?</div>;<div><b>Db</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Db</b>?</div>;<div><b>C#</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>D#</b>?</div>;<div><b>Eb</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Eb</b>?</div>;<div><b>D#</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>F#</b>?</div>;<div><b>Gb</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Gb</b>?</div>;<div><b>F#</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>G#</b>?</div>;<div><b>Ab</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Ab</b>?</div>;<div><b>G#</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>A#</b>?</div>;<div><b>Bb</b></div>;Enharmonics;;;;;;
+<div>What is the <b>enharmonic</b> equivalent of <b>Bb</b>?</div>;<div><b>A#</b></div>;Enharmonics;;;;;;
 <div>What are the <b>intervals</b> of <b>Major Scale</b>?</div>;<div><b>1 2 3 4 5 6 7</b></div>;ModeIntervals;;Major Scale;;;Major Scale;
 <div>What are the <b>intervals</b> of <b>Dorian</b>?</div>;<div><b>1 2 b3 4 5 6 b7</b></div>;ModeIntervals;;Major Scale;;;Dorian;
 <div>What are the <b>intervals</b> of <b>Phrygian</b>?</div>;<div><b>1 b2 b3 4 5 b6 b7</b></div>;ModeIntervals;;Major Scale;;;Phrygian;

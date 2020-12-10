@@ -19,11 +19,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import de.jlab.scales.anki.Deck;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
 
 public class TestUtils {
+  private static ObjectMapper mapper = new ObjectMapper();
   static boolean disabled = false;
   
   public static void assertFileContentMatches(String actualString, Class<?> testClass, String fileName) {
@@ -34,11 +37,11 @@ public class TestUtils {
     try (InputStream inputStream = testClass.getResourceAsStream(fileName)) {
       writeActual(actualLines, testClass, fileName);
       if (disabled) return;
+      String actual = sanitize(actualLines).stream().collect(joining("\n"));
       if (inputStream == null) {
-        fail("Resource not found: " + fileName);
+        assertEquals("Resource not found: " + fileName, actual);
       }
       List<String> expectedLines = Utils.readLines(inputStream);
-      String actual = sanitize(actualLines).stream().collect(joining("\n"));
       String expected = sanitize(expectedLines).stream().collect(joining("\n"));
       assertEquals(fileName, expected, actual);
     } catch (IOException e) {
@@ -110,10 +113,17 @@ public class TestUtils {
   }
 
   public static void writeTo(Deck deck, double randomness) {
-    Path dir = Paths.get("build/anki");
-    deck.writeHtml(dir); 
+    Path ankiDir = Paths.get("build/anki");
+    deck.writeHtml(ankiDir);
     deck.sort(randomness);
-    deck.writeAssets(dir);
+    deck.writeAnki(ankiDir); 
+    deck.writeAssets(ankiDir);
+
+    Deck subdeck = deck.subdeck(16);
+    Path jsonDir = Paths.get("build/examples");
+    subdeck.writeHtml(jsonDir);
+    subdeck.writeJson(jsonDir);
+    subdeck.writeAssets(jsonDir);
   }
- 
+
 }

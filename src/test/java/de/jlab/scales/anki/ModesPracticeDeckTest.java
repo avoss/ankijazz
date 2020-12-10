@@ -13,8 +13,9 @@ public class ModesPracticeDeckTest {
   @Test
   public void testPlayModesDeckTreble() {
     Deck deck = new ModesPracticeDeck(Note.C);
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesPracticeDeckTest.html.txt");
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeDeckTest.txt");
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "ModesPracticeDeckTest.json");
+    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesPracticeDeckTest.html");
     TestUtils.writeTo(deck, RND);
   }
 
@@ -39,8 +40,7 @@ public class ModesPracticeDeckTest {
   @Test
   public void testPlayModesGuitarDeck() {
     Deck deck = new ModesPracticeGuitarDeck();
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeGuitarDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesPracticeGuitarDeckTest.html.txt");
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeGuitarDeckTest.txt");
     TestUtils.writeTo(deck, RND);
   }
 }

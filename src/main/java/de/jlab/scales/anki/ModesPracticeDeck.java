@@ -16,12 +16,12 @@ import de.jlab.scales.theory.ScaleInfo;
 public class ModesPracticeDeck extends AbstractDeck {
 
   public ModesPracticeDeck(Note instrument) {
-    super(format("ModesPractice%sDeck", instrument.getName(FLAT)), format("AnkiJazz - Practice Modes (%s-Instrument)", instrument.getName(FLAT)));
+    super(format("AnkiJazz - Practice Modes (%s-Instrument)", instrument.getName(FLAT)), format("ModesPractice%sDeck", instrument.getName(FLAT)));
     initialize(Clef.TREBLE, instrument);
   }
 
   public ModesPracticeDeck(Clef clef) {
-    super(format("ModesPractice%sDeck", clef.getLabel()), format("AnkiJazz - Practice Modes (%s-Clef)", clef.getLabel()));
+    super(format("AnkiJazz - Practice Modes (%s-Clef)", clef.getLabel()), format("ModesPractice%sDeck", clef.getLabel()));
     initialize(clef, Note.C);
   }
 

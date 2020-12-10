@@ -9,10 +9,9 @@ public class ModesTheoryDeckTest {
   @Test
   public void testModesTheoryDeck() {
     Deck deck = new ModesTheoryDeck();
-//    FIXME remove comments
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesTheoryDeckTest.csv.txt");
-    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesTheoryDeckTest.html.txt");
-
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesTheoryDeckTest.txt");
+    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesTheoryDeckTest.html");
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "ModesTheoryDeckTest.json");
     TestUtils.writeTo(deck, 0.10);
   }
 

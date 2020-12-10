@@ -10,12 +10,12 @@ import de.jlab.scales.anki.AbstractDeck;
 
 public class GnDeck extends AbstractDeck {
 
-  protected GnDeck() {
+  public GnDeck() {
     super("Groovin Nana Set List");
     for (GnSong song: List.of(GnSong.values())) {
-      super.add(new GnCard(song, Song, Guitar));
+      add(new GnCard(song, Song, Guitar));
       if (song.hasGuitarSolo()) {
-        super.add(new GnCard(song, Solo, Guitar));
+        add(new GnCard(song, Solo, Guitar));
       }
     }
   }

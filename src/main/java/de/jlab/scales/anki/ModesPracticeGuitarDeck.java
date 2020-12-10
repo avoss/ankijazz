@@ -28,21 +28,5 @@ public class ModesPracticeGuitarDeck extends AbstractDeck {
     }
   }
   
-  /**
-   * skip cards, otherwise it is too many / html too big
-   */
-  public List<Card> getHtmlCards() {
-    Predicate<Card> filter = new Predicate<Card>() {
-        int counter = 0;
-
-        @Override
-        public boolean test(Card t) {
-          return counter++ % 13 == 0;
-        }
-    };
-    
-    return getCards().stream().filter(filter).collect(Collectors.toList());
-  }
-
 
 }

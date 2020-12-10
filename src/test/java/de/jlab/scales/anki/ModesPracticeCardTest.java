@@ -14,13 +14,13 @@ public class ModesPracticeCardTest {
   @Test
   public void testPlayModes() {
     Card card = new ModesPracticeCard(model());
-    TestUtils.assertFileContentMatches(card.getCsv(), getClass(), "ModesPracticeCardTest.csv.txt");
+    TestUtils.assertFileContentMatches(card.getCsv(), getClass(), "ModesPracticeCardTest.txt");
   }
 
   @Test
   public void testPlayModesGuitar() {
     Card card = new ModesPracticeGuitarCard(model(), FretboardPosition.HIGH);
-    TestUtils.assertFileContentMatches(card.getCsv(), getClass(), "ModesPracticeGuitarCardTest.csv.txt");
+    TestUtils.assertFileContentMatches(card.getCsv(), getClass(), "ModesPracticeGuitarCardTest.txt");
   }
   
   private ScaleModel model() {

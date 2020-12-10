@@ -5,7 +5,9 @@ import static de.jlab.scales.anki.AnkiUtils.ankiPng;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -80,5 +82,21 @@ public class RhythmCard extends LilyCard {
         hasSyncopation(),
         Integer.toString(getNumberOfUniqueQuarters()),
         Integer.toString(getBpm())).collect(joining(";"));
+  }
+  
+  @Override
+  public Map<String, Object> getJson() {
+    Map<String, Object> map = new LinkedHashMap<>();
+    map.put("title", getTitle());
+    map.put("type", getTypeName());
+    map.put("rhythmPng", getPngName());
+    map.put("rhythmMp3", getMp3Name());
+    map.put("metronomeMp3", getMetronomeMp3Name());
+    map.put("hasTies", hasTies());
+    map.put("hasSyncopation", hasSyncopation());
+    map.put("numberOfUniqueQuarters", getNumberOfUniqueQuarters());
+    map.put("bpm", getBpm());
+    map.put("difficulty", getDifficulty());
+    return map;
   }
 }

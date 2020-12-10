@@ -23,7 +23,7 @@ public class RhythmCardTest {
   public void testRhythmCard() {
     Tempo tempo = new LilyMetronome(5, 50, 120).tempo(83);
     Card card = new RhythmCard(rhythm(), tempo, LilyRhythm.Type.PIANO);
-    assertFileContentMatches(card.getCsv(), getClass(), "RhythmCardTest.csv.txt");
+    assertFileContentMatches(card.getCsv(), getClass(), "RhythmCardTest.txt");
   }
 
   private AbstractRhythm rhythm() {

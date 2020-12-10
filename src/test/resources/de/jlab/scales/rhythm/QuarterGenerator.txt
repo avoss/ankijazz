@@ -20,4 +20,3 @@
 [r3, b1]
 [bt, bt, bt]
 [rt, bt, bt]
-

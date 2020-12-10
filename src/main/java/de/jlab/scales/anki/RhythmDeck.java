@@ -20,7 +20,7 @@ public class RhythmDeck extends AbstractDeck {
   private LilyMetronome metronome = new LilyMetronome(5, MIN_BPM, MAX_BPM);
   
   public RhythmDeck(LilyRhythm.Type type) {
-    super(format("AnkiJazz-RhythmDeck%s", type.getLabel()), String.format("AnkiJazz - Read and Play Rhythms (%d .. %d bpm)", MIN_BPM, MAX_BPM));
+    super(format(String.format("AnkiJazz - Read and Play Rhythms (%d .. %d bpm)", MIN_BPM, MAX_BPM), "AnkiJazz-RhythmDeck%s", type.getLabel()));
     RhythmGenerator generator = new RhythmGenerator();
     List<AbstractRhythm> rhythms = generator.generate();
     Interpolator tempoInterpolator = Utils.interpolator(0, rhythms.size(), MIN_BPM, MAX_BPM);
