@@ -8,7 +8,6 @@ public class MustacheCardTest {
 
   private TestCard card = new TestCard();
 
-  
   @Test
   public void testToCsv() {
     assertEquals("<div> Question: <b>A &lt; B?</b> </div>;<div> Answer: <b>Yes</b> </div>;A B", card.getCsv());

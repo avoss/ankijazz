@@ -138,7 +138,7 @@ public class ModesTheoryDeck extends AbstractDeck {
       for (ScaleInfo chordInfo : ScaleUniverse.CHORDS.infos(chord)) {
         numberOfAccidentalsDifficulty.update(chordInfo.getKeySignature().getNumberOfAccidentals());
         numberOfNotesDifficulty.update(chord.getNumberOfNotes());
-        Object chordLabel = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
+        String chordLabel = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
         String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s%s?</div>", chordInfo.getScaleName(), chordLabel, chordSignature(chordInfo));
         String back = divb(chordInfo.getKeySignature().toString(chordInfo.getScale()));
         SimpleCard card = card(model.getDifficulty(), "SpellChord", front, back);
@@ -151,11 +151,15 @@ public class ModesTheoryDeck extends AbstractDeck {
   }
 
   private String chordSignature(ScaleInfo info) {
-    if (!Scales.CMajor.contains(info.getScale().getRoot())) {
+    Note root = info.getScale().getRoot();
+    if (!Scales.CMajor.contains(root)) {
       return "";
     }
     KeySignature keySignature = info.getKeySignature();
     if (keySignature.getNumberOfAccidentals() == 0) {
+      return "";
+    }
+    if (info.getScaleType().getKeySignatures(root).size() == 1) {
       return "";
     }
     return format(" (using <b>%s</b>)", keySignature.getAccidental() == FLAT ? "flats" : "sharps");

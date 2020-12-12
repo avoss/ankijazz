@@ -37,7 +37,7 @@ public class BuiltinChordTypeTest {
   }
 
   @Test
-  @Ignore
+  //@Ignore
   public void findMajorScalesContainingAllChords() {
     ScaleUniverse scales = new ScaleUniverse(false, List.of(Major));
     for (ScaleType chordType : BuiltinChordType.values()) {
@@ -57,6 +57,7 @@ public class BuiltinChordTypeTest {
     // E# rejected for chords
     assertNotation(Major7, Gb, /* "F# A# C# E#", */ "Gb Bb Db F");
     assertNotation(Major7, C, "C E G B");
+    assertNotation(BuiltinChordType.Minor7, Note.Eb, "D# F# A# C#", "Eb Gb Bb Db");
   }
 
 

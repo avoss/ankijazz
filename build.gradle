@@ -47,15 +47,15 @@ task copyAssets(type:Copy) {
   into 'build/anki'
 }
 
-task copyExamples(type:Copy) {
+task copyPreview(type:Copy) {
   from ('src/assets') {
     include ('*.png', '*.mp3', '*.ly')
   } 
-  into 'build/examples'
+  into 'build/preview'
 }
 
 build.dependsOn(copyAssets)
-build.dependsOn(copyExamples)
+build.dependsOn(copyPreview)
 
 task deleteAnki {
   delete "${ankiProfile}"
