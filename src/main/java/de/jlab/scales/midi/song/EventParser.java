@@ -39,11 +39,11 @@ public class EventParser {
     List<Event> events = new ArrayList<>();
     while (patternIndex < patternLength) {
       if (values[patternIndex] > 0) {
-        int noteLength = notLength(patternIndex);
+        int noteLength = noteLength(patternIndex);
         Event event = Event.builder()
             .patternLength(patternLength)
             .patternIndex(patternIndex)
-            .patternId(patternId)
+            .eventId(Integer.toString(patternId).concat(":").concat(Integer.toString(patternIndex)))
             .velocity(interpolator.apply(values[patternIndex]))
             .noteLength(noteLength)
             .build();
@@ -57,7 +57,7 @@ public class EventParser {
     return new PatternMetadata(patternLength, events);
   }
 
-  private int notLength(int patternIndex) {
+  private int noteLength(int patternIndex) {
     int length = 1;
     for (int i = patternIndex + 1; i < values.length; i++) {
       if (values[i] == -1.0) {

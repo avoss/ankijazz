@@ -76,16 +76,22 @@ public class EnsembleTest {
     return Song.of(
         Bar.of(Chord.of(Cm7, "Cm7")), Bar.of(Chord.of(Cm7.transpose(2), "Dm7")));
   }
+  Path dir = Paths.get("build", "EnsembleTest");
 
   @Test
   public void testGrooves() throws IOException {
     RenderContext ctx = RenderContext.ANKI;
-    Path dir = Paths.get("build", "EnsembleTest");
     Files.createDirectories(dir);
     Song song = MidiTestUtils.createRandomSong(ctx.getNumberOfBars());
     new PngImageRenderer(ctx, song).renderTo(dir.resolve("song.png"));
     groove(song, Ensembles.latin(120), dir.resolve("latin.midi"));
     groove(song, Ensembles.funk(80), dir.resolve("funk.midi"));
+  }
+  
+  @Test
+  public void test2ChordsPerBar() {
+    groove(MidiTestUtils.songWith2ChordPerBar(), Ensembles.funk(85), dir.resolve("funk2.midi"));
+    groove(MidiTestUtils.songWith2ChordPerBar(), Ensembles.latin(120), dir.resolve("latin2.midi"));
   }
 
   private void groove(Song song, Ensemble ensemble, Path path) {

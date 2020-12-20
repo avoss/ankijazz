@@ -33,6 +33,8 @@ public class BarProcessorFactory implements EventProcessor {
     @Override
     public void accept(CompositePart parts, Bar bar) {
       Interpolator interpolator = Utils.interpolator(0, event.getPatternLength(), 0, bar.getChords().size());
+      // TODO use "center of gravity" of chord instead of start time, e.g. (start + length)/2
+      // if outside this bar, put into next bar - this can only happen, if next bar starts with dashes --- which extend event from this bar
       int chordIndex = interpolator.apply(event.getPatternIndex());
       Scale chord = bar.getChords().get(chordIndex).getScale();
       Part part = player.apply(event, chord);

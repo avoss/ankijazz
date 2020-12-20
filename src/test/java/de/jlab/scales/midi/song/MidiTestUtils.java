@@ -3,6 +3,7 @@ package de.jlab.scales.midi.song;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
@@ -12,7 +13,6 @@ import de.jlab.scales.theory.Scales;
 
 public class MidiTestUtils {
 
-  public static final int PATTERN_ID = 27;
   
   private static ThreadLocalRandom random = ThreadLocalRandom.current();
 
@@ -20,7 +20,7 @@ public class MidiTestUtils {
     return Event.builder()
         .patternLength(patternLength)
         .patternIndex(patternIndex)
-        .patternId(PATTERN_ID)
+        .eventId("0:".concat(Integer.toString(patternIndex)))
         .velocity(velocity)
         .noteLength(length)
         .build();
@@ -46,6 +46,19 @@ public class MidiTestUtils {
     Scale scale = type.getPrototype().transpose(root);
     String symbol = ScaleUniverse.CHORDS.findFirstOrElseThrow(scale).getScaleName();
     return new Chord(scale, symbol);
+  }
+
+  public static Song songWith2ChordPerBar() {
+    Bar b1 = Bar.of(Chord.of(Scales.Cm7.transpose(Note.D), "Dm7"), Chord.of(Scales.C7.transpose(Note.G), "G7"));
+    Bar b2 = Bar.of(Chord.of(Scales.Cmaj7, "CMA7"));
+    List<Bar> bars = new ArrayList<>();
+    IntStream.range(0, 4).forEach(i -> {
+      bars.add(b1);
+      bars.add(b2);
+      bars.add(b2);
+      bars.add(b1);
+    });
+    return new Song(bars);
   }
 
 }

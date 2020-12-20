@@ -13,7 +13,7 @@ import de.jlab.scales.theory.Scale;
 
 public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> {
 
-  private final Map<Event, Integer> chordIndexMap = new HashMap<>();
+  private final Map<String, Integer> chordIndexMap = new HashMap<>();
   private final NoteToMidiMapper noteToMidiMapper;
   private final int midiChannel;
   private int denominator;
@@ -37,10 +37,10 @@ public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> 
     int index = 0;
     IntervalToChordIndexMapper indexMapper = new IntervalToChordIndexMapper();
     for (Event event : metadata.getEvents()) {
-      if (chordIndexMap.containsKey(event)) {
+      if (chordIndexMap.containsKey(event.getEventId())) {
         throw new IllegalStateException("should not happen - was equals/hashcode modified? Kind of useless field patternId removed?");
       }
-      chordIndexMap.put(event, indexMapper.map(intervals[index++]));
+      chordIndexMap.put(event.getEventId(), indexMapper.map(intervals[index++]));
     }
     return this;
   }
@@ -48,7 +48,7 @@ public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> 
   @Override
   protected BiFunction<Event, Scale, Part> getPlayer() {
     return (event, scale) -> {
-      int index = chordIndexMap.get(event);
+      int index = chordIndexMap.get(event.getEventId());
       Note note = scale.getNote(index);
       int midiPitch = noteToMidiMapper.nextClosest(note);
       return Parts.note(midiChannel, midiPitch, event.getVelocity(), event.getNoteLength(), denominator);

@@ -49,7 +49,7 @@ public class EventParserTest {
 
   private void assertParse(String pattern, Event ... expected) {
     TestEventProcessor processor = new TestEventProcessor();
-    PatternMetadata metadata = EventParser.parseEvents(processor, pattern, MidiTestUtils.PATTERN_ID);
+    PatternMetadata metadata = EventParser.parseEvents(processor, pattern, 0);
     assertThat(metadata.getEvents().size()).isEqualTo(expected.length);
     assertThat(metadata.getPatternLength()).isEqualTo(expected[0].getPatternLength());
     assertThat(processor.getEvents()).containsExactly(expected);

@@ -85,7 +85,7 @@ public class Ensembles {
       .bar(".... .... .... ....");
     
     ensemble.monophonic(32, Program.FingeredElectricBass, 127, 30)
-      .bar("9--- ..2x .... ....", 1, 1, 1)
+      .bar("9--- ..8x .... ....", 1, 1, 1)
       .bar("9--- ...9 ---- ....", 1, 1);
 
     ensemble.drop2chords(55, Program.ElectricPiano2, 55, -1)
