@@ -9,7 +9,6 @@ import java.util.function.BiFunction;
 
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.midi.Sequential;
-import de.jlab.scales.midi.song.EventParser.PatternMetadata;
 import de.jlab.scales.theory.Scale;
 import lombok.Getter;
 
@@ -26,13 +25,13 @@ public abstract class AbstractInstrument<T extends AbstractInstrument<T>> implem
     this.denominator = denominator;
   }
 
-  protected PatternMetadata parse(String pattern) {
+  protected List<String> parse(String pattern) {
     BarProcessorFactory factory = new BarProcessorFactory(denominator, getPlayer());
-    PatternMetadata metadata = EventParser.parseEvents(factory, pattern, patternId);
+    List<String> eventIds = EventParser.parseEvents(factory, pattern, patternId);
     barProcessors.add(factory.create());
     barProcessorIterator = loopIterator(barProcessors);
     patternId++;
-    return metadata;
+    return eventIds;
   }
 
   @Override

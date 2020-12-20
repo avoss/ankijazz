@@ -1,5 +1,7 @@
 package de.jlab.scales.midi.song;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,23 +17,16 @@ public class EventParser {
   private final EventProcessor processor;
   private final int patternId;
 
-  @RequiredArgsConstructor
-  @Getter
-  public static class PatternMetadata {
-    private final int patternLength;
-    private final List<Event> events;
-  }
-  
   public EventParser(EventProcessor processor, int patternId) {
     this.processor = processor;
     this.patternId = patternId;
   }
 
-  public static PatternMetadata parseEvents(EventProcessor processor, String pattern, int patternId) {
+  public static List<String> parseEvents(EventProcessor processor, String pattern, int patternId) {
     return new EventParser(processor, patternId).internalParse(pattern);
   }
 
-  private PatternMetadata internalParse(String pattern) {
+  private List<String> internalParse(String pattern) {
     values = Patterns.parse(pattern);
     int patternLength = values.length;
     Interpolator interpolator = Utils.interpolator(0, 127);
@@ -54,7 +49,7 @@ public class EventParser {
       }
       patternIndex++;
     }
-    return new PatternMetadata(patternLength, events);
+    return events.stream().map(Event::getEventId).collect(toList());
   }
 
   private int noteLength(int patternIndex) {

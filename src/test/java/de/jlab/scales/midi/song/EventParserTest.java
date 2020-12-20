@@ -8,7 +8,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.song.EventParser.PatternMetadata;
 
 public class EventParserTest {
 
@@ -49,9 +48,8 @@ public class EventParserTest {
 
   private void assertParse(String pattern, Event ... expected) {
     TestEventProcessor processor = new TestEventProcessor();
-    PatternMetadata metadata = EventParser.parseEvents(processor, pattern, 0);
-    assertThat(metadata.getEvents().size()).isEqualTo(expected.length);
-    assertThat(metadata.getPatternLength()).isEqualTo(expected[0].getPatternLength());
+    List<String> eventIds = EventParser.parseEvents(processor, pattern, 0);
+    assertThat(eventIds.size()).isEqualTo(expected.length);
     assertThat(processor.getEvents()).containsExactly(expected);
     String expectedProcessorPattern = pattern.replaceAll("[ |]", "").replace("-", ".").replace("5", "x");
     assertThat(processor.getPattern()).isEqualTo(expectedProcessorPattern);
