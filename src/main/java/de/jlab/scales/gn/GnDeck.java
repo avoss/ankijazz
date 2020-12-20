@@ -8,7 +8,7 @@ import java.util.List;
 
 import de.jlab.scales.anki.AbstractDeck;
 
-public class GnDeck extends AbstractDeck {
+public class GnDeck extends AbstractDeck<GnCard> {
 
   public GnDeck() {
     super("Groovin Nana Set List");

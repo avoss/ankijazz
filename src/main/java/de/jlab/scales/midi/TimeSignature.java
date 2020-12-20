@@ -1,5 +1,10 @@
 package de.jlab.scales.midi;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
+@Getter
+@EqualsAndHashCode(callSuper = true)
 public class TimeSignature extends AbstractPart {
   final int numerator;
   final int denominator;

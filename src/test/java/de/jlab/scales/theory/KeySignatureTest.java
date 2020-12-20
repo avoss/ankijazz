@@ -15,7 +15,6 @@ import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
@@ -47,7 +46,8 @@ public class KeySignatureTest {
       for (Scale scale : allKeys(type.getPrototype())) {
         for (KeySignature keySignature : type.getKeySignatures(scale.getRoot())) {
           String reviewMarker = reviewMarker(scale, keySignature);
-          String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", keySignature.notate(scale.getRoot()), type.getTypeName(), keySignature.notationKey(), 
+          String notationKey = keySignature.getKeySignatureString();
+          String message = format("%2s %15s, Signature: %2s (%d%s), Notation: %s %s", keySignature.notate(scale.getRoot()), type.getTypeName(), notationKey, 
               keySignature.getNumberOfAccidentals(), keySignature.getAccidental().symbol(), keySignature.toString(scale), reviewMarker);
           actual.add(message);
           //System.out.println(message);

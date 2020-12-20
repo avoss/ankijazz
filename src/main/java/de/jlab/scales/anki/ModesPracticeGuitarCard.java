@@ -2,14 +2,11 @@ package de.jlab.scales.anki;
 
 import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
 import static de.jlab.scales.anki.AnkiUtils.ankiPng;
-import static java.lang.String.format;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import de.jlab.scales.Utils;
 
 public class ModesPracticeGuitarCard extends LilyCard {
 
@@ -50,7 +47,7 @@ public class ModesPracticeGuitarCard extends LilyCard {
         ankiPng(super.getPngName()),
         model.getDirection(),
         position.getLabel(),
-        ankiPng(position.getImage())).collect(Collectors.joining(";"));
+        ankiPng(position.getImage())).collect(Collectors.joining(CSV_DELIMITER));
   }
 
   @Override

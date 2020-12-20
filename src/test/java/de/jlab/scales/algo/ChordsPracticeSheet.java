@@ -6,6 +6,7 @@ import static de.jlab.scales.midi.Parts.rest;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
 
@@ -96,7 +97,7 @@ public class ChordsPracticeSheet {
     seq.add(play(chords));
     
     seq.perform(mf);
-    mf.save(name + ".mid");
+    mf.save(Paths.get(name + ".midi"));
   }
 
   class ChordPlayer extends SectionAware<Scale> {

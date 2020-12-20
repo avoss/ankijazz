@@ -43,6 +43,9 @@ public class Patterns {
       case'.':
         integers.add(0);
         break;
+      case'-':
+        integers.add(-MAX_VALUE);
+        break;
         
       }
     }

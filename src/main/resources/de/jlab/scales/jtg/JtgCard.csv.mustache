@@ -1,0 +1,73 @@
+<div>
+  <p>Play {{title}} ({{roots}})</p>
+</div>
+
+{{#media}}
+<div class="jtghidden jtg{{index}}">
+  <img src="{{id}}.png">
+</div>
+{{/media}} 
+
+{{#isScriptRequired}}
+<script>
+    (function() {
+      var hidden = document.getElementsByClassName('jtghidden');
+      Array.prototype.forEach.call(hidden, function(elem) {
+        elem.style.display = "none";
+      });
+      var range = {{randomRange}};
+      var date = new Date();
+      var random = Math.floor((date.getMinutes() / 5 + date.getHours() + date.getDay()) % range);
+      var hidden = document.getElementsByClassName('jtg' + random);
+      Array.prototype.forEach.call(hidden, function(elem) {
+        elem.style.display = "block";
+      });
+    })();
+  </script>
+{{/isScriptRequired}}
+
+-------------------------------------------------------------------------------------------
+
+<div>
+  <p>Play {{title}} ({{roots}})</p>
+</div>
+
+{{#media}}
+<div class="jtghidden jtg{{index}}">
+  <img src="{{id}}.png">
+</div>
+{{/media}} 
+
+<hr id="answer">
+
+{{#media}}
+<div class="jtghidden jtg{{index}}">
+  [sound:{{id}}.mp3]
+</div>
+{{/media}}
+
+{{#isScriptRequired}}
+<script>
+    (function() {
+      var hidden = document.getElementsByClassName('jtghidden');
+      Array.prototype.forEach.call(hidden, function(elem) {
+        elem.style.display = "none";
+      });
+      var range = {{randomRange}};
+      var date = new Date();
+      var random = Math.floor((date.getMinutes() / 5 + date.getHours() + date.getDay()) % range);
+      var hidden = document.getElementsByClassName('jtg' + random);
+      Array.prototype.forEach.call(hidden, function(elem) {
+        elem.style.display = "block";
+      });
+    })();
+  </script>
+{{/isScriptRequired}}
+
+-------------------------------------------------------------------------------------------
+{{title}}
+-------------------------------------------------------------------------------------------
+{{beatsPerMinute}}
+-------------------------------------------------------------------------------------------
+{{roots}}
+

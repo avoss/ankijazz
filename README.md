@@ -1,4 +1,5 @@
 # Scales Core
+Anki media directory is C:\Users\andreas\AppData\Roaming\Anki2
 
 # TODO
 - agpl license
@@ -9,32 +10,18 @@
 
 --------------------------------------------------------------------------------------------
 
-# Anki
+## Chords
+- add to scales deck (already in theory deck)
+- add pentatonics to scales deck?
+- add which pentatonic over which chord?
 
-                       AnkiJazz
-                       
-                     Practice Jazz
-                  (and other styles)
-                      EFFICIENTLY
-                      with Anki
+## JTG in Lily?
+[proportional notation](https://lilypond.org/doc/v2.16/Documentation/notation/proportional-notation.en.html)
+bars with equal space length?
 
-Title:
-practice *efficiently* scales and more
-learn jazz efficiently
-
-website shows preview only (json + Angular), not full deck
-
-## chords
-
-key signature:
-- m6 -> dorian
-- minor -> aeolean
-- major -> ionian
-- dominant -> mixolydian
 
 ## Rhythm
 12/8 Bembe Bell Pattern, 6/8 Clave, 
-transpose (3, 5 Marcus)
 
 alle Pattern mit max 1 Pause (statt pause nur am anfang = syncopation)?
 

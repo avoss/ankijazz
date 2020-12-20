@@ -79,7 +79,7 @@ public class LilyMetronome implements WithAssets {
 
   // TODO move to Utils or similar
   private String readTemplate() {
-    try (InputStream input = LilyRhythm.class.getResourceAsStream("LilyMetronome.ly")) {
+    try (InputStream input = LilyMetronome.class.getResourceAsStream("LilyMetronome.ly")) {
       return Utils.readString(input);
     } catch (IOException e) {
       throw new UncheckedIOException(e);

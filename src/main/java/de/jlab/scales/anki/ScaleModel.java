@@ -90,7 +90,7 @@ public class ScaleModel implements WithDifficulty {
   }
   
   public String getNotationKey() {
-    return keySignature.notationKey();
+    return keySignature.getKeySignatureString();
   }
 
   public String getInstrument() {

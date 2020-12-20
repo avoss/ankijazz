@@ -10,7 +10,7 @@ public class MustacheCardTest {
 
   @Test
   public void testToCsv() {
-    assertEquals("<div> Question: <b>A &lt; B?</b> </div>;<div> Answer: <b>Yes</b> </div>;A B", card.getCsv());
+    assertEquals("<div> Question: <b>A &lt; B?</b> </div>\t<div> Answer: <b>Yes</b> </div>\tA B", card.getCsv());
   }
 
   @Test

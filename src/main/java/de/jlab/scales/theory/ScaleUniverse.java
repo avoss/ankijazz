@@ -1,7 +1,6 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.Utils.isSymmetricalDuplicate;
-import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
@@ -153,12 +152,14 @@ public class ScaleUniverse implements Iterable<Scale> {
     return infos.get(scale).stream().sorted(difficulty).collect(toList());
   }
 
-  // TODO rename to findFirstOrElseDefault
-  public ScaleInfo info(Scale scale) {
+  public ScaleInfo findFirstOrElseDefault(Scale scale) {
     return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
-//    return infos(scale).stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Scale not found: " + scale));
   }
 
+  public ScaleInfo findFirstOrElseThrow(Scale scale) {
+    return infos(scale).stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Scale not found: " + scale));
+  }
+  
   public List<ScaleInfo> findScalesContaining(Set<Note> notes) {
     Set<Set<Note>> seenBefore = new HashSet<>();
     return scales.stream()
@@ -184,7 +185,7 @@ public class ScaleUniverse implements Iterable<Scale> {
      */
     Optional<Scale> superScale = info.getSuperScales().stream().findFirst();
     KeySignature signature = superScale.isPresent() 
-        ? info(superScale.get()).getKeySignature() 
+        ? findFirstOrElseDefault(superScale.get()).getKeySignature() 
         : KeySignature.fromScale(scale); 
     info.setKeySignature(signature);
     info.setScaleName(scaleName(scale, signature));

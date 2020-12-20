@@ -116,7 +116,7 @@ public class ScaleUniverseTest {
       }
       String message = format("%25s, Signature: %2s (%d%s), Notation: %s %s",
           scaleInfo.getScaleName(),
-          signature.notationKey(),
+          signature.getKeySignatureString(),
           signature.getNumberOfAccidentals(),
           signature.getAccidental().symbol(), 
           signature.toString(scale),
@@ -131,7 +131,7 @@ public class ScaleUniverseTest {
   public void testParents() {
     for (Scale parent : allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor))) {
       for (Scale mode : allModes(parent)) {
-        ScaleInfo modeInfo = allScales.info(mode);
+        ScaleInfo modeInfo = allScales.findFirstOrElseDefault(mode);
         assertEquals(parent, modeInfo.getParentInfo().getScale());
       }
     }
@@ -139,17 +139,17 @@ public class ScaleUniverseTest {
   
   @Test
   public void testAbAltered() {
-    ScaleInfo aMelodicMinor = jazz.info(CMelodicMinor.transpose(A));
-    ScaleInfo aFlatAltered = jazz.info(aMelodicMinor.getScale().superimpose(Ab));
+    ScaleInfo aMelodicMinor = jazz.findFirstOrElseDefault(CMelodicMinor.transpose(A));
+    ScaleInfo aFlatAltered = jazz.findFirstOrElseDefault(aMelodicMinor.getScale().superimpose(Ab));
     assertEquals(aMelodicMinor.getKeySignature(), aFlatAltered.getKeySignature());
     assertEquals("G# Altered", aFlatAltered.getScaleName());
   }
   
   @Test
   public void testMinor6PentatonicModes() {
-    assertEquals("C Minor6 Pentatonic", allScales.info(CMinor6Pentatonic).getScaleName());
-    assertEquals("F Dominant7 Pentatonic", allScales.info(CMinor6Pentatonic.superimpose(F)).getScaleName());
-    assertEquals("A Minor7b5 Pentatonic", allScales.info(CMinor6Pentatonic.superimpose(A)).getScaleName());
+    assertEquals("C Minor6 Pentatonic", allScales.findFirstOrElseDefault(CMinor6Pentatonic).getScaleName());
+    assertEquals("F Dominant7 Pentatonic", allScales.findFirstOrElseDefault(CMinor6Pentatonic.superimpose(F)).getScaleName());
+    assertEquals("A Minor7b5 Pentatonic", allScales.findFirstOrElseDefault(CMinor6Pentatonic.superimpose(A)).getScaleName());
   }
 
   @Test
@@ -157,7 +157,7 @@ public class ScaleUniverseTest {
     ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, Minor7Pentatonic));
     for (Scale scale : universe) {
       // System.out.println(scale.getName());
-      ScaleInfo info = universe.info(scale);
+      ScaleInfo info = universe.findFirstOrElseDefault(scale);
       if (scale.asSet().size() == 5) {
         assertEquals(3, info.getSuperScales().size());
         assertEquals(0, info.getSubScales().size());
@@ -174,7 +174,7 @@ public class ScaleUniverseTest {
     Scale dorian = CMajor.superimpose(D);
     for (Note note: Note.values()) {
       Scale scale = dorian.transpose(note);
-      assertEquals("Dorian", jazz.info(scale).getTypeName());
+      assertEquals("Dorian", jazz.findFirstOrElseDefault(scale).getTypeName());
     }
   }
   
@@ -183,7 +183,7 @@ public class ScaleUniverseTest {
     Scale dorian = CMelodicMinor.superimpose(D);
     for (Note note: Note.values()) {
       Scale scale = dorian.transpose(note);
-      assertEquals("Dorian b2", jazz.info(scale).getTypeName());
+      assertEquals("Dorian b2", jazz.findFirstOrElseDefault(scale).getTypeName());
     }
   }
 
@@ -193,7 +193,7 @@ public class ScaleUniverseTest {
     List<Scale> expected = Scales.allKeys(asList(CMajor, CMelodicMinor));
     List<Scale> actual = Lists.newArrayList(universe.iterator());
     assertThat(actual).isEqualTo(expected);
-    ScaleInfo info = universe.info(Cm7b5.transpose(B));
+    ScaleInfo info = universe.findFirstOrElseDefault(Cm7b5.transpose(B));
     assertThat(info.getSuperScales()).containsExactly(CMajor, CMelodicMinor, CMelodicMinor.transpose(D));
   }
 
@@ -203,7 +203,7 @@ public class ScaleUniverseTest {
     List<Scale> expected = Scales.allKeys(asList(CMelodicMinor, CMajor));
     List<Scale> actual = Lists.newArrayList(universe.iterator());
     assertThat(expected).isEqualTo(actual);
-    ScaleInfo info = universe.info(Cm7b5.transpose(B));
+    ScaleInfo info = universe.findFirstOrElseDefault(Cm7b5.transpose(B));
     assertThat(info.getSuperScales()).containsExactly(CMelodicMinor, CMelodicMinor.transpose(D), CMajor);
   }
   
@@ -211,7 +211,7 @@ public class ScaleUniverseTest {
   @Test
   public void testMatchingScalesForChordNotInUniverse() {
     ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, MelodicMinor, DiminishedTriad));
-    ScaleInfo info = universe.info(Cm7b5.transpose(B));
+    ScaleInfo info = universe.findFirstOrElseDefault(Cm7b5.transpose(B));
     assertThat(info.getSuperScales()).containsExactlyInAnyOrder(CMajor, CMelodicMinor, CMelodicMinor.transpose(D));
     assertThat(info.getSubScales()).containsExactlyInAnyOrder(CdimTriad.transpose(B));
   }
@@ -231,7 +231,7 @@ public class ScaleUniverseTest {
   }
 
   private void assertName(String expectedName, Scale scale) {
-    assertEquals(expectedName, jazz.info(scale).getScaleName());
+    assertEquals(expectedName, jazz.findFirstOrElseDefault(scale).getScaleName());
   }
 
   @Test
@@ -251,7 +251,7 @@ public class ScaleUniverseTest {
 
   @Test
   public void testIdentity() {
-    ScaleInfo info = allScales.info(C7sus4.transpose(2));
+    ScaleInfo info = allScales.findFirstOrElseDefault(C7sus4.transpose(2));
     assertSame(info.getScale(), info.getParentInfo().getScale());
   }
   
@@ -266,7 +266,7 @@ public class ScaleUniverseTest {
   public void testModeInUniverseWithoutModes() {
     ScaleUniverse universe = new ScaleUniverse(false, List.of(Major));
     Scale dDorianScale = CMajor.superimpose(D);
-    ScaleInfo dDorianInfo = universe.info(dDorianScale);
+    ScaleInfo dDorianInfo = universe.findFirstOrElseDefault(dDorianScale);
     assertThat(dDorianInfo.getScaleName()).isNotEqualTo("D Dorian");
     assertEquals(dDorianScale, dDorianInfo.getParentInfo().getScale());
   }
@@ -281,9 +281,9 @@ public class ScaleUniverseTest {
   @Test
   public void testMajorModeKeySignatures() {
     for (Scale scale : allKeys(CMajor)) {
-      KeySignature expected = jazz.info(scale).getKeySignature();
+      KeySignature expected = jazz.findFirstOrElseDefault(scale).getKeySignature();
       for (Scale mode : allModes(scale)) {
-        KeySignature actual = jazz.info(mode).getKeySignature();
+        KeySignature actual = jazz.findFirstOrElseDefault(mode).getKeySignature();
         assertThat(actual).isEqualTo(expected);
       }
     }
@@ -297,32 +297,32 @@ public class ScaleUniverseTest {
     Note majorKey = MelodicMinor.notationKey().apply(G);
     KeySignature expected = KeySignature.fromScale(gMelodicMinor, majorKey, Accidental.preferredAccidentalForMajorKey(majorKey));
     Scale gFlatAltered = gMelodicMinor.superimpose(Gb);
-    ScaleInfo info = jazz.info(gFlatAltered);
+    ScaleInfo info = jazz.findFirstOrElseDefault(gFlatAltered);
     assertEquals(expected, info.getKeySignature());
   }
 
   private void assertSignature(Scale scale, Note root, Accidental accidental) {
     assertSignature(scale, root);
-    assertEquals(scale.toString(), accidental, jazz.info(scale).getKeySignature().getAccidental());
+    assertEquals(scale.toString(), accidental, jazz.findFirstOrElseDefault(scale).getKeySignature().getAccidental());
   }
 
   private void assertSignature(Scale scale, Note root) {
-    assertEquals(scale.toString(), root, jazz.info(scale).getKeySignature().getNotationKey());
+    assertEquals(scale.toString(), root, jazz.findFirstOrElseDefault(scale).getKeySignature().getNotationKey());
   }
 
   private void assertTypeName(Scale scale, String expectedTypeName) {
-    ScaleInfo info = allScales.info(scale);
+    ScaleInfo info = allScales.findFirstOrElseDefault(scale);
     assertThat(info.getTypeName()).isEqualTo(expectedTypeName);
   }
   
   private void assertInfo(Scale scale, Scale parent, String name, KeySignature keySignature) {
     assertInfo(scale, parent, name);
-    ScaleInfo info = allScales.info(scale);
+    ScaleInfo info = allScales.findFirstOrElseDefault(scale);
     assertThat(info.getKeySignature()).isEqualTo(keySignature);
   }
 
   private void assertInfo(Scale scale, Scale parent, String name) {
-    ScaleInfo info = allScales.info(scale);
+    ScaleInfo info = allScales.findFirstOrElseDefault(scale);
     assertThat(info.getScaleName()).isEqualTo(name);
     assertEquals(info.getScale(), scale);
     assertEquals(info.getParentInfo().getScale(), parent);

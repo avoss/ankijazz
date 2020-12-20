@@ -5,10 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
-import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -18,6 +15,8 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Charsets;
+import com.google.common.hash.HashCode;
+import com.google.common.hash.Hashing;
 
 import de.jlab.scales.theory.Scale;
 
@@ -46,17 +45,12 @@ public final class Utils {
   }
 
   public static String assetId(String string) {
-    try {
-      MessageDigest messageDigest = MessageDigest.getInstance("SHA");
-      messageDigest.update(string.getBytes(Charsets.UTF_8));
-      byte [] bytes = messageDigest.digest();
-      BigInteger mediator = new BigInteger(1, bytes);
-      String longString = String.format("%040x", mediator);
-      return "AnkiJazz-" + longString.substring(0, 10);
-    } catch (NoSuchAlgorithmException e) {
-      throw new IllegalStateException(e);
-    }
+    return assetId(string.getBytes(Charsets.UTF_8));
+  }
 
+  public static String assetId(byte[] bytes) {
+    HashCode hash = Hashing.sha256().hashBytes(bytes);
+    return "AnkiJazz-".concat(Integer.toHexString(hash.asInt()));
   }
 
   /**
@@ -100,10 +94,28 @@ public final class Utils {
   }
 
   public static <T> Iterator<T> randomLoopIterator(Collection<T> collection) {
-    List<T> list = new ArrayList<>(collection);
-    Collections.shuffle(list);
-    return loopIterator(list);
+    return new Iterator<T>() {
+      List<T> list = new ArrayList<>(collection);
+
+      private Iterator<T> iter = null;
+     
+      @Override
+      public boolean hasNext() {
+        return true;
+      }
+
+      @Override
+      public T next() {
+        if (iter == null || !iter.hasNext()) {
+          Collections.shuffle(list);
+          iter = list.iterator();
+        }
+        return iter.next();
+      }
+      
+    };
   }
+  
   
   public static <T> List<T> repeat(int times, T ... elements) {
     List<T> result = new ArrayList<>();
@@ -116,15 +128,19 @@ public final class Utils {
   }
 
   public interface Interpolator {
-    int apply(int value);
+    int apply(double value);
   }
   
-  public static Interpolator interpolator(int inputMin, int inputMax, int outputMin, int outputMax) {
+  public static Interpolator interpolator(double inputMin, double inputMax, int outputMin, int outputMax) {
     return (input) -> {
       input = Math.max(inputMin, input);
       input = Math.min(inputMax, input);
-      return outputMin + (outputMax - outputMin) * (input - inputMin) / (inputMax - inputMin);
+      return (int)(outputMin + (outputMax - outputMin) * (input - inputMin) / (inputMax - inputMin));
     };
+  }
+  
+  public static Interpolator interpolator(int outputMin, int outputMax) {
+    return interpolator(0, 1, outputMin, outputMax);
   }
 
 }

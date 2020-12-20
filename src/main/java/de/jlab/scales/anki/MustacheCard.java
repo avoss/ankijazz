@@ -22,7 +22,7 @@ public abstract class MustacheCard implements Card {
   
   @Override
   public String getCsv() {
-    return transform(".csv.mustache").replaceAll("\\s*-----[-]+\\s*", ";");
+    return transform(".csv.mustache").replace(CSV_DELIMITER, " ").replaceAll("\\s*-----[-]+\\s*", CSV_DELIMITER);
   }
 
   public String getHtml() {

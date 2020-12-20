@@ -1,5 +1,8 @@
 package de.jlab.scales.midi;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode(callSuper = true)
 public class Parallel extends CompositePart {
 
   public Parallel(Part part, Part... parts) {

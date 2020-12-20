@@ -24,7 +24,7 @@ public class LilyScaleTest {
 
   @Test
   public void testEDorian() {
-    ScaleInfo edorian = MODES.info(CMajor.transpose(D).superimpose(E));
+    ScaleInfo edorian = MODES.findFirstOrElseDefault(CMajor.transpose(D).superimpose(E));
     String source = new LilyScale(edorian).toLily();
     assertThat(source).contains("scaleNotes = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e4 ~ e1 }");
     assertThat(source).contains("noteNames = \\relative e' { e4 fs4 g4 a4 b4 cs4 d4 e }");
@@ -34,7 +34,7 @@ public class LilyScaleTest {
 
   @Test
   public void testDescending() {
-    ScaleInfo edorian = MODES.info(CMajor.transpose(D).superimpose(E));
+    ScaleInfo edorian = MODES.findFirstOrElseDefault(CMajor.transpose(D).superimpose(E));
     String source = new LilyScale(edorian, Direction.DESCENDING).toLily();
     assertThat(source).contains("scaleNotes = \\relative e'' { e4 d4 cs4 b4 a4 g4 fs4 e4 ~ e1 }");
   }
@@ -55,23 +55,23 @@ public class LilyScaleTest {
   @Test
   public void testScalesWithDifferentNumberOfNotes() {
     // 5 notes
-    String cMinorPentatonicsource = new LilyScale(MODES.info(CMinorPentatonic)).toLily();
+    String cMinorPentatonicsource = new LilyScale(MODES.findFirstOrElseDefault(CMinorPentatonic)).toLily();
     assertThat(cMinorPentatonicsource).contains("scaleNotes = \\relative e' { c4 ef4 f4 g4 bf4 c2. }");
     // 6 notes
-    String cWholeToneSource = new LilyScale(MODES.info(CWholeTone)).toLily();
+    String cWholeToneSource = new LilyScale(MODES.findFirstOrElseDefault(CWholeTone)).toLily();
     assertThat(cWholeToneSource).contains("scaleNotes = \\relative e' { c4 d4 e4 gf4 af4 bf4 c2 }");
     // 7 notes
-    String cMajorSource = new LilyScale(MODES.info(CMajor)).toLily();
+    String cMajorSource = new LilyScale(MODES.findFirstOrElseDefault(CMajor)).toLily();
     assertThat(cMajorSource).contains("scaleNotes = \\relative e' { c4 d4 e4 f4 g4 a4 b4 c4 ~ c1 }");
     // 8 notes
-    String cDiminishedSource = new LilyScale(MODES.info(CDiminishedHalfWhole)).toLily();
+    String cDiminishedSource = new LilyScale(MODES.findFirstOrElseDefault(CDiminishedHalfWhole)).toLily();
     assertThat(cDiminishedSource).contains("scaleNotes = \\relative e' { c4 df4 ef4 e4 gf4 g4 a4 bf4 c1 }");
   }
   
   @Test
   public void reproduceBug() {
     Scale gbaltered = CMelodicMinor.transpose(G).superimpose(Gb);
-    ScaleInfo info = MODES.info(gbaltered);
+    ScaleInfo info = MODES.findFirstOrElseDefault(gbaltered);
     String source = new LilyScale(info).toLily();
     assertThat(source).contains("\\key f \\major");
   }

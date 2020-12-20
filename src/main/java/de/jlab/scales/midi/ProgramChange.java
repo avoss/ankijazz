@@ -1,5 +1,10 @@
 package de.jlab.scales.midi;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
+@EqualsAndHashCode(callSuper = true)
+@Getter
 public class ProgramChange extends AbstractPart {
   
   private int channel;

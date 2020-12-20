@@ -1,5 +1,8 @@
 package de.jlab.scales.midi;
 
+import lombok.EqualsAndHashCode;
+
+@EqualsAndHashCode
 public abstract class AbstractPart implements Part {
 
   public Part repeat(int times) {

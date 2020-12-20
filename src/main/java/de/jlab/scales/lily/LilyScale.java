@@ -5,13 +5,9 @@ import static de.jlab.scales.lily.Direction.DESCENDING;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UncheckedIOException;
 import java.util.Collections;
 import java.util.List;
 
-import de.jlab.scales.Utils;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
@@ -43,11 +39,10 @@ public class LilyScale {
     this.scale = scaleInfo.getScale();
   }
   
-
   public String toLily() {
-    return readTemplate()
+    return LilyUtil.readTemplate(LilyScale.class, "LilyScale.ly")
       .replace("${title}", scaleName)
-      .replace("${key}", key())
+      .replace("${key}", notationKey())
       .replace("${clef}", clef.getClef())
       .replace("${relativeTo}", clef.getRelativeTo(direction))
       .replace("${scaleNotes}", lilyNotesWithExtendedOctave())
@@ -121,32 +116,16 @@ public class LilyScale {
     return toLilyNote(scale.getRoot());
   }
 
-  private String key() {
-    return toLilyNote(keySignature.notationKey());
-  }
-
-  private String toLilyNote(Note note) {
-    return toLilyNote(keySignature.notate(note));
-  }
-  
-  private String toLilyNote(String notatedNote) {
-    return notatedNote
-        .replace("b", "f")
-        .replace("#", "s")
-        .replace("x", "ss")
-        .toLowerCase();
+  private String notationKey() {
+    return toLilyNote(keySignature.getKeySignature());
   }
 
   private String toLilyQuarterNote(Note note) {
     return toLilyNote(note) + "4";
   }
 
-  private String readTemplate() {
-    try (InputStream input = LilyScale.class.getResourceAsStream("LilyScale.ly")) {
-      return Utils.readString(input);
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    }
+  private String toLilyNote(Note note) {
+    return LilyUtil.toLilyNote(keySignature, note);
   }
 
 }

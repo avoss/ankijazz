@@ -1,6 +1,8 @@
 package de.jlab.scales.midi;
 
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode(callSuper = true)
 public class Sequential extends CompositePart {
 
   public Sequential(Part part, Part... parts) {

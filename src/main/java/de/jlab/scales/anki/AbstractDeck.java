@@ -2,7 +2,6 @@ package de.jlab.scales.anki;
 
 import static java.util.stream.Collectors.toList;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.io.UncheckedIOException;
@@ -11,7 +10,6 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -23,9 +21,9 @@ import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
 import de.jlab.scales.difficulty.DifficultyCollection;
 
-public abstract class AbstractDeck implements Deck {
+public abstract class AbstractDeck<T extends Card> implements Deck<T> {
   private static final ObjectMapper MAPPER = new ObjectMapper();
-  private final List<Card> cards = new ArrayList<>();
+  private final List<T> cards = new ArrayList<>();
   private final String title;
   private final String outputFileName;
   private final String mustacheTemplate;
@@ -43,7 +41,7 @@ public abstract class AbstractDeck implements Deck {
     this.mustacheTemplate = String.format("%s.html.mustache", getClass().getName().replace('.', '/'));
   }
   
-  protected AbstractDeck(String title, String outputFileName, String mustacheTemplate, List<Card> cards) {
+  protected AbstractDeck(String title, String outputFileName, String mustacheTemplate, List<? extends T> cards) {
     this.title = title;
     this.outputFileName = outputFileName;
     this.mustacheTemplate = mustacheTemplate;
@@ -55,11 +53,11 @@ public abstract class AbstractDeck implements Deck {
   }
   
   @Override
-  public void add(Card card) {
+  public void add(T card) {
     cards.add(card);
   }
   
-  protected void addAll(List<Card> cards) {
+  protected void addAll(List<T> cards) {
     cards.addAll(cards);
   }
   
@@ -138,23 +136,22 @@ public abstract class AbstractDeck implements Deck {
   }
 
   @Override
-  public List<Card> getCards() {
+  public List<T> getCards() {
     return cards;
   }
   
   @Override
-  public Deck subdeck(int numberOfCards) {
-    Card[] cards = getCards().toArray(new Card[getCards().size()]);
-    List<Card> sublist = new ArrayList<>();
-    Interpolator interpolator = Utils.interpolator(0, numberOfCards, 0, cards.length);
+  public Deck<T> subdeck(int numberOfCards) {
+    List<T> sublist = new ArrayList<>();
+    Interpolator interpolator = Utils.interpolator(0, numberOfCards, 0, cards.size());
     for (int i = 0; i < numberOfCards; i++) {
-      sublist.add(cards[interpolator.apply(i)]);
+      sublist.add(getCards().get(interpolator.apply(i)));
     }
     return subdeck(title, outputFileName, mustacheTemplate, sublist);
   }
 
-  protected Deck subdeck(String title, String outputFileName, String mustacheTemplate, List<Card> cards) {
-    return new SimpleDeck(title, outputFileName, mustacheTemplate, cards);
+  protected Deck<T> subdeck(String title, String outputFileName, String mustacheTemplate, List<T> cards) {
+    return new SimpleDeck<T>(title, outputFileName, mustacheTemplate, cards);
   }
   
 }

@@ -5,8 +5,8 @@ import java.util.Map;
 import de.jlab.scales.difficulty.WithDifficulty;
 
 public interface Card extends WithDifficulty, WithAssets, Comparable<Card> {
+  final String CSV_DELIMITER = "\t";
 
-  // FIXME rename getCsv() to getAnki();
   String getCsv();
   
   Map<String, Object> getJson();

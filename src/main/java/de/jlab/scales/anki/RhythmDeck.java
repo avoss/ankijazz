@@ -13,7 +13,7 @@ import de.jlab.scales.lily.LilyRhythm;
 import de.jlab.scales.rhythm.AbstractRhythm;
 import de.jlab.scales.rhythm.RhythmGenerator;
 
-public class RhythmDeck extends AbstractDeck {
+public class RhythmDeck extends AbstractDeck<RhythmCard> {
 
   private static final int MIN_BPM = 55;
   private static final int MAX_BPM = 75;

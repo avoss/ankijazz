@@ -10,13 +10,11 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-
 public class SimpleDeckTest {
   
   @Test
   public void testWriteCsv() throws IOException {
-    Deck deck = new SimpleDeck("Test Deck");
+    Deck<SimpleCard> deck = new SimpleDeck<SimpleCard>("Test Deck");
     deck.add(card(1,  "A", "B", "T1"));
     deck.add(card(3,  "E", "F", "T3"));
     deck.add(card(2,  "C", "D", "T2"));
@@ -27,10 +25,10 @@ public class SimpleDeckTest {
     deck.writeHtml(dir);
     
     String actual = Files.readAllLines(dir.resolve("SimpleDeck.txt")).stream().collect(Collectors.joining("\n"));
-    assertEquals("A;B;T1\nC;D;T2\nE;F;T3", actual);
+    assertEquals("A\tB\tT1\nC\tD\tT2\nE\tF\tT3", actual);
   }
 
-  private Card card(double difficulty, String front, String back, String tags) {
+  private SimpleCard card(double difficulty, String front, String back, String tags) {
     SimpleCard card = new SimpleCard(difficulty, "front", "back", "tags");
     card.put("front", front);
     card.put("back", back);

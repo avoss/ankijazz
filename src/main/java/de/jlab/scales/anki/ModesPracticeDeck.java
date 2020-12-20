@@ -13,7 +13,7 @@ import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class ModesPracticeDeck extends AbstractDeck {
+public class ModesPracticeDeck extends AbstractDeck<ModesPracticeCard> {
 
   public ModesPracticeDeck(Note instrument) {
     super(format("AnkiJazz - Practice Modes (%s-Instrument)", instrument.getName(FLAT)), format("ModesPractice%sDeck", instrument.getName(FLAT)));

@@ -2,6 +2,7 @@ package de.jlab.scales.midi.wav;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
 
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioSystem;
@@ -27,10 +28,6 @@ public class WavFile implements MidiOut {
   }
 
   @Override
-  public void addLyrics(String text) {
-  }
-
-  @Override
   public void advance(int numerator, int denominator) {
     buffer.setPosition(buffer.getPosition() + calc.samples(numerator, denominator));
   }
@@ -44,7 +41,11 @@ public class WavFile implements MidiOut {
   @Override
   public void programChange(int channel, int program) {
   }
-
+  
+  @Override
+  public void controllerChange(int channel, int controller, int value) {
+  }
+  
   @Override
   public int getClock() {
     return buffer.getPosition();
@@ -56,9 +57,9 @@ public class WavFile implements MidiOut {
   }
 
   @Override
-  public void save(String filename) {
+  public void save(Path path) {
     try {
-      File file = new File(filename).getAbsoluteFile();
+      File file = path.toFile();
       file.getParentFile().mkdirs();
       AudioSystem.write(buffer.toAudioInputStream(), AudioFileFormat.Type.WAVE, file);
     } catch (IOException e) {

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <title>{{title}}</title>
+  <style>
+    .card {
+      max-width: 40rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>
+      This deck contains chord progressions commonly used in Jazz and other styles. For details visit <a href="https://www.ankijazz.com">AnkiJazz.com</a>
+    </p>
+    {{#cards}}
+      <div class="card border-secondary mb-3">
+        <h4 class="card-header">
+          TODO
+        </h4>
+        <div class="card-body">
+          <img class="card-img-top" src="{{pngName}}">
+          <p class="card-text text-center">
+            <audio controls src="{{mp3Name}}"></audio>
+          </p>
+          <p class="card-text">Fields:</p>
+          <ul>
+            <li>TODO</li>
+          </ul>
+        </div>
+      </div>
+    {{/cards}}
+  </div>
+</body>
+</html>

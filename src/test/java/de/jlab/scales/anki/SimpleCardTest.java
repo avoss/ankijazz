@@ -1,6 +1,6 @@
 package de.jlab.scales.anki;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class SimpleCardTest {
     card.put("back", "b");
     card.put("front", "a");
     card.put("front", "x");
-    assertEquals("x;b", card.getCsv());
+    assertEquals("x\tb", card.getCsv());
     
   }
 

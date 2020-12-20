@@ -1,7 +1,5 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -9,7 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 import de.jlab.scales.theory.Analyzer.Result;
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /**
  * TODO: 
@@ -77,11 +78,15 @@ public class KeySignature {
     return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap(), numberOfAccidentals);
   }
 
-  public String notationKey() {
+  public Note getKeySignature() {
     if (suppressStaffSignature) {
-      return "C";
+      return Note.C;
     }
-    return notate(notationKey);
+    return notationKey;
+  }
+  
+  public String getKeySignatureString() {
+    return notate(getKeySignature());
   }
   
   public String notate(Note note) {

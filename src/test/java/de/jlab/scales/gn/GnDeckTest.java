@@ -11,7 +11,7 @@ public class GnDeckTest {
 
   @Test
   public void test() {
-    Deck deck = new GnDeck();
+    Deck<?> deck = new GnDeck();
     TestUtils.writeTo(deck, 1);
     List.of(GnSong.values()).stream().filter(GnSong::hasGuitarSolo).forEach(s -> System.out.println(s));
   }

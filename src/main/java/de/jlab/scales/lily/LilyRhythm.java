@@ -2,11 +2,6 @@ package de.jlab.scales.lily;
 
 import static java.util.stream.Collectors.joining;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.UncheckedIOException;
-
-import de.jlab.scales.Utils;
 import de.jlab.scales.rhythm.AbstractRhythm;
 import de.jlab.scales.rhythm.Event;
 import de.jlab.scales.rhythm.Quarter;
@@ -49,7 +44,7 @@ public class LilyRhythm {
   }
 
   public String toLily() {
-    return readTemplate()
+    return LilyUtil.readTemplate(LilyRhythm.class, type.getTemplate())
         .replace("${scaleNotes}", scaleNotes(Type.PIANO))
         .replace("${cowbellNotes}", scaleNotes(Type.COWBELL))
         .replace("${bpm}", Integer.toString(bpm))
@@ -92,14 +87,6 @@ public class LilyRhythm {
     case bt: return symbol + "8";
     default:
       throw new IllegalArgumentException("Event not supported: " + event);
-    }
-  }
-
-  private String readTemplate() {
-    try (InputStream input = LilyRhythm.class.getResourceAsStream(type.getTemplate())) {
-      return Utils.readString(input);
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
     }
   }
 

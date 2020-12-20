@@ -1,7 +1,5 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
@@ -38,15 +36,9 @@ import static de.jlab.scales.theory.Scales.CminTriad;
 import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.Csus4Triad;
 import static java.util.stream.Collectors.toCollection;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.stream.Collector;
-import java.util.stream.Stream;
 
 
 public enum BuiltinChordType implements ScaleType {

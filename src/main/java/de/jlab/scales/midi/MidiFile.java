@@ -1,7 +1,10 @@
 package de.jlab.scales.midi;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Path;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MetaMessage;
@@ -11,13 +14,15 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
+import com.google.common.annotations.VisibleForTesting;
+
 public class MidiFile implements MidiOut {
   // http://www.jsresources.org
   // similar project http://www.jfugue.org/
   private Sequence sequence;
   private Track track;
   
-  private final int PPQ = 480;
+  private static final int PPQ = 480;
   
   private int clock = 0;
 
@@ -78,7 +83,8 @@ public class MidiFile implements MidiOut {
     clock += ticks(numerator, denominator);
   }
 
-  private int ticks(int numerator, int denominator) {
+  @VisibleForTesting
+  static int ticks(int numerator, int denominator) {
     return PPQ * 4 * numerator / denominator;
   }
   
@@ -92,15 +98,36 @@ public class MidiFile implements MidiOut {
   public void programChange(int channel, int program) {
     track.add(shortMessage(clock, ShortMessage.PROGRAM_CHANGE, channel, program, 0));
   }
+
+  public void controllerChange(int channel, int controller, int value) {
+    track.add(shortMessage(clock, ShortMessage.CONTROL_CHANGE, channel, controller, value));
+  }
+
+  /**
+   * 0 = left, 64 = center, 127 = right
+   */
+  public void panChange(int channel, int value) {
+    track.add(shortMessage(clock, ShortMessage.CONTROL_CHANGE, channel, 10, value));
+  }
   
   @Override
-  public void save(String filename) {
+  public void save(Path path) {
     try {
-      File file = new File(filename).getAbsoluteFile();
+      File file = path.toFile();
       file.getParentFile().mkdirs();
       MidiSystem.write(sequence, 0, file);
     } catch (IOException e) {
-      throw new RuntimeException(e);
+      throw new UncheckedIOException(e);
+    }
+  }
+  
+  public byte[] getBytes() {
+    try {
+      ByteArrayOutputStream bos = new ByteArrayOutputStream();
+      MidiSystem.write(sequence, 0, bos);
+      return bos.toByteArray();
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
     }
   }
 
@@ -110,7 +137,7 @@ public class MidiFile implements MidiOut {
       sm.setMessage(status, channel, data1, data2);
       return new MidiEvent(sm, clock);
     } catch (InvalidMidiDataException e) {
-      throw new RuntimeException(e);
+      throw new IllegalArgumentException(e);
     }
   }
 

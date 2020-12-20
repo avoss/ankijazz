@@ -2,7 +2,6 @@ package de.jlab.scales.anki;
 
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -35,7 +34,7 @@ public class SimpleCard implements Card {
 
   @Override
   public String getCsv() {
-    return fields.values().stream().map(v -> v.replace(';', '_')).collect(Collectors.joining(";"));
+    return fields.values().stream().map(s -> s.replace(CSV_DELIMITER, " ")).collect(Collectors.joining(CSV_DELIMITER));
   }
 
   @Override

@@ -3,7 +3,6 @@ package de.jlab.scales;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.fail;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -19,14 +18,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import de.jlab.scales.anki.Deck;
+import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
+import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
 public class TestUtils {
-  private static ObjectMapper mapper = new ObjectMapper();
   static boolean disabled = false;
   
   public static void assertFileContentMatches(String actualString, Class<?> testClass, String fileName) {
@@ -112,18 +111,28 @@ public class TestUtils {
     return uniqueNotes.size() < scale.asList().size();
   }
 
-  public static void writeTo(Deck deck, double randomness) {
+  public static void writeTo(Deck<?> deck, double randomness) {
     Path ankiDir = Paths.get("build/anki");
     deck.writeHtml(ankiDir);
     deck.sort(randomness);
     deck.writeAnki(ankiDir); 
     deck.writeAssets(ankiDir);
 
-    Deck subdeck = deck.subdeck(32);
+    Deck<?> subdeck = deck.subdeck(32);
     Path jsonDir = Paths.get("build/preview");
     subdeck.writeHtml(jsonDir);
     subdeck.writeJson(jsonDir);
     subdeck.writeAssets(jsonDir);
   }
 
+  public static KeySignature majorKeySignature(Note root) {
+    List<KeySignature> list = BuiltinScaleType.Major.getKeySignatures(root).stream().collect(toList());
+    assertEquals(1, list.size());
+    return list.get(0);
+  }
+
+  public static KeySignature majorKeySignature(Note root, Accidental accidental) {
+    return BuiltinScaleType.Major.getKeySignatures(root).stream().filter(k -> k.getAccidental() == accidental).findAny().orElseThrow();
+  }
+  
 }

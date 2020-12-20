@@ -6,14 +6,10 @@ import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;
 
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class ModesPracticeGuitarDeck extends AbstractDeck {
+public class ModesPracticeGuitarDeck extends AbstractDeck<ModesPracticeGuitarCard> {
 
   public ModesPracticeGuitarDeck() {
     super("AnkiJazz - Modes Practice (Guitar)");

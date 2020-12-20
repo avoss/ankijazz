@@ -2,11 +2,10 @@ package de.jlab.scales.anki;
 
 import java.nio.file.Path;
 import java.util.List;
-import java.util.Map;
 
-public interface Deck extends WithAssets {
+public interface Deck<T extends Card> extends WithAssets {
 
-  void add(Card card);
+  void add(T card);
 
   void writeAnki(Path dir);
   void writeJson(Path dir);
@@ -23,8 +22,8 @@ public interface Deck extends WithAssets {
   List<String> getJson();
   String getHtml();
 
-  Deck subdeck(int numberOfCards);
+  Deck<T> subdeck(int numberOfCards);
   
-  List<Card> getCards();
+  List<T> getCards();
 
 }

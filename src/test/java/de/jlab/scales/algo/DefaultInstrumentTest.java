@@ -1,5 +1,7 @@
 package de.jlab.scales.algo;
 
+import java.nio.file.Paths;
+
 import org.junit.Test;
 
 import de.jlab.scales.midi.Drum;
@@ -12,7 +14,7 @@ public class DefaultInstrumentTest {
     MidiFile mf = new MidiFile();
     Instrument instrument = Instruments.drum(Drum.ClosedHiHat).rhythm("x.7.7.7. x2738495").length("x").velocity(60, 80).build();
     instrument.play(1600).perform(mf);
-    mf.save("temp/test.midi");
+    mf.save(Paths.get("temp/test.midi"));
     
   }
 

@@ -1,7 +1,6 @@
 package de.jlab.scales.gn;
 
 import java.nio.file.Path;
-import java.util.Collections;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,7 +40,7 @@ public class GnCard implements Card {
 
   @Override
   public String getCsv() {
-    return Stream.of(getTitle(), AnkiUtils.ankiMp3(getMp3Name())).collect(Collectors.joining(";"));
+    return Stream.of(getTitle(), AnkiUtils.ankiMp3(getMp3Name())).collect(Collectors.joining(CSV_DELIMITER));
   }
   
   @Override

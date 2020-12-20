@@ -39,7 +39,7 @@ public class ModesPracticeCard extends LilyCard {
         model.getModeRootName(),
         ankiMp3(super.getMp3Name()),
         ankiPng(super.getPngName()),
-        model.getDirection()).collect(Collectors.joining(";"));
+        model.getDirection()).collect(Collectors.joining(CSV_DELIMITER));
   }
 
   @Override

@@ -8,7 +8,6 @@ import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;
 import static java.lang.String.format;
 
-import de.jlab.scales.Utils;
 import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 import de.jlab.scales.theory.IntervalAnalyzer;
@@ -31,7 +30,7 @@ Fields are for filtered decks only
 - modeType
 - modeRoot
  */
-public class ModesTheoryDeck extends AbstractDeck {
+public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
 
   private static final String FRONT = "front";
   private static final String BACK = "back";
@@ -92,7 +91,7 @@ public class ModesTheoryDeck extends AbstractDeck {
   void modeIntervals() {
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
-      ScaleInfo modeInfo = MODES.info(scale);
+      ScaleInfo modeInfo = MODES.findFirstOrElseDefault(scale);
       String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", modeInfo.getTypeName());
       String back = divb(analyzer.analyze(scale).toString());
       SimpleCard card = card(computeScaleDifficulty(modeInfo), "ModeIntervals", front, back);

@@ -2,16 +2,12 @@ package de.jlab.scales.anki;
 
 import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
 import static de.jlab.scales.anki.AnkiUtils.ankiPng;
-import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
 import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.stream.Stream;
 
-import de.jlab.scales.Utils;
 import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.lily.LilyMetronome.Tempo;
 import de.jlab.scales.lily.LilyRhythm;
@@ -81,7 +77,7 @@ public class RhythmCard extends LilyCard {
         hasTies(),
         hasSyncopation(),
         Integer.toString(getNumberOfUniqueQuarters()),
-        Integer.toString(getBpm())).collect(joining(";"));
+        Integer.toString(getBpm())).collect(joining(CSV_DELIMITER));
   }
   
   @Override

@@ -12,9 +12,7 @@ import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
 import static de.jlab.scales.theory.Scales.CMinorPentatonic;
 import static de.jlab.scales.theory.Scales.CWholeTone;
 
-import java.util.ArrayList;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
