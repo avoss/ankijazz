@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 
 import javax.imageio.ImageIO;
@@ -20,7 +21,7 @@ import de.jlab.scales.midi.song.Song;
 public class PngImageRenderer extends Layout {
   private final String copyright = "(C) 2020 www.AnkiJazz.com - all rights reserved";
 
-  private static final int barLineSpacing = 20;
+  private final int barLineSpacing;
 
   private final IdSong song;
   private Graphics2D g;
@@ -35,6 +36,7 @@ public class PngImageRenderer extends Layout {
     super(context.scaleWidth(1000 * context.getLayoutColumns() / 8)); // used to be 8 columns in initial version ??????????????
     this.originalContext = context;
     this.song = new IdSong(song);
+    this.barLineSpacing = context.isWithBarNumbers() ? 20 : 10;
   }
   
   boolean linux() {
@@ -110,10 +112,7 @@ public class PngImageRenderer extends Layout {
 
   private void drawBar(IdBar bar) {
     drawBarLineLeft(bar);
-    for (IdChord chord : bar.getChords()) {
-      int chordIndexInSong = song.indexOf(chord);
-      drawChord(chordIndexInSong, chord);
-    }
+    drawChords(bar);
     if (isLineBreak(bar) || isLastBar(bar)) {
       drawBarLineRight(bar);
     }
@@ -124,17 +123,15 @@ public class PngImageRenderer extends Layout {
   }
 
   private boolean isLineBreak(IdBar bar) {
-    IdChord lastChord = bar.getChords().get(bar.getChords().size() - 1);
-    return column(song.indexOf(lastChord)) == (columns() - 1);
+    return column(song.indexOf(bar)) == (columns() - 1);
   }
 
   private void drawBarLineLeft(IdBar bar) {
-    IdChord chord = bar.getChords().get(0);
-    int chordIndexInSong = song.indexOf(chord);
-    int row = row(chordIndexInSong);
-    int column = column(chordIndexInSong);
+    int barIndex = song.indexOf(bar);
+    int row = row(barIndex);
+    int column = column(barIndex);
     drawBarLine(row, column);
-    drawBarNumber(bar, row, column);
+    //drawBarNumber(bar, row, column);
   }
 
   private void drawBarNumber(IdBar bar, int row, int column) {
@@ -147,9 +144,8 @@ public class PngImageRenderer extends Layout {
   }
 
   private void drawBarLineRight(IdBar bar) {
-    IdChord chord = bar.getChords().get(bar.getChords().size() - 1);
-    int chordIndexInSong = song.indexOf(chord);
-    drawBarLine(row(chordIndexInSong), column(chordIndexInSong) + 1);
+    int barIndex = song.indexOf(bar);
+    drawBarLine(row(barIndex), column(barIndex) + 1);
   }
 
   private void drawBarLine(int row, int column) {
@@ -162,37 +158,76 @@ public class PngImageRenderer extends Layout {
     return (int) (y(row) + chordHeight() * 1.25);
   }
 
-  // TODO: should render "%" if current chord equals previous chord
-  private void drawChord(int index, IdChord chord) {
+  class MyRenderer implements ChordRenderer.Renderer {
+    private float x;
+    private float y;
+    private Font chordFont;
+    private Font superFont;
+    private Font subFont;
+    private float xOffset;
+
+    public void setPosition(float x, float y) {
+      this.x = x + xOffset;
+      this.y = y;
+    }
+    
+    MyRenderer(float xOffset, AffineTransform transform) {
+      this.xOffset = xOffset;
+      this.chordFont = PngImageRenderer.this.chordFont.deriveFont(transform);
+      this.superFont = PngImageRenderer.this.superFont.deriveFont(transform);
+      this.subFont = PngImageRenderer.this.subFont.deriveFont(transform);
+    }
+
+    @Override
+    public void renderNormal(String s) {
+      g.setFont(chordFont);
+      g.drawString(s, x, y);
+      x += g.getFontMetrics().stringWidth(s);
+    }
+
+    @Override
+    public void renderSuper(String s) {
+      g.setFont(chordFont);
+      int rootHeight = g.getFontMetrics().getAscent();
+      g.setFont(superFont);
+      int accHeight = g.getFontMetrics().getAscent();
+      g.drawString(s, x, y - (rootHeight - accHeight) - accHeight / 3);
+    }
+
+    @Override
+    public void renderSub(String s) {
+      g.setFont(subFont);
+      int accHeight = g.getFontMetrics().getAscent();
+      g.drawString(s, x, y + accHeight / 6);
+    }
+
+  }
+  
+  MyRenderer singleChordRenderer = new MyRenderer(0, AffineTransform.getScaleInstance(1, 1));
+  MyRenderer leftChordRenderer = new MyRenderer(0, AffineTransform.getScaleInstance(0.7, 1));
+  MyRenderer rightChordRenderer = new MyRenderer((x(1)-x(0))/2, AffineTransform.getScaleInstance(0.7, 1));
+  
+  private void drawChords(IdBar bar) {
     g.setColor(Color.BLACK);
+    int index = song.indexOf(bar);
+    float x = x(column(index)) + barLineSpacing;
+    float y = y(row(index) + 1);
+    if (bar.getChords().size() == 1) {
+      String symbol = bar.getChords().get(0).getChord().getSymbol();
+      singleChordRenderer.setPosition(x, y);
+      new ChordRenderer(singleChordRenderer).parse(symbol);
+    } else if (bar.getChords().size() == 2) {
+      String leftSymbol = bar.getChords().get(0).getChord().getSymbol();
+      leftChordRenderer.setPosition(x, y);
+      new ChordRenderer(leftChordRenderer).parse(leftSymbol);
 
-    ChordRenderer.Renderer renderer = new ChordRenderer.Renderer() {
-      float x = x(column(index)) + barLineSpacing;
-      float y = y(row(index) + 1);
-
-      @Override public void renderNormal(String s) {
-        g.setFont(chordFont);
-        g.drawString(s, x, y);
-        x += g.getFontMetrics().stringWidth(s);
-      }
-
-      @Override public void renderSuper(String s) {
-        g.setFont(chordFont);
-        int rootHeight = g.getFontMetrics().getAscent();
-        g.setFont(superFont);
-        int accHeight = g.getFontMetrics().getAscent();
-        g.drawString(s, x, y - (rootHeight - accHeight) - accHeight/3);
-      }
+      String rightSymbol = bar.getChords().get(1).getChord().getSymbol();
+      rightChordRenderer.setPosition(x, y);
+      new ChordRenderer(rightChordRenderer).parse(rightSymbol);
       
-      @Override public void renderSub(String s) {
-        g.setFont(subFont);
-        int accHeight = g.getFontMetrics().getAscent();
-        g.drawString(s, x, y + accHeight/6);
-      }
-    };
+    }
 
-    String chordString = chord.getChord().getSymbol();
-    new ChordRenderer(renderer).parse(chordString);
+
   }
 
   public void renderTo(Path path) {
@@ -200,6 +235,7 @@ public class PngImageRenderer extends Layout {
       BufferedImage image = new BufferedImage(originalContext.getImageWidth(), originalContext.getImageHeight(), BufferedImage.TYPE_3BYTE_BGR);
       renderSheet(image);
       File out = path.toFile();
+      Files.createDirectories(path.getParent());
       ImageIO.write(image,  "png", out);
     } catch (IOException e) {
       throw new UncheckedIOException(e);

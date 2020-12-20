@@ -9,6 +9,7 @@ public class RenderContext {
       .layoutRows(16)
       .numberOfBars(96)
       .withHeader(true)
+      .withBarNumbers(true)
       .repeat(1)
       .build();
 
@@ -19,6 +20,7 @@ public class RenderContext {
       .layoutRows(5)
       .numberOfBars(16)
       .withHeader(false)
+      .withBarNumbers(false)
       .repeat(2)
       .build();
   
@@ -28,6 +30,7 @@ public class RenderContext {
   private int layoutColumns;
   private int numberOfBars;
   private boolean withHeader;
+  private boolean withBarNumbers;
   private int repeat;
   
   
