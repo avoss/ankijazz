@@ -91,8 +91,6 @@ public class SongFactoryTest {
     SongFactory songFactory = new SongFactory(EnumSet.of(SeventhChords, Major6251, Minor6251, AllKeys));
     int songIndex = 0;
     for (Song song: songFactory.generate(ctx.getNumberOfBars())) {
-      MidiFile midiFile = new MidiFile();
-      
       String name = String.format("song%02d", songIndex++);
       new PngImageRenderer(ctx, song).renderTo(dir.resolve(name.concat(".png")));
       groove(song, Ensembles.latin(120), dir.resolve(name.concat("-latin.midi")));

@@ -33,7 +33,7 @@ public class JamDeck extends AbstractDeck<JamCard> {
   private void addCards(Set<Feature> features) {
     SongFactory factory = new SongFactory(features);
     for (Song song: factory.generate(context.getNumberOfBars())) {
-      add(new JamCard(context, song, Ensembles.funk(70)));
+      add(new JamCard(context, song, Ensembles.funk(80)));
       add(new JamCard(context, song, Ensembles.latin(120)));
     }
   }

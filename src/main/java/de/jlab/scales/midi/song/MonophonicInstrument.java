@@ -19,9 +19,9 @@ public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> 
   private int denominator;
   
   // TODO use parameter object
-  public MonophonicInstrument(int denominator, int midiChannel, NoteToMidiMapper noteToMidiMapper, Program program, int volume, int pan) {
-    super(denominator, midiChannel, program, volume, pan);
-    this.denominator = denominator;
+  public MonophonicInstrument(int beatsPerBar, int ticksPerBar, int midiChannel, NoteToMidiMapper noteToMidiMapper, Program program, int volume, int pan) {
+    super(beatsPerBar, ticksPerBar, midiChannel, program, volume, pan);
+    this.denominator = ticksPerBar;
     this.midiChannel = midiChannel;
     this.noteToMidiMapper = noteToMidiMapper;
   }
@@ -45,7 +45,7 @@ public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> 
   @Override
   protected BiFunction<Event, Scale, Part> getPlayer() {
     return (event, scale) -> {
-      int index = chordIndexMap.get(event.getEventId());
+      int index = chordIndexMap.get(event.getId());
       Note note = scale.getNote(index);
       int midiPitch = noteToMidiMapper.nextClosest(note);
       return Parts.note(midiChannel, midiPitch, event.getVelocity(), event.getNoteLength(), denominator);

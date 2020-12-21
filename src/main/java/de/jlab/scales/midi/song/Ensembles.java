@@ -47,12 +47,12 @@ public class Ensembles {
       .bar(".... .... 6... 6...");
 
     ensemble.monophonic(32, Program.FretlessBass, 105, -40)
-      .bar("8--- -.8. 8---", 1, 5, 5)
-      .bar("..8. 8--- -.8. 8--- ....", 1, 1, 5, 5);
+      .bar("8--- -.8. 8--- > ..8.", 1, 5, 5, 1)
+      .bar("8--- -.8. 8--- ....",  1, 5, 5);
 
     ensemble.drop2chords(55, Program.ElectricPiano1, 60, 0)
-      .bar("8... 8--- ..8.")
-      .bar("..8- ---- ..8. ..8- ---.");
+      .bar("8... 8--- ..8. > ..8-")
+      .bar("---- ..8. ..8- ---.");
 
     return ensemble;
   }

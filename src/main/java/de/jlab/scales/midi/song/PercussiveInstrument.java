@@ -12,8 +12,8 @@ public class PercussiveInstrument extends AbstractInstrument<PercussiveInstrumen
 
   private Drum drum;
 
-  public PercussiveInstrument(int denominator, Drum drum) {
-    super(denominator);
+  public PercussiveInstrument(int beatsPerBar, int denominator, Drum drum) {
+    super(beatsPerBar, denominator);
     this.drum = drum;
   }
   
@@ -26,7 +26,7 @@ public class PercussiveInstrument extends AbstractInstrument<PercussiveInstrumen
   protected BiFunction<Event, Scale, Part> getPlayer() {
     
     return (event, scale) -> {
-      return note(Drum.getMidiChannel(), drum.getMidiPitch(), event.getVelocity(), event.getNoteLength(), getDenominator());
+      return note(Drum.getMidiChannel(), drum.getMidiPitch(), event.getVelocity(), event.getNoteLength(), getTicksPerBar());
     };
   }
 }

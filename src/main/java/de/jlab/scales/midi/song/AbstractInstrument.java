@@ -15,30 +15,33 @@ import lombok.Getter;
 @Getter
 public abstract class AbstractInstrument<T extends AbstractInstrument<T>> implements Instrument {
 
-  private final int denominator;
+  private final int ticksPerBar;
+  private final int ticksPerBeat;
+  private final List<BarProcessor> barProcessors = new ArrayList<>();
+  private final RhythmParser ryhthmParser;
 
-  private List<BarProcessor> barProcessors = new ArrayList<>();
-  private Iterator<BarProcessor> barProcessorIterator;
-  private int patternId;
 
-  protected AbstractInstrument(int denominator) {
-    this.denominator = denominator;
+  protected AbstractInstrument(int beatsPerBar, int ticksPerBar) {
+    this.ticksPerBar = ticksPerBar;
+    this.ticksPerBeat = ticksPerBar / beatsPerBar;
+    this.ryhthmParser = new RhythmParser(ticksPerBeat);
   }
 
   protected List<String> parse(String pattern) {
-    BarProcessorFactory factory = new BarProcessorFactory(denominator, getPlayer());
-    List<String> eventIds = EventParser.parseEvents(factory, pattern, patternId);
+    BarProcessorFactory factory = new BarProcessorFactory(ticksPerBar, getPlayer());
+    List<String> eventIds = ryhthmParser.parse(pattern, factory);
     barProcessors.add(factory.create());
-    barProcessorIterator = loopIterator(barProcessors);
-    patternId++;
     return eventIds;
   }
 
   @Override
   public Part play(Song song) {
+    ryhthmParser.close();
+
+    Iterator<BarProcessor> iterator = loopIterator(barProcessors);
     Sequential container = new Sequential();
     for (Bar bar : song.getBars()) {
-      barProcessorIterator.next().accept(container, bar);
+      iterator.next().accept(container, bar);
     }
     return container;
   }

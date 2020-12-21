@@ -20,26 +20,29 @@ public class Ensemble {
   private final List<Instrument> instruments = new ArrayList<>();
   private final TimeSignature timeSignature;
   private final Tempo tempo;
-  private final int denominator;
+  private final int ticksPerBar;
+  private final int beatsPerBar;
+  
   private int midiChannel = -1;
   private int drumVolume = 100;
   private int drumPan = 0;
   private Optional<Part> countInPart = Optional.empty();
   
-  public Ensemble(int denominator, TimeSignature timeSignature, Tempo tempo) {
-    this.denominator = denominator;
+  public Ensemble(int ticksPerBar, TimeSignature timeSignature, Tempo tempo) {
+    this.ticksPerBar = ticksPerBar;
     this.timeSignature = timeSignature;
+    this.beatsPerBar = timeSignature.getNumerator();
     this.tempo = tempo;
   }
   
   public PercussiveInstrument percussive(Drum drum) {
-    PercussiveInstrument instrument = new PercussiveInstrument(denominator, drum);
+    PercussiveInstrument instrument = new PercussiveInstrument(beatsPerBar, ticksPerBar, drum);
     instruments.add(instrument);
     return instrument;
   }
 
   public void countIn(Drum drum, String pattern) {
-    PercussiveInstrument instrument = new PercussiveInstrument(denominator, drum);
+    PercussiveInstrument instrument = new PercussiveInstrument(beatsPerBar, ticksPerBar, drum);
     instrument.bar(pattern);
     countInPart = Optional.of(instrument.play(Song.of(Bar.of(Chord.of(Cmaj7, "Cmaj7")))));
   }
@@ -49,14 +52,14 @@ public class Ensemble {
   }
   
   public MonophonicInstrument monophonic(NoteToMidiMapper noteToMidiMapper, Program program, int volume, int pan) {
-    MonophonicInstrument instrument = new MonophonicInstrument(denominator, nextMidiChannel(), noteToMidiMapper, program, volume, pan);
+    MonophonicInstrument instrument = new MonophonicInstrument(beatsPerBar, ticksPerBar, nextMidiChannel(), noteToMidiMapper, program, volume, pan);
     instruments.add(instrument);
     return instrument;
   }
 
   public PolyphonicInstrument drop2chords(int lowestMidiPitch, Program program, int volume, int pan) {
     ChordToMidiMapper mapper = new Drop2ChordGenerator(lowestMidiPitch);
-    PolyphonicInstrument instrument = new PolyphonicInstrument(denominator, nextMidiChannel(), mapper, program, volume, pan);
+    PolyphonicInstrument instrument = new PolyphonicInstrument(beatsPerBar, ticksPerBar, nextMidiChannel(), mapper, program, volume, pan);
     instruments.add(instrument);
     return instrument;
   }

@@ -14,9 +14,9 @@ public class PolyphonicInstrument extends TonalInstrument<PolyphonicInstrument> 
   private int denominator;
   private int midiChannel;
 
-  public PolyphonicInstrument(int denominator, int midiChannel, ChordToMidiMapper mapper, Program program, int volume, int pan) {
-    super(denominator, midiChannel, program, volume, pan);
-    this.denominator = denominator;
+  public PolyphonicInstrument(int beatsPerBar, int ticksPerBar, int midiChannel, ChordToMidiMapper mapper, Program program, int volume, int pan) {
+    super(beatsPerBar, ticksPerBar, midiChannel, program, volume, pan);
+    this.denominator = ticksPerBar;
     this.midiChannel = midiChannel;
     this.mapper = mapper;
   }

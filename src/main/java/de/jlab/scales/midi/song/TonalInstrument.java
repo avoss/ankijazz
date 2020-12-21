@@ -12,8 +12,8 @@ public abstract class TonalInstrument<T extends AbstractInstrument<T>> extends A
   private int pan;
   private int midiChannel;
   
-  protected TonalInstrument(int denominator, int midiChannel, Program program, int volume, int pan) {
-    super(denominator);
+  protected TonalInstrument(int beatsPerBar, int ticksPerBar, int midiChannel, Program program, int volume, int pan) {
+    super(beatsPerBar, ticksPerBar);
     this.midiChannel = midiChannel;
     this.program = program;
     this.volume = volume;

@@ -5,8 +5,6 @@ import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
 import de.jlab.scales.midi.CompositePart;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.midi.Parts;
@@ -32,11 +30,7 @@ public class BarProcessorFactory implements EventProcessor {
 
     @Override
     public void accept(CompositePart parts, Bar bar) {
-      Interpolator interpolator = Utils.interpolator(0, event.getPatternLength(), 0, bar.getChords().size());
-      // TODO use "center of gravity" of chord instead of start time, e.g. (start + length)/2
-      // if outside this bar, put into next bar - this can only happen, if next bar starts with dashes --- which extend event from this bar
-      int chordIndex = interpolator.apply(event.getPatternIndex());
-      Scale chord = bar.getChords().get(chordIndex).getScale();
+      Scale chord = bar.getChordForBeat(event.getBeat()).getScale();
       Part part = player.apply(event, chord);
       parts.add(part);
       parts.add(Parts.rest(denominator));

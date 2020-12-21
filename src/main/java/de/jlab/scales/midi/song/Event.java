@@ -6,9 +6,14 @@ import lombok.Data;
 @Builder
 @Data
 public class Event {
-  final String eventId;
-  final int patternLength;
-  final int patternIndex;
-  final int velocity;
-  final int noteLength;
+  private final int patternIndex;
+  private final int patternId;
+  private final int velocity;
+  private final int beat;
+  private int noteLength;
+  
+  public String getId() {
+    return Integer.toString(patternId).concat(":").concat(Integer.toString(patternIndex));
+  }
+  
 }

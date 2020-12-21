@@ -16,13 +16,21 @@ public class MidiTestUtils {
   
   private static ThreadLocalRandom random = ThreadLocalRandom.current();
 
-  public static Event event(int patternLength, int patternIndex, int velocity, int length) {
+  public static Event event(int patternIndex, int velocity, int length) {
+    return event(patternIndex, velocity, length, patternIndex/4);
+  }
+
+  public static Event event(int patternIndex, int velocity, int length, int beat) {
+    return event(0, patternIndex, velocity, length, beat);
+  }
+    
+  public static Event event(int patternId, int patternIndex, int velocity, int length, int beat) {
     return Event.builder()
-        .patternLength(patternLength)
+        .patternId(patternId)
         .patternIndex(patternIndex)
-        .eventId("0:".concat(Integer.toString(patternIndex)))
         .velocity(velocity)
         .noteLength(length)
+        .beat(beat)
         .build();
   }
   
