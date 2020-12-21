@@ -4,6 +4,23 @@ import de.jlab.scales.midi.Drum;
 import de.jlab.scales.midi.Parts;
 import de.jlab.scales.midi.Program;
 
+/**
+ * bar() notation
+ * <dl>
+ *   <dt>0-9</dt>
+ *   <dd>play chord or note with velocity between 0 and ~100</dd
+ *   <td>x</dt>
+ *   <dd>play chord or note with max velocity of 127</dd>
+ *   <dt>.</dt>
+ *   <dd>rest, or no sound</dd>
+ *   <dt>-</dt>
+ *   <dd>increase length of previous sound. E.g. <b>x--</b> will create a note/chord with velocity of 127 and length of 3 ticks</dd>
+ *   <dt>&gt;</dt>
+ *   <dd>take chord from next beat instead of current beat. Sometimes a note or chord plays the sound of the next beat a little bit before that beat. Does not advance the clock (e.g. <b>x... x...</b> and  <b>x... &gt; x...</b>  have the same rhythmic structure (only notes/chords to pick are different)</dd> 
+ *   <dt>everything else</dt>
+ *   <dd>is ignored</dd>
+ *  </dl>
+ */
 public class Ensembles {
   private Ensembles() {}
   
