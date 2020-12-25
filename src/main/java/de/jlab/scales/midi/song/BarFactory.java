@@ -11,23 +11,28 @@ import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
 
-public class ChordFactory {
+public class BarFactory {
 
-  private List<Scale> candidates = new ArrayList<>();
-  private Iterator<Scale> iterator;
+  private List<Scale[]> candidates = new ArrayList<>();
+  private Iterator<Scale[]> iterator;
 
-  public ChordFactory add(Scale scale, int probability) {
-    IntStream.range(0, probability).forEach(i -> candidates.add(scale));
+  public BarFactory add(int probability, Scale ...scales) {
+    IntStream.range(0, probability).forEach(i -> candidates.add(scales));
     iterator = Utils.randomLoopIterator(candidates);
     return this;
   }
 
-  // TODO semitones == keySignature.getNotationKey().ordinal() ???!!!!
-  public Chord next(int transposeSemitones, KeySignature keySignature) {
-    Scale scale = iterator.next().transpose(transposeSemitones);
-    ScaleInfo scaleInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(scale);
-    String symbol = String.format("%s%s", keySignature.notate(scale.getRoot()), scaleInfo.getTypeName());
-    return new Chord(scale, symbol);
+  public Bar next(KeySignature keySignature) {
+    int semitones = keySignature.getNotationKey().ordinal();
+    List<Chord> chords = new ArrayList<>();
+    Scale scales[] = iterator.next();
+    for (Scale scale : scales) {
+      scale = scale.transpose(semitones);
+      ScaleInfo scaleInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(scale);
+      String symbol = String.format("%s%s", keySignature.notate(scale.getRoot()), scaleInfo.getTypeName());
+      chords.add(new Chord(scale, symbol));
+    }
+    return new Bar(chords);
   }
 
 }

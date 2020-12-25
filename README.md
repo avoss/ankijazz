@@ -8,6 +8,11 @@ Anki media directory is C:\Users\andreas\AppData\Roaming\Anki2
 - scales free, modes commercial?
 - guitar tabulator
 
+## pentatonics
+- m7 and m6 pentatonics
+- string skipping 
+- chords maj7, min7, min6, dominant7, altered 2x
+
 --------------------------------------------------------------------------------------------
 
 ## Chords

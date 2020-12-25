@@ -14,8 +14,6 @@ import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Scales.*;
-import static de.jlab.scales.theory.Scales.CdimTriad;
-import static de.jlab.scales.theory.Scales.CmajTriad;
 import static java.util.Collections.singletonList;
 import static java.util.stream.Collectors.toList;
 
@@ -33,7 +31,6 @@ import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Scales;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
@@ -41,104 +38,95 @@ import lombok.Getter;
 public class SongFactory {
 
   private Set<Feature> features;
-  private ChordFactories chordFactories;
   private Map<Feature, ProgressionFactory> progressionFactories;
   private Map<Feature, List<KeyFactory>> keyFactories;
 
   public enum Feature { Triads, SeventhChords, WithSubstitutions, Major6251, Minor6251, Folk, SimpleBlues, JazzBlues, EachKey, AllKeys }
   
   @Getter
-  static class ChordFactories {
-    private ChordFactory cmajor6 = new ChordFactory();
-    private ChordFactory cmajor2 = new ChordFactory();
-    private ChordFactory cmajor5 = new ChordFactory();
-    private ChordFactory cmajor1 = new ChordFactory();
-    private ChordFactory aminor6 = new ChordFactory();
-    private ChordFactory aminor2 = new ChordFactory();
-    private ChordFactory aminor5 = new ChordFactory();
-    private ChordFactory aminor1 = new ChordFactory();
+  static class BarFactories {
+    private BarFactory cmajor6 = new BarFactory();
+    private BarFactory cmajor2 = new BarFactory();
+    private BarFactory cmajor5 = new BarFactory();
+    private BarFactory cmajor1 = new BarFactory();
+    private BarFactory aminor6 = new BarFactory();
+    private BarFactory aminor2 = new BarFactory();
+    private BarFactory aminor5 = new BarFactory();
+    private BarFactory aminor1 = new BarFactory();
     
-    ChordFactories(Set<Feature> features) {
+    BarFactories(Set<Feature> features) {
+      // Triad and SeventhChords are about notation, not about what an instrument plays. 
+      // e.g. an instrument may play upper structure triads or shell chords even if seventh chords are notated.
       boolean withSubstitutions = features.contains(WithSubstitutions);
       if (features.contains(Triads)) {
         addTriads();
-        if (withSubstitutions) {
+        if (features.contains(WithSubstitutions)) {
           addTriadSubstitutions();
         }
       }
       if (features.contains(SeventhChords)) {
         addSeventhChords();
-//        if (withSubstitutions) {
-//          addSeventhChordSubstitutions();
-//        }
       }
+      // 1. every chord can become a dominant (altered or not)
+      // 2. every dominant can become a ii-V
+      // 3. lead to any chord with its dominant
+      // 4. lead to any chord with the tritone sub of its dominant
+//    if (withSubstitutions) {
+//      addSeventhChordSubstitutions();
+//    }
+    }
+
+    private void addTriadSubstitutions() {
+      cmajor6.add(1, triad(6+2));
+      cmajor2.add(1, triad(2+2));
+      cmajor5.add(1, triad(5+2));
+      cmajor1.add(1, triad(1+2));
+      aminor6.add(1, triad(4+2));
+      aminor2.add(1, triad(7+2));
+      aminor5.add(2, CmajTriad.transpose(Bb));
+      aminor1.add(1, triad(6+2));
     }
 
     private void addTriads() {
-      cmajor6.add(triad(6), 2);
-      cmajor2.add(triad(2), 2);
-      cmajor5.add(triad(5), 2);
-      cmajor1.add(triad(1), 2);
-      aminor6.add(triad(4), 2);
-      aminor2.add(triad(7), 2);
-      aminor5.add(CaugTriad.transpose(E), 2);
-      aminor1.add(triad(6), 2);
+      cmajor6.add(2, triad(6));
+      cmajor2.add(2, triad(2));
+      cmajor5.add(2, triad(5));
+      cmajor1.add(2, triad(1));
+      aminor6.add(2, triad(4));
+      aminor2.add(2, triad(7));
+      aminor5.add(2, CaugTriad.transpose(E));
+      aminor1.add(2, triad(6));
     }
     
-    private void addTriadSubstitutions() {
-      cmajor6.add(triad(6+2), 1);
-      cmajor6.add(triad(6-2), 1);
-      cmajor2.add(triad(2+2), 1);
-      cmajor2.add(triad(2-2), 1);
-      cmajor5.add(triad(5+2), 1);
-      cmajor5.add(triad(5-2), 1);
-      cmajor1.add(triad(1+2), 1);
-      cmajor1.add(triad(1-2), 1);
-      aminor6.add(triad(4+2), 1);
-      aminor6.add(triad(4-2), 1);
-      aminor2.add(triad(7+2), 1);
-      aminor2.add(triad(7-2), 1);
-      aminor5.add(CdimTriad.transpose(B), 1);
-      aminor5.add(CdimTriad.transpose(D), 1);
-      aminor5.add(CmajTriad.transpose(Bb), 2);
-      aminor1.add(triad(6+2), 1);
-      aminor1.add(triad(6-2), 1);
+    private void addSeventhChords() {
+      cmajor6.add(2, seventh(6));
+      cmajor2.add(2, seventh(2));
+      cmajor5.add(2, seventh(5));
+      cmajor1.add(2, seventh(1));
+      aminor6.add(2, seventh(4));
+      aminor2.add(2, seventh(7));
+      aminor5.add(2, C7flat9.transpose(E));
+      aminor1.add(2, seventh(6));
     }
 
-    private void addSeventhChords() {
-      cmajor6.add(seventh(6), 2);
-      cmajor2.add(seventh(2), 2);
-      cmajor5.add(seventh(5), 2);
-      cmajor1.add(seventh(1), 2);
-      aminor6.add(seventh(4), 2);
-      aminor2.add(seventh(7), 2);
-      aminor5.add(C7flat9.transpose(E), 2);
-      aminor1.add(seventh(6), 2);
-    }
-    
     private Scale triad(int degree) {
-      return Scales.CMajor.getChord(degree - 1, 3);
+      return CMajor.getChord(degree - 1, 3);
     }
     
     private Scale seventh(int degree) {
-      return Scales.CMajor.getChord(degree - 1, 4);
+      return CMajor.getChord(degree - 1, 4);
     }
   }
 
   static abstract class ProgressionFactory {
-    protected ChordFactories factories;
+    protected BarFactories factories;
     private int numberOfBars;
-    protected ProgressionFactory(ChordFactories factories, int numberOfBars) {
+    protected ProgressionFactory(BarFactories factories, int numberOfBars) {
       this.factories = factories;
       this.numberOfBars = numberOfBars;
     }
     
-    public List<Bar> create(KeySignature keySignature) {
-      int semitones = keySignature.getNotationKey().ordinal();
-      return create(semitones, keySignature).map(chord -> Bar.of(chord)).collect(toList());
-    }
-    
-    protected abstract Stream<Chord> create(int semitones, KeySignature keySignature);
+    protected abstract List<Bar> create(KeySignature keySignature);
     
     public int getNumberOfBars() {
       return numberOfBars;
@@ -147,31 +135,45 @@ public class SongFactory {
   
   // TODO getTitle() contains keysignature.notate(root)
   static class Major6251 extends ProgressionFactory {
-    protected Major6251(ChordFactories factories) {
+    protected Major6251(BarFactories factories) {
       super(factories, 4);
     }
     @Override
-    protected Stream<Chord> create(int semitones, KeySignature keySignature) {
-      return Stream.of(
-          factories.getCmajor6().next(semitones, keySignature),
-          factories.getCmajor2().next(semitones, keySignature),
-          factories.getCmajor5().next(semitones, keySignature),
-          factories.getCmajor1().next(semitones, keySignature));
+    protected List<Bar> create(KeySignature keySignature) {
+      return List.of(
+          factories.getCmajor6().next(keySignature),
+          factories.getCmajor2().next(keySignature),
+          factories.getCmajor5().next(keySignature),
+          factories.getCmajor1().next(keySignature));
     }
   }
 
   // TODO getTitle() contains keysignature.notate(root.transpose(-3)) // minor
   static class Minor6251 extends ProgressionFactory {
-    protected Minor6251(ChordFactories factories) {
+    protected Minor6251(BarFactories factories) {
       super(factories, 4);
     }
     @Override
-    protected Stream<Chord> create(int semitones, KeySignature keySignature) {
-      return Stream.of(
-          factories.getAminor6().next(semitones, keySignature),
-          factories.getAminor2().next(semitones, keySignature),
-          factories.getAminor5().next(semitones, keySignature),
-          factories.getAminor1().next(semitones, keySignature));
+    protected List<Bar> create(KeySignature keySignature) {
+      return List.of(
+          factories.getAminor6().next(keySignature),
+          factories.getAminor2().next(keySignature),
+          factories.getAminor5().next(keySignature),
+          factories.getAminor1().next(keySignature));
+    }
+  }
+  
+  static class JazzBlues extends ProgressionFactory {
+    protected JazzBlues(BarFactories factories) {
+      super(factories, 4);
+    }
+    @Override
+    protected List<Bar> create(KeySignature keySignature) {
+      return List.of(
+          factories.getAminor6().next(keySignature),
+          factories.getAminor2().next(keySignature),
+          factories.getAminor5().next(keySignature),
+          factories.getAminor1().next(keySignature));
     }
   }
   
@@ -202,14 +204,13 @@ public class SongFactory {
     }
   }
   
-  
   public SongFactory(Set<Feature> features) {
     this.features = features;
-    chordFactories = new ChordFactories(features);
+    BarFactories barFactories = new BarFactories(features);
     
     progressionFactories = new HashMap<>();
-    progressionFactories.put(Major6251, new Major6251(chordFactories));
-    progressionFactories.put(Minor6251, new Minor6251(chordFactories));
+    progressionFactories.put(Major6251, new Major6251(barFactories));
+    progressionFactories.put(Minor6251, new Minor6251(barFactories));
     
     keyFactories = new HashMap<>();
     keyFactories.put(AllKeys, KeyFactory.allKeys());

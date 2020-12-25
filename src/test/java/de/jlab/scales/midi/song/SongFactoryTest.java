@@ -31,7 +31,7 @@ import de.jlab.scales.midi.HumanizingMidiOut;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.MidiOut;
 import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.song.SongFactory.ChordFactories;
+import de.jlab.scales.midi.song.SongFactory.BarFactories;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.midi.song.SongFactory.Major6251;
 import de.jlab.scales.midi.song.SongFactory.Minor6251;
@@ -42,15 +42,15 @@ import de.jlab.scales.theory.Scale;
 public class SongFactoryTest {
 
   @Test
-  public void testChordFactoriesTriads() {
-    ChordFactories factories = new ChordFactories(EnumSet.of(Triads));
-    Scale actual = factories.getAminor1().next(0, majorKeySignature(C)).getScale();
+  public void testBarFactoriesTriads() {
+    BarFactories factories = new BarFactories(EnumSet.of(Triads));
+    Scale actual = factories.getAminor1().next(majorKeySignature(C)).getChords().get(0).getScale();
     assertEquals(new Scale(A, C, E), actual);
   }
 
   @Test
   public void testMajor6251() {
-    ChordFactories factories = new ChordFactories(EnumSet.of(SeventhChords));
+    BarFactories factories = new BarFactories(EnumSet.of(SeventhChords));
     ProgressionFactory factory = new Major6251(factories);
     assertProgression(factory, majorKeySignature(C), "Am7", "Dm7", "G7", "CΔ7");
     assertProgression(factory, majorKeySignature(Gb, FLAT), "Ebm7", "Abm7", "Db7", "GbΔ7");
@@ -59,7 +59,7 @@ public class SongFactoryTest {
 
   @Test
   public void testMinor6251() {
-    ChordFactories factories = new ChordFactories(EnumSet.of(SeventhChords));
+    BarFactories factories = new BarFactories(EnumSet.of(SeventhChords));
     ProgressionFactory factory = new Minor6251(factories);
     assertProgression(factory, majorKeySignature(C), "FΔ7", "Bm7b5", "E7b9", "Am7");
     assertProgression(factory, majorKeySignature(Gb, FLAT), "CbΔ7", "Fm7b5", "Bb7b9", "Ebm7");
