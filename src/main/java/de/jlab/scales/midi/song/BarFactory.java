@@ -1,13 +1,16 @@
 package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.Utils.randomLoopIterator;
-import static de.jlab.scales.theory.Scales.C7;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.C7flat9;
 import static de.jlab.scales.theory.Scales.Cm7;
 import static de.jlab.scales.theory.Scales.Cm7b5;
 import static de.jlab.scales.theory.Scales.Cmaj7;
+import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -48,7 +51,7 @@ minor7b5
 
 BarFactory.builder(Note root)
   .withMinor7       // Cm7
-  .withMinor7Subs   // Cm6, Cm9, Cm11, Cm7b5?
+  .withMinor7Subs   // Cm7, Cm6, Cm9, Cm11, Cm7b5?
   .withDominant
   .withDominantSubs
   .withAlteredSubs
@@ -64,50 +67,54 @@ BarFactory.builder(Note root)
 //@Builder
 public class BarFactory {
   
-  static class Builder {
+  static class SeventhBuilder {
     private final BarFactory factory = new BarFactory();
     private final Note root;
     
-    Builder(Note root) {
+    SeventhBuilder(Note root) {
       this.root = root;
     }
     
-    private Iterator<Scale> minor7(Note root) {
-      return randomLoopIterator(List.of(Cm7.transpose(root)));
-    }
-
-    private Iterator<Scale> dominant(Note root) {
-      return randomLoopIterator(List.of(C7.transpose(root)));
+    private List<Scale> transpose(Note root, Scale ...scales) {
+      return Arrays.stream(scales).map(scale -> scale.transpose(root)).collect(toCollection(ArrayList::new));
     }
     
-    Builder withMinor7() {
+    private Iterator<Scale> minor7Subs(Note root) {
+      return randomLoopIterator(transpose(root, Cm7, Cm6, Cm9, Cm11, Cm7b5));
+    }
+
+    private Iterator<Scale> dominant7Subs(Note root) {
+      return randomLoopIterator(transpose(root, C7, C9, C13, C7sus4, Cdim7.transpose(Note.Ab)));
+    }
+    
+    SeventhBuilder withMinor7() {
       factory.add(10, Cm7.transpose(root));
       return this;
     }
 
-    Builder withDominant7() {
+    SeventhBuilder withDominant7() {
       factory.add(10, C7.transpose(root));
       return this;
     }
 
-    public Builder withAltered() {
+    public SeventhBuilder withAltered() {
       factory.add(10, C7flat9.transpose(root));
       return this;
     }
 
     
-    Builder withMajor7() {
+    SeventhBuilder withMajor7() {
       factory.add(10, Cmaj7.transpose(root));
       return this;
     }
 
-    Builder withMinor7b5() {
+    SeventhBuilder withMinor7b5() {
       factory.add(10, Cm7b5.transpose(root));
       return this;
     }
 
-    public Builder withTwoFiveAlteredSubs() {
-      factory.add(10, List.of(minor7(root.flat9()), dominant(root.flat5())));
+    public SeventhBuilder withTwoFiveAlteredSubs() {
+      factory.add(10, List.of(minor7Subs(root.flat9()), dominant7Subs(root.flat5())));
       return this;
     }
     
@@ -160,8 +167,8 @@ public class BarFactory {
     return new Bar(chords);
   }
   
-  public static Builder seventhChordBuilder(Note root) {
-    return new Builder(root);
+  public static SeventhBuilder seventhChordBuilder(Note root) {
+    return new SeventhBuilder(root);
   }
 
 }

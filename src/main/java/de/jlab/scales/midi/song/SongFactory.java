@@ -58,7 +58,7 @@ public class SongFactory {
       II = BarFactory.seventhChordBuilder(Note.D).withMinor7().build();
       V = BarFactory.seventhChordBuilder(Note.G)
           .withDominant7()
-          //.withTwoFiveAlteredSubs()
+          .withTwoFiveAlteredSubs()
           .build();
       I = BarFactory.seventhChordBuilder(Note.C).withMajor7().build();
     }

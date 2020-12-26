@@ -39,8 +39,12 @@ public class Scales {
 
   public static final Scale Cmaj7 = new Scale(C, E, G, B);
   public static final Scale Cm7 = new Scale(C, Eb, G, Bb);
+  public static final Scale Cm9 = new Scale(C, Eb, G, Bb, D);
+  public static final Scale Cm11 = new Scale(C, Eb, G, Bb, F);
   public static final Scale Cm6 = new Scale(C, Eb, G, A);
   public static final Scale C7 = new Scale(C, E, G, Bb);
+  public static final Scale C9 = new Scale(C, E, G, Bb, D);
+  public static final Scale C13 = new Scale(C, E, G, Bb, A);
   public static final Scale Cm7b5 = new Scale(C, Eb, Gb, Bb);
   public static final Scale Cdim7 = new Scale(C, Eb, Gb, A);
   public static final Scale Cmmaj7 = new Scale(C, Eb, G, B);
