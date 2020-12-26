@@ -204,7 +204,7 @@ public class PngImageRenderer extends Layout {
   
   MyRenderer singleChordRenderer = new MyRenderer(0, AffineTransform.getScaleInstance(1, 1));
   MyRenderer leftChordRenderer = new MyRenderer(0, AffineTransform.getScaleInstance(0.7, 1));
-  MyRenderer rightChordRenderer = new MyRenderer((x(1)-x(0))/2, AffineTransform.getScaleInstance(0.7, 1));
+  MyRenderer rightChordRenderer = new MyRenderer((x(1)-x(0))/2, translateLeft(AffineTransform.getScaleInstance(0.6, 1)));
   
   private void drawChords(IdBar bar) {
     g.setColor(Color.BLACK);
@@ -227,6 +227,11 @@ public class PngImageRenderer extends Layout {
     }
 
 
+  }
+
+  private AffineTransform translateLeft(AffineTransform transform) {
+    transform.translate(-5, 0);
+    return transform;
   }
 
   public void renderTo(Path path) {
