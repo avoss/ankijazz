@@ -61,18 +61,6 @@ public final class Utils {
     return !parent.equals(mode) && parent.transpose(mode.getRoot()).equals(mode);
   }
   
-  /**
-   * remove whitespace etc to create valid Anki Tags
-   */
-  public static String tags(String ... tags) {
-    return tags(List.of(tags));
-  }
-  
-  public static String tags(Collection<String> tags) {
-    return tags.stream().map(s -> s.trim().replaceAll("[^\\w#Δø\\+=]", "-")).collect(Collectors.joining(" "));
-  }
-  
-  
   public static <T> Iterator<T> loopIterator(Collection<T> collection) {
     return new Iterator<T>() {
       private Iterator<T> iter = collection.iterator();
@@ -115,7 +103,6 @@ public final class Utils {
       
     };
   }
-  
   
   public static <T> List<T> repeat(int times, T ... elements) {
     List<T> result = new ArrayList<>();

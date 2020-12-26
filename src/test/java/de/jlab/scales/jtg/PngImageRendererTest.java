@@ -2,25 +2,13 @@ package de.jlab.scales.jtg;
 
 import static org.junit.Assert.assertTrue;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.IntStream;
-
-import javax.imageio.ImageIO;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.song.Bar;
-import de.jlab.scales.midi.song.Chord;
 import de.jlab.scales.midi.song.MidiTestUtils;
 import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scales;
 
 
 public class PngImageRendererTest {

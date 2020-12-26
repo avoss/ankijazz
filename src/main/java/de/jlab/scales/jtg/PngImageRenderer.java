@@ -15,7 +15,6 @@ import java.nio.file.Path;
 import javax.imageio.ImageIO;
 
 import de.jlab.scales.jtg.IdSong.IdBar;
-import de.jlab.scales.jtg.IdSong.IdChord;
 import de.jlab.scales.midi.song.Song;
 
 public class PngImageRenderer extends Layout {

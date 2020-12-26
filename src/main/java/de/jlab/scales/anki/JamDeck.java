@@ -1,11 +1,9 @@
 package de.jlab.scales.anki;
 
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
-import static de.jlab.scales.midi.song.SongFactory.Feature.*;
+import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Major6251;
-import static de.jlab.scales.midi.song.SongFactory.Feature.Minor6251;
 import static de.jlab.scales.midi.song.SongFactory.Feature.SeventhChords;
-import static de.jlab.scales.midi.song.SongFactory.Feature.Triads;
 
 import java.util.EnumSet;
 import java.util.Set;
@@ -30,7 +28,7 @@ public class JamDeck extends AbstractDeck<JamCard> {
     
 //    addCards(EnumSet.of(ShellChords, Major6251, Minor6251, AllKeys, EachKey));
 //    addCards(EnumSet.of(Triads, Major6251, Minor6251, AllKeys, EachKey));
-    addCards(EnumSet.of(SeventhChords, Major6251, Minor6251, AllKeys, EachKey));
+    addCards(EnumSet.of(SeventhChords, Major6251, AllKeys, EachKey));
   }
 
   private void addCards(Set<Feature> features) {
