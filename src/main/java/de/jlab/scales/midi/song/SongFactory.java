@@ -17,11 +17,14 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
+import de.jlab.scales.midi.song.BarFactory.SeventhBuilder;
+import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 public class SongFactory {
 
@@ -29,20 +32,46 @@ public class SongFactory {
   private Map<Feature, ProgressionFactory> progressionFactories;
   private Map<Feature, List<KeyFactory>> keyFactories;
 
-  public enum Feature { Triads, SeventhChords, WithSubstitutions, Major6251, Minor6251, Folk, SimpleBlues, JazzBlues, EachKey, AllKeys }
+  public enum Feature { Triads, SeventhChords, WithSubs, WithTwoFiveSubs, Major6251, Minor6251, Folk, SimpleBlues, JazzBlues, EachKey, AllKeys }
   
 
+  @Getter
   static abstract class ProgressionFactory {
     private int numberOfBars;
-    protected ProgressionFactory(int numberOfBars) {
+    private Set<Feature> features;
+    
+    protected ProgressionFactory(int numberOfBars, Set<Feature> features) {
       this.numberOfBars = numberOfBars;
+      this.features = features;
     }
     
     protected abstract List<Bar> create(KeySignature keySignature);
     
+    protected BarFactory.Builder builder() {
+      if (features.contains(Feature.SeventhChords) && features.contains(Feature.Triads)) {
+        throw new IllegalStateException("cannot produce chord progressions with triads and seventh chords together, sorry");
+      }
+      if (features.contains(Feature.SeventhChords)) {
+        return BarFactory.seventhChordBuilder();
+      }
+      if (features.contains(Feature.Triads)) {
+        return BarFactory.triadsBuilder();
+      }
+      throw new IllegalStateException("must have either triads or seventh chords in features");
+    }
+    
     public int getNumberOfBars() {
       return numberOfBars;
     }
+    
+    protected boolean withSubs() {
+      return features.contains(Feature.WithSubs);
+    }
+    
+    protected boolean withTwoFiveSubs() {
+      return features.contains(Feature.WithTwoFiveSubs);
+    }
+    
   }
   
   // TODO getTitle() contains keysignature.notate(root)
@@ -53,14 +82,22 @@ public class SongFactory {
     private BarFactory I;
     
     protected Major6251(Set<Feature> features) {
-      super(4);
-      VI = BarFactory.seventhChordBuilder(Note.A).withMinor7().build();
-      II = BarFactory.seventhChordBuilder(Note.D).withMinor7().build();
-      V = BarFactory.seventhChordBuilder(Note.G)
-          .withDominant7()
-          .withTwoFiveAlteredSubs()
-          .build();
-      I = BarFactory.seventhChordBuilder(Note.C).withMajor7().build();
+      super(4, features);
+      VI = builder().withRoot(Note.A).withMinor7().build();
+      II = builder().withRoot(Note.D).withMinor7().build();
+      V = five();
+      I = builder().withRoot(Note.C).withMajor7().build();
+    }
+    
+    BarFactory five() {
+      BarFactory.Builder builder = builder().withRoot(Note.G).withDominant7();
+      if (withSubs()) {
+        builder = builder.withDominant7Subs().withAltered().withAlteredSubs();
+      }
+      if (withTwoFiveSubs()) {
+        builder = builder.withTwoFiveSubs().withTwoFiveAlteredSubs();
+      }
+      return builder.build();
     }
     
     @Override
@@ -80,11 +117,11 @@ public class SongFactory {
     private BarFactory V;
     private BarFactory I;
     protected Minor6251(Set<Feature> features) {
-      super(4);
-      VI = BarFactory.seventhChordBuilder(Note.F).withMajor7().build();
-      II = BarFactory.seventhChordBuilder(Note.B).withMinor7b5().build();
-      V = BarFactory.seventhChordBuilder(Note.E).withAltered().build();
-      I = BarFactory.seventhChordBuilder(Note.A).withMinor7().build();
+      super(4,features);
+      VI = builder().withRoot(Note.F).withMajor7().build();
+      II = builder().withRoot(Note.B).withMinor7b5().build();
+      V = builder().withRoot(Note.E).withAltered().build();
+      I = builder().withRoot(Note.A).withMinor7().build();
     }
     @Override
     protected List<Bar> create(KeySignature keySignature) {

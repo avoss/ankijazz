@@ -37,20 +37,22 @@ public class Scales {
   public static final Scale CMinorPentatonic = new Scale(C, Eb, F, G, Bb);
   public static final Scale CMinor6Pentatonic = new Scale(C, Eb, F, G, A);
 
-  public static final Scale Cmaj7 = new Scale(C, E, G, B);
   public static final Scale Cm7 = new Scale(C, Eb, G, Bb);
   public static final Scale Cm9 = new Scale(C, Eb, G, Bb, D);
   public static final Scale Cm11 = new Scale(C, Eb, G, Bb, F);
   public static final Scale Cm6 = new Scale(C, Eb, G, A);
+  public static final Scale Cm7b5 = new Scale(C, Eb, Gb, Bb);
+  public static final Scale Cmmaj7 = new Scale(C, Eb, G, B);
+
   public static final Scale C7 = new Scale(C, E, G, Bb);
   public static final Scale C9 = new Scale(C, E, G, Bb, D);
   public static final Scale C13 = new Scale(C, E, G, Bb, A);
-  public static final Scale Cm7b5 = new Scale(C, Eb, Gb, Bb);
+  public static final Scale C7sus4 = new Scale(C, F, G, Bb);
   public static final Scale Cdim7 = new Scale(C, Eb, Gb, A);
-  public static final Scale Cmmaj7 = new Scale(C, Eb, G, B);
+
+  public static final Scale Cmaj7 = new Scale(C, E, G, B);
   public static final Scale Cmaj7Sharp5 = new Scale(C, E, Ab, B);
   public static final Scale Cmaj7Sharp11 = new Scale(C, E, Gb, B);
-  public static final Scale C7sus4 = new Scale(C, F, G, Bb);
 
   public static final Scale C7flat9 = new Scale(C, E, G, Bb, Db);
   public static final Scale C7sharp9 = new Scale(C, E, G, Bb, Eb);

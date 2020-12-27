@@ -1,12 +1,24 @@
 package de.jlab.scales.midi.song;
 
-import static de.jlab.scales.Utils.randomLoopIterator;
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.C13;
+import static de.jlab.scales.theory.Scales.C7;
+import static de.jlab.scales.theory.Scales.C7flat5;
+import static de.jlab.scales.theory.Scales.C7flat5flat9;
 import static de.jlab.scales.theory.Scales.C7flat9;
+import static de.jlab.scales.theory.Scales.C7sharp5;
+import static de.jlab.scales.theory.Scales.C7sharp5sharp9;
+import static de.jlab.scales.theory.Scales.C7sharp9;
+import static de.jlab.scales.theory.Scales.C7sus4;
+import static de.jlab.scales.theory.Scales.C9;
+import static de.jlab.scales.theory.Scales.Cm11;
+import static de.jlab.scales.theory.Scales.Cm6;
 import static de.jlab.scales.theory.Scales.Cm7;
-import static de.jlab.scales.theory.Scales.Cm7b5;
+import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.Cm9;
 import static de.jlab.scales.theory.Scales.Cmaj7;
-import static java.util.stream.Collectors.toCollection;
+import static de.jlab.scales.theory.Scales.Cmaj7Sharp11;
+import static de.jlab.scales.theory.Scales.Cmaj7Sharp5;
+import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -14,6 +26,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.theory.KeySignature;
@@ -21,108 +34,240 @@ import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
-/*
 
-major 6251 = 2x aeolean/dorian, mixolydian, ionan/lydian
-minor 6251 = locrian, dorian, altered, minor
-maj-blues = dom, dom, dom 2-5, dom, dim, dom, dom, iim7, V7, I7, vi-ii, V7-I7. Tonika ohne alerierung
-
-Dim7 chord: auf der kleinen Terz löst sich zum grundton auf (maj + dominant - siehe blues), wen kein V-I Bewegung
-# https://en.wikipedia.org/wiki/Diminished_seventh_chord#Most_common_functions
-
-
-ii-5 kombinatorik zu groß, brauche chordfactory zurück - maybe T?
-
-
-ii7 = Cm7, Cm6, Cm9, Cm11, Cm7b5?
-V7 = C7, C9, C13, C7sus4, Abdim7
-V7alt = C7b13, C7b9, ..., Edim7 = C7b9, Gb7, Gb9, Gb13
-Imaj = C6, CMaj7, CMaj7#11, CMaj9
-viim7b5 = Cm7b5, BMaj7
-
-ii7V7alt = ii7 * V7alt, viim7b5 * V7alt 
-ii7V7 = ii7(G) * V7, G7sus4 * V7, Ebdim7 * V7
-
-BarFactories
-minor7
-dominant7
-major7
-minor7b5
-
-BarFactory.builder(Note root)
-  .withMinor7       // Cm7
-  .withMinor7Subs   // Cm7, Cm6, Cm9, Cm11, Cm7b5?
-  .withDominant
-  .withDominantSubs
-  .withAlteredSubs
-  .withTwoFiveSubs()
-  .withTwoFiveAlteredSubs()
-  .build();
-  
-BarFactory.builder(Note root)
-  .withDominant()
-  .withDominantSubs()
-    
- */
-//@Builder
 public class BarFactory {
   
-  static class SeventhBuilder {
+  public static interface Builder {
+    Builder withRoot(Note root);
+    Builder withMinor7();
+    Builder withMinor7Subs();
+    Builder withDominant7();
+    Builder withDominant7Subs();
+    Builder withAltered();
+    Builder withAlteredSubs();
+    Builder withMajor7();
+    Builder withMajor7Subs();
+    Builder withMinor7b5();
+    Builder withMinor7b5Subs();
+    Builder withTwoFiveSubs();
+    Builder withTwoFiveAlteredSubs();
+    BarFactory build();
+  }
+  
+  private static Iterator<Scale> iterator(Note root, Scale ...scales) {
+    return randomLoopIterator(Arrays.stream(scales).map(scale -> scale.transpose(root)).collect(toList()));
+  }
+
+  private static Iterator<Scale> randomLoopIterator(List<Scale> scales) {
+    for (Scale scale: scales) {
+      if (scale.getNumberOfNotes() < 3) {
+        throw new IllegalStateException("cannot have chord with < 3 notes (won't be found in scale universe): " + scale);
+      }
+    }
+    return Utils.randomLoopIterator(scales);
+  }
+
+  static class SeventhBuilder implements Builder {
     private final BarFactory factory = new BarFactory();
-    private final Note root;
-    
-    SeventhBuilder(Note root) {
+    private Note root = Note.C;
+
+    @Override
+    public Builder withRoot(Note root) {
       this.root = root;
-    }
-    
-    private List<Scale> transpose(Note root, Scale ...scales) {
-      return Arrays.stream(scales).map(scale -> scale.transpose(root)).collect(toCollection(ArrayList::new));
-    }
-    
-    private Iterator<Scale> minor7Subs(Note root) {
-      return randomLoopIterator(transpose(root, Cm7, Cm6, Cm9, Cm11, Cm7b5));
-    }
-
-    private Iterator<Scale> dominant7Subs(Note root) {
-      return randomLoopIterator(transpose(root, C7, C9, C13, C7sus4, Cdim7.transpose(Note.Ab)));
-    }
-    
-    SeventhBuilder withMinor7() {
-      factory.add(10, Cm7.transpose(root));
-      return this;
-    }
-
-    SeventhBuilder withDominant7() {
-      factory.add(10, C7.transpose(root));
-      return this;
-    }
-
-    public SeventhBuilder withAltered() {
-      factory.add(10, C7flat9.transpose(root));
-      return this;
-    }
-
-    
-    SeventhBuilder withMajor7() {
-      factory.add(10, Cmaj7.transpose(root));
-      return this;
-    }
-
-    SeventhBuilder withMinor7b5() {
-      factory.add(10, Cm7b5.transpose(root));
-      return this;
-    }
-
-    public SeventhBuilder withTwoFiveAlteredSubs() {
-      factory.add(10, List.of(minor7Subs(root.flat9()), dominant7Subs(root.flat5())));
       return this;
     }
     
-    BarFactory build() {
+    @Override
+    public Builder withMinor7() {
+      factory.add(1, Cm7.transpose(root));
+      return this;
+    }
+
+    @Override
+    public Builder withMinor7Subs() {
+      factory.add(5, iterator(root, Cm6, Cm9, Cm11, Cm7b5, Cmmaj7));
+      return this;
+    }
+    
+    @Override
+    public Builder withDominant7() {
+      factory.add(1, C7.transpose(root));
+      return this;
+    }
+
+    @Override
+    public Builder withDominant7Subs() {
+      factory.add(3, iterator(root, C9, C13, C7sus4));
+      return this;
+    }
+
+    @Override
+    public Builder withAltered() {
+      factory.add(1, C7flat9.transpose(root));
+      return this;
+    }
+
+    @Override
+    public Builder withAlteredSubs() {
+      List<Scale> list = Stream.concat(
+        Stream.of(C7sharp9, C7flat5, C7sharp5, C7sharp5sharp9, C7flat5flat9).map(s -> s.transpose(root)),
+        Stream.of(C7, C9, C13).map(s -> s.transpose(root.flat5()))
+      ).collect(toList());
+      factory.add(8, randomLoopIterator(list));
+      return this;
+    }
+
+    @Override
+    public Builder withMajor7() {
+      factory.add(1, Cmaj7.transpose(root));
+      return this;
+    }
+
+    @Override
+    public Builder withMajor7Subs() {
+      factory.add(2, iterator(root, Cmaj7Sharp5, Cmaj7Sharp11));
+      return this;
+    }
+    
+    @Override
+    public Builder withMinor7b5() {
+      factory.add(1, Cm7b5.transpose(root));
+      return this;
+    }
+    
+    @Override
+    public Builder withMinor7b5Subs() {
+      factory.add(1, iterator(root, Cmaj7.transpose(-1)));
+      return this;
+    }
+
+    @Override
+    public Builder withTwoFiveSubs() {
+      factory.add(4, List.of(iterator(root.five(), Cm7, Cm6, Cm9, Cm7b5), iterator(root, C7, C9, C13, C7sus4)));
+      return this;
+    }
+    
+    @Override
+    public Builder withTwoFiveAlteredSubs() {
+      factory.add(4, List.of(iterator(root.flat9(), Cm7, Cm6, Cm9, Cm7b5), iterator(root.flat5(), C7, C9, C13)));
+      return this;
+    }
+    
+    @Override
+    public BarFactory build() {
       return factory;
     }
 
+  }
+  
+  public static class TriadsBuilder implements Builder {
+    private final BarFactory factory = new BarFactory();
+    private Note root = Note.C;
 
+    @Override
+    public Builder withRoot(Note root) {
+      this.root = root;
+      return this;
+    }
+    
+    @Override
+    public Builder withMinor7() {
+      factory.add(1, lower(root, Cm7));
+      return this;
+    }
+
+
+    @Override
+    public Builder withMinor7Subs() {
+      factory.add(1, upper(root, Cm7));
+      return this;
+    }
+    
+    @Override
+    public Builder withDominant7() {
+      factory.add(1, lower(root, C7));
+      return this;
+    }
+
+    @Override
+    public Builder withDominant7Subs() {
+      factory.add(1, upper(root, C7));
+      return this;
+    }
+
+    @Override
+    public Builder withAltered() {
+      factory.add(1, CaugTriad.transpose(root));
+      return this;
+    }
+
+    @Override
+    public Builder withAlteredSubs() {
+      factory.add(1, CmajTriad.transpose(root.flat5()));
+      return this;
+    }
+
+    @Override
+    public Builder withMajor7() {
+      factory.add(1, lower(root, Cmaj7));
+      return this;
+    }
+
+    @Override
+    public Builder withMajor7Subs() {
+      factory.add(1, upper(root, Cmaj7));
+      return this;
+    }
+    
+    @Override
+    public Builder withMinor7b5() {
+      factory.add(1, lower(root, Cm7b5));
+      return this;
+    }
+    
+    @Override
+    public Builder withMinor7b5Subs() {
+      factory.add(1, upper(root, Cm7b5));
+      return this;
+    }
+
+    private Iterator<Scale> minor7subs(Note root) {
+      return iterator(root, lower(Cm7), upper(Cm7), lower(Cm7b5), upper(Cm7b5));
+    }
+    
+    @Override
+    public Builder withTwoFiveSubs() {
+      factory.add(5, List.of(minor7subs(root.five()), iterator(root, lower(C7), upper(C7))));
+      return this;
+    }
+    
+    @Override
+    public Builder withTwoFiveAlteredSubs() {
+      factory.add(4, List.of(minor7subs(root.flat9()), iterator(root.flat5(), lower(C7), upper(C7))));
+      return this;
+    }
+    
+    @Override
+    public BarFactory build() {
+      return factory;
+    }
+
+    private Scale lower(Note root, Scale scale) {
+      return lower(scale.transpose(root));
+    }
+
+    private Scale lower(Scale scale) {
+      return new Scale(scale.getNote(0), scale.getNote(1), scale.getNote(2));
+    }
+    
+    private Scale upper(Note root, Scale scale) {
+      return upper(scale.transpose(root));
+    }
+
+    private Scale upper(Scale scale) {
+      return new Scale(scale.getNote(1), scale.getNote(2), scale.getNote(3));
+    }
+    
   }
 
   private List<List<Iterator<Scale>>> candidates = new ArrayList<>();
@@ -167,8 +312,12 @@ public class BarFactory {
     return new Bar(chords);
   }
   
-  public static SeventhBuilder seventhChordBuilder(Note root) {
-    return new SeventhBuilder(root);
+  public static Builder seventhChordBuilder() {
+    return new SeventhBuilder();
+  }
+
+  public static Builder triadsBuilder() {
+    return new TriadsBuilder();
   }
 
 }

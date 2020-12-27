@@ -20,6 +20,7 @@ import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
+import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.Scales.C7;
 import static de.jlab.scales.theory.Scales.C7sus4;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
@@ -131,7 +132,7 @@ public class ScaleUniverseTest {
   public void testParents() {
     for (Scale parent : allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor))) {
       for (Scale mode : allModes(parent)) {
-        ScaleInfo modeInfo = allScales.findFirstOrElseDefault(mode);
+        ScaleInfo modeInfo = allScales.findFirstOrElseThrow(mode);
         assertEquals(parent, modeInfo.getParentInfo().getScale());
       }
     }
@@ -139,17 +140,17 @@ public class ScaleUniverseTest {
   
   @Test
   public void testAbAltered() {
-    ScaleInfo aMelodicMinor = jazz.findFirstOrElseDefault(CMelodicMinor.transpose(A));
-    ScaleInfo aFlatAltered = jazz.findFirstOrElseDefault(aMelodicMinor.getScale().superimpose(Ab));
+    ScaleInfo aMelodicMinor = allScales.findFirstOrElseThrow(CMelodicMinor.transpose(A));
+    ScaleInfo aFlatAltered = allScales.findFirstOrElseThrow(aMelodicMinor.getScale().superimpose(Ab));
     assertEquals(aMelodicMinor.getKeySignature(), aFlatAltered.getKeySignature());
     assertEquals("G# Altered", aFlatAltered.getScaleName());
   }
   
   @Test
   public void testMinor6PentatonicModes() {
-    assertEquals("C Minor6 Pentatonic", allScales.findFirstOrElseDefault(CMinor6Pentatonic).getScaleName());
-    assertEquals("F Dominant7 Pentatonic", allScales.findFirstOrElseDefault(CMinor6Pentatonic.superimpose(F)).getScaleName());
-    assertEquals("A Minor7b5 Pentatonic", allScales.findFirstOrElseDefault(CMinor6Pentatonic.superimpose(A)).getScaleName());
+    assertEquals("C Minor6 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic).getScaleName());
+    assertEquals("F Dominant7 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic.superimpose(F)).getScaleName());
+    assertEquals("A Minor7b5 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic.superimpose(A)).getScaleName());
   }
 
   @Test
