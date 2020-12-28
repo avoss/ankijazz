@@ -65,7 +65,7 @@ public class Ensembles {
 
     ensemble.monophonic(32, Program.FretlessBass, 105, -40)
       .bar("8--- > -.8. 8--- > ..8.", 1, 5, 5, 1)
-      .bar("8--- -.8. 8--- ....",  1, 5, 5);
+      .bar("8--- > -.8. 8--- ....",  1, 5, 5);
 
     ensemble.drop2chords(55, Program.ElectricPiano1, 60, 0)
       .bar("8... 8--- ..8. > ..8-")
@@ -103,11 +103,11 @@ public class Ensembles {
     
     ensemble.monophonic(32, Program.FingeredElectricBass, 127, 30)
       .bar("9--- > ..8x .... ....", 1, 1, 1)
-      .bar("9--- ...9 ---- ....", 1, 1);
+      .bar("9--- > ...9 ---- ....", 1, 1);
 
     ensemble.drop2chords(55, Program.ElectricPiano2, 50, -1)
       .bar("x..x .... x--x ..x.")
-      .bar("x--- ...x ---- ....");
+      .bar("x--- > ...x ---- ....");
 
     return ensemble;
   }
