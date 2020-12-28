@@ -1,6 +1,7 @@
 package de.jlab.scales.midi.song;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -10,7 +11,7 @@ import lombok.Getter;
 public class Song {
   private final List<Bar> bars;
   private int beatsPerBar;
-  
+
   public Song(List<Bar> bars) {
     this(4, bars);
   }
@@ -20,7 +21,7 @@ public class Song {
     this.bars = bars;
     initialize();
   }
-  
+
   private void initialize() {
     Bar prev = bars.get(bars.size() - 1);
     for (Bar next : bars) {
@@ -29,7 +30,12 @@ public class Song {
     }
   }
 
-  public static Song of(Bar ...bars) {
+  public static Song of(Bar... bars) {
     return new Song(List.of(bars));
+  }
+
+  @Override
+  public String toString() {
+    return bars.stream().map(bar -> bar.getChords().stream().map(Chord::getSymbol).collect(Collectors.joining(" "))).collect(Collectors.joining(" | ", "| ", " |"));
   }
 }

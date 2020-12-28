@@ -6,6 +6,8 @@ import static java.util.Collections.emptyMap;
 import java.nio.file.Path;
 import java.util.Map;
 
+import com.google.common.base.Charsets;
+
 import de.jlab.scales.Utils;
 import de.jlab.scales.jtg.PngImageRenderer;
 import de.jlab.scales.jtg.RenderContext;
@@ -27,7 +29,7 @@ public class JamCard implements Card {
     this.context = context;
     this.song = song;
     this.ensemble = ensemble;
-    this.assetId = assetId();
+    this.assetId = computeAssetId();
   }
 
   @Override
@@ -65,11 +67,21 @@ public class JamCard implements Card {
     mf.save(directory.resolve(assetId.concat(".midi")));
   }
 
-  String assetId() {
+  private String computeAssetId() {
     MidiFile midiFile = new MidiFile();
     Part part = ensemble.play(song, context.getRepeat());
     part.perform(midiFile);
-    return Utils.assetId(midiFile.getBytes());
+    byte[] midiBytes = midiFile.getBytes();
+    // songs in F# and Gb produce identical midi, so we need to add notation
+    // same song may be played by multiple ensembles, so we need to add midi
+    byte[] songBytes = song.toString().getBytes(Charsets.UTF_8);
+    byte[] allBytes = new byte[midiBytes.length + songBytes.length];
+    System.arraycopy(midiBytes, 0, allBytes, 0, midiBytes.length);
+    System.arraycopy(songBytes, 0, allBytes, midiBytes.length, songBytes.length);
+    return Utils.assetId(allBytes);
   }
 
+  public String getAssetId() {
+    return assetId;
+  }
 }

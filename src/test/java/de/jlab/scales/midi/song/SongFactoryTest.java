@@ -2,6 +2,7 @@ package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.TestUtils.majorKeySignature;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
+import static de.jlab.scales.midi.song.SongFactory.Feature.Debug;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Major6251;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Minor6251;
@@ -15,6 +16,7 @@ import static de.jlab.scales.theory.Note.Gb;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -26,7 +28,6 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.JamCard;
 import de.jlab.scales.jtg.PngImageRenderer;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.HumanizingMidiOut;
@@ -60,6 +61,14 @@ public class SongFactoryTest {
   private void assertProgression(ProgressionFactory factory, KeySignature keySignature, String ... expected) {
     List<String> actual = factory.create(keySignature).stream().map(bar -> bar.getChords().get(0)).map(c -> c.getSymbol()).collect(toList());
     assertEquals(List.of(expected), actual);
+  }
+  
+  @Test
+  public void testNoDuplicates() {
+    SongFactory factory = new SongFactory(EnumSet.of(Debug, SeventhChords, Minor6251));
+    List<Song> songs = factory.generate(16);
+    assertEquals(2, songs.size());
+    assertNotEquals(songs.get(0), songs.get(1));
   }
   
   @Test

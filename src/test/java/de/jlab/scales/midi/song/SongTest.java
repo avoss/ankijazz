@@ -26,5 +26,13 @@ public class SongTest {
   private Chord chord(String symbol) {
     return new Chord(Scales.Cmaj7, symbol);
   }
+  
+  @Test
+  public void testToString() {
+    Bar b1 = Bar.of(chord("Bb7"));
+    Bar b2 = Bar.of(chord("CMaj7"), chord("Dm7"));
+    Song song = Song.of(b1, b2);
+    assertEquals("| Bb7 | CMaj7 Dm7 |", song.toString());
+  }
 
 }

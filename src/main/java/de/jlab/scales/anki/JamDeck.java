@@ -28,7 +28,8 @@ public class JamDeck extends AbstractDeck<JamCard> {
     
 //    addCards(EnumSet.of(ShellChords, Major6251, Minor6251, AllKeys, EachKey));
 //    addCards(EnumSet.of(Triads, Major6251, Minor6251, AllKeys, EachKey));
-    addCards(EnumSet.of(SeventhChords, WithSubs,  Major6251, AllKeys, EachKey));
+//    addCards(EnumSet.of(SeventhChords, WithSubs,  Major6251, Minor6251, AllKeys, EachKey));
+    addCards(EnumSet.of(SeventhChords, Major6251, EachKey));
   }
 
   private void addCards(Set<Feature> features) {

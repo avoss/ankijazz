@@ -12,8 +12,8 @@ public class JamCardTest {
 
   @Test
   public void testSongId() {
-    String id1 = new JamCard(RenderContext.ANKI, MidiTestUtils.createStaticSong(), Ensembles.funk(100)).assetId();
-    String id2 = new JamCard(RenderContext.ANKI, MidiTestUtils.createStaticSong(), Ensembles.funk(100)).assetId();
+    String id1 = new JamCard(RenderContext.ANKI, MidiTestUtils.createStaticSong(), Ensembles.funk(100)).getAssetId();
+    String id2 = new JamCard(RenderContext.ANKI, MidiTestUtils.createStaticSong(), Ensembles.funk(100)).getAssetId();
     assertEquals(id1, id2);
   }
 

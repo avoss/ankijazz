@@ -1,8 +1,8 @@
 package de.jlab.scales.anki;
 
-import static java.util.stream.Collectors.toSet;
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.junit.Test;
@@ -14,13 +14,19 @@ public class JamDeckTest {
   @Test
   public void test() {
     JamDeck deck = new JamDeck("Test Jam Deck");
-    assertDeckContainsNoDuplicates(deck);
     TestUtils.writeTo(deck, 0.2);
+    assertDeckContainsNoDuplicates(deck);
   }
 
   private void assertDeckContainsNoDuplicates(JamDeck deck) {
-    Set<String> set = deck.getCards().stream().map(c -> c.assetId()).collect(toSet());
-    assertEquals(deck.getCards().size(), set.size());
+    Set<String> assetIds = new HashSet<>();
+    for (JamCard card : deck.getCards()) {
+      String assetId = card.getAssetId();
+      if (assetIds.contains(assetId)) {
+        fail("duplicate asset id: " + assetId);
+      }
+      assetIds.add(assetId);
+    }
   }
 
 }

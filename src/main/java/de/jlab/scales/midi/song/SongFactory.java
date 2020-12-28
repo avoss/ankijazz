@@ -2,7 +2,7 @@ package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.Utils.loopIterator;
 import static de.jlab.scales.Utils.randomLoopIterator;
-import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
+import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Major6251;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Minor6251;
@@ -32,7 +32,7 @@ public class SongFactory {
   private Map<Feature, ProgressionFactory> progressionFactories;
   private Map<Feature, List<KeyFactory>> keyFactories;
 
-  public enum Feature { Triads, SeventhChords, WithSubs, WithTwoFiveSubs, Major6251, Minor6251, Folk, SimpleBlues, JazzBlues, EachKey, AllKeys }
+  public enum Feature { Debug, Triads, SeventhChords, WithSubs, WithTwoFiveSubs, Major6251, Minor6251, Folk, SimpleBlues, JazzBlues, EachKey, AllKeys }
   
 
   @Getter
@@ -167,6 +167,14 @@ public class SongFactory {
     private final Iterator<KeySignature> signatures;
     private final int numberOfKeys;
 
+    static List<KeyFactory> debug() {
+      List<KeyFactory> keys = new ArrayList<>();
+      for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(Note.Gb)) {
+        keys.add(new KeyFactory(loopIterator(singletonList(keySignature)), 1));
+      }
+      return keys;
+    }
+    
     static List<KeyFactory> eachKey() {
       List<KeyFactory> keys = new ArrayList<>();
       for (Note root : Note.values()) {
@@ -184,7 +192,7 @@ public class SongFactory {
           keys.add(keySignature);
         }
       }
-      return singletonList(new KeyFactory(randomLoopIterator(keys), keys.size()));
+      return singletonList(new KeyFactory(loopIterator(keys), keys.size()));
     }
   }
   
@@ -198,6 +206,7 @@ public class SongFactory {
     keyFactories = new HashMap<>();
     keyFactories.put(AllKeys, KeyFactory.allKeys());
     keyFactories.put(EachKey, KeyFactory.eachKey());
+    keyFactories.put(Debug, KeyFactory.debug());
   }
   
   
