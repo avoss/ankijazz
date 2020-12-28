@@ -4,14 +4,17 @@ import java.util.List;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Bar {
-
+  @EqualsAndHashCode.Include
   private List<Chord> chords;
-  private Interpolator interpolator;
+  
   private int beatsPerBar;
+  private Interpolator interpolator;
   private Bar next;
 
   public Bar(List<Chord> chords) {

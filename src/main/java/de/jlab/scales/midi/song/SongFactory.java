@@ -71,6 +71,45 @@ public class SongFactory {
     protected boolean withTwoFiveSubs() {
       return features.contains(Feature.WithTwoFiveSubs);
     }
+
+    BarFactory dominant7(Note root) {
+      BarFactory.Builder builder = builder().withRoot(root).withDominant7();
+      if (withSubs()) {
+        builder = builder
+            .withDominant7Subs()
+            .withAltered()
+            .withAlteredSubs();
+      }
+      if (withTwoFiveSubs()) {
+        builder = builder
+            .withTwoFiveSubs()
+            .withTwoFiveAlteredSubs();
+      }
+      return builder.build();
+    }
+
+    BarFactory major7(Note root) {
+      BarFactory.Builder builder = builder().withRoot(Note.C).withMajor7();
+      if (withSubs()) {
+        builder = builder.withMajor7Subs();
+      }
+      return builder.build();
+    }
+
+
+    BarFactory minor7(Note root) {
+      BarFactory.Builder builder = builder().withRoot(root).withMinor7();
+      if (withSubs()) {
+        builder = builder
+            .withMinor7Subs();
+      }
+      if (withTwoFiveSubs()) {
+        builder = builder
+            .withDominant7Subs()
+            .withTwoFiveSubs();
+      }
+      return builder.build();
+    }
     
   }
   
@@ -83,21 +122,10 @@ public class SongFactory {
     
     protected Major6251(Set<Feature> features) {
       super(4, features);
-      VI = builder().withRoot(Note.A).withMinor7().build();
-      II = builder().withRoot(Note.D).withMinor7().build();
-      V = five();
-      I = builder().withRoot(Note.C).withMajor7().build();
-    }
-    
-    BarFactory five() {
-      BarFactory.Builder builder = builder().withRoot(Note.G).withDominant7();
-      if (withSubs()) {
-        builder = builder.withDominant7Subs().withAltered().withAlteredSubs();
-      }
-      if (withTwoFiveSubs()) {
-        builder = builder.withTwoFiveSubs().withTwoFiveAlteredSubs();
-      }
-      return builder.build();
+      VI = minor7(Note.A);
+      II = minor7(Note.D);
+      V = dominant7(Note.G);
+      I = major7(Note.C);
     }
     
     @Override

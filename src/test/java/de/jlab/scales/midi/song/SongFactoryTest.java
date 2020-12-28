@@ -7,11 +7,13 @@ import static de.jlab.scales.midi.song.SongFactory.Feature.Major6251;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Minor6251;
 import static de.jlab.scales.midi.song.SongFactory.Feature.SeventhChords;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Triads;
+import static de.jlab.scales.midi.song.SongFactory.Feature.WithSubs;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.Gb;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
 import java.io.IOException;
@@ -20,9 +22,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.EnumSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Test;
 
+import de.jlab.scales.anki.JamCard;
 import de.jlab.scales.jtg.PngImageRenderer;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.HumanizingMidiOut;
@@ -69,6 +73,17 @@ public class SongFactoryTest {
     List<Song> songs = factory.generate(16);
     assertEquals(expectedNumberOfSongs, songs.size());
   }
+
+  @Test
+  public void assertNoDuplicateSongsAreGenerated() {
+    EnumSet<Feature> features = EnumSet.of(SeventhChords, WithSubs,  Major6251, AllKeys, EachKey);
+    SongFactory factory = new SongFactory(features);
+    RenderContext context = RenderContext.ANKI;
+    List<Song> list = factory.generate(context.getNumberOfBars()).stream().collect(toList());
+    Set<Song> set = factory.generate(context.getNumberOfBars()).stream().collect(toSet());
+    assertEquals(list.size(), set.size());
+  }
+    
   
   @Test
   public void testRenderSongs() throws IOException {

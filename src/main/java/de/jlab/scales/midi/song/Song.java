@@ -2,9 +2,11 @@ package de.jlab.scales.midi.song;
 
 import java.util.List;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 @Getter
+@EqualsAndHashCode
 public class Song {
   private final List<Bar> bars;
   private int beatsPerBar;

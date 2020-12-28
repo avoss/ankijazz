@@ -142,6 +142,9 @@ public abstract class AbstractDeck<T extends Card> implements Deck<T> {
   
   @Override
   public Deck<T> subdeck(int numberOfCards) {
+    if (numberOfCards >= getCards().size()) {
+      return this;
+    }
     List<T> sublist = new ArrayList<>();
     Interpolator interpolator = Utils.interpolator(0, numberOfCards, 0, cards.size());
     for (int i = 0; i < numberOfCards; i++) {

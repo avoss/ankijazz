@@ -9,7 +9,7 @@ public class HumanizingMidiOut implements MidiOut {
   private final int randomTicks;
 
   public HumanizingMidiOut(MidiOut delegate) {
-    this(delegate, 6); // TODO depends on MidiFile.PPQ
+    this(delegate, 4); // TODO depends on MidiFile.PPQ
   }
   
   public HumanizingMidiOut(MidiOut delegate, int randomTicks) {
