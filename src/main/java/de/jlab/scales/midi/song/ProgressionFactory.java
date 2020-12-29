@@ -47,30 +47,38 @@ public class ProgressionFactory {
     private String progression;
     private List<ChordFactory> chordFactories = null;
 
-    public List<Bar> getBars(KeySignature keySignature) {
+    private List<ChordFactory> getChordFactories() {
       if (chordFactories == null) {
         chordFactories = new ProgressionParser().parse(progression);
       }
-      
-      return chordFactories.stream()
+      return chordFactories;
+    }
+    
+    public List<Bar> create(KeySignature keySignature) {
+      return getChordFactories().stream()
           .map(factory -> factory.create(keySignature))
           .map(chords -> new Bar(chords))
           .collect(toList());
-      
+    }
+
+    public int getNumberOfBars() {
+      return getChordFactories().size();
     }
   }
 
   @Getter
   @Setter
   public static class ProgressionSet {
-    String title;
+    String id;
     List<Progression> progressions;
   }
   
-  private List<ProgressionSet> sets = new ArrayList<>();
+  @Getter
+  private List<ProgressionSet> progressionSets = new ArrayList<>();
   
   public ProgressionFactory() {
-    sets.add(load("triads.yaml"));
+    progressionSets.add(load("test.yaml"));
+    progressionSets.add(load("triads.yaml"));
   }
 
   ProgressionSet load(String yamlResourceName) {

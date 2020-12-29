@@ -15,7 +15,7 @@ public class ProgressionFactoryTest {
     ProgressionFactory factory = new ProgressionFactory();
     ProgressionSet set = factory.load("triads.yaml");
     assertEquals(5, set.getProgressions().size());
-    Song song = new Song(set.getProgressions().get(0).getBars(TestUtils.majorKeySignature(Note.C)));
+    Song song = new Song(set.getProgressions().get(0).create(TestUtils.majorKeySignature(Note.C)));
     assertEquals("| A | D | G | C |", song.toString());
   }
 
