@@ -122,8 +122,8 @@ public class ScaleTest {
   @Test
   public void testAsChord() {
     assertEquals("CΔ7", Cmaj7.superimpose(C).asChord());
-    assertEquals("Am79", Cmaj7.superimpose(A).asChord());
-    assertEquals("Am79", Cmaj7.superimpose(A.ordinal()).asChord());
+    assertEquals("Am9", Cmaj7.superimpose(A).asChord());
+    assertEquals("Am9", Cmaj7.superimpose(A.ordinal()).asChord());
     assertEquals("Eb6", Cm7.superimpose(Eb).asChord());
     assertEquals("Dm7", Cm7.transpose(2).asChord());
     assertEquals("Dm7", Cm7.transpose(2).superimpose(D).asChord());
@@ -131,7 +131,7 @@ public class ScaleTest {
     assertEquals("CΔ79", CMajor.getChord(2).superimpose(C).asChord());
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
     assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
-    assertEquals("Co7", Cdim7.superimpose(C).superimpose(C).asChord());
+    assertEquals("Cdim7", Cdim7.superimpose(C).superimpose(C).asChord());
     assertEquals("Gb7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
   }
@@ -142,14 +142,13 @@ public class ScaleTest {
     fromChord("C7");
     fromChord("F#", Accidental.SHARP);
     fromChord("F7#5", Accidental.SHARP);
-    fromChord("Eb7#5b913");
-    fromChord("Csus7913");
+    fromChord("C7sus4913");
     fromChord("Cm7");
-    fromChord("Cm79");
+    fromChord("Cm9");
     fromChord("C6");
     fromChord("C7b5#9");
-    fromChord("Co");
-    fromChord("Co7");
+    fromChord("Cdim");
+    fromChord("Cdim7");
   }
 
   @Test

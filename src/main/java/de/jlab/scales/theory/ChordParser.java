@@ -147,13 +147,24 @@ public class ChordParser {
     matcher = optionsPattern.matcher(options);
     while (matcher.find()) {
       matchedLength = matcher.end();
-      int degree = Integer.parseInt(matcher.group(2));
+      final int degree = Integer.parseInt(matcher.group(2));
       Note option = degree == 7 ? Note.C.flat7() : CMajor.getNote(degree - 1);
       notes.remove(option.transpose(root.ordinal()));
-      if ("#".equals(matcher.group(1)))
+      if ("#".equals(matcher.group(1))) {
         option = option.transpose(1);
-      else if ("b".equalsIgnoreCase(matcher.group(1)))
+        if (degree == 11) {
+          notes.remove(root.five()); // #11 == b5
+        }
+      }
+      else if ("b".equalsIgnoreCase(matcher.group(1))) {
         option = option.transpose(-1);
+        if (degree == 13) {
+          notes.remove(root.five()); // b13 == #5
+        }
+      }
+      else if (Set.of(9, 11, 13).contains(degree)) {
+        notes.add(root.flat7());
+      }
       notes.add(option.transpose(root.ordinal()));
     }
     if (matchedLength != options.length()) {
@@ -173,6 +184,8 @@ public class ChordParser {
     sb.append(root.getName(accidental));
     remaining.remove(root);
     
+    boolean flat7 = false;
+    
     // 3rd
     if (remaining.remove(root.major3())) {
       ; // implied
@@ -180,23 +193,34 @@ public class ChordParser {
       if (remaining.contains(root.flat5()) && remaining.contains(root.major6())) {
         remaining.remove(root.flat5());
         remaining.remove(root.major6());
-        sb.append("o7");
+        sb.append("dim7");
       } else if (remaining.contains(root.flat5()) && remaining.size() == 1) {
         remaining.remove(root.flat5());
-        sb.append("o");
+        sb.append("dim");
       } else
         sb.append("m");
-    } else if (remaining.remove(root.four()))
-      sb.append("sus");
-    else if (remaining.remove(root.nine()))
+    } else if (remaining.remove(root.four())) {
+      if (remaining.remove(root.flat7())) {
+        flat7 = true;
+        sb.append("7");
+      }
+      sb.append("sus4");
+    }
+    else if (remaining.remove(root.nine())) {
+      if (remaining.remove(root.flat7())) {
+        flat7 = true;
+        sb.append("7");
+      }
       sb.append("sus2");
+    }
     else if (remaining.remove(root.five()))
       sb.append("5");
 
-    boolean flat7 = false;
     // 7th
     if (remaining.remove(root.flat7())) {
-      sb.append("7");
+      if (!remaining.contains(root.nine()) && !remaining.contains(root.four()) && !remaining.contains(root.major6())) {
+        sb.append("7");
+      }
       flat7 = true;
     }
     if (remaining.remove(root.sharp7()))
@@ -243,9 +267,9 @@ public class ChordParser {
     if (set.containsAll(C, Eb, G))
       return root + "m";
     if (set.containsAll(C, Eb, Gb))
-      return root + "o";
+      return root + "dim";
     if (set.containsAll(C, E, Ab))
-      return root + "+";
+      return root + "aug";
     if (set.containsAll(C, D, G))
       return root + "sus2";
     if (set.containsAll(C, F, G))
