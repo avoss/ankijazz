@@ -1,6 +1,5 @@
 package de.jlab.scales.midi.song;
 
-import static de.jlab.scales.Utils.loopIterator;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
 import static java.util.Collections.singletonList;
@@ -13,6 +12,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
+import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.midi.song.ProgressionFactory.Progression;
 import de.jlab.scales.midi.song.ProgressionFactory.ProgressionSet;
 import de.jlab.scales.theory.BuiltinScaleType;
@@ -25,6 +26,7 @@ public class SongFactory {
   private Set<Feature> features;
   private Map<Feature, List<KeyFactory>> keyFactories = new HashMap<>();
   private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
+  private LoopIteratorFactory iteratorFactory;
 
   public enum Feature { Test, Triads, EachKey, AllKeys }
 
@@ -34,32 +36,33 @@ public class SongFactory {
     private final Iterator<KeySignature> signatures;
     private final int numberOfKeys;
     
-    static List<KeyFactory> eachKey() {
+    static List<KeyFactory> eachKey(LoopIteratorFactory iteratorFactory) {
       List<KeyFactory> keys = new ArrayList<>();
       for (Note root : Note.values()) {
         for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(root)) {
-          keys.add(new KeyFactory(loopIterator(singletonList(keySignature)), 1));
+          keys.add(new KeyFactory(iteratorFactory.iterator(singletonList(keySignature)), 1));
         }
       }
       return keys;
     }
 
-    static List<KeyFactory> allKeys() {
+    static List<KeyFactory> allKeys(LoopIteratorFactory iteratorFactory) {
       List<KeySignature> keys = new ArrayList<>();
       for (Note root : Note.values()) {
         for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(root)) {
           keys.add(keySignature);
         }
       }
-      return singletonList(new KeyFactory(loopIterator(keys), keys.size()));
+      return singletonList(new KeyFactory(iteratorFactory.iterator(keys), keys.size()));
     }
   }
   
-  public SongFactory(ProgressionFactory progressionFactory, Set<Feature> features) {
+  public SongFactory(LoopIteratorFactory iteratorFactory, ProgressionFactory progressionFactory, Set<Feature> features) {
+    this.iteratorFactory = iteratorFactory;
     this.features = features;
     
-    keyFactories.put(AllKeys, KeyFactory.allKeys());
-    keyFactories.put(EachKey, KeyFactory.eachKey());
+    keyFactories.put(AllKeys, KeyFactory.allKeys(iteratorFactory));
+    keyFactories.put(EachKey, KeyFactory.eachKey(iteratorFactory));
     
     for (ProgressionSet set: progressionFactory.getProgressionSets()) {
       Feature feature = Feature.valueOf(set.getId());

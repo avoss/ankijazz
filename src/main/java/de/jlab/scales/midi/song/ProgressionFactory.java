@@ -13,6 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
+import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.midi.song.ProgressionParser.ChordFactory;
 import de.jlab.scales.theory.KeySignature;
 import lombok.Data;
@@ -39,30 +41,34 @@ public class ProgressionFactory {
 
   private ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
   private ObjectReader reader = mapper.readerFor(ProgressionSet.class);
-  
+
   public static class Progression {
-    @Getter @Setter
+    @Getter
+    @Setter
     private String title;
-    @Getter @Setter
+    @Getter
+    @Setter
     private String progression;
     private List<ChordFactory> chordFactories = null;
+    private LoopIteratorFactory loopIteratorFactory;
 
     private List<ChordFactory> getChordFactories() {
       if (chordFactories == null) {
-        chordFactories = new ProgressionParser().parse(progression);
+        chordFactories = new ProgressionParser(loopIteratorFactory).parse(progression);
       }
       return chordFactories;
     }
-    
+
     public List<Bar> create(KeySignature keySignature) {
-      return getChordFactories().stream()
-          .map(factory -> factory.create(keySignature))
-          .map(chords -> new Bar(chords))
-          .collect(toList());
+      return getChordFactories().stream().map(factory -> factory.create(keySignature)).map(chords -> new Bar(chords)).collect(toList());
     }
 
     public int getNumberOfBars() {
       return getChordFactories().size();
+    }
+
+    public void setLoopIteratorFactory(LoopIteratorFactory loopIteratorFactory) {
+      this.loopIteratorFactory = loopIteratorFactory;
     }
   }
 
@@ -71,19 +77,29 @@ public class ProgressionFactory {
   public static class ProgressionSet {
     String id;
     List<Progression> progressions;
+
+    public void setLoopIteratorFactory(LoopIteratorFactory loopIteratorFactory) {
+      for (Progression progression : progressions) {
+        progression.setLoopIteratorFactory(loopIteratorFactory);
+      }
+    }
   }
-  
+
   @Getter
   private List<ProgressionSet> progressionSets = new ArrayList<>();
-  
-  public ProgressionFactory() {
+  private LoopIteratorFactory loopIteratorFactory;
+
+  public ProgressionFactory(LoopIteratorFactory loopIteratorFactory) {
+    this.loopIteratorFactory = loopIteratorFactory;
     progressionSets.add(load("test.yaml"));
     progressionSets.add(load("triads.yaml"));
   }
 
   ProgressionSet load(String yamlResourceName) {
     try {
-      return reader.<ProgressionSet>readValue(ProgressionFactory.class.getResource(yamlResourceName));
+      ProgressionSet factories = reader.<ProgressionSet>readValue(ProgressionFactory.class.getResource(yamlResourceName));
+      factories.setLoopIteratorFactory(loopIteratorFactory);
+      return factories;
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }

@@ -2,10 +2,10 @@ package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.CHORD;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_CHOICE;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_SEQUENCE;
+import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_BAR;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.EOF;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_CHOICE;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_SEQUENCE;
+import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_BAR;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -15,6 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.theory.ChordParser;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Scale;
@@ -38,9 +39,10 @@ import de.jlab.scales.theory.Scale;
 public class ProgressionParser {
   
   private Scanner scanner;
+  private LoopIteratorFactory loopIteratorFactory;
 
   static class Scanner {
-    public enum  Token { BOF, START_CHOICE, END_CHOICE, START_SEQUENCE, END_SEQUENCE, CHORD, EOF }
+    public enum  Token { BOF, START_CHOICE, END_CHOICE, START_BAR, END_BAR, CHORD, EOF }
 
     private static final Pattern PATTERN = Pattern.compile("\\s*(\\()|(\\))|(\\[)|(\\])|([^\\s\\(\\)\\[\\]]+)", Pattern.CASE_INSENSITIVE);
     private Matcher matcher;
@@ -65,9 +67,9 @@ public class ProgressionParser {
       } else if (matcher.group(2) != null) {
         token = END_CHOICE;
       } else if (matcher.group(3) != null) {
-        token = START_SEQUENCE;
+        token = START_BAR;
       } else if (matcher.group(4) != null) {
-        token = END_SEQUENCE;
+        token = END_BAR;
       } else if (matcher.group(5) != null) {
         token = CHORD;
       } else {
@@ -86,6 +88,10 @@ public class ProgressionParser {
 
   }
 
+  public ProgressionParser(LoopIteratorFactory loopIteratorFactory) {
+    this.loopIteratorFactory = loopIteratorFactory;
+  }
+
   public List<ChordFactory> parse(String progression) {
     scanner = new Scanner(progression);
     return recurse();
@@ -98,11 +104,11 @@ public class ProgressionParser {
       case CHORD:
         list.add(new SimpleChordFactory(scanner.getValue()));
         break;
-      case END_SEQUENCE:
+      case END_BAR:
       case END_CHOICE:
       case EOF:
         return list;
-      case START_SEQUENCE:
+      case START_BAR:
         list.add(sequence());
         break;
       case START_CHOICE:
@@ -115,7 +121,7 @@ public class ProgressionParser {
   }
 
   private ChordFactory choice() {
-    return new ChoiceChordFactory(recurse());
+    return new ChoiceChordFactory(loopIteratorFactory, recurse());
   }
 
   private ChordFactory sequence() {
@@ -128,8 +134,8 @@ public class ProgressionParser {
 
   static class ChoiceChordFactory implements ChordFactory {
     private Iterator<ChordFactory> iterator;
-    public ChoiceChordFactory(List<ChordFactory> factories) {
-      iterator = Utils.loopIterator(factories);
+    public ChoiceChordFactory(LoopIteratorFactory loopIteratorFactory, List<ChordFactory> factories) {
+      iterator = loopIteratorFactory.iterator(factories);
     }
     @Override
     public List<Chord> create(KeySignature keySignature) {

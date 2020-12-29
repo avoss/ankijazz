@@ -18,6 +18,7 @@ import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 
+import de.jlab.scales.midi.song.ProgressionFactory;
 import de.jlab.scales.theory.Scale;
 
 public final class Utils {
@@ -61,9 +62,9 @@ public final class Utils {
     return !parent.equals(mode) && parent.transpose(mode.getRoot()).equals(mode);
   }
   
-  public static <T> Iterator<T> loopIterator(Collection<T> collection) {
+  public static <T> Iterator<T> loopIterator(Collection<? extends T> collection) {
     return new Iterator<T>() {
-      private Iterator<T> iter = collection.iterator();
+      private Iterator<? extends T> iter = collection.iterator();
      
       @Override
       public boolean hasNext() {
@@ -81,7 +82,7 @@ public final class Utils {
     };
   }
 
-  public static <T> Iterator<T> randomLoopIterator(Collection<T> collection) {
+  public static <T> Iterator<T> randomLoopIterator(Collection<? extends T> collection) {
     return new Iterator<T>() {
       List<T> list = new ArrayList<>(collection);
 
@@ -130,4 +131,30 @@ public final class Utils {
     return interpolator(0, 1, outputMin, outputMax);
   }
 
+  @FunctionalInterface
+  public static interface LoopIteratorFactory {
+    <T> Iterator<T> iterator(Collection<? extends T> collection);
+  }
+
+  public static LoopIteratorFactory randomLoopIteratorFactory() {
+    return new LoopIteratorFactory() {
+
+      @Override
+      public <T> Iterator<T> iterator(Collection<? extends T> collection) {
+        return randomLoopIterator(collection);
+      }
+      
+    };
+  }
+
+  public static LoopIteratorFactory fixedLoopIteratorFactory() {
+    return new LoopIteratorFactory() {
+
+      @Override
+      public <T> Iterator<T> iterator(Collection<? extends T> collection) {
+        return loopIterator(collection);
+      }
+      
+    };
+  }
 }

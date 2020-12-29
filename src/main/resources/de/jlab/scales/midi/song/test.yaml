@@ -1,12 +1,12 @@
-# id - must match one of the SongFactory.Feature enum literals (exactly)
+# id - must match one of the SongFactory.Feature enum literals (exactly) - otherwise exception will be thrown
 # progression:
-#   A B C = play one bar chord A, next bar chord B and then chord C
-#   (A B) C = play one bar either A or B, and next bar C
-#   [A B] C = play a single bar with both chords, A and B, and the second bar chord C
+#   A B C = play 1st bar chord A, 2nd bar chord B and 3rd bar chord C
+#   (A B) C = play 1st bar either A or B, and 2nd bar C
+#   [A B] C = play 1st bar two chords (A and B) and 2nd bar chord C
 # these may be mixed.
 
 id: Test
 progressions:
     - title: Minor 6251
-      progression: (FΔ7 F#m7b5) Bm7b5 (E7b9 [Fm7 Bb7]) Am7
+      progression: (FΔ7 F#m7b5) Bm7b5 (E7b9 E7b13 Bb7 [Fm7 Bb7]) (Am7 Am9 [Am9 Am7])
 

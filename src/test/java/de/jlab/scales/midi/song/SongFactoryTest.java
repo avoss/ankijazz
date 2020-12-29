@@ -13,6 +13,8 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 
@@ -31,7 +33,8 @@ public class SongFactoryTest {
   }
 
   private SongFactory factory(EnumSet<Feature> features) {
-    return new SongFactory(new ProgressionFactory(), features);
+    LoopIteratorFactory iterators = Utils.fixedLoopIteratorFactory();
+    return new SongFactory(iterators, new ProgressionFactory(iterators), features);
   }
 
   @Test

@@ -4,10 +4,10 @@ import static de.jlab.scales.TestUtils.majorKeySignature;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.BOF;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.CHORD;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_CHOICE;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_SEQUENCE;
+import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_BAR;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.EOF;
 import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_CHOICE;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_SEQUENCE;
+import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_BAR;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.junit.Test;
 
+import de.jlab.scales.Utils;
 import de.jlab.scales.midi.song.ProgressionParser.ChordFactory;
 import de.jlab.scales.midi.song.ProgressionParser.Scanner;
 import de.jlab.scales.midi.song.ProgressionParser.SimpleChordFactory;
@@ -28,12 +29,12 @@ public class ProgressionParserTest {
   public void testScanner() {
     Scanner scanner = new Scanner("[(Ab7#5)] CmΔ7 Dm7");
     assertEquals(BOF, scanner.getToken());
-    assertEquals(START_SEQUENCE, scanner.next());
+    assertEquals(START_BAR, scanner.next());
     assertEquals(START_CHOICE, scanner.next());
     assertEquals(CHORD, scanner.next());
     assertEquals("Ab7#5", scanner.getValue());
     assertEquals(END_CHOICE, scanner.next());
-    assertEquals(END_SEQUENCE, scanner.next());
+    assertEquals(END_BAR, scanner.next());
     assertEquals(CHORD, scanner.next());
     assertEquals("CmΔ7", scanner.getValue());
     assertEquals(CHORD, scanner.next());
@@ -62,7 +63,7 @@ public class ProgressionParserTest {
   }
 
   private void assertProgression(String progression, String ... songs) {
-    ProgressionParser parser = new ProgressionParser();
+    ProgressionParser parser = new ProgressionParser(Utils.fixedLoopIteratorFactory());
     List<ChordFactory> factories = parser.parse(progression);
     KeySignature keyOfD = majorKeySignature(Note.D);
     for (String expected : songs) {

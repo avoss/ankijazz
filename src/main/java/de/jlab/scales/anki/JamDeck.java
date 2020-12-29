@@ -3,6 +3,8 @@ package de.jlab.scales.anki;
 import java.util.EnumSet;
 import java.util.Set;
 
+import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensembles;
 import de.jlab.scales.midi.song.ProgressionFactory;
@@ -21,7 +23,8 @@ public class JamDeck extends AbstractDeck<JamCard> {
   }
 
   private void addCards(Set<Feature> features) {
-    SongFactory factory = new SongFactory(new ProgressionFactory(), features);
+    LoopIteratorFactory iteratorFactory = Utils.randomLoopIteratorFactory();
+    SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
     for (Song song: factory.generate(context.getNumberOfBars())) {
       add(new JamCard(context, song, Ensembles.funk(80)));
       add(new JamCard(context, song, Ensembles.latin(120)));
