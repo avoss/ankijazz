@@ -35,18 +35,18 @@ public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> 
       throw new IllegalArgumentException("number of notes in pattern must match the numbers of intervals");
     }
     int index = 0;
-    IntervalToChordIndexMapper indexMapper = new IntervalToChordIndexMapper();
     for (String eventId : eventIds) {
-      chordIndexMap.put(eventId, indexMapper.map(intervals[index++]));
+      chordIndexMap.put(eventId, intervals[index++]);
     }
     return this;
   }
 
   @Override
   protected BiFunction<Event, Scale, Part> getPlayer() {
+    IntervalToChordIndexMapper mapper = new IntervalToChordIndexMapper();
     return (event, scale) -> {
-      int index = chordIndexMap.get(event.getId());
-      Note note = scale.getNote(index);
+      int interval = chordIndexMap.get(event.getId());
+      Note note = mapper.map(scale, interval);
       int midiPitch = noteToMidiMapper.nextClosest(note);
       return Parts.note(midiChannel, midiPitch, event.getVelocity(), event.getNoteLength(), denominator);
     };

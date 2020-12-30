@@ -56,7 +56,7 @@ public class Drop2ChordGenerator implements ChordToMidiMapper {
       return chord;
     }
     List<Note> notes = new ArrayList<>(chord.asList());
-    notes.remove(0);
+    notes.remove(chord.getRoot());
     return new Scale(notes.get(0), notes);
   }
 
