@@ -1,0 +1,44 @@
+# workouts focus on a certain chord. Following chords are focussed on:
+#  
+# Major7
+# Minor7
+# Dominant7
+# Minor7b5
+# Dominant7b9
+
+# TODO:
+
+# Minor6
+# Minor9
+# Minor11
+# Dominant9
+# Dominant11
+# Diminished7
+# Major7#11
+# MinorMajor7
+# Major7#5
+# Dominant7sus4
+# Dominant7#9
+# Dominant7#11 
+# Dominant7b13
+# Dominant7b9#11
+# Dominant7b9b13
+# Dominant7#9#11
+# Dominant7#9b13
+
+id: Workouts
+progressions:
+#    - title: Major7 Workout
+#      progression: Cmaj7 FΔ7 Cmaj7 FΔ7
+#    - title: Minor7 Workout 
+#      progression: Dm7 Em7 Dm7 Em7
+#    - title: Dominant7 Workout (Blues)
+#      progression: G7 C7 G7 G7 C7 C7 G7 G7 D7 C7 G7 D7
+#    - title: Minor7b5 Workout
+#      progression: F#m7b5 Bm7b5 Dm7b5 Am7
+#    - title: Dominant7b9 Workout
+#      progression: F#7b9 Bm7b5 E7b9 Am7
+#    - title: Minor9 Workout
+#      progression: F#m9 Bm9 E7b9 Am9
+    - title: Minor11 Workout
+      progression: F#m11 Bm11 E7b9 Am11

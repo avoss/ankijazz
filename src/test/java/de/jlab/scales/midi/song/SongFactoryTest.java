@@ -3,7 +3,7 @@ package de.jlab.scales.midi.song;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Test;
-import static java.util.stream.Collectors.toList;
+import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
@@ -39,11 +39,15 @@ public class SongFactoryTest {
 
   @Test
   public void assertNoDuplicateSongsAreGenerated() {
-    SongFactory factory = factory(EnumSet.of(Test, AllKeys, EachKey));
+    SongFactory factory = factory(EnumSet.of(Test, Workouts, AllKeys, EachKey));
     RenderContext context = RenderContext.ANKI;
-    List<Song> list = factory.generate(context.getNumberOfBars()).stream().collect(toList());
-    Set<Song> set = factory.generate(context.getNumberOfBars()).stream().collect(toSet());
+    List<Song> list = factory.generate(context.getNumberOfBars());
+    Set<Song> set = list.stream().collect(toSet());
     assertEquals(list.size(), set.size());
   }
-  
+
+  @Test
+  public void testProgressionMustNotSpanSongBoundaries() {
+    assertEquals(12, factory(EnumSet.of(Test, AllKeys)).progressionMustNotSpanSongBoundaries(12, 16));
+  }
 }

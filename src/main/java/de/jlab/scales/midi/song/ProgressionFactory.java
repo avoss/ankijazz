@@ -93,6 +93,7 @@ public class ProgressionFactory {
     this.loopIteratorFactory = loopIteratorFactory;
     progressionSets.add(load("test.yaml"));
     progressionSets.add(load("triads.yaml"));
+    progressionSets.add(load("workouts.yaml"));
   }
 
   ProgressionSet load(String yamlResourceName) {

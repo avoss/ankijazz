@@ -6,6 +6,7 @@ import static java.util.Collections.singletonList;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -27,8 +28,9 @@ public class SongFactory {
   private Map<Feature, List<KeyFactory>> keyFactories = new HashMap<>();
   private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
   private LoopIteratorFactory iteratorFactory;
+  private Set<Song> songsGeneratedSoFar = new HashSet<>();
 
-  public enum Feature { Test, Triads, EachKey, AllKeys }
+  public enum Feature { Test, Workouts, Triads, EachKey, AllKeys }
 
   @Data
   @Builder
@@ -71,7 +73,6 @@ public class SongFactory {
     
   }
   
-  
   public List<Song> generate(int numberOfBars) {
     List<Song> songs = new ArrayList<>();
     features.stream().map(keyFactories::get).filter(Objects::nonNull).flatMap(List::stream).forEach(key -> {
@@ -83,21 +84,31 @@ public class SongFactory {
     return songs;
   }
 
-  private List<Song> play(KeyFactory key, Progression progression, int numberOfBarsInSong) {
-    int numberOfProgressions = numberOfBarsInSong / progression.getNumberOfBars();
-    int numberOfSongs = key.numberOfKeys / numberOfProgressions;
-    if ((key.numberOfKeys % numberOfProgressions) != 0) {
+  private List<Song> play(KeyFactory key, Progression progression, int maxNumberOfBarsInSong) {
+    int nuberOfBarsInProgression = progression.getNumberOfBars();
+    int numberOfBarsInSong = progressionMustNotSpanSongBoundaries(nuberOfBarsInProgression, maxNumberOfBarsInSong);
+    int numberOfProgressionsInSong = numberOfBarsInSong / nuberOfBarsInProgression;
+    int numberOfSongs = key.numberOfKeys / numberOfProgressionsInSong;
+    if ((key.numberOfKeys % numberOfProgressionsInSong) != 0) {
       numberOfSongs += 1;
     }
     List<Song> songs = new ArrayList<>();
     for (int i = 0; i < numberOfSongs; i++) {
       List<Bar> bars = new ArrayList<>();
-      for (int j = 0; j < numberOfProgressions; j++) {
+      for (int j = 0; j < numberOfProgressionsInSong; j++) {
         bars.addAll(progression.create(key.getSignatures().next()));
       }
-      songs.add(new Song(bars));
+      Song song = new Song(bars);
+      if (songsGeneratedSoFar.add(song)) {
+        songs.add(song);
+      }
     }
     return songs;
+  }
+
+
+  int progressionMustNotSpanSongBoundaries(int nuberOfBarsInProgression, int numberOfBarsInSong) {
+    return numberOfBarsInSong - (numberOfBarsInSong % nuberOfBarsInProgression);
   }
 
 }
