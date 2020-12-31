@@ -22,6 +22,8 @@ import de.jlab.scales.midi.song.ProgressionFactory;
 import de.jlab.scales.theory.Scale;
 
 public final class Utils {
+  private static final String ANKI_JAZZ = "AnkiJazz-";
+
   private Utils() {
   }
 
@@ -38,11 +40,7 @@ public final class Utils {
   }
 
   public static String uuid() {
-    return UUID.randomUUID().toString().substring(0, 8);
-  }
-
-  public static String uuid(String prefix) {
-    return prefix + "-" + uuid();
+    return ANKI_JAZZ.concat(UUID.randomUUID().toString().substring(0, 8));
   }
 
   public static String assetId(String string) {
@@ -51,7 +49,7 @@ public final class Utils {
 
   public static String assetId(byte[] bytes) {
     HashCode hash = Hashing.sha256().hashBytes(bytes);
-    return "AnkiJazz-".concat(Integer.toHexString(hash.asInt()));
+    return ANKI_JAZZ.concat(Integer.toHexString(hash.asInt()));
   }
 
   /**

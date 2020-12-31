@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Optional;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.jtg.PngImageRenderer;
@@ -20,9 +21,11 @@ import de.jlab.scales.midi.HumanizingMidiOut;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.MidiOut;
 import de.jlab.scales.midi.Part;
+import de.jlab.scales.midi.TransposingMidiOut;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.Song;
 import de.jlab.scales.midi.song.SongWrapper;
+import de.jlab.scales.theory.Note;
 
 public class JamCard implements Card {
 
@@ -31,14 +34,27 @@ public class JamCard implements Card {
   private final RenderContext context;
   private final String assetId;
   private final Song song;
+  private final Note instrument;
+  private final Optional<FretboardPosition> position;
 
-  public JamCard(RenderContext context, SongWrapper wrapper, Ensemble ensemble) {
+  public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Ensemble ensemble, FretboardPosition position) {
+    this(instrument, context, wrapper, ensemble, Optional.of(position));
+  }
+  
+  public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Ensemble ensemble) {
+    this(instrument, context, wrapper, ensemble, Optional.absent());
+  }
+  
+  public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Ensemble ensemble, Optional<FretboardPosition> position) {
+    this.instrument = instrument;
     this.context = context;
     this.wrapper = wrapper;
     this.ensemble = ensemble;
+    this.position = position;
     this.song = wrapper.getSong();
     this.assetId = computeAssetId();
   }
+
 
   @Override
   public double getDifficulty() {
@@ -57,29 +73,43 @@ public class JamCard implements Card {
     map.put("songImage", getPngName());
     map.put("songAudio", getMp3Name());
     map.put("difficulty", getDifficulty());
+    if (position.isPresent()) {
+      map.put("positionLabel", position.get().getLabel());
+      map.put("positionImage", position.get().getImage());
+    }
     return map;
   }
 
   @Override
   public String getCsv() {
-    return Stream.of(
+    Stream<String> positionStream = position.isPresent() ? Stream.of(position.get().getLabel(), ankiPng(position.get().getImage())) : Stream.empty();
+    Stream<String> songStream = Stream.of(
         getProgression(),
         getType(),
         getKey(),
         getStyle(),
         Integer.toString(getTempo()),
         ankiPng(getPngName()),
-        ankiMp3(getMp3Name())).collect(joining(CSV_DELIMITER));
+        ankiMp3(getMp3Name()));
+    return Stream.concat(songStream, positionStream).collect(joining(CSV_DELIMITER));
   }
   
   
   @Override
   public void writeAssets(Path directory) {
-    new PngImageRenderer(context, song).renderTo(directory.resolve(assetId.concat(".png")));
+    new PngImageRenderer(context, song).renderTo(pngPath(directory));
     Part part = ensemble.play(song, context.getRepeat());
-    MidiOut mf = new HumanizingMidiOut(new MidiFile());
+    MidiOut mf = new HumanizingMidiOut(new TransposingMidiOut(new MidiFile(), instrument));
     part.perform(mf);
-    mf.save(directory.resolve(assetId.concat(".midi")));
+    mf.save(midiPath(directory));
+  }
+
+  private Path midiPath(Path directory) {
+    return directory.resolve(assetId.concat(".midi"));
+  }
+
+  private Path pngPath(Path directory) {
+    return directory.resolve(assetId.concat(".png"));
   }
 
   private String computeAssetId() {
@@ -126,5 +156,13 @@ public class JamCard implements Card {
 
   public int getTempo() {
     return ensemble.getBpm();
+  }
+  
+  public boolean isWithGuitar() {
+    return position.isPresent();
+  }
+  
+  public FretboardPosition getPosition() {
+    return position.get();
   }
 }

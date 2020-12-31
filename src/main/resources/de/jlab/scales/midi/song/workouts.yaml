@@ -10,14 +10,7 @@
 # Minor11
 # Minor6
 # Dominant9
-
-# TODO:
-
 # Dominant13
-# Diminished7
-# Major7#11
-# MinorMajor7
-# Major7#5
 # Dominant7sus4
 # Dominant7#9
 # Dominant7#11 
@@ -26,6 +19,10 @@
 # Dominant7b9b13
 # Dominant7#9#11
 # Dominant7#9b13
+# Diminished7
+# MinorMajor7
+# Major7#11
+
 
 id: Workouts
 progressions:
@@ -33,12 +30,12 @@ progressions:
       progression: Cmaj7 FΔ7 Cmaj7 FΔ7
     - title: Minor7 Workout 
       progression: Dm7 Em7 Dm7 Em7
-    - title: Dominant7 Workout (Blues)
-      progression: G7 C7 G7 G7 C7 C7 G7 G7 D7 C7 G7 D7
+    - title: Dominant7 Workout
+      progression: A7 D7 G7 CΔ7
     - title: Minor7b5 Workout
       progression: F#m7b5 Bm7b5 (E7b9 Bb7) Am7
     - title: Dominant7b9 Workout
-      progression: F#7b9 Bm7b5 (E7b9 Bb7) Am7
+      progression: F#7b9 Bm7b5 E7b9 Am7
     - title: Minor9 Workout
       progression: F#m9 Bm9 (E7b9 Bb7) Am9
     - title: Minor11 Workout
@@ -49,4 +46,31 @@ progressions:
       progression: A9 D9 G9 CΔ7
     - title: Major6 Workout
       progression: A6 D6 (G7 Db7) C6
-      
+    - title: Dominant13 Workout
+      progression: A13 D13 G13 CΔ7
+    - title: Dominant Sus4 Workout
+      progression: A7sus4 D7sus4 Gsus4 CΔ7
+    - title: Dominant#9 Workout
+      progression: F#7#9 Bm7b5 E7#9 Am7
+    - title: Dominant#11 Workout
+      progression: F#7#11 Bm7b5 E7#11 Am7
+    - title: Dominantb13 Workout
+      progression: F#7b13 Bm7b5 E7b13 Am7
+    - title: Dominantb9#11 Workout
+      progression: F#7b9#11 Bm7b5 E7b9#11 Am7
+    - title: Dominantb9b13 Workout
+      progression: F#7b9b13 Bm7b5 E7b9b13 Am7
+    - title: Dominant#9#11 Workout
+      progression: F#7#9#11 Bm7b5 E7#9#11 Am7
+    - title: Dominant#9b13 Workout
+      progression: F#7#9b13 Bm7b5 E7#9b13 Am7
+    - title: Diminished7 Workout
+      progression: Gdim7 Bm7b5 Fdim7 Am7
+    - title: MinorMajor7 Workout
+      progression: FΔ7 Bm7b5 E7b9 AmΔ7
+    - title: Major#11 Workout
+      progression: Dm7 G7 C7 FΔ7#11
+
+#    - title: Altered Dominant Workout
+#      progression: (A7b9#11 A7b9b13 A7#9#11 A7#9b13) (D7b9#11 D7b9b13 D7#9#11 D7#9b13) (G7b9#11 G7b9b13 G7#9#11 G7#9b13) CΔ7
+

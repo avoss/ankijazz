@@ -20,8 +20,15 @@
       <div class="card border-secondary mb-3">
         <h4 class="card-header">
           Play {{progression}} in {{key}}
+          {{#withGuitar}}
+          in {{position.label}} Position
+          {{/withGuitar}}
+          
         </h4>
         <div class="card-body">
+          {{#withGuitar}}
+          <p><img src="{{position.image}}"></p>
+          {{/withGuitar}}
           <img class="card-img-top" src="{{pngName}}">
           <p class="card-text text-center">
             <audio controls src="{{mp3Name}}"></audio>
@@ -35,6 +42,10 @@
             <li>Tempo: {{tempo}}</li>
             <li>SongAudio: {{mp3Name}}</li>
             <li>SongImage: {{pngName}}</li>
+            {{#withGuitar}}
+            <li>PositionLabel: {{position.label}}</li>
+            <li>PositionImage: {{position.image}}</li>
+            {{/withGuitar}}
           </ul>
         </div>
       </div>
