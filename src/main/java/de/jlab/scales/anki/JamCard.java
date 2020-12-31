@@ -17,18 +17,21 @@ import de.jlab.scales.midi.MidiOut;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.Song;
+import de.jlab.scales.midi.song.SongWrapper;
 
 public class JamCard implements Card {
 
-  private Song song;
-  private Ensemble ensemble;
-  private RenderContext context;
-  private String assetId;
+  private final SongWrapper wrapper;
+  private final Ensemble ensemble;
+  private final RenderContext context;
+  private final String assetId;
+  private final Song song;
 
-  public JamCard(RenderContext context, Song song, Ensemble ensemble) {
+  public JamCard(RenderContext context, SongWrapper wrapper, Ensemble ensemble) {
     this.context = context;
-    this.song = song;
+    this.wrapper = wrapper;
     this.ensemble = ensemble;
+    this.song = wrapper.getSong();
     this.assetId = computeAssetId();
   }
 

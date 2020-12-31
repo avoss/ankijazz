@@ -11,6 +11,8 @@ import de.jlab.scales.midi.song.ProgressionFactory;
 import de.jlab.scales.midi.song.Song;
 import de.jlab.scales.midi.song.SongFactory;
 import de.jlab.scales.midi.song.SongFactory.Feature;
+import de.jlab.scales.midi.song.SongWrapper;
+
 import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 
 public class JamDeck extends AbstractDeck<JamCard> {
@@ -25,9 +27,9 @@ public class JamDeck extends AbstractDeck<JamCard> {
   private void addCards(Set<Feature> features) {
     LoopIteratorFactory iteratorFactory = Utils.randomLoopIteratorFactory();
     SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
-    for (Song song: factory.generate(context.getNumberOfBars())) {
-      add(new JamCard(context, song, Ensembles.funk(80)));
-      add(new JamCard(context, song, Ensembles.latin(120)));
+    for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
+      add(new JamCard(context, wrapper, Ensembles.funk(80)));
+      add(new JamCard(context, wrapper, Ensembles.latin(120)));
     }
   }
 

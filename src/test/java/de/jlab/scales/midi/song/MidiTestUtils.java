@@ -38,6 +38,16 @@ public class MidiTestUtils {
     return new Song(List.of(Bar.of(Chord.of(Scales.Cm7, "Cm7")), Bar.of(Chord.of(Scales.C7.transpose(Note.F), "F7"))));
   }
   
+  public static SongWrapper createStaticSongWrapper() {
+    return SongWrapper.builder()
+      .song(createStaticSong())
+      .keyFactory("Key of C")
+      .progression("Test Progression")
+      .progressionSet("Minor7Chords")
+      .build();
+  }
+  
+  
   public static Song createRandomSong(int numberOfBars) {
     List<Bar> bars = new ArrayList<>();
     for (int i = 0; i < numberOfBars; i++) {

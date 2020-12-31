@@ -33,8 +33,8 @@ public class SongFactory {
   public enum Feature { Test, Workouts, Triads, EachKey, AllKeys }
 
   @Data
-  @Builder
   static class KeyFactory {
+    private final String title;
     private final Iterator<KeySignature> signatures;
     private final int numberOfKeys;
     
@@ -42,7 +42,8 @@ public class SongFactory {
       List<KeyFactory> keys = new ArrayList<>();
       for (Note root : Note.values()) {
         for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(root)) {
-          keys.add(new KeyFactory(iteratorFactory.iterator(singletonList(keySignature)), 1));
+          String title = "Key of ".concat(keySignature.getKeySignatureString());
+          keys.add(new KeyFactory(title, iteratorFactory.iterator(singletonList(keySignature)), 1));
         }
       }
       return keys;
@@ -55,7 +56,11 @@ public class SongFactory {
           keys.add(keySignature);
         }
       }
-      return singletonList(new KeyFactory(iteratorFactory.iterator(keys), keys.size()));
+      return singletonList(new KeyFactory("Mixed Keys", iteratorFactory.iterator(keys), keys.size()));
+    }
+
+    public String getTitle() {
+      return title;
     }
   }
   
@@ -73,18 +78,19 @@ public class SongFactory {
     
   }
   
-  public List<Song> generate(int numberOfBars) {
-    List<Song> songs = new ArrayList<>();
+  public List<SongWrapper> generate(int numberOfBars) {
+    List<SongWrapper> songs = new ArrayList<>();
     features.stream().map(keyFactories::get).filter(Objects::nonNull).flatMap(List::stream).forEach(key -> {
-      features.stream().map(progressionSets::get).filter(Objects::nonNull).flatMap(set -> set.getProgressions().stream()).forEach(progression -> {
-        songs.addAll(play(key, progression, numberOfBars));
-        
+      features.stream().map(progressionSets::get).filter(Objects::nonNull).forEach(progressionSet -> {
+        progressionSet.getProgressions().stream().forEach(progression -> {
+          songs.addAll(play(key, progressionSet, progression, numberOfBars));
+        });
       });
     });
     return songs;
   }
 
-  private List<Song> play(KeyFactory key, Progression progression, int maxNumberOfBarsInSong) {
+  private List<SongWrapper> play(KeyFactory key, ProgressionSet progressionSet, Progression progression, int maxNumberOfBarsInSong) {
     int nuberOfBarsInProgression = progression.getNumberOfBars();
     int numberOfBarsInSong = progressionMustNotSpanSongBoundaries(nuberOfBarsInProgression, maxNumberOfBarsInSong);
     int numberOfProgressionsInSong = numberOfBarsInSong / nuberOfBarsInProgression;
@@ -92,7 +98,7 @@ public class SongFactory {
     if ((key.numberOfKeys % numberOfProgressionsInSong) != 0) {
       numberOfSongs += 1;
     }
-    List<Song> songs = new ArrayList<>();
+    List<SongWrapper> songs = new ArrayList<>();
     for (int i = 0; i < numberOfSongs; i++) {
       List<Bar> bars = new ArrayList<>();
       for (int j = 0; j < numberOfProgressionsInSong; j++) {
@@ -100,7 +106,14 @@ public class SongFactory {
       }
       Song song = new Song(bars);
       if (songsGeneratedSoFar.add(song)) {
-        songs.add(song);
+        SongWrapper songWrapper = SongWrapper.builder()
+          .song(song)
+          .keyFactory(key.getTitle())
+          .progressionSet(progressionSet.getId())
+          .progression(progression.getTitle())
+          .build();
+          
+        songs.add(songWrapper);
       }
     }
     return songs;

@@ -28,7 +28,7 @@ public class SongFactoryTest {
 
   private void assertNumberOfSongs(EnumSet<Feature> features, int expectedNumberOfSongs) {
     SongFactory factory = factory(features);
-    List<Song> songs = factory.generate(16);
+    List<SongWrapper> songs = factory.generate(16);
     assertEquals(expectedNumberOfSongs, songs.size());
   }
 
@@ -41,8 +41,8 @@ public class SongFactoryTest {
   public void assertNoDuplicateSongsAreGenerated() {
     SongFactory factory = factory(EnumSet.of(Test, Workouts, AllKeys, EachKey));
     RenderContext context = RenderContext.ANKI;
-    List<Song> list = factory.generate(context.getNumberOfBars());
-    Set<Song> set = list.stream().collect(toSet());
+    List<SongWrapper> list = factory.generate(context.getNumberOfBars());
+    Set<Song> set = list.stream().map(SongWrapper::getSong).collect(toSet());
     assertEquals(list.size(), set.size());
   }
 
