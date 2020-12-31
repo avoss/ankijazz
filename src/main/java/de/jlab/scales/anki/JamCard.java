@@ -1,10 +1,15 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
+import static de.jlab.scales.anki.AnkiUtils.ankiPng;
 import static java.lang.String.format;
 import static java.util.Collections.emptyMap;
+import static java.util.stream.Collectors.joining;
 
 import java.nio.file.Path;
+import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import com.google.common.base.Charsets;
 
@@ -43,23 +48,30 @@ public class JamCard implements Card {
 
   @Override
   public Map<String, Object> getJson() {
-    // TODO Auto-generated method stub
-    return emptyMap();
+    Map<String, Object> map = new LinkedHashMap<>();
+    map.put("progression", getProgression());
+    map.put("type", getType());
+    map.put("key", getKey());
+    map.put("style", getStyle());
+    map.put("tempo", getTempo());
+    map.put("songImage", getPngName());
+    map.put("songAudio", getMp3Name());
+    map.put("difficulty", getDifficulty());
+    return map;
   }
 
   @Override
   public String getCsv() {
-    // TODO Auto-generated method stub
-    return "TODO";
+    return Stream.of(
+        getProgression(),
+        getType(),
+        getKey(),
+        getStyle(),
+        Integer.toString(getTempo()),
+        ankiPng(getPngName()),
+        ankiMp3(getMp3Name())).collect(joining(CSV_DELIMITER));
   }
   
-  public String getPngName() {
-    return format("%s.png", assetId);
-  }
-
-  public String getMp3Name() {
-    return format("%s.mp3",  assetId);
-  }
   
   @Override
   public void writeAssets(Path directory) {
@@ -86,5 +98,33 @@ public class JamCard implements Card {
 
   public String getAssetId() {
     return assetId;
+  }
+  
+  public String getPngName() {
+    return format("%s.png", assetId);
+  }
+  
+  public String getMp3Name() {
+    return format("%s.mp3",  assetId);
+  }
+
+  public String getKey() {
+    return wrapper.getKey();
+  }
+
+  public String getProgression() {
+    return wrapper.getProgression();
+  }
+
+  public String getType() {
+    return wrapper.getProgressionSet();
+  }
+
+  public String getStyle() {
+    return ensemble.getStyle();
+  }
+
+  public int getTempo() {
+    return ensemble.getBpm();
   }
 }

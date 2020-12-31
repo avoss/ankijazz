@@ -25,7 +25,7 @@ public class Ensembles {
   private Ensembles() {}
   
   public static Ensemble latin(int tempo) {
-    Ensemble ensemble = new Ensemble(16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
+    Ensemble ensemble = new Ensemble("Latin", 16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
     ensemble.setDrumVolume(90);
     ensemble.setDrumPan(-20);
     ensemble.countIn(Drum.Cowbell, "x... x... x... x...");
@@ -75,7 +75,7 @@ public class Ensembles {
   }
   
   public static Ensemble funk(int tempo) {
-    Ensemble ensemble = new Ensemble(16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
+    Ensemble ensemble = new Ensemble("Funk", 16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
     ensemble.setDrumVolume(90);
     ensemble.setDrumPan(-20);
     ensemble.countIn(Drum.Cowbell, "x... x... x... x...");

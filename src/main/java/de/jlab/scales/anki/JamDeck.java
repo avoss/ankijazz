@@ -1,5 +1,8 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
+import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
+
 import java.util.EnumSet;
 import java.util.Set;
 
@@ -8,20 +11,17 @@ import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensembles;
 import de.jlab.scales.midi.song.ProgressionFactory;
-import de.jlab.scales.midi.song.Song;
 import de.jlab.scales.midi.song.SongFactory;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.midi.song.SongWrapper;
-
-import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 
 public class JamDeck extends AbstractDeck<JamCard> {
 
   private RenderContext context = RenderContext.ANKI;
   
-  protected JamDeck(String title) {
+  protected JamDeck(String title, Set<Feature> features) {
     super(title);
-    addCards(EnumSet.of(Workouts, AllKeys));
+    addCards(features);
   }
 
   private void addCards(Set<Feature> features) {

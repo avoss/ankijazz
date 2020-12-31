@@ -41,7 +41,7 @@ public class MidiTestUtils {
   public static SongWrapper createStaticSongWrapper() {
     return SongWrapper.builder()
       .song(createStaticSong())
-      .keyFactory("Key of C")
+      .key("Key of C")
       .progression("Test Progression")
       .progressionSet("Minor7Chords")
       .build();

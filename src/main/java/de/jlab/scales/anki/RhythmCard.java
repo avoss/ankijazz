@@ -85,13 +85,13 @@ public class RhythmCard extends LilyCard {
     Map<String, Object> map = new LinkedHashMap<>();
     map.put("title", getTitle());
     map.put("type", getTypeName());
-    map.put("rhythmPng", getPngName());
-    map.put("rhythmMp3", getMp3Name());
-    map.put("metronomeMp3", getMetronomeMp3Name());
+    map.put("rhythmImage", getPngName());
+    map.put("rhythmAudio", getMp3Name());
+    map.put("metronomeAudio", getMetronomeMp3Name());
     map.put("hasTies", hasTies());
     map.put("hasSyncopation", hasSyncopation());
     map.put("numberOfUniqueQuarters", getNumberOfUniqueQuarters());
-    map.put("bpm", getBpm());
+    map.put("tempo", getBpm());
     map.put("difficulty", getDifficulty());
     return map;
   }

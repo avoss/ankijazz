@@ -27,8 +27,10 @@ public class Ensemble {
   private int drumVolume = 100;
   private int drumPan = 0;
   private Optional<Part> countInPart = Optional.empty();
+  private String style;
   
-  public Ensemble(int ticksPerBar, TimeSignature timeSignature, Tempo tempo) {
+  public Ensemble(String style, int ticksPerBar, TimeSignature timeSignature, Tempo tempo) {
+    this.style = style;
     this.ticksPerBar = ticksPerBar;
     this.timeSignature = timeSignature;
     this.beatsPerBar = timeSignature.getNumerator();
@@ -102,5 +104,11 @@ public class Ensemble {
     return midiChannel;
   }
 
-
+  public String getStyle() {
+    return style;
+  }
+  
+  public int getBpm() {
+    return tempo.getBpm();
+  }
 }

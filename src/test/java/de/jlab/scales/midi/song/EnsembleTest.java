@@ -35,7 +35,7 @@ public class EnsembleTest {
 
   @Test
   public void testMonophonicInstrument() {
-    Ensemble ensemble = new Ensemble(16, timeSignature, tempo);
+    Ensemble ensemble = new Ensemble("Test", 16, timeSignature, tempo);
     ensemble.monophonic(lowestMidiPitch, Program.AcousticBass, 80, -20).bar("x--- ..x.", 1, 5);
     MockMidiOut mock = new MockMidiOut();
     ensemble.play(song(), 1).perform(mock);
@@ -54,7 +54,7 @@ public class EnsembleTest {
 
   @Test
   public void testPercussiveInstrument() {
-    Ensemble ensemble = new Ensemble(16, timeSignature, tempo);
+    Ensemble ensemble = new Ensemble("Test", 16, timeSignature, tempo);
     int volume = 90;
     int pan = -20;
     ensemble.setDrumVolume(volume);

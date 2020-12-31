@@ -13,21 +13,18 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 
-import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.midi.song.ProgressionFactory.Progression;
 import de.jlab.scales.midi.song.ProgressionFactory.ProgressionSet;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
-import lombok.Builder;
 import lombok.Data;
 
 public class SongFactory {
   private Set<Feature> features;
   private Map<Feature, List<KeyFactory>> keyFactories = new HashMap<>();
   private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
-  private LoopIteratorFactory iteratorFactory;
   private Set<Song> songsGeneratedSoFar = new HashSet<>();
 
   public enum Feature { Test, Workouts, Triads, EachKey, AllKeys }
@@ -65,7 +62,6 @@ public class SongFactory {
   }
   
   public SongFactory(LoopIteratorFactory iteratorFactory, ProgressionFactory progressionFactory, Set<Feature> features) {
-    this.iteratorFactory = iteratorFactory;
     this.features = features;
     
     keyFactories.put(AllKeys, KeyFactory.allKeys(iteratorFactory));
@@ -108,7 +104,8 @@ public class SongFactory {
       if (songsGeneratedSoFar.add(song)) {
         SongWrapper songWrapper = SongWrapper.builder()
           .song(song)
-          .keyFactory(key.getTitle())
+          .key(key.getTitle())
+          .mixedKeys(key.getNumberOfKeys() > 1)
           .progressionSet(progressionSet.getId())
           .progression(progression.getTitle())
           .build();
