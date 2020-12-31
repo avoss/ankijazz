@@ -19,7 +19,7 @@ public class JamDeck extends AbstractDeck<JamCard> {
   
   protected JamDeck(String title) {
     super(title);
-    addCards(EnumSet.of(Test, EachKey, AllKeys));
+    addCards(EnumSet.of(Workouts, AllKeys));
   }
 
   private void addCards(Set<Feature> features) {

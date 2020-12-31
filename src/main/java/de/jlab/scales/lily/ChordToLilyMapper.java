@@ -27,6 +27,7 @@ public class ChordToLilyMapper {
   private static Map<String, String> map = new HashMap<>();
   static {
     map.put("Δ7", "maj7");
+    map.put("6", "6");
     map.put("Δ7#11", "maj7.11+");
     map.put("m7", "m7");
     map.put("m6", "m6");

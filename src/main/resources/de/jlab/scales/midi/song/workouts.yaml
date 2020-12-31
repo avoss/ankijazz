@@ -5,14 +5,15 @@
 # Dominant7
 # Minor7b5
 # Dominant7b9
+# Major6
+# Minor9
+# Minor11
+# Minor6
+# Dominant9
 
 # TODO:
 
-# Minor6
-# Minor9
-# Minor11
-# Dominant9
-# Dominant11
+# Dominant13
 # Diminished7
 # Major7#11
 # MinorMajor7
@@ -28,17 +29,24 @@
 
 id: Workouts
 progressions:
-#    - title: Major7 Workout
-#      progression: Cmaj7 FΔ7 Cmaj7 FΔ7
-#    - title: Minor7 Workout 
-#      progression: Dm7 Em7 Dm7 Em7
-#    - title: Dominant7 Workout (Blues)
-#      progression: G7 C7 G7 G7 C7 C7 G7 G7 D7 C7 G7 D7
-#    - title: Minor7b5 Workout
-#      progression: F#m7b5 Bm7b5 Dm7b5 Am7
-#    - title: Dominant7b9 Workout
-#      progression: F#7b9 Bm7b5 E7b9 Am7
-#    - title: Minor9 Workout
-#      progression: F#m9 Bm9 E7b9 Am9
+    - title: Major7 Workout
+      progression: Cmaj7 FΔ7 Cmaj7 FΔ7
+    - title: Minor7 Workout 
+      progression: Dm7 Em7 Dm7 Em7
+    - title: Dominant7 Workout (Blues)
+      progression: G7 C7 G7 G7 C7 C7 G7 G7 D7 C7 G7 D7
+    - title: Minor7b5 Workout
+      progression: F#m7b5 Bm7b5 (E7b9 Bb7) Am7
+    - title: Dominant7b9 Workout
+      progression: F#7b9 Bm7b5 (E7b9 Bb7) Am7
+    - title: Minor9 Workout
+      progression: F#m9 Bm9 (E7b9 Bb7) Am9
     - title: Minor11 Workout
-      progression: F#m11 Bm11 E7b9 Am11
+      progression: F#m11 Bm11 (E7b9 Bb7) Am11
+    - title: Minor6 Workout
+      progression: F#m6 Bm6 (E7b9 Bb7) Am6
+    - title: Dominant9 Workout
+      progression: A9 D9 G9 CΔ7
+    - title: Major6 Workout
+      progression: A6 D6 (G7 Db7) C6
+      
