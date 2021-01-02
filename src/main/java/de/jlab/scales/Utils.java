@@ -27,6 +27,10 @@ public final class Utils {
   private Utils() {
   }
 
+  public static <T> T getLast(List<? extends T> list) {
+    return list.get(list.size() - 1);
+  }
+  
   public static String readString(InputStream input) {
     return readLines(input).stream().collect(Collectors.joining("\n"));
   }

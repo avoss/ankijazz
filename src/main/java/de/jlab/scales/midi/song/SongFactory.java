@@ -2,6 +2,7 @@ package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
+import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
 import static java.util.Collections.singletonList;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class SongFactory {
   private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
   private Set<Song> songsGeneratedSoFar = new HashSet<>();
 
-  public enum Feature { Test, Workouts, Triads, EachKey, AllKeys }
+  public enum Feature { Test, Workouts, Triads, EachKey, SomeKeys, AllKeys }
 
   @Data
   static class KeyFactory {
@@ -46,6 +47,19 @@ public class SongFactory {
       return keys;
     }
 
+    static List<KeyFactory> someKeys(LoopIteratorFactory iteratorFactory) {
+      List<KeyFactory> keys = new ArrayList<>();
+      Iterator<Note> noteIterator = iteratorFactory.iterator(List.of(Note.values()));
+      for (int i = 0; i < 4; i++) {
+        Note root = noteIterator.next();
+        for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(root)) {
+          String title = "Key of ".concat(keySignature.getKeySignatureString());
+          keys.add(new KeyFactory(title, iteratorFactory.iterator(singletonList(keySignature)), 1));
+        }
+      }
+      return keys;
+    }
+    
     static List<KeyFactory> allKeys(LoopIteratorFactory iteratorFactory) {
       List<KeySignature> keys = new ArrayList<>();
       for (Note root : Note.values()) {
@@ -65,6 +79,7 @@ public class SongFactory {
     this.features = features;
     
     keyFactories.put(AllKeys, KeyFactory.allKeys(iteratorFactory));
+    keyFactories.put(SomeKeys, KeyFactory.someKeys(iteratorFactory));
     keyFactories.put(EachKey, KeyFactory.eachKey(iteratorFactory));
     
     for (ProgressionSet set: progressionFactory.getProgressionSets()) {

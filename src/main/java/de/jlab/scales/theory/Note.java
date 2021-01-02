@@ -123,8 +123,13 @@ public enum Note {
     return semitones;
   }
 
+  public int distance(Note that) {
+    return Math.min(this.semitones(that), that.semitones(this));
+  }
+  
   public boolean isSemitone(Note other) {
     return this.semitones(other) == 1 || other.semitones(this) == 1;
   }
+
   
 }

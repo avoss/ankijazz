@@ -10,15 +10,15 @@ import de.jlab.scales.theory.Scale;
 
 public class PolyphonicInstrument extends TonalInstrument<PolyphonicInstrument> {
 
-  private ChordToMidiMapper mapper;
+  private ChordGenerator chordGenerator;
   private int denominator;
   private int midiChannel;
 
-  public PolyphonicInstrument(int beatsPerBar, int ticksPerBar, int midiChannel, ChordToMidiMapper mapper, Program program, int volume, int pan) {
+  public PolyphonicInstrument(int beatsPerBar, int ticksPerBar, int midiChannel, ChordGenerator chordGenerator, Program program, int volume, int pan) {
     super(beatsPerBar, ticksPerBar, midiChannel, program, volume, pan);
     this.denominator = ticksPerBar;
     this.midiChannel = midiChannel;
-    this.mapper = mapper;
+    this.chordGenerator = chordGenerator;
   }
   
   public PolyphonicInstrument bar(String pattern) {
@@ -31,7 +31,7 @@ public class PolyphonicInstrument extends TonalInstrument<PolyphonicInstrument> 
   protected BiFunction<Event, Scale, Part> getPlayer() {
     return (event, chord) -> {
       Parallel container = new Parallel();
-      int[] midiPitches = mapper.midiChord(chord);
+      int[] midiPitches = chordGenerator.midiChord(chord);
       for (int midiPitch : midiPitches) {
         container.add(Parts.note(midiChannel, midiPitch, event.getVelocity(), event.getNoteLength(), denominator));
       }

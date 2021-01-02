@@ -10,7 +10,15 @@ public class MidiUtils {
     return Note.values()[ordinal];
   }
 
-  public static int noteToMidiPitch(int lowestMidiPitch, Note note) {
+  public static int noteToMidiPitchBelow(int highestMidiPitch, Note note) {
+    int pitch = noteToMidiPitchAbove(highestMidiPitch, note);
+    if (pitch > highestMidiPitch) {
+      pitch -= 12;
+    }
+    return pitch;
+  }
+
+  public static int noteToMidiPitchAbove(int lowestMidiPitch, Note note) {
     int midiPitch = note.ordinal();
     while (midiPitch < lowestMidiPitch) {
       midiPitch += 12;

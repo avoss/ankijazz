@@ -35,12 +35,15 @@ public class JamDeck extends AbstractDeck<JamCard> {
     super(title, "JamDeck".concat(instrument.name()).concat(withGuitar ? "Guitar" : ""));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
-    addCards(EnumSet.of(Workouts, AllKeys));
+    addCards(EnumSet.of(Test, AllKeys));
+    //addCards(EnumSet.of(Workouts, SomeKeys));
   }
 
+  // TODO: someKeys instead of eachKey, increase tempo slowly
+  // different random chords per fretboard position -> uuid good enough for assedId
   private void addCards(Set<Feature> features) {
-    addCards(Ensembles.funk(75), features);
-    //addCards(Ensembles.latin(120), features);
+    addCards(Ensembles.funk(70), features);
+    addCards(Ensembles.latin(120), features);
   }
 
   private void addCards(Ensemble ensemble, Set<Feature> features) {

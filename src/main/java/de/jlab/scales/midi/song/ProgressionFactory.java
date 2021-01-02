@@ -48,6 +48,9 @@ public class ProgressionFactory {
     private String title;
     @Getter
     @Setter
+    private String comment;
+    @Getter
+    @Setter
     private String progression;
     private List<ChordFactory> chordFactories = null;
     private LoopIteratorFactory loopIteratorFactory;

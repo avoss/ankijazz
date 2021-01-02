@@ -1,48 +1,90 @@
 package de.jlab.scales.midi.song;
 
+import static de.jlab.scales.Utils.getLast;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
+import java.util.Set;
 
 import de.jlab.scales.midi.MidiUtils;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
-public class Drop2ChordGenerator implements ChordToMidiMapper {
+public class Drop2ChordGenerator implements ChordGenerator {
 
-  private final int lowestMidiPitch;
+  private static final int NUMBER_OF_NOTES_LIMIT = 4;
+  private final int highestMidiPitch;
 
-  public Drop2ChordGenerator(int lowestMidiPitch) {
-    this.lowestMidiPitch = lowestMidiPitch;
+  public Drop2ChordGenerator(int highestMidiPitch) {
+    this.highestMidiPitch = highestMidiPitch;
   }
 
   @Override
   public int[] midiChord(Scale chord) {
-    int dropIndex = dropIndex(chord);
-    Scale inversion = findBestInversion(chord, dropIndex);
-    return drop2MidiPitches(dropIndex, inversion);
+    List<Note> notes = stackedThirds(chord);
+    notes = limitNumberOfNotes(chord.getRoot(), notes);
+    notes = findBestInversion(notes);
+    int dropIndex = dropIndex(notes);
+    return drop2MidiPitches(dropIndex, notes);
   }
 
-  private int[] drop2MidiPitches(int dropIndex, Scale inversion) {
-    int[] result = new int[inversion.getNumberOfNotes()];
+  List<Note> stackedThirds(Scale chord) {
+    Set<Note> set = chord.asSet();
+    List<Note> list = new ArrayList<>();
+    Note note = chord.getRoot();
+    while (!set.isEmpty()) {
+      set.remove(note);
+      list.add(note);
+      note = nextThird(set, note);
+    }
+    return list;
+  }
+
+  private Note nextThird(Set<Note> set, Note note) {
+    final int[] intervals = { 4, 3, 2, 5, 1, 6};//, 7, 8, 9, 10, 11 };
+    if (set.isEmpty()) {
+      return note;
+    }
+    
+    if (set.size() == 1) {
+      return set.iterator().next();
+    }
+    
+    for (int i = 0; i < intervals.length; i++) {
+      int interval = intervals[i];
+      if (set.contains(note.transpose(interval))) {
+        return note.transpose(interval);
+      }
+    }
+    throw new IllegalArgumentException("Could not create stacked thirds for " + set + " starting at " + note);
+  }
+
+  private int[] drop2MidiPitches(int dropIndex, List<Note> inversion) {
+    int[] result = new int[inversion.size()];
     int resultIndex = 0;
-    NoteToMidiMapper mapper = NoteToMidiMapper.range(lowestMidiPitch, 127).resetToLowest();
-    Note dropNote = inversion.getNote(dropIndex);
-    result[resultIndex++] = mapper.nextHigher(dropNote);
-    for (Note note : inversion) {
+    NoteToMidiMapper mapper = NoteToMidiMapper.range(0, highestMidiPitch).resetToHighest();
+    ListIterator<Note> iterator = inversion.listIterator(inversion.size());
+    Note dropNote = inversion.get(dropIndex);
+    while (iterator.hasPrevious()) {
+      Note note = iterator.previous();
       if (note == dropNote) {
         continue;
       }
-      result[resultIndex++] = mapper.nextHigher(note);
+      result[resultIndex++] = mapper.nextLower(note);
     }
+    result[resultIndex++] = mapper.nextLower(dropNote);
     return result;
   }
 
-  Scale findBestInversion(Scale fullChord, int dropIndex) {
-    Scale chord = limitNumberOfNotes(fullChord);
-    Scale bestInversion = chord;
-    int bestDistance = distance(chord, dropIndex);
-    for (Scale inversion : chord.getInversions()) {
-      int distance = distance(inversion, dropIndex);
+  List<Note> findBestInversion(List<Note> notes) {
+    List<Note> bestInversion = notes;
+    int bestDistance = distance(notes);
+    for (int i = 1; i < notes.size(); i++) {
+      List<Note> inversion = new ArrayList<>(notes);
+      Collections.rotate(inversion, i);
+      int distance = distance(inversion);
       if (distance < bestDistance) {
         bestDistance = distance;
         bestInversion = inversion;
@@ -51,21 +93,23 @@ public class Drop2ChordGenerator implements ChordToMidiMapper {
     return bestInversion;
   }
 
-  private Scale limitNumberOfNotes(Scale chord) {
-    if (chord.getNumberOfNotes() <= 4) {
-      return chord;
+  List<Note> limitNumberOfNotes(Note root, List<Note> notes) {
+    if (notes.size() > NUMBER_OF_NOTES_LIMIT) {
+      notes.remove(root);
     }
-    List<Note> notes = new ArrayList<>(chord.asList());
-    notes.remove(chord.getRoot());
-    return new Scale(notes.get(0), notes);
+    if (notes.size() > NUMBER_OF_NOTES_LIMIT) {
+      notes.remove(root.five());
+    }
+    return notes;
   }
 
-  private int distance(Scale chord, int dropIndex) {
-    return MidiUtils.noteToMidiPitch(lowestMidiPitch, chord.getNote(dropIndex)) - lowestMidiPitch;
+  private int distance(List<Note> notes) {
+    return highestMidiPitch - MidiUtils.noteToMidiPitchBelow(highestMidiPitch, getLast(notes));
   }
   
-  int dropIndex(Scale chord) {
-    switch(chord.getNumberOfNotes()) {
+
+  int dropIndex(List<Note> notes) {
+    switch(notes.size()) {
     case 0:
     case 1:
     case 2:

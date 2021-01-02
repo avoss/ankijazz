@@ -59,9 +59,9 @@ public class Ensemble {
     return instrument;
   }
 
-  public PolyphonicInstrument drop2chords(int lowestMidiPitch, Program program, int volume, int pan) {
-    ChordToMidiMapper mapper = new Drop2ChordGenerator(lowestMidiPitch);
-    PolyphonicInstrument instrument = new PolyphonicInstrument(beatsPerBar, ticksPerBar, nextMidiChannel(), mapper, program, volume, pan);
+  public PolyphonicInstrument drop2chords(int highestMidiPitch, Program program, int volume, int pan) {
+    ChordGenerator chordGenerator = new Drop2ChordGenerator(highestMidiPitch);
+    PolyphonicInstrument instrument = new PolyphonicInstrument(beatsPerBar, ticksPerBar, nextMidiChannel(), chordGenerator, program, volume, pan);
     instruments.add(instrument);
     return instrument;
   }

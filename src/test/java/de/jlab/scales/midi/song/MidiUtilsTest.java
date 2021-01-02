@@ -23,9 +23,15 @@ public class MidiUtilsTest {
   }
 
   @Test
-  public void testNoteToMidiPitch() {
-    assertEquals(60, MidiUtils.noteToMidiPitch(59, Note.C));
-    assertEquals(62, MidiUtils.noteToMidiPitch(59, Note.D));
-    assertEquals(59, MidiUtils.noteToMidiPitch(59, Note.B));
+  public void testNoteToMidiPitchAbove() {
+    assertEquals(60, MidiUtils.noteToMidiPitchAbove(59, Note.C));
+    assertEquals(62, MidiUtils.noteToMidiPitchAbove(59, Note.D));
+    assertEquals(59, MidiUtils.noteToMidiPitchAbove(59, Note.B));
+  }
+  @Test
+  public void testNoteToMidiPitchBelow() {
+    assertEquals(60, MidiUtils.noteToMidiPitchBelow(60, Note.C));
+    assertEquals(50, MidiUtils.noteToMidiPitchBelow(60, Note.D));
+    assertEquals(59, MidiUtils.noteToMidiPitchBelow(60, Note.B));
   }
 }
