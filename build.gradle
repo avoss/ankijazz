@@ -58,21 +58,32 @@ task copyPreview(type:Copy) {
 build.dependsOn(copyAssets)
 build.dependsOn(copyPreview)
 
-task deleteAnki {
+task deleteAnkiProfile(type: Delete) {
   delete "${ankiProfile}"
 }
 
-task initAnki(type: Copy) {
-  dependsOn copyAssets
-  dependsOn deleteAnki
-  from zipTree("src/assets/build.zip")
+task initAnkiProfile(type: Copy) {
+  dependsOn deleteAnkiProfile
+  from zipTree("${ankiAsset}")
   into "${ankiProfile}"
 }
 
-task copyAnki(type: Copy) {
-  dependsOn initAnki
+task copyAnkiAssetToProfile(type: Copy) {
+  dependsOn copyAssets
+  dependsOn initAnkiProfile
   from ("build/anki") {
     include ('*.png', '*.mp3')
   }
   into "${ankiProfile}/collection.media"
+}
+
+task deleteAnkiAsset(type: Delete) {
+  delete "${ankiAsset}"
+}
+
+task createAnkiAssetFromProfile(type: Zip) {
+  dependsOn deleteAnkiAsset
+  archiveFileName = "build.zip"
+  destinationDirectory = file("src/assets")
+  from "${ankiProfile}"
 }
