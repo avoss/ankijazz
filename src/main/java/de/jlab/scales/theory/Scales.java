@@ -51,6 +51,7 @@ public class Scales {
   public static final Scale Cdim7 = new Scale(C, Eb, Gb, A);
 
   public static final Scale Cmaj7 = new Scale(C, E, G, B);
+  public static final Scale Cmaj9 = new Scale(C, E, G, B, D);
   public static final Scale C6 = new Scale(C, E, G, A);
   public static final Scale Cmaj7Sharp5 = new Scale(C, E, Ab, B);
   public static final Scale Cmaj7Sharp11 = new Scale(C, E, Gb, B);

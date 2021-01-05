@@ -22,7 +22,7 @@ import com.google.common.collect.Sets;
 public class ChordParser {
   private final Accidental accidental;
 
-  private static final Pattern chordPattern = Pattern.compile("\\s*(C#|C|D#|Db|D|Eb|E|F#|F|G#|Gb|G|A#|Ab|A|Bb|B)\\s*(aug|\\+|dim7|o7|dim|o|7sus4|7sus|sus4|7sus2|sus2|sus|mmaj7|maj7|maj|m7|-7|m|-|7|m6|-6|6|5)?(.*)\\s*", Pattern.CASE_INSENSITIVE);
+  private static final Pattern chordPattern = Pattern.compile("\\s*(C#|C|D#|Db|D|Eb|E|F#|F|G#|Gb|G|A#|Ab|A|Bb|B)\\s*(aug|\\+|dim7|o7|dim|o|7sus4|7sus|sus4|7sus2|sus2|sus|mmaj7|maj7|maj9|maj|m7|-7|m|-|7|m6|-6|6|5)?(.*)\\s*", Pattern.CASE_INSENSITIVE);
   private static final Pattern optionsPattern = Pattern.compile("(b|#)?(4|5|6|7|9|11|13)\\s*", Pattern.CASE_INSENSITIVE);
   
   public ChordParser(Accidental accidental) {
@@ -42,6 +42,7 @@ public class ChordParser {
 
   public static Scale parseChord(String string) throws ParseChordException {
     string = string.replace("Δ7", "maj7"); // bug in regex?
+    string = string.replace("Δ9", "maj9"); // bug in regex?
     Matcher matcher = chordPattern.matcher(string);
     if (!matcher.find())
       throw new ParseChordException("Not a chord: " + string);
@@ -87,6 +88,13 @@ public class ChordParser {
         notes.add(root.major3());
         notes.add(root.five());
         notes.add(root.sharp7());
+        break;
+      case "maj9":
+      case "Δ9":
+        notes.add(root.major3());
+        notes.add(root.five());
+        notes.add(root.sharp7());
+        notes.add(root.nine());
         break;
       case "mmaj7":
       case "mΔ7":
@@ -223,8 +231,13 @@ public class ChordParser {
       }
       flat7 = true;
     }
-    if (remaining.remove(root.sharp7()))
-      sb.append("Δ7");
+    if (remaining.remove(root.sharp7())) {
+      if (remaining.remove(root.nine())) {
+        sb.append("Δ9");
+      } else {
+        sb.append("Δ7");
+      }
+    }
 
     // options
     if (remaining.remove(root.flat5()))

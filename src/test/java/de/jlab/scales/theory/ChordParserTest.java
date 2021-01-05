@@ -76,7 +76,7 @@ public class ChordParserTest {
           Scale actual = ChordParser.parseChord(symbol);
           assertEquals("could not parse " + symbol, expected, actual);
           /*
-           * other chords use b5, only maj7#11 uses #11 instead. ChordParser will return maj7b5
+           * TODO other chords use b5, only maj7#11 uses #11 instead. ChordParser will return maj7b5
            */
           if (type != BuiltinChordType.Major7Sharp11) {
             assertEquals("could not print " + symbol, symbol, new ChordParser(key.getAccidental()).asChord(actual));
@@ -89,6 +89,9 @@ public class ChordParserTest {
   @Test
   public void testMajorChords() {
     assertChord("CΔ7", C, E, G, B);
+    assertChord("Cmaj7", "CΔ7", C, E, G, B);
+    assertChord("CΔ9", C, E, G, B, D);
+    assertChord("Cmaj9", "CΔ9", C, E, G, B, D);
     assertChord("CΔ7#11", "CΔ7b5", C, E, B, Gb);
   }
 

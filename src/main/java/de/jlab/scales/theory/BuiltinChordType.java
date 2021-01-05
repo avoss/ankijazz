@@ -36,6 +36,7 @@ import static de.jlab.scales.theory.Scales.Cm9;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.Cmaj7Sharp11;
 import static de.jlab.scales.theory.Scales.Cmaj7Sharp5;
+import static de.jlab.scales.theory.Scales.Cmaj9;
 import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
 import static de.jlab.scales.theory.Scales.Cmmaj7;
@@ -48,20 +49,23 @@ import java.util.Set;
 
 public enum BuiltinChordType implements ScaleType {
   // see BuitlinChordTypeTest to figure out what to put here
-  Major7(Cmaj7, "Δ7", C, Major),
   Major6(C6, "6", C, Major),
+  Major7(Cmaj7, "Δ7", C, Major),
+  Major9(Cmaj9, "Δ9", C, Major),
   Major7Sharp11(Cmaj7Sharp11, "Δ7#11", G, Major),
+  Major7Sharp5(Cmaj7Sharp5, "Δ7#5", A, MelodicMinor),
+  
   Minor7(Cm7, "m7", Eb, Major),
   Minor6(Cm6, "m6", Bb, Major),
   Minor9(Cm9, "m9", Bb, Major),
   Minor11(Cm11, "m11", Bb, Major),
+  Minor7b5(Cm7b5, "m7b5", Db, Major),
+  Diminished7(Cdim7, "dim7", E, HarmonicMinor),
+  
   Dominant7(C7, "7", F, Major),
   Dominant9(C9, "9", F, Major),
   Dominant13(C13, "13", F, Major),
-  Minor7b5(Cm7b5, "m7b5", Db, Major),
-  Diminished7(Cdim7, "dim7", E, HarmonicMinor),
   MinorMajor7(Cmmaj7, "mΔ7", C, MelodicMinor),
-  Major7Sharp5(Cmaj7Sharp5, "Δ7#5", A, MelodicMinor),
   Dominant7sus4(C7sus4, "7sus4", F, Major),
   Dominant7flat9(C7flat9, "7b9", F, HarmonicMinor),
   Dominant7sharp9(C7sharp9, "7#9", A, HarmonicMajor),
