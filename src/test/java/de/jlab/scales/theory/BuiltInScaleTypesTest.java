@@ -9,13 +9,13 @@ import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.Gb;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
-import static org.assertj.core.api.Assertions.*;
 
 public class BuiltInScaleTypesTest {
 

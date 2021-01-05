@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
@@ -10,8 +11,6 @@ import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensembles;
 import de.jlab.scales.midi.song.MidiTestUtils;
 import de.jlab.scales.theory.Note;
-
-import static org.assertj.core.api.Assertions.*;
 
 public class JamCardTest {
 

@@ -17,8 +17,6 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.midi.song.ProgressionFactory.ChordProgression;
-import de.jlab.scales.midi.song.ProgressionFactory.ChordProgressionSet;
 import de.jlab.scales.midi.song.ProgressionFactory.Progression;
 import de.jlab.scales.midi.song.ProgressionFactory.ProgressionSet;
 import de.jlab.scales.theory.BuiltinScaleType;

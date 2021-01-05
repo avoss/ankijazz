@@ -16,13 +16,9 @@ import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
 import java.util.Set;
 
-import org.junit.Ignore;
 import org.junit.Test;
-
-import com.google.common.collect.Sets;
 
 public class ChordParserTest {
 

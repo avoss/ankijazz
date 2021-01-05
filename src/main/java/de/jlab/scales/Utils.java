@@ -18,7 +18,6 @@ import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 
-import de.jlab.scales.midi.song.ProgressionFactory;
 import de.jlab.scales.theory.Scale;
 
 public final class Utils {

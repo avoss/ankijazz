@@ -3,7 +3,6 @@ package de.jlab.scales.anki;
 import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
 import static de.jlab.scales.anki.AnkiUtils.ankiPng;
 import static java.lang.String.format;
-import static java.util.Collections.emptyMap;
 import static java.util.stream.Collectors.joining;
 
 import java.nio.file.Path;

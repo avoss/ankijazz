@@ -1,23 +1,24 @@
 package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.Utils.getLast;
-import static de.jlab.scales.theory.Note.*;
-import de.jlab.scales.theory.ScaleType;
-
+import static de.jlab.scales.theory.Note.B;
+import static de.jlab.scales.theory.Note.Bb;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.F;
+import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.C7flat9;
 import static de.jlab.scales.theory.Scales.C9;
-import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.allModes;
-import static org.junit.Assert.assertArrayEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -25,7 +26,7 @@ import de.jlab.scales.midi.MidiUtils;
 import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
-import static org.assertj.core.api.Assertions.*;
+import de.jlab.scales.theory.ScaleType;
 
 public class Drop2ChordGeneratorTest {
 

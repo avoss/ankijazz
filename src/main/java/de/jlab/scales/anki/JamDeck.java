@@ -1,8 +1,6 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.lily.Direction.ASCENDING;
-import static de.jlab.scales.lily.Direction.DESCENDING;
-import static de.jlab.scales.midi.song.SongFactory.Feature.*;
+import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 
 import java.util.EnumSet;
@@ -35,8 +33,8 @@ public class JamDeck extends AbstractDeck<JamCard> {
     super(title, "JamDeck".concat(instrument.name()).concat(withGuitar ? "Guitar" : ""));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
-    addCards(EnumSet.of(Test, AllKeys));
-    //addCards(EnumSet.of(Workouts, SomeKeys));
+    //addCards(EnumSet.of(Test, AllKeys));
+    addCards(EnumSet.of(Workouts, SomeKeys));
   }
 
   // TODO: someKeys instead of eachKey, increase tempo slowly
