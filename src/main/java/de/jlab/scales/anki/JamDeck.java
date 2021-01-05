@@ -1,6 +1,6 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
+import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 
 import java.util.EnumSet;
@@ -34,13 +34,15 @@ public class JamDeck extends AbstractDeck<JamCard> {
     this.instrument = instrument;
     this.withGuitar = withGuitar;
     //addCards(EnumSet.of(Test, AllKeys));
-    addCards(EnumSet.of(Workouts, SomeKeys));
+    //addCards(EnumSet.of(Triads, EachKey, AllKeys));
+    //addCards(EnumSet.of(Workouts, SomeKeys));
+    addCards(EnumSet.of(TwoFiveOnes, SomeKeys));
   }
 
   // TODO: someKeys instead of eachKey, increase tempo slowly
   // different random chords per fretboard position -> uuid good enough for assedId
   private void addCards(Set<Feature> features) {
-    addCards(Ensembles.funk(70), features);
+    //addCards(Ensembles.funk(70), features);
     addCards(Ensembles.latin(120), features);
   }
 

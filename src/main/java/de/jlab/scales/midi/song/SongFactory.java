@@ -30,7 +30,7 @@ public class SongFactory {
   private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
   private Set<Song> songsGeneratedSoFar = new HashSet<>();
 
-  public enum Feature { Test, Workouts, Triads, EachKey, SomeKeys, AllKeys }
+  public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, EachKey, SomeKeys, AllKeys }
 
   interface KeyFactory {
     String getTitle();
@@ -156,7 +156,7 @@ public class SongFactory {
           .song(song)
           .key(key.getTitle())
           .mixedKeys(key.getNumberOfKeys() > 1)
-          .progressionSet(progressionSet.getId())
+          .progressionSet(progressionSet.getTitle())
           .progression(progression.getTitle())
           .build();
           

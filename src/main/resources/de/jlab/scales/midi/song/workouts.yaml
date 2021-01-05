@@ -2,24 +2,32 @@
 
 id: Workouts
 progressions:
+    - title: Major6 Workout
+      progression: A6 D6 (G7 Db7) C6
     - title: Major7 Workout
       progression: (CΔ7 Cmaj7) (FΔ7 Fmaj7) (CΔ7 Cmaj7) (FΔ7 Fmaj7)
+    - title: Major9 Workout
+      progression: (CΔ9 Cmaj9) (FΔ9 Fmaj9) (CΔ9 Cmaj9) (FΔ9 Fmaj9)
+    - title: "Major7 #11 Workout"
+      progression: (CΔ7#11 Cmaj7#11) (CΔ7 Cmaj7) (CΔ7#11 Cmaj7#11) (CΔ7 Cmaj7)
+    - title: "Major7 #5 Workout"
+      progression: (CΔ7#5 Cmaj7#5) C6 (CΔ7#5 Cmaj7#5) C6
+
+    - title: Minor6 Workout
+      progression: F#m6 Bm6 (E7b9 Bb7) Am6
     - title: Minor7 Workout 
       progression: Dm7 Em7 Dm7 Em7
-    - title: Dominant7 Workout
-      progression: A7 D7 (G7 Db7) CΔ7
-    - title: Minor7b5 Workout
-      progression: F#m7b5 Bm7b5 (E7b9 Bb7) Am7
     - title: Minor9 Workout
       progression: F#m9 Bm9 (E7b9 Bb7) Am9
     - title: Minor11 Workout
       progression: F#m11 Bm11 (E7b9 Bb7) Am11
-    - title: Minor6 Workout
-      progression: F#m6 Bm6 (E7b9 Bb7) Am6
+    - title: Minor7b5 Workout
+      progression: F#m7b5 Bm7b5 (E7b9 Bb7) Am7
+      
+    - title: Dominant7 Workout
+      progression: A7 D7 (G7 Db7) CΔ7
     - title: Dominant9 Workout
       progression: A9 (DΔ7 Dmaj7) (G9 Db9) (CΔ7 Cmaj7)
-    - title: Major6 Workout
-      progression: A6 D6 (G7 Db7) C6
     - title: Dominant13 Workout
       progression: A13 (DΔ7 Dmaj7) (G13 Db13) (CΔ7 Cmaj7)
     - title: Dominant Sus4 Workout
@@ -38,6 +46,7 @@ progressions:
     - title: "Dominant7 b9b13 = b9#5 Workout"
       progression: (F#7b9b13 F#b9#5) Bm7 (E7b9b13 E7b9#5) Am7
       comment: tritone sub of Dominant 9
+      
 #    - title: "Dominant7 #9#11 Workout"
 #      progression: F#7#9#11 Bm7b5 E7#9#11 Am7
 #    - title: "Dominant7 #9b13 = #9#5 Workout"

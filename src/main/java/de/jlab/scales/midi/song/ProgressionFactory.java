@@ -63,6 +63,7 @@ public class ProgressionFactory {
   
   public interface ProgressionSet {
     String getId();
+    String getTitle();
     List<? extends Progression> getProgressions();
   }
 
@@ -72,6 +73,9 @@ public class ProgressionFactory {
     @Getter
     @Setter
     private String id;
+    @Getter
+    @Setter
+    private String title;
     @Getter
     @Setter
     private List<ChordProgression> progressions;
@@ -102,6 +106,8 @@ public class ProgressionFactory {
     progressionSets.add(loadChordProgression("test.yaml", loopIteratorFactory));
     progressionSets.add(loadChordProgression("triads.yaml", loopIteratorFactory));
     progressionSets.add(loadChordProgression("workouts.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("twofiveones.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("exttwofiveones.yaml", loopIteratorFactory));
   }
 
 }
