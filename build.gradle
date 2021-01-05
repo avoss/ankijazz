@@ -62,15 +62,15 @@ task deleteAnkiProfile(type: Delete) {
   delete "${ankiProfile}"
 }
 
-task initAnkiProfile(type: Copy) {
+task createEmptyAnkiProfile(type: Copy) {
   dependsOn deleteAnkiProfile
   from zipTree("${ankiAsset}")
   into "${ankiProfile}"
 }
 
-task copyAnkiAssetToProfile(type: Copy) {
+task createAnkiProfileWithMedia(type: Copy) {
   dependsOn copyAssets
-  dependsOn initAnkiProfile
+  dependsOn createEmptyAnkiProfile
   from ("build/anki") {
     include ('*.png', '*.mp3')
   }
