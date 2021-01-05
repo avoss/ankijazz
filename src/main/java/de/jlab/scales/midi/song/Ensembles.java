@@ -76,7 +76,7 @@ public class Ensembles {
   
   public static Ensemble funk(int tempo) {
     Ensemble ensemble = new Ensemble("Funk", 16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
-    ensemble.setDrumVolume(90);
+    ensemble.setDrumVolume(85);
     ensemble.setDrumPan(-20);
     ensemble.countIn(Drum.Cowbell, "x... x... x... x...");
     ensemble.percussive(Drum.BassDrum1)
@@ -105,7 +105,7 @@ public class Ensembles {
       .bar("x--- > ..xx .... ....", 1, 1, 1)
       .bar("x--- > ...x ---- ....", 1, 1);
 
-    ensemble.drop2chords(74, Program.ElectricPiano2, 50, -1)
+    ensemble.drop2chords(74, Program.ElectricPiano2, 55, -1)
       .bar("x..x .... x--x ..x.")
       .bar("x--- > ...x ---- ....");
 
