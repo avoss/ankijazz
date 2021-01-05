@@ -1,7 +1,7 @@
 \version "2.20.0"
 \include "english.ly"
 
-#(set! paper-alist (cons '("anki-png" . (cons (* 140 mm) (* 50 mm))) paper-alist))
+#(set! paper-alist (cons '("anki-png" . (cons (* 150 mm) (* 50 mm))) paper-alist))
 #(set-default-paper-size "anki-png")
 
 \header {
@@ -29,7 +29,12 @@ bassNotes = \relative e, { a2. a4 d2. d4 }
   >>
   \layout {
     indent = 0.0 
-    \context { \Score \omit BarNumber }
+    \context { 
+      \Score \omit BarNumber
+    }
+    \context { 
+      \Staff \omit TimeSignature
+    }
   }
 }
 
