@@ -99,15 +99,15 @@ public class ProgressionFactory {
 
   @Getter
   private List<ProgressionSet> progressionSets = new ArrayList<>();
-  private LoopIteratorFactory loopIteratorFactory;
 
   public ProgressionFactory(LoopIteratorFactory loopIteratorFactory) {
-    this.loopIteratorFactory = loopIteratorFactory;
-    progressionSets.add(loadChordProgression("test.yaml", loopIteratorFactory));
-    progressionSets.add(loadChordProgression("triads.yaml", loopIteratorFactory));
-    progressionSets.add(loadChordProgression("workouts.yaml", loopIteratorFactory));
-    progressionSets.add(loadChordProgression("twofiveones.yaml", loopIteratorFactory));
-    progressionSets.add(loadChordProgression("exttwofiveones.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("Test.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("Triads.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("Workouts.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("TwoFiveOnes.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("ExtTwoFiveOnes.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("SimpleBlues.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("JazzBlues.yaml", loopIteratorFactory));
   }
 
 }

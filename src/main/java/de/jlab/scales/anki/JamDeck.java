@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.midi.song.Ensembles.funk;
+import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 
@@ -10,7 +12,6 @@ import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensemble;
-import de.jlab.scales.midi.song.Ensembles;
 import de.jlab.scales.midi.song.ProgressionFactory;
 import de.jlab.scales.midi.song.SongFactory;
 import de.jlab.scales.midi.song.SongFactory.Feature;
@@ -23,27 +24,22 @@ public class JamDeck extends AbstractDeck<JamCard> {
   private final Note instrument;
   private boolean withGuitar;
   
-  public JamDeck(String title, Set<Feature> features) {
-    super(title);
-    instrument = Note.C;
-    addCards(features);
-  }
-
   public JamDeck(String title, Note instrument, boolean withGuitar) {
     super(title, "JamDeck".concat(instrument.name()).concat(withGuitar ? "Guitar" : ""));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
     //addCards(EnumSet.of(Test, AllKeys));
     //addCards(EnumSet.of(Triads, EachKey, AllKeys));
-    //addCards(EnumSet.of(Workouts, SomeKeys));
-    addCards(EnumSet.of(TwoFiveOnes, SomeKeys));
+    addCards(Set.of(SimpleBlues, JazzBlues, SomeKeys), Set.of(latin(130)));
+    //addCards(Set.of(JazzBlues, SomeKeys), Set.of(funk(70), funk(90), latin(125)));
   }
 
   // TODO: someKeys instead of eachKey, increase tempo slowly
   // different random chords per fretboard position -> uuid good enough for assedId
-  private void addCards(Set<Feature> features) {
-    //addCards(Ensembles.funk(70), features);
-    addCards(Ensembles.latin(120), features);
+  private void addCards(Set<Feature> features, Set<Ensemble> ensembles) {
+    for (Ensemble ensemble: ensembles) {
+      addCards(ensemble, features);
+    }
   }
 
   private void addCards(Ensemble ensemble, Set<Feature> features) {

@@ -5,7 +5,8 @@
 #   [A B] C = play 1st bar two chords (A and B, each 2 beats) and 2nd bar chord C
 # these may be mixed.
 
-id: Test
+id: JazzBlues
+title: Jazz Blues
 progressions:
-   - title: Minor 6251
-     progression: (FΔ7 F#m7b5) Bm7b5 (E7b9 E7b13 Bb7 [Fm7 Bb7]) (Am7 Am9 Am11 [Am9 Am7])
+   - title: Jazz Blues
+     progression: C7 F9 C7 [C7sus4 C7] F7 F7b9 C7 (A7#5 A7b9) (Dm7 Dm9) (G7#5 G7b9) [C7 (A7#5 A7b9)] [(Dm7 Dm9) (G7#5 G7b9)]

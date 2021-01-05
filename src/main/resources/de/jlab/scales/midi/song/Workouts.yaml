@@ -1,6 +1,7 @@
 # workouts focus on a certain chord. 
 
 id: Workouts
+title: Workouts
 progressions:
     - title: Major6 Workout
       progression: A6 D6 (G7 Db7) C6
@@ -25,13 +26,13 @@ progressions:
       progression: F#m7b5 Bm7b5 (E7b9 Bb7) Am7
       
     - title: Dominant7 Workout
-      progression: A7 D7 (G7 Db7) CΔ7
+      progression: (A7 Eb7) (D7 Ab7) (G7 Db7) (CΔ7 Cmaj7)
     - title: Dominant9 Workout
-      progression: A9 (DΔ7 Dmaj7) (G9 Db9) (CΔ7 Cmaj7)
+      progression: (A9 Eb9) (DΔ7 Dmaj7) (G9 Db9) (CΔ7 Cmaj7)
     - title: Dominant13 Workout
       progression: A13 (DΔ7 Dmaj7) (G13 Db13) (CΔ7 Cmaj7)
     - title: Dominant Sus4 Workout
-      progression: A7sus4 Dsus4 Gsus4 (CΔ7 Cmaj7)
+      progression: A7sus4 D7sus4 G7sus4 (CΔ7 Cmaj7)
     - title: Dominant7 b9 Workout
       progression: F#7b9 Bm7 E7b9 Am7
     - title: "Dominant7 #9 Workout"
