@@ -29,31 +29,41 @@ public class JamDeck extends AbstractDeck<JamCard> {
     this.instrument = instrument;
     this.withGuitar = withGuitar;
     //addCards(EnumSet.of(Test, AllKeys));
-    //addCards(EnumSet.of(Triads, EachKey, AllKeys));
-    //addCards(Set.of(SimpleBlues, JazzBlues, SomeKeys), Set.of(funk(70), funk(90), latin(120)));
-    addCards(Set.of(JazzBlues, SomeKeys), Set.of(latin(125)));
+    
+    addCards(Set.of(Triads, EachKey, AllKeys), Set.of(funk(70), funk(90), latin(120)));
+    addCards(Set.of(Workouts, SomeKeys, AllKeys), Set.of(funk(70), funk(90), latin(120)));
+    addCards(Set.of(TwoFiveOnes, EachKey), Set.of(funk(70), funk(90), latin(120)));
+    addCards(Set.of(ExtTwoFiveOnes, EachKey, AllKeys), Set.of(funk(70), funk(90), latin(120)));
+    addCards(Set.of(JazzBlues, EachKey), Set.of(funk(70), funk(90), latin(120)));
+    System.out.println(String.format("Total number of cards: %d", getCards().size()));
   }
 
   // TODO: someKeys instead of eachKey, increase tempo slowly
   // different random chords per fretboard position -> uuid good enough for assedId
   private void addCards(Set<Feature> features, Set<Ensemble> ensembles) {
+    int numberOfCards = 0;
     for (Ensemble ensemble: ensembles) {
-      addCards(ensemble, features);
+      numberOfCards += addCards(ensemble, features);
     }
+    System.out.println(String.format("%5d cards added for %s and %s", numberOfCards, features, ensembles));
   }
 
-  private void addCards(Ensemble ensemble, Set<Feature> features) {
+  private int addCards(Ensemble ensemble, Set<Feature> features) {
+    int numberOfCards = 0;
     LoopIteratorFactory iteratorFactory = Utils.randomLoopIteratorFactory();
     SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
     for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
       if (withGuitar) {
         for (FretboardPosition position : FretboardPosition.values()) {
           add(new JamCard(instrument, context, wrapper, ensemble, position));
+          numberOfCards ++;
         }
       } else {
         add(new JamCard(instrument, context, wrapper, ensemble));
+        numberOfCards ++;
       }
     }
+    return numberOfCards;
   }
 
  

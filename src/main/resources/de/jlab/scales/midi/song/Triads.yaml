@@ -11,11 +11,11 @@ progressions:
     - title: Major Triads
       progression: A D G C
     - title: Minor Triads
-      progression: Am Dm G C
+      progression: Am Dm G Cm
     - title: Diminished Triads
-      progression: Adim Ddim G C
+      progression: Adim Ddim Fdim Cm
     - title: Augmented Triads
-      progression: Am Ddim Gaug Cm
+      progression: Aaug Ddim Gaug Cm
     - title: All Triads
-      progression: Am Ddim (Gaug C#) (Cm C)
+      progression: Am Ddim Gaug C
 

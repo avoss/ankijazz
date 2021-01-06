@@ -22,12 +22,12 @@ public class Ensemble {
   private final Tempo tempo;
   private final int ticksPerBar;
   private final int beatsPerBar;
+  private final String style;
   
   private int midiChannel = -1;
   private int drumVolume = 100;
   private int drumPan = 0;
   private Optional<Part> countInPart = Optional.empty();
-  private String style;
   
   public Ensemble(String style, int ticksPerBar, TimeSignature timeSignature, Tempo tempo) {
     this.style = style;
@@ -110,5 +110,9 @@ public class Ensemble {
   
   public int getBpm() {
     return tempo.getBpm();
+  }
+  @Override
+  public String toString() {
+    return style.concat(" ").concat(Integer.toString(tempo.getBpm())).concat(" bpm");
   }
 }
