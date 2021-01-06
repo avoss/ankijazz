@@ -30,8 +30,8 @@ public class JamDeck extends AbstractDeck<JamCard> {
     this.withGuitar = withGuitar;
     //addCards(EnumSet.of(Test, AllKeys));
     //addCards(EnumSet.of(Triads, EachKey, AllKeys));
-    addCards(Set.of(SimpleBlues, JazzBlues, SomeKeys), Set.of(funk(70), funk(90), latin(120)));
-    //addCards(Set.of(JazzBlues, SomeKeys), Set.of(funk(70), funk(90), latin(125)));
+    //addCards(Set.of(SimpleBlues, JazzBlues, SomeKeys), Set.of(funk(70), funk(90), latin(120)));
+    addCards(Set.of(JazzBlues, SomeKeys), Set.of(latin(125)));
   }
 
   // TODO: someKeys instead of eachKey, increase tempo slowly

@@ -3,12 +3,19 @@
 #   A B C = play 1st bar chord A, 2nd bar chord B and 3rd bar chord C
 #   (A B) C = play 1st bar either A or B, and 2nd bar C
 #   [A B] C = play 1st bar two chords (A and B, each 2 beats) and 2nd bar chord C
-# these may be mixed.
-
-# FIXME align with https://de.wikipedia.org/wiki/Jazzblues - e.g. add minor blues
+# these can be mixed.
 
 id: JazzBlues
 title: Jazz Blues
 progressions:
    - title: Jazz Blues
-     progression: C7 F9 C7 [C7sus4 C7] F7 F#dim7 C7 (A7#5 A7b9) (Dm7 Dm9) (G7#5 G7b9) [C7 (A7#5 A7b9)] [(Dm7 Dm9) (G7#5 G7b9)]
+     progression: >-2 
+       C7 F9 C7 [C7sus4 C7] 
+       F7 F#dim7 C7 (A7#5 A7b9 [A7sus4 A7]) 
+       (Dm7 Dm9) (G7#5 G7b9) [C7 (A7#5 A7b9)] [(Dm7 Dm9) (G7#5 G7b9)]
+
+   - title: Minor Jazz Blues
+     progression: >-2
+       (Am7 Am9) (Dm7 Dm9) (Am7 Am9) [Em7b5 (A7b9 A7#5)]
+       (Dm7 Dm9) (Dm7 Dm9) (Am7 Am9) (Am7 Am9)
+       F7b5 (E7b9 E7b13 E7#5) (Am7 Am9) [Bm7b5 (E7b9 E7b13 E7#5)] 

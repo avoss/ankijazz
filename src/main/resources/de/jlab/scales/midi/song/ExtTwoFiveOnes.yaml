@@ -1,3 +1,10 @@
+# id - must match one of the SongFactory.Feature enum literals (exactly) - otherwise exception will be thrown
+# progression:
+#   A B C = play 1st bar chord A, 2nd bar chord B and 3rd bar chord C
+#   (A B) C = play 1st bar either A or B, and 2nd bar C
+#   [A B] C = play 1st bar two chords (A and B, each 2 beats) and 2nd bar chord C
+# these can be mixed.
+
 id: ExtTwoFiveOnes
 title: Extended II-V-I Progressions
 progressions:
