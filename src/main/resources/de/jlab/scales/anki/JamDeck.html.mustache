@@ -14,16 +14,16 @@
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      This deck contains chord progressions commonly used in Jazz and other styles. For details visit <a href="https://www.ankijazz.com">AnkiJazz.com</a>
+      This deck contains chords and chord progressions commonly used in Jazz and other music styles. 
+      For details visit <a href="https://www.ankijazz.com">AnkiJazz.com</a>
     </p>
     {{#cards}}
       <div class="card border-secondary mb-3">
         <h4 class="card-header">
-          Play {{progression}} in {{key}}
+          {{progression}} in {{key}}
           {{#withGuitar}}
           in {{position.label}} Position
           {{/withGuitar}}
-          
         </h4>
         <div class="card-body">
           {{#withGuitar}}

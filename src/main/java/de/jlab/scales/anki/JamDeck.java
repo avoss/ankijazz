@@ -28,13 +28,14 @@ public class JamDeck extends AbstractDeck<JamCard> {
     super(title, "JamDeck".concat(instrument.name()).concat(withGuitar ? "Guitar" : ""));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
-    //addCards(EnumSet.of(Test, AllKeys));
+//    addCards(Set.of(Test, AllKeys), Set.of(latin(125)));
     
-    addCards(Set.of(Triads, EachKey, AllKeys), Set.of(funk(70), funk(90), latin(120)));
-    addCards(Set.of(Workouts, SomeKeys, AllKeys), Set.of(funk(70), funk(90), latin(120)));
-    addCards(Set.of(TwoFiveOnes, EachKey), Set.of(funk(70), funk(90), latin(120)));
-    addCards(Set.of(ExtTwoFiveOnes, EachKey, AllKeys), Set.of(funk(70), funk(90), latin(120)));
-    addCards(Set.of(JazzBlues, EachKey), Set.of(funk(70), funk(90), latin(120)));
+    Set<Ensemble> ensembles = Set.of(funk(70), latin(120));
+    addCards(Set.of(Triads, EachKey, AllKeys), ensembles);
+    addCards(Set.of(Workouts, SomeKeys, AllKeys), ensembles);
+    addCards(Set.of(TwoFiveOnes, EachKey), ensembles);
+    addCards(Set.of(ExtTwoFiveOnes, EachKey, AllKeys), ensembles);
+    addCards(Set.of(JazzBlues, EachKey), ensembles);
     System.out.println(String.format("Total number of cards: %d", getCards().size()));
   }
 

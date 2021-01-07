@@ -119,10 +119,11 @@ public class TestUtils {
     deck.writeAssets(ankiDir);
 
     Deck<?> subdeck = deck.subdeck(32);
-    Path jsonDir = Paths.get("build/preview");
-    subdeck.writeHtml(jsonDir);
-    subdeck.writeJson(jsonDir);
-    subdeck.writeAssets(jsonDir);
+    Path previewDir = Paths.get("build/preview");
+    deck.writeAnki(previewDir); 
+    subdeck.writeHtml(previewDir);
+    subdeck.writeJson(previewDir);
+    subdeck.writeAssets(previewDir);
   }
 
   public static KeySignature majorKeySignature(Note root) {

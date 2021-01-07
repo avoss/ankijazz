@@ -53,17 +53,9 @@ progressions:
       progression: (F#7b9b13 F#b9#5) Bm7 (E7b9b13 E7b9#5) Am7
       comment: tritone sub of Dominant 9
       
-#    - title: "Dominant7 #9#11 Workout"
-#      progression: F#7#9#11 Bm7b5 E7#9#11 Am7
-#    - title: "Dominant7 #9b13 = #9#5 Workout"
-#      progression: (F#7#9#5 F#7#9b13) Bm7b5 (E7#9#5 E7#9b13) Am7
     - title: Diminished7 Workout
       progression: Gdim7 Bm7 Fdim7 Am7
     - title: MinorMajor7 Workout
       progression: FΔ7 Bm7b5 E7b9 AmΔ7
-    - title: "Major #11 Workout"
-      progression: Dm7 G7 (CΔ7 Cmaj7) FΔ7#11
 
-#    - title: Altered Dominant Workout
-#      progression: (A7b9#11 A7b9b13 A7#9#11 A7#9b13) (D7b9#11 D7b9b13 D7#9#11 D7#9b13) (G7b9#11 G7b9b13 G7#9#11 G7#9b13) CΔ7
 
