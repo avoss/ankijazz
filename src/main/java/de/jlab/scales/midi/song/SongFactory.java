@@ -15,6 +15,7 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.midi.song.ProgressionFactory.Progression;
@@ -29,6 +30,7 @@ public class SongFactory {
   private Map<Feature, List<? extends KeyFactory>> keyFactories = new HashMap<>();
   private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
   private Set<Song> songsGeneratedSoFar = new HashSet<>();
+  private LoopIteratorFactory iteratorFactory;
 
   public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, SimpleBlues, JazzBlues, EachKey, SomeKeys, AllKeys }
 
@@ -36,7 +38,7 @@ public class SongFactory {
     String getTitle();
     Iterator<KeySignature> getSignatures();
     int getNumberOfKeys();
-    void nextSong();
+    void nextSong(boolean minor);
   }
   
   @Data
@@ -45,76 +47,66 @@ public class SongFactory {
     private final Iterator<KeySignature> signatures;
     private final int numberOfKeys;
     
-
     @Override
-    public String getTitle() {
-      return title;
-    }
-    
-    @Override
-    public void nextSong() {
+    public void nextSong(boolean minor) {
     }
   }
 
-  List<? extends KeyFactory> eachKey(LoopIteratorFactory iteratorFactory) {
-    List<KeyFactory> keys = new ArrayList<>();
-    for (Note root : Note.values()) {
-      for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(root)) {
-        String title = "Key of ".concat(keySignature.getKeySignatureString());
-        keys.add(new SimpleKeyFactory(title, iteratorFactory.iterator(singletonList(keySignature)), 1));
-      }
-    }
-    return keys;
-  }
-
-  List<? extends KeyFactory> someKeys(LoopIteratorFactory iteratorFactory) {
-    Iterator<KeySignature> keySignatures = iteratorFactory.iterator(Arrays.stream(Note.values())
-        .flatMap(root ->  BuiltinScaleType.Major.getKeySignatures(root).stream())
-        .collect(Collectors.toList()));
-    return List.of(new KeyFactory() {
-      String title;
-      KeySignature keySignature;
-      
-      @Override
-      public String getTitle() {
-        return title;
-      }
-
-      @Override
-      public Iterator<KeySignature> getSignatures() {
-        return iteratorFactory.iterator(List.of(keySignature));
-      }
-
-      @Override
-      public int getNumberOfKeys() {
-        return 16;
-      }
-
-      @Override
-      public void nextSong() {
-        this.keySignature = keySignatures.next();
-        this.title = "Key of ".concat(keySignature.getKeySignatureString());
-      }
-      
-    });
+  List<KeySignature> allKeySignatures() {
+    return Arrays.stream(Note.values()).flatMap(root ->  BuiltinScaleType.Major.getKeySignatures(root).stream()).collect(Collectors.toList());
   }
   
-  List<? extends KeyFactory> allKeys(LoopIteratorFactory iteratorFactory) {
-    List<KeySignature> keys = new ArrayList<>();
-    for (Note root : Note.values()) {
-      for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(root)) {
-        keys.add(keySignature);
-      }
-    }
+  List<? extends KeyFactory> allKeys() {
+    List<KeySignature> keys = allKeySignatures();
     return singletonList(new SimpleKeyFactory("Mixed Keys", iteratorFactory.iterator(keys), keys.size()));
   }
   
+  List<? extends KeyFactory> eachKey() {
+    return someKeys(allKeySignatures().size());
+  }
+
+  List<? extends KeyFactory> someKeys(int numberOfKeys) {
+    Iterator<KeySignature> keySignatures = iteratorFactory.iterator(allKeySignatures());
+    List<KeyFactory> factories = new ArrayList<>();
+    IntStream.range(0, numberOfKeys).forEach(i -> {
+      factories.add(new KeyFactory() {
+        String title;
+        KeySignature keySignature;
+        
+        @Override
+        public String getTitle() {
+          return title;
+        }
+        
+        @Override
+        public Iterator<KeySignature> getSignatures() {
+          return iteratorFactory.iterator(List.of(keySignature));
+        }
+        
+        @Override
+        public int getNumberOfKeys() {
+          return 1;
+        }
+        
+        @Override
+        public void nextSong(boolean minor) {
+          this.keySignature = keySignatures.next();
+          this.title = "Key of ".concat(keySignature.getKeySignatureString());
+        }
+        
+      });
+    });
+    return factories;
+  }
+  
+  
   public SongFactory(LoopIteratorFactory iteratorFactory, ProgressionFactory progressionFactory, Set<Feature> features) {
+    this.iteratorFactory = iteratorFactory;
     this.features = features;
     
-    keyFactories.put(AllKeys, allKeys(iteratorFactory));
-    keyFactories.put(SomeKeys, someKeys(iteratorFactory));
-    keyFactories.put(EachKey, eachKey(iteratorFactory));
+    keyFactories.put(AllKeys, allKeys());
+    keyFactories.put(SomeKeys, someKeys(4));
+    keyFactories.put(EachKey, eachKey());
     
     for (ProgressionSet set: progressionFactory.getProgressionSets()) {
       Feature feature = Feature.valueOf(set.getId());
@@ -145,7 +137,7 @@ public class SongFactory {
     }
     List<SongWrapper> songs = new ArrayList<>();
     for (int i = 0; i < numberOfSongs; i++) {
-      key.nextSong();
+      key.nextSong(progression.isMinor());
       List<Bar> bars = new ArrayList<>();
       for (int j = 0; j < numberOfProgressionsInSong; j++) {
         bars.addAll(progression.create(key.getSignatures().next()));

@@ -1,9 +1,12 @@
 package de.jlab.scales.midi.song;
 
+import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
+import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Test;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
@@ -17,22 +20,32 @@ import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.SongFactory.Feature;
+import de.jlab.scales.midi.song.SongFactory.KeyFactory;
+import static org.assertj.core.api.Assertions.*;
 
 public class SongFactoryTest {
+  
+  @Test
+  public void testKeyFactoryMinorMajor() {
+    SongFactory factory = factory(Set.of());
+    KeyFactory eachKey = factory.eachKey().get(2);
+    eachKey.nextSong(false);
+    assertEquals("Key of D Major", eachKey.getTitle());
+  }
 
   @Test
   public void testKeys() {
-    assertNumberOfSongs(EnumSet.of(Test, EachKey), 13);
-    assertNumberOfSongs(EnumSet.of(Test, AllKeys), 4);
+    assertNumberOfSongs(Set.of(Test, EachKey), 13);
+    assertNumberOfSongs(Set.of(Test, AllKeys), 4);
   }
 
-  private void assertNumberOfSongs(EnumSet<Feature> features, int expectedNumberOfSongs) {
+  private void assertNumberOfSongs(Set<Feature> features, int expectedNumberOfSongs) {
     SongFactory factory = factory(features);
     List<SongWrapper> songs = factory.generate(16);
     assertEquals(expectedNumberOfSongs, songs.size());
   }
 
-  private SongFactory factory(EnumSet<Feature> features) {
+  private SongFactory factory(Set<Feature> features) {
     LoopIteratorFactory iterators = Utils.fixedLoopIteratorFactory();
     return new SongFactory(iterators, new ProgressionFactory(iterators), features);
   }
@@ -49,5 +62,23 @@ public class SongFactoryTest {
   @Test
   public void testProgressionMustNotSpanSongBoundaries() {
     assertEquals(12, factory(EnumSet.of(Test, AllKeys)).progressionMustNotSpanSongBoundaries(12, 16));
+  }
+  
+  @Test
+  public void testAllKeySignatures() {
+    assertThat(factory(Set.of()).allKeySignatures().size()).isEqualTo(13);
+  }
+  
+  @Test
+  public void testSongGenerator() {
+    assertFactoryGenerates(factory(Set.of(Test, AllKeys)), "testAllKeys.txt");
+    assertFactoryGenerates(factory(Set.of(Test, EachKey)), "testEachKey.txt");
+    assertFactoryGenerates(factory(Set.of(Test, SomeKeys)), "testSomeKeys.txt");
+  }
+
+  private void assertFactoryGenerates(SongFactory factory, String fileName) {
+    List<SongWrapper> wrapper = factory.generate(16);
+    List<String> actual = wrapper.stream().map(SongWrapper::toString).collect(toList());
+    assertFileContentMatches(actual, SongFactoryTest.class, fileName);
   }
 }

@@ -26,6 +26,7 @@ public class ProgressionFactory {
     String getProgression();
     int getNumberOfBars();
     List<Bar> create(KeySignature keySignature);
+    boolean isMinor();
   }
   
   public static class ChordProgression implements Progression {
@@ -38,6 +39,10 @@ public class ProgressionFactory {
     @Getter
     @Setter
     private String progression;
+    @Getter
+    @Setter
+    private boolean minor;
+    
     private List<ChordFactory> chordFactories = null;
     private LoopIteratorFactory loopIteratorFactory;
 
