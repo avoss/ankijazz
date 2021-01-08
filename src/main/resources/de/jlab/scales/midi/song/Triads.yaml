@@ -4,18 +4,24 @@
 #   (A B) C = play 1st bar either A or B, and 2nd bar C
 #   [A B] C = play 1st bar two chords (A and B, each 2 beats) and 2nd bar chord C
 # these can be mixed.
+# Major progressions must be in key of C, minor progressions in key of Am
 
 id: Triads
 title: Triads
 progressions:
     - title: Major Triads
+      minor: false
       progression: A D G C
     - title: Minor Triads
-      progression: Am Dm G Cm
+      minor: true
+      progression: F#m Bm E Am
     - title: Diminished Triads
-      progression: Adim Ddim Fdim Cm
+      minor: true
+      progression: F#dim Bdim Edim Am
     - title: Augmented Triads
-      progression: Aaug Ddim Gaug Cm
+      minor: true
+      progression: F#aug Bdim Eaug Am
     - title: All Triads
-      progression: Am Ddim Gaug C
+      minor: true
+      progression: F Bdim Eaug Am
 

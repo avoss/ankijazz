@@ -44,8 +44,9 @@ public class ChordParser {
     string = string.replace("Δ7", "maj7"); // bug in regex?
     string = string.replace("Δ9", "maj9"); // bug in regex?
     Matcher matcher = chordPattern.matcher(string);
-    if (!matcher.find())
+    if (!matcher.find()) {
       throw new ParseChordException("Not a chord: " + string);
+    }
     Note root = noteNameMap.get(matcher.group(1).toLowerCase());
     if (root == null)
       throw new ParseChordException("Root not found: " + string);

@@ -3,6 +3,7 @@ package de.jlab.scales.midi.song;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
 import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
+import static java.lang.String.format;
 import static java.util.Collections.singletonList;
 
 import java.util.ArrayList;
@@ -90,8 +91,14 @@ public class SongFactory {
         
         @Override
         public void nextSong(boolean minor) {
-          this.keySignature = keySignatures.next();
-          this.title = "Key of ".concat(keySignature.getKeySignatureString());
+          keySignature = keySignatures.next();
+          Note root = keySignature.getNotationKey();
+          final String format = "Key of %s %s";
+          if (minor) {
+            title = format(format, keySignature.notate(root.major6()), "Minor");
+          } else {
+            title = format(format, keySignature.notate(root), "Major");
+          }
         }
         
       });
@@ -117,9 +124,9 @@ public class SongFactory {
   
   public List<SongWrapper> generate(int numberOfBars) {
     List<SongWrapper> songs = new ArrayList<>();
-    features.stream().map(keyFactories::get).filter(Objects::nonNull).flatMap(List::stream).forEach(key -> {
-      features.stream().map(progressionSets::get).filter(Objects::nonNull).forEach(progressionSet -> {
-        progressionSet.getProgressions().stream().forEach(progression -> {
+    features.stream().map(progressionSets::get).filter(Objects::nonNull).forEach(progressionSet -> {
+      progressionSet.getProgressions().stream().forEach(progression -> {
+        features.stream().map(keyFactories::get).filter(Objects::nonNull).flatMap(List::stream).forEach(key -> {
           songs.addAll(play(key, progressionSet, progression, numberOfBars));
         });
       });

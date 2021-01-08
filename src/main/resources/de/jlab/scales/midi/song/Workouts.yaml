@@ -4,6 +4,7 @@
 #   (A B) C = play 1st bar either A or B, and 2nd bar C
 #   [A B] C = play 1st bar two chords (A and B, each 2 beats) and 2nd bar chord C
 # these can be mixed.
+# Major progressions must be in key of C, minor progressions in key of Am
 
 id: Workouts
 title: Workouts
@@ -20,14 +21,19 @@ progressions:
       progression: (CΔ7#5 Cmaj7#5) C6 (CΔ7#5 Cmaj7#5) C6
 
     - title: Minor6 Workout
+      minor: true
       progression: F#m6 Bm6 (E7b9 Bb7) Am6
     - title: Minor7 Workout 
+      minor: true
       progression: Dm7 Em7 Dm7 Em7
     - title: Minor9 Workout
+      minor: true
       progression: F#m9 Bm9 (E7b9 Bb7) Am9
     - title: Minor11 Workout
+      minor: true
       progression: F#m11 Bm11 (E7b9 Bb7) Am11
     - title: Minor7b5 Workout
+      minor: true
       progression: F#m7b5 Bm7b5 (E7b9 Bb7) Am7
       
     - title: Dominant7 Workout
@@ -39,23 +45,31 @@ progressions:
     - title: Dominant Sus4 Workout
       progression: A7sus4 D7sus4 G7sus4 (CΔ7 Cmaj7)
     - title: Dominant7 b9 Workout
+      minor: true
       progression: F#7b9 Bm7 E7b9 Am7
     - title: "Dominant7 #9 Workout"
+      minor: true
       progression: F#7#9 Bm7 E7#9 Am7
     - title: "Dominant7 #11 = b5 Workout"
+      minor: true
       progression: (F#7#11 F#7b5) Bm7 (E7#11 E7b5) Am7
     - title: "Dominant7 b13 = #5 Workout"
+      minor: true
       progression: (F#7b13 F#7#5) Bm7 (E7b13 E7#5) Am7
     - title: "Dominant7 b9#11 = b9b5 Workout"
+      minor: true
       progression: (F#7b9b5 F#7b9#11) Bm7 (E7b9b5 E7b9#11) Am7
       comment: tritone sub of Dominant 7
     - title: "Dominant7 b9b13 = b9#5 Workout"
+      minor: true
       progression: (F#7b9b13 F#b9#5) Bm7 (E7b9b13 E7b9#5) Am7
       comment: tritone sub of Dominant 9
       
     - title: Diminished7 Workout
+      minor: true
       progression: Gdim7 Bm7 Fdim7 Am7
     - title: MinorMajor7 Workout
+      minor: true
       progression: FΔ7 Bm7b5 E7b9 AmΔ7
 
 

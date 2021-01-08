@@ -28,15 +28,19 @@ public class SongFactoryTest {
   @Test
   public void testKeyFactoryMinorMajor() {
     SongFactory factory = factory(Set.of());
-    KeyFactory eachKey = factory.eachKey().get(2);
-    eachKey.nextSong(false);
-    assertEquals("Key of D Major", eachKey.getTitle());
+    KeyFactory[] eachKey = factory.eachKey().toArray(new KeyFactory[0]);
+    eachKey[0].nextSong(false);
+    assertEquals("Key of C Major", eachKey[0].getTitle());
+    eachKey[0].nextSong(false);
+    assertEquals("Key of Db Major", eachKey[0].getTitle());
+    eachKey[1].nextSong(true);
+    assertEquals("Key of B Minor", eachKey[1].getTitle());
   }
 
   @Test
   public void testKeys() {
-    assertNumberOfSongs(Set.of(Test, EachKey), 13);
-    assertNumberOfSongs(Set.of(Test, AllKeys), 4);
+    assertNumberOfSongs(Set.of(Test, EachKey), 3 * 13);
+    assertNumberOfSongs(Set.of(Test, AllKeys), 3 * 4);
   }
 
   private void assertNumberOfSongs(Set<Feature> features, int expectedNumberOfSongs) {
