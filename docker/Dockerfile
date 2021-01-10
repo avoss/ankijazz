@@ -14,8 +14,13 @@ RUN chmod 700 /root/.ssh && chmod 600 /root/.ssh/authorized_keys
 
 COPY anki.sh /root/.
 RUN chmod 755 /root/anki.sh
+RUN dos2unix /root/anki.sh
 
 COPY imagemagick-policy.xml /etc/ImageMagick-6/policy.xml
+
+# install documentation and other data for system where users log-in
+# RUN apt-get install -y man-db
+# RUN unminimize -y
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
