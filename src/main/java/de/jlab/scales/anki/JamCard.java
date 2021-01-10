@@ -125,6 +125,7 @@ public class JamCard implements Card {
     return Utils.assetId(allBytes);
   }
 
+  @Override
   public String getAssetId() {
     return assetId;
   }

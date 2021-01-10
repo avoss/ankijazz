@@ -13,23 +13,23 @@ import de.jlab.scales.Utils;
 public abstract class LilyCard implements Card {
 
   private String lilyString;
-  private String lilyId;
+  private String assetId;
 
   public LilyCard(String lilyString) {
     this.lilyString = lilyString;
-    this.lilyId = Utils.assetId(lilyString);
+    this.assetId = Utils.assetId(lilyString);
   }
 
   public String getPngName() {
-    return format("%s.png", lilyId);
+    return format("%s.png", assetId);
   }
 
   public String getMp3Name() {
-    return format("%s.mp3",  lilyId);
+    return format("%s.mp3",  assetId);
   }
 
   public String getLilyName() {
-    return format("%s.ly", lilyId);
+    return format("%s.ly", assetId);
   }
   
   @Override
@@ -40,6 +40,11 @@ public abstract class LilyCard implements Card {
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+  
+  @Override
+  public String getAssetId() {
+    return assetId;
   }
 
 }

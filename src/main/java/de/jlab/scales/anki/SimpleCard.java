@@ -44,6 +44,12 @@ public class SimpleCard implements Card {
   
   @Override
   public void writeAssets(Path directory) {
+    // no assets
+  }
+  
+  @Override
+  public String getAssetId() {
+    return SimpleCard.class.getName();
   }
   
   public Map<String, String> getFields() {

@@ -30,7 +30,7 @@ public class JamDeck extends AbstractDeck<JamCard> {
     this.withGuitar = withGuitar;
     // addCards(Set.of(Test, AllKeys), Set.of(latin(125)));
     
-    Set<Ensemble> ensembles = Set.of(funk(90), latin(125));
+    Set<Ensemble> ensembles = Set.of(funk(80), latin(125));
     addCards(Set.of(Triads, EachKey, AllKeys), ensembles);
     addCards(Set.of(Workouts, SomeKeys, AllKeys), ensembles);
     addCards(Set.of(TwoFiveOnes, EachKey), ensembles);
@@ -39,8 +39,6 @@ public class JamDeck extends AbstractDeck<JamCard> {
     System.out.println(String.format("Total number of cards: %d", getCards().size()));
   }
 
-  // TODO: someKeys instead of eachKey, increase tempo slowly
-  // different random chords per fretboard position -> uuid good enough for assedId
   private void addCards(Set<Feature> features, Set<Ensemble> ensembles) {
     int numberOfCards = 0;
     for (Ensemble ensemble: ensembles) {

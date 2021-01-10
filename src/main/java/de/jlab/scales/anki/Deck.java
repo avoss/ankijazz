@@ -3,13 +3,14 @@ package de.jlab.scales.anki;
 import java.nio.file.Path;
 import java.util.List;
 
-public interface Deck<T extends Card> extends WithAssets {
+public interface Deck<T extends Card> {
 
   void add(T card);
 
   void writeAnki(Path dir);
   void writeJson(Path dir);
   void writeHtml(Path dir);
+  void writeAssets(Path directory);
 
   /**
    * 0.0 = sort by difficulty

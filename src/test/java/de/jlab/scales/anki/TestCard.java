@@ -35,6 +35,11 @@ public class TestCard extends MustacheCard {
   @Override
   public void writeAssets(Path directory) {
   }
+  
+  @Override
+  public String getAssetId() {
+    return TestCard.class.getName();
+  }
 
   public TestModel getModel() {
     return model;

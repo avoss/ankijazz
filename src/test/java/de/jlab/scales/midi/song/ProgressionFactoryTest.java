@@ -27,7 +27,7 @@ public class ProgressionFactoryTest {
     
     Progression minorProgression = set.getProgressions().get(1);
     Song minorSong = new Song(minorProgression.create(TestUtils.majorKeySignature(Note.C)));
-    assertEquals("| Am | Dm | G | Cm |", minorSong.toString());
+    assertEquals("| Gbm | Bm | E | Am |", minorSong.toString());
     assertTrue(minorProgression.isMinor());
     
   }

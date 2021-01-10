@@ -9,7 +9,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -65,8 +67,14 @@ public abstract class AbstractDeck<T extends Card> implements Deck<T> {
   @Override
   public void writeAssets(Path dir) {
     try {
+      Set<String> assets = Collections.synchronizedSet(new HashSet<>());
       Files.createDirectories(dir);
-      cards.forEach(c -> c.writeAssets(dir));
+      cards.stream().parallel().forEach(card -> {
+        if (assets.add(card.getAssetId())) {
+          card.writeAssets(dir);
+        }
+      });
+        
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }

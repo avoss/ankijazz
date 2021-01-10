@@ -65,6 +65,10 @@ public class LilyMetronome implements WithAssets {
       writeAsset(dir, assetId + ".ly", templates.get(assetId));
     }
   }
+  @Override
+  public String getAssetId() {
+    return LilyMetronome.class.getName();
+  }
 
   // TODO move to Utils or similar
   private void writeAsset(Path dir, String fileName, String content) {

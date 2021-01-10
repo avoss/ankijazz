@@ -37,6 +37,11 @@ public class GnCard implements Card {
   public void writeAssets(Path directory) {
 
   }
+  
+  @Override
+  public String getAssetId() {
+    return song.name();
+  }
 
   @Override
   public String getCsv() {
