@@ -1,7 +1,7 @@
 package de.jlab.scales.difficulty;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -63,7 +63,7 @@ public class DifficultyModel implements WithDifficulty {
   }
 
 
-  private final Set<Term> terms = new HashSet<>();
+  private final List<Term> terms = new ArrayList<>();
   
   @Override
   public double getDifficulty() {

@@ -71,4 +71,13 @@ public class DifficultyModelTest {
     doubleTerm.update(30);
     assertThat(model.getDifficulty()).isCloseTo(0.666, EPS);
   }
+  
+  @Test
+  public void testBugFix() {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleTerm(100).update(0.5);
+    model.doubleTerm(100).update(1.0);
+    assertThat(model.getDifficulty()).isCloseTo(0.75, EPS);
+    
+  }
 }
