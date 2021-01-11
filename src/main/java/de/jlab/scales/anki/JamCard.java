@@ -14,6 +14,7 @@ import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.jtg.PngImageRenderer;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.HumanizingMidiOut;
@@ -23,6 +24,7 @@ import de.jlab.scales.midi.Part;
 import de.jlab.scales.midi.TransposingMidiOut;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.Song;
+import de.jlab.scales.midi.song.SongDifficultyModel;
 import de.jlab.scales.midi.song.SongWrapper;
 import de.jlab.scales.theory.Note;
 
@@ -35,7 +37,8 @@ public class JamCard implements Card {
   private final Song song;
   private final Note instrument;
   private final Optional<FretboardPosition> position;
-
+  private final double difficulty;
+  
   public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Ensemble ensemble, FretboardPosition position) {
     this(instrument, context, wrapper, ensemble, Optional.of(position));
   }
@@ -52,13 +55,22 @@ public class JamCard implements Card {
     this.position = position;
     this.song = wrapper.getSong();
     this.assetId = computeAssetId();
+    this.difficulty = computeDifficulty();
   }
 
 
+  private double computeDifficulty() {
+    DifficultyModel model = new DifficultyModel();
+    double songDifficulty = new SongDifficultyModel().getDifficulty(wrapper.getSong());
+    model.doubleTerm(100).update(songDifficulty);
+    model.doubleTerm(60, 140, 50).update(ensemble.getBpm());
+    double difficulty = model.getDifficulty();
+    return difficulty;
+  }
+
   @Override
   public double getDifficulty() {
-    // TODO Auto-generated method stub
-    return 0;
+    return difficulty;
   }
 
   @Override

@@ -122,12 +122,12 @@ public class SongFactory {
     
   }
   
-  public List<SongWrapper> generate(int numberOfBars) {
+  public List<SongWrapper> generate(int maxNumberOfBarsInSong) {
     List<SongWrapper> songs = new ArrayList<>();
     features.stream().map(progressionSets::get).filter(Objects::nonNull).forEach(progressionSet -> {
       progressionSet.getProgressions().stream().forEach(progression -> {
         features.stream().map(keyFactories::get).filter(Objects::nonNull).flatMap(List::stream).forEach(key -> {
-          songs.addAll(play(key, progressionSet, progression, numberOfBars));
+          songs.addAll(play(key, progressionSet, progression, maxNumberOfBarsInSong));
         });
       });
     });
@@ -154,7 +154,6 @@ public class SongFactory {
         SongWrapper songWrapper = SongWrapper.builder()
           .song(song)
           .key(key.getTitle())
-          .mixedKeys(key.getNumberOfKeys() > 1)
           .progressionSet(progressionSet.getTitle())
           .progression(progression.getTitle())
           .build();

@@ -56,13 +56,13 @@ progressions:
     - title: "Dominant7 b13 = #5 Workout"
       minor: true
       progression: (F#7b13 F#7#5) Bm7 (E7b13 E7#5) Am7
-    - title: "Dominant7 b9#11 = b9b5 Workout"
+    - title: "Dominant7 b9#11 = b5b9 Workout"
       minor: true
-      progression: (F#7b9b5 F#7b9#11) Bm7 (E7b9b5 E7b9#11) Am7
+      progression: (F#7b5b9 F#7b9#11) Bm7 (E7b5b9 E7b9#11) Am7
       comment: tritone sub of Dominant 7
-    - title: "Dominant7 b9b13 = b9#5 Workout"
+    - title: "Dominant7 b9b13 = #5b9 Workout"
       minor: true
-      progression: (F#7b9b13 F#b9#5) Bm7 (E7b9b13 E7b9#5) Am7
+      progression: (F#7b9b13 F7#5b9) Bm7 (E7b9b13 E7#5b9) Am7
       comment: tritone sub of Dominant 9
       
     - title: Diminished7 Workout

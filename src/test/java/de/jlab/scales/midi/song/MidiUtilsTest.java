@@ -34,4 +34,9 @@ public class MidiUtilsTest {
     assertEquals(50, MidiUtils.noteToMidiPitchBelow(60, Note.D));
     assertEquals(59, MidiUtils.noteToMidiPitchBelow(60, Note.B));
   }
+  
+  @Test
+  public void testSong() {
+    assertEquals("| Cm7 | F7 |", MidiTestUtils.song("Cm7 F7").toString());
+  }
 }

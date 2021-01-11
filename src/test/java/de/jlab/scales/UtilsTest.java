@@ -17,6 +17,7 @@ import org.junit.Test;
 
 import de.jlab.scales.Utils.Interpolator;
 import de.jlab.scales.theory.Scale;
+import static org.assertj.core.api.Assertions.*;
 
 public class UtilsTest {
 
@@ -55,5 +56,10 @@ public class UtilsTest {
     assertEquals(28, interpolator.apply(7));
     assertEquals(40, interpolator.apply(10));
     assertEquals(40, interpolator.apply(20));
+  }
+  
+  @Test
+  public void testAllChords() {
+    assertThat(TestUtils.allChords()).contains("C6", "Em9", "DbΔ7", "F#7b9", "Gb7b9");
   }
 }

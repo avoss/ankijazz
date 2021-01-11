@@ -1,11 +1,15 @@
 package de.jlab.scales.midi.song;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.BuiltinChordType;
+import de.jlab.scales.theory.ChordParser;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleUniverse;
@@ -34,13 +38,21 @@ public class MidiTestUtils {
         .build();
   }
   
-  public static Song createStaticSong() {
+  public static Song staticSong() {
     return new Song(List.of(Bar.of(Chord.of(Scales.Cm7, "Cm7")), Bar.of(Chord.of(Scales.C7.transpose(Note.F), "F7"))));
+  }
+  
+  public static Song song(String chords) {
+    List<Bar> bars = Arrays.stream(chords.split("\\s+"))
+      .map(symbol -> Chord.of(ChordParser.parseChord(symbol), symbol))
+      .map(chord -> Bar.of(chord))
+      .collect(toList());
+    return Song.of(bars);
   }
   
   public static SongWrapper createStaticSongWrapper() {
     return SongWrapper.builder()
-      .song(createStaticSong())
+      .song(staticSong())
       .key("Key of C")
       .progression("Test Progression")
       .progressionSet("Minor7Chords")
@@ -48,7 +60,7 @@ public class MidiTestUtils {
   }
   
   
-  public static Song createRandomSong(int numberOfBars) {
+  public static Song randomSong(int numberOfBars) {
     List<Bar> bars = new ArrayList<>();
     for (int i = 0; i < numberOfBars; i++) {
       bars.add(Bar.of(randomChord()));

@@ -33,6 +33,10 @@ public class Song {
   public static Song of(Bar... bars) {
     return new Song(List.of(bars));
   }
+  
+  public static Song of(List<Bar> bars) {
+    return new Song(bars);
+  }
 
   @Override
   public String toString() {

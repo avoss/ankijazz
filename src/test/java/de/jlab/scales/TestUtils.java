@@ -17,13 +17,17 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import de.jlab.scales.anki.Deck;
 import de.jlab.scales.theory.Accidental;
+import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.ScaleUniverse;
+import de.jlab.scales.theory.Scales;
 
 public class TestUtils {
   static boolean disabled = false;
@@ -113,8 +117,8 @@ public class TestUtils {
 
   public static void writeTo(Deck<?> deck, double randomness) {
     Path ankiDir = Paths.get("build/anki");
-    deck.writeHtml(ankiDir);
     deck.sort(randomness);
+    deck.writeHtml(ankiDir);
     deck.writeAnki(ankiDir); 
     deck.writeAssets(ankiDir);
 
@@ -134,6 +138,19 @@ public class TestUtils {
 
   public static KeySignature majorKeySignature(Note root, Accidental accidental) {
     return BuiltinScaleType.Major.getKeySignatures(root).stream().filter(k -> k.getAccidental() == accidental).findAny().orElseThrow();
+  }
+  
+  public static List<String> allChords() {
+    return Arrays.stream(BuiltinChordType.values()).flatMap(type -> {
+      return Arrays.stream(Note.values()).flatMap(root -> {
+        Stream<String> name = Stream.of(root.getName(Accidental.FLAT).concat(type.getTypeName()));
+        if (!Scales.CMajor.contains(root)) {
+          return Stream.concat(name, Stream.of(root.getName(Accidental.SHARP).concat(type.getTypeName())));
+        }
+        return name;
+      });
+    }).collect(Collectors.toList());
+    
   }
   
 }

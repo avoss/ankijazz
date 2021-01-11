@@ -5,7 +5,6 @@ import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 
-import java.util.EnumSet;
 import java.util.Set;
 
 import de.jlab.scales.Utils;
@@ -13,6 +12,7 @@ import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.ProgressionFactory;
+import de.jlab.scales.midi.song.SongDifficultyModel;
 import de.jlab.scales.midi.song.SongFactory;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.midi.song.SongWrapper;

@@ -10,5 +10,4 @@ public class SongWrapper {
   private final String progressionSet;
   private final String progression;
   private final String key;
-  private final boolean mixedKeys;
 }

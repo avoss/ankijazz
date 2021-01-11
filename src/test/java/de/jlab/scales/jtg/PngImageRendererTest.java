@@ -17,7 +17,7 @@ public class PngImageRendererTest {
 
   @Test
   public void testAnkiImage() {
-    Song song = MidiTestUtils.createRandomSong(ctx.getNumberOfBars());
+    Song song = MidiTestUtils.randomSong(ctx.getNumberOfBars());
     PngImageRenderer renderer = new PngImageRenderer(ctx, song);
     Path path = dir.resolve("OneChordPerBar.png");
     renderer.renderTo(path);

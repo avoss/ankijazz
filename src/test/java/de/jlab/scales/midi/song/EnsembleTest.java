@@ -82,7 +82,7 @@ public class EnsembleTest {
   public void testGrooves() throws IOException {
     RenderContext ctx = RenderContext.ANKI;
     Files.createDirectories(dir);
-    Song song = MidiTestUtils.createRandomSong(ctx.getNumberOfBars());
+    Song song = MidiTestUtils.randomSong(ctx.getNumberOfBars());
     new PngImageRenderer(ctx, song).renderTo(dir.resolve("song.png"));
     groove(song, Ensembles.latin(120), dir.resolve("latin.midi"));
     groove(song, Ensembles.funk(80), dir.resolve("funk.midi"));

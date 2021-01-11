@@ -184,8 +184,9 @@ public class ChordParser {
   }
 
   public String asChord(Scale chord) {
-    if (asTriad(chord) != null)
-        return asTriad(chord);
+    if (isTriad(chord) ) {
+      return asTriad(chord);
+    }
     
     StringBuilder sb = new StringBuilder();
     Set<Note> remaining = new TreeSet<Note>(chord.asSet());
@@ -261,6 +262,7 @@ public class ChordParser {
     return sb.toString().trim();
   }
   
+
   @SuppressWarnings("serial")
   static class NoteSet extends TreeSet<Note> {
     public NoteSet(Scale scale) {
@@ -271,9 +273,11 @@ public class ChordParser {
     }
   }
 
+  private boolean isTriad(Scale chord) {
+    return chord.asSet().size() == 3;
+  }
+  
   private String asTriad(Scale chord) {
-    if (chord.asSet().size() != 3)
-      return null;
     String root = chord.getRoot().getName(accidental);
     NoteSet set = new NoteSet(chord.transpose(C));
     if (set.containsAll(C, E, G))
