@@ -98,9 +98,13 @@ public class KeySignature {
   }
   
   public String toString(Scale scale) {
-    return scale.asList().stream().map(this::notate).collect(joining(" "));
+    return toString(scale.asList());
   }
 
+  public String toString(List<Note> notes) {
+    return notes.stream().map(this::notate).collect(joining(" "));
+  }
+  
   public int getNumberOfAccidentals() {
     return numberOfAccidentals;
   }

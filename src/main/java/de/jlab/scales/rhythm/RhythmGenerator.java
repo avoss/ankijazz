@@ -7,6 +7,7 @@ import static de.jlab.scales.rhythm.BasicRhythm.Type.TIED;
 import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.b3;
+import static de.jlab.scales.rhythm.Event.b4;
 import static de.jlab.scales.rhythm.Event.bt;
 import static de.jlab.scales.rhythm.Event.r1;
 import static de.jlab.scales.rhythm.Event.r2;
@@ -14,24 +15,28 @@ import static de.jlab.scales.rhythm.Event.r3;
 import static de.jlab.scales.rhythm.Event.r4;
 import static de.jlab.scales.rhythm.Event.rt;
 import static de.jlab.scales.rhythm.Quarter.q;
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Function;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
+import de.jlab.scales.Utils.LoopIteratorFactory;
 
 // FIXME RhythmGenerator has no tests
 public class RhythmGenerator {
 
   private static class RandomTies implements Function<List<Quarter>, List<Quarter>> {
 
-    private ThreadLocalRandom random = ThreadLocalRandom.current();
+    Iterator<Boolean> random;
+    RandomTies(LoopIteratorFactory iteratorFactory) {
+      this.random = iteratorFactory.iterator(List.of(TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, TRUE, FALSE));
+    }
     
     @Override
     public List<Quarter> apply(List<Quarter> quarters) {
@@ -53,28 +58,33 @@ public class RhythmGenerator {
     }
     
     boolean shouldCreateTie(Quarter prev, Quarter next) {
-      return random.nextBoolean(); 
+      return random.next();
     }
     
   }
   
-  private final int numberOfRhythms = 150;
+  private final int numberOfRhythms = 200;
   private final int numberOfQuarters = 16;
-  private List<Quarter> quarters;
-  private final RandomTies randomTies = new RandomTies();
+  private final Iterator<Quarter> quarterIterator;
+  
+  private final RandomTies randomTies;
+  private final LoopIteratorFactory iteratorFactory;
 
-  public RhythmGenerator() {
-    this(new QuarterGenerator().getQuarters());
+  public RhythmGenerator(LoopIteratorFactory iteratorFactory) {
+    this(iteratorFactory, new QuarterGenerator().getQuarters());
   }
 
-  public RhythmGenerator(List<Quarter> quarters) {
-    this.quarters = Collections.unmodifiableList(quarters);
+  public RhythmGenerator(LoopIteratorFactory iteratorFactory, Collection<? extends Quarter> quarters) {
+    this.iteratorFactory = iteratorFactory;
+    this.quarterIterator = iteratorFactory.iterator(quarters);
+    this.randomTies = new RandomTies(iteratorFactory);
   }
   
 
   
   public List<AbstractRhythm> generate() {
     List<AbstractRhythm> result = new ArrayList<>();
+//    result.addAll(allBlocks());
     result.addAll(basicRhythms());
     result.addAll(standardRhythms());
     result.addAll(group3Rhythms());
@@ -84,6 +94,43 @@ public class RhythmGenerator {
   }
 
 
+  private Collection<? extends AbstractRhythm> allBlocks() {
+    BasicRhythm basic = new BasicRhythm(BASIC, List.of(
+        q(b4),
+        q(b2, b2),
+        q(b3, b1),
+        q(b1, b3),
+        q(b2, b1, b1),
+        q(b1, b1, b2),
+        q(b1, b2, b1),
+        q(b1, b1, b1, b1),
+        q(bt, bt, bt)));
+
+    BasicRhythm syncopated = new BasicRhythm(SYNCOPATED, List.of(
+        q(r4),
+        q(r2, b2),
+        q(r3, b1),
+        q(r1, b3),
+        q(r2, b1, b1),
+        q(r1, b1, b2),
+        q(r1, b2, b1),
+        q(r1, b1, b1, b1),
+        q(rt, bt, bt)));
+    
+    BasicRhythm tied = new BasicRhythm(TIED, List.of(
+        q(b4),
+        q(b2, b2).tie(),
+        q(b3, b1).tie(),
+        q(b1, b3).tie(),
+        q(b2, b1, b1).tie(),
+        q(b1, b1, b2).tie(),
+        q(b1, b2, b1).tie(),
+        q(b1, b1, b1, b1).tie(),
+        q(bt, bt, bt).tie()));
+    
+    return List.of(basic, syncopated, tied);
+  }
+  
   private Collection<? extends AbstractRhythm> basicRhythms() {
     List<AbstractRhythm> result = new ArrayList<>();
     result.add(new BasicRhythm(BASIC, repeat(16, q(b2, b2))));
@@ -145,7 +192,7 @@ public class RhythmGenerator {
   private Collection<? extends AbstractRhythm> randomRhythms(int rhythmsSoFar) {
     List<AbstractRhythm> result = new ArrayList<>();
     int numberOfRhythmsToCreate = numberOfRhythms - rhythmsSoFar;
-    Interpolator uniqueQuartersInterpolator = Utils.interpolator(0, numberOfRhythmsToCreate, 2, 9);
+    Interpolator uniqueQuartersInterpolator = Utils.interpolator(0, numberOfRhythmsToCreate, 2, 5);
     for (int i = 0; i < numberOfRhythmsToCreate; i++) {
       int numberOfUniqueQuarters = uniqueQuartersInterpolator.apply(i);
       List<Quarter> quarters = chooseQuarters(numberOfUniqueQuarters);
@@ -156,9 +203,22 @@ public class RhythmGenerator {
 
 
   private List<Quarter> chooseQuarters(int numberOfUniqueQuarters) {
-    List<Quarter> uniqueQuarters = take(numberOfUniqueQuarters, Utils.randomLoopIterator(quarters));
+    List<Quarter> uniqueQuarters = take(numberOfUniqueQuarters, quarterIterator);
     List<Quarter> tiedQuarters = randomTies.apply(uniqueQuarters);
-    return take(numberOfQuarters, Utils.randomLoopIterator(tiedQuarters));
+    List<Quarter> quarters = take(numberOfQuarters, Utils.loopIterator(tiedQuarters));
+    return ensureTiesAreConsistent(quarters);
+  }
+
+  private List<Quarter> ensureTiesAreConsistent(List<Quarter> quarters) {
+    if (quarters.get(0).startsWithBeat()) {
+      return quarters;
+    }
+    Quarter last = Utils.getLast(quarters);
+    if (last.isTied()) {
+      quarters.remove(quarters.size()-1);
+      quarters.add(last.unTie());
+    }
+    return quarters;
   }
 
   private List<Quarter> take(int numberOfElements, Iterator<Quarter> iterator) {

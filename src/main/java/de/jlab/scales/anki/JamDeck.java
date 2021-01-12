@@ -12,7 +12,6 @@ import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.ProgressionFactory;
-import de.jlab.scales.midi.song.SongDifficultyModel;
 import de.jlab.scales.midi.song.SongFactory;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.midi.song.SongWrapper;
@@ -25,7 +24,7 @@ public class JamDeck extends AbstractDeck<JamCard> {
   private boolean withGuitar;
   
   public JamDeck(String title, Note instrument, boolean withGuitar) {
-    super(title, "JamDeck".concat(instrument.name()).concat(withGuitar ? "Guitar" : ""));
+    super(title, "Jam".concat(instrument.name()).concat(withGuitar ? "Guitar" : "").concat("Deck"));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
     // addCards(Set.of(Test, AllKeys), Set.of(latin(125)));

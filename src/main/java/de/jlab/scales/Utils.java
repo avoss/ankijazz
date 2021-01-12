@@ -30,6 +30,11 @@ public final class Utils {
     return list.get(list.size() - 1);
   }
   
+  public static <T> T getFirst(List<? extends T> list) {
+    return list.get(0);
+  }
+  
+  
   public static String readString(InputStream input) {
     return readLines(input).stream().collect(Collectors.joining("\n"));
   }
@@ -158,4 +163,5 @@ public final class Utils {
       
     };
   }
+
 }

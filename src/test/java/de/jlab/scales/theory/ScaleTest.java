@@ -8,22 +8,25 @@ import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.C7;
+import static de.jlab.scales.theory.Scales.C9;
 import static de.jlab.scales.theory.Scales.CHarmonicMajor;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.Cdim7;
-import static de.jlab.scales.theory.Scales.Cm7;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
+import static de.jlab.scales.theory.Scales.allKeys;
+import static de.jlab.scales.theory.Scales.allModes;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -219,4 +222,28 @@ public class ScaleTest {
     List<Note> actual = ddorian.stream().collect(Collectors.toList());
     assertEquals(expected, actual);
   }
+  
+  @Test
+  public void testStackedThirdsSomeChords() {
+    assertEquals(List.of(C, E, G, Bb, D), C9.stackedThirds());
+    assertEquals(List.of(C, Eb, G, Bb, D), Cm9.stackedThirds());
+    assertEquals(List.of(C, Eb, G, Bb, F), Cm11.stackedThirds());
+    assertEquals(List.of(C, E, G, Bb, A), C13.stackedThirds());
+    assertEquals(List.of(D, Gb, A, C, Eb), C7flat9.transpose(D).stackedThirds());
+    assertEquals(List.of(Ab, C, D, Gb, B), C7flat5sharp9.transpose(Ab).stackedThirds());
+  }
+  
+  @Test
+  public void testStackedThirds() {
+    for (ScaleType type : BuiltinChordType.values()) {
+      Scale prototype = type.getPrototype();
+      for (Scale scale : allModes(allKeys(prototype))) {
+        Note[] thirds = scale.stackedThirds().toArray(new Note[0]);
+        for (int i = 1; i < thirds.length; i++) {
+          assertThat(thirds[i-1].distance(thirds[i])).isLessThan(7);
+        }
+      }
+    }
+  }
+  
 }

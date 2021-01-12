@@ -136,6 +136,10 @@ public class Quarter implements WithDifficulty {
   public Quarter tie() {
     return new Quarter(true, events);
   }
+
+  public Quarter unTie() {
+    return new Quarter(false, events);
+  }
   
   public boolean isSyncopated() {
     int numberOfRests = (int) events.stream().filter(e -> !e.isBeat()).count();
@@ -148,5 +152,6 @@ public class Quarter implements WithDifficulty {
   public static Quarter q(Event ... events) {
     return new Quarter(events);
   }
+
 
 }

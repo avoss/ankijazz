@@ -139,7 +139,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
         numberOfNotesDifficulty.update(chord.getNumberOfNotes());
         String chordLabel = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
         String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s%s?</div>", chordInfo.getScaleName(), chordLabel, chordSignature(chordInfo));
-        String back = divb(chordInfo.getKeySignature().toString(chordInfo.getScale()));
+        String back = divb(chordInfo.getKeySignature().toString(chordInfo.getScale().stackedThirds()));
         SimpleCard card = card(model.getDifficulty(), "SpellChord", front, back);
         card.put(MODE_NAME, chordInfo.getScaleName());
         card.put(MODE_TYPE, chordInfo.getTypeName());

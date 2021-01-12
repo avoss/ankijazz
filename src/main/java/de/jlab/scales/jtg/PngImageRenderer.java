@@ -130,7 +130,9 @@ public class PngImageRenderer extends Layout {
     int row = row(barIndex);
     int column = column(barIndex);
     drawBarLine(row, column);
-    //drawBarNumber(bar, row, column);
+    if (context.isWithBarNumbers()) {
+      drawBarNumber(bar, row, column);
+    }
   }
 
   private void drawBarNumber(IdBar bar, int row, int column) {

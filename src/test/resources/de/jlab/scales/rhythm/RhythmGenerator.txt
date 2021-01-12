@@ -1,0 +1,200 @@
+         Basic Building Blocks : b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2 b2b2
+         Basic Building Blocks : b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1 b1b1b1b1
+         Basic Building Blocks : b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2 b1b1b2
+         Basic Building Blocks : b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1 b2b1b1
+         Basic Building Blocks : b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1 b1b2b1
+         Basic Building Blocks : b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3 b1b3
+         Basic Building Blocks : b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1 b3b1
+         Basic Building Blocks : btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt btbtbt
+    Syncopated Building Blocks : r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2 r2b2
+    Syncopated Building Blocks : r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1 r1b1b1b1
+    Syncopated Building Blocks : r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2 r1b1b2
+    Syncopated Building Blocks : r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1 r2b1b1
+    Syncopated Building Blocks : r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1 r1b2b1
+    Syncopated Building Blocks : r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3 r1b3
+    Syncopated Building Blocks : r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1 r3b1
+    Syncopated Building Blocks : rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt rtbtbt
+          Tied Building Blocks : b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~ b2b2 ~
+          Tied Building Blocks : b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~ b1b1b1b1 ~
+          Tied Building Blocks : b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~ b1b1b2 ~
+          Tied Building Blocks : b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~ b2b1b1 ~
+          Tied Building Blocks : b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~ b1b2b1 ~
+          Tied Building Blocks : b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~ b1b3 ~
+          Tied Building Blocks : b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~ b3b1 ~
+          Tied Building Blocks : btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~ btbtbt ~
+                       Shuffle : btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt btrtbt
+                 2-3 Son Clave : r2b2 b2r2 b3b1 ~ b2b2 r2b2 b2r2 b3b1 ~ b2b2 r2b2 b2r2 b3b1 ~ b2b2 r2b2 b2r2 b3b1 ~ b2b2
+                 3-2 Son Clave : b3b1 ~ b2b2 r2b2 b2r2 b3b1 ~ b2b2 r2b2 b2r2 b3b1 ~ b2b2 r2b2 b2r2 b3b1 ~ b2b2 r2b2 b2r2
+              2-3 Rhumba Clave : r2b2 b2r2 b3b1 ~ b3b1 r2b2 b2r2 b3b1 ~ b3b1 r2b2 b2r2 b3b1 ~ b3b1 r2b2 b2r2 b3b1 ~ b3b1
+              3-2 Rhumba Clave : b3b1 ~ b3b1 r2b2 b2r2 b3b1 ~ b3b1 r2b2 b2r2 b3b1 ~ b3b1 r2b2 b2r2 b3b1 ~ b3b1 r2b2 b2r2
+               2-3 Bossa Clave : r2b2 r1b2r1 b3b1 ~ b2b2 r2b2 r1b2r1 b3b1 ~ b2b2 r2b2 r1b2r1 b3b1 ~ b2b2 r2b2 r1b2r1 b3b1 ~ b2b2
+               3-2 Bossa Clave : b3b1 ~ b2b2 r2b2 r1b2r1 b3b1 ~ b2b2 r2b2 r1b2r1 b3b1 ~ b2b2 r2b2 r1b2r1 b3b1 ~ b2b2 r2b2 r1b2r1
+                     Carleston : b3b1 r4 b3b1 r4 b3b1 r4 b3b1 r4 b3b1 r4 b3b1 r4 b3b1 r4 b3b1 r4
+                    Bossa Nova : b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1
+            Reverse Bossa Nova : r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2 r1b1r1b1 b2b2
+                         Samba : r1b1r1b1 b2b2 b2b2 r1b1r1b1 r1b1r1b1 b2b2 b2b2 r1b1r1b1 r1b1r1b1 b2b2 b2b2 r1b1r1b1 r1b1r1b1 b2b2 b2b2 r1b1r1b1
+                 Reverse Samba : b2b2 r1b1r1b1 r1b1r1b1 b2b2 b2b2 r1b1r1b1 r1b1r1b1 b2b2 b2b2 r1b1r1b1 r1b1r1b1 b2b2 b2b2 r1b1r1b1 r1b1r1b1 b2b2
+               Choro Variation : r2b2 ~ b2b1r1 r2b2 ~ b2b1r1 r2b2 ~ b2b1r1 r2b2 ~ b2b1r1 r2b2 ~ b2b1r1 r2b2 ~ b2b1r1 r2b2 ~ b2b1r1 r2b2 ~ b2b1r1
+                         Baiao : b3b1 ~ b2b2 b3b1 ~ b2b2 b3b1 ~ b2b2 b3b1 ~ b2b2 b3b1 ~ b2b2 b3b1 ~ b2b2 b3b1 ~ b2b2 b3b1 ~ b2b2
+                   2/3 Montuno : b2b1b1 r1b2b1 r1b2b1 r1b2b1 b2b1b1 r1b2b1 r1b2b1 r1b2b1 b2b1b1 r1b2b1 r1b2b1 r1b2b1 b2b1b1 r1b2b1 r1b2b1 r1b2b1
+                   3/2 Montuno : r1b2b1 r1b2b1 b2b1b1 r1b2b1 r1b2b1 r1b2b1 b2b1b1 r1b2b1 r1b2b1 r1b2b1 b2b1b1 r1b2b1 r1b2b1 r1b2b1 b2b1b1 r1b2b1
+                   3/2 Cascara : b2b1b1 r1b2b1 b2b2 b1b3 b2b1b1 r1b2b1 b2b2 b1b3 b2b1b1 r1b2b1 b2b2 b1b3 b2b1b1 r1b2b1 b2b2 b1b3
+                   2/3 Cascara : b2b2 b1b3 b2b1b1 r1b2b1 b2b2 b1b3 b2b1b1 r1b2b1 b2b2 b1b3 b2b1b1 r1b2b1 b2b2 b1b3 b2b1b1 r1b2b1
+ Group of length 3, position 1 : b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1
+ Group of length 3, position 2 : b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3
+ Group of length 3, position 3 : r1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2
+ Group of length 3, position 4 : r2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1
+ Group of length 3, position 5 : b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3
+ Group of length 3, position 6 : r1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2
+ Group of length 3, position 7 : r2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1
+ Group of length 3, position 8 : b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3
+ Group of length 3, position 9 : r1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2
+Group of length 3, position 10 : r2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1
+Group of length 3, position 11 : b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3
+Group of length 3, position 12 : r1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2
+Group of length 3, position 13 : r2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1 ~ b2b2 ~ b1b3 b3b1 b3b1
+Group of length 3, position 14 : b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3 b3b1 ~ b2b2 ~ b1b3 b1b3
+Group of length 3, position 15 : r1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2 ~ b1b3 b3b1 ~ b2b2 ~ b1b1b2
+Group of length 3, position 16 : r2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1 ~ b2b2 ~ b1b3 b3b1 ~ b2b1b1
+ Group of length 5, position 1 : b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1
+ Group of length 5, position 2 : r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3
+ Group of length 5, position 3 : r2b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2
+ Group of length 5, position 4 : r3b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1
+ Group of length 5, position 5 : b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2
+ Group of length 5, position 6 : r1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1
+ Group of length 5, position 7 : b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3
+ Group of length 5, position 8 : r1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2
+ Group of length 5, position 9 : r2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1
+Group of length 5, position 10 : b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2
+Group of length 5, position 11 : r1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1
+Group of length 5, position 12 : b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3
+Group of length 5, position 13 : r1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2 ~ b1b2b1 ~ b2b2 b3r1 b2b2
+Group of length 5, position 14 : r2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1 ~ b2b2 b3b1 ~ b1b3 r1b2b1
+Group of length 5, position 15 : b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2 b3b1 ~ b1b3 b2b2 ~ b1r1b2
+Group of length 5, position 16 : r1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1 ~ b1b3 b2b2 ~ b1b2b1 ~ b2r1b1
+Random rhythm with 2 pattern(s) : b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2
+Random rhythm with 2 pattern(s) : b1b2b1 ~ b1b3 b1b2b1 ~ b1b3 b1b2b1 ~ b1b3 b1b2b1 ~ b1b3 b1b2b1 ~ b1b3 b1b2b1 ~ b1b3 b1b2b1 ~ b1b3 b1b2b1 ~ b1b3
+Random rhythm with 2 pattern(s) : b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2
+Random rhythm with 2 pattern(s) : b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4
+Random rhythm with 2 pattern(s) : r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2
+Random rhythm with 2 pattern(s) : r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3
+Random rhythm with 2 pattern(s) : r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2
+Random rhythm with 2 pattern(s) : r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt
+Random rhythm with 2 pattern(s) : rtbtbt b1b1b1b1 rtbtbt b1b1b1b1 rtbtbt b1b1b1b1 rtbtbt b1b1b1b1 rtbtbt b1b1b1b1 rtbtbt b1b1b1b1 rtbtbt b1b1b1b1 rtbtbt b1b1b1b1
+Random rhythm with 2 pattern(s) : b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1 b1b1b2 ~ b1b2b1
+Random rhythm with 2 pattern(s) : b1b3 b2b1b1 b1b3 b2b1b1 b1b3 b2b1b1 b1b3 b2b1b1 b1b3 b2b1b1 b1b3 b2b1b1 b1b3 b2b1b1 b1b3 b2b1b1
+Random rhythm with 2 pattern(s) : b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1
+Random rhythm with 2 pattern(s) : b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1
+Random rhythm with 2 pattern(s) : r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1
+Random rhythm with 2 pattern(s) : r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1
+Random rhythm with 2 pattern(s) : r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1
+Random rhythm with 2 pattern(s) : btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt
+Random rhythm with 2 pattern(s) : b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2 b1b1b1b1 ~ b1b1b2
+Random rhythm with 2 pattern(s) : b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3
+Random rhythm with 2 pattern(s) : b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2 b2b1b1 b2b2
+Random rhythm with 2 pattern(s) : b3b1 ~ b4 b3b1 ~ b4 b3b1 ~ b4 b3b1 ~ b4 b3b1 ~ b4 b3b1 ~ b4 b3b1 ~ b4 b3b1 ~ b4
+Random rhythm with 2 pattern(s) : r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2
+Random rhythm with 2 pattern(s) : r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3
+Random rhythm with 2 pattern(s) : r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2
+Random rhythm with 2 pattern(s) : r3b1 btbtbt r3b1 btbtbt r3b1 btbtbt r3b1 btbtbt r3b1 btbtbt r3b1 btbtbt r3b1 btbtbt r3b1 btbtbt
+Random rhythm with 2 pattern(s) : rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1 rtbtbt ~ b1b1b1b1
+Random rhythm with 2 pattern(s) : b1b1b2 b1b2b1 b1b1b2 b1b2b1 b1b1b2 b1b2b1 b1b1b2 b1b2b1 b1b1b2 b1b2b1 b1b1b2 b1b2b1 b1b1b2 b1b2b1 b1b1b2 b1b2b1
+Random rhythm with 2 pattern(s) : b1b3 ~ b2b1b1 b1b3 ~ b2b1b1 b1b3 ~ b2b1b1 b1b3 ~ b2b1b1 b1b3 ~ b2b1b1 b1b3 ~ b2b1b1 b1b3 ~ b2b1b1 b1b3 ~ b2b1b1
+Random rhythm with 2 pattern(s) : b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1 b2b2 ~ b3b1
+Random rhythm with 2 pattern(s) : b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1 b4 r1b1b1b1
+Random rhythm with 2 pattern(s) : r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1 r1b1b2 r1b2b1
+Random rhythm with 2 pattern(s) : r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1 r1b3 r2b1b1
+Random rhythm with 2 pattern(s) : r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1 r2b2 r3b1
+Random rhythm with 2 pattern(s) : btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt btbtbt rtbtbt
+Random rhythm with 2 pattern(s) : b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2 b1b1b1b1 b1b1b2
+Random rhythm with 2 pattern(s) : b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3 b1b2b1 b1b3
+Random rhythm with 2 pattern(s) : b2b1b1 ~ b2b2 b2b1b1 ~ b2b2 b2b1b1 ~ b2b2 b2b1b1 ~ b2b2 b2b1b1 ~ b2b2 b2b1b1 ~ b2b2 b2b1b1 ~ b2b2 b2b1b1 ~ b2b2
+Random rhythm with 2 pattern(s) : b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4 b3b1 b4
+Random rhythm with 2 pattern(s) : r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2 r1b1b1b1 r1b1b2
+Random rhythm with 2 pattern(s) : r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3 r1b2b1 r1b3
+Random rhythm with 2 pattern(s) : r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2 r2b1b1 r2b2
+Random rhythm with 2 pattern(s) : r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt r3b1 ~ btbtbt
+Random rhythm with 3 pattern(s) : rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt
+Random rhythm with 3 pattern(s) : b1b2b1 ~ b1b3 b2b1b1 b1b2b1 ~ b1b3 b2b1b1 b1b2b1 ~ b1b3 b2b1b1 b1b2b1 ~ b1b3 b2b1b1 b1b2b1 ~ b1b3 b2b1b1 b1b2b1 ~
+Random rhythm with 3 pattern(s) : b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2
+Random rhythm with 3 pattern(s) : r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1
+Random rhythm with 3 pattern(s) : r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3
+Random rhythm with 3 pattern(s) : r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1
+Random rhythm with 3 pattern(s) : b1b1b1b1 ~ b1b1b2 b1b2b1 b1b1b1b1 ~ b1b1b2 b1b2b1 b1b1b1b1 ~ b1b1b2 b1b2b1 b1b1b1b1 ~ b1b1b2 b1b2b1 b1b1b1b1 ~ b1b1b2 b1b2b1 b1b1b1b1 ~
+Random rhythm with 3 pattern(s) : b1b3 ~ b2b1b1 ~ b2b2 b1b3 ~ b2b1b1 ~ b2b2 b1b3 ~ b2b1b1 ~ b2b2 b1b3 ~ b2b1b1 ~ b2b2 b1b3 ~ b2b1b1 ~ b2b2 b1b3 ~
+Random rhythm with 3 pattern(s) : b3b1 b4 r1b1b1b1 b3b1 b4 r1b1b1b1 b3b1 b4 r1b1b1b1 b3b1 b4 r1b1b1b1 b3b1 b4 r1b1b1b1 b3b1
+Random rhythm with 3 pattern(s) : r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2
+Random rhythm with 3 pattern(s) : r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1
+Random rhythm with 3 pattern(s) : btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt
+Random rhythm with 3 pattern(s) : b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~
+Random rhythm with 3 pattern(s) : b2b1b1 ~ b2b2 b3b1 b2b1b1 ~ b2b2 b3b1 b2b1b1 ~ b2b2 b3b1 b2b1b1 ~ b2b2 b3b1 b2b1b1 ~ b2b2 b3b1 b2b1b1 ~
+Random rhythm with 3 pattern(s) : b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4
+Random rhythm with 3 pattern(s) : r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1
+Random rhythm with 3 pattern(s) : r2b2 r3b1 ~ btbtbt r2b2 r3b1 ~ btbtbt r2b2 r3b1 ~ btbtbt r2b2 r3b1 ~ btbtbt r2b2 r3b1 ~ btbtbt r2b2
+Random rhythm with 4 pattern(s) : rtbtbt ~ b1b1b1b1 b1b1b2 rtbtbt ~ b1b1b1b1 b1b1b2 rtbtbt ~ b1b1b1b1 b1b1b2 rtbtbt ~ b1b1b1b1 b1b1b2 rtbtbt ~ b1b1b1b1 b1b1b2 rtbtbt
+Random rhythm with 3 pattern(s) : b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1
+Random rhythm with 3 pattern(s) : b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2
+Random rhythm with 3 pattern(s) : r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1
+Random rhythm with 3 pattern(s) : r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3
+Random rhythm with 3 pattern(s) : r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1 btbtbt rtbtbt r3b1
+Random rhythm with 3 pattern(s) : b1b1b1b1 ~ b1b1b2 ~ b1b2b1 b1b1b1b1 ~ b1b1b2 ~ b1b2b1 b1b1b1b1 ~ b1b1b2 ~ b1b2b1 b1b1b1b1 ~ b1b1b2 ~ b1b2b1 b1b1b1b1 ~ b1b1b2 ~ b1b2b1 b1b1b1b1 ~
+Random rhythm with 3 pattern(s) : b1b3 b2b1b1 b2b2 b1b3 b2b1b1 b2b2 b1b3 b2b1b1 b2b2 b1b3 b2b1b1 b2b2 b1b3 b2b1b1 b2b2 b1b3
+Random rhythm with 3 pattern(s) : b3b1 ~ b4 r1b1b1b1 b3b1 ~ b4 r1b1b1b1 b3b1 ~ b4 r1b1b1b1 b3b1 ~ b4 r1b1b1b1 b3b1 ~ b4 r1b1b1b1 b3b1 ~
+Random rhythm with 3 pattern(s) : r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2 r1b2b1 r1b3 r1b1b2
+Random rhythm with 3 pattern(s) : r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1 r2b2 r3b1 r2b1b1
+Random rhythm with 3 pattern(s) : btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt rtbtbt b1b1b1b1 btbtbt
+Random rhythm with 3 pattern(s) : b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~ b1b2b1 b1b3 b1b1b2 ~
+Random rhythm with 3 pattern(s) : b2b1b1 ~ b2b2 ~ b3b1 b2b1b1 ~ b2b2 ~ b3b1 b2b1b1 ~ b2b2 ~ b3b1 b2b1b1 ~ b2b2 ~ b3b1 b2b1b1 ~ b2b2 ~ b3b1 b2b1b1 ~
+Random rhythm with 3 pattern(s) : b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4 r1b1b1b1 r1b1b2 b4
+Random rhythm with 3 pattern(s) : r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1 r1b3 r2b1b1 r1b2b1
+Random rhythm with 3 pattern(s) : r2b2 r3b1 btbtbt r2b2 r3b1 btbtbt r2b2 r3b1 btbtbt r2b2 r3b1 btbtbt r2b2 r3b1 btbtbt r2b2
+Random rhythm with 3 pattern(s) : rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt b1b1b1b1 ~ b1b1b2 rtbtbt
+Random rhythm with 3 pattern(s) : b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1 b1b3 ~ b2b1b1 b1b2b1
+Random rhythm with 3 pattern(s) : b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2 b3b1 ~ b4 b2b2
+Random rhythm with 3 pattern(s) : r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1 r1b1b2 r1b2b1 r1b1b1b1
+Random rhythm with 3 pattern(s) : r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3 r2b1b1 r2b2 r1b3
+Random rhythm with 4 pattern(s) : r3b1 ~ btbtbt rtbtbt r3b1 ~ btbtbt rtbtbt r3b1 ~ btbtbt rtbtbt r3b1 ~ btbtbt rtbtbt r3b1 ~ btbtbt rtbtbt r3b1
+Random rhythm with 3 pattern(s) : b1b1b1b1 b1b1b2 b1b2b1 b1b1b1b1 b1b1b2 b1b2b1 b1b1b1b1 b1b1b2 b1b2b1 b1b1b1b1 b1b1b2 b1b2b1 b1b1b1b1 b1b1b2 b1b2b1 b1b1b1b1
+Random rhythm with 3 pattern(s) : b1b3 ~ b2b1b1 b2b2 b1b3 ~ b2b1b1 b2b2 b1b3 ~ b2b1b1 b2b2 b1b3 ~ b2b1b1 b2b2 b1b3 ~ b2b1b1 b2b2 b1b3 ~
+Random rhythm with 4 pattern(s) : b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2
+Random rhythm with 4 pattern(s) : r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2
+Random rhythm with 4 pattern(s) : r3b1 btbtbt rtbtbt ~ b1b1b1b1 r3b1 btbtbt rtbtbt ~ b1b1b1b1 r3b1 btbtbt rtbtbt ~ b1b1b1b1 r3b1 btbtbt rtbtbt ~ b1b1b1b1
+Random rhythm with 4 pattern(s) : b1b1b2 ~ b1b2b1 b1b3 b2b1b1 b1b1b2 ~ b1b2b1 b1b3 b2b1b1 b1b1b2 ~ b1b2b1 b1b3 b2b1b1 b1b1b2 ~ b1b2b1 b1b3 b2b1b1
+Random rhythm with 4 pattern(s) : b2b2 ~ b3b1 b4 r1b1b1b1 b2b2 ~ b3b1 b4 r1b1b1b1 b2b2 ~ b3b1 b4 r1b1b1b1 b2b2 ~ b3b1 b4 r1b1b1b1
+Random rhythm with 4 pattern(s) : r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1
+Random rhythm with 4 pattern(s) : r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt
+Random rhythm with 4 pattern(s) : b1b1b1b1 b1b1b2 ~ b1b2b1 ~ b1b3 b1b1b1b1 b1b1b2 ~ b1b2b1 ~ b1b3 b1b1b1b1 b1b1b2 ~ b1b2b1 ~ b1b3 b1b1b1b1 b1b1b2 ~ b1b2b1 ~ b1b3
+Random rhythm with 4 pattern(s) : b2b1b1 b2b2 b3b1 ~ b4 b2b1b1 b2b2 b3b1 ~ b4 b2b1b1 b2b2 b3b1 ~ b4 b2b1b1 b2b2 b3b1 ~ b4
+Random rhythm with 4 pattern(s) : r1b1b1b1 r1b1b2 r1b2b1 r1b3 r1b1b1b1 r1b1b2 r1b2b1 r1b3 r1b1b1b1 r1b1b2 r1b2b1 r1b3 r1b1b1b1 r1b1b2 r1b2b1 r1b3
+Random rhythm with 4 pattern(s) : r2b1b1 r2b2 r3b1 btbtbt r2b1b1 r2b2 r3b1 btbtbt r2b1b1 r2b2 r3b1 btbtbt r2b1b1 r2b2 r3b1 btbtbt
+Random rhythm with 4 pattern(s) : rtbtbt ~ b1b1b1b1 b1b1b2 ~ b1b2b1 rtbtbt ~ b1b1b1b1 b1b1b2 ~ b1b2b1 rtbtbt ~ b1b1b1b1 b1b1b2 ~ b1b2b1 rtbtbt ~ b1b1b1b1 b1b1b2 ~ b1b2b1
+Random rhythm with 4 pattern(s) : b1b3 ~ b2b1b1 b2b2 b3b1 b1b3 ~ b2b1b1 b2b2 b3b1 b1b3 ~ b2b1b1 b2b2 b3b1 b1b3 ~ b2b1b1 b2b2 b3b1
+Random rhythm with 4 pattern(s) : b4 r1b1b1b1 r1b1b2 r1b2b1 b4 r1b1b1b1 r1b1b2 r1b2b1 b4 r1b1b1b1 r1b1b2 r1b2b1 b4 r1b1b1b1 r1b1b2 r1b2b1
+Random rhythm with 4 pattern(s) : r1b3 r2b1b1 r2b2 r3b1 r1b3 r2b1b1 r2b2 r3b1 r1b3 r2b1b1 r2b2 r3b1 r1b3 r2b1b1 r2b2 r3b1
+Random rhythm with 4 pattern(s) : btbtbt rtbtbt ~ b1b1b1b1 b1b1b2 btbtbt rtbtbt ~ b1b1b1b1 b1b1b2 btbtbt rtbtbt ~ b1b1b1b1 b1b1b2 btbtbt rtbtbt ~ b1b1b1b1 b1b1b2
+Random rhythm with 4 pattern(s) : b1b2b1 ~ b1b3 b2b1b1 ~ b2b2 b1b2b1 ~ b1b3 b2b1b1 ~ b2b2 b1b2b1 ~ b1b3 b2b1b1 ~ b2b2 b1b2b1 ~ b1b3 b2b1b1 ~ b2b2
+Random rhythm with 4 pattern(s) : b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2
+Random rhythm with 4 pattern(s) : r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2
+Random rhythm with 4 pattern(s) : r3b1 btbtbt rtbtbt b1b1b1b1 r3b1 btbtbt rtbtbt b1b1b1b1 r3b1 btbtbt rtbtbt b1b1b1b1 r3b1 btbtbt rtbtbt b1b1b1b1
+Random rhythm with 4 pattern(s) : b1b1b2 ~ b1b2b1 b1b3 ~ b2b1b1 b1b1b2 ~ b1b2b1 b1b3 ~ b2b1b1 b1b1b2 ~ b1b2b1 b1b3 ~ b2b1b1 b1b1b2 ~ b1b2b1 b1b3 ~ b2b1b1
+Random rhythm with 4 pattern(s) : b2b2 b3b1 ~ b4 r1b1b1b1 b2b2 b3b1 ~ b4 r1b1b1b1 b2b2 b3b1 ~ b4 r1b1b1b1 b2b2 b3b1 ~ b4 r1b1b1b1
+Random rhythm with 4 pattern(s) : r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1
+Random rhythm with 4 pattern(s) : r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt
+Random rhythm with 4 pattern(s) : b1b1b1b1 b1b1b2 b1b2b1 ~ b1b3 b1b1b1b1 b1b1b2 b1b2b1 ~ b1b3 b1b1b1b1 b1b1b2 b1b2b1 ~ b1b3 b1b1b1b1 b1b1b2 b1b2b1 ~ b1b3
+Random rhythm with 4 pattern(s) : b2b1b1 b2b2 ~ b3b1 b4 b2b1b1 b2b2 ~ b3b1 b4 b2b1b1 b2b2 ~ b3b1 b4 b2b1b1 b2b2 ~ b3b1 b4
+Random rhythm with 4 pattern(s) : r1b1b1b1 r1b1b2 r1b2b1 r1b3 r1b1b1b1 r1b1b2 r1b2b1 r1b3 r1b1b1b1 r1b1b2 r1b2b1 r1b3 r1b1b1b1 r1b1b2 r1b2b1 r1b3
+Random rhythm with 4 pattern(s) : r2b1b1 r2b2 r3b1 ~ btbtbt r2b1b1 r2b2 r3b1 ~ btbtbt r2b1b1 r2b2 r3b1 ~ btbtbt r2b1b1 r2b2 r3b1 ~ btbtbt
+Random rhythm with 4 pattern(s) : rtbtbt ~ b1b1b1b1 b1b1b2 b1b2b1 rtbtbt ~ b1b1b1b1 b1b1b2 b1b2b1 rtbtbt ~ b1b1b1b1 b1b1b2 b1b2b1 rtbtbt ~ b1b1b1b1 b1b1b2 b1b2b1
+Random rhythm with 4 pattern(s) : b1b3 ~ b2b1b1 b2b2 ~ b3b1 b1b3 ~ b2b1b1 b2b2 ~ b3b1 b1b3 ~ b2b1b1 b2b2 ~ b3b1 b1b3 ~ b2b1b1 b2b2 ~ b3b1
+Random rhythm with 4 pattern(s) : b4 r1b1b1b1 r1b1b2 r1b2b1 b4 r1b1b1b1 r1b1b2 r1b2b1 b4 r1b1b1b1 r1b1b2 r1b2b1 b4 r1b1b1b1 r1b1b2 r1b2b1
+Random rhythm with 4 pattern(s) : r1b3 r2b1b1 r2b2 r3b1 r1b3 r2b1b1 r2b2 r3b1 r1b3 r2b1b1 r2b2 r3b1 r1b3 r2b1b1 r2b2 r3b1
+Random rhythm with 4 pattern(s) : btbtbt rtbtbt b1b1b1b1 ~ b1b1b2 btbtbt rtbtbt b1b1b1b1 ~ b1b1b2 btbtbt rtbtbt b1b1b1b1 ~ b1b1b2 btbtbt rtbtbt b1b1b1b1 ~ b1b1b2
+Random rhythm with 4 pattern(s) : b1b2b1 ~ b1b3 b2b1b1 b2b2 b1b2b1 ~ b1b3 b2b1b1 b2b2 b1b2b1 ~ b1b3 b2b1b1 b2b2 b1b2b1 ~ b1b3 b2b1b1 b2b2
+Random rhythm with 4 pattern(s) : b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2 b3b1 ~ b4 r1b1b1b1 r1b1b2
+Random rhythm with 4 pattern(s) : r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2 r1b2b1 r1b3 r2b1b1 r2b2
+Random rhythm with 4 pattern(s) : r3b1 btbtbt rtbtbt ~ b1b1b1b1 r3b1 btbtbt rtbtbt ~ b1b1b1b1 r3b1 btbtbt rtbtbt ~ b1b1b1b1 r3b1 btbtbt rtbtbt ~ b1b1b1b1
+Random rhythm with 4 pattern(s) : b1b1b2 b1b2b1 ~ b1b3 ~ b2b1b1 b1b1b2 b1b2b1 ~ b1b3 ~ b2b1b1 b1b1b2 b1b2b1 ~ b1b3 ~ b2b1b1 b1b1b2 b1b2b1 ~ b1b3 ~ b2b1b1
+Random rhythm with 4 pattern(s) : b2b2 b3b1 b4 r1b1b1b1 b2b2 b3b1 b4 r1b1b1b1 b2b2 b3b1 b4 r1b1b1b1 b2b2 b3b1 b4 r1b1b1b1
+Random rhythm with 4 pattern(s) : r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1 r1b1b2 r1b2b1 r1b3 r2b1b1
+Random rhythm with 4 pattern(s) : r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt r2b2 r3b1 ~ btbtbt rtbtbt
+Random rhythm with 4 pattern(s) : b1b1b1b1 b1b1b2 ~ b1b2b1 b1b3 b1b1b1b1 b1b1b2 ~ b1b2b1 b1b3 b1b1b1b1 b1b1b2 ~ b1b2b1 b1b3 b1b1b1b1 b1b1b2 ~ b1b2b1 b1b3

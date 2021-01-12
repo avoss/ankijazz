@@ -4,7 +4,9 @@ import static java.util.Arrays.asList;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.function.Predicate;
 
 import org.apache.commons.math3.fraction.Fraction;
@@ -12,7 +14,7 @@ import org.apache.commons.math3.fraction.Fraction;
 public class QuarterGenerator {
 
   private final Fraction ticksPerQuarter;
-  private List<Quarter> quarters = new ArrayList<>();
+  private Set<Quarter> quarters = new LinkedHashSet<>();
   private List<Event> events = new ArrayList<>();
   private final Predicate<Quarter> filter;
 
@@ -42,7 +44,7 @@ public class QuarterGenerator {
     }
   }
   
-  public List<Quarter> getQuarters() {
+  public Collection<? extends Quarter> getQuarters() {
     return quarters;
   }
   

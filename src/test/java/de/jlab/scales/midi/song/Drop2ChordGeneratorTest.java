@@ -36,22 +36,9 @@ public class Drop2ChordGeneratorTest {
   
   @Test
   public void testLimitNumberOfNotes() {
-    List<Note> notes = generator.stackedThirds(C9);
+    List<Note> notes = C9.stackedThirds();
     assertEquals(List.of(C, E, G, Bb, D), notes);
     assertEquals(List.of(E, G, Bb, D), generator.limitNumberOfNotes(C, notes));
-  }
-  
-  @Test
-  public void testStackedThirds() {
-    for (ScaleType type : BuiltinChordType.values()) {
-      Scale prototype = type.getPrototype();
-      for (Scale scale : allModes(allKeys(prototype))) {
-        Note[] thirds = generator.stackedThirds(scale).toArray(new Note[0]);
-        for (int i = 1; i < thirds.length; i++) {
-          assertThat(thirds[i-1].distance(thirds[i])).isLessThan(7);
-        }
-      }
-    }
   }
   
   @Test

@@ -290,4 +290,35 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return this.notes.containsAll(chord.asSet());
   }
 
+  public List<Note> stackedThirds() {
+    Set<Note> set = asSet();
+    List<Note> list = new ArrayList<>();
+    Note note = getRoot();
+    while (!set.isEmpty()) {
+      set.remove(note);
+      list.add(note);
+      note = nextThird(set, note);
+    }
+    return list;
+  }
+
+  private Note nextThird(Set<Note> set, Note note) {
+    final int[] intervals = { 4, 3, 2, 5, 1, 6};//, 7, 8, 9, 10, 11 };
+    if (set.isEmpty()) {
+      return note;
+    }
+    
+    if (set.size() == 1) {
+      return set.iterator().next();
+    }
+    
+    for (int i = 0; i < intervals.length; i++) {
+      int interval = intervals[i];
+      if (set.contains(note.transpose(interval))) {
+        return note.transpose(interval);
+      }
+    }
+    throw new IllegalArgumentException("Could not create stacked thirds for " + set + " starting at " + note);
+  }
+  
 }

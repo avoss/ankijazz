@@ -55,6 +55,17 @@ task copyPreview(type:Copy) {
   into 'build/preview'
 }
 
+task deleteWebsitePreview(type: Delete) {
+  delete "${websitePreview}"
+}
+task copyWebsitePreview(type:Copy) {
+  dependsOn deleteWebsitePreview
+  from ('build/preview') {
+    include ('*.png', '*.mp3', '*.html', "*.json")
+  } 
+  into "${websitePreview}"
+}
+
 build.dependsOn(copyAssets)
 build.dependsOn(copyPreview)
 

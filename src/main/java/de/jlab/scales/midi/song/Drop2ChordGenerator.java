@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.Set;
 
 import de.jlab.scales.midi.MidiUtils;
 import de.jlab.scales.theory.Note;
@@ -23,42 +22,11 @@ public class Drop2ChordGenerator implements ChordGenerator {
 
   @Override
   public int[] midiChord(Scale chord) {
-    List<Note> notes = stackedThirds(chord);
+    List<Note> notes = chord.stackedThirds();
     notes = limitNumberOfNotes(chord.getRoot(), notes);
     notes = findBestInversion(notes);
     int dropIndex = dropIndex(notes);
     return drop2MidiPitches(dropIndex, notes);
-  }
-
-  List<Note> stackedThirds(Scale chord) {
-    Set<Note> set = chord.asSet();
-    List<Note> list = new ArrayList<>();
-    Note note = chord.getRoot();
-    while (!set.isEmpty()) {
-      set.remove(note);
-      list.add(note);
-      note = nextThird(set, note);
-    }
-    return list;
-  }
-
-  private Note nextThird(Set<Note> set, Note note) {
-    final int[] intervals = { 4, 3, 2, 5, 1, 6};//, 7, 8, 9, 10, 11 };
-    if (set.isEmpty()) {
-      return note;
-    }
-    
-    if (set.size() == 1) {
-      return set.iterator().next();
-    }
-    
-    for (int i = 0; i < intervals.length; i++) {
-      int interval = intervals[i];
-      if (set.contains(note.transpose(interval))) {
-        return note.transpose(interval);
-      }
-    }
-    throw new IllegalArgumentException("Could not create stacked thirds for " + set + " starting at " + note);
   }
 
   private int[] drop2MidiPitches(int dropIndex, List<Note> inversion) {

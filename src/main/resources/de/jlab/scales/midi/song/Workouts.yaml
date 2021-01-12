@@ -12,9 +12,9 @@ progressions:
     - title: Major6 Workout
       progression: A6 D6 (G7 Db7) C6
     - title: Major7 Workout
-      progression: (CΔ7 Cmaj7) (FΔ7 Fmaj7) (CΔ7 Cmaj7) (FΔ7 Fmaj7)
+      progression: (CΔ7 Cmaj7) (FΔ7 Fmaj7) G7 (CΔ7 Cmaj7)
     - title: Major9 Workout
-      progression: (CΔ9 Cmaj9) (FΔ9 Fmaj9) (CΔ9 Cmaj9) (FΔ9 Fmaj9)
+      progression: (CΔ9 Cmaj9) (FΔ9 Fmaj9) G7 (CΔ9 Cmaj9)
     - title: "Major7 #11 Workout"
       progression: (CΔ7#11 Cmaj7#11) (CΔ7 Cmaj7) (CΔ7#11 Cmaj7#11) (CΔ7 Cmaj7)
     - title: "Major7 #5 Workout"
@@ -25,7 +25,7 @@ progressions:
       progression: F#m6 Bm6 (E7b9 Bb7) Am6
     - title: Minor7 Workout 
       minor: true
-      progression: Dm7 Em7 Dm7 Em7
+      progression: Dm7 Em7 E7 Am7
     - title: Minor9 Workout
       minor: true
       progression: F#m9 Bm9 (E7b9 Bb7) Am9
