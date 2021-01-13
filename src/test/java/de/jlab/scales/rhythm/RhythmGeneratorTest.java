@@ -39,7 +39,7 @@ public class RhythmGeneratorTest {
   
   @Test
   public void assertThatLastQuarterIsNotTied() {
-    // TODO it's not just last quarter, it is every quarter where the tie loops
+    // TODO it's not just last quarter, it is every quarter within the loop
     RhythmGenerator generator = new RhythmGenerator(Utils.fixedLoopIteratorFactory());
     Predicate<AbstractRhythm> filter = r -> {
       Quarter first = Utils.getFirst(r.getQuarters());

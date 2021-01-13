@@ -96,7 +96,6 @@ public class RhythmGenerator {
 
   private Collection<? extends AbstractRhythm> allBlocks() {
     BasicRhythm basic = new BasicRhythm(BASIC, List.of(
-        q(b4),
         q(b2, b2),
         q(b3, b1),
         q(b1, b3),
@@ -107,7 +106,6 @@ public class RhythmGenerator {
         q(bt, bt, bt)));
 
     BasicRhythm syncopated = new BasicRhythm(SYNCOPATED, List.of(
-        q(r4),
         q(r2, b2),
         q(r3, b1),
         q(r1, b3),
@@ -118,7 +116,6 @@ public class RhythmGenerator {
         q(rt, bt, bt)));
     
     BasicRhythm tied = new BasicRhythm(TIED, List.of(
-        q(b4),
         q(b2, b2).tie(),
         q(b3, b1).tie(),
         q(b1, b3).tie(),

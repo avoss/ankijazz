@@ -15,12 +15,13 @@ import de.jlab.scales.rhythm.RhythmGenerator;
 
 public class RhythmDeck extends AbstractDeck<RhythmCard> {
 
-  private static final int MIN_BPM = 55;
-  private static final int MAX_BPM = 75;
-  private LilyMetronome metronome = new LilyMetronome(5, MIN_BPM, MAX_BPM);
+  private static final int MIN_BPM = 60;
+  private static final int MAX_BPM = 80;
+  private LilyMetronome metronome;
   
   public RhythmDeck(LilyRhythm.Type type) {
-    super(format(String.format("AnkiJazz - Read and Play Rhythms (%d .. %d bpm)", MIN_BPM, MAX_BPM)), "RhythmDeck".concat(type.getLabel()));
+    super(format(String.format("AnkiJazz - Read and Play Rhythms (%d .. %d bpm)", MIN_BPM, MAX_BPM)), "Rhythm".concat(type.getLabel()).concat("Deck"));
+    this.metronome = new LilyMetronome(5, MIN_BPM, MAX_BPM);
     RhythmGenerator generator = new RhythmGenerator(Utils.randomLoopIteratorFactory());
     List<AbstractRhythm> rhythms = generator.generate();
     Interpolator tempoInterpolator = Utils.interpolator(0, rhythms.size(), MIN_BPM, MAX_BPM);
@@ -32,10 +33,19 @@ public class RhythmDeck extends AbstractDeck<RhythmCard> {
     }
   }
   
+  public RhythmDeck(String title, String outputFileName, String mustacheTemplate, List<RhythmCard> cards, LilyMetronome metronome) {
+    super(title, outputFileName, mustacheTemplate, cards);
+    this.metronome = metronome;
+  }
+
   @Override
   public void writeAssets(Path dir) {
     super.writeAssets(dir);
     metronome.writeAssets(dir);
   }
 
+  @Override
+  protected Deck<RhythmCard> subdeck(String title, String outputFileName, String mustacheTemplate, List<RhythmCard> cards) {
+    return new RhythmDeck(title, outputFileName, mustacheTemplate, cards, metronome);
+  }
 }

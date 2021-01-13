@@ -14,8 +14,12 @@
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      This deck contains chords and chord progressions commonly used in Jazz and other music styles. 
-      For details visit <a href="https://www.ankijazz.com">AnkiJazz.com</a>
+      This deck contains chords and chord progressions commonly used in Jazz and other music styles.
+    </p> 
+    <p>
+      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a>
+      and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz" target="_blank">buy me a coffee</a>? 
+      See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
     </p>
     {{#cards}}
       <div class="card border-secondary mb-3">
@@ -40,10 +44,8 @@
             <li>Key: {{key}}</li>
             <li>Style: {{style}}</li>
             <li>Tempo: {{tempo}}</li>
-            <li>Difficulty: {{difficulty}}</li>
             {{#withGuitar}}
-             <li>PositionLabel: {{position.label}}</li>
-             <li>PositionImage: {{position.image}}</li>
+             <li>Position: {{position.label}}</li>
             {{/withGuitar}}
           </ul>
         </div>
