@@ -1,60 +1,59 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    .card {
-       max-width: 40rem;
-    }
-  </style>
-  <title>{{title}}</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+.card {
+	max-width: 40rem;
+}
+</style>
+<title>{{title}}</title>
 </head>
 <body>
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      Rhythm is the driving foundation of modern music. 
-      In a tight groove even wrong notes sound right, which means that good timing is more important than good note choices.
-      This deck contains the most common rhythmic patterns.
+      This deck contains the most common rhythmic patterns. See full documentation on <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
     </p>
     <p>
-      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a>
-      and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz" target="_blank">buy me a coffee</a>? 
-      See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a> and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz"
+        target="_blank">buy me some coffee</a>?
     </p>
     {{#cards}}
-			<div class="card border-secondary mb-3">
-			  <h4 class="card-header">
-			    Play {{title}}
-			  </h4>
-			  <div class="card-body">
-			    <img class="card-img-top" src="{{pngName}}">
-			
-			    <div class="card-text">
-			      <div class="container">
-			        <div class="row mt-2">
-			          <div class="col">Play Metronome</div>
-			          <div class="col"><audio controls src="{{metronomeMp3Name}}"></audio></div>
-			        </div>
-			        <div class="row mt-2">
-			          <div class="col">Play Rhythm</div>
-			          <div class="col"><audio controls src="{{mp3Name}}"></audio></div>
-			        </div>
-			      </div>
-			    </div>
-			    
-			    <p class="card-text">Fields:</p>
-			    <ul>
-			      <li>Title: {{title}}</li>
-			      <li>Type: {{typeName}}</li>
-			      <li>HasTies: {{hasTies}}</li>
-			      <li>HasSyncopation: {{hasSyncopation}}</li>
-			      <li>NumberOfUniqueQuarters: {{numberOfUniqueQuarters}}</li>
-			      <li>Tempo: {{bpm}}</li>
-			    </ul>
-			  </div>
-			</div>
+    <div class="card border-secondary mb-3">
+      <h4 class="card-header">Play {{title}}</h4>
+      <div class="card-body">
+        <img class="card-img-top" src="{{pngName}}">
+
+        <div class="card-text">
+          <div class="container">
+            <div class="row mt-2">
+              <div class="col">Play Metronome</div>
+              <div class="col">
+                <audio controls src="{{metronomeMp3Name}}"></audio>
+              </div>
+            </div>
+            <div class="row mt-2">
+              <div class="col">Play Rhythm</div>
+              <div class="col">
+                <audio controls src="{{mp3Name}}"></audio>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="card-text">Fields:</p>
+        <ul>
+          <li>Title: {{title}}</li>
+          <li>Type: {{typeName}}</li>
+          <li>HasTies: {{hasTies}}</li>
+          <li>HasSyncopation: {{hasSyncopation}}</li>
+          <li>NumberOfUniqueQuarters: {{numberOfUniqueQuarters}}</li>
+          <li>Tempo: {{bpm}}</li>
+        </ul>
+      </div>
+    </div>
     {{/cards}}
   </div>
 </body>

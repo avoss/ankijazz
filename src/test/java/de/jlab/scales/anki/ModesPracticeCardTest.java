@@ -25,7 +25,7 @@ public class ModesPracticeCardTest {
   
   private ScaleModel model() {
     Scale mode = Scales.CMajor.superimpose(Note.D);
-    ScaleInfo info = ScaleUniverse.MODES.findFirstOrElseDefault(mode);
+    ScaleInfo info = ScaleUniverse.MODES.findFirstOrElseThrow(mode);
     return new ScaleModel(info);
   }
 

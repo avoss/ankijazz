@@ -8,6 +8,13 @@ import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;
 import static java.lang.String.format;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
+import de.jlab.scales.Utils;
 import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 import de.jlab.scales.theory.IntervalAnalyzer;
@@ -18,18 +25,6 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
-/**
-Fields are for filtered decks only
-- front
-- back
-- task: one of Enharmonics, ModeIntervals, NameParent, NameMode, SpellScale, SpellChord
-- parentName - name of parent scale (only for tasks NameParent, NameMode, SpellScale)
-- parentType
-- parentRoot
-- modeName
-- modeType
-- modeRoot
- */
 public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
 
   private static final String FRONT = "front";
@@ -91,7 +86,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   void modeIntervals() {
     IntervalAnalyzer analyzer = new IntervalAnalyzer();
     for (Scale scale : commonModes()) {
-      ScaleInfo modeInfo = MODES.findFirstOrElseDefault(scale);
+      ScaleInfo modeInfo = MODES.findFirstOrElseThrow(scale);
       String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", modeInfo.getTypeName());
       String back = divb(analyzer.analyze(scale).toString());
       SimpleCard card = card(computeScaleDifficulty(modeInfo), "ModeIntervals", front, back);
@@ -128,12 +123,23 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
     add(card(difficulty, "SpellScale", front, back, modeInfo));
   }
 
+  Collection<? extends Scale> chordsToSpell() {
+    List<Scale> chords = new ArrayList<>();
+    Iterator<Note> roots = Utils.loopIterator(Arrays.asList(Note.values()));
+    for (Scale chord : Scales.allChords()) {
+      for (int i = 0; i < 7; i++) {
+        chords.add(chord.transpose(roots.next()));
+      }
+    }
+    return chords;
+  }
+  
   private void spellChords() {
     DifficultyModel model = new DifficultyModel();
     DoubleTerm numberOfAccidentalsDifficulty = model.doubleTerm(0, 6, 100);
     DoubleTerm numberOfNotesDifficulty = model.doubleTerm(3, 5, 50);
     model.doubleTerm(30).update(1);
-    for (Scale chord : allKeys(Scales.allChords())) {
+    for (Scale chord : chordsToSpell()) {
       for (ScaleInfo chordInfo : ScaleUniverse.CHORDS.infos(chord)) {
         numberOfAccidentalsDifficulty.update(chordInfo.getKeySignature().getNumberOfAccidentals());
         numberOfNotesDifficulty.update(chord.getNumberOfNotes());

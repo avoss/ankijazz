@@ -1,50 +1,51 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>{{title}}</title>
-  <style>
-    .card {
-      max-width: 40rem;
-    }
-  </style>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>{{title}}</title>
+<style>
+.card {
+	max-width: 40rem;
+}
+</style>
 </head>
 <body>
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      This deck contains the scales and modes that are most commonly used in modern music.
-    </p> 
+      This deck contains the scales and modes that are most commonly used in modern music. See full documentation on <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+    </p>
     <p>
-      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a>
-      and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz" target="_blank">buy me a coffee</a>? 
-      See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a> and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz"
+        target="_blank">buy me some coffee</a>?
     </p>
     {{#cards}}
-			<div class="card border-secondary mb-3">
-			  <h4 class="card-header">
-			    Play {{model.modeName}} in {{model.direction}} Direction in {{position.label}} Position
-			  </h4>
-			  <div class="card-body">
-			    <p><img src="{{position.image}}"></p>
-			    <p><img class="card-img-top" src="{{pngName}}"></p>
-			    <p class="card-text text-center">
-			      <audio controls src="{{mp3Name}}"></audio>
-			    </p>
-          <p class="card-text">Fields:</p>
-          <ul>
-            <li>ParentName: {{model.parentName}}</li>
-            <li>ParentType: {{model.parentTypeName}}</li>
-            <li>ParentRoot: {{model.parentRootName}}</li>
-            <li>ModeName: {{model.modeName}}</li>
-            <li>ModeType: {{model.modeTypeName}}</li>
-            <li>ModeRoot: {{model.modeRootName}}</li>
-            <li>Direction: {{model.direction}}</li>
-            <li>Position: {{position.label}}</li>
-          </ul>
-			  </div>
-			</div>
+    <div class="card border-secondary mb-3">
+      <h4 class="card-header">Play {{model.modeName}} in {{model.direction}} Direction in {{position.label}} Position</h4>
+      <div class="card-body">
+        <p>
+          <img src="{{position.image}}">
+        </p>
+        <p>
+          <img class="card-img-top" src="{{pngName}}">
+        </p>
+        <p class="card-text text-center">
+          <audio controls src="{{mp3Name}}"></audio>
+        </p>
+        <p class="card-text">Fields:</p>
+        <ul>
+          <li>ModeName: {{model.modeName}}</li>
+          <li>ModeType: {{model.modeTypeName}}</li>
+          <li>ModeRoot: {{model.modeRootName}}</li>
+          <li>ParentName: {{model.parentName}}</li>
+          <li>ParentType: {{model.parentTypeName}}</li>
+          <li>ParentRoot: {{model.parentRootName}}</li>
+          <li>Direction: {{model.direction}}</li>
+          <li>Position: {{position.label}}</li>
+        </ul>
+      </div>
+    </div>
     {{/cards}}
   </div>
 </body>

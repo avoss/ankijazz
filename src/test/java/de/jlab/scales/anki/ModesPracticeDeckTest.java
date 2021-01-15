@@ -11,7 +11,7 @@ public class ModesPracticeDeckTest {
   private static final double RND = 0.2;
 
   @Test
-  public void testPlayModesDeckTreble() {
+  public void testPlayModesDeckC() {
     Deck<?> deck = new ModesPracticeDeck(Note.C);
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "ModesPracticeDeckTest.txt");
     TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "ModesPracticeDeckTest.json");

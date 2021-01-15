@@ -8,25 +8,22 @@ import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.*;
+import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.C9;
 import static de.jlab.scales.theory.Scales.CHarmonicMajor;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.Cdim7;
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.Cm7;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
-import static de.jlab.scales.theory.Scales.allKeys;
-import static de.jlab.scales.theory.Scales.allModes;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -118,8 +115,8 @@ public class ScaleTest {
     assertEquals(G, C.five());
     assertEquals(Ab, C.sharp5());
     assertEquals(A, C.major6());
-    assertEquals(Bb, C.flat7());
-    assertEquals(B, C.sharp7());
+    assertEquals(Bb, C.dominant7());
+    assertEquals(B, C.major7());
   }
 
   @Test
@@ -133,9 +130,9 @@ public class ScaleTest {
     assertEquals("Em7", CMajor.getChord(2).asChord());
     assertEquals("CΔ9", CMajor.getChord(2).superimpose(C).asChord());
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
-    assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
+    assertEquals("C#7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
     assertEquals("Cdim7", Cdim7.superimpose(C).superimpose(C).asChord());
-    assertEquals("Gb7b5b9", C7.superimpose(Gb).asChord());
+    assertEquals("F#7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
   }
 
@@ -145,7 +142,6 @@ public class ScaleTest {
     fromChord("C7");
     fromChord("F#", Accidental.SHARP);
     fromChord("F7#5", Accidental.SHARP);
-    fromChord("C7sus4913");
     fromChord("Cm7");
     fromChord("Cm9");
     fromChord("C6");
@@ -221,29 +217,6 @@ public class ScaleTest {
     List<Note> expected = Arrays.asList(D, E, F, G, A, B, C);
     List<Note> actual = ddorian.stream().collect(Collectors.toList());
     assertEquals(expected, actual);
-  }
-  
-  @Test
-  public void testStackedThirdsSomeChords() {
-    assertEquals(List.of(C, E, G, Bb, D), C9.stackedThirds());
-    assertEquals(List.of(C, Eb, G, Bb, D), Cm9.stackedThirds());
-    assertEquals(List.of(C, Eb, G, Bb, F), Cm11.stackedThirds());
-    assertEquals(List.of(C, E, G, Bb, A), C13.stackedThirds());
-    assertEquals(List.of(D, Gb, A, C, Eb), C7flat9.transpose(D).stackedThirds());
-    assertEquals(List.of(Ab, C, D, Gb, B), C7flat5sharp9.transpose(Ab).stackedThirds());
-  }
-  
-  @Test
-  public void testStackedThirds() {
-    for (ScaleType type : BuiltinChordType.values()) {
-      Scale prototype = type.getPrototype();
-      for (Scale scale : allModes(allKeys(prototype))) {
-        Note[] thirds = scale.stackedThirds().toArray(new Note[0]);
-        for (int i = 1; i < thirds.length; i++) {
-          assertThat(thirds[i-1].distance(thirds[i])).isLessThan(7);
-        }
-      }
-    }
   }
   
 }

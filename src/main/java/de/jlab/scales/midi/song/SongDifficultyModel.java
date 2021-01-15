@@ -3,19 +3,27 @@ package de.jlab.scales.midi.song;
 import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Diminished7;
 import static de.jlab.scales.theory.BuiltinChordType.DiminishedTriad;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant11;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant13;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat13;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat5;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat5flat9;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat5sharp9;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat9;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat9flat13;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat9sharp11;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp11;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5flat9;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5sharp9;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp9;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp9flat13;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp9sharp11;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant9;
 import static de.jlab.scales.theory.BuiltinChordType.Major6;
+import static de.jlab.scales.theory.BuiltinChordType.Major69;
 import static de.jlab.scales.theory.BuiltinChordType.Major7;
 import static de.jlab.scales.theory.BuiltinChordType.Major7Sharp11;
 import static de.jlab.scales.theory.BuiltinChordType.Major7Sharp5;
@@ -23,11 +31,13 @@ import static de.jlab.scales.theory.BuiltinChordType.Major9;
 import static de.jlab.scales.theory.BuiltinChordType.MajorTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Minor11;
 import static de.jlab.scales.theory.BuiltinChordType.Minor6;
+import static de.jlab.scales.theory.BuiltinChordType.Minor69;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
 import static de.jlab.scales.theory.BuiltinChordType.Minor9;
 import static de.jlab.scales.theory.BuiltinChordType.MinorMajor7;
 import static de.jlab.scales.theory.BuiltinChordType.MinorTriad;
+import static de.jlab.scales.theory.BuiltinChordType.PowerChord;
 import static de.jlab.scales.theory.BuiltinChordType.Sus4Triad;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
@@ -46,6 +56,7 @@ import de.jlab.scales.theory.Scales;
 public class SongDifficultyModel {
 
   static final ScaleType[] typesOrderedByDifficulty = {
+      PowerChord,
       MajorTriad,
       MinorTriad,
       Minor7,
@@ -62,21 +73,33 @@ public class SongDifficultyModel {
       Dominant9,
       Sus4Triad,
       Dominant7sus4,
+      Major69,
       Dominant13,
       AugmentedTriad,
+      Minor69,
       Minor11,
       Dominant7sharp5,
+      Dominant7flat13,
       Dominant7sharp9,
       Dominant7flat5,
+      Dominant7sharp11,
       Major7Sharp11,
 
+      Dominant11,
       MinorMajor7,
+      
       Dominant7flat5flat9,
-      Dominant7sharp5sharp9,
-      Dominant7sharp5flat9,
       Dominant7flat5sharp9,
+      Dominant7sharp5flat9,
+      Dominant7sharp5sharp9,
+
+      Dominant7flat9sharp11,
+      Dominant7flat9flat13,
+      Dominant7sharp9sharp11,
+      Dominant7sharp9flat13,
       
       Major7Sharp5,
+      
       
   };
   

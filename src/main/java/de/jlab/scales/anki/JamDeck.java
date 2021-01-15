@@ -30,9 +30,9 @@ public class JamDeck extends AbstractDeck<JamCard> {
     // addCards(Set.of(Test, AllKeys), Set.of(latin(125)));
     
     Set<Ensemble> ensembles = Set.of(funk(80), latin(125));
-    addCards(Set.of(Triads, EachKey, AllKeys), ensembles);
+    addCards(Set.of(Triads, SomeKeys, AllKeys), ensembles);
     addCards(Set.of(Workouts, SomeKeys, AllKeys), ensembles);
-    addCards(Set.of(TwoFiveOnes, EachKey), ensembles);
+    addCards(Set.of(TwoFiveOnes, EachKey, AllKeys), ensembles);
     addCards(Set.of(ExtTwoFiveOnes, EachKey, AllKeys), ensembles);
     addCards(Set.of(JazzBlues, EachKey), ensembles);
     System.out.println(String.format("Total number of cards: %d", getCards().size()));

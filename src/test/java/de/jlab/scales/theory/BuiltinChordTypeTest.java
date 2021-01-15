@@ -15,13 +15,17 @@ import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
+import java.util.stream.Collectors;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class BuiltinChordTypeTest {
 
   @Test
+  @Ignore
   public void findScalesContainingChord() {
     ScaleUniverse scales = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, HarmonicMajor));
     for (ScaleType chordType : BuiltinChordType.values()) {
@@ -35,7 +39,7 @@ public class BuiltinChordTypeTest {
   }
 
   @Test
-  //@Ignore
+  @Ignore
   public void findMajorScalesContainingAllChords() {
     ScaleUniverse scales = new ScaleUniverse(false, List.of(Major));
     for (ScaleType chordType : BuiltinChordType.values()) {
@@ -65,6 +69,22 @@ public class BuiltinChordTypeTest {
       .map(k -> k.toString(type.getPrototype().transpose(root)))
       .collect(toSet());
     assertEquals(expectedSet, actualSet);
+  }
+  
+  @Test
+  public void assertAllChordsHaveBuiltinChordType() {
+    for (Scale chord : Scales.allChords()) {
+      Arrays.stream(BuiltinChordType.values()).filter(type -> type.getPrototype().equals(chord)).findAny().orElseThrow(() -> new NoSuchElementException(chord.asChord()));
+    }
+  }
+  
+  @Test
+  public void assertNoDuplicateTypes() {
+    Set<Scale> scales = Arrays.stream(BuiltinChordType.values()).map(t -> t.getPrototype()).collect(Collectors.toSet());
+    assertEquals(BuiltinChordType.values().length, scales.size());
+    Set<String> names = Arrays.stream(BuiltinChordType.values()).map(t -> t.getTypeName()).collect(Collectors.toSet());
+    assertEquals(BuiltinChordType.values().length, names.size());
+    
   }
   
 }

@@ -1,40 +1,37 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <title>{{title}}</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>{{title}}</title>
 </head>
 <body>
   <div class="container">
     <h1>{{title}}</h1>
     <p>
-      This deck contains the scales, modes and chords that are most commonly used in Jazz.  
-    </p> 
+      This deck contains the scales, modes and chords that are most commonly used in Jazz. See full documentation on <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+    </p>
     <p>
-      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a>
-      and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz" target="_blank">buy me a coffee</a>? 
-      See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a> and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz"
+        target="_blank">buy me some coffee</a>?
     </p>
     {{#cards}}
-      <div class="card mb-3">
-        <h5 class="card-header">{{{fields.front}}}</h5>
-        <div class="card-body">
-          <p class="card-text">{{{fields.back}}}</p>
-          <p class="card-text">Fields:</p>
-          <ul>
-            <li>Front: as shown</li>
-            <li>Back: as shown</li>
-            <li>Task: {{fields.task}}</li>
-            <li>ParentName: {{fields.parentName}}</li>
-            <li>ParentType: {{fields.parentType}}</li>
-            <li>ParentRoot: {{fields.parentRoot}}</li>
-            <li>ModeName: {{fields.modeName}}</li>
-            <li>ModeType: {{fields.modeType}}</li>
-            <li>ModeRoot: {{fields.modeRoot}}</li>
-          </ul>
-        </div>
+    <div class="card mb-3">
+      <h5 class="card-header">{{{fields.front}}}</h5>
+      <div class="card-body">
+        <p class="card-text">{{{fields.back}}}</p>
+        <p class="card-text">Fields:</p>
+        <ul>
+          <li>Task: {{fields.task}}</li>
+          <li>ModeName: {{fields.modeName}}</li>
+          <li>ModeType: {{fields.modeType}}</li>
+          <li>ModeRoot: {{fields.modeRoot}}</li>
+          <li>ParentName: {{fields.parentName}}</li>
+          <li>ParentType: {{fields.parentType}}</li>
+          <li>ParentRoot: {{fields.parentRoot}}</li>
+        </ul>
       </div>
+    </div>
     {{/cards}}
   </div>
 </body>

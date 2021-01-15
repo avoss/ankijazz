@@ -28,10 +28,13 @@ public class ChordToLilyMapper {
   static {
     map.put("Δ7", "maj7");
     map.put("Δ9", "maj9");
+    map.put("5", "5");
     map.put("6", "6");
+    map.put("69", "6.9");
     map.put("Δ7#11", "maj7.11+");
     map.put("m7", "m7");
     map.put("m6", "m6");
+    map.put("m69", "m6.9");
     map.put("m9", "m9");
     map.put("m11", "m11");
     map.put("7", "7");
@@ -47,10 +50,18 @@ public class ChordToLilyMapper {
     map.put("7#9", "7.9+");
     map.put("7b5", "7.5-");
     map.put("7#5", "7.5+");
+    map.put("7#11", "7.11+");
+    map.put("7b13", "7.13-");
     map.put("7b5b9", "7.5-9-");
     map.put("7#5b9", "7.5+9-");
     map.put("7b5#9", "7.5-9+");
     map.put("7#5#9", "7.5+9+");
+    
+    map.put("7b9#11", "7.9-11+");
+    map.put("7b9b13", "7.9-13-");
+    map.put("7#9#11", "7.9+11+");
+    map.put("7#9b13", "7.9+13-");
+    
     map.put("", "");
     map.put("m", "m");
     map.put("dim", "dim");

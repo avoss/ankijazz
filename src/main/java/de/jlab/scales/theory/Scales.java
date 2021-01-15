@@ -37,15 +37,25 @@ public class Scales {
   public static final Scale CMinorPentatonic = new Scale(C, Eb, F, G, Bb);
   public static final Scale CMinor6Pentatonic = new Scale(C, Eb, F, G, A);
 
+  public static final Scale C5 = new Scale(C, G);
+  
+  public static final Scale CmajTriad = new Scale(C, E, G);
+  public static final Scale CminTriad = new Scale(C, Eb, G);
+  public static final Scale CdimTriad = new Scale(C, Eb, Gb);
+  public static final Scale CaugTriad = new Scale(C, E, Ab);
+  public static final Scale Csus4Triad = new Scale(C, F, G);
+  
   public static final Scale Cm7 = new Scale(C, Eb, G, Bb);
   public static final Scale Cm9 = new Scale(C, Eb, G, Bb, D);
   public static final Scale Cm11 = new Scale(C, Eb, G, Bb, F);
   public static final Scale Cm6 = new Scale(C, Eb, G, A);
+  public static final Scale Cm69 = new Scale(C, Eb, G, A, D);
   public static final Scale Cm7b5 = new Scale(C, Eb, Gb, Bb);
   public static final Scale Cmmaj7 = new Scale(C, Eb, G, B);
 
   public static final Scale C7 = new Scale(C, E, G, Bb);
   public static final Scale C9 = new Scale(C, E, G, Bb, D);
+  public static final Scale C11 = new Scale(C, E, G, Bb, F);
   public static final Scale C13 = new Scale(C, E, G, Bb, A);
   public static final Scale C7sus4 = new Scale(C, F, G, Bb);
   public static final Scale Cdim7 = new Scale(C, Eb, Gb, A);
@@ -53,26 +63,67 @@ public class Scales {
   public static final Scale Cmaj7 = new Scale(C, E, G, B);
   public static final Scale Cmaj9 = new Scale(C, E, G, B, D);
   public static final Scale C6 = new Scale(C, E, G, A);
+  public static final Scale C69 = new Scale(C, E, G, A, D);
   public static final Scale Cmaj7Sharp5 = new Scale(C, E, Ab, B);
-  public static final Scale Cmaj7Sharp11 = new Scale(C, E, Gb, B);
+  public static final Scale Cmaj7Sharp11 = new Scale(C, E, G, B, Gb);
 
   public static final Scale C7flat9 = new Scale(C, E, G, Bb, Db);
   public static final Scale C7sharp9 = new Scale(C, E, G, Bb, Eb);
   public static final Scale C7flat5 = new Scale(C, E, Gb, Bb);
+  public static final Scale C7sharp11 = new Scale(C, E, G, Bb, Gb);
   public static final Scale C7sharp5 = new Scale(C, E, Ab, Bb);
+  public static final Scale C7flat13 = new Scale(C, E, G, Bb, Ab);
+  
   public static final Scale C7flat5flat9 = new Scale(C, E, Gb, Bb, Db);
   public static final Scale C7sharp5flat9 = new Scale(C, E, Ab, Bb, Db);
   public static final Scale C7flat5sharp9 = new Scale(C, E, Gb, Bb, Eb);
   public static final Scale C7sharp5sharp9 = new Scale(C, E, Ab, Bb, Eb);
 
-  public static final Scale CmajTriad = new Scale(C, E, G);
-  public static final Scale CminTriad = new Scale(C, Eb, G);
-  public static final Scale CdimTriad = new Scale(C, Eb, Gb);
-  public static final Scale CaugTriad = new Scale(C, E, Ab);
-  public static final Scale Csus4Triad = new Scale(C, F, G);
-
+  public static final Scale C7flat9sharp11 = new Scale(C, E, G, Bb, Db, Gb);
+  public static final Scale C7flat9flat13 = new Scale(C, E, G, Bb, Db, Ab);
+  public static final Scale C7sharp9sharp11 = new Scale(C, E, G, Bb, Eb, Gb);
+  public static final Scale C7sharp9flat13 = new Scale(C, E, G, Bb, Eb, Ab);
+  
   public static List<Scale> seventhChords() {
-    return List.of(Cmaj7, Cm7, Cm6, C7, Cm7b5, Cdim7, Cmmaj7, Cmaj7Sharp5, Cmaj7Sharp11, C7sus4, C7flat9, C7sharp9, C7flat5, C7sharp5, C7flat5flat9, C7sharp5flat9, C7flat5sharp9, C7sharp5sharp9);
+    return List.of(
+        Cm7,
+        Cm9,
+        Cm11,
+        Cm6,
+        Cm69,
+        Cm7b5,
+        Cmmaj7,
+
+        C7,
+        C9,
+        C11,
+        C13,
+        C7sus4,
+        Cdim7,
+
+        Cmaj7,
+        Cmaj9,
+        C6,
+        C69,
+        Cmaj7Sharp5,
+        Cmaj7Sharp11,
+
+        C7flat9,
+        C7sharp9,
+        C7flat5,
+        C7sharp11,
+        C7sharp5,
+        C7flat13,
+        
+        C7flat5flat9,
+        C7sharp5flat9,
+        C7flat5sharp9,
+        C7sharp5sharp9,
+        
+        C7flat9sharp11,
+        C7flat9flat13,
+        C7sharp9sharp11,
+        C7sharp9flat13);
   }
 
   public static List<Scale> triads() {

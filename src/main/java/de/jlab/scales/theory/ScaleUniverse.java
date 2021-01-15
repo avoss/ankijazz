@@ -152,9 +152,6 @@ public class ScaleUniverse implements Iterable<Scale> {
     return infos.get(scale).stream().sorted(difficulty).collect(toList());
   }
 
-  public ScaleInfo findFirstOrElseDefault(Scale scale) {
-    return infos(scale).stream().findFirst().orElseGet(() -> defaultInfo(scale));
-  }
 
   public ScaleInfo findFirstOrElseThrow(Scale scale) {
     return infos(scale).stream().findFirst().orElseThrow(() -> new IllegalArgumentException("Scale not found: " + scale));
@@ -173,48 +170,6 @@ public class ScaleUniverse implements Iterable<Scale> {
     
   }
   
-  // FIXME too much guesswork here ...
-  private ScaleInfo defaultInfo(Scale scale) {
-    ScaleInfo info = ScaleInfo.builder().scale(scale).typeName(scale.asIntervals()).build();
-    info.setParentInfo(info);
-    initializeDefaultInfoSuperAndSubScales(info);
-    /*
-     * TODO: should search for major scale with lowest index. 
-     * E.g. FMaj7 belongs to F major scale, not to c major, although contained in both
-     * If no major scale can be found, then meldodic / harmonic minor schould be searched. 
-     */
-    Optional<Scale> superScale = info.getSuperScales().stream().findFirst();
-    KeySignature signature = superScale.isPresent() 
-        ? findFirstOrElseDefault(superScale.get()).getKeySignature() 
-        : KeySignature.fromScale(scale); 
-    info.setKeySignature(signature);
-    info.setScaleName(scaleName(scale, signature));
-    return info;
-  }
-
-  private String scaleName(Scale scale, KeySignature signature) {
-    return isChord(scale) ? scale.asChord(signature.getAccidental()) : signature.toString(scale);
-  }
-  
-  private boolean isChord(Scale scale) {
-    return scale.getNumberOfNotes() < 5;
-  }
-
-  private void initializeDefaultInfoSuperAndSubScales(ScaleInfo info) {
-    Set<? extends Note> notes = info.getScale().asSet();
-    for (Scale scale : this) {
-      if (scale.asSet().equals(notes)) {
-        continue;
-      }
-      if (scale.asSet().containsAll(notes)) {
-        info.getSuperScales().add(scale);
-      }
-      if (notes.containsAll(scale.asSet())) {
-        info.getSubScales().add(scale);
-      }
-    }
-  }
-
   private void initializeSubScales() {
     for (Scale superScale : this) {
       for (Scale subScale : this) {

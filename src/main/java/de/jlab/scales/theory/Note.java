@@ -84,11 +84,11 @@ public enum Note {
     return transpose(9);
   }
 
-  public Note flat7() {
+  public Note dominant7() {
     return transpose(10);
   }
 
-  public Note sharp7() {
+  public Note major7() {
     return transpose(11);
   }
 

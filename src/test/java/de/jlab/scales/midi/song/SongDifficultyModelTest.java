@@ -19,7 +19,7 @@ public class SongDifficultyModelTest {
   @Test
   public void testAllChordsCanBeHandled() {
     assertThat(model.getChordDifficulty(CmajTriad.transpose(Note.Eb))).isLessThan(model.getChordDifficulty(Cmaj7));
-    Arrays.stream(BuiltinChordType.values()).forEach(type -> model.getChordDifficulty(type.getPrototype()));
+    BuiltinChordType.stream().forEach(type -> model.getChordDifficulty(type.getPrototype()));
   }
 
   @Test

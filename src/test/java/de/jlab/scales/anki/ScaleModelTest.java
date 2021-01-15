@@ -21,7 +21,7 @@ public class ScaleModelTest {
   @Test
   public void testWriteAssets() throws IOException {
     Scale bb7 = CMajor.transpose(Eb).superimpose(Bb);
-    ScaleModel model = new ScaleModel(ScaleUniverse.MODES.findFirstOrElseDefault(bb7));
+    ScaleModel model = new ScaleModel(ScaleUniverse.MODES.findFirstOrElseThrow(bb7));
     LilyCard card = new ModesPracticeCard(model);
     Path dir = Paths.get("build/lily");
     Files.createDirectories(dir);

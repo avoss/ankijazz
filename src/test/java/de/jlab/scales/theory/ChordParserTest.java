@@ -41,7 +41,6 @@ public class ChordParserTest {
     assertChord("Cm", C, Eb, G);
     assertChord("Cdim", C, Eb, Gb);
     assertChord("Caug", C, E, Ab);
-    assertChord("Csus2", C, D, G);
     assertChord("Csus4", C, F, G);
   }
 
@@ -61,13 +60,14 @@ public class ChordParserTest {
     assertChord("C9", C, E, G, Bb, D);
     assertChord("C11", C, E, G, Bb, F);
     assertChord("C13", C, E, G, Bb, A);
-    assertChord("C7b13", "C7#5", C, E, Bb, Ab);
+    assertChord("C7b13", C, E, G, Bb, Ab);
+    assertChord("C7#11", C, E, G, Bb, Gb);
     assertChord("Cdim7", C, Eb, Gb, A);
     assertChord("C7sus4", C, F, G, Bb);
   }
   
   @Test
-  public void testBuiltinChordTypes() {
+  public void assertThatAllBuiltinChordTypesAreParsedCorrectly() {
     for (ScaleType type : BuiltinChordType.values()) {
       for (Note root : Note.values()) {
         Scale expected = type.getPrototype().transpose(root);
@@ -75,12 +75,6 @@ public class ChordParserTest {
           String symbol = key.notate(expected.getRoot()).concat(type.getTypeName());
           Scale actual = ChordParser.parseChord(symbol);
           assertEquals("could not parse " + symbol, expected, actual);
-          /*
-           * TODO other chords use b5, only maj7#11 uses #11 instead. ChordParser will return maj7b5
-           */
-          if (type != BuiltinChordType.Major7Sharp11) {
-            assertEquals("could not print " + symbol, symbol, new ChordParser(key.getAccidental()).asChord(actual));
-          }
         }
       }
     }
@@ -88,11 +82,13 @@ public class ChordParserTest {
   
   @Test
   public void testMajorChords() {
+    assertChord("C6", C, E, G, A);
+    assertChord("C69", C, E, G, A, D);
     assertChord("CΔ7", C, E, G, B);
     assertChord("Cmaj7", "CΔ7", C, E, G, B);
     assertChord("CΔ9", C, E, G, B, D);
     assertChord("Cmaj9", "CΔ9", C, E, G, B, D);
-    assertChord("CΔ7#11", "CΔ7b5", C, E, B, Gb);
+    assertChord("CΔ7#11", C, E, G, B, Gb);
   }
 
   @Test
@@ -114,6 +110,6 @@ public class ChordParserTest {
   private void assertChord(String symbol, String expected, Accidental accidental, Note... notes) {
     Scale chord = ChordParser.parseChord(symbol);
     assertEquals("could not parse " + symbol, Set.of(notes), chord.asSet());
-    assertEquals("could not print " + symbol, expected, new ChordParser(accidental).asChord(chord));
+    assertEquals("could not print " + symbol, expected, new ChordParser().asChord(chord, accidental));
   }
 }
