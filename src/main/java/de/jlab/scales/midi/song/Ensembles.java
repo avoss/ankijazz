@@ -67,7 +67,7 @@ public class Ensembles {
       .bar("8--- > -.8. 8--- > ..8.", 1, 5, 5, 1)
       .bar("8--- > -.8. 8--- ....",  1, 5, 5);
 
-    ensemble.drop2chords(74, Program.ElectricPiano1, 50, -1)
+    ensemble.drop2chords(72, Program.ElectricPiano1, 50, -1)
       .bar("x... x--- ..x. > ..x-")
       .bar("---- > ..x. ..x- ---.");
 
@@ -105,7 +105,7 @@ public class Ensembles {
       .bar("x--- > ..xx .... ....", 1, 1, 1)
       .bar("x--- > ...x ---- ....", 1, 1);
 
-    ensemble.drop2chords(74, Program.ElectricPiano2, 55, -1)
+    ensemble.drop2chords(72, Program.ElectricPiano2, 55, -1)
       .bar("x..x .... x--x ..x.")
       .bar("x--- > ...x ---- ....");
 

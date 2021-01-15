@@ -15,9 +15,11 @@ public class Drop2ChordGenerator implements ChordGenerator {
 
   private static final int NUMBER_OF_NOTES_LIMIT = 4;
   private final int highestMidiPitch;
+  private final NoteToMidiMapper mapper;
 
   public Drop2ChordGenerator(int highestMidiPitch) {
     this.highestMidiPitch = highestMidiPitch;
+    this.mapper = NoteToMidiMapper.range(0, highestMidiPitch);
   }
 
   @Override
@@ -32,7 +34,7 @@ public class Drop2ChordGenerator implements ChordGenerator {
   private int[] drop2MidiPitches(int dropIndex, List<Note> inversion) {
     int[] result = new int[inversion.size()];
     int resultIndex = 0;
-    NoteToMidiMapper mapper = NoteToMidiMapper.range(0, highestMidiPitch).resetToHighest();
+    mapper.resetToHighest();
     ListIterator<Note> iterator = inversion.listIterator(inversion.size());
     Note dropNote = inversion.get(dropIndex);
     while (iterator.hasPrevious()) {
@@ -40,10 +42,18 @@ public class Drop2ChordGenerator implements ChordGenerator {
       if (note == dropNote) {
         continue;
       }
-      result[resultIndex++] = mapper.nextLower(note);
+      result[resultIndex++] = nextLower(note);
     }
-    result[resultIndex++] = mapper.nextLower(dropNote);
+    result[resultIndex++] = nextLower(dropNote);
     return result;
+  }
+
+  private int nextLower(Note note) {
+    int lower = mapper.nextLower(note);
+    if (lower < highestMidiPitch - 16) {
+      lower += 12;
+    }
+    return lower;
   }
 
   List<Note> findBestInversion(List<Note> notes) {
