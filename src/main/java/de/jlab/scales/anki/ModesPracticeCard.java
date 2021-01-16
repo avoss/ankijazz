@@ -31,12 +31,12 @@ public class ModesPracticeCard extends LilyCard {
   @Override
   public String getCsv() {
     return Stream.of(
-        model.getParentName(),
-        model.getParentTypeName(),
-        model.getParentRootName(),
         model.getModeName(),
         model.getModeTypeName(),
         model.getModeRootName(),
+        model.getParentName(),
+        model.getParentTypeName(),
+        model.getParentRootName(),
         ankiMp3(super.getMp3Name()),
         ankiPng(super.getPngName()),
         model.getDirection()).collect(Collectors.joining(CSV_DELIMITER));
@@ -45,12 +45,12 @@ public class ModesPracticeCard extends LilyCard {
   @Override
   public Map<String, Object> getJson() {
     Map<String, Object> map = new LinkedHashMap<>();
-    map.put("parentName", model.getParentName());
-    map.put("parentType", model.getParentTypeName());
-    map.put("parentRoot", model.getParentRootName());
     map.put("modeName", model.getModeName());
     map.put("modeType", model.getModeTypeName());
     map.put("modeRoot", model.getModeRootName());
+    map.put("parentName", model.getParentName());
+    map.put("parentType", model.getParentTypeName());
+    map.put("parentRoot", model.getParentRootName());
     map.put("modeMp3", getMp3Name());
     map.put("modePng", getPngName());
     map.put("direction", model.getDirection());

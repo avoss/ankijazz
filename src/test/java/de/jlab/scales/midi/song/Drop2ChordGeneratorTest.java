@@ -30,7 +30,7 @@ import de.jlab.scales.theory.ScaleType;
 
 public class Drop2ChordGeneratorTest {
 
-  final int highestMidiPitch = 70;
+  final int highestMidiPitch = 72;
   final Note highestMidiNote = MidiUtils.midiPitchToNote(highestMidiPitch);
   final Drop2ChordGenerator generator = new Drop2ChordGenerator(highestMidiPitch);
   

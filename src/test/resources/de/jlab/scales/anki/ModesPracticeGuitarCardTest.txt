@@ -1,1 +1,1 @@
-C Major Scale	Major Scale	C	D Dorian	Dorian	D	[sound:AnkiJazz-83e6e558f9.mp3]	<img src="AnkiJazz-83e6e558f9.png">	Ascending	High	<img src="AnkiJazz-FretboardHigh.png">
+D Dorian	Dorian	D	C Major Scale	Major Scale	C	[sound:AnkiJazz-fd51a7d0.mp3]	<img src="AnkiJazz-fd51a7d0.png">	Ascending	High	<img src="AnkiJazz-FretboardHigh.png">

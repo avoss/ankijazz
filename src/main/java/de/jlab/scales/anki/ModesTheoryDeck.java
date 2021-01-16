@@ -54,7 +54,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   }
 
   private SimpleCard card(double difficulty, String task, String front, String back) {
-    SimpleCard card = new SimpleCard(difficulty, FRONT, BACK, TASK, PARENT_NAME, PARENT_TYPE, PARENT_ROOT, MODE_NAME, MODE_TYPE, MODE_ROOT);
+    SimpleCard card = new SimpleCard(difficulty, FRONT, BACK, TASK, MODE_NAME, MODE_TYPE, MODE_ROOT, PARENT_NAME, PARENT_TYPE, PARENT_ROOT);
     card.put(FRONT, front);
     card.put(BACK, back);
     card.put(TASK, task);
@@ -64,12 +64,12 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   private SimpleCard card(double difficulty, String task, String front, String back, ScaleInfo modeInfo) {
     SimpleCard card = card(difficulty, task, front, back);
     ScaleInfo parentInfo = modeInfo.getParentInfo();
-    card.put(PARENT_NAME, parentInfo.getScaleName());
-    card.put(PARENT_TYPE, parentInfo.getTypeName());
-    card.put(PARENT_ROOT, parentInfo.getKeySignature().notate(parentInfo.getScale().getRoot()));
     card.put(MODE_NAME, modeInfo.getScaleName());
     card.put(MODE_TYPE, modeInfo.getTypeName());
     card.put(MODE_ROOT, modeInfo.getKeySignature().notate(modeInfo.getScale().getRoot()));
+    card.put(PARENT_NAME, parentInfo.getScaleName());
+    card.put(PARENT_TYPE, parentInfo.getTypeName());
+    card.put(PARENT_ROOT, parentInfo.getKeySignature().notate(parentInfo.getScale().getRoot()));
     return card;
   }
   

@@ -76,13 +76,13 @@ public class JamCard implements Card {
   @Override
   public Map<String, Object> getJson() {
     Map<String, Object> map = new LinkedHashMap<>();
-    map.put("progression", getProgression());
+    map.put("title", getProgression());
     map.put("type", getType());
     map.put("key", getKey());
     map.put("style", getStyle());
     map.put("tempo", getTempo());
-    map.put("songImage", getPngName());
-    map.put("songAudio", getMp3Name());
+    map.put("songPng", getPngName());
+    map.put("songMp3", getMp3Name());
     map.put("difficulty", getDifficulty());
     if (position.isPresent()) {
       map.put("positionLabel", position.get().getLabel());
