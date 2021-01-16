@@ -113,14 +113,15 @@ public class TestUtils {
 
   public static void writeTo(Deck<?> deck, double randomness) {
     deck.sort(randomness);
-//    Path ankiDir = Paths.get("build/anki");
-//    deck.writeHtml(ankiDir);
-//    deck.writeAnki(ankiDir); 
-//    deck.writeAssets(ankiDir);
+    Path ankiDir = Paths.get("build/anki");
+    deck.writeAnki(ankiDir); 
+    deck.writeHtml(ankiDir);
+    deck.writeJson(ankiDir);
+    deck.writeAssets(ankiDir);
 
     Deck<?> subdeck = deck.subdeck(50);
     Path previewDir = Paths.get("build/preview");
-    deck.writeAnki(previewDir); 
+    subdeck.writeAnki(previewDir); 
     subdeck.writeHtml(previewDir);
     subdeck.writeJson(previewDir);
     subdeck.writeAssets(previewDir);
