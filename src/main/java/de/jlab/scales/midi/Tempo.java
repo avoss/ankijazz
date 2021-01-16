@@ -2,9 +2,11 @@ package de.jlab.scales.midi;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter
+@ToString
 public class Tempo extends AbstractPart {
   private final int bpm;
 

@@ -19,6 +19,7 @@ public class JamDeckTest {
   @Test
   @Ignore
   public void testC() {
-    TestUtils.writeTo(new JamDeck("Practice Chords (C-Instrument)", Note.C, false), 0.0);
+    TestUtils.writeTo(new JamDeck("Practice Chords (Eb-Instrument)", Note.Eb, false), 0.0);
+//    TestUtils.writeTo(new JamDeck("Practice Chords (C-Instrument)", Note.C, false), 0.0);
   }
 }

@@ -1,8 +1,10 @@
 package de.jlab.scales.midi;
 
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 @EqualsAndHashCode(callSuper = true)
+@ToString
 public class Rest  extends AbstractPart  {
   public static final Rest r1 = new Rest(1, 1);
   public static final Rest r2 = new Rest(1, 2);
