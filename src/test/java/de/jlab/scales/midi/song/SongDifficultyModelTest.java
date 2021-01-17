@@ -5,8 +5,6 @@ import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import java.util.Arrays;
-
 import org.junit.Test;
 
 import de.jlab.scales.theory.BuiltinChordType;

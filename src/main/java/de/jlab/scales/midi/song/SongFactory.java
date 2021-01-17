@@ -27,11 +27,11 @@ import de.jlab.scales.theory.Note;
 import lombok.Data;
 
 public class SongFactory {
-  private Set<Feature> features;
-  private Map<Feature, List<? extends KeyFactory>> keyFactories = new HashMap<>();
-  private Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
-  private Set<Song> songsGeneratedSoFar = new HashSet<>();
-  private LoopIteratorFactory iteratorFactory;
+  private final Set<Feature> features;
+  private final Map<Feature, List<? extends KeyFactory>> keyFactories = new HashMap<>();
+  private final Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
+  private final Set<Song> songsGeneratedSoFar = new HashSet<>();
+  private final LoopIteratorFactory iteratorFactory;
 
   public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, SimpleBlues, JazzBlues, EachKey, SomeKeys, AllKeys }
 

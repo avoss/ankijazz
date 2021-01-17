@@ -2,7 +2,6 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.BuiltinChordType.DiminishedTriad;
 import static de.jlab.scales.theory.BuiltinScaleType.DiminishedHalfWhole;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
@@ -16,7 +15,6 @@ import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
@@ -30,7 +28,6 @@ import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
 import static de.jlab.scales.theory.Scales.CWholeTone;
-import static de.jlab.scales.theory.Scales.CdimTriad;
 import static de.jlab.scales.theory.Scales.Cm7b5;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;
@@ -51,8 +48,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
-
-import com.google.common.collect.Lists;
 
 import de.jlab.scales.TestUtils;
 

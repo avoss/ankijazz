@@ -38,11 +38,11 @@ public class JamCardTest {
   }
   
   private JamCard guitarCard() {
-    return new JamCard(Note.C, RenderContext.ANKI, MidiTestUtils.createStaticSongWrapper(), Ensembles.funk(100), position);
+    return new JamCard(Note.C, RenderContext.ANKI, MidiTestUtils.createStaticSongWrapper(), () -> Ensembles.funk(100), position);
   }
   
   private JamCard card() {
-    return new JamCard(Note.C, RenderContext.ANKI, MidiTestUtils.createStaticSongWrapper(), Ensembles.funk(100));
+    return new JamCard(Note.C, RenderContext.ANKI, MidiTestUtils.createStaticSongWrapper(), () -> Ensembles.funk(100));
   }
 
 }

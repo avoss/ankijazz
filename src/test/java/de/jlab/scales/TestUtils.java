@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import de.jlab.scales.anki.Card;
 import de.jlab.scales.anki.Deck;
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.BuiltinScaleType;
@@ -111,7 +112,7 @@ public class TestUtils {
     return uniqueNotes.size() < scale.asList().size();
   }
 
-  public static void writeTo(Deck<?> deck, double randomness) {
+  public static <T extends Card> Deck<T> writeTo(Deck<T> deck, double randomness) {
     deck.sort(randomness);
     Path ankiDir = Paths.get("build/anki");
     deck.writeAnki(ankiDir); 
@@ -119,12 +120,13 @@ public class TestUtils {
     deck.writeJson(ankiDir);
     deck.writeAssets(ankiDir);
 
-    Deck<?> subdeck = deck.subdeck(50);
+    Deck<T> subdeck = deck.subdeck(50);
     Path previewDir = Paths.get("build/preview");
     subdeck.writeAnki(previewDir); 
     subdeck.writeHtml(previewDir);
     subdeck.writeJson(previewDir);
     subdeck.writeAssets(previewDir);
+    return subdeck;
   }
 
   public static KeySignature majorKeySignature(Note root) {

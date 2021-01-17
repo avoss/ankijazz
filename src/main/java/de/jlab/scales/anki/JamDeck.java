@@ -2,10 +2,17 @@ package de.jlab.scales.anki;
 
 import static de.jlab.scales.midi.song.Ensembles.funk;
 import static de.jlab.scales.midi.song.Ensembles.latin;
-import static de.jlab.scales.midi.song.SongFactory.Feature.*;
+import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
+import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
+import static de.jlab.scales.midi.song.SongFactory.Feature.ExtTwoFiveOnes;
+import static de.jlab.scales.midi.song.SongFactory.Feature.JazzBlues;
+import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
+import static de.jlab.scales.midi.song.SongFactory.Feature.Triads;
+import static de.jlab.scales.midi.song.SongFactory.Feature.TwoFiveOnes;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 
 import java.util.Set;
+import java.util.function.Supplier;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
@@ -27,9 +34,9 @@ public class JamDeck extends AbstractDeck<JamCard> {
     super(title, "Jam".concat(instrument.name()).concat(withGuitar ? "Guitar" : "").concat("Deck"));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
-    // addCards(Set.of(Test, AllKeys), Set.of(latin(125)));
+    // addCards(Set.of(Test, AllKeys), () -> Set.of(latin(125)));
     
-    Set<Ensemble> ensembles = Set.of(funk(80), latin(125));
+    Set<Supplier<Ensemble>> ensembles =  Set.of(() -> funk(80), () -> latin(125));
     addCards(Set.of(Triads, SomeKeys, AllKeys), ensembles);
     addCards(Set.of(Workouts, SomeKeys, AllKeys), ensembles);
     addCards(Set.of(TwoFiveOnes, EachKey, AllKeys), ensembles);
@@ -38,30 +45,26 @@ public class JamDeck extends AbstractDeck<JamCard> {
     System.out.println(String.format("Total number of cards: %d", getCards().size()));
   }
 
-  private void addCards(Set<Feature> features, Set<Ensemble> ensembles) {
-    int numberOfCards = 0;
-    for (Ensemble ensemble: ensembles) {
-      numberOfCards += addCards(ensemble, features);
-    }
-    System.out.println(String.format("%5d cards added for %s and %s", numberOfCards, features, ensembles));
-  }
-
-  private int addCards(Ensemble ensemble, Set<Feature> features) {
+  private void addCards(Set<Feature> features, Set<Supplier<Ensemble>> ensembles) {
     int numberOfCards = 0;
     LoopIteratorFactory iteratorFactory = Utils.randomLoopIteratorFactory();
     SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
     for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
       if (withGuitar) {
         for (FretboardPosition position : FretboardPosition.values()) {
-          add(new JamCard(instrument, context, wrapper, ensemble, position));
-          numberOfCards ++;
+          for (Supplier<Ensemble> ensemble : ensembles) {
+            add(new JamCard(instrument, context, wrapper, ensemble, position));
+            numberOfCards ++;
+          }
         }
       } else {
-        add(new JamCard(instrument, context, wrapper, ensemble));
-        numberOfCards ++;
+        for (Supplier<Ensemble> ensemble : ensembles) {
+          add(new JamCard(instrument, context, wrapper, ensemble));
+          numberOfCards ++;
+        }
       }
     }
-    return numberOfCards;
+    System.out.println(String.format("%5d cards added for %s", numberOfCards, features));
   }
 
  

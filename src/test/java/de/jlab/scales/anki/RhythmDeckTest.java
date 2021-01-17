@@ -1,7 +1,5 @@
 package de.jlab.scales.anki;
 
-import java.nio.file.Paths;
-
 import org.junit.Ignore;
 import org.junit.Test;
 

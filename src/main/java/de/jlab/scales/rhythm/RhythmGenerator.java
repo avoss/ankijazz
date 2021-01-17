@@ -7,7 +7,6 @@ import static de.jlab.scales.rhythm.BasicRhythm.Type.TIED;
 import static de.jlab.scales.rhythm.Event.b1;
 import static de.jlab.scales.rhythm.Event.b2;
 import static de.jlab.scales.rhythm.Event.b3;
-import static de.jlab.scales.rhythm.Event.b4;
 import static de.jlab.scales.rhythm.Event.bt;
 import static de.jlab.scales.rhythm.Event.r1;
 import static de.jlab.scales.rhythm.Event.r2;

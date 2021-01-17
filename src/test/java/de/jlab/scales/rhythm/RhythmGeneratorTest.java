@@ -11,7 +11,6 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import org.assertj.core.data.Offset;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
