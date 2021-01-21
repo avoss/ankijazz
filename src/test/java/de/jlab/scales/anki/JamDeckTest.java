@@ -22,10 +22,10 @@ public class JamDeckTest {
 
   @Test
   public void testAll() {
-    Deck<JamCard> deckC = TestUtils.writeTo(new JamDeck("Practice Chords (C-Instrument)", Note.C, false), 0.01);
-    Deck<JamCard> deckGit = TestUtils.writeTo(new JamDeck("Practice Chords (Guitar)", Note.C, true), 0.01);
-    Deck<JamCard> deckBb = TestUtils.writeTo(new JamDeck("Practice Chords (Bb-Instrument)", Note.Bb, false), 0.01);
-    Deck<JamCard> deckEb = TestUtils.writeTo(new JamDeck("Practice Chords (Eb-Instrument)", Note.Eb, false), 0.01);
+    Deck<JamCard> deckC = TestUtils.writeTo(new JamDeck("Practice Chords (C-Instrument)", Note.C, false), 0.1);
+    Deck<JamCard> deckGit = TestUtils.writeTo(new JamDeck("Practice Chords (Guitar)", Note.C, true), 0.1);
+    Deck<JamCard> deckBb = TestUtils.writeTo(new JamDeck("Practice Chords (Bb-Instrument)", Note.Bb, false), 0.1);
+    Deck<JamCard> deckEb = TestUtils.writeTo(new JamDeck("Practice Chords (Eb-Instrument)", Note.Eb, false), 0.1);
 
     differenceFound = false;
     writeAndDiff(deckEb);
