@@ -37,8 +37,9 @@ public class Fretboard {
   
   private List<GuitarString> createStrings(int numberOfFrets, Note[] roots) {
     List<GuitarString> strings = new ArrayList<GuitarString>();
-    for (Note root : roots)
+    for (Note root : roots) {
       strings.add(new GuitarString(root, numberOfFrets));
+    }
     return strings;
   }
 

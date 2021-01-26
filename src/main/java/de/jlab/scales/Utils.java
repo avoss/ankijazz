@@ -164,4 +164,12 @@ public final class Utils {
     };
   }
 
+  public static <T> List<T> take(Iterator<T> iterator, int count) {
+    List<T> result = new ArrayList<>();
+    for (int i = 0; i < count; i++) {
+      result.add(iterator.next());
+    }
+    return result;
+  }
+
 }

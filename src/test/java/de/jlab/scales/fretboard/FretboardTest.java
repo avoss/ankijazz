@@ -67,7 +67,6 @@ public class FretboardTest {
   }
 
   @Test
-  @Ignore
   public void printMelodicMinorScaleBerkley() {
     printFatboard(CMelodicMinor, new Berkley(), rootMarker);
   }
