@@ -8,7 +8,7 @@ import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.CMinorPentatonic;
+import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static de.jlab.scales.theory.Scales.CWholeTone;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -55,7 +55,7 @@ public class LilyScaleTest {
   @Test
   public void testScalesWithDifferentNumberOfNotes() {
     // 5 notes
-    String cMinorPentatonicsource = new LilyScale(MODES.findFirstOrElseThrow(CMinorPentatonic)).toLily();
+    String cMinorPentatonicsource = new LilyScale(MODES.findFirstOrElseThrow(CMinor7Pentatonic)).toLily();
     assertThat(cMinorPentatonicsource).contains("scaleNotes = \\relative e' { c4 ef4 f4 g4 bf4 c2. }");
     // 6 notes
     String cWholeToneSource = new LilyScale(MODES.findFirstOrElseThrow(CWholeTone)).toLily();

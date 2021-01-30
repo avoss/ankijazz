@@ -9,7 +9,7 @@ import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
-import static de.jlab.scales.theory.Scales.CMinorPentatonic;
+import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Iterator;
@@ -92,7 +92,7 @@ public class FretboardTest {
   @Test
   @Ignore
   public void print2NotesPerStringForMinorPentatonic() {
-    printFatboard(CMinorPentatonic.transpose(5), new NotesPerString(2, -2, 5), rootMarker);
+    printFatboard(CMinor7Pentatonic.transpose(5), new NotesPerString(2, -2, 5), rootMarker);
   }
 
   @Test

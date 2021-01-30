@@ -1,24 +1,31 @@
 package de.jlab.scales.fretboard2;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 import de.jlab.scales.Utils;
-import de.jlab.scales.fretboard2.NPS.RangeHandler;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.Scales;
 
 public class NPS implements Fingering {
-  public static Fingering CMajor = new NPS(Scales.CMajor.superimpose(Note.B), Tuning.STANDARD_TUNING, List.of(3, 3, 3, 3, 2));
+  private static final List<Integer> CAGED = List.of(3, 3, 3, 3, 2);
+  private static final List<Integer> TWO_NPS = List.of(2, 2, 2, 2, 2);
+  
+  public static final Fingering C_MAJOR_CAGED = new NPS(Scales.CMajor.superimpose(Note.B), Tuning.STANDARD_TUNING, CAGED);
+  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS(Scales.CMelodicMinor.superimpose(Note.A), Tuning.STANDARD_TUNING, CAGED);
+  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS(Scales.CHarmonicMinor.superimpose(Note.D), Tuning.STANDARD_TUNING, CAGED);
+  public static final Fingering C_MINOR7_PENTATONIC = new NPS(Scales.CMinor7Pentatonic, Tuning.STANDARD_TUNING, TWO_NPS);
+  public static final Fingering C_MINOR6_PENTATONIC = new NPS(Scales.CMinor6Pentatonic, Tuning.STANDARD_TUNING, TWO_NPS);
+  
   private List<Position> positions = new ArrayList<>();
   private Tuning tuning;
   private Scale scale;
@@ -44,6 +51,20 @@ public class NPS implements Fingering {
     @Override
     public Tuning getTuning() {
       return tuning;
+    }
+
+    @Override
+    public int getMinFret() {
+      return frets().min().getAsInt();
+    }
+
+    @Override
+    public int getMaxFret() {
+      return frets().max().getAsInt();
+    }
+
+    private IntStream frets() {
+      return map.values().stream().flatMap(v -> v.stream()).mapToInt(i -> i);
     }
 
   }
@@ -115,21 +136,47 @@ public class NPS implements Fingering {
 
   }
 
-  NPS(Scale scale, Tuning tuning, List<Integer> notesPerString) {
+  class PositionComparator implements Comparator<Position> {
+    private int minFretOfPositionOne;
+
+    PositionComparator(int minFretOfPositionOne) {
+      this.minFretOfPositionOne = minFretOfPositionOne;
+    }
+
+    @Override
+    public int compare(Position p1, Position p2) {
+      int fret1 = fret(p1);
+      int fret2 = fret(p2);
+      return Integer.compare(fret1, fret2);
+    }
+
+    private int fret(Position p) {
+      int fret = p.getMinFret();
+      return fret < minFretOfPositionOne ? fret + 12 : fret;
+    }
+
+  }
+
+  private NPS(Scale scale, Tuning tuning, List<Integer> notesPerString) {
     this.scale = scale;
     this.tuning = tuning;
     this.notesPerString = notesPerString;
-    for (int stringSkip = 0; stringSkip < notesPerString.size(); stringSkip++) {
+    for (int stringsToSkip = 0; stringsToSkip < notesPerString.size(); stringsToSkip++) {
       RangeHandler rangeHandler = new RangeHandler();
-      process(stringSkip, rangeHandler);
-      process(stringSkip, new PositionHandler(rangeHandler.getMaxFret() - 6));
+      process(stringsToSkip, rangeHandler);
+      process(stringsToSkip, new PositionHandler(rangeHandler.getMaxFret() - 6));
     }
+    sortPositions();
   }
 
-  private void process(int stringSkip, Handler handler) {
+  private void sortPositions() {
+    positions.sort(new PositionComparator(positions.get(0).getMinFret()));
+  }
+
+  private void process(int stringsToSkip, Handler handler) {
     Iterator<Note> scaleNotesIterator = Utils.loopIterator(scale.asList());
     Iterator<Integer> notesPerStringIterator = Utils.loopIterator(notesPerString);
-    for (int i = 0; i < stringSkip; i++) {
+    for (int i = 0; i < stringsToSkip; i++) {
       Utils.take(scaleNotesIterator, notesPerStringIterator.next());
     }
     processPosition(scaleNotesIterator, notesPerStringIterator, handler);

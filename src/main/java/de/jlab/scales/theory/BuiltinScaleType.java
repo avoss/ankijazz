@@ -9,7 +9,7 @@ import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
-import static de.jlab.scales.theory.Scales.CMinorPentatonic;
+import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static de.jlab.scales.theory.Scales.CWholeTone;
 
 import java.util.LinkedHashSet;
@@ -26,7 +26,7 @@ public enum BuiltinScaleType implements ScaleType {
   DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole", "Diminished Half/Whole", "Diminished Whole/Half"),
   WholeTone(CWholeTone, "Whole Tone"),
   
-  Minor7Pentatonic(CMinorPentatonic, "Minor Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
+  Minor7Pentatonic(CMinor7Pentatonic, "Minor Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
   Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", null, "Dominant7 Pentatonic", null, "Minor7b5 Pentatonic"),
   ;
   
