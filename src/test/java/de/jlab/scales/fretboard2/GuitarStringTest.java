@@ -12,8 +12,9 @@ public class GuitarStringTest {
   @Test
   public void test() {
     GuitarString eString = new GuitarString(0, E);
-    eString.mark(5);
-    assertThat(eString.getMarked()).containsExactly(5);
+    eString.mark(5, Markers.foreground());
+    assertThat(eString.markerOf(1)).isEqualTo(Markers.empty());
+    assertThat(eString.markerOf(5)).isNotEqualTo(Markers.empty());
     assertThat(eString.noteOf(0)).isEqualTo(E);
     assertThat(eString.noteOf(5)).isEqualTo(A);
     assertThat(eString.noteOf(8)).isEqualTo(C);
