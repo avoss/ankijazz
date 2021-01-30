@@ -142,7 +142,7 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
   }
 
   private void drawFrets() {
-    g.setColor(Color.DARK_GRAY);
+    g.setColor(Color.GRAY);
     g.setStroke(new BasicStroke(6, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));
     for (int fret = minFret + 1; fret <= maxFret; fret++) {
       g.drawLine(fretX(fret), fretboardY(), fretX(fret), fretboardY() + fretboardHeight());
