@@ -1,5 +1,7 @@
 package de.jlab.scales.fretboard2;
 
+import static java.util.stream.Collectors.toList;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Comparator;
@@ -16,36 +18,61 @@ import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.Scales;
 
-public class NPS implements Fingering {
+public class NPS {
   private static final List<Integer> CAGED = List.of(3, 3, 3, 3, 2);
   private static final List<Integer> TWO_NPS = List.of(2, 2, 2, 2, 2);
   
-  public static final Fingering C_MAJOR_CAGED = new NPS(Scales.CMajor.superimpose(Note.B), Tuning.STANDARD_TUNING, CAGED);
-  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS(Scales.CMelodicMinor.superimpose(Note.A), Tuning.STANDARD_TUNING, CAGED);
-  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS(Scales.CHarmonicMinor.superimpose(Note.D), Tuning.STANDARD_TUNING, CAGED);
-  public static final Fingering C_MINOR7_PENTATONIC = new NPS(Scales.CMinor7Pentatonic, Tuning.STANDARD_TUNING, TWO_NPS);
-  public static final Fingering C_MINOR6_PENTATONIC = new NPS(Scales.CMinor6Pentatonic, Tuning.STANDARD_TUNING, TWO_NPS);
+  public static final Fingering C_MAJOR_CAGED = new NPS(Scales.CMajor, Note.B, Tuning.STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS(Scales.CMelodicMinor, Note.A, Tuning.STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS(Scales.CHarmonicMinor, Note.D, Tuning.STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_MINOR7_PENTATONIC = new NPS(Scales.CMinor7Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
+  public static final Fingering C_MINOR6_PENTATONIC = new NPS(Scales.CMinor6Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
   
   private List<Position> positions = new ArrayList<>();
   private Tuning tuning;
   private Scale scale;
   private List<Integer> notesPerString;
+  private Note lowestNote;
 
+  @lombok.Getter
+  static class NpsFingering implements Fingering {
+    private final Scale scale;
+    private final List<Position> positions;
+
+    NpsFingering(Scale scale, List<Position> positions) {
+      this.scale = scale;
+      this.positions = positions;
+    }
+
+    @Override
+    public Fingering transpose(Note newRoot) {
+      int semitones = newRoot.ordinal() - scale.getRoot().ordinal();
+      List<Position> transposedPositions = positions.stream().map(p -> p.transpose(semitones)).collect(Collectors.toList());
+      Scale transposedScale = scale.transpose(newRoot);
+      return new NpsFingering(transposedScale, transposedPositions);
+    }
+  }
+  
   static class NpsPosition implements Position {
-    private Map<Integer, List<Integer>> map = new HashMap<>();
+    private Map<Integer, List<Integer>> stringToFretsMap = new HashMap<>();
     private Tuning tuning;
 
     public NpsPosition(Tuning tuning) {
       this.tuning = tuning;
     }
 
+    public NpsPosition(Tuning tuning, Map<Integer, List<Integer>> stringToFretsMap) {
+      this.tuning = tuning;
+      this.stringToFretsMap = stringToFretsMap;
+    }
+
     @Override
     public Collection<Integer> getFrets(int stringIndex) {
-      return map.get(stringIndex);
+      return stringToFretsMap.get(stringIndex);
     }
 
     public void put(int stringIndex, List<Integer> frets) {
-      map.put(stringIndex, frets);
+      stringToFretsMap.put(stringIndex, frets);
     }
 
     @Override
@@ -64,7 +91,24 @@ public class NPS implements Fingering {
     }
 
     private IntStream frets() {
-      return map.values().stream().flatMap(v -> v.stream()).mapToInt(i -> i);
+      return stringToFretsMap.values().stream().flatMap(v -> v.stream()).mapToInt(i -> i);
+    }
+
+    @Override
+    public Position transpose(int semitones) {
+      Map<Integer, List<Integer>> transposed = new HashMap<>();
+      stringToFretsMap.forEach((string, frets) -> {
+        List<Integer> newFrets = frets.stream().map(i -> i + semitones).collect(toList());
+        transposed.put(string, newFrets);
+      });
+      Position transposedPosition = new NpsPosition(tuning, transposed);
+      if (transposedPosition.getMinFret() > 12) {
+        transposedPosition = transposedPosition.transpose(-12);
+      }
+      else if (transposedPosition.getMinFret() < 1) {
+        transposedPosition = transposedPosition.transpose(12);
+      }
+      return transposedPosition;
     }
 
   }
@@ -157,16 +201,23 @@ public class NPS implements Fingering {
 
   }
 
-  private NPS(Scale scale, Tuning tuning, List<Integer> notesPerString) {
+  private NPS(Scale scale, Note lowestNote, Tuning tuning, List<Integer> notesPerString) {
     this.scale = scale;
+    this.lowestNote = lowestNote;
     this.tuning = tuning;
     this.notesPerString = notesPerString;
+    create();
+  }
+
+  private Fingering create() {
+    positions.clear();
     for (int stringsToSkip = 0; stringsToSkip < notesPerString.size(); stringsToSkip++) {
       RangeHandler rangeHandler = new RangeHandler();
       process(stringsToSkip, rangeHandler);
       process(stringsToSkip, new PositionHandler(rangeHandler.getMaxFret() - 6));
     }
     sortPositions();
+    return new NpsFingering(scale, positions);
   }
 
   private void sortPositions() {
@@ -174,7 +225,7 @@ public class NPS implements Fingering {
   }
 
   private void process(int stringsToSkip, Handler handler) {
-    Iterator<Note> scaleNotesIterator = Utils.loopIterator(scale.asList());
+    Iterator<Note> scaleNotesIterator = Utils.loopIterator(scale.superimpose(lowestNote).asList());
     Iterator<Integer> notesPerStringIterator = Utils.loopIterator(notesPerString);
     for (int i = 0; i < stringsToSkip; i++) {
       Utils.take(scaleNotesIterator, notesPerStringIterator.next());
@@ -195,11 +246,6 @@ public class NPS implements Fingering {
 
   private List<Integer> toFrets(Note string, List<Note> notes) {
     return notes.stream().map(note -> string.semitones(note)).collect(Collectors.toList());
-  }
-
-  @Override
-  public List<Position> getPositions() {
-    return positions;
   }
 
 }

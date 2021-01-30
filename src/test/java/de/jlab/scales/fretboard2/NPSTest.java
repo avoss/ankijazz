@@ -8,6 +8,9 @@ import java.util.stream.IntStream;
 
 import org.junit.Test;
 
+import de.jlab.scales.theory.Note;
+import de.jlab.scales.theory.Scales;
+
 public class NPSTest {
 
   @Test
@@ -52,6 +55,25 @@ public class NPSTest {
     List<Position> positions = NPS.C_MINOR6_PENTATONIC.getPositions();
     assertEquals(5, positions.size());
     assertEquals("8 11|8 10|7 10|8 10|8 10|8 11", toString(positions.get(0)));
+  }
+
+  @Test
+  public void testGetScale() {
+    assertEquals(Scales.CHarmonicMinor, NPS.C_HARMONIC_MINOR_CAGED.getScale());
+  }
+  
+  @Test
+  public void testTransposePosition() {
+    Fingering aMinorPentatonic = NPS.C_MINOR7_PENTATONIC.transpose(Note.A);
+    assertEquals("5 8|5 7|5 7|5 7|5 8|5 8", toString(aMinorPentatonic.getPositions().get(0)));
+    assertEquals(Scales.CMinor7Pentatonic.transpose(-3), aMinorPentatonic.getScale());
+    Fingering gMinorPentatonic = aMinorPentatonic.transpose(Note.G);
+    Position position = gMinorPentatonic.getPositions().get(0);
+    String positionString = "3 6|3 5|3 5|3 5|3 6|3 6";
+    assertEquals(positionString, toString(position));
+    assertEquals(positionString, toString(position.transpose(12)));
+    assertEquals(positionString, toString(position.transpose(-12)));
+    assertEquals(Scales.CMinor7Pentatonic.transpose(Note.G), gMinorPentatonic.getScale());
   }
   
   private String toString(Position position) {
