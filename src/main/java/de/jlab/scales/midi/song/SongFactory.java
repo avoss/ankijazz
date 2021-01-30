@@ -33,7 +33,7 @@ public class SongFactory {
   private final Set<Song> songsGeneratedSoFar = new HashSet<>();
   private final LoopIteratorFactory iteratorFactory;
 
-  public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, SimpleBlues, JazzBlues, EachKey, SomeKeys, AllKeys }
+  public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, SimpleBlues, JazzBlues, Pentatonics, EachKey, SomeKeys, AllKeys }
 
   interface KeyFactory {
     String getTitle();

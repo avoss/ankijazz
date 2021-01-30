@@ -113,6 +113,7 @@ public class ProgressionFactory {
     progressionSets.add(loadChordProgression("ExtTwoFiveOnes.yaml", loopIteratorFactory));
     progressionSets.add(loadChordProgression("SimpleBlues.yaml", loopIteratorFactory));
     progressionSets.add(loadChordProgression("JazzBlues.yaml", loopIteratorFactory));
+    progressionSets.add(loadChordProgression("Pentatonics.yaml", loopIteratorFactory));
   }
 
 }

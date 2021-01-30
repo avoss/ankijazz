@@ -1,0 +1,85 @@
+# TODO
+# add minor pentatonic at #9 for altered dominant
+# add second minor6 pentatonic in melodic minor (chord + pentatonic) 
+# m7 can be seen as maj9 maj6
+
+# id - must match one of the SongFactory.Feature enum literals (exactly) - otherwise exception will be thrown
+# progression:
+#   A B C = play 1st bar chord A, 2nd bar chord B and 3rd bar chord C
+#   (A B) C = play 1st bar either A or B, and 2nd bar C
+#   [A B] C = play 1st bar two chords (A and B, each 2 beats) and 2nd bar chord C
+# these can be mixed.
+# Major progressions must be in key of C, minor progressions in key of Am
+
+id: Pentatonics
+title: Pentatonics
+progressions:
+
+   - title: Minor7 Pentatonics at root of Minor7 Chord
+     minor: true
+     progression: >-2 
+        F#m7 Bm7 Em7 Am7
+
+   - title: Minor7 Pentatonics at major 3rd of Major7 Chord
+     minor: false
+     progression: >-2 
+       AΔ7 DΔ7 GΔ7 CΔ7 
+
+   - title: Minor7 Pentatonics at major 7th of Major7#11 Chord
+     minor: false
+     progression: >-2 
+       AΔ7 DΔ7 GΔ7 CΔ7 
+
+   - title: Minor7 Pentatonics at 6th of Major 6 Chord
+     minor: false
+     progression: >-2 
+       A6 D6 G6 C6 
+
+   - title: Minor7 Pentatonics at 5th of Sus4 Chord
+     minor: false
+     progression: >-2 
+       Asus4 Dsus4 Gsus4 Csus4 
+
+   - title: Minor7 Pentatonics at 5th of Sus4 Chord
+     minor: false
+     progression: >-2 
+       Asus4 Dsus4 Gsus4 Csus4 
+
+   - title: Minor6 Pentatonics at root of Minor6 Chord
+     minor: true
+     progression: >-2 
+        F#m6 Bm6 Em6 Am6
+
+   - title: Minor6 Pentatonics at 5th of Dominant 9th Chord
+     minor: false
+     progression: >-2 
+       A9 D9 G9 C9 
+
+   - title: Minor6 Pentatonics at b9 of Dominant7#5b9 Chord
+     minor: false
+     progression: >-2 
+       A7#5b9 D7#5b9 G7#5b9 C7#5b9 
+
+   - title: Minor6 Pentatonics at minor 3rd of Minor7b5 Chord
+     minor: true
+     progression: >-2 
+        F#m7b5 Bm7b5 Em7b5 Am7b5
+
+   - title: Minor7 Pentatonics Mixed
+     minor: false
+     progression: >-2 
+       AΔ7 Dm7 G7sus4 C6 
+
+   - title: Minor6 Pentatonics Mixed
+     minor: true
+     progression: >-2 
+        F#9 Bm7b5 E7#5b9 Am6
+
+   - title: All Pentatonics Mixed
+     minor: true
+     progression: >-2 
+        (FΔ7 F#m7b5 C9 C7sus4)
+        (Bm7b5 B7#5b9 F9 F7sus4) 
+        (E7#5b9 Bb9 Bb7sus4)
+        (Am6 Am7 A7sus4)
+
