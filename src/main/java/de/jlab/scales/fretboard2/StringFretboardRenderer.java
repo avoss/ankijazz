@@ -1,11 +1,12 @@
 package de.jlab.scales.fretboard2;
 
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toCollection;
+
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.stream.Collectors;
 
 public class StringFretboardRenderer implements FretboardRenderer<String> {
-
 
   private final Fretboard fretboard;
   private final int minFret;
@@ -21,12 +22,12 @@ public class StringFretboardRenderer implements FretboardRenderer<String> {
   public String render() {
     ArrayList<String> strings = fretboard.getStrings().stream()
         .map(this::render)
-        .collect(Collectors.toCollection(ArrayList::new));
+        .collect(toCollection(ArrayList::new));
     Collections.reverse(strings);
-    return strings.stream().collect(Collectors.joining("\n"));
+    return strings.stream().collect(joining("\n"));
   }
   
-  class StringRenderer implements MarkerRenderer {
+  class StringMarkerRenderer implements MarkerRenderer {
     StringBuilder sb = new StringBuilder("|");
 
     @Override
@@ -42,17 +43,22 @@ public class StringFretboardRenderer implements FretboardRenderer<String> {
     @Override
     public void renderBackground(GuitarString string, int fret) {
       sb.append("-\u2022-|");
-      //sb.append("-.-|");
     }
     
     @Override
     public String toString() {
       return sb.toString();
     }
+
+    @Override
+    public void renderRoot(GuitarString string, int fret) {
+      sb.append("-R-|");
+    }
     
   }
+  
   String render(GuitarString string) {
-    StringRenderer renderer = new StringRenderer();
+    StringMarkerRenderer renderer = new StringMarkerRenderer();
     for (int fret = minFret; fret <= maxFret; fret++) {
       Marker marker = string.markerOf(fret);
       marker.render(renderer, string, fret);

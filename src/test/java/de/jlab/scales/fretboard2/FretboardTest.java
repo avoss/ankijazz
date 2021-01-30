@@ -34,17 +34,17 @@ public class FretboardTest {
   public void testGMajorScaleWithAMinorPentatonic() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Scale gMinorPentatonic = Scales.CMinor7Pentatonic.transpose(Note.A);
-    Function<Note, Marker> markers = (n) -> (gMinorPentatonic.contains(n) ? Markers.foreground() : Markers.background());
+    Function<Note, Marker> markers = n -> n == Note.A ? Markers.root() : (gMinorPentatonic.contains(n) ? Markers.foreground() : Markers.background());
     Fretboard fretboard = new Fretboard(position, markers);
     FretboardRenderer<String> renderer = new StringFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
     
     assertEquals(
-        "|---|-o-|---|-•-|-o-|\n" + //
+        "|---|-R-|---|-•-|-o-|\n" + //
         "|---|-o-|---|-•-|-o-|\n" + //
         "|-•-|-o-|---|-o-|---|\n" + //
-        "|-•-|-o-|---|-o-|---|\n" + //
+        "|-•-|-o-|---|-R-|---|\n" + //
         "|---|-o-|---|-o-|---|\n" + //
-        "|---|-o-|---|-•-|-o-|" , //
+        "|---|-R-|---|-•-|-o-|" , //
         renderer.render());
   }
   

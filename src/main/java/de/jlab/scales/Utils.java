@@ -1,6 +1,7 @@
 package de.jlab.scales;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -172,4 +173,7 @@ public final class Utils {
     return result;
   }
 
+  public static boolean linux() {
+    return new File("/usr/bin/bash").exists();
+  }
 }

@@ -35,4 +35,15 @@ public class Markers {
       }};
   }
 
+  public static Marker root() {
+    return new Marker() {
+
+      @Override
+      public void render(MarkerRenderer renderer, GuitarString string, int fret) {
+        renderer.renderRoot(string, fret);
+      }
+      
+    };
+  }
+
 }

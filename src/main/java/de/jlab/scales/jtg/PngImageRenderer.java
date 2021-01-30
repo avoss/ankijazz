@@ -1,5 +1,7 @@
 package de.jlab.scales.jtg;
 
+import static de.jlab.scales.Utils.linux;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
@@ -38,10 +40,6 @@ public class PngImageRenderer extends Layout {
     this.barLineSpacing = context.isWithBarNumbers() ? 20 : 10;
   }
   
-  boolean linux() {
-    return new File("/usr/bin/bash").exists();
-  }
-
   private Font chordFont() {
     return linux() ? new Font("Lucida Sans", Font.BOLD, 27) : new Font("Comic Sans MS", Font.BOLD, 27);
   }

@@ -8,4 +8,6 @@ public interface MarkerRenderer {
 
   void renderBackground(GuitarString string, int fret);
 
+  void renderRoot(GuitarString string, int fret);
+
 }
