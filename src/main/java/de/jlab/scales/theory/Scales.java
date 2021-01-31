@@ -35,6 +35,7 @@ public class Scales {
   public static final Scale CChromatic = new Scale(C, Note.values());
 
   public static final Scale CMinor7Pentatonic = new Scale(C, Eb, F, G, Bb);
+  public static final Scale CDominant7Pentatonic = new Scale(C, E, F, G, Bb);
   public static final Scale CMinor6Pentatonic = new Scale(C, Eb, F, G, A);
 
   public static final Scale C5 = new Scale(C, G);

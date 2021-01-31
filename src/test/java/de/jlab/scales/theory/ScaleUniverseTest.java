@@ -143,7 +143,7 @@ public class ScaleUniverseTest {
   @Test
   public void testMinor6PentatonicModes() {
     assertEquals("C Minor6 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic).getScaleName());
-    assertEquals("F Dominant7 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic.superimpose(F)).getScaleName());
+    assertEquals("F Dominant9 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic.superimpose(F)).getScaleName());
     assertEquals("A Minor7b5 Pentatonic", MODES.findFirstOrElseThrow(CMinor6Pentatonic.superimpose(A)).getScaleName());
   }
 

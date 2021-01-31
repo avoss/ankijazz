@@ -3,7 +3,9 @@ package de.jlab.scales.theory;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
+import static de.jlab.scales.theory.Scales.CDominant7Pentatonic;
 import static de.jlab.scales.theory.Scales.CHarmonicMajor;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
@@ -26,8 +28,9 @@ public enum BuiltinScaleType implements ScaleType {
   DiminishedHalfWhole(CDiminishedHalfWhole, "Diminished Half/Whole", "Diminished Half/Whole", "Diminished Whole/Half"),
   WholeTone(CWholeTone, "Whole Tone"),
   
-  Minor7Pentatonic(CMinor7Pentatonic, "Minor Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
-  Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", null, "Dominant7 Pentatonic", null, "Minor7b5 Pentatonic"),
+  Minor7Pentatonic(CMinor7Pentatonic, "Minor7 Pentatonic", A, "Minor Pentatonic", "Major Pentatonic"),
+  Minor6Pentatonic(CMinor6Pentatonic, "Minor6 Pentatonic", D, "Minor6 Pentatonic", null, "Dominant9 Pentatonic", null, "Minor7b5 Pentatonic"),
+  Dominant7Pentatonic(CDominant7Pentatonic, "Dominant7 Pentatonic", G, "Dominant7 Pentatonic")
   ;
   
   private final Scale prototype;

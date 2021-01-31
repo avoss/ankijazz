@@ -27,12 +27,16 @@ public class IntervalAnalyzer {
   }
 
   public Result analyze(Scale scale) {
+    return analyze(scale, scale.getRoot());
+  }
+  
+  public Result analyze(Scale scale, Note root) {
     Result result = new Result(scale);
     Set<Note> scaleNotes = scale.asSet();
-    Scale major = CMajor.transpose(scale.getRoot());
+    Scale major = CMajor.transpose(root);
     computeIntervalsRelativeToMajorScale(result, scaleNotes, major);
     if (!scaleNotes.isEmpty()) {
-      return fallback(scale);
+      return fallback(scale, root);
     }
     return result;
   }
@@ -55,9 +59,8 @@ public class IntervalAnalyzer {
     }
   }
 
-  private Result fallback(Scale scale) {
+  public Result fallback(Scale scale, Note root) {
     Result result = new Result(scale);
-    Note root = scale.getRoot();
     scale.forEach(note -> {
       result.intervals.put(note, root.intervalName(note));
     });
