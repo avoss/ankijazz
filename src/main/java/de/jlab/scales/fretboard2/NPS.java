@@ -3,12 +3,14 @@ package de.jlab.scales.fretboard2;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -21,25 +23,34 @@ import de.jlab.scales.theory.Scales;
 public class NPS {
   private static final List<Integer> CAGED = List.of(3, 3, 3, 3, 2);
   private static final List<Integer> TWO_NPS = List.of(2, 2, 2, 2, 2);
+  private static final List<Integer> THREE_NPS = List.of(3, 3, 3, 3, 3, 3, 3);
   
-  public static final Fingering C_MAJOR_CAGED = new NPS(Scales.CMajor, Note.B, Tuning.STANDARD_TUNING, CAGED).create();
-  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS(Scales.CMelodicMinor, Note.A, Tuning.STANDARD_TUNING, CAGED).create();
-  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS(Scales.CHarmonicMinor, Note.D, Tuning.STANDARD_TUNING, CAGED).create();
-  public static final Fingering C_MINOR7_PENTATONIC = new NPS(Scales.CMinor7Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
-  public static final Fingering C_MINOR6_PENTATONIC = new NPS(Scales.CMinor6Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
+  public static final Fingering C_MAJOR_CAGED = new NPS("MajorCAGED", Scales.CMajor, Note.B, Tuning.STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS("MelodicMinorCAGED", Scales.CMelodicMinor, Note.A, Tuning.STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS("HarmonicMinorCAGED", Scales.CHarmonicMinor, Note.D, Tuning.STANDARD_TUNING, CAGED).create();
+
+  public static final Fingering C_MAJOR_3NPS = new NPS("Major3NPS", Scales.CMajor, Note.B, Tuning.STANDARD_TUNING, THREE_NPS).create();
+  public static final Fingering C_MELODIC_MINOR_3NPS = new NPS("MelodicMinor3NPS", Scales.CMelodicMinor, Note.A, Tuning.STANDARD_TUNING, THREE_NPS).create();
+  public static final Fingering C_HARMONIC_MINOR_3NPS = new NPS("HarmonicMinor3NPS", Scales.CHarmonicMinor, Note.D, Tuning.STANDARD_TUNING, THREE_NPS).create();
+  
+  public static final Fingering C_MINOR7_PENTATONIC = new NPS("Minor7Pentatonic2NPS", Scales.CMinor7Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
+  public static final Fingering C_MINOR6_PENTATONIC = new NPS("Minor6Pentatonic2NPS", Scales.CMinor6Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
   
   private List<Position> positions = new ArrayList<>();
   private Tuning tuning;
   private Scale scale;
   private List<Integer> notesPerString;
   private Note lowestNote;
+  private String name;
 
   @lombok.Getter
   static class NpsFingering implements Fingering {
     private final Scale scale;
     private final List<Position> positions;
+    private String name;
 
-    NpsFingering(Scale scale, List<Position> positions) {
+    NpsFingering(String name, Scale scale, List<Position> positions) {
+      this.name = name;
       this.scale = scale;
       this.positions = positions;
     }
@@ -49,20 +60,45 @@ public class NPS {
       int semitones = newRoot.ordinal() - scale.getRoot().ordinal();
       List<Position> transposedPositions = positions.stream().map(p -> p.transpose(semitones)).collect(Collectors.toList());
       Scale transposedScale = scale.transpose(newRoot);
-      return new NpsFingering(transposedScale, transposedPositions);
+      return new NpsFingering(name, transposedScale, transposedPositions);
     }
   }
   
+  @lombok.EqualsAndHashCode
   static class NpsPosition implements Position {
-    private Map<Integer, List<Integer>> stringToFretsMap = new HashMap<>();
-    private Tuning tuning;
+    private Map<Integer, List<Integer>> stringToFretsMap;
+    private final Tuning tuning;
+    private final Scale scale;
 
-    public NpsPosition(Tuning tuning) {
-      this.tuning = tuning;
+    private static final Map<Map<Integer, List<Integer>>, Map<Integer, List<Integer>>> EXCEPTIONS = new HashMap<>();
+    
+    // key "8 10 11|8 10 11|9 10|7 8 10|8 9 12|8 10 11"
+    // val 8 10 11|8 10 11|9 10|7 8 10|8 9|7 8 10
+
+    static {
+      EXCEPTIONS.put(parse("8 10 11|8 10 11|9 10|7 8 10|8 9 12|8 10 11"), parse("8 10 11|8 10 11|9 10|7 8 10|8 9|7 8 10"));
+      EXCEPTIONS.put(parse("8 10 11|8 10|7 9 10|7 8 10|8 10 12|8 10 11"), parse("7 8 10|6 8 10|7 9 10|7 8 10|8 10|7 8 10"));
+      EXCEPTIONS.put(parse("13 15|12 14 15|12 13 15|12 14 16|13 15 16|13 15"), parse("11 13 15|12 14 15|12 13 15|12 14|12 13 15|11 13 15"));
+    }
+    
+    // see NpsPosition.toString()
+    static Map<Integer, List<Integer>> parse(String board) {
+      String[] strings = board.split("\\|");
+      Map<Integer, List<Integer>> stringToFretsMap = new HashMap<>();
+      for (int i = 0; i < strings.length; i++) {
+        List<Integer> frets = Arrays.stream(strings[i].split(" ")).map(s -> Integer.parseInt(s)).collect(Collectors.toList());
+        stringToFretsMap.put(i, frets);
+      }
+      return stringToFretsMap;
+    }
+    
+    public NpsPosition(Tuning tuning, Scale scale) {
+      this(tuning, scale, new HashMap<>());
     }
 
-    public NpsPosition(Tuning tuning, Map<Integer, List<Integer>> stringToFretsMap) {
+    public NpsPosition(Tuning tuning, Scale scale, Map<Integer, List<Integer>> stringToFretsMap) {
       this.tuning = tuning;
+      this.scale = scale;
       this.stringToFretsMap = stringToFretsMap;
     }
 
@@ -93,6 +129,11 @@ public class NPS {
     private IntStream frets() {
       return stringToFretsMap.values().stream().flatMap(v -> v.stream()).mapToInt(i -> i);
     }
+    
+    @Override
+    public Scale getScale() {
+      return scale;
+    }
 
     @Override
     public Position transpose(int semitones) {
@@ -101,7 +142,7 @@ public class NPS {
         List<Integer> newFrets = frets.stream().map(i -> i + semitones).collect(toList());
         transposed.put(string, newFrets);
       });
-      Position transposedPosition = new NpsPosition(tuning, transposed);
+      Position transposedPosition = new NpsPosition(tuning, scale, transposed);
       if (transposedPosition.getMinFret() > 12) {
         transposedPosition = transposedPosition.transpose(-12);
       }
@@ -109,6 +150,17 @@ public class NPS {
         transposedPosition = transposedPosition.transpose(12);
       }
       return transposedPosition;
+    }
+    
+    @Override
+    public String toString() {
+      return IntStream.range(0, getTuning().getStrings().size()).mapToObj(stringIndex -> {
+        return getFrets(stringIndex).stream().map(fret -> Integer.toString(fret)).collect(Collectors.joining(" "));
+      }).collect(Collectors.joining("|"));
+    }
+
+    public void applyExceptions() {
+      this.stringToFretsMap = EXCEPTIONS.getOrDefault(stringToFretsMap, stringToFretsMap);
     }
 
   }
@@ -132,11 +184,12 @@ public class NPS {
 
     @Override
     public void startPosition() {
-      position = new NpsPosition(tuning);
+      position = new NpsPosition(tuning, scale);
     }
 
     @Override
     public void endPosition() {
+      position.applyExceptions();
       positions.add(position);
     }
 
@@ -201,12 +254,12 @@ public class NPS {
 
   }
 
-  private NPS(Scale scale, Note lowestNote, Tuning tuning, List<Integer> notesPerString) {
+  private NPS(String name, Scale scale, Note lowestNote, Tuning tuning, List<Integer> notesPerString) {
+    this.name = name;
     this.scale = scale;
     this.lowestNote = lowestNote;
     this.tuning = tuning;
     this.notesPerString = notesPerString;
-    create();
   }
 
   private Fingering create() {
@@ -217,7 +270,7 @@ public class NPS {
       process(stringsToSkip, new PositionHandler(rangeHandler.getMaxFret() - 6));
     }
     sortPositions();
-    return new NpsFingering(scale, positions);
+    return new NpsFingering(name, scale, positions);
   }
 
   private void sortPositions() {

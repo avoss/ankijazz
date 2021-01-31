@@ -1,5 +1,10 @@
 package de.jlab.scales.fretboard2;
 
+import java.util.function.Function;
+
+import de.jlab.scales.theory.Note;
+import de.jlab.scales.theory.Scale;
+
 public class Markers {
   public static final Marker EMPTY = new Marker() {
 
@@ -44,6 +49,10 @@ public class Markers {
       }
       
     };
+  }
+
+  public static Function<Note, Marker> marker(Note root, Scale foreground) {
+    return n -> n == root ? Markers.root() : (foreground.contains(n) ? Markers.foreground() : Markers.background());
   }
 
 }

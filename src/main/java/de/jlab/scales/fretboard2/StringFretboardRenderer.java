@@ -5,8 +5,9 @@ import static java.util.stream.Collectors.toCollection;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
-public class StringFretboardRenderer implements FretboardRenderer<String> {
+public class StringFretboardRenderer implements FretboardRenderer<List<String>> {
 
   private final Fretboard fretboard;
   private final int minFret;
@@ -19,12 +20,17 @@ public class StringFretboardRenderer implements FretboardRenderer<String> {
   }
 
   @Override
-  public String render() {
+  public List<String> render() {
     ArrayList<String> strings = fretboard.getStrings().stream()
         .map(this::render)
         .collect(toCollection(ArrayList::new));
     Collections.reverse(strings);
-    return strings.stream().collect(joining("\n"));
+    return strings;
+  }
+  
+  @Override
+  public String toString() {
+    return render().stream().collect(joining("\n"));
   }
   
   class StringMarkerRenderer implements MarkerRenderer {
@@ -46,13 +52,13 @@ public class StringFretboardRenderer implements FretboardRenderer<String> {
     }
     
     @Override
-    public String toString() {
-      return sb.toString();
+    public void renderRoot(GuitarString string, int fret) {
+      sb.append("-R-|");
     }
 
     @Override
-    public void renderRoot(GuitarString string, int fret) {
-      sb.append("-R-|");
+    public String toString() {
+      return sb.toString();
     }
     
   }

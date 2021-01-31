@@ -2,6 +2,8 @@ package de.jlab.scales.fretboard2;
 
 import java.util.Collection;
 
+import de.jlab.scales.theory.Scale;
+
 public interface Position {
   /**
    * 0 = lowest string
@@ -13,6 +15,8 @@ public interface Position {
   int getMaxFret();
 
   Tuning getTuning();
+  
+  Scale getScale();
 
   Position transpose(int semitones);
 }
