@@ -3,9 +3,16 @@ package de.jlab.scales.anki;
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
+import static de.jlab.scales.theory.Scales.C7;
+import static de.jlab.scales.theory.Scales.C7flat9;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.Cm7;
+import static de.jlab.scales.theory.Scales.Cm7b5;
+import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static de.jlab.scales.theory.Scales.commonModes;
+import static de.jlab.scales.theory.Scales.commonScales;
 import static java.lang.String.format;
 
 import java.util.ArrayList;
@@ -36,16 +43,20 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   private static final String MODE_NAME = "modeName";
   private static final String MODE_TYPE = "modeType";
   private static final String MODE_ROOT = "modeRoot";
+  private boolean fullVersion;
 
-  protected ModesTheoryDeck() {
-    super("Modes Theory");
-    
-    for (Scale scale : allKeys(commonModes(false))) {
+  public ModesTheoryDeck(boolean fullVersion) {
+    super(fullVersion ? "Modes Theory" : "Scales Theory", fullVersion ? "ModesTheoryDeck" : "ScalesTheoryDeck");
+    this.fullVersion = fullVersion;
+    Collection<Scale> scales = fullVersion ? commonModes(false) : commonScales(false);
+    for (Scale scale : allKeys(scales)) {
       for (ScaleInfo info : MODES.infos(scale)) {
         double difficulty = computeScaleDifficulty(info);
         spellScales(difficulty, info);
-        nameParent(difficulty, info);
-        nameMode(difficulty, info);
+        if (fullVersion) {
+          nameParent(difficulty, info);
+          nameMode(difficulty, info);
+        }
       }
     }
     enharmonics();
@@ -126,9 +137,17 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   Collection<? extends Scale> chordsToSpell() {
     List<Scale> chords = new ArrayList<>();
     Iterator<Note> roots = Utils.loopIterator(Arrays.asList(Note.values()));
-    for (Scale chord : Scales.allChords()) {
-      for (int i = 0; i < 7; i++) {
-        chords.add(chord.transpose(roots.next()));
+    if (fullVersion) {
+      for (Scale chord : Scales.allChords()) {
+        for (int i = 0; i < 7; i++) {
+          chords.add(chord.transpose(roots.next()));
+        }
+      }
+    } else {
+      for (Scale chord : List.of(Cm6, C6, Cm7, C7, Cmaj7, Cm7b5, C7flat9, C7sharp5)) {
+        for (int i = 0; i < 12; i++) {
+          chords.add(chord.transpose(roots.next()));
+        }
       }
     }
     return chords;

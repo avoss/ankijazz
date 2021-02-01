@@ -15,6 +15,7 @@ import static de.jlab.scales.theory.Scales.allKeys;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -51,5 +52,15 @@ public class IntervalAnalyzerTest {
     assertIntervals("1 b2 b3 3 b5 5 6 b7", allKeys(CDiminishedHalfWhole));
   }
 
+  @Test
+  public void printPentatonicRelations() {
+    IntervalAnalyzer analyzer = new IntervalAnalyzer();
+    for (Scale scale : List.of(Scales.CMinor7Pentatonic, Scales.CMinor6Pentatonic, Scales.CDominant7Pentatonic)) {
+      for (Note root : Note.values()) {
+        ScaleInfo info = ScaleUniverse.SCALES.findFirstOrElseThrow(scale.transpose(root));
+        System.out.println(String.format("%25s over C has intervals %s", info.getScaleName(), analyzer.fallback(info.getScale(), Note.C)));
+      }
+    }
+  }
 
 }

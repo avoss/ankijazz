@@ -25,7 +25,7 @@ public class PngFretboardRendererTest {
     assertEquals(4, position.getMaxFret() - position.getMinFret());
     Fretboard fretboard = new Fretboard(position, markers);
     FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
-   // Preview.preview(renderer.render());
+    Preview.preview(renderer.render());
     
   }
 

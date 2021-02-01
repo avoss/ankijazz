@@ -90,3 +90,18 @@ Small, text-only (and mobile friendly) deck to learn to spell scales and chords,
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
+---------------------
+
+AnkiJazz - Learn Scales and most important Chords (Theory)
+
+music scales modes chords
+
+https://www.ankijazz.com
+
+This is a subset of my other Deck <em>AnkiJazz - Learn Scales, Modes, Chords and more (Theory)</em>. It only asks you about scales (not their modes) and
+contains only the most important chords.
+
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ScalesTheoryDeck.html">preview some cards here</a>.
+
+See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
