@@ -16,6 +16,7 @@ import de.jlab.scales.theory.ScaleInfo;
 public class ModesPracticeDeck extends AbstractDeck<ModesPracticeCard> {
 
   public ModesPracticeDeck(Note instrument) {
+    // TODO static factory method ...
     super(format("AnkiJazz - Practice Modes (%s-Instrument)", instrument.getName(FLAT)), format("ModesPractice%sDeck", instrument.getName(FLAT)));
     initialize(Clef.TREBLE, instrument);
   }

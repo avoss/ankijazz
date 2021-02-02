@@ -1,35 +1,36 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.ScaleUniverse.SCALES;
-import static org.junit.Assert.*;
-import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
+import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.TreeSet;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
+import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 
 public class ChordSubstitutionChooserTest {
 
-  @Test
-  public void test() {
-    fail("Not yet implemented");
-  }
 
   @Test
-  public void printPentatonicRelations() {
+  public void testPentatonicMapping() {
+    PentatonicChooser chooser = new PentatonicChooser();
+    List<String> actual = new ArrayList<>();
     for (BuiltinChordType type : BuiltinChordType.values()) {
+      if (type.getPrototype().getNumberOfNotes() < 4) {
+        continue;
+      }
       Scale chord = type.getPrototype();
-      System.out.println("\n*** " + type.getTypeName());
-      Set<Scale> candidates = SCALES.findScalesContaining(chord.asSet())
-          .stream()
-          .flatMap(info -> info.getSubScales().stream())
-          .collect(Collectors.toSet());
-      ChordSubstitutionChooser chooser = new ChordSubstitutionChooser();
-      List<SubstitutionInfo> byQuality = chooser.orderedByQuality(chord, candidates);
+      Optional<Scale> best = chooser.chooseBest(chord);
+      actual.add(String.format("*** Pentatonic for C%s = %s", type.getTypeName(), best.isPresent() ? SCALES.findFirstOrElseThrow(best.get()).getScaleName() : "NOT FOUND"));
+
+      List<SubstitutionInfo> byQuality = chooser.orderedByQuality(chord);
       for (SubstitutionInfo substInfo : byQuality) {
         ScaleInfo pentInfo = SCALES.findFirstOrElseThrow(substInfo.getSubstitution());
         
@@ -47,15 +48,19 @@ public class ChordSubstitutionChooserTest {
             commonNotes.size(), toIntervals(commonNotes), 
             extraNotes.size(), toIntervals(extraNotes), 
             missingNotes.size(), toIntervals(missingNotes));
-        System.out.println(line);
+        actual.add(line);
       }
     }
-  }    
-    private String toIntervals(Set<Note> notes) {
-      if (notes.isEmpty()) {
-        return "";
-      }
-      return new Scale(notes.iterator().next(), notes).asIntervals(Note.C);
+    actual.forEach(line -> System.out.println(line));
+    TestUtils.assertFileContentMatches(actual, getClass(), "PentatonicChordSubstitutions.txt");
+  }
+
+  private String toIntervals(Set<Note> scrambledNotes) {
+    if (scrambledNotes.isEmpty()) {
+      return "";
     }
-  
+    Set<Note> orderedNotes = new TreeSet<>(scrambledNotes);
+    return new Scale(orderedNotes.iterator().next(), orderedNotes).asIntervals(Note.C);
+  }
+
 }

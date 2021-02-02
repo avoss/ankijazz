@@ -1,0 +1,172 @@
+*** Pentatonic for C6 = A Minor Pentatonic
+            A Minor Pentatonic quality: 395, common: 4 (1 3 5 6), extra: 1 (2), missing: 0 ()
+            E Minor Pentatonic quality: 315, common: 3 (3 5 6), extra: 2 (2 7), missing: 1 (1)
+           A Minor6 Pentatonic quality: 300, common: 3 (1 3 6), extra: 2 (2 b5), missing: 1 (5)
+            D Minor Pentatonic quality: 285, common: 3 (1 5 6), extra: 2 (2 4), missing: 1 (3)
+           G Minor6 Pentatonic quality: 245, common: 3 (1 3 5), extra: 2 (2 b7), missing: 1 (6)
+            B Minor Pentatonic quality: 220, common: 2 (3 6), extra: 3 (2 b5 7), missing: 2 (1 5)
+           D Minor6 Pentatonic quality: 205, common: 2 (5 6), extra: 3 (2 4 7), missing: 2 (1 3)
+            G Minor Pentatonic quality: 135, common: 2 (1 5), extra: 3 (2 4 b7), missing: 2 (3 6)
+*** Pentatonic for C69 = A Minor Pentatonic
+            A Minor Pentatonic quality: 495, common: 5 (1 2 3 5 6), extra: 0 (), missing: 0 ()
+            E Minor Pentatonic quality: 415, common: 4 (2 3 5 6), extra: 1 (7), missing: 1 (1)
+           A Minor6 Pentatonic quality: 400, common: 4 (1 2 3 6), extra: 1 (b5), missing: 1 (5)
+            D Minor Pentatonic quality: 385, common: 4 (1 2 5 6), extra: 1 (4), missing: 1 (3)
+           G Minor6 Pentatonic quality: 345, common: 4 (1 2 3 5), extra: 1 (b7), missing: 1 (6)
+            B Minor Pentatonic quality: 320, common: 3 (2 3 6), extra: 2 (b5 7), missing: 2 (1 5)
+           D Minor6 Pentatonic quality: 305, common: 3 (2 5 6), extra: 2 (4 7), missing: 2 (1 3)
+            G Minor Pentatonic quality: 235, common: 3 (1 2 5), extra: 2 (4 b7), missing: 2 (3 6)
+*** Pentatonic for CΔ7 = E Minor Pentatonic
+            E Minor Pentatonic quality: 315, common: 3 (3 5 7), extra: 2 (2 6), missing: 1 (1)
+            A Minor Pentatonic quality: 295, common: 3 (1 3 5), extra: 2 (2 6), missing: 1 (7)
+            B Minor Pentatonic quality: 220, common: 2 (3 7), extra: 3 (2 b5 6), missing: 2 (1 5)
+           D Minor6 Pentatonic quality: 205, common: 2 (5 7), extra: 3 (2 4 6), missing: 2 (1 3)
+           A Minor6 Pentatonic quality: 200, common: 2 (1 3), extra: 3 (2 b5 6), missing: 2 (5 7)
+            D Minor Pentatonic quality: 185, common: 2 (1 5), extra: 3 (2 4 6), missing: 2 (3 7)
+*** Pentatonic for CΔ9 = E Minor Pentatonic
+            E Minor Pentatonic quality: 415, common: 4 (2 3 5 7), extra: 1 (6), missing: 1 (1)
+            A Minor Pentatonic quality: 395, common: 4 (1 2 3 5), extra: 1 (6), missing: 1 (7)
+            B Minor Pentatonic quality: 320, common: 3 (2 3 7), extra: 2 (b5 6), missing: 2 (1 5)
+           D Minor6 Pentatonic quality: 305, common: 3 (2 5 7), extra: 2 (4 6), missing: 2 (1 3)
+           A Minor6 Pentatonic quality: 300, common: 3 (1 2 3), extra: 2 (b5 6), missing: 2 (5 7)
+            D Minor Pentatonic quality: 285, common: 3 (1 2 5), extra: 2 (4 6), missing: 2 (3 7)
+*** Pentatonic for CΔ7#11 = B Minor Pentatonic
+            B Minor Pentatonic quality: 320, common: 3 (3 b5 7), extra: 2 (2 6), missing: 2 (1 5)
+            E Minor Pentatonic quality: 315, common: 3 (3 5 7), extra: 2 (2 6), missing: 2 (1 b5)
+           A Minor6 Pentatonic quality: 300, common: 3 (1 3 b5), extra: 2 (2 6), missing: 2 (5 7)
+            A Minor Pentatonic quality: 295, common: 3 (1 3 5), extra: 2 (2 6), missing: 2 (b5 7)
+*** Pentatonic for CΔ7#5 = B Minor6 Pentatonic
+           B Minor6 Pentatonic quality: 320, common: 3 (3 b6 7), extra: 2 (2 b5), missing: 1 (1)
+            B Minor Pentatonic quality: 220, common: 2 (3 7), extra: 3 (2 b5 6), missing: 2 (1 b6)
+           A Minor6 Pentatonic quality: 200, common: 2 (1 3), extra: 3 (2 b5 6), missing: 2 (b6 7)
+*** Pentatonic for Cm7 = C Minor Pentatonic
+            C Minor Pentatonic quality: 405, common: 4 (1 b3 5 b7), extra: 1 (4), missing: 0 ()
+          Bb Minor6 Pentatonic quality: 315, common: 3 (b3 5 b7), extra: 2 (b2 4), missing: 1 (1)
+            F Minor Pentatonic quality: 310, common: 3 (1 b3 b7), extra: 2 (4 b6), missing: 1 (5)
+            G Minor Pentatonic quality: 295, common: 3 (1 5 b7), extra: 2 (2 4), missing: 1 (b3)
+           C Minor6 Pentatonic quality: 295, common: 3 (1 b3 5), extra: 2 (4 6), missing: 1 (b7)
+           Bb Minor Pentatonic quality: 220, common: 2 (b3 b7), extra: 3 (b2 4 b6), missing: 2 (1 5)
+           F Minor6 Pentatonic quality: 200, common: 2 (1 b7), extra: 3 (2 4 b6), missing: 2 (b3 5)
+            D Minor Pentatonic quality: 185, common: 2 (1 5), extra: 3 (2 4 6), missing: 2 (b3 b7)
+*** Pentatonic for Cm6 = C Minor6 Pentatonic
+           C Minor6 Pentatonic quality: 395, common: 4 (1 b3 5 6), extra: 1 (4), missing: 0 ()
+            C Minor Pentatonic quality: 305, common: 3 (1 b3 5), extra: 2 (4 b7), missing: 1 (6)
+            D Minor Pentatonic quality: 285, common: 3 (1 5 6), extra: 2 (2 4), missing: 1 (b3)
+          Bb Minor6 Pentatonic quality: 215, common: 2 (b3 5), extra: 3 (b2 4 b7), missing: 2 (1 6)
+            G Minor Pentatonic quality: 195, common: 2 (1 5), extra: 3 (2 4 b7), missing: 2 (b3 6)
+           D Minor6 Pentatonic quality: 185, common: 2 (5 6), extra: 3 (2 4 7), missing: 2 (1 b3)
+*** Pentatonic for Cm69 = C Minor6 Pentatonic
+           C Minor6 Pentatonic quality: 395, common: 4 (1 b3 5 6), extra: 1 (4), missing: 1 (2)
+            D Minor Pentatonic quality: 385, common: 4 (1 2 5 6), extra: 1 (4), missing: 1 (b3)
+            C Minor Pentatonic quality: 305, common: 3 (1 b3 5), extra: 2 (4 b7), missing: 2 (2 6)
+            G Minor Pentatonic quality: 295, common: 3 (1 2 5), extra: 2 (4 b7), missing: 2 (b3 6)
+           D Minor6 Pentatonic quality: 285, common: 3 (2 5 6), extra: 2 (4 7), missing: 2 (1 b3)
+*** Pentatonic for Cm9 = C Minor Pentatonic
+            C Minor Pentatonic quality: 405, common: 4 (1 b3 5 b7), extra: 1 (4), missing: 1 (2)
+            G Minor Pentatonic quality: 395, common: 4 (1 2 5 b7), extra: 1 (4), missing: 1 (b3)
+            F Minor Pentatonic quality: 310, common: 3 (1 b3 b7), extra: 2 (4 b6), missing: 2 (2 5)
+           F Minor6 Pentatonic quality: 300, common: 3 (1 2 b7), extra: 2 (4 b6), missing: 2 (b3 5)
+           C Minor6 Pentatonic quality: 295, common: 3 (1 b3 5), extra: 2 (4 6), missing: 2 (2 b7)
+            D Minor Pentatonic quality: 285, common: 3 (1 2 5), extra: 2 (4 6), missing: 2 (b3 b7)
+*** Pentatonic for Cm11 = C Minor Pentatonic
+            C Minor Pentatonic quality: 505, common: 5 (1 b3 4 5 b7), extra: 0 (), missing: 0 ()
+          Bb Minor6 Pentatonic quality: 415, common: 4 (b3 4 5 b7), extra: 1 (b2), missing: 1 (1)
+            F Minor Pentatonic quality: 410, common: 4 (1 b3 4 b7), extra: 1 (b6), missing: 1 (5)
+            G Minor Pentatonic quality: 395, common: 4 (1 4 5 b7), extra: 1 (2), missing: 1 (b3)
+           C Minor6 Pentatonic quality: 395, common: 4 (1 b3 4 5), extra: 1 (6), missing: 1 (b7)
+           Bb Minor Pentatonic quality: 320, common: 3 (b3 4 b7), extra: 2 (b2 b6), missing: 2 (1 5)
+           F Minor6 Pentatonic quality: 300, common: 3 (1 4 b7), extra: 2 (2 b6), missing: 2 (b3 5)
+            D Minor Pentatonic quality: 285, common: 3 (1 4 5), extra: 2 (2 6), missing: 2 (b3 b7)
+*** Pentatonic for Cm7b5 = Eb Minor6 Pentatonic
+          Eb Minor6 Pentatonic quality: 410, common: 4 (1 b3 b5 b7), extra: 1 (b6), missing: 0 ()
+           Eb Minor Pentatonic quality: 320, common: 3 (b3 b5 b7), extra: 2 (b2 b6), missing: 1 (1)
+            F Minor Pentatonic quality: 310, common: 3 (1 b3 b7), extra: 2 (4 b6), missing: 1 (b5)
+           Bb Minor Pentatonic quality: 220, common: 2 (b3 b7), extra: 3 (b2 4 b6), missing: 2 (1 b5)
+          C# Minor6 Pentatonic quality: 200, common: 2 (b5 b7), extra: 3 (b2 3 b6), missing: 2 (1 b3)
+           F Minor6 Pentatonic quality: 200, common: 2 (1 b7), extra: 3 (2 4 b6), missing: 2 (b3 b5)
+*** Pentatonic for Cdim7 = NOT FOUND
+*** Pentatonic for C7 = G Minor6 Pentatonic
+           G Minor6 Pentatonic quality: 405, common: 4 (1 3 5 b7), extra: 1 (2), missing: 0 ()
+            A Minor Pentatonic quality: 295, common: 3 (1 3 5), extra: 2 (2 6), missing: 1 (b7)
+            G Minor Pentatonic quality: 295, common: 3 (1 5 b7), extra: 2 (2 4), missing: 1 (3)
+           F Minor6 Pentatonic quality: 195, common: 2 (1 b7), extra: 3 (2 4 b6), missing: 2 (3 5)
+           A Minor6 Pentatonic quality: 195, common: 2 (1 3), extra: 3 (2 b5 6), missing: 2 (5 b7)
+            D Minor Pentatonic quality: 185, common: 2 (1 5), extra: 3 (2 4 6), missing: 2 (3 b7)
+*** Pentatonic for C9 = G Minor6 Pentatonic
+           G Minor6 Pentatonic quality: 505, common: 5 (1 2 3 5 b7), extra: 0 (), missing: 0 ()
+            A Minor Pentatonic quality: 395, common: 4 (1 2 3 5), extra: 1 (6), missing: 1 (b7)
+            G Minor Pentatonic quality: 395, common: 4 (1 2 5 b7), extra: 1 (4), missing: 1 (3)
+           F Minor6 Pentatonic quality: 295, common: 3 (1 2 b7), extra: 2 (4 b6), missing: 2 (3 5)
+           A Minor6 Pentatonic quality: 295, common: 3 (1 2 3), extra: 2 (b5 6), missing: 2 (5 b7)
+            D Minor Pentatonic quality: 285, common: 3 (1 2 5), extra: 2 (4 6), missing: 2 (3 b7)
+*** Pentatonic for C11 = G Minor6 Pentatonic
+           G Minor6 Pentatonic quality: 405, common: 4 (1 3 5 b7), extra: 1 (2), missing: 1 (4)
+            G Minor Pentatonic quality: 395, common: 4 (1 4 5 b7), extra: 1 (2), missing: 1 (3)
+            A Minor Pentatonic quality: 295, common: 3 (1 3 5), extra: 2 (2 6), missing: 2 (4 b7)
+           F Minor6 Pentatonic quality: 295, common: 3 (1 4 b7), extra: 2 (2 b6), missing: 2 (3 5)
+            D Minor Pentatonic quality: 285, common: 3 (1 4 5), extra: 2 (2 6), missing: 2 (3 b7)
+*** Pentatonic for C13 = G Minor6 Pentatonic
+           G Minor6 Pentatonic quality: 405, common: 4 (1 3 5 b7), extra: 1 (2), missing: 1 (6)
+            A Minor Pentatonic quality: 395, common: 4 (1 3 5 6), extra: 1 (2), missing: 1 (b7)
+            G Minor Pentatonic quality: 295, common: 3 (1 5 b7), extra: 2 (2 4), missing: 2 (3 6)
+           A Minor6 Pentatonic quality: 295, common: 3 (1 3 6), extra: 2 (2 b5), missing: 2 (5 b7)
+            D Minor Pentatonic quality: 285, common: 3 (1 5 6), extra: 2 (2 4), missing: 2 (3 b7)
+*** Pentatonic for CmΔ7 = C Minor6 Pentatonic
+           C Minor6 Pentatonic quality: 295, common: 3 (1 b3 5), extra: 2 (4 6), missing: 1 (7)
+           D Minor6 Pentatonic quality: 185, common: 2 (5 7), extra: 3 (2 4 6), missing: 2 (1 b3)
+            D Minor Pentatonic quality: 185, common: 2 (1 5), extra: 3 (2 4 6), missing: 2 (b3 7)
+*** Pentatonic for C7sus4 = G Minor Pentatonic
+            G Minor Pentatonic quality: 405, common: 4 (1 4 5 b7), extra: 1 (2), missing: 0 ()
+            C Minor Pentatonic quality: 390, common: 4 (1 4 5 b7), extra: 1 (b3), missing: 0 ()
+           F Minor6 Pentatonic quality: 305, common: 3 (1 4 b7), extra: 2 (2 b6), missing: 1 (5)
+          Bb Minor6 Pentatonic quality: 295, common: 3 (4 5 b7), extra: 2 (b2 b3), missing: 1 (1)
+            D Minor Pentatonic quality: 295, common: 3 (1 4 5), extra: 2 (2 6), missing: 1 (b7)
+            F Minor Pentatonic quality: 290, common: 3 (1 4 b7), extra: 2 (b3 b6), missing: 1 (5)
+           G Minor6 Pentatonic quality: 285, common: 3 (1 5 b7), extra: 2 (2 3), missing: 1 (4)
+           C Minor6 Pentatonic quality: 280, common: 3 (1 4 5), extra: 2 (b3 6), missing: 1 (b7)
+           Bb Minor Pentatonic quality: 195, common: 2 (4 b7), extra: 3 (b2 b3 b6), missing: 2 (1 5)
+            A Minor Pentatonic quality: 175, common: 2 (1 5), extra: 3 (2 3 6), missing: 2 (4 b7)
+*** Pentatonic for C7b9 = NOT FOUND
+*** Pentatonic for C7#9 = NOT FOUND
+*** Pentatonic for C7b5 = C# Minor6 Pentatonic
+          C# Minor6 Pentatonic quality: 313, common: 3 (3 b5 b7), extra: 2 (b2 b6), missing: 1 (1)
+          Eb Minor6 Pentatonic quality: 298, common: 3 (1 b5 b7), extra: 2 (b3 b6), missing: 1 (3)
+           A Minor6 Pentatonic quality: 276, common: 3 (1 3 b5), extra: 2 (2 6), missing: 1 (b7)
+           G Minor6 Pentatonic quality: 275, common: 3 (1 3 b7), extra: 2 (2 5), missing: 1 (b5)
+           Eb Minor Pentatonic quality: 209, common: 2 (b5 b7), extra: 3 (b2 b3 b6), missing: 2 (1 3)
+            A Minor Pentatonic quality: 170, common: 2 (1 3), extra: 3 (2 5 6), missing: 2 (b5 b7)
+*** Pentatonic for C7#5 = C# Minor6 Pentatonic
+          C# Minor6 Pentatonic quality: 313, common: 3 (3 b6 b7), extra: 2 (b2 b5), missing: 1 (1)
+          Eb Minor6 Pentatonic quality: 298, common: 3 (1 b6 b7), extra: 2 (b3 b5), missing: 1 (3)
+           F Minor6 Pentatonic quality: 276, common: 3 (1 b6 b7), extra: 2 (2 4), missing: 1 (3)
+           G Minor6 Pentatonic quality: 275, common: 3 (1 3 b7), extra: 2 (2 5), missing: 1 (b6)
+           Eb Minor Pentatonic quality: 209, common: 2 (b6 b7), extra: 3 (b2 b3 b5), missing: 2 (1 3)
+            G Minor Pentatonic quality: 170, common: 2 (1 b7), extra: 3 (2 4 5), missing: 2 (3 b6)
+*** Pentatonic for C7#11 = G Minor6 Pentatonic
+           G Minor6 Pentatonic quality: 370, common: 4 (1 3 5 b7), extra: 1 (2), missing: 1 (b5)
+           A Minor6 Pentatonic quality: 276, common: 3 (1 3 b5), extra: 2 (2 6), missing: 2 (5 b7)
+            A Minor Pentatonic quality: 265, common: 3 (1 3 5), extra: 2 (2 6), missing: 2 (b5 b7)
+*** Pentatonic for C7b13 = G Minor6 Pentatonic
+           G Minor6 Pentatonic quality: 370, common: 4 (1 3 5 b7), extra: 1 (2), missing: 1 (b6)
+           F Minor6 Pentatonic quality: 276, common: 3 (1 b6 b7), extra: 2 (2 4), missing: 2 (3 5)
+            G Minor Pentatonic quality: 265, common: 3 (1 5 b7), extra: 2 (2 4), missing: 2 (3 b6)
+*** Pentatonic for C7b5b9 = C# Minor6 Pentatonic
+          C# Minor6 Pentatonic quality: 413, common: 4 (b2 3 b5 b7), extra: 1 (b6), missing: 1 (1)
+           Eb Minor Pentatonic quality: 309, common: 3 (b2 b5 b7), extra: 2 (b3 b6), missing: 2 (1 3)
+          Eb Minor6 Pentatonic quality: 298, common: 3 (1 b5 b7), extra: 2 (b3 b6), missing: 2 (b2 3)
+*** Pentatonic for C7#5b9 = C# Minor6 Pentatonic
+          C# Minor6 Pentatonic quality: 413, common: 4 (b2 3 b6 b7), extra: 1 (b5), missing: 1 (1)
+           Eb Minor Pentatonic quality: 309, common: 3 (b2 b6 b7), extra: 2 (b3 b5), missing: 2 (1 3)
+          Eb Minor6 Pentatonic quality: 298, common: 3 (1 b6 b7), extra: 2 (b3 b5), missing: 2 (b2 3)
+*** Pentatonic for C7b5#9 = Eb Minor6 Pentatonic
+          Eb Minor6 Pentatonic quality: 398, common: 4 (1 b3 b5 b7), extra: 1 (b6), missing: 1 (3)
+          C# Minor6 Pentatonic quality: 313, common: 3 (3 b5 b7), extra: 2 (b2 b6), missing: 2 (1 b3)
+           Eb Minor Pentatonic quality: 309, common: 3 (b3 b5 b7), extra: 2 (b2 b6), missing: 2 (1 3)
+*** Pentatonic for C7#5#9 = Eb Minor6 Pentatonic
+          Eb Minor6 Pentatonic quality: 398, common: 4 (1 b3 b6 b7), extra: 1 (b5), missing: 1 (3)
+          C# Minor6 Pentatonic quality: 313, common: 3 (3 b6 b7), extra: 2 (b2 b5), missing: 2 (1 b3)
+           Eb Minor Pentatonic quality: 309, common: 3 (b3 b6 b7), extra: 2 (b2 b5), missing: 2 (1 3)
+*** Pentatonic for C7b9#11 = NOT FOUND
+*** Pentatonic for C7b9b13 = NOT FOUND
+*** Pentatonic for C7#9#11 = NOT FOUND
+*** Pentatonic for C7#9b13 = NOT FOUND

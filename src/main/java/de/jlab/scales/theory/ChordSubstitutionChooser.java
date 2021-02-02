@@ -2,17 +2,16 @@ package de.jlab.scales.theory;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
 public class ChordSubstitutionChooser {
-
 
   @EqualsAndHashCode
   @Getter
@@ -22,7 +21,7 @@ public class ChordSubstitutionChooser {
     private final Set<Note> commonNotes;
     private final int quality;
     private final Scale substitution;
-    
+
     SubstitutionInfo(Scale chord, Scale substitution) {
       this.chord = chord;
       this.substitution = substitution;
@@ -31,10 +30,12 @@ public class ChordSubstitutionChooser {
       commonNotes.retainAll(substitution.asSet());
       quality = computeQuality();
     }
-    
+
     private int computeQuality() {
       Note root = chord.getRoot();
       int result = commonNotes.size() * 100;
+      result -= commonNotes.contains(root) ? 10 : 0;
+      result -= commonNotes.contains(root.five()) ? 5 : 0;
       if (chord.isAlteredDominant()) {
         result += substitutionContains(5, root.major3(), root.minor7());
         result += substitutionContains(1, root.flat5(), root.sharp5(), root.flat9(), root.sharp9());
@@ -53,17 +54,14 @@ public class ChordSubstitutionChooser {
         result -= substitutionContains(10, root.major3(), root.major7());
       } else if (chord.isSus4()) {
         result += substitutionContains(10, root.four(), root.minor7());
-        result -= substitutionContains(10, root.minor3(), root.major3());
+        result -= substitutionContains(10, root.minor3(), root.major3(), root.major7());
         result -= substitutionContains(5, root.flat5(), root.sharp5(), root.flat9(), root.sharp9());
       }
       return result;
     }
 
-    private int substitutionContains(int weight, Note ... notes) {
-      return Arrays.stream(notes)
-        .filter(note -> substitutionNotes.contains(note))
-        .mapToInt(note -> weight)
-        .sum();
+    private int substitutionContains(int weight, Note... notes) {
+      return Arrays.stream(notes).filter(note -> substitutionNotes.contains(note)).mapToInt(note -> weight).sum();
     }
 
     @Override
@@ -71,17 +69,18 @@ public class ChordSubstitutionChooser {
       return Integer.compare(that.quality, this.quality);
     }
   }
-  
-  public Scale chooseBest(Scale chord, Collection<? extends Scale> candidates) {
-    return orderedByQuality(chord, candidates).get(0).getSubstitution();
+
+  public Optional<Scale> chooseBest(Scale chord, Collection<? extends Scale> candidates) {
+    List<SubstitutionInfo> result = orderedByQuality(chord, candidates);
+    if (result.isEmpty()) {
+      return Optional.empty();
+    }
+    return Optional.of(result.get(0).getSubstitution());
   }
 
   public List<SubstitutionInfo> orderedByQuality(Scale chord, Collection<? extends Scale> candidates) {
-    return candidates.stream()
-    .map(candidate -> new SubstitutionInfo(chord, candidate))
-    .collect(Collectors.toSet()).stream()
-    .sorted()
-    .collect(Collectors.toList());
+    return candidates.stream().map(candidate -> new SubstitutionInfo(chord, candidate)).collect(Collectors.toCollection(LinkedHashSet::new)).stream().sorted()
+        .collect(Collectors.toList());
   }
-  
+
 }

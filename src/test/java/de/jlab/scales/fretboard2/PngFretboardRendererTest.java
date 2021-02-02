@@ -1,7 +1,7 @@
 package de.jlab.scales.fretboard2;
 
 import static de.jlab.scales.theory.Scales.Cmaj7;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.awt.image.BufferedImage;
 import java.util.function.Function;
@@ -9,7 +9,6 @@ import java.util.function.Function;
 import org.junit.Test;
 
 import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
 
 public class PngFretboardRendererTest {
   /**
@@ -25,7 +24,7 @@ public class PngFretboardRendererTest {
     assertEquals(4, position.getMaxFret() - position.getMinFret());
     Fretboard fretboard = new Fretboard(position, markers);
     FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
-    Preview.preview(renderer.render());
+    //Preview.preview(renderer.render());
     
   }
 
