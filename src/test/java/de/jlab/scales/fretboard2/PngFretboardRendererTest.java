@@ -23,9 +23,8 @@ public class PngFretboardRendererTest {
     Function<Note, Marker> markers = n -> n == Cmaj7.getRoot() ? Markers.root() : (Cmaj7.contains(n) ? Markers.foreground() : Markers.background());
     assertEquals(4, position.getMaxFret() - position.getMinFret());
     Fretboard fretboard = new Fretboard(position, markers);
-    FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
+    FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard);
     //Preview.preview(renderer.render());
-    
   }
 
 }

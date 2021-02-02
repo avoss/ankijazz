@@ -35,6 +35,10 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
     return linux() ? new Font("Lucida Sans", Font.PLAIN, 15) : new Font("Comic Sans MS", Font.PLAIN, 15);
   }
   
+  public PngFretboardRenderer(Fretboard fretboard) {
+    this(fretboard, fretboard.getMinFret(), fretboard.getMaxFret());
+  }
+  
   public PngFretboardRenderer(Fretboard fretboard, int minFret, int maxFret) {
     this.fretboard = fretboard;
     this.minFret = minFret;

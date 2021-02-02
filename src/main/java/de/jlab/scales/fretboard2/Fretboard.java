@@ -3,7 +3,9 @@ package de.jlab.scales.fretboard2;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.OptionalInt;
 import java.util.function.Function;
+import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.Note;
 
@@ -40,6 +42,22 @@ public class Fretboard {
 
   public Tuning getTuning() {
     return tuning;
+  }
+
+  public int getMinFret() {
+    return getMinMaxFret(string -> string.getMinFret()).min().getAsInt();
+  }
+
+  public int getMaxFret() {
+    return getMinMaxFret(string -> string.getMaxFret()).max().getAsInt();
+  }
+
+  private IntStream getMinMaxFret(Function<GuitarString, OptionalInt> toMinMax) {
+    return strings.stream().map(toMinMax).filter(minMax -> minMax.isPresent()).mapToInt(fret -> fret.getAsInt());
+  }
+  
+  public void mark(int string, int fret, Marker marker) {
+    strings.get(string).mark(fret, marker);
   }
 
 }

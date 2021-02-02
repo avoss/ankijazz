@@ -1,12 +1,13 @@
 package de.jlab.scales.fretboard2;
 
+import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static java.util.stream.Collectors.toList;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 import org.junit.Test;
@@ -14,7 +15,6 @@ import org.junit.Test;
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Scales;
 
 public class FretboardTest {
 
@@ -23,7 +23,9 @@ public class FretboardTest {
     Position position = NPS.C_MINOR7_PENTATONIC.transpose(Note.A).getPositions().get(0);
     Function<Note, Marker> markers = (n) -> Markers.foreground();
     Fretboard fretboard = new Fretboard(position, markers);
-    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
+    assertThat(fretboard.getMinFret()).isEqualTo(position.getMinFret());
+    assertThat(fretboard.getMaxFret()).isEqualTo(position.getMaxFret());
     
     assertEquals(
         "|-o-|---|---|-o-|\n" + //
@@ -38,10 +40,10 @@ public class FretboardTest {
   @Test
   public void testGMajorScaleWithAMinorPentatonic() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
-    Scale aMinorPentatonic = Scales.CMinor7Pentatonic.transpose(Note.A);
+    Scale aMinorPentatonic = CMinor7Pentatonic.transpose(Note.A);
     Function<Note, Marker> markers = Markers.marker(aMinorPentatonic);
     Fretboard fretboard = new Fretboard(position, markers);
-    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
     assertEquals(
         "|---|-R-|---|-•-|-o-|\n" + //
@@ -51,6 +53,55 @@ public class FretboardTest {
         "|---|-o-|---|-o-|---|\n" + //
         "|---|-R-|---|-•-|-o-|" , //
         renderer.toString());
+  }
+
+  @Test
+  public void testMarkersOnFretboard() {
+    Fretboard fretboard = new Fretboard(Tuning.STANDARD_TUNING);
+    fretboard.mark(0, 5, Markers.foreground());
+    fretboard.mark(2, 7, Markers.background());
+    fretboard.mark(3, 9, Markers.empty());
+    assertThat(fretboard.getMinFret()).isEqualTo(5);
+    assertThat(fretboard.getMaxFret()).isEqualTo(7);
+
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
+    
+    assertEquals(
+        "|---|---|---|\n" + //
+        "|---|---|---|\n" + //
+        "|---|---|---|\n" + //
+        "|---|---|-•-|\n" + //
+        "|---|---|---|\n" + //
+        "|-o-|---|---|" , //
+        renderer.toString());
+    
+  }
+  
+  @Test
+  public void testArrowMarkers() {
+    Position position = NPS.C_MINOR7_PENTATONIC.getPositions().get(0);
+    Function<Note, Marker> markers = Markers.marker(CMinor7Pentatonic);
+    Fretboard fretboard = new Fretboard(position, markers);
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
+    
+    assertEquals(
+        "|---|-\u02c4-|---|---|\n" + //
+        "|---|---|---|---|\n" + //
+        "|---|---|---|---|\n" + //
+        "|---|---|---|---|\n" + //
+        "|---|---|---|---|\n" + //
+        "|---|-\u02c4-|---|---|" , //
+        renderer.toString());
+
+    assertEquals(
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|-\u02c5-|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|" , //
+        renderer.toString());
+    
   }
   
   @Test
@@ -65,7 +116,7 @@ public class FretboardTest {
         Scale scale = position.getScale();
         Function<Note, Marker> markers = Markers.marker(scale);
         Fretboard fretboard = new Fretboard(position, markers);
-        StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard, position.getMinFret(), position.getMaxFret());
+        StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
         List<String> rendered = renderer.render();
         actual.addAll(Stream.concat(rendered.stream(), Stream.of("--------------")).collect(toList()));
       }

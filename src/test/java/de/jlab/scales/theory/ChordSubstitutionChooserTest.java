@@ -8,19 +8,15 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
-import java.util.TreeSet;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.anki.Card;
 import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 
 public class ChordSubstitutionChooserTest {

@@ -3,6 +3,7 @@ package de.jlab.scales.fretboard2;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.E;
+import static de.jlab.scales.theory.Note.G;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
@@ -19,10 +20,20 @@ public class GuitarStringTest {
     assertThat(eString.noteOf(5)).isEqualTo(A);
     assertThat(eString.noteOf(8)).isEqualTo(C);
 
+    eString.mark(7, Markers.background());
+    eString.mark(9, Markers.empty());
+    assertThat(eString.getMinFret().getAsInt()).isEqualTo(5);
+    assertThat(eString.getMaxFret().getAsInt()).isEqualTo(7);
+    
     GuitarString aString = new GuitarString(1, A);
     assertThat(aString.noteOf(7)).isEqualTo(E);
     assertThat(aString.getStringIndex()).isEqualTo(1);
 
   }
 
+  @Test
+  public void testEmptyString() {
+    GuitarString gString = new GuitarString(0, G);
+    assertThat(gString.getMinFret()).isEmpty();
+  }
 }

@@ -10,13 +10,9 @@ import java.util.List;
 public class StringFretboardRenderer implements FretboardRenderer<List<String>> {
 
   private final Fretboard fretboard;
-  private final int minFret;
-  private final int maxFret;
 
-  public StringFretboardRenderer(Fretboard fretboard, int minFret, int maxFret) {
+  public StringFretboardRenderer(Fretboard fretboard) {
     this.fretboard = fretboard;
-    this.minFret = minFret;
-    this.maxFret = maxFret;
   }
 
   @Override
@@ -63,7 +59,11 @@ public class StringFretboardRenderer implements FretboardRenderer<List<String>> 
     
   }
   
-  String render(GuitarString string) {
+  public String render(GuitarString string) {
+    return render(string, fretboard.getMinFret(), fretboard.getMaxFret());
+  }
+  
+  public String render(GuitarString string, int minFret, int maxFret) {
     StringMarkerRenderer renderer = new StringMarkerRenderer();
     for (int fret = minFret; fret <= maxFret; fret++) {
       Marker marker = string.markerOf(fret);

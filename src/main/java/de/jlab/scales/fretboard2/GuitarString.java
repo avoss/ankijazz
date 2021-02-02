@@ -2,9 +2,15 @@ package de.jlab.scales.fretboard2;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.function.Function;
+import java.util.function.IntPredicate;
+import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.Note;
 
+@lombok.ToString
 public class GuitarString {
 
   private Note tuning;
@@ -30,6 +36,20 @@ public class GuitarString {
   
   public int getStringIndex() {
     return stringIndex;
+  }
+
+  public OptionalInt getMinFret() {
+    OptionalInt min = nonEmptyMarkers().min();
+    return min;
+  }
+
+  public OptionalInt getMaxFret() {
+    OptionalInt max = nonEmptyMarkers().max();
+    return max;
+  }
+  
+  private IntStream nonEmptyMarkers() {
+    return marked.keySet().stream().filter(i -> !marked.get(i).isEmpty()).mapToInt(i -> i);
   }
 
 }
