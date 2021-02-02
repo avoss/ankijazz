@@ -1,66 +1,89 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.ScaleUniverse.SCALES;
-import static org.junit.Assert.fail;
 
+import java.io.IOException;
+import java.io.UncheckedIOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import de.jlab.scales.TestUtils;
+import de.jlab.scales.anki.Card;
 import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 
 public class ChordSubstitutionChooserTest {
-
+  
+  @lombok.Data
+  static class Documentation {
+    private final String chordName;
+    private final String pentaName;
+    private final String commonNotes;
+    private final String extraNotes;
+    private final String missingNotes;
+  }
 
   @Test
   public void testPentatonicMapping() {
     PentatonicChooser chooser = new PentatonicChooser();
-    List<String> actual = new ArrayList<>();
+    List<String> fullPentatonics = new ArrayList<>();
+    List<String> bestPentatonics = new ArrayList<>();
+    List<Documentation> documentation = new ArrayList<>();
     for (BuiltinChordType type : BuiltinChordType.values()) {
       if (type.getPrototype().getNumberOfNotes() < 4) {
         continue;
       }
       Scale chord = type.getPrototype();
-      Optional<Scale> best = chooser.chooseBest(chord);
-      actual.add(String.format("*** Pentatonic for C%s = %s", type.getTypeName(), best.isPresent() ? SCALES.findFirstOrElseThrow(best.get()).getScaleName() : "NOT FOUND"));
+      Optional<SubstitutionInfo> best = chooser.chooseBest(chord);
+      String title = String.format("*** Pentatonic for C%s = %s", type.getTypeName(), best.isPresent() ? SCALES.findFirstOrElseThrow(best.get().getSubstitution()).getScaleName() : "NOT FOUND");
+      fullPentatonics.add(title);
+      bestPentatonics.add(title);
 
       List<SubstitutionInfo> byQuality = chooser.orderedByQuality(chord);
       for (SubstitutionInfo substInfo : byQuality) {
         ScaleInfo pentInfo = SCALES.findFirstOrElseThrow(substInfo.getSubstitution());
         
-        Set<Note> substNotes = substInfo.getSubstitutionNotes();
         Set<Note> commonNotes = substInfo.getCommonNotes();
-        Set<Note> chordNotes = chord.asSet();
-
-        Set<Note> extraNotes = new HashSet<>(substNotes);
-        extraNotes.removeAll(chordNotes);
-
-        Set<Note> missingNotes = new HashSet<>(chordNotes);
-        missingNotes.removeAll(substNotes);
+        Set<Note> extraNotes = substInfo.getExtraNotes();
+        Set<Note> missingNotes = substInfo.getMissingNotes();
         
         String line = String.format("%30s quality: %d, common: %d (%s), extra: %d (%s), missing: %d (%s)", pentInfo.getScaleName(), substInfo.getQuality(), 
-            commonNotes.size(), toIntervals(commonNotes), 
-            extraNotes.size(), toIntervals(extraNotes), 
-            missingNotes.size(), toIntervals(missingNotes));
-        actual.add(line);
+            commonNotes.size(), substInfo.getCommonNotesAsIntervals(), 
+            extraNotes.size(), substInfo.getExtraNotesAsIntervals(), 
+            missingNotes.size(), substInfo.getMissingNotesAsIntervals());
+        fullPentatonics.add(line);
+        if (best.get().equals(substInfo)) {
+          documentation.add(new Documentation("C" + type.getTypeName(), pentInfo.getScaleName(), substInfo.getCommonNotesAsIntervals(), substInfo.getExtraNotesAsIntervals(), substInfo.getMissingNotesAsIntervals()));
+        }
       }
     }
-    actual.forEach(line -> System.out.println(line));
-    TestUtils.assertFileContentMatches(actual, getClass(), "PentatonicChordSubstitutions.txt");
+    //fullPentatonics.forEach(line -> System.out.println(line));
+    TestUtils.assertFileContentMatches(bestPentatonics, getClass(), "BestPentatonics.txt");
+    TestUtils.assertFileContentMatches(fullPentatonics, getClass(), "FullPentatonics.txt");
+    writeDocumentation(documentation);
   }
 
-  private String toIntervals(Set<Note> scrambledNotes) {
-    if (scrambledNotes.isEmpty()) {
-      return "";
+  private void writeDocumentation(List<Documentation> documentation) {
+    try {
+      Path dir = Paths.get("build");
+      Files.createDirectories(dir);
+      Path path = dir.resolve("PentatonicSubstitutions.json");
+      new ObjectMapper().writeValue(path.toFile(), documentation);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
     }
-    Set<Note> orderedNotes = new TreeSet<>(scrambledNotes);
-    return new Scale(orderedNotes.iterator().next(), orderedNotes).asIntervals(Note.C);
   }
+
 
 }

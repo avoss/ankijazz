@@ -2,10 +2,12 @@ package de.jlab.scales.theory;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import lombok.EqualsAndHashCode;
@@ -21,13 +23,27 @@ public class ChordSubstitutionChooser {
     private final Set<Note> commonNotes;
     private final int quality;
     private final Scale substitution;
+    private final Set<Note> chordNotes;
+    private final Set<Note> extraNotes;
+    private final Set<Note> missingNotes;
+    private final Note root;
 
     SubstitutionInfo(Scale chord, Scale substitution) {
       this.chord = chord;
+      root = chord.getRoot();
       this.substitution = substitution;
       substitutionNotes = substitution.asSet();
+      chordNotes = chord.asSet();
+      
       commonNotes = chord.asSet();
       commonNotes.retainAll(substitution.asSet());
+
+      extraNotes = new HashSet<>(substitutionNotes);
+      extraNotes.removeAll(chordNotes);
+      
+      missingNotes = new HashSet<>(chordNotes);
+      missingNotes.removeAll(substitutionNotes);
+      
       quality = computeQuality();
     }
 
@@ -68,14 +84,35 @@ public class ChordSubstitutionChooser {
     public int compareTo(SubstitutionInfo that) {
       return Integer.compare(that.quality, this.quality);
     }
+    
+    public String getCommonNotesAsIntervals() {
+      return toIntervals(commonNotes);
+    }
+    
+    public String getExtraNotesAsIntervals() {
+      return toIntervals(extraNotes);
+    }
+    
+    public String getMissingNotesAsIntervals() {
+      return toIntervals(missingNotes);
+    }
+    
+    private String toIntervals(Set<Note> scrambledNotes) {
+      if (scrambledNotes.isEmpty()) {
+        return "";
+      }
+      Set<Note> orderedNotes = new TreeSet<>(scrambledNotes);
+      return new Scale(orderedNotes.iterator().next(), orderedNotes).asIntervals(root);
+    }
+    
   }
 
-  public Optional<Scale> chooseBest(Scale chord, Collection<? extends Scale> candidates) {
+  public Optional<SubstitutionInfo> chooseBest(Scale chord, Collection<? extends Scale> candidates) {
     List<SubstitutionInfo> result = orderedByQuality(chord, candidates);
     if (result.isEmpty()) {
       return Optional.empty();
     }
-    return Optional.of(result.get(0).getSubstitution());
+    return Optional.of(result.get(0));
   }
 
   public List<SubstitutionInfo> orderedByQuality(Scale chord, Collection<? extends Scale> candidates) {
