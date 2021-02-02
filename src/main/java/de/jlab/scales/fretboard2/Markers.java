@@ -51,6 +51,10 @@ public class Markers {
     };
   }
 
+  public static Function<Note, Marker> marker(Scale scale) {
+    return marker(scale.getRoot(), scale);
+  }
+  
   public static Function<Note, Marker> marker(Note root, Scale foreground) {
     return n -> n == root ? Markers.root() : (foreground.contains(n) ? Markers.foreground() : Markers.background());
   }

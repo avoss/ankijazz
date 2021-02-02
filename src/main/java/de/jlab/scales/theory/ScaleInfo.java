@@ -25,6 +25,7 @@ public class ScaleInfo {
    */
   private String typeName;
   private Scale scale;
+  @EqualsAndHashCode.Exclude
   private ScaleInfo parentInfo;
   private KeySignature keySignature;
   private final List<Scale> superScales = new ArrayList<>();

@@ -84,7 +84,7 @@ public enum Note {
     return transpose(9);
   }
 
-  public Note dominant7() {
+  public Note minor7() {
     return transpose(10);
   }
 

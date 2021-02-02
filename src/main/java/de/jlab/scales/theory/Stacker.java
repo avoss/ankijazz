@@ -24,11 +24,11 @@ public class Stacker {
       move(root.sharp5());
     }
     
-    if (!move(root.dominant7()) && !move(root.major7())) {
+    if (!move(root.minor7()) && !move(root.major7())) {
       move(root.major6());
     }
     
-    move(root.dominant7());
+    move(root.minor7());
     move(root.major7());
     move(root.flat9());
     move(root.nine());

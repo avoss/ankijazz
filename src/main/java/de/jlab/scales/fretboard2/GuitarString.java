@@ -1,9 +1,7 @@
 package de.jlab.scales.fretboard2;
 
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 import de.jlab.scales.theory.Note;
 
@@ -13,8 +11,8 @@ public class GuitarString {
   private Map<Integer, Marker> marked = new HashMap<>();
   private int stringIndex;
 
-  public GuitarString(int index, Note tuning) {
-    this.stringIndex = index;
+  public GuitarString(int stringIndex, Note tuning) {
+    this.stringIndex = stringIndex;
     this.tuning = tuning;
   }
 

@@ -115,7 +115,7 @@ public class ScaleTest {
     assertEquals(G, C.five());
     assertEquals(Ab, C.sharp5());
     assertEquals(A, C.major6());
-    assertEquals(Bb, C.dominant7());
+    assertEquals(Bb, C.minor7());
     assertEquals(B, C.major7());
   }
 

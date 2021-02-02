@@ -247,6 +247,10 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return intervals;
   }
 
+  public boolean isSus4() {
+    return !isMajor() && !isMinor() && contains(root.four());
+  }
+  
   public boolean isMajor() {
     return contains(root.major3());
   }
@@ -256,7 +260,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
   
   public boolean isDominant() {
-    return isMajor() && contains(root.dominant7());
+    return isMajor() && contains(root.minor7());
   }
   
 
