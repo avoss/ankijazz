@@ -8,7 +8,6 @@ import java.util.Optional;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
