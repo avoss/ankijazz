@@ -27,6 +27,10 @@ public class Fretboard {
 
   public Fretboard(Position position, Function<Note, Marker> markers) {
     this(position.getTuning());
+    mark(position, markers);
+  }
+
+  public void mark(Position position, Function<Note, Marker> markers) {
     for (int i = 0; i < tuning.getStrings().size(); i++) {
       GuitarString string = strings.get(i);
       for (int fret : position.getFrets(i)) {
@@ -58,6 +62,14 @@ public class Fretboard {
   
   public void mark(int string, int fret, Marker marker) {
     strings.get(string).mark(fret, marker);
+  }
+
+  public Marker getMarker(int string, int fret) {
+    return strings.get(string).markerOf(fret);
+  }
+
+  public GuitarString getString(int string) {
+    return strings.get(string);
   }
 
 }

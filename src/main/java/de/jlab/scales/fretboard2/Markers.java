@@ -1,13 +1,11 @@
 package de.jlab.scales.fretboard2;
 
+
 import java.util.function.Function;
 
-import de.jlab.scales.fretboard2.MarkerRenderer.LeftRight;
-import de.jlab.scales.fretboard2.MarkerRenderer.UpDown;
+import de.jlab.scales.fretboard2.BoxMarker.LeftRight;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
-import lombok.Builder;
-import lombok.Data;
 
 public class Markers {
   public static final Marker EMPTY = new Marker() {
@@ -30,6 +28,10 @@ public class Markers {
   private Markers() {
   }
 
+  public static Marker empty() {
+    return EMPTY;
+  }
+  
   public static Marker foreground() {
     return new Marker() {
 
@@ -43,10 +45,6 @@ public class Markers {
         return "Foreground";
       }
     };
-  }
-
-  public static Marker empty() {
-    return EMPTY;
   }
 
   public static Marker background() {
@@ -78,6 +76,11 @@ public class Markers {
       }
     };
   }
+  
+  public static Position box(Fretboard fretboard, int string, Note root, LeftRight boxPosition, Fingering fingering) {
+    BoxMarker marker = new BoxMarker(fretboard, string, root, boxPosition, fingering);
+    return marker.mark();
+  }
 
   public static Function<Note, Marker> marker(Scale scale) {
     return marker(scale.getRoot(), scale);
@@ -87,26 +90,5 @@ public class Markers {
     return n -> n == root ? Markers.root() : (foreground.contains(n) ? Markers.foreground() : Markers.background());
   }
 
-  @Builder
-  @Data
-  public static class ArrowMarkerFunction implements Function<Note, Marker> {
-    private final Position position;
-    private final Note root;
-    private final LeftRight leftRight;
-    private final UpDown upDown;
-
-    private ArrowMarkerFunction(Position position, Note root, LeftRight leftRight, UpDown upDown) {
-      this.position = position;
-      this.root = root;
-      this.leftRight = leftRight;
-      this.upDown = upDown;
-    }
-
-    @Override
-    public Marker apply(Note note) {
-      // TODO Auto-generated method stub
-      return null;
-    }
-  }
 
 }

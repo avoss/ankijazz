@@ -1,8 +1,6 @@
 package de.jlab.scales.fretboard2;
 
 public interface MarkerRenderer {
-  public enum LeftRight { LEFT, RIGHT }
-  public enum UpDown { UP, DOWN }
 
   void renderEmpty(GuitarString string, int fret);
 
@@ -11,5 +9,7 @@ public interface MarkerRenderer {
   void renderBackground(GuitarString string, int fret);
 
   void renderRoot(GuitarString string, int fret);
+
+  void renderBox(GuitarString string, int rootFret, int minFret, int maxFret);
 
 }

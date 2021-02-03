@@ -21,6 +21,7 @@ public class JamDeckTest {
   boolean differenceFound = false;
 
   @Test
+  @Ignore
   public void testAll() {
     Deck<JamCard> deckC = TestUtils.writeTo(new JamDeck("Practice Chords (C-Instrument)", Note.C, false), 0.1);
     Deck<JamCard> deckGit = TestUtils.writeTo(new JamDeck("Practice Chords (Guitar)", Note.C, true), 0.1);
@@ -74,7 +75,6 @@ public class JamDeckTest {
   }
 
   @Test
-  @Ignore
   public void testC() {
     TestUtils.writeTo(new JamDeck("Practice Chords (C-Instrument)", Note.C, false), 0.01);
   }

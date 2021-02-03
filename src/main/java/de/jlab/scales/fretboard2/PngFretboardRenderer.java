@@ -117,6 +117,11 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
       return (fretX(fret) + fretX(fret + 1)) / 2 - markerSize/2;
     }
 
+    @Override
+    public void renderBox(GuitarString string, int rootFret, int minFret, int maxFret) {
+      throw new UnsupportedOperationException();
+    }
+
   }
   
   private void drawMarkers(GuitarString string) {

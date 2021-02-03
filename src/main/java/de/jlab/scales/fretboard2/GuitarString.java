@@ -33,23 +33,26 @@ public class GuitarString {
   public Note noteOf(int fret) {
     return tuning.transpose(fret);
   }
+
+  public int fretOf(Note note) {
+    return tuning.semitones(note);
+  }
   
   public int getStringIndex() {
     return stringIndex;
   }
 
   public OptionalInt getMinFret() {
-    OptionalInt min = nonEmptyMarkers().min();
-    return min;
+    return nonEmptyMarkers().min();
   }
 
   public OptionalInt getMaxFret() {
-    OptionalInt max = nonEmptyMarkers().max();
-    return max;
+    return nonEmptyMarkers().max();
   }
   
   private IntStream nonEmptyMarkers() {
     return marked.keySet().stream().filter(i -> !marked.get(i).isEmpty()).mapToInt(i -> i);
   }
+
 
 }

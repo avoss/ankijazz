@@ -11,6 +11,7 @@ public class StringFretboardRenderer implements FretboardRenderer<List<String>> 
 
   private final Fretboard fretboard;
 
+  
   public StringFretboardRenderer(Fretboard fretboard) {
     this.fretboard = fretboard;
   }
@@ -55,6 +56,11 @@ public class StringFretboardRenderer implements FretboardRenderer<List<String>> 
     @Override
     public String toString() {
       return sb.toString();
+    }
+
+    @Override
+    public void renderBox(GuitarString string, int rootFret, int minFret, int maxFret) {
+      sb.append("-B-|");
     }
     
   }

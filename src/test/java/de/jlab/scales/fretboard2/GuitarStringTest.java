@@ -17,8 +17,11 @@ public class GuitarStringTest {
     assertThat(eString.markerOf(1)).isEqualTo(Markers.empty());
     assertThat(eString.markerOf(5)).isNotEqualTo(Markers.empty());
     assertThat(eString.noteOf(0)).isEqualTo(E);
+    assertThat(eString.fretOf(E)).isEqualTo(0);
     assertThat(eString.noteOf(5)).isEqualTo(A);
+    assertThat(eString.fretOf(A)).isEqualTo(5);
     assertThat(eString.noteOf(8)).isEqualTo(C);
+    assertThat(eString.fretOf(C)).isEqualTo(8);
 
     eString.mark(7, Markers.background());
     eString.mark(9, Markers.empty());

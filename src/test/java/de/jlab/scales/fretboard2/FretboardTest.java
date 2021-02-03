@@ -78,30 +78,20 @@ public class FretboardTest {
   }
   
   @Test
-  public void testArrowMarkers() {
-    Position position = NPS.C_MINOR7_PENTATONIC.getPositions().get(0);
-    Function<Note, Marker> markers = Markers.marker(CMinor7Pentatonic);
-    Fretboard fretboard = new Fretboard(position, markers);
+  public void testBoxMarkers() {
+    Fretboard fretboard = new Fretboard();
+    Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    fretboard.mark(position, Markers.marker(position.getScale()));
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
     assertEquals(
-        "|---|-\u02c4-|---|---|\n" + //
-        "|---|---|---|---|\n" + //
-        "|---|---|---|---|\n" + //
-        "|---|---|---|---|\n" + //
-        "|---|---|---|---|\n" + //
-        "|---|-\u02c4-|---|---|" , //
+        "|-B-|-R-|---|---|-o-|\n" + //
+        "|---|-o-|---|---|-o-|\n" + //
+        "|---|-o-|---|-o-|---|\n" + //
+        "|---|-o-|---|-R-|---|\n" + //
+        "|---|-o-|---|-o-|---|\n" + //
+        "|---|-R-|---|---|-o-|" , //
         renderer.toString());
-
-    assertEquals(
-        "|---|---|---|---|---|\n" + //
-        "|---|---|---|---|-\u02c5-|\n" + //
-        "|---|---|---|---|---|\n" + //
-        "|---|---|---|---|---|\n" + //
-        "|---|---|---|---|---|\n" + //
-        "|---|---|---|---|---|" , //
-        renderer.toString());
-    
   }
   
   @Test
