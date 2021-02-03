@@ -13,6 +13,7 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
+import de.jlab.scales.fretboard2.Fretboard.Box;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
@@ -78,35 +79,36 @@ public class FretboardTest {
   }
   
   @Test
-  public void testBoxWithMarkers() {
-    Fretboard fretboard = new Fretboard();
-    Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
-    fretboard.mark(position, Markers.marker(position.getScale()));
-    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
-    
-    assertEquals(
-        "|-B-|-R-|---|---|-o-|\n" + //
-        "|---|-o-|---|---|-o-|\n" + //
-        "|---|-o-|---|-o-|---|\n" + //
-        "|---|-o-|---|-R-|---|\n" + //
-        "|---|-o-|---|-o-|---|\n" + //
-        "|---|-R-|---|---|-o-|" , //
-        renderer.toString());
-  }
-
-  @Test
-  public void testBoxWithoutMarkers() {
+  public void testQuestion() {
     Fretboard fretboard = new Fretboard();
     Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
     assertEquals(
-        "|-B-|---|---|---|---|\n" + //
+        "|-R-|---|---|---|---|\n" + //
         "|---|---|---|---|---|\n" + //
         "|---|---|---|---|---|\n" + //
         "|---|---|---|---|---|\n" + //
         "|---|---|---|---|---|\n" + //
         "|---|---|---|---|---|" , //
+        renderer.toString());
+  }
+
+  @Test
+  public void testAnswer() {
+    Fretboard fretboard = new Fretboard();
+    Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    fretboard.mark(position, Markers.foreground());
+    fretboard.markVisible(Note.B, Markers.root());
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
+    
+    assertEquals(
+        "|-R-|-o-|---|---|-o-|\n" + //
+        "|---|-o-|---|---|-o-|\n" + //
+        "|---|-o-|---|-o-|---|\n" + //
+        "|---|-o-|-R-|-o-|---|\n" + //
+        "|---|-o-|---|-o-|---|\n" + //
+        "|-R-|-o-|---|---|-o-|" , //
         renderer.toString());
   }
   
@@ -128,5 +130,13 @@ public class FretboardTest {
       }
       TestUtils.assertFileContentMatches(actual, getClass(), fingering.getName().concat(".txt"));
     }
+  }
+  
+  @Test
+  public void testBoxOnly() {
+    Fretboard fretboard = new Fretboard();
+    fretboard.setBox(new Box(5, 7));
+    assertThat(fretboard.getMinFret()).isEqualTo(5);
+    assertThat(fretboard.getMaxFret()).isEqualTo(7);
   }
 }

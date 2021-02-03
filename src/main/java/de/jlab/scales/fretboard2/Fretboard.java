@@ -1,7 +1,6 @@
 package de.jlab.scales.fretboard2;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
@@ -9,6 +8,7 @@ import java.util.function.Function;
 import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.Note;
+import de.jlab.scales.theory.Scale;
 
 public class Fretboard {
   
@@ -58,19 +58,25 @@ public class Fretboard {
   }
 
   public int getMinFret() {
-    int minFret = getMinMaxFret(string -> string.getMinFret()).min().getAsInt();
-    if (box.isPresent()) {
-      minFret = Math.min(minFret, box.get().getMinFret());
+    OptionalInt min = getMinMaxFret(string -> string.getMinFret()).min();
+    if (min.isPresent() && box.isPresent()) {
+      return Math.min(min.getAsInt(), box.get().getMinFret());
     }
-    return minFret;
+    if (min.isPresent()) {
+      return min.getAsInt();
+    }
+    return box.get().getMinFret();
   }
 
   public int getMaxFret() {
-    int maxFret = getMinMaxFret(string -> string.getMaxFret()).max().getAsInt();
-    if (box.isPresent()) {
-      maxFret = Math.max(maxFret, box.get().getMaxFret());
+    OptionalInt max = getMinMaxFret(string -> string.getMaxFret()).max();
+    if (max.isPresent() && box.isPresent()) {
+      return Math.max(max.getAsInt(), box.get().getMaxFret());
     }
-    return maxFret;
+    if (max.isPresent()) {
+      return max.getAsInt();
+    }
+    return box.get().getMaxFret();
   }
 
   private IntStream getMinMaxFret(Function<GuitarString, OptionalInt> toMinMax) {
@@ -91,6 +97,28 @@ public class Fretboard {
   
   public void setBox(Box box) {
     this.box = Optional.of(box);
+  }
+
+  public void mark(Position position, Marker marker) {
+    mark(position, n -> marker);
+  }
+
+  public void markVisible(Note note, Marker marker) {
+    int minFret = getMinFret();
+    int maxFret = getMaxFret();
+    for (GuitarString string : strings) {
+      for (int fret = minFret; fret <= maxFret; fret++) {
+        if (string.noteOf(fret) == note) {
+          string.mark(fret, marker);
+        }
+      }
+    }
+  }
+
+  public void markVisible(Scale scale, Marker marker) {
+    for (Note note : scale) {
+      markVisible(note, marker);
+    }
   }
 
 }

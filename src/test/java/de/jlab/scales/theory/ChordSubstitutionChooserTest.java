@@ -41,7 +41,7 @@ public class ChordSubstitutionChooserTest {
         continue;
       }
       Scale chord = type.getPrototype();
-      Optional<SubstitutionInfo> best = chooser.chooseBest(chord);
+      Optional<SubstitutionInfo> best = chooser.chooseBestInfo(chord);
       String title = String.format("*** Pentatonic for C%s = %s", type.getTypeName(), best.isPresent() ? SCALES.findFirstOrElseThrow(best.get().getSubstitution()).getScaleName() : "NOT FOUND");
       fullPentatonics.add(title);
       bestPentatonics.add(title);

@@ -10,6 +10,4 @@ public interface MarkerRenderer {
 
   void renderRoot(GuitarString string, int fret);
 
-  void renderBox(GuitarString string, int rootFret, int minFret, int maxFret);
-
 }

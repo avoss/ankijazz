@@ -95,19 +95,6 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
       renderMarker(Color.RED, string, fret);
     }
 
-    @Override
-    public void renderBox(GuitarString string, int rootFret, int minFret, int maxFret) {
-      renderRoot(string, rootFret);
-      renderBox(minFret, maxFret);
-    }
-    
-    private void renderBox(int minFret, int maxFret) {
-      g.setColor(Color.GREEN);
-      g.setStroke(new BasicStroke(8));
-      int margin = 0;
-      g.drawRect(fretX(minFret) + margin, fretboardY() + margin, fretX(maxFret) - fretX(minFret) - 2 * margin, fretboardHeight() - 2 * margin);
-    }
-
     private void renderMarker(Color color, GuitarString string, int fret) {
       g.setColor(color);
       g.fillOval(markerX(fret), markerY(string.getStringIndex()), markerWidth(), markerHeight());

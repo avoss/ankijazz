@@ -78,8 +78,11 @@ public class Markers {
   }
   
   public static Position box(Fretboard fretboard, int string, Note root, BoxPosition boxPosition, Fingering fingering) {
-    BoxMarker marker = new BoxMarker(fretboard, string, root, boxPosition, fingering);
-    return marker.mark();
+    return box(fretboard, string, root, boxPosition, fingering, Markers.root());
+  }
+  
+  public static Position box(Fretboard fretboard, int string, Note root, BoxPosition boxPosition, Fingering fingering, Marker marker) {
+    return new BoxMarker(fretboard, string, root, boxPosition, fingering, marker).mark();
   }
 
   public static Function<Note, Marker> marker(Scale foreground) {
@@ -89,6 +92,5 @@ public class Markers {
   public static Function<Note, Marker> marker(Note root, Scale foreground) {
     return n -> n == root ? Markers.root() : (foreground.contains(n) ? Markers.foreground() : Markers.background());
   }
-
 
 }

@@ -18,7 +18,11 @@ public class PentatonicChooser {
   private static final ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, Minor7Pentatonic, Minor6Pentatonic));
   private final ChordSubstitutionChooser chooser = new ChordSubstitutionChooser();
 
-  public Optional<SubstitutionInfo> chooseBest(Scale chord) {
+  public Scale chooseBest(Scale chord) {
+    return chooseBestInfo(chord).get().getSubstitution();
+  }
+  
+  public Optional<SubstitutionInfo> chooseBestInfo(Scale chord) {
     return chooser.chooseBest(chord, candidates(chord));
   }
 
