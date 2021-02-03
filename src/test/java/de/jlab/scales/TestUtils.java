@@ -2,8 +2,12 @@ package de.jlab.scales;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
+import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
@@ -18,8 +22,11 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.imageio.ImageIO;
+
 import de.jlab.scales.anki.Card;
 import de.jlab.scales.anki.Deck;
+import de.jlab.scales.fretboard2.PngFretboardRendererTest;
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
@@ -49,10 +56,31 @@ public class TestUtils {
     }
   }
 
+  public static void assertImageMatches(BufferedImage image, Class<?> testClass, String fileName) {
+    try (InputStream inputStream = testClass.getResourceAsStream(fileName)) {
+      Path path = outputDir(testClass).resolve(fileName);
+      File out = path.toFile();
+      ImageIO.write(image,  "png", out);
+      if (inputStream == null) {
+        fail("Resource not found: " + fileName);
+      }
+      byte[] expected = inputStream.readAllBytes();
+      byte[] actual = Files.readAllBytes(path);
+      assertArrayEquals(expected, actual);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
+  }
+  
   private static void writeActual(List<String> actualLines, Class<?> testClass, String fileName) throws IOException {
+    Path dir = outputDir(testClass);
+    Files.write(dir.resolve(fileName), actualLines);
+  }
+
+  private static Path outputDir(Class<?> testClass) throws IOException {
     Path dir = Paths.get("build", testClass.getPackage().getName().replace('.', '/'));
     Files.createDirectories(dir);
-    Files.write(dir.resolve(fileName), actualLines);
+    return dir;
   }
 
   public static void assertFileContentMatchesInAnyOrder(List<String> actualLines, Class<?> testClass, String fileName) {
@@ -138,5 +166,6 @@ public class TestUtils {
   public static KeySignature majorKeySignature(Note root, Accidental accidental) {
     return BuiltinScaleType.Major.getKeySignatures(root).stream().filter(k -> k.getAccidental() == accidental).findAny().orElseThrow();
   }
+
   
 }

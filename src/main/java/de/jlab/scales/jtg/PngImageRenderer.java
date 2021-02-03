@@ -236,14 +236,19 @@ public class PngImageRenderer extends Layout {
 
   public void renderTo(Path path) {
     try {
-      BufferedImage image = new BufferedImage(originalContext.getImageWidth(), originalContext.getImageHeight(), BufferedImage.TYPE_3BYTE_BGR);
-      renderSheet(image);
+      BufferedImage image = render();
       File out = path.toFile();
       Files.createDirectories(path.getParent());
       ImageIO.write(image,  "png", out);
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
+  }
+
+  public BufferedImage render() {
+    BufferedImage image = new BufferedImage(originalContext.getImageWidth(), originalContext.getImageHeight(), BufferedImage.TYPE_3BYTE_BGR);
+    renderSheet(image);
+    return image;
   }
 
 }

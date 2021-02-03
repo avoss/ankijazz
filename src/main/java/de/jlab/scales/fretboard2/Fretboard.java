@@ -3,6 +3,7 @@ package de.jlab.scales.fretboard2;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.function.Function;
 import java.util.stream.IntStream;
@@ -10,8 +11,16 @@ import java.util.stream.IntStream;
 import de.jlab.scales.theory.Note;
 
 public class Fretboard {
+  
+  @lombok.Data
+  public static class Box {
+    private final int minFret;
+    private final int maxFret;
+  }
+  
   private List<GuitarString> strings = new ArrayList<>();
-  private Tuning tuning;
+  private final Tuning tuning;
+  private Optional<Box> box = Optional.empty();
 
   public Fretboard() {
     this(Tuning.STANDARD_TUNING);
@@ -49,11 +58,19 @@ public class Fretboard {
   }
 
   public int getMinFret() {
-    return getMinMaxFret(string -> string.getMinFret()).min().getAsInt();
+    int minFret = getMinMaxFret(string -> string.getMinFret()).min().getAsInt();
+    if (box.isPresent()) {
+      minFret = Math.min(minFret, box.get().getMinFret());
+    }
+    return minFret;
   }
 
   public int getMaxFret() {
-    return getMinMaxFret(string -> string.getMaxFret()).max().getAsInt();
+    int maxFret = getMinMaxFret(string -> string.getMaxFret()).max().getAsInt();
+    if (box.isPresent()) {
+      maxFret = Math.max(maxFret, box.get().getMaxFret());
+    }
+    return maxFret;
   }
 
   private IntStream getMinMaxFret(Function<GuitarString, OptionalInt> toMinMax) {
@@ -70,6 +87,10 @@ public class Fretboard {
 
   public GuitarString getString(int string) {
     return strings.get(string);
+  }
+  
+  public void setBox(Box box) {
+    this.box = Optional.of(box);
   }
 
 }

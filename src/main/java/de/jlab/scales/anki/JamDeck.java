@@ -4,7 +4,7 @@ import static de.jlab.scales.midi.song.Ensembles.funk;
 import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
-import static de.jlab.scales.midi.song.SongFactory.Feature.ExtTwoFiveOnes;
+import static de.jlab.scales.midi.song.SongFactory.Feature.*;
 import static de.jlab.scales.midi.song.SongFactory.Feature.JazzBlues;
 import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Triads;
@@ -34,7 +34,9 @@ public class JamDeck extends AbstractDeck<JamCard> {
     super(title, "Jam".concat(instrument.name()).concat(withGuitar ? "Guitar" : "").concat("Deck"));
     this.instrument = instrument;
     this.withGuitar = withGuitar;
-    // addCards(Set.of(Test, AllKeys), () -> Set.of(latin(125)));
+    
+//    Set<Supplier<Ensemble>> ensembles =  Set.of( () -> latin(125));
+//    addCards(Set.of(Test, AllKeys), ensembles);
     
     Set<Supplier<Ensemble>> ensembles =  Set.of(() -> funk(80) /*, () -> latin(125) */);
     addCards(Set.of(Triads, SomeKeys, AllKeys), ensembles);
@@ -42,6 +44,7 @@ public class JamDeck extends AbstractDeck<JamCard> {
     addCards(Set.of(TwoFiveOnes, EachKey, AllKeys), ensembles);
     addCards(Set.of(ExtTwoFiveOnes, EachKey, AllKeys), ensembles);
     addCards(Set.of(JazzBlues, EachKey), ensembles);
+    
     System.out.println(String.format("Total number of cards: %d", getCards().size()));
   }
 

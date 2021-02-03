@@ -78,7 +78,7 @@ public class FretboardTest {
   }
   
   @Test
-  public void testBoxMarkers() {
+  public void testBoxWithMarkers() {
     Fretboard fretboard = new Fretboard();
     Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
     fretboard.mark(position, Markers.marker(position.getScale()));
@@ -91,6 +91,22 @@ public class FretboardTest {
         "|---|-o-|---|-R-|---|\n" + //
         "|---|-o-|---|-o-|---|\n" + //
         "|---|-R-|---|---|-o-|" , //
+        renderer.toString());
+  }
+
+  @Test
+  public void testBoxWithoutMarkers() {
+    Fretboard fretboard = new Fretboard();
+    Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
+    
+    assertEquals(
+        "|-B-|---|---|---|---|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|\n" + //
+        "|---|---|---|---|---|" , //
         renderer.toString());
   }
   

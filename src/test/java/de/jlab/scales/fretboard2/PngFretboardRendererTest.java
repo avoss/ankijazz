@@ -8,23 +8,31 @@ import java.util.function.Function;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
 import de.jlab.scales.theory.Note;
 
 public class PngFretboardRendererTest {
-  /**
-   * m7 pent
-   * m6 pent
-   * m7 bend3 pent
-   */
 
   @Test
   public void testCLydian() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
-    Function<Note, Marker> markers = n -> n == Cmaj7.getRoot() ? Markers.root() : (Cmaj7.contains(n) ? Markers.foreground() : Markers.background());
+    Function<Note, Marker> markers = Markers.marker(Cmaj7);
     assertEquals(4, position.getMaxFret() - position.getMinFret());
     Fretboard fretboard = new Fretboard(position, markers);
     FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard);
-    //Preview.preview(renderer.render());
+    BufferedImage image = renderer.render();
+    //Preview.preview(image);
+    TestUtils.assertImageMatches(image, getClass(), "CLydian.png");
   }
 
+  @Test
+  public void testBoxOnly() {
+    Fretboard fretboard = new Fretboard();
+    Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard);
+    BufferedImage image = renderer.render();
+    //Preview.preview(image);
+    TestUtils.assertImageMatches(image, getClass(), "BoxOnly.png");
+  }
+  
 }

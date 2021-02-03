@@ -82,8 +82,8 @@ public class Markers {
     return marker.mark();
   }
 
-  public static Function<Note, Marker> marker(Scale scale) {
-    return marker(scale.getRoot(), scale);
+  public static Function<Note, Marker> marker(Scale foreground) {
+    return marker(foreground.getRoot(), foreground);
   }
 
   public static Function<Note, Marker> marker(Note root, Scale foreground) {
