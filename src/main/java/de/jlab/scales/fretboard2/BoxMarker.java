@@ -9,17 +9,17 @@ import de.jlab.scales.fretboard2.Fretboard.Box;
 import de.jlab.scales.theory.Note;
 
 public class BoxMarker implements Marker {
-  public enum LeftRight { LEFT, RIGHT }
+  public enum BoxPosition { LEFT, RIGHT }
   
   private final Fretboard fretboard;
-  private final LeftRight boxPosition;
+  private final BoxPosition boxPosition;
   private final Fingering fingering;
   
   private final int rootFret;
   private final Position position;
   private final GuitarString string;
 
-  public BoxMarker(Fretboard fretboard, int stringIndex, Note root, LeftRight boxPosition, Fingering fingering) {
+  public BoxMarker(Fretboard fretboard, int stringIndex, Note root, BoxPosition boxPosition, Fingering fingering) {
     this.fretboard = fretboard;
     this.boxPosition = boxPosition;
     this.fingering = fingering;
@@ -38,7 +38,7 @@ public class BoxMarker implements Marker {
   Optional<Position> findPosition(int rootFret) {
     Comparator<Position> byFret = (a, b) -> Integer.compare(a.getMinFret(), b.getMinFret());
     Stream<Position> positions = fingering.getPositions().stream();
-    if (boxPosition == LeftRight.LEFT) {
+    if (boxPosition == BoxPosition.LEFT) {
       Predicate<Position> filter = p -> rootFret > (p.getMinFret() + p.getMaxFret()) / 2.0;
       return positions.filter(filter).max(byFret);
     }

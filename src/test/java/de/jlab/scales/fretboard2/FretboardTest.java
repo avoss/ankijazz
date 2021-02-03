@@ -80,7 +80,7 @@ public class FretboardTest {
   @Test
   public void testBoxWithMarkers() {
     Fretboard fretboard = new Fretboard();
-    Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
     fretboard.mark(position, Markers.marker(position.getScale()));
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
@@ -97,7 +97,7 @@ public class FretboardTest {
   @Test
   public void testBoxWithoutMarkers() {
     Fretboard fretboard = new Fretboard();
-    Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
     assertEquals(

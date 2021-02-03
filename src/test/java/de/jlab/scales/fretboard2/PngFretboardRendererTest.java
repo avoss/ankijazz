@@ -28,7 +28,7 @@ public class PngFretboardRendererTest {
   @Test
   public void testBoxOnly() {
     Fretboard fretboard = new Fretboard();
-    Markers.box(fretboard, 5, Note.B, BoxMarker.LeftRight.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
     FretboardRenderer<BufferedImage> renderer = new PngFretboardRenderer(fretboard);
     BufferedImage image = renderer.render();
     //Preview.preview(image);

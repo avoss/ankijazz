@@ -3,7 +3,7 @@ package de.jlab.scales.fretboard2;
 
 import java.util.function.Function;
 
-import de.jlab.scales.fretboard2.BoxMarker.LeftRight;
+import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
@@ -77,7 +77,7 @@ public class Markers {
     };
   }
   
-  public static Position box(Fretboard fretboard, int string, Note root, LeftRight boxPosition, Fingering fingering) {
+  public static Position box(Fretboard fretboard, int string, Note root, BoxPosition boxPosition, Fingering fingering) {
     BoxMarker marker = new BoxMarker(fretboard, string, root, boxPosition, fingering);
     return marker.mark();
   }

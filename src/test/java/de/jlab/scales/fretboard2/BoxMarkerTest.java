@@ -1,6 +1,6 @@
 package de.jlab.scales.fretboard2;
 
-import static de.jlab.scales.fretboard2.BoxMarker.LeftRight.*;
+import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.*;
 import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static org.junit.Assert.*;
 
@@ -22,7 +22,7 @@ public class BoxMarkerTest {
     assertThat(position).isNotNull();
     assertThat(position).isEqualTo(aMinorPent.getPositions().get(0));
     assertThat(fretboard.getMinFret()).isEqualTo(5);
-    assertThat(fretboard.getMaxFret()).isEqualTo(5);
+    assertThat(fretboard.getMaxFret()).isEqualTo(8);
     Marker marker = fretboard.getMarker(5, 5);
     assertThat(marker.isEmpty()).isFalse();
     MarkerRenderer mock = Mockito.mock(MarkerRenderer.class);
