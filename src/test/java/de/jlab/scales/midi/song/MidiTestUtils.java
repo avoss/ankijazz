@@ -39,7 +39,7 @@ public class MidiTestUtils {
   }
   
   public static Song staticSong() {
-    return new Song(List.of(Bar.of(Chord.of(Scales.Cm7, "Cm7")), Bar.of(Chord.of(Scales.C7.transpose(Note.F), "F7"))));
+    return song("Cm7 F7");
   }
   
   public static Song song(String chords) {

@@ -163,6 +163,6 @@ public class Fretboard {
       list.add(sb.toString());
     }
     Collections.reverse(list);
-    return list.stream().collect(Collectors.joining("\n"));
+    return list.stream().collect(Collectors.joining("\n")).concat("\n");
   }
 }
