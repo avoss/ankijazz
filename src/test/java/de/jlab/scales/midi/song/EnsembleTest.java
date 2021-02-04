@@ -1,7 +1,7 @@
 package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.midi.MidiUtils.midiPitchToNote;
-import static de.jlab.scales.theory.Scales.Cm7;
+import static de.jlab.scales.midi.song.MidiTestUtils.song;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -13,6 +13,7 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
 import de.jlab.scales.jtg.PngImageRenderer;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.Drum;
@@ -38,7 +39,7 @@ public class EnsembleTest {
     Ensemble ensemble = new Ensemble("Test", 16, timeSignature, tempo);
     ensemble.monophonic(lowestMidiPitch, Program.AcousticBass, 80, -20).bar("x--- ..x.", 1, 5);
     MockMidiOut mock = new MockMidiOut();
-    ensemble.play(song(), 1).perform(mock);
+    ensemble.play(song("Cm7 Dm7"), 1).perform(mock);
     assertEquals(4, mock.getNotes().size());
     assertNote(mock, 0, Note.C, 4);
     assertNote(mock, 1, Note.G, 1);
@@ -61,7 +62,7 @@ public class EnsembleTest {
     ensemble.setDrumPan(pan);
     ensemble.percussive(Drum.Cowbell).bar("x...").bar("5...");
 
-    Part part = ensemble.play(song(), 1);
+    Part part = ensemble.play(song("Cm7 Dm7"), 1);
     assertNotNull(part);
     MockMidiOut midiOut = new MockMidiOut();
     part.perform(midiOut);
@@ -72,32 +73,13 @@ public class EnsembleTest {
     assertThat(midiOut.getPan()).isEqualTo(pan + 64);
   }
 
-  private Song song() {
-    return Song.of(
-        Bar.of(Chord.of(Cm7, "Cm7")), Bar.of(Chord.of(Cm7.transpose(2), "Dm7")));
-  }
-  Path dir = Paths.get("build", "EnsembleTest");
-
   @Test
-  public void testGrooves() throws IOException {
-    RenderContext ctx = RenderContext.ANKI;
-    Files.createDirectories(dir);
-    Song song = MidiTestUtils.randomSong(ctx.getNumberOfBars());
-    new PngImageRenderer(ctx, song).renderTo(dir.resolve("song.png"));
-    groove(song, Ensembles.latin(120), dir.resolve("latin.midi"));
-    groove(song, Ensembles.funk(80), dir.resolve("funk.midi"));
+  public void testMidi() {
+    Song song = song("Em7 Am7 D7 Cmaj7   Fmaj7 Bm7b5 E7#5 Am6");
+    Part latin = Ensembles.latin(125).play(song, 2);
+    TestUtils.assertMidiMatches(latin, getClass(), "latin.midi");
+    Part funk = Ensembles.funk(90).play(song, 2);
+    TestUtils.assertMidiMatches(funk, getClass(), "funk.midi");
   }
   
-  @Test
-  public void test2ChordsPerBar() {
-    groove(MidiTestUtils.songWith2ChordPerBar(), Ensembles.funk(85), dir.resolve("funk2.midi"));
-    groove(MidiTestUtils.songWith2ChordPerBar(), Ensembles.latin(120), dir.resolve("latin2.midi"));
-  }
-
-  private void groove(Song song, Ensemble ensemble, Path path) {
-    Part part = ensemble.play(song, 4);
-    MidiOut mf = new HumanizingMidiOut(new MidiFile());
-    part.perform(mf);
-    mf.save(path);
-  }
 }
