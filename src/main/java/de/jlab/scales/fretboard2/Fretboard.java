@@ -11,13 +11,13 @@ import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
 public class Fretboard {
-  
+
   @lombok.Data
   public static class Box {
     private final int minFret;
     private final int maxFret;
   }
-  
+
   private List<GuitarString> strings = new ArrayList<>();
   private final Tuning tuning;
   private Optional<Box> box = Optional.empty();
@@ -82,7 +82,7 @@ public class Fretboard {
   private IntStream getMinMaxFret(Function<GuitarString, OptionalInt> toMinMax) {
     return strings.stream().map(toMinMax).filter(minMax -> minMax.isPresent()).mapToInt(fret -> fret.getAsInt());
   }
-  
+
   public void mark(int string, int fret, Marker marker) {
     strings.get(string).mark(fret, marker);
   }
@@ -94,7 +94,7 @@ public class Fretboard {
   public GuitarString getString(int string) {
     return strings.get(string);
   }
-  
+
   public void setBox(Box box) {
     this.box = Optional.of(box);
   }
@@ -121,4 +121,44 @@ public class Fretboard {
     }
   }
 
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    for (GuitarString string : strings) {
+      
+      switch (string.markerOf(0)) {
+      case EMPTY:
+        sb.append(" ");
+        break;
+      case ROOT:
+        sb.append("R");
+        break;
+      case FOREGROUND:
+        sb.append("o");
+        break;
+      case BACKGROUND:
+        sb.append("\u2022");
+        break;
+      }
+      sb.append("|");
+      for (int i = 1; i < 15; i++) {
+        switch (string.markerOf(i)) {
+        case EMPTY:
+          sb.append("---|");
+          break;
+        case ROOT:
+          sb.append("-R-|");
+          break;
+        case FOREGROUND:
+          sb.append("-o-|");
+          break;
+        case BACKGROUND:
+          sb.append("-\u2022-|");
+          break;
+        }
+      }
+      sb.append("\n");
+    }
+    return sb.toString();
+  }
 }

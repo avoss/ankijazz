@@ -50,7 +50,7 @@ public class GuitarString {
     return nonEmptyMarkerFrets().max();
   }
   
-  private IntStream nonEmptyMarkerFrets() {
+  IntStream nonEmptyMarkerFrets() {
     return marked.keySet().stream().filter(i -> marked.get(i) != Marker.EMPTY).mapToInt(i -> i);
   }
 

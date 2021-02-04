@@ -39,6 +39,23 @@ public class FretboardTest {
   }
 
   @Test
+  public void testToString() {
+    Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
+    Scale aMinorPentatonic = CMinor7Pentatonic.transpose(Note.A);
+    Function<Note, Marker> markers = Marker.marker(aMinorPentatonic);
+    Fretboard fretboard = new Fretboard(position, markers);
+    fretboard.mark(0, 0, Marker.FOREGROUND);
+    assertEquals(
+        "o|---|---|---|---|-R-|---|-•-|-o-|---|---|---|---|---|---|\n" + //
+        " |---|---|---|---|-o-|---|-o-|---|---|---|---|---|---|---|\n" + //
+        " |---|---|---|-•-|-o-|---|-R-|---|---|---|---|---|---|---|\n" + //
+        " |---|---|---|-•-|-o-|---|-o-|---|---|---|---|---|---|---|\n" + //
+        " |---|---|---|---|-o-|---|-•-|-o-|---|---|---|---|---|---|\n" + //
+        " |---|---|---|---|-R-|---|-•-|-o-|---|---|---|---|---|---|\n", //
+        fretboard.toString());
+  }
+  
+  @Test
   public void testGMajorScaleWithAMinorPentatonic() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Scale aMinorPentatonic = CMinor7Pentatonic.transpose(Note.A);
@@ -54,6 +71,7 @@ public class FretboardTest {
         "|---|-o-|---|-o-|---|\n" + //
         "|---|-R-|---|-•-|-o-|" , //
         renderer.toString());
+    
   }
 
   @Test

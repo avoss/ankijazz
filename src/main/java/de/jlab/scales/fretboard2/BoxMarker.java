@@ -61,10 +61,10 @@ public class BoxMarker {
     Comparator<Position> byFret = (a, b) -> Integer.compare(a.getMinFret(), b.getMinFret());
     Stream<Position> positions = fingering.getPositions().stream();
     if (boxPosition == BoxPosition.LEFT) {
-      Predicate<Position> filter = p -> rootFret > middleFret(p);
+      Predicate<Position> filter = p -> rootFret >= middleFret(p);
       return positions.filter(filter).max(byFret);
     }
-    Predicate<Position> filter = p -> rootFret < middleFret(p);
+    Predicate<Position> filter = p -> rootFret <= middleFret(p);
     return positions.filter(filter).min(byFret);
   }
 

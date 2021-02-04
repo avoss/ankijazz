@@ -4,14 +4,14 @@ import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
-import java.util.stream.IntStream;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import org.assertj.core.api.AbstractComparableAssert;
 import org.junit.Test;
 import org.mockito.Mockito;
 
+import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
@@ -70,12 +70,12 @@ public class BoxMarkerTest {
   public void transposeRequired() {
     Fretboard fretboard = new Fretboard();
     Position position = Marker.box(fretboard, Tuning.G_STRING, Note.A, LEFT, aMinorPent);
-    
+
     assertEquals("12 15|12 15|12 14|12 14|13 15|12 15", position.toString());
     assertThat(position).isEqualTo(aMinorPent.getPositions().get(3));
     assertThat(fretboard.getMinFret()).isEqualTo(12);
     assertThat(fretboard.getMaxFret()).isEqualTo(15);
-    
+
     MarkerRenderer mock = Mockito.mock(MarkerRenderer.class);
     GuitarString gString = fretboard.getString(Tuning.G_STRING);
     Marker marker = gString.markerOf(14);
@@ -90,19 +90,32 @@ public class BoxMarkerTest {
     Position position = Marker.box(fretboard, 5, Note.F, RIGHT, NPS.C_MAJOR_CAGED);
     assertEquals("12 13 15|12 14 15|12 14 15|12 14|12 13 15|12 13 15", position.toString());
   }
-  
+
   @Test
   public void assertThatBoxNoteIsRootIfScaleIncludesRoot() {
-    NPS.allFingerings().forEach(cfingering -> {
-      Fingering fingering = cfingering.transpose(Note.Bb);
-      Scale scale = fingering.getScale();
-      
-      IntStream.range(0, Tuning.STANDARD_TUNING.getStrings().size()).forEach(stringIndex -> {
-        Fretboard fretboard = new Fretboard();
-        Position position = Marker.box(fretboard, stringIndex, scale.getRoot(), RIGHT, fingering);
-      });
-      
-    });
+    for (Note root : Note.values()) {
+      for (Fingering fingering : NPS.allFingerings()) {
+        assertThatBoxNoteIsRootIfScaleIncludesRoot(fingering.transpose(root));
+      }
+    }
   }
-  
+
+  private void assertThatBoxNoteIsRootIfScaleIncludesRoot(Fingering fingering) {
+    Scale scale = fingering.getScale();
+    Note root = scale.getRoot();
+
+    for (int stringIndex = 0; stringIndex < Tuning.STANDARD_TUNING.getStrings().size(); stringIndex++) {
+      for (BoxPosition boxPosition : BoxPosition.values()) {
+        Fretboard fretboard = new Fretboard();
+        Position position = Marker.box(fretboard, stringIndex, root, boxPosition, fingering);
+        List<Integer> markedFrets = fretboard.getString(stringIndex).nonEmptyMarkerFrets().boxed().collect(Collectors.toList());
+        assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard), 1, markedFrets.size());
+        int markedFret = markedFrets.get(0);
+
+        fretboard = new Fretboard(position, Marker.marker(scale));
+        assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard), Marker.ROOT, fretboard.getString(stringIndex).markerOf(markedFret));
+      }
+    }
+  }
+
 }
