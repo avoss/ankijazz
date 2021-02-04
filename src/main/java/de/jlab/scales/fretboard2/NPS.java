@@ -1,5 +1,6 @@
 package de.jlab.scales.fretboard2;
 
+import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -25,16 +26,16 @@ public class NPS {
   private static final List<Integer> TWO_NPS = List.of(2, 2, 2, 2, 2);
   private static final List<Integer> THREE_NPS = List.of(3, 3, 3, 3, 3, 3, 3);
   
-  public static final Fingering C_MAJOR_CAGED = new NPS("MajorCAGED", Scales.CMajor, Note.B, Tuning.STANDARD_TUNING, CAGED).create();
-  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS("MelodicMinorCAGED", Scales.CMelodicMinor, Note.A, Tuning.STANDARD_TUNING, CAGED).create();
-  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS("HarmonicMinorCAGED", Scales.CHarmonicMinor, Note.D, Tuning.STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_MAJOR_CAGED = new NPS("MajorCAGED", Scales.CMajor, Note.B, STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_MELODIC_MINOR_CAGED = new NPS("MelodicMinorCAGED", Scales.CMelodicMinor, Note.A, STANDARD_TUNING, CAGED).create();
+  public static final Fingering C_HARMONIC_MINOR_CAGED = new NPS("HarmonicMinorCAGED", Scales.CHarmonicMinor, Note.D, STANDARD_TUNING, CAGED).create();
 
-  public static final Fingering C_MAJOR_3NPS = new NPS("Major3NPS", Scales.CMajor, Note.B, Tuning.STANDARD_TUNING, THREE_NPS).create();
-  public static final Fingering C_MELODIC_MINOR_3NPS = new NPS("MelodicMinor3NPS", Scales.CMelodicMinor, Note.A, Tuning.STANDARD_TUNING, THREE_NPS).create();
-  public static final Fingering C_HARMONIC_MINOR_3NPS = new NPS("HarmonicMinor3NPS", Scales.CHarmonicMinor, Note.D, Tuning.STANDARD_TUNING, THREE_NPS).create();
+  public static final Fingering C_MAJOR_3NPS = new NPS("Major3NPS", Scales.CMajor, Note.B, STANDARD_TUNING, THREE_NPS).create();
+  public static final Fingering C_MELODIC_MINOR_3NPS = new NPS("MelodicMinor3NPS", Scales.CMelodicMinor, Note.A, STANDARD_TUNING, THREE_NPS).create();
+  public static final Fingering C_HARMONIC_MINOR_3NPS = new NPS("HarmonicMinor3NPS", Scales.CHarmonicMinor, Note.D, STANDARD_TUNING, THREE_NPS).create();
   
-  public static final Fingering C_MINOR7_PENTATONIC = new NPS("Minor7Pentatonic2NPS", Scales.CMinor7Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
-  public static final Fingering C_MINOR6_PENTATONIC = new NPS("Minor6Pentatonic2NPS", Scales.CMinor6Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
+  public static final Fingering C_MINOR7_PENTATONIC = new NPS("Minor7Pentatonic2NPS", Scales.CMinor7Pentatonic, Note.C, STANDARD_TUNING, TWO_NPS).create();
+  public static final Fingering C_MINOR6_PENTATONIC = new NPS("Minor6Pentatonic2NPS", Scales.CMinor6Pentatonic, Note.C, STANDARD_TUNING, TWO_NPS).create();
 
   public static List<Fingering> caged() {
     return List.of(C_MAJOR_CAGED, C_MELODIC_MINOR_CAGED, C_HARMONIC_MINOR_CAGED);

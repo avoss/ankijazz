@@ -1,10 +1,12 @@
 package de.jlab.scales.fretboard2;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.Note;
@@ -23,7 +25,7 @@ public class Fretboard {
   private Optional<Box> box = Optional.empty();
 
   public Fretboard() {
-    this(Tuning.STANDARD_TUNING);
+    this(Tunings.STANDARD_TUNING);
   }
 
   public Fretboard(Tuning tuning) {
@@ -123,9 +125,10 @@ public class Fretboard {
 
   @Override
   public String toString() {
-    StringBuilder sb = new StringBuilder();
+    List<String> list = new ArrayList<>();
     for (GuitarString string : strings) {
       
+      StringBuilder sb = new StringBuilder();
       switch (string.markerOf(0)) {
       case EMPTY:
         sb.append(" ");
@@ -157,8 +160,9 @@ public class Fretboard {
           break;
         }
       }
-      sb.append("\n");
+      list.add(sb.toString());
     }
-    return sb.toString();
+    Collections.reverse(list);
+    return list.stream().collect(Collectors.joining("\n"));
   }
 }

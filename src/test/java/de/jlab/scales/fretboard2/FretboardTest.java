@@ -1,5 +1,6 @@
 package de.jlab.scales.fretboard2;
 
+import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.*;
@@ -76,7 +77,7 @@ public class FretboardTest {
 
   @Test
   public void testMarkersOnFretboard() {
-    Fretboard fretboard = new Fretboard(Tuning.STANDARD_TUNING);
+    Fretboard fretboard = new Fretboard(STANDARD_TUNING);
     fretboard.mark(0, 5, Marker.FOREGROUND);
     fretboard.mark(2, 7, Marker.BACKGROUND);
     fretboard.mark(3, 9, Marker.EMPTY);

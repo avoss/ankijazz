@@ -2,6 +2,9 @@ package de.jlab.scales.fretboard2;
 
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
+import static de.jlab.scales.fretboard2.StandardTuning.G_STRING;
+import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
+import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -21,32 +24,32 @@ public class BoxMarkerTest {
   @Test
   public void testAminorPosition0Right() {
     Fretboard fretboard = new Fretboard();
-    Position position = Marker.box(fretboard, Tuning.HIGH_E_STRING, Note.A, RIGHT, aMinorPent);
+    Position position = Marker.box(fretboard, HIGH_E_STRING, Note.A, RIGHT, aMinorPent);
     assertThat(position).isNotNull();
     assertEquals("5 8|5 7|5 7|5 7|5 8|5 8", position.toString());
     assertThat(position).isEqualTo(aMinorPent.getPositions().get(0));
     assertThat(fretboard.getMinFret()).isEqualTo(5);
     assertThat(fretboard.getMaxFret()).isEqualTo(8);
-    Marker marker = fretboard.getMarker(Tuning.HIGH_E_STRING, 5);
+    Marker marker = fretboard.getMarker(HIGH_E_STRING, 5);
     assertEquals(marker, Marker.ROOT);
     MarkerRenderer mock = Mockito.mock(MarkerRenderer.class);
     GuitarString highEString = fretboard.getString(5);
-    marker.render(mock, highEString, Tuning.HIGH_E_STRING);
+    marker.render(mock, highEString, HIGH_E_STRING);
     Mockito.verify(mock).renderRoot(highEString, 5);
   }
 
   @Test
   public void testAminorPosition0Left() {
     Fretboard fretboard = new Fretboard();
-    Position position = Marker.box(fretboard, Tuning.HIGH_E_STRING, Note.A, LEFT, aMinorPent);
+    Position position = Marker.box(fretboard, HIGH_E_STRING, Note.A, LEFT, aMinorPent);
     assertEquals("3 5|3 5|2 5|2 5|3 5|3 5", position.toString());
     assertThat(position).isEqualTo(aMinorPent.getPositions().get(4));
     assertThat(fretboard.getMinFret()).isEqualTo(2);
     assertThat(fretboard.getMaxFret()).isEqualTo(5);
-    Marker marker = fretboard.getMarker(Tuning.HIGH_E_STRING, 5);
+    Marker marker = fretboard.getMarker(HIGH_E_STRING, 5);
     assertEquals(marker, Marker.ROOT);
     MarkerRenderer mock = Mockito.mock(MarkerRenderer.class);
-    GuitarString highEString = fretboard.getString(Tuning.HIGH_E_STRING);
+    GuitarString highEString = fretboard.getString(HIGH_E_STRING);
     marker.render(mock, highEString, 5);
     Mockito.verify(mock).renderRoot(highEString, 5);
   }
@@ -54,11 +57,11 @@ public class BoxMarkerTest {
   @Test
   public void testRootOutsideOfPosition() {
     Fretboard fretboard = new Fretboard();
-    Position position = Marker.box(fretboard, Tuning.HIGH_E_STRING, Note.Bb, LEFT, aMinorPent);
+    Position position = Marker.box(fretboard, HIGH_E_STRING, Note.Bb, LEFT, aMinorPent);
     assertEquals("3 5|3 5|2 5|2 5|3 5|3 5", position.toString());
     assertThat(fretboard.getMinFret()).isEqualTo(2);
     assertThat(fretboard.getMaxFret()).isEqualTo(6);
-    Marker marker = fretboard.getMarker(Tuning.HIGH_E_STRING, 6);
+    Marker marker = fretboard.getMarker(HIGH_E_STRING, 6);
     assertEquals(marker, Marker.ROOT);
     MarkerRenderer mock = Mockito.mock(MarkerRenderer.class);
     GuitarString highEString = fretboard.getString(5);
@@ -69,7 +72,7 @@ public class BoxMarkerTest {
   @Test
   public void transposeRequired() {
     Fretboard fretboard = new Fretboard();
-    Position position = Marker.box(fretboard, Tuning.G_STRING, Note.A, LEFT, aMinorPent);
+    Position position = Marker.box(fretboard, G_STRING, Note.A, LEFT, aMinorPent);
 
     assertEquals("12 15|12 15|12 14|12 14|13 15|12 15", position.toString());
     assertThat(position).isEqualTo(aMinorPent.getPositions().get(3));
@@ -77,7 +80,7 @@ public class BoxMarkerTest {
     assertThat(fretboard.getMaxFret()).isEqualTo(15);
 
     MarkerRenderer mock = Mockito.mock(MarkerRenderer.class);
-    GuitarString gString = fretboard.getString(Tuning.G_STRING);
+    GuitarString gString = fretboard.getString(G_STRING);
     Marker marker = gString.markerOf(14);
     assertEquals(marker, Marker.ROOT);
     marker.render(mock, gString, 14);
@@ -104,7 +107,7 @@ public class BoxMarkerTest {
     Scale scale = fingering.getScale();
     Note root = scale.getRoot();
 
-    for (int stringIndex = 0; stringIndex < Tuning.STANDARD_TUNING.getStrings().size(); stringIndex++) {
+    for (int stringIndex = 0; stringIndex < STANDARD_TUNING.getStrings().size(); stringIndex++) {
       for (BoxPosition boxPosition : BoxPosition.values()) {
         Fretboard fretboard = new Fretboard();
         Position position = Marker.box(fretboard, stringIndex, root, boxPosition, fingering);
