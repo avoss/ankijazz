@@ -9,6 +9,7 @@ import java.util.function.Function;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
@@ -17,39 +18,34 @@ public class MidiFretboardRendererTest {
 
   @Test
   public void testForegroundAndBackground() {
-    MidiFile mf = render(Marker.marker(Cmaj7), true);
-    mf.save(Paths.get("build").resolve("ForegroundAndBackground.midi"));
+    Part part = render(Marker.marker(Cmaj7), true);
+    TestUtils.assertMidiMatches(part, getClass(), "ForegroundAndBackground.midi");
   }
 
   @Test
   public void testForegroundOnly() {
-    MidiFile mf = render((n) -> Marker.FOREGROUND, true);
-    mf.save(Paths.get("build").resolve("ForegroundOnly.midi"));
+    Part part = render((n) -> Marker.FOREGROUND, true);
+    TestUtils.assertMidiMatches(part, getClass(), "ForegroundOnly.midi");
   }
 
   @Test
   public void testBackgroundOnly() {
-    MidiFile mf = render((n) -> Marker.BACKGROUND, true);
-    mf.save(Paths.get("build").resolve("BackgroundOnly.midi"));
+    Part part = render((n) -> Marker.BACKGROUND, true);
+    TestUtils.assertMidiMatches(part, getClass(), "BackgroundOnly.midi");
   }
 
   @Test
   public void testForegroundOnlyNoRoot() {
-    MidiFile mf = render(Marker.marker(Cmaj7), false);
-    mf.save(Paths.get("build").resolve("ForegroundAndBackgroundNoRoot.midi"));
+    Part part = render(Marker.marker(Cmaj7), false);
+    TestUtils.assertMidiMatches(part, getClass(), "ForegroundAndBackgroundNoRoot.midi");
   }
   
-  private MidiFile render(Function<Note, Marker> markers, boolean foregroundIncludesRoot) {
+  private Part render(Function<Note, Marker> markers, boolean foregroundIncludesRoot) {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Fretboard fretboard = new Fretboard(position, markers);
-    System.out.println(fretboard);
-    System.out.println();
 
     MidiFretboardRenderer renderer = new MidiFretboardRenderer(fretboard, foregroundIncludesRoot, Cmaj7);
-    Part part = renderer.render();
-    MidiFile mf = new MidiFile();
-    part.perform(mf);
-    return mf;
+    return renderer.render();
   }
 
 }

@@ -27,6 +27,8 @@ import javax.imageio.ImageIO;
 import de.jlab.scales.anki.Card;
 import de.jlab.scales.anki.Deck;
 import de.jlab.scales.fretboard2.PngFretboardRendererTest;
+import de.jlab.scales.midi.MidiFile;
+import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
@@ -61,6 +63,23 @@ public class TestUtils {
       Path path = outputDir(testClass).resolve(fileName);
       File out = path.toFile();
       ImageIO.write(image,  "png", out);
+      if (inputStream == null) {
+        fail("Resource not found: " + fileName);
+      }
+      byte[] expected = inputStream.readAllBytes();
+      byte[] actual = Files.readAllBytes(path);
+      assertArrayEquals(expected, actual);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
+  }
+
+  public static void assertMidiMatches(Part part, Class<?> testClass, String fileName) {
+    try (InputStream inputStream = testClass.getResourceAsStream(fileName)) {
+      Path path = outputDir(testClass).resolve(fileName);
+      MidiFile mf = new MidiFile();
+      part.perform(mf);
+      mf.save(path);
       if (inputStream == null) {
         fail("Resource not found: " + fileName);
       }

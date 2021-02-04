@@ -20,7 +20,8 @@ import de.jlab.scales.theory.Scale;
 public class MidiFretboardRenderer implements FretboardRenderer<Part> {
   private static final int BG_CHORD_MIDI_CHANNEL = 0;
   private static final int FRETBOARD_MIDI_CHANNEL = 1;
-
+  private static final int TEMPO = 40;
+  
   private final Fretboard fretboard;
   private final boolean foregroundIncludesRoot;
   private final Optional<Scale> backgroundChord;
@@ -113,7 +114,7 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
       fretboard.add(new MidiRenderer(FOREGROUND).render());
     }
     par.add(fretboard);
-    Sequential seq = Parts.seq(Parts.tempo(30), REST, par);
+    Sequential seq = Parts.seq(Parts.tempo(TEMPO), REST, par);
     return seq;
   }
 
