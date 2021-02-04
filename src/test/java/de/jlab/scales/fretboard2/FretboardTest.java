@@ -22,7 +22,7 @@ public class FretboardTest {
   @Test
   public void testAmPentatonic() {
     Position position = NPS.C_MINOR7_PENTATONIC.transpose(Note.A).getPositions().get(0);
-    Function<Note, Marker> markers = (n) -> Markers.foreground();
+    Function<Note, Marker> markers = (n) -> Marker.FOREGROUND;;
     Fretboard fretboard = new Fretboard(position, markers);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     assertThat(fretboard.getMinFret()).isEqualTo(position.getMinFret());
@@ -42,7 +42,7 @@ public class FretboardTest {
   public void testGMajorScaleWithAMinorPentatonic() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Scale aMinorPentatonic = CMinor7Pentatonic.transpose(Note.A);
-    Function<Note, Marker> markers = Markers.marker(aMinorPentatonic);
+    Function<Note, Marker> markers = Marker.marker(aMinorPentatonic);
     Fretboard fretboard = new Fretboard(position, markers);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
@@ -59,9 +59,9 @@ public class FretboardTest {
   @Test
   public void testMarkersOnFretboard() {
     Fretboard fretboard = new Fretboard(Tuning.STANDARD_TUNING);
-    fretboard.mark(0, 5, Markers.foreground());
-    fretboard.mark(2, 7, Markers.background());
-    fretboard.mark(3, 9, Markers.empty());
+    fretboard.mark(0, 5, Marker.FOREGROUND);
+    fretboard.mark(2, 7, Marker.BACKGROUND);
+    fretboard.mark(3, 9, Marker.EMPTY);
     assertThat(fretboard.getMinFret()).isEqualTo(5);
     assertThat(fretboard.getMaxFret()).isEqualTo(7);
 
@@ -81,7 +81,7 @@ public class FretboardTest {
   @Test
   public void testQuestion() {
     Fretboard fretboard = new Fretboard();
-    Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    Marker.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
     assertEquals(
@@ -97,9 +97,9 @@ public class FretboardTest {
   @Test
   public void testAnswer() {
     Fretboard fretboard = new Fretboard();
-    Position position = Markers.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
-    fretboard.mark(position, Markers.foreground());
-    fretboard.markVisible(Note.B, Markers.root());
+    Position position = Marker.box(fretboard, 5, Note.B, BoxMarker.BoxPosition.RIGHT, NPS.C_MINOR7_PENTATONIC);
+    fretboard.mark(position, Marker.FOREGROUND);
+    fretboard.markVisible(Note.B, Marker.ROOT);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
     assertEquals(
@@ -122,7 +122,7 @@ public class FretboardTest {
       List<String> actual = new ArrayList<>();
       for (Position position : fingering.getPositions()) {
         Scale scale = position.getScale();
-        Function<Note, Marker> markers = Markers.marker(scale);
+        Function<Note, Marker> markers = Marker.marker(scale);
         Fretboard fretboard = new Fretboard(position, markers);
         StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
         List<String> rendered = renderer.render();

@@ -27,7 +27,7 @@ public class GuitarString {
   }
   
   public Marker markerOf(int fret) {
-    return marked.getOrDefault(fret, Markers.empty());
+    return marked.getOrDefault(fret, Marker.EMPTY);
   }
   
   public Note noteOf(int fret) {
@@ -43,16 +43,25 @@ public class GuitarString {
   }
 
   public OptionalInt getMinFret() {
-    return nonEmptyMarkers().min();
+    return nonEmptyMarkerFrets().min();
   }
 
   public OptionalInt getMaxFret() {
-    return nonEmptyMarkers().max();
+    return nonEmptyMarkerFrets().max();
   }
   
-  private IntStream nonEmptyMarkers() {
-    return marked.keySet().stream().filter(i -> !marked.get(i).isEmpty()).mapToInt(i -> i);
+  private IntStream nonEmptyMarkerFrets() {
+    return marked.keySet().stream().filter(i -> marked.get(i) != Marker.EMPTY).mapToInt(i -> i);
   }
 
+  public void apply(MarkerRenderer renderer) {
+    if (getMinFret().isEmpty() || getMaxFret().isEmpty()) {
+      return;
+    }
+    for (int fret = getMinFret().getAsInt(); fret <= getMaxFret().getAsInt(); fret++) {
+      Marker marker = markerOf(fret);
+      marker.render(renderer, this, fret);
+    }
+  }
 
 }

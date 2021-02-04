@@ -17,15 +17,6 @@ public class StringFretboardRenderer implements FretboardRenderer<List<String>> 
   }
 
   @Override
-  public List<String> render() {
-    ArrayList<String> strings = fretboard.getStrings().stream()
-        .map(this::render)
-        .collect(toCollection(ArrayList::new));
-    Collections.reverse(strings);
-    return strings;
-  }
-  
-  @Override
   public String toString() {
     return render().stream().collect(joining("\n"));
   }
@@ -58,6 +49,15 @@ public class StringFretboardRenderer implements FretboardRenderer<List<String>> 
       return sb.toString();
     }
     
+  }
+
+  @Override
+  public List<String> render() {
+    ArrayList<String> strings = fretboard.getStrings().stream()
+        .map(this::render)
+        .collect(toCollection(ArrayList::new));
+    Collections.reverse(strings);
+    return strings;
   }
   
   public String render(GuitarString string) {

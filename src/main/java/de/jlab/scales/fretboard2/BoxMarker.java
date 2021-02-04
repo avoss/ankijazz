@@ -22,7 +22,7 @@ public class BoxMarker {
 
     
   public BoxMarker(Fretboard fretboard, int stringIndex, Note root, BoxPosition boxPosition, Fingering fingering) {
-    this(fretboard, stringIndex, root, boxPosition, fingering, Markers.foreground());
+    this(fretboard, stringIndex, root, boxPosition, fingering, Marker.FOREGROUND);
   }
   
   public BoxMarker(Fretboard fretboard, int stringIndex, Note root, BoxPosition boxPosition, Fingering fingering, Marker marker) {

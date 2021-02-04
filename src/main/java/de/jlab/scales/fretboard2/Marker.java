@@ -1,8 +1,51 @@
 package de.jlab.scales.fretboard2;
 
-public interface Marker {
-  void render(MarkerRenderer renderer, GuitarString string, int fret);
-  default boolean isEmpty() {
-    return false;
+
+import java.util.function.Function;
+
+import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
+import de.jlab.scales.theory.Note;
+import de.jlab.scales.theory.Scale;
+
+public enum Marker {
+  EMPTY {
+    @Override
+    void render(MarkerRenderer renderer, GuitarString string, int fret) {
+      renderer.renderEmpty(string, fret);
+    }
+  }, FOREGROUND {
+    @Override
+    void render(MarkerRenderer renderer, GuitarString string, int fret) {
+      renderer.renderForeground(string, fret);
+    }
+  }, BACKGROUND {
+    @Override
+    void render(MarkerRenderer renderer, GuitarString string, int fret) {
+      renderer.renderBackground(string, fret);
+    }
+  }, ROOT {
+    @Override
+    void render(MarkerRenderer renderer, GuitarString string, int fret) {
+      renderer.renderRoot(string, fret);
+    }
+  };
+
+  abstract void render(MarkerRenderer renderer, GuitarString string, int fret);
+  
+  public static Position box(Fretboard fretboard, int string, Note root, BoxPosition boxPosition, Fingering fingering) {
+    return box(fretboard, string, root, boxPosition, fingering, ROOT);
   }
+  
+  public static Position box(Fretboard fretboard, int string, Note root, BoxPosition boxPosition, Fingering fingering, Marker marker) {
+    return new BoxMarker(fretboard, string, root, boxPosition, fingering, marker).mark();
+  }
+
+  public static Function<Note, Marker> marker(Scale foreground) {
+    return marker(foreground.getRoot(), foreground);
+  }
+
+  public static Function<Note, Marker> marker(Note root, Scale foreground) {
+    return n -> n == root ? ROOT : (foreground.contains(n) ? FOREGROUND : BACKGROUND);
+  }
+
 }

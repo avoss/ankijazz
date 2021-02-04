@@ -13,9 +13,9 @@ public class GuitarStringTest {
   @Test
   public void test() {
     GuitarString eString = new GuitarString(0, E);
-    eString.mark(5, Markers.foreground());
-    assertThat(eString.markerOf(1)).isEqualTo(Markers.empty());
-    assertThat(eString.markerOf(5)).isNotEqualTo(Markers.empty());
+    eString.mark(5, Marker.FOREGROUND);
+    assertThat(eString.markerOf(1)).isEqualTo(Marker.EMPTY);
+    assertThat(eString.markerOf(5)).isNotEqualTo(Marker.EMPTY);
     assertThat(eString.noteOf(0)).isEqualTo(E);
     assertThat(eString.fretOf(E)).isEqualTo(0);
     assertThat(eString.noteOf(5)).isEqualTo(A);
@@ -23,8 +23,8 @@ public class GuitarStringTest {
     assertThat(eString.noteOf(8)).isEqualTo(C);
     assertThat(eString.fretOf(C)).isEqualTo(8);
 
-    eString.mark(7, Markers.background());
-    eString.mark(9, Markers.empty());
+    eString.mark(7, Marker.BACKGROUND);
+    eString.mark(9, Marker.EMPTY);
     assertThat(eString.getMinFret().getAsInt()).isEqualTo(5);
     assertThat(eString.getMaxFret().getAsInt()).isEqualTo(7);
     

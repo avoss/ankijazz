@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.function.ToIntFunction;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.theory.Note;
@@ -34,6 +35,24 @@ public class NPS {
   
   public static final Fingering C_MINOR7_PENTATONIC = new NPS("Minor7Pentatonic2NPS", Scales.CMinor7Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
   public static final Fingering C_MINOR6_PENTATONIC = new NPS("Minor6Pentatonic2NPS", Scales.CMinor6Pentatonic, Note.C, Tuning.STANDARD_TUNING, TWO_NPS).create();
+
+  public static Stream<Fingering> caged() {
+    return Stream.of(C_MAJOR_CAGED, C_MELODIC_MINOR_CAGED, C_HARMONIC_MINOR_CAGED);
+  }
+  
+  public static Stream<Fingering> threenps() {
+    return Stream.of(C_MAJOR_3NPS, C_MELODIC_MINOR_3NPS, C_HARMONIC_MINOR_3NPS);
+  }
+  
+  public static Stream<Fingering> pentatonics() {
+    return Stream.of(C_MINOR6_PENTATONIC, C_MINOR7_PENTATONIC);
+  }
+  
+  public static Stream<Fingering> allFingerings() {
+    return Stream.concat(Stream.concat(caged(), threenps()), pentatonics());
+  }
+  
+  
   
   private List<Position> positions = new ArrayList<>();
   private Tuning tuning;
