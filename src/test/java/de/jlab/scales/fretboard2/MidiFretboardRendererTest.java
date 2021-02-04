@@ -17,29 +17,35 @@ public class MidiFretboardRendererTest {
 
   @Test
   public void testForegroundAndBackground() {
-    Function<Note, Marker> markers = Marker.marker(Cmaj7);
-    MidiFile mf = render(markers);
+    MidiFile mf = render(Marker.marker(Cmaj7), true);
     mf.save(Paths.get("build").resolve("ForegroundAndBackground.midi"));
   }
 
   @Test
   public void testForegroundOnly() {
-    MidiFile mf = render((n) -> Marker.FOREGROUND);
+    MidiFile mf = render((n) -> Marker.FOREGROUND, true);
     mf.save(Paths.get("build").resolve("ForegroundOnly.midi"));
   }
 
   @Test
   public void testBackgroundOnly() {
-    MidiFile mf = render((n) -> Marker.BACKGROUND);
+    MidiFile mf = render((n) -> Marker.BACKGROUND, true);
     mf.save(Paths.get("build").resolve("BackgroundOnly.midi"));
   }
+
+  @Test
+  public void testForegroundOnlyNoRoot() {
+    MidiFile mf = render(Marker.marker(Cmaj7), false);
+    mf.save(Paths.get("build").resolve("ForegroundAndBackgroundNoRoot.midi"));
+  }
   
-  private MidiFile render(Function<Note, Marker> markers) {
+  private MidiFile render(Function<Note, Marker> markers, boolean foregroundIncludesRoot) {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Fretboard fretboard = new Fretboard(position, markers);
     System.out.println(fretboard);
+    System.out.println();
 
-    MidiFretboardRenderer renderer = new MidiFretboardRenderer(fretboard, true, Cmaj7);
+    MidiFretboardRenderer renderer = new MidiFretboardRenderer(fretboard, foregroundIncludesRoot, Cmaj7);
     Part part = renderer.render();
     MidiFile mf = new MidiFile();
     part.perform(mf);

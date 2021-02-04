@@ -186,7 +186,7 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
     Drop2ChordGenerator g = new Drop2ChordGenerator(90);
     int[] midiChord = g.midiChord(backgroundChord.get());
     for (int i = 0; i < midiChord.length; i++) {
-      seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, midiChord[i], 50, duration, TICK));
+      seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, midiChord[i], 40, duration, TICK));
     }
     int bassPitch = MidiUtils.noteToMidiPitchBelow(45, backgroundChord.get().getRoot());
     seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, bassPitch, 70, duration, TICK));
