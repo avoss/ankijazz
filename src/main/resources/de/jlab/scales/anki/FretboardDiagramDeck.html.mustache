@@ -22,13 +22,22 @@
     </p>
     {{#cards}}
     <div class="card border-secondary mb-3">
-      <h4 class="card-header">{{chordName}}</h4>
+      <h4 class="card-header">{{title}}</h4>
       <div class="card-body">
         <img class="card-img-top" src="{{frontPngName}}">
         <img class="card-img-top" src="{{backPngName}}">
         <p class="card-text text-center">
           <audio controls src="{{backMp3Name}}"></audio>
         </p>
+        <p class="card-text">Fields:</p>
+        <ul>
+          <li>ScaleName: {{scaleName}}</li>
+          <li>ScaleTypeName: {{scaleTypeName}}</li>
+          <li>ScaleRootName: {{scaleRootName}}</li>
+          <li>ChordeName: {{chordName}}</li>
+          <li>ChordTypeName: {{chordTypeName}}</li>
+          <li>ChordRootName: {{chordRootName}}</li>
+        </ul>
       </div>
     </div>
     {{/cards}}

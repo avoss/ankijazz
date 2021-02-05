@@ -11,7 +11,7 @@ public class FretboardDiagramDeckTest {
   public void test() {
     CardGenerator<FretboardDiagramCard> generator = new OutlineChordsWithPentatonicsCardGenerator(Utils.fixedLoopIteratorFactory());
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.writeTo(deck, 0);
+    TestUtils.writeTo(deck, 0.1);
   }
 
 }

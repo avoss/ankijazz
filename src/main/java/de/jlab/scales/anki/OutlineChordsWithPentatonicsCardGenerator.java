@@ -97,14 +97,14 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     Fingering fingering = NPS.caged(pentaInfo.getScaleType()).transpose(penta.getRoot());
     Fretboard frontBoard = new Fretboard();
     Position position = Marker.box(frontBoard, string, chord.getRoot(), box, fingering, Marker.BACKGROUND);
-    Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard).render();
+    Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
 
     int rootFret = findFirstMarkedFret(frontBoard, string);
 
     Fretboard backBoard = new Fretboard();
     backBoard.mark(position, Marker.outline(penta));
     backBoard.mark(string, rootFret, Marker.BACKGROUND);
-    Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard).render();
+    Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, false).render();
     Supplier<Part> backMidi = () -> {
       if (penta.contains(chord.getRoot())) {
         return MidiFretboardRenderer.builder()
@@ -123,7 +123,9 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
         .render();
     };
 
+    String title = String.format("Outline %s Chord", chordInfo.getScaleName());
     return FretboardDiagramCard.builder()
+        .title(title)
         .chordInfo(chordInfo)
         .scaleInfo(pentaInfo)
         .frontImage(frontImage)

@@ -20,12 +20,12 @@ public class PngFretboardRendererTest {
     Fretboard fretboard = new Fretboard();
     Scale fLydian = fLydian();
     Position modePosition = Marker.box(fretboard, HIGH_E_STRING, fLydian.getRoot(), RIGHT, NPS.C_MAJOR_CAGED);
-    BufferedImage question = new PngFretboardRenderer(fretboard).render();
+    BufferedImage question = new PngFretboardRenderer(fretboard, true).render();
     //Preview.preview(question);
     TestUtils.assertImageMatches(question, getClass(), "LydianCAGEDQuestion.png");
     
     fretboard.mark(modePosition, Marker.outline(fLydian.getChord(0)));
-    BufferedImage answer = new PngFretboardRenderer(fretboard).render();
+    BufferedImage answer = new PngFretboardRenderer(fretboard, false).render();
     //Preview.preview(answer);
     TestUtils.assertImageMatches(answer, getClass(), "LydianCAGEDAnswer.png");
   }
@@ -39,7 +39,7 @@ public class PngFretboardRendererTest {
     Fretboard fretboard = new Fretboard();
     Scale fLydian = fLydian();
     Marker.box(fretboard, HIGH_E_STRING, fLydian.getRoot(), RIGHT, NPS.C_MAJOR_CAGED);
-    BufferedImage question = new PngFretboardRenderer(fretboard).render();
+    BufferedImage question = new PngFretboardRenderer(fretboard, true).render();
     //Preview.preview(question);
     TestUtils.assertImageMatches(question, getClass(), "LydianPentatonicQuestion.png");
     
@@ -47,7 +47,7 @@ public class PngFretboardRendererTest {
     Scale pentatonic = chooser.chooseBest(fLydian.getChord(0));
     fretboard.markVisible(fLydian.getRoot(), Marker.EMPTY);
     fretboard.markVisible(pentatonic, Marker.FOREGROUND);
-    BufferedImage answer = new PngFretboardRenderer(fretboard).render();
+    BufferedImage answer = new PngFretboardRenderer(fretboard, true).render();
     //Preview.preview(answer);
     TestUtils.assertImageMatches(answer, getClass(), "LydianPentatonicAnswer.png");
   }

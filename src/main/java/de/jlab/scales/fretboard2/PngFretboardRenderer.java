@@ -21,6 +21,7 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
   private final Fretboard fretboard;
   private final int minFret;
   private final int maxFret;
+  private boolean renderFretNumber;
   
   private final int stringDistance = 100;
   private final int fretDistance = stringDistance * 3;
@@ -31,6 +32,7 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
   
   private Graphics2D g;
 
+
   private Font copyrightFont() {
     return linux() ? new Font("Lucida Sans", Font.PLAIN, 35) : new Font("Comic Sans MS", Font.PLAIN, 35);
   }
@@ -39,14 +41,15 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
     return linux() ? new Font("Lucida Sans", Font.BOLD, 50) : new Font("Comic Sans MS", Font.BOLD, 50);
   }
   
-  public PngFretboardRenderer(Fretboard fretboard) {
-    this(fretboard, fretboard.getMinFret(), fretboard.getMaxFret());
+  public PngFretboardRenderer(Fretboard fretboard, boolean renderFretNumber) {
+    this(fretboard, fretboard.getMinFret(), fretboard.getMaxFret(), renderFretNumber);
   }
   
-  public PngFretboardRenderer(Fretboard fretboard, int minFret, int maxFret) {
+  public PngFretboardRenderer(Fretboard fretboard, int minFret, int maxFret, boolean renderFretNumber) {
     this.fretboard = fretboard;
     this.minFret = minFret;
     this.maxFret = maxFret;
+    this.renderFretNumber = renderFretNumber;
     this.height = stringDistance * (fretboard.getStrings().size() + 1);
     this.width = fretDistance * (maxFret - minFret + 1);
   }
@@ -204,6 +207,9 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
   }
   
   private void drawFretNumber() {
+    if (!renderFretNumber) {
+      return;
+    }
     String fretNumber = Integer.toString(fretboard.getMinFret());
     g.setFont(fretNumberFont());
     g.setColor(Color.GRAY);
