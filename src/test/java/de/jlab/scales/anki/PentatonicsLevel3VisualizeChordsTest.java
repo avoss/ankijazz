@@ -23,6 +23,8 @@ public class PentatonicsLevel3VisualizeChordsTest {
   public void testWriteDeck() {
     CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel3VisualizeChords(Utils.fixedLoopIteratorFactory());
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "PentatonicsLevel3VisualizeChords.json");
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
     TestUtils.writeTo(deck, 0.1);
   }
   
