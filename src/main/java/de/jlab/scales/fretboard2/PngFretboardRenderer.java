@@ -25,14 +25,18 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
   private final int stringDistance = 100;
   private final int fretDistance = stringDistance * 3;
   private final int marginX = fretDistance / 2;
-  private final int marginY = stringDistance / 2;
+  private final int marginY = stringDistance;
   private final int height;
   private final int width;
   
   private Graphics2D g;
 
   private Font copyrightFont() {
-    return linux() ? new Font("Lucida Sans", Font.PLAIN, 15) : new Font("Comic Sans MS", Font.PLAIN, 15);
+    return linux() ? new Font("Lucida Sans", Font.PLAIN, 35) : new Font("Comic Sans MS", Font.PLAIN, 35);
+  }
+
+  private Font fretNumberFont() {
+    return linux() ? new Font("Lucida Sans", Font.BOLD, 50) : new Font("Comic Sans MS", Font.BOLD, 50);
   }
   
   public PngFretboardRenderer(Fretboard fretboard) {
@@ -45,7 +49,6 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
     this.maxFret = maxFret;
     this.height = stringDistance * (fretboard.getStrings().size() + 1);
     this.width = fretDistance * (maxFret - minFret + 1);
-         
   }
   
   @Override
@@ -62,6 +65,7 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
     drawFrets();
     drawStrings();
     drawMarkers();
+    drawFretNumber();
     
     return image;
   }
@@ -178,9 +182,6 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
     return height - 2 * marginY;
   }
 
-
-
-
   private void mapUserSpaceToDeviceSpace(BufferedImage image) {
     double sx = (double) image.getWidth() / width;
     double sy = (double) image.getHeight() / height;
@@ -200,6 +201,16 @@ public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
     float x = (float)(width - length)/2;
     float y = (float)(height - g.getFontMetrics().getHeight());
     g.drawString(copyright, x, y);
+  }
+  
+  private void drawFretNumber() {
+    String fretNumber = Integer.toString(fretboard.getMinFret());
+    g.setFont(fretNumberFont());
+    g.setColor(Color.GRAY);
+    float fretX = (fretX(minFret) + fretX(minFret+1))/2;
+    float stringWidth = g.getFontMetrics().stringWidth(fretNumber);
+    float x = fretX - stringWidth/2;
+    g.drawString(fretNumber, x, g.getFontMetrics().getHeight());
   }
   
 }

@@ -51,7 +51,7 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
 
   @lombok.Data
   @lombok.RequiredArgsConstructor
-  class ChordPentaPair {
+  static class ChordPentaPair {
     private final ScaleType chord;
     private final Scale penta;
   }
