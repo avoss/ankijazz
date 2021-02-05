@@ -23,7 +23,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Supplier;
 
-import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
 import de.jlab.scales.fretboard2.Fingering;

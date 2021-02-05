@@ -1,10 +1,9 @@
 package de.jlab.scales.anki;
 
 import static de.jlab.scales.midi.song.Ensembles.funk;
-import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
-import static de.jlab.scales.midi.song.SongFactory.Feature.*;
+import static de.jlab.scales.midi.song.SongFactory.Feature.ExtTwoFiveOnes;
 import static de.jlab.scales.midi.song.SongFactory.Feature.JazzBlues;
 import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Triads;

@@ -4,7 +4,7 @@ import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
 import static de.jlab.scales.fretboard2.StandardTuning.A_STRING;
 import static de.jlab.scales.fretboard2.StandardTuning.G_STRING;
-import static de.jlab.scales.fretboard2.StandardTuning.*;
+import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;

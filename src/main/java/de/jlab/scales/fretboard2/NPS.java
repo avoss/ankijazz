@@ -1,7 +1,11 @@
 package de.jlab.scales.fretboard2;
 
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
-import static de.jlab.scales.theory.BuiltinScaleType.*;
+import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.Major;
+import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
+import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;

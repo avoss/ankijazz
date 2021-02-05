@@ -2,10 +2,7 @@ package de.jlab.scales.fretboard2;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.OptionalInt;
-import java.util.function.Function;
-import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
 import de.jlab.scales.theory.Note;

@@ -1,14 +1,5 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.anki.FretboardDiagramDeck.Options.RenderMode.*;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import de.jlab.scales.fretboard2.Fingering;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-
 public class FretboardDiagramDeck extends AbstractDeck<FretboardDiagramCard> {
   
 

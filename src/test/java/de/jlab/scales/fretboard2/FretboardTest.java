@@ -3,8 +3,8 @@ package de.jlab.scales.fretboard2;
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static java.util.stream.Collectors.toList;
-import static org.assertj.core.api.Assertions.*;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;

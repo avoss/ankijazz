@@ -1,20 +1,15 @@
 package de.jlab.scales.fretboard2;
 
 import static de.jlab.scales.theory.Scales.Cmaj7;
-import static org.assertj.core.api.Assertions.*;
 
-import java.awt.image.BufferedImage;
-import java.nio.file.Paths;
 import java.util.function.Function;
 
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.fretboard2.MidiFretboardRenderer.MidiFretboardRendererBuilder;
-import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
-import static org.assertj.core.api.Assertions.*;
 public class MidiFretboardRendererTest {
 
   @Test

@@ -8,6 +8,7 @@ import static de.jlab.scales.midi.song.SongFactory.Feature.Test;
 import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.util.EnumSet;
@@ -21,7 +22,6 @@ import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.midi.song.SongFactory.KeyFactory;
-import static org.assertj.core.api.Assertions.*;
 
 public class SongFactoryTest {
   

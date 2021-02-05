@@ -3,13 +3,11 @@ package de.jlab.scales.anki;
 import static de.jlab.scales.lily.Direction.ASCENDING;
 
 import de.jlab.scales.difficulty.Difficulties;
-import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.difficulty.WithDifficulty;
 import de.jlab.scales.lily.Clef;
 import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;
 import de.jlab.scales.theory.Accidental;
-import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.ScaleInfo;
@@ -38,7 +36,7 @@ public class ScaleModel implements WithDifficulty {
     this.instrument = instrument;
     this.keySignature = modeInfo.getKeySignature();
     this.parentInfo = modeInfo.getParentInfo();
-    this.difficulty = Difficulties.getScaleDifficulty(modeInfo);
+    this.difficulty = Difficulties.getScaleInfoDifficulty(modeInfo);
   }
 
   public LilyScale getLilyScale() {

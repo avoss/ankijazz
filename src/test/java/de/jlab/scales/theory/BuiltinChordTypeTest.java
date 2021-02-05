@@ -1,7 +1,6 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
-import lombok.Getter;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinChordType.Major7;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
@@ -10,15 +9,11 @@ import static de.jlab.scales.theory.BuiltinScaleType.Major;
 import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.ScaleUniverse.SCALES;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -26,7 +21,6 @@ import java.util.stream.Collectors;
 
 import org.junit.Ignore;
 import org.junit.Test;
-import  lombok.EqualsAndHashCode;
 public class BuiltinChordTypeTest {
 
   @Test

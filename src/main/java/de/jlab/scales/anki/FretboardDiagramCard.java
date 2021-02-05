@@ -12,10 +12,11 @@ import java.util.function.Supplier;
 import javax.imageio.ImageIO;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.difficulty.Difficulties;
+import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleType;
 
 public class FretboardDiagramCard implements Card {
 
@@ -26,6 +27,7 @@ public class FretboardDiagramCard implements Card {
   private Supplier<Part> backMidi;
   private ScaleInfo chordInfo;
   private ScaleInfo scaleInfo;
+  private double difficulty;
 
   @lombok.Builder
   private FretboardDiagramCard(ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
@@ -36,12 +38,19 @@ public class FretboardDiagramCard implements Card {
     this.backImage = backImage;
     this.backMidi = backMidi;
     this.assetId = computeAssetId();
+    this.difficulty = computeDifficulty();
+  }
+
+  private double computeDifficulty() {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleTerm(40).update(Difficulties.getChordInfoDifficulty(chordInfo));
+    model.doubleTerm(60).update(Difficulties.getScaleInfoDifficulty(scaleInfo));
+    return model.getDifficulty();
   }
 
   @Override
   public double getDifficulty() {
-    // TODO Auto-generated method stub
-    return 0;
+    return difficulty;
   }
 
   @Override

@@ -2,18 +2,11 @@ package de.jlab.scales.fretboard2;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import org.junit.Test;
 
 import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.Scales;
 
 public class NPSTest {

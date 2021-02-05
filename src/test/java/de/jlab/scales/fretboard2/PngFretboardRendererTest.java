@@ -1,21 +1,16 @@
 package de.jlab.scales.fretboard2;
 
-import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
 import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
-import static de.jlab.scales.fretboard2.StandardTuning.LOW_E_STRING;
 
 import java.awt.image.BufferedImage;
 
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
 public class PngFretboardRendererTest {
