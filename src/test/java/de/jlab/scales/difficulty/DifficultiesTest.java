@@ -1,8 +1,8 @@
-package de.jlab.scales.midi.song;
+package de.jlab.scales.difficulty;
 
-import static de.jlab.scales.midi.song.Difficulties.getChordTypeDifficulty;
-import static de.jlab.scales.midi.song.Difficulties.getChordDifficulty;
-import static de.jlab.scales.midi.song.Difficulties.getSongDifficulty;
+import static de.jlab.scales.difficulty.Difficulties.getChordDifficulty;
+import static de.jlab.scales.difficulty.Difficulties.getChordTypeDifficulty;
+import static de.jlab.scales.difficulty.Difficulties.getSongDifficulty;
 import static de.jlab.scales.midi.song.MidiTestUtils.song;
 import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;

@@ -1,4 +1,4 @@
-package de.jlab.scales.midi.song;
+package de.jlab.scales.difficulty;
 
 import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
@@ -62,7 +62,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.midi.song.Song;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
