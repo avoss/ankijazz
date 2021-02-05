@@ -1,16 +1,21 @@
 package de.jlab.scales.fretboard2;
 
+import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
+import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
+import static de.jlab.scales.fretboard2.StandardTuning.LOW_E_STRING;
 
 import java.awt.image.BufferedImage;
-import java.util.Optional;
 
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
+import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.ScaleInfo;
+import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
 public class PngFretboardRendererTest {
@@ -19,7 +24,7 @@ public class PngFretboardRendererTest {
   public void testLydianCAGEDQuestionAnswer() {
     Fretboard fretboard = new Fretboard();
     Scale fLydian = fLydian();
-    Position modePosition = Marker.box(fretboard, 5, fLydian.getRoot(), RIGHT, NPS.C_MAJOR_CAGED);
+    Position modePosition = Marker.box(fretboard, HIGH_E_STRING, fLydian.getRoot(), RIGHT, NPS.C_MAJOR_CAGED);
     BufferedImage question = new PngFretboardRenderer(fretboard).render();
     //Preview.preview(question);
     TestUtils.assertImageMatches(question, getClass(), "LydianCAGEDQuestion.png");
@@ -28,7 +33,6 @@ public class PngFretboardRendererTest {
     BufferedImage answer = new PngFretboardRenderer(fretboard).render();
     //Preview.preview(answer);
     TestUtils.assertImageMatches(answer, getClass(), "LydianCAGEDAnswer.png");
-    
   }
 
   private Scale fLydian() {
@@ -39,7 +43,7 @@ public class PngFretboardRendererTest {
   public void testLydianPentatonicQuestionAnswer() {
     Fretboard fretboard = new Fretboard();
     Scale fLydian = fLydian();
-    Marker.box(fretboard, 5, fLydian.getRoot(), RIGHT, NPS.C_MAJOR_CAGED);
+    Marker.box(fretboard, HIGH_E_STRING, fLydian.getRoot(), RIGHT, NPS.C_MAJOR_CAGED);
     BufferedImage question = new PngFretboardRenderer(fretboard).render();
     //Preview.preview(question);
     TestUtils.assertImageMatches(question, getClass(), "LydianPentatonicQuestion.png");
@@ -51,7 +55,6 @@ public class PngFretboardRendererTest {
     BufferedImage answer = new PngFretboardRenderer(fretboard).render();
     //Preview.preview(answer);
     TestUtils.assertImageMatches(answer, getClass(), "LydianPentatonicAnswer.png");
-    
   }
-  
+ 
 }

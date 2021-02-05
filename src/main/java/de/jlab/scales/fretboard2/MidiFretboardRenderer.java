@@ -5,8 +5,6 @@ import static de.jlab.scales.fretboard2.Marker.FOREGROUND;
 
 import java.util.List;
 
-import com.google.common.base.Optional;
-
 import de.jlab.scales.midi.MidiUtils;
 import de.jlab.scales.midi.Parallel;
 import de.jlab.scales.midi.Part;
@@ -20,27 +18,25 @@ import de.jlab.scales.theory.Scale;
 public class MidiFretboardRenderer implements FretboardRenderer<Part> {
   private static final int BG_CHORD_MIDI_CHANNEL = 0;
   private static final int FRETBOARD_MIDI_CHANNEL = 1;
+  private static final int FRETBOARD_MIDI_VELOCITY = 110;
   private static final int TEMPO = 40;
   
   private final Fretboard fretboard;
   private final boolean foregroundIncludesRoot;
-  private final Optional<Scale> backgroundChord;
+  private final boolean renderForeground;
+  private final boolean renderBackground;
+  private final Scale backgroundChord;
   private final Counter counter;
   private final int TICK = 16;
   private final Part REST = Parts.rest(1, TICK);
 
-  public MidiFretboardRenderer(Fretboard fretboard) {
-    this(fretboard, true, Optional.absent());
-  }
-
-  public MidiFretboardRenderer(Fretboard fretboard, boolean foregroundIncludesRoot, Scale backgroundChord) {
-    this(fretboard, foregroundIncludesRoot, Optional.of(backgroundChord));
-  }
-
-  private MidiFretboardRenderer(Fretboard fretboard, boolean foregroundIncludesRoot, Optional<Scale> backgroundChord) {
+  @lombok.Builder
+  public MidiFretboardRenderer(Fretboard fretboard, Scale backgroundChord, boolean renderForeground, boolean foregroundIncludesRoot, boolean renderBackground) {
     this.fretboard = fretboard;
-    this.foregroundIncludesRoot = foregroundIncludesRoot;
     this.backgroundChord = backgroundChord;
+    this.renderForeground = renderForeground;
+    this.foregroundIncludesRoot = foregroundIncludesRoot;
+    this.renderBackground = renderBackground;
     this.counter = countNotes();
   }
 
@@ -71,21 +67,13 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
     }
 
     int getNumberOfNotes() {
-      int background = isBackgroundPresent() ? numBackground + numForeground + numRoot : 0;
-      int foreground = isForegroundPresent() ? numForeground + (foregroundIncludesRoot ? numRoot : 0) : 0;
+      int foreground = renderForeground ? numForeground + (foregroundIncludesRoot ? numRoot : 0) : 0;
+      int background = renderBackground ? numBackground + numForeground + numRoot : 0;
       return background + foreground;
     }
 
-    boolean isForegroundPresent() {
-      return numForeground > 0;
-    }
-
-    boolean isBackgroundPresent() {
-      return numBackground > 0;
-    }
-
     public int getSongDuration() {
-      return getNumberOfNotes() + (isForegroundPresent() ? 4 : 0) + (isBackgroundPresent() ? 4 : 0);
+      return getNumberOfNotes() + (renderForeground ? 4 : 0) + (renderBackground ? 4 : 0);
     }
 
   }
@@ -107,10 +95,10 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
     Parallel par = Parts.par();
     par.add(renderBackgroundChord());
     Sequential fretboard = Parts.seq();
-    if (counter.isBackgroundPresent()) {
+    if (renderBackground) {
       fretboard.add(new MidiRenderer(BACKGROUND).render());
     }
-    if (counter.isForegroundPresent()) {
+    if (renderForeground) {
       fretboard.add(new MidiRenderer(FOREGROUND).render());
     }
     par.add(fretboard);
@@ -168,7 +156,7 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
 
     private void play(int fret, int duration) {
       if (previousPitch > 0) {
-        seq.add(Parts.note(FRETBOARD_MIDI_CHANNEL, previousPitch, 100, duration, TICK));
+        seq.add(Parts.note(FRETBOARD_MIDI_CHANNEL, previousPitch, FRETBOARD_MIDI_VELOCITY, duration, TICK));
         seq.add(Parts.rest(duration, TICK));
       }
       previousPitch = stringPitch + fret;
@@ -178,19 +166,19 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
 
   private Part renderBackgroundChord() {
     Sequential seq = Parts.seq();
-    if (!backgroundChord.isPresent()) {
+    if (backgroundChord == null) {
       return seq;
     }
     int duration = counter.getSongDuration();
     seq.add(Parts.program(BG_CHORD_MIDI_CHANNEL, Program.Pad2_warm));
     seq.add(REST);
     Drop2ChordGenerator g = new Drop2ChordGenerator(90);
-    int[] midiChord = g.midiChord(backgroundChord.get());
+    int[] midiChord = g.midiChord(backgroundChord);
     for (int i = 0; i < midiChord.length; i++) {
       seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, midiChord[i], 40, duration, TICK));
     }
-    int bassPitch = MidiUtils.noteToMidiPitchBelow(45, backgroundChord.get().getRoot());
-    seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, bassPitch, 70, duration, TICK));
+    int bassPitch = MidiUtils.noteToMidiPitchBelow(45, backgroundChord.getRoot());
+    seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, bassPitch, 90, duration, TICK));
     return seq;
   }
 

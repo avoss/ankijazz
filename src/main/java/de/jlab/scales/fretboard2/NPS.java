@@ -1,6 +1,7 @@
 package de.jlab.scales.fretboard2;
 
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
+import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -19,6 +20,7 @@ import java.util.stream.Stream;
 import de.jlab.scales.Utils;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.Scales;
 
 public class NPS {
@@ -41,6 +43,25 @@ public class NPS {
     return List.of(C_MAJOR_CAGED, C_MELODIC_MINOR_CAGED, C_HARMONIC_MINOR_CAGED);
   }
   
+  public static Fingering caged(ScaleType type) {
+    if (type.equals(Major)) {
+      return C_MAJOR_CAGED;
+    }
+    if (type.equals(MelodicMinor)) {
+      return C_MELODIC_MINOR_CAGED;
+    }
+    if (type.equals(HarmonicMinor)) {
+      return C_HARMONIC_MINOR_CAGED;
+    }
+    if (type.equals(Minor7Pentatonic)) {
+      return C_MINOR7_PENTATONIC;
+    }
+    if (type.equals(Minor6Pentatonic)) {
+      return C_MINOR6_PENTATONIC;
+    }
+    throw new IllegalArgumentException("Unsupported scale type: " + type);
+  }
+  
   public static List<Fingering> threenps() {
     return List.of(C_MAJOR_3NPS, C_MELODIC_MINOR_3NPS, C_HARMONIC_MINOR_3NPS);
   }
@@ -52,8 +73,6 @@ public class NPS {
   public static List<Fingering> allFingerings() {
     return Stream.concat(Stream.concat(caged().stream(), threenps().stream()), pentatonics().stream()).collect(Collectors.toList());
   }
-  
-  
   
   private List<Position> positions = new ArrayList<>();
   private Tuning tuning;
@@ -96,9 +115,6 @@ public class NPS {
 
     private static final Map<Map<Integer, List<Integer>>, Map<Integer, List<Integer>>> EXCEPTIONS = new HashMap<>();
     
-    // key "8 10 11|8 10 11|9 10|7 8 10|8 9 12|8 10 11"
-    // val 8 10 11|8 10 11|9 10|7 8 10|8 9|7 8 10
-
     static {
       EXCEPTIONS.put(parse("8 10 11|8 10 11|9 10|7 8 10|8 9 12|8 10 11"), parse("8 10 11|8 10 11|9 10|7 8 10|8 9|7 8 10"));
       EXCEPTIONS.put(parse("8 10 11|8 10|7 9 10|7 8 10|8 10 12|8 10 11"), parse("7 8 10|6 8 10|7 9 10|7 8 10|8 10|7 8 10"));

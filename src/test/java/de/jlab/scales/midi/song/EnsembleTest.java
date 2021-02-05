@@ -6,20 +6,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.jtg.PngImageRenderer;
-import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.Drum;
-import de.jlab.scales.midi.HumanizingMidiOut;
-import de.jlab.scales.midi.MidiFile;
-import de.jlab.scales.midi.MidiOut;
 import de.jlab.scales.midi.MockMidiOut;
 import de.jlab.scales.midi.NoteOn;
 import de.jlab.scales.midi.Part;

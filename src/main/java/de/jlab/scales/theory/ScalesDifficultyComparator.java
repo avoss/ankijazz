@@ -25,8 +25,7 @@ public final class ScalesDifficultyComparator implements Comparator<ScaleInfo> {
   }
 
   private int indexOf(ScaleInfo info) {
-    @SuppressWarnings("unlikely-arg-type")
-    int index = types.indexOf(info);
+    int index = types.indexOf(info.getScaleType());
     return index >= 0 ? index : 1000;
   }
   

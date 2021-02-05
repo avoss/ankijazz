@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>{{title}}</title>
+<style>
+.card {
+	max-width: 40rem;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>
+      Learn scales and arpeggios via fretboard diagrams. See full documentation on <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+    </p>
+    <p>
+      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a> and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz"
+        target="_blank">buy me some coffee</a>?
+    </p>
+    {{#cards}}
+    <div class="card border-secondary mb-3">
+      <h4 class="card-header">{{chordName}}</h4>
+      <div class="card-body">
+        <img class="card-img-top" src="{{frontPngName}}">
+        <img class="card-img-top" src="{{backPngName}}">
+        <p class="card-text text-center">
+          <audio controls src="{{backMp3Name}}"></audio>
+        </p>
+      </div>
+    </div>
+    {{/cards}}
+  </div>
+</body>
+</html>

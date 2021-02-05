@@ -2,7 +2,7 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 

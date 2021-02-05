@@ -1,5 +1,6 @@
 package de.jlab.scales;
 
+import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +8,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -15,11 +18,18 @@ import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import javax.imageio.ImageIO;
+
 import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
 
+import de.jlab.scales.midi.MidiFile;
+import de.jlab.scales.midi.Part;
+import de.jlab.scales.theory.KeySignature;
+import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.ScaleType;
 
 public final class Utils {
   private static final String ANKI_JAZZ = "AnkiJazz-";
@@ -175,5 +185,26 @@ public final class Utils {
 
   public static boolean linux() {
     return new File("/usr/bin/bash").exists();
+  }
+  
+  public static String chordName(ScaleType chord, Note root) {
+    KeySignature keySignature = chord.getKeySignatures(root).iterator().next();
+    return keySignature.notate(root).concat(chord.getTypeName());
+  }
+
+  public static void writeImage(Path path, BufferedImage image) {
+    try {
+      File out = path.toFile();
+      Files.createDirectories(path.getParent());
+      ImageIO.write(image,  "png", out);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
+  }
+
+  public static void writeMidi(Path path, Part part) {
+    MidiFile mf = new MidiFile();
+    part.perform(mf);
+    mf.save(path);
   }
 }

@@ -16,6 +16,8 @@ import java.util.Set;
 import org.junit.Test;
 
 import de.jlab.scales.Utils.Interpolator;
+import de.jlab.scales.theory.BuiltinChordType;
+import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
 public class UtilsTest {
@@ -56,5 +58,10 @@ public class UtilsTest {
     assertEquals(40, interpolator.apply(10));
     assertEquals(40, interpolator.apply(20));
   }
-  
+
+  @Test
+  public void testChordName() {
+    assertEquals("Eb7", Utils.chordName(BuiltinChordType.Dominant7, Note.Eb));
+    assertEquals("F#7", Utils.chordName(BuiltinChordType.Dominant7, Note.Gb));
+  }
 }

@@ -1,8 +1,3 @@
-# TODO
-# add minor pentatonic at #9 for altered dominant
-# add second minor6 pentatonic in melodic minor (chord + pentatonic) 
-# m7 can be seen as maj9 maj6
-
 # id - must match one of the SongFactory.Feature enum literals (exactly) - otherwise exception will be thrown
 # progression:
 #   A B C = play 1st bar chord A, 2nd bar chord B and 3rd bar chord C
@@ -28,7 +23,7 @@ progressions:
    - title: Minor7 Pentatonics at major 7th of Major7#11 Chord
      minor: false
      progression: >-2 
-       AΔ7 DΔ7 GΔ7 CΔ7 
+       AΔ7#11 DΔ7#11 GΔ7#11 CΔ7#11 
 
    - title: Minor7 Pentatonics at 6th of Major 6 Chord
      minor: false
@@ -40,25 +35,25 @@ progressions:
      progression: >-2 
        Asus4 Dsus4 Gsus4 Csus4 
 
-   - title: Minor7 Pentatonics at 5th of Sus4 Chord
-     minor: false
-     progression: >-2 
-       Asus4 Dsus4 Gsus4 Csus4 
-
    - title: Minor6 Pentatonics at root of Minor6 Chord
      minor: true
      progression: >-2 
         F#m6 Bm6 Em6 Am6
 
-   - title: Minor6 Pentatonics at 5th of Dominant 9th Chord
+   - title: Minor6 Pentatonics at 5th of Dominant 7th Chord
      minor: false
      progression: >-2 
-       A9 D9 G9 C9 
+       A7 D7 G7 C7 
 
-   - title: Minor6 Pentatonics at b9 of Dominant7#5b9 Chord
+#   - title: Minor6 Pentatonics at b9 of altered Chord
+#     minor: false
+#     progression: >-2 
+#       A7#5b9 D7#5#9 G7#5b9 C7#5
+
+   - title: "Minor7 Pentatonics at #9 of altered Chord"
      minor: false
      progression: >-2 
-       A7#5b9 D7#5b9 G7#5b9 C7#5b9 
+       A7#5b9 D7#5#9 G7#5b9 C7#5
 
    - title: Minor6 Pentatonics at minor 3rd of Minor7b5 Chord
      minor: true

@@ -16,6 +16,7 @@ import java.nio.file.Path;
 
 import javax.imageio.ImageIO;
 
+import de.jlab.scales.Utils;
 import de.jlab.scales.jtg.IdSong.IdBar;
 import de.jlab.scales.midi.song.Song;
 
@@ -235,14 +236,8 @@ public class PngImageRenderer extends Layout {
   }
 
   public void renderTo(Path path) {
-    try {
-      BufferedImage image = render();
-      File out = path.toFile();
-      Files.createDirectories(path.getParent());
-      ImageIO.write(image,  "png", out);
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    }
+    BufferedImage image = render();
+    Utils.writeImage(path, image);
   }
 
   public BufferedImage render() {
