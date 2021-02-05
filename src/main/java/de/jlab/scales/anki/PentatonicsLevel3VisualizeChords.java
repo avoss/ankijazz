@@ -57,7 +57,7 @@ public class PentatonicsLevel3VisualizeChords extends AbstractCardGenerator<Fret
   }
   
   public PentatonicsLevel3VisualizeChords(LoopIteratorFactory iteratorFactory) {
-    super(iteratorFactory, "Outline Chords with Pentatonics", "OutlineChordsWithPentatonics");
+    super(iteratorFactory, " Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
   }
   
   Collection<ChordPentaPair> findPairs() {
