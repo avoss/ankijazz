@@ -18,7 +18,6 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -37,7 +36,6 @@ import de.jlab.scales.fretboard2.Position;
 import de.jlab.scales.fretboard2.Tunings;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
@@ -54,8 +52,8 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
   private static final ScaleUniverse PENTAS = new ScaleUniverse(false, List.of(Minor7Pentatonic, Minor6Pentatonic));
 
   @lombok.Data
-  @lombok.RequiredArgsConstructor(staticName = "pair")
-  static class ChordPentaPair {
+  @lombok.RequiredArgsConstructor
+  class ChordPentaPair {
     private final ScaleType chord;
     private final Scale penta;
   }
@@ -64,22 +62,6 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     super(iteratorFactory, "Outline Chords with Pentatonics", "OutlineChordsWithPentatonics");
   }
   
-  Collection<ChordPentaPair> findAllPairs() {
-    List<ChordPentaPair> pairs = new ArrayList<>();
-    PentatonicChooser chooser = new PentatonicChooser();
-    for (BuiltinChordType type : BuiltinChordType.values()) {
-      if (type.getPrototype().getNumberOfNotes() < 4) {
-        continue;
-      }
-      Scale chord = type.getPrototype();
-      Optional<SubstitutionInfo> best = chooser.chooseBestInfo(chord);
-      if (best.isPresent()) {
-        pairs.add(new ChordPentaPair(type, best.get().getSubstitution()));
-      }
-    }
-    return pairs;
-  }
-
   Collection<ChordPentaPair> findPairs() {
     List<ChordPentaPair> pairs = new ArrayList<>();
     PentatonicChooser chooser = new PentatonicChooser();
@@ -103,8 +85,6 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     return result;
   }
 
-  // TODO: if root is contained in penta, it should be red. If not, it should be gray.
-  // TODO: mark root of pentatonic?
   private FretboardDiagramCard createCard(ChordPentaPair pair, Note root, BoxPosition box, int string) {
     Scale chord = pair.getChord().getPrototype().transpose(root.ordinal());
     Scale penta = pair.getPenta().transpose(root.ordinal());
