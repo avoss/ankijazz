@@ -1,6 +1,14 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.BuiltinChordType.*;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5flat9;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
+import static de.jlab.scales.theory.BuiltinChordType.Major6;
+import static de.jlab.scales.theory.BuiltinChordType.Major7;
+import static de.jlab.scales.theory.BuiltinChordType.Major7Sharp11;
+import static de.jlab.scales.theory.BuiltinChordType.Minor6;
+import static de.jlab.scales.theory.BuiltinChordType.Minor7;
+import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
 import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 
@@ -11,7 +19,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -30,9 +37,7 @@ import de.jlab.scales.fretboard2.Position;
 import de.jlab.scales.fretboard2.Tunings;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.ChordParser;
 import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
-import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
@@ -107,55 +112,45 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     ScaleInfo pentaInfo = PENTAS.findFirstOrElseThrow(penta);
     Fingering fingering = NPS.caged(pentaInfo.getScaleType()).transpose(penta.getRoot());
     Fretboard frontBoard = new Fretboard();
-    Position position = Marker.box(frontBoard, string, chord.getRoot(), box, fingering);
+    Position position = Marker.box(frontBoard, string, chord.getRoot(), box, fingering, Marker.BACKGROUND);
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard).render();
-    int rootFret = findRootFret(frontBoard, string);
+
+    int rootFret = findFirstMarkedFret(frontBoard, string);
 
     Fretboard backBoard = new Fretboard();
-    backBoard.mark(string, rootFret, Marker.BACKGROUND);
     backBoard.mark(position, Marker.outline(penta));
+    backBoard.mark(string, rootFret, Marker.BACKGROUND);
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard).render();
-    Supplier<Part> backMidi = () -> MidiFretboardRenderer.builder()
+    Supplier<Part> backMidi = () -> {
+      if (penta.contains(chord.getRoot())) {
+        return MidiFretboardRenderer.builder()
+            .fretboard(backBoard)
+            .backgroundChord(chord)
+            .renderBackground(true)
+            .build()
+            .render();
+      }
+      return MidiFretboardRenderer.builder()
         .fretboard(backBoard)
         .backgroundChord(chord)
         .renderForeground(true)
         .foregroundIncludesRoot(true)
         .build()
         .render();
+    };
         
     String chordName = Utils.chordName(pair.getChord(), root);
     return new FretboardDiagramCard(chordName, frontImage, backImage, backMidi);
-    
-
-    
-//    ScaleInfo scaleInfo = ScaleUniverse.SCALES.findScalesContaining(chord.asSet()).iterator().next();
-//    
-//    // FIXME: must transpose to mode root, e.g. to Bb for Cm7 dorian
-//    Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getScale().getRoot());  
-//    
-//    Fretboard fretboard = new Fretboard();
-//    Position scalePosition = Marker.box(fretboard, string, chord.getRoot(), box, fingering);
-//    BufferedImage frontImage = new PngFretboardRenderer(fretboard).render();
-//    
-//    fretboard.mark(scalePosition, n -> Marker.EMPTY);
-//    
-//    // FIXME: must use NPS Pentatonic Fingering, not just visible (that marks too many frets)
-//    fretboard.markVisible(penta, Marker.FOREGROUND);
-//    BufferedImage backImage = new PngFretboardRenderer(fretboard).render();
-//    Part backMidi = new MidiFretboardRenderer(fretboard, false, chord).render();
-//    String chordName = Utils.chordName(pair.getChord(), root);
-//    return new FretboardDiagramCard(chordName, frontImage, backImage, backMidi);
-    
   }
 
-  private int findRootFret(Fretboard fretboard, int stringIndex) {
+  private int findFirstMarkedFret(Fretboard fretboard, int stringIndex) {
     GuitarString string = fretboard.getString(stringIndex);
     for (int i = 0; i < 24; i++) {
-      if (string.markerOf(i) == Marker.ROOT) {
+      if (string.markerOf(i) != Marker.EMPTY) {
         return i;
       }
     }
-    throw new IllegalStateException("Root not found on string:" + string);
+    throw new IllegalStateException("Marker not found on string:" + string);
   }
 
 }
