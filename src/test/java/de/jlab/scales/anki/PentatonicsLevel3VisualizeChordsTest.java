@@ -6,16 +6,25 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
 import de.jlab.scales.Utils;
-import de.jlab.scales.anki.OutlineChordsWithPentatonicsCardGenerator.ChordPentaPair;
+import de.jlab.scales.anki.PentatonicsLevel3VisualizeChords.ChordPentaPair;
 import de.jlab.scales.theory.Note;
 
-public class OutlineChordsWithPentatonicsCardGeneratorTest {
+public class PentatonicsLevel3VisualizeChordsTest {
 
   @Test
-  public void test() {
-    OutlineChordsWithPentatonicsCardGenerator generator = new OutlineChordsWithPentatonicsCardGenerator(Utils.fixedLoopIteratorFactory());
+  public void testGenerator() {
+    PentatonicsLevel3VisualizeChords generator = new PentatonicsLevel3VisualizeChords(Utils.fixedLoopIteratorFactory());
     assertThat(generator.findPairs()).contains(new ChordPentaPair(Major7, Minor7Pentatonic.getPrototype().transpose(Note.E)));
   }
+  
+  @Test
+  public void testWriteDeck() {
+    CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel3VisualizeChords(Utils.fixedLoopIteratorFactory());
+    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.writeTo(deck, 0.1);
+  }
+  
 
 }

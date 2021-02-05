@@ -43,7 +43,7 @@ import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
-public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGenerator<FretboardDiagramCard> {
+public class PentatonicsLevel3VisualizeChords extends AbstractCardGenerator<FretboardDiagramCard> {
   /**
    * TODO show fret number on answer page
    */
@@ -56,7 +56,7 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     private final Scale penta;
   }
   
-  public OutlineChordsWithPentatonicsCardGenerator(LoopIteratorFactory iteratorFactory) {
+  public PentatonicsLevel3VisualizeChords(LoopIteratorFactory iteratorFactory) {
     super(iteratorFactory, "Outline Chords with Pentatonics", "OutlineChordsWithPentatonics");
   }
   
