@@ -14,6 +14,7 @@ import static de.jlab.scales.theory.BuiltinChordType.Minor7;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
 import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
 import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
+import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -90,9 +91,10 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
 
   private FretboardDiagramCard createCard(ChordPentaPair pair, Note root, BoxPosition box, int string) {
     Scale chord = pair.getChord().getPrototype().transpose(root.ordinal());
+    ScaleInfo chordInfo = CHORDS.findFirstOrElseThrow(chord);
     Scale penta = pair.getPenta().transpose(root.ordinal());
-    
     ScaleInfo pentaInfo = PENTAS.findFirstOrElseThrow(penta);
+    
     Fingering fingering = NPS.caged(pentaInfo.getScaleType()).transpose(penta.getRoot());
     Fretboard frontBoard = new Fretboard();
     Position position = Marker.box(frontBoard, string, chord.getRoot(), box, fingering, Marker.BACKGROUND);
@@ -121,9 +123,14 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
         .build()
         .render();
     };
-        
-    String chordName = Utils.chordName(pair.getChord(), root);
-    return new FretboardDiagramCard(chordName, frontImage, backImage, backMidi);
+
+    return FretboardDiagramCard.builder()
+        .chordInfo(chordInfo)
+        .scaleInfo(pentaInfo)
+        .frontImage(frontImage)
+        .backImage(backImage)
+        .backMidi(backMidi)
+        .build();
   }
 
   private int findFirstMarkedFret(Fretboard fretboard, int stringIndex) {

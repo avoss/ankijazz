@@ -14,6 +14,8 @@ import javax.imageio.ImageIO;
 import de.jlab.scales.Utils;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
+import de.jlab.scales.theory.ScaleInfo;
+import de.jlab.scales.theory.ScaleType;
 
 public class FretboardDiagramCard implements Card {
 
@@ -22,9 +24,14 @@ public class FretboardDiagramCard implements Card {
   private Supplier<BufferedImage> frontImage;
   private Supplier<BufferedImage> backImage;
   private Supplier<Part> backMidi;
+  private ScaleInfo chordInfo;
+  private ScaleInfo scaleInfo;
 
-  public FretboardDiagramCard(String chordName, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
-    this.chordName = chordName;
+  @lombok.Builder
+  private FretboardDiagramCard(ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
+    
+    this.chordInfo = chordInfo;
+    this.scaleInfo = scaleInfo;
     this.frontImage = frontImage;
     this.backImage = backImage;
     this.backMidi = backMidi;

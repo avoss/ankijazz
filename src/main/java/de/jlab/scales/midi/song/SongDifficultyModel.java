@@ -53,6 +53,7 @@ import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.Scales;
 
+// TODO rename to ScalesDifficulty or similar and add ScaleDifficulty (currently implemented in ModesPractice deck)
 public class SongDifficultyModel {
 
   static final ScaleType[] typesOrderedByDifficulty = {
@@ -109,14 +110,14 @@ public class SongDifficultyModel {
       .collect(Collectors.toList()); 
   
 
-  public double getDifficulty(Song song) {
+  public double getSongDifficulty(Song song) {
     List<Scale> chords = song.getBars().stream()
     .flatMap(bar -> bar.getChords().stream())
     .map(chord -> chord.getScale())
     .collect(toList());
     
     IntSummaryStatistics statistics = chords.stream()
-      .mapToInt(this::getChordDifficulty)
+      .mapToInt(this::getChordIndex)
       .summaryStatistics();
     double chordDifficulty = statistics.getAverage() / scalesOrderedByDifficulty.size();
     double numberOfDifferentChordsDifficulty = (double)chords.stream().collect(toSet()).size() / chords.size();
@@ -135,7 +136,7 @@ public class SongDifficultyModel {
     return model.getDifficulty();
   }
 
-  int getChordDifficulty(Scale chord) {
+  int getChordIndex(Scale chord) {
     Scale transposed = chord.transpose(Note.C);
     int index = scalesOrderedByDifficulty.indexOf(transposed);
     if (index < 0) {
@@ -143,5 +144,9 @@ public class SongDifficultyModel {
     }
     return index;
   }
-
+  
+  public double getChordDifficulty(Scale chord) {
+    return getSongDifficulty(Song.of(Bar.of(Chord.of(chord, ""))));
+  }
+  
 }

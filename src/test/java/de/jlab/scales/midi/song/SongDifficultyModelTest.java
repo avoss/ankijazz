@@ -22,13 +22,13 @@ public class SongDifficultyModelTest {
 
   @Test
   public void testNumberOfDifferentChordsMatter() {
-    assertThat(model.getDifficulty(song("Cm7 Cm7"))).isLessThan(model.getDifficulty(song("Cm7 Dm7")));
+    assertThat(model.getSongDifficulty(song("Cm7 Cm7"))).isLessThan(model.getSongDifficulty(song("Cm7 Dm7")));
   }
 
   @Test
   public void testNumberOfAccidentalsMatter() {
-    assertThat(model.getDifficulty(song("Am7 Am7"))).isLessThan(model.getDifficulty(song("Bbm7 Bbm7")));
-    assertThat(model.getDifficulty(song("Am7 Am7"))).isLessThan(model.getDifficulty(song("Bm7 Bm7")));
+    assertThat(model.getSongDifficulty(song("Am7 Am7"))).isLessThan(model.getSongDifficulty(song("Bbm7 Bbm7")));
+    assertThat(model.getSongDifficulty(song("Am7 Am7"))).isLessThan(model.getSongDifficulty(song("Bm7 Bm7")));
   }
 
 }

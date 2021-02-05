@@ -65,7 +65,7 @@ public class JamCard implements Card {
 
   private double computeDifficulty() {
     DifficultyModel model = new DifficultyModel();
-    double songDifficulty = new SongDifficultyModel().getDifficulty(wrapper.getSong());
+    double songDifficulty = new SongDifficultyModel().getSongDifficulty(wrapper.getSong());
     model.doubleTerm(100).update(songDifficulty);
     model.doubleTerm(60, 140, 50).update(bpm);
     double difficulty = model.getDifficulty();
