@@ -7,6 +7,7 @@ import de.jlab.scales.difficulty.WithDifficulty;
 import de.jlab.scales.lily.Clef;
 import de.jlab.scales.lily.Direction;
 import de.jlab.scales.lily.LilyScale;
+import de.jlab.scales.midi.song.Difficulties;
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.KeySignature;
@@ -37,7 +38,7 @@ public class ScaleModel implements WithDifficulty {
     this.instrument = instrument;
     this.keySignature = modeInfo.getKeySignature();
     this.parentInfo = modeInfo.getParentInfo();
-    this.difficulty = computeDifficulty();
+    this.difficulty = Difficulties.getScaleDifficulty(modeInfo);
   }
 
   public LilyScale getLilyScale() {
@@ -79,14 +80,6 @@ public class ScaleModel implements WithDifficulty {
   @Override
   public double getDifficulty() {
     return difficulty;
-  }
-  
-  private double computeDifficulty() {
-    DifficultyModel model = new DifficultyModel();
-    model.doubleTerm(0, 6, 100).update(modeInfo.getKeySignature().getNumberOfAccidentals());
-    model.booleanTerm(50).update(modeInfo.getScaleType() != BuiltinScaleType.Major);
-    model.booleanTerm(25).update(modeInfo.isInversion());
-    return model.getDifficulty();
   }
   
   public String getNotationKey() {

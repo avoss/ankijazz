@@ -23,7 +23,7 @@ import de.jlab.scales.midi.Part;
 import de.jlab.scales.midi.TransposingMidiOut;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.midi.song.SongDifficultyModel;
+import de.jlab.scales.midi.song.Difficulties;
 import de.jlab.scales.midi.song.SongWrapper;
 import de.jlab.scales.theory.Note;
 
@@ -65,7 +65,7 @@ public class JamCard implements Card {
 
   private double computeDifficulty() {
     DifficultyModel model = new DifficultyModel();
-    double songDifficulty = new SongDifficultyModel().getSongDifficulty(wrapper.getSong());
+    double songDifficulty = Difficulties.getSongDifficulty(wrapper.getSong());
     model.doubleTerm(100).update(songDifficulty);
     model.doubleTerm(60, 140, 50).update(bpm);
     double difficulty = model.getDifficulty();

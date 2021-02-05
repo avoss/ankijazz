@@ -1,5 +1,6 @@
 package de.jlab.scales.midi.song;
 
+import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Diminished7;
 import static de.jlab.scales.theory.BuiltinChordType.DiminishedTriad;
@@ -39,24 +40,40 @@ import static de.jlab.scales.theory.BuiltinChordType.MinorMajor7;
 import static de.jlab.scales.theory.BuiltinChordType.MinorTriad;
 import static de.jlab.scales.theory.BuiltinChordType.PowerChord;
 import static de.jlab.scales.theory.BuiltinChordType.Sus4Triad;
+import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.D;
+import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
+import static de.jlab.scales.theory.Scales.CDominant7Pentatonic;
+import static de.jlab.scales.theory.Scales.CHarmonicMajor;
+import static de.jlab.scales.theory.Scales.CHarmonicMinor;
+import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
+import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
+import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
+import static de.jlab.scales.theory.Scales.CWholeTone;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 
 import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import de.jlab.scales.difficulty.DifficultyModel;
+import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleType;
-import de.jlab.scales.theory.Scales;
 
-// TODO rename to ScalesDifficulty or similar and add ScaleDifficulty (currently implemented in ModesPractice deck)
-public class SongDifficultyModel {
+public class Difficulties {
+  
+  private Difficulties() {}
 
-  static final ScaleType[] typesOrderedByDifficulty = {
+  static final ScaleType[] CHORD_TYPES_ORDERED_BY_DIFFICULTY = {
       PowerChord,
       MajorTriad,
       MinorTriad,
@@ -100,53 +117,79 @@ public class SongDifficultyModel {
       Dominant7sharp9flat13,
       
       Major7Sharp5,
-      
-      
   };
   
-  private static final List<Scale> scalesOrderedByDifficulty = 
-      Arrays.stream(typesOrderedByDifficulty)
-      .map(ScaleType::getPrototype)
-      .collect(Collectors.toList()); 
+  static final List<ScaleType> SCALE_TYPES_ORDERED_BY_DIFFICULTY = List.of(
+      Minor7Pentatonic,
+      Major,
+      Minor6Pentatonic,
+      MelodicMinor,
+      HarmonicMinor,
+      WholeTone,
+      DiminishedHalfWhole,
+      Dominant7Pentatonic,
+      HarmonicMajor
+  );
   
-
-  public double getSongDifficulty(Song song) {
+  private static final List<Scale> CHORDS_ORDERED_BY_DIFFICULTY = 
+      Arrays.stream(CHORD_TYPES_ORDERED_BY_DIFFICULTY)
+        .map(ScaleType::getPrototype)
+        .collect(Collectors.toList()); 
+  
+  public static double getSongDifficulty(Song song) {
     List<Scale> chords = song.getBars().stream()
-    .flatMap(bar -> bar.getChords().stream())
-    .map(chord -> chord.getScale())
-    .collect(toList());
+      .flatMap(bar -> bar.getChords().stream())
+      .map(chord -> chord.getScale())
+      .collect(toList());
     
-    IntSummaryStatistics statistics = chords.stream()
-      .mapToInt(this::getChordIndex)
+    DoubleSummaryStatistics statistics = chords.stream()
+      .mapToDouble(chord -> getChordDifficulty(chord))
       .summaryStatistics();
-    double chordDifficulty = statistics.getAverage() / scalesOrderedByDifficulty.size();
+    double chordDifficulty = statistics.getAverage();
     double numberOfDifferentChordsDifficulty = (double)chords.stream().collect(toSet()).size() / chords.size();
     
-    double numberOfAccidentals = (double)chords.stream()
-      .flatMap(chord -> chord.asList().stream())
-      .filter(note -> !Scales.CMajor.contains(note))
-      .collect(toSet()).size() / Note.values().length;
-
-    // System.out.println(String.format("%5f %5f %5f %s", chordDifficulty, numberOfDifferentChordsDifficulty, numberOfAccidentals, song));
-
     DifficultyModel model = new DifficultyModel();
     model.doubleTerm(120).update(chordDifficulty);
     model.doubleTerm(50).update(numberOfDifferentChordsDifficulty);
-    model.doubleTerm(30).update(numberOfAccidentals);
+    return model.getDifficulty();
+  }
+  
+  public static double getChordDifficulty(Scale chord) {
+    double chordTypeDifficulty = getChordTypeDifficulty(chord);
+    double accidentalDifficulty = getAccidentalDifficulty(chord);
+    DifficultyModel model = new DifficultyModel();
+    model.doubleTerm(120).update(chordTypeDifficulty);
+    model.doubleTerm(30).update(accidentalDifficulty);
     return model.getDifficulty();
   }
 
-  int getChordIndex(Scale chord) {
-    Scale transposed = chord.transpose(Note.C);
-    int index = scalesOrderedByDifficulty.indexOf(transposed);
-    if (index < 0) {
-      throw new IllegalArgumentException("Chord not found in difficulty list: " + chord.asChord());
-    }
-    return index;
+  private static double getAccidentalDifficulty(Scale chord) {
+    return (double)chord.asList().stream().filter(note -> !CMajor.contains(note)).collect(toSet()).size() / 6;
+  }
+
+  static double getChordTypeDifficulty(Scale chord) {
+    return getTypeDifficulty(chord.transpose(Note.C), CHORDS_ORDERED_BY_DIFFICULTY);
   }
   
-  public double getChordDifficulty(Scale chord) {
-    return getSongDifficulty(Song.of(Bar.of(Chord.of(chord, ""))));
+  private static double getScaleTypeDifficulty(ScaleType scaleType) {
+    return getTypeDifficulty(scaleType, SCALE_TYPES_ORDERED_BY_DIFFICULTY);
   }
+
+  private static <T> double getTypeDifficulty(T element, List<T> elements) {
+    int index = elements.indexOf(element);
+    if (index < 0) {
+      throw new IllegalArgumentException("Not found in difficulty list: " + element);
+    }
+    return (double)index / elements.size();
+  }
+
+  public static double getScaleDifficulty(ScaleInfo modeInfo) {
+    DifficultyModel model = new DifficultyModel();
+    model.doubleTerm(0, 6, 100).update(modeInfo.getKeySignature().getNumberOfAccidentals());
+    model.doubleTerm(100).update(getScaleTypeDifficulty(modeInfo.getScaleType()));
+    model.booleanTerm(25).update(modeInfo.isInversion());
+    return model.getDifficulty();
+  }
+
   
 }
