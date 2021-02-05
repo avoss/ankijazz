@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5flat9;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
@@ -33,7 +34,6 @@ import de.jlab.scales.fretboard2.MidiFretboardRenderer;
 import de.jlab.scales.fretboard2.NPS;
 import de.jlab.scales.fretboard2.PngFretboardRenderer;
 import de.jlab.scales.fretboard2.Position;
-import de.jlab.scales.fretboard2.Tunings;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
@@ -42,13 +42,12 @@ import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.ScaleUniverse;
+import de.jlab.scales.theory.Scales;
 
 public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGenerator<FretboardDiagramCard> {
   /**
    * TODO show fret number on answer page
    */
-  final int numberOfCards = 50;
-  
   private static final ScaleUniverse PENTAS = new ScaleUniverse(false, List.of(Minor7Pentatonic, Minor6Pentatonic));
 
   @lombok.Data
@@ -75,12 +74,13 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
     List<FretboardDiagramCard> result = new ArrayList<>();
-    Iterator<ChordPentaPair> pairs = loopIterator(findPairs());
-    Iterator<Note> roots = loopIterator(Arrays.asList(Note.values()));
-    Iterator<BoxPosition> boxes = loopIterator(Arrays.asList(BoxPosition.values()));
-    Iterator<Integer> strings = loopIterator(IntStream.range(0, Tunings.STANDARD_TUNING.getStrings().size()).boxed().collect(Collectors.toList()));
-    for (int i = 0; i < numberOfCards; i++) {
-      result.add(createCard(pairs.next(), roots.next(), boxes.next(), strings.next()));
+    Iterator<Note> roots = loopIterator(Scales.CMajor.asList());
+    for (ChordPentaPair pair : findPairs()) {
+      for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string ++) {
+        for (BoxPosition box : BoxPosition.values()) {
+          result.add(createCard(pair, roots.next(), box, string));
+        }
+      }
     }
     return result;
   }

@@ -144,7 +144,7 @@ public class Fretboard {
         break;
       }
       sb.append("|");
-      for (int i = 1; i < 15; i++) {
+      for (int i = 1; i < 24; i++) {
         switch (string.markerOf(i)) {
         case EMPTY:
           sb.append("---|");

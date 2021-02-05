@@ -2,6 +2,7 @@ package de.jlab.scales.fretboard2;
 
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
+import static de.jlab.scales.fretboard2.StandardTuning.A_STRING;
 import static de.jlab.scales.fretboard2.StandardTuning.G_STRING;
 import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
@@ -88,9 +89,23 @@ public class BoxMarkerTest {
   }
 
   @Test
+  public void testE7Sharp5Flat9RightLeft() {
+    Fretboard fretboard = new Fretboard();
+    Fingering fingering = NPS.C_MINOR6_PENTATONIC.transpose(Note.F);
+    Position left = Marker.box(fretboard, A_STRING, Note.E, LEFT, fingering);
+    Position right = Marker.box(fretboard, A_STRING, Note.E, RIGHT, fingering);
+    /*
+     * some scales in some positions have no left/right because root is exactly
+     * in the center. If we force one of them to the left or right, it would
+     * be too far away from the requested fret. 
+     */
+    assertEquals(left, right);
+  }
+  
+  @Test
   public void transposeImprovesQuality() {
     Fretboard fretboard = new Fretboard();
-    Position position = Marker.box(fretboard, 5, Note.F, RIGHT, NPS.C_MAJOR_CAGED);
+    Position position = Marker.box(fretboard, HIGH_E_STRING, Note.F, RIGHT, NPS.C_MAJOR_CAGED);
     assertEquals("12 13 15|12 14 15|12 14 15|12 14|12 13 15|12 13 15", position.toString());
   }
 
@@ -109,14 +124,14 @@ public class BoxMarkerTest {
 
     for (int stringIndex = 0; stringIndex < STANDARD_TUNING.getStrings().size(); stringIndex++) {
       for (BoxPosition boxPosition : BoxPosition.values()) {
-        Fretboard fretboard = new Fretboard();
-        Position position = Marker.box(fretboard, stringIndex, root, boxPosition, fingering);
-        List<Integer> markedFrets = fretboard.getString(stringIndex).nonEmptyMarkerFrets().boxed().collect(Collectors.toList());
-        assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard), 1, markedFrets.size());
+        Fretboard fretboard1 = new Fretboard();
+        Position position = Marker.box(fretboard1, stringIndex, root, boxPosition, fingering);
+        List<Integer> markedFrets = fretboard1.getString(stringIndex).nonEmptyMarkerFrets().boxed().collect(Collectors.toList());
+        assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard1), 1, markedFrets.size());
         int markedFret = markedFrets.get(0);
 
-        fretboard = new Fretboard(position, Marker.outline(scale));
-        assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard), Marker.ROOT, fretboard.getString(stringIndex).markerOf(markedFret));
+        Fretboard fretboard2 = new Fretboard(position, Marker.outline(scale));
+        assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard2), Marker.ROOT, fretboard2.getString(stringIndex).markerOf(markedFret));
       }
     }
   }
