@@ -9,7 +9,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.nio.file.Path;
-import java.util.Collections;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -34,10 +33,12 @@ public class FretboardDiagramCard implements Card {
   private ScaleInfo scaleInfo;
   private double difficulty;
   private String title;
+  private int fretNumber;
 
   @lombok.Builder
-  private FretboardDiagramCard(String title, ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
+  private FretboardDiagramCard(String title, int fretNumber, ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
     this.title = title;
+    this.fretNumber = fretNumber;
     this.chordInfo = chordInfo;
     this.scaleInfo = scaleInfo;
     this.frontImage = frontImage;
@@ -94,6 +95,7 @@ public class FretboardDiagramCard implements Card {
   public String getCsv() {
     return Stream.of(
         getTitle(),
+        getFretNumber(),
         getScaleName(),
         getScaleTypeName(),
         getScaleRootName(),
@@ -110,6 +112,7 @@ public class FretboardDiagramCard implements Card {
   public Map<String, Object> getJson() {
     Map<String, Object> map = new LinkedHashMap<>();
     map.put("title", getTitle());
+    map.put("fretNumber", getFretNumber());
     map.put("scaleName", getScaleName());
     map.put("scaleTypeName", getScaleTypeName());
     map.put("scaleRootName", getScaleRootName());
@@ -173,5 +176,7 @@ public class FretboardDiagramCard implements Card {
   public ScaleInfo getScaleInfo() {
     return scaleInfo;
   }
-  
+  public String getFretNumber() {
+    return Integer.toString(fretNumber);
+  }  
 }

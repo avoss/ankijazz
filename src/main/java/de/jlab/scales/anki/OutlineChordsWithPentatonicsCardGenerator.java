@@ -126,6 +126,7 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     String title = String.format("Outline %s Chord", chordInfo.getScaleName());
     return FretboardDiagramCard.builder()
         .title(title)
+        .fretNumber(backBoard.getMinFret())
         .chordInfo(chordInfo)
         .scaleInfo(pentaInfo)
         .frontImage(frontImage)
