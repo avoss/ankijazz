@@ -71,6 +71,13 @@ public final class Utils {
     return ANKI_JAZZ.concat(Integer.toHexString(hash.asInt()));
   }
 
+  public static String assetId(byte[] bytes1, byte[] bytes2) {
+    byte[] allBytes = new byte[bytes1.length + bytes2.length];
+    System.arraycopy(bytes1, 0, allBytes, 0, bytes1.length);
+    System.arraycopy(bytes2, 0, allBytes, bytes1.length, bytes2.length);
+    return Utils.assetId(allBytes);
+  }
+  
   /**
    * symmetrical scales, when transposed, can result in the same scale as the original. This method returns true
    * if the mode is either the parent scale, or a mode that is not equal to the parent scale. 
@@ -207,4 +214,5 @@ public final class Utils {
     part.perform(mf);
     mf.save(path);
   }
+  
 }

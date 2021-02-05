@@ -136,10 +136,7 @@ public class JamCard implements Card {
     part.perform(midiOut);
     byte[] midiBytes = midiFile.getBytes();
     byte[] songBytes = song.toString().getBytes(Charsets.UTF_8);
-    byte[] allBytes = new byte[midiBytes.length + songBytes.length];
-    System.arraycopy(midiBytes, 0, allBytes, 0, midiBytes.length);
-    System.arraycopy(songBytes, 0, allBytes, midiBytes.length, songBytes.length);
-    return Utils.assetId(allBytes);
+    return Utils.assetId(midiBytes, songBytes);
   }
 
   @Override

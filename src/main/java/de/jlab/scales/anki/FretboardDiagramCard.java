@@ -1,12 +1,18 @@
 package de.jlab.scales.anki;
 
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.UncheckedIOException;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.Map;
 import java.util.function.Supplier;
 
+import javax.imageio.ImageIO;
+
 import de.jlab.scales.Utils;
+import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
 
 public class FretboardDiagramCard implements Card {
@@ -22,7 +28,7 @@ public class FretboardDiagramCard implements Card {
     this.frontImage = frontImage;
     this.backImage = backImage;
     this.backMidi = backMidi;
-    assetId = Utils.uuid();
+    this.assetId = computeAssetId();
   }
 
   @Override
@@ -36,6 +42,23 @@ public class FretboardDiagramCard implements Card {
     return assetId;
   }
 
+  private String computeAssetId() {
+    try {
+      MidiFile midiFile = new MidiFile();
+      Part part = backMidi.get();
+      part.perform(midiFile);
+      byte[] midiBytes = midiFile.getBytes();
+
+      ByteArrayOutputStream bos = new ByteArrayOutputStream();
+      ImageIO.write(backImage.get(), "png", bos);
+      byte[] imageBytes = bos.toByteArray();
+
+      return Utils.assetId(midiBytes, imageBytes);
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
+  }
+  
   public String getChordName() {
     return chordName;
   }

@@ -1,5 +1,7 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
+import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5flat9;
@@ -15,13 +17,10 @@ import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
@@ -77,8 +76,12 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
     Iterator<Note> roots = loopIterator(Scales.CMajor.asList());
     for (ChordPentaPair pair : findPairs()) {
       for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string ++) {
-        for (BoxPosition box : BoxPosition.values()) {
-          result.add(createCard(pair, roots.next(), box, string));
+        Note root = roots.next();
+        FretboardDiagramCard card1 = createCard(pair, root, LEFT, string);
+        FretboardDiagramCard card2 = createCard(pair, root, RIGHT, string);
+        result.add(card1);
+        if (!card1.getAssetId().equals(card2.getAssetId())) {
+          result.add(createCard(pair, roots.next(), RIGHT, string));
         }
       }
     }
