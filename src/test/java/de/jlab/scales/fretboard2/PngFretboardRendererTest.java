@@ -29,7 +29,7 @@ public class PngFretboardRendererTest {
     //Preview.preview(question);
     TestUtils.assertImageMatches(question, getClass(), "LydianCAGEDQuestion.png");
     
-    fretboard.mark(modePosition, Marker.marker(fLydian.getChord(0)));
+    fretboard.mark(modePosition, Marker.outline(fLydian.getChord(0)));
     BufferedImage answer = new PngFretboardRenderer(fretboard).render();
     //Preview.preview(answer);
     TestUtils.assertImageMatches(answer, getClass(), "LydianCAGEDAnswer.png");

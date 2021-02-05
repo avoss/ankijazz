@@ -113,7 +113,7 @@ public class OutlineChordsWithPentatonicsCardGenerator extends AbstractCardGener
 
     Fretboard backBoard = new Fretboard();
     backBoard.mark(string, rootFret, Marker.BACKGROUND);
-    backBoard.mark(position, Marker.marker(penta));
+    backBoard.mark(position, Marker.outline(penta));
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard).render();
     Supplier<Part> backMidi = () -> MidiFretboardRenderer.builder()
         .fretboard(backBoard)

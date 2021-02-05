@@ -43,7 +43,7 @@ public class FretboardTest {
   public void testToString() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Scale aMinorPentatonic = CMinor7Pentatonic.transpose(Note.A);
-    Function<Note, Marker> markers = Marker.marker(aMinorPentatonic);
+    Function<Note, Marker> markers = Marker.outline(aMinorPentatonic);
     Fretboard fretboard = new Fretboard(position, markers);
     fretboard.mark(0, 0, Marker.FOREGROUND);
     assertEquals(
@@ -61,7 +61,7 @@ public class FretboardTest {
   public void testGMajorScaleWithAMinorPentatonic() {
     Position position = NPS.C_MAJOR_CAGED.transpose(Note.G).getPositions().get(1);
     Scale aMinorPentatonic = CMinor7Pentatonic.transpose(Note.A);
-    Function<Note, Marker> markers = Marker.marker(aMinorPentatonic);
+    Function<Note, Marker> markers = Marker.outline(aMinorPentatonic);
     Fretboard fretboard = new Fretboard(position, markers);
     StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
     
@@ -142,7 +142,7 @@ public class FretboardTest {
       List<String> actual = new ArrayList<>();
       for (Position position : fingering.getPositions()) {
         Scale scale = position.getScale();
-        Function<Note, Marker> markers = Marker.marker(scale);
+        Function<Note, Marker> markers = Marker.outline(scale);
         Fretboard fretboard = new Fretboard(position, markers);
         StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
         List<String> rendered = renderer.render();

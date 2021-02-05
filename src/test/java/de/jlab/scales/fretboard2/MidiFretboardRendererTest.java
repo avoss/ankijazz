@@ -19,7 +19,7 @@ public class MidiFretboardRendererTest {
 
   @Test
   public void testForegroundAndBackground() {
-    Part part = builder(Marker.marker(Cmaj7))
+    Part part = builder(Marker.outline(Cmaj7))
       .renderForeground(true)
       .renderBackground(true)
       .foregroundIncludesRoot(true)
@@ -56,7 +56,7 @@ public class MidiFretboardRendererTest {
 
   @Test
   public void testForegroundOnlyNoRoot() {
-    Part part = builder(Marker.marker(Cmaj7))
+    Part part = builder(Marker.outline(Cmaj7))
         .renderForeground(true)
         .renderBackground(true)
         .build()

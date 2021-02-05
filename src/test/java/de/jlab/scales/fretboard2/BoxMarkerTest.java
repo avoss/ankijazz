@@ -115,7 +115,7 @@ public class BoxMarkerTest {
         assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard), 1, markedFrets.size());
         int markedFret = markedFrets.get(0);
 
-        fretboard = new Fretboard(position, Marker.marker(scale));
+        fretboard = new Fretboard(position, Marker.outline(scale));
         assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard), Marker.ROOT, fretboard.getString(stringIndex).markerOf(markedFret));
       }
     }

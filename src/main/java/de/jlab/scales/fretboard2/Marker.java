@@ -40,7 +40,7 @@ public enum Marker {
     return new BoxMarker(fretboard, string, root, boxPosition, fingering, marker).mark();
   }
 
-  public static Function<Note, Marker> marker(Scale foreground) {
+  public static Function<Note, Marker> outline(Scale foreground) {
     return marker(foreground.getRoot(), foreground);
   }
 
