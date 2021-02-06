@@ -34,11 +34,13 @@ public class FretboardDiagramCard implements Card {
   private double difficulty;
   private String title;
   private int fretNumber;
+  private int stringNumber;
 
   @lombok.Builder
-  private FretboardDiagramCard(String title, int fretNumber, ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
+  private FretboardDiagramCard(String title, int fretNumber, int stringNumber, ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
     this.title = title;
     this.fretNumber = fretNumber;
+    this.stringNumber = stringNumber;
     this.chordInfo = chordInfo;
     this.scaleInfo = scaleInfo;
     this.frontImage = frontImage;
@@ -96,6 +98,7 @@ public class FretboardDiagramCard implements Card {
     return Stream.of(
         getTitle(),
         getFretNumber(),
+        getStringNumber(),
         getScaleName(),
         getScaleTypeName(),
         getScaleRootName(),
@@ -113,6 +116,7 @@ public class FretboardDiagramCard implements Card {
     Map<String, Object> map = new LinkedHashMap<>();
     map.put("title", getTitle());
     map.put("fretNumber", getFretNumber());
+    map.put("stringNumber", getStringNumber());
     map.put("scaleName", getScaleName());
     map.put("scaleTypeName", getScaleTypeName());
     map.put("scaleRootName", getScaleRootName());
@@ -178,5 +182,8 @@ public class FretboardDiagramCard implements Card {
   }
   public String getFretNumber() {
     return Integer.toString(fretNumber);
-  }  
+  }
+  public String getStringNumber() {
+    return Integer.toString(stringNumber + 1);
+  }
 }
