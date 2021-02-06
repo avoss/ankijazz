@@ -36,7 +36,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   @lombok.Data
   @lombok.RequiredArgsConstructor
   protected static class ChordScalePair {
-    private final ScaleType chord;
+    private final Scale chord;
     private final Scale scale;
   }
   
@@ -51,6 +51,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   }
   
   protected abstract Collection<ChordScalePair> findPairs();
+  protected abstract String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo);
   
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
@@ -67,12 +68,12 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   }
 
   private FretboardDiagramCard createCard(ChordScalePair pair, Note root, BoxPosition box, int stringNumber) {
-    Scale chord = pair.getChord().getPrototype().transpose(root.ordinal());
+    Scale chord = pair.getChord().transpose(root.ordinal());
     ScaleInfo chordInfo = CHORDS.findFirstOrElseThrow(chord);
-    Scale penta = pair.getScale().transpose(root.ordinal());
-    ScaleInfo pentaInfo = SCALES.findFirstOrElseThrow(penta);
+    Scale scale = pair.getScale().transpose(root.ordinal());
+    ScaleInfo scaleInfo = SCALES.findFirstOrElseThrow(scale);
     
-    Fingering fingering = NPS.caged(pentaInfo.getScaleType()).transpose(penta.getRoot());
+    Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scale.getRoot());
     Fretboard frontBoard = new Fretboard();
     Position position = Marker.box(frontBoard, stringNumber, chord.getRoot(), box, fingering, Marker.BACKGROUND);
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
@@ -80,11 +81,11 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     int rootFret = findFirstMarkedFret(frontBoard, stringNumber);
 
     Fretboard backBoard = new Fretboard();
-    backBoard.mark(position, Marker.outline(penta));
+    backBoard.mark(position, Marker.outline(scale));
     backBoard.mark(stringNumber, rootFret, Marker.BACKGROUND);
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
-      if (penta.contains(chord.getRoot())) {
+      if (scale.contains(chord.getRoot())) {
         return MidiFretboardRenderer.builder()
             .fretboard(backBoard)
             .backgroundChord(chord)
@@ -101,13 +102,13 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .render();
     };
 
-    String title = String.format("Outline %s Chord", chordInfo.getScaleName());
+    String cardTitle = getCardTitle(chordInfo, scaleInfo);
     return FretboardDiagramCard.builder()
-        .title(title)
+        .title(cardTitle)
         .fretNumber(backBoard.getMinFret())
         .stringNumber(stringNumber)
         .chordInfo(chordInfo)
-        .scaleInfo(pentaInfo)
+        .scaleInfo(scaleInfo)
         .frontImage(frontImage)
         .backImage(backImage)
         .backMidi(backMidi)
