@@ -12,9 +12,8 @@ import static de.jlab.scales.theory.BuiltinChordType.Major7Sharp11;
 import static de.jlab.scales.theory.BuiltinChordType.Minor6;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
+import static de.jlab.scales.theory.ScaleUniverse.PENTAS;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -40,14 +39,9 @@ import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleType;
-import de.jlab.scales.theory.ScaleUniverse;
 import de.jlab.scales.theory.Scales;
 
 public class PentatonicsLevel3VisualizeChords extends AbstractCardGenerator<FretboardDiagramCard> {
-  /**
-   * TODO show fret number on answer page
-   */
-  private static final ScaleUniverse PENTAS = new ScaleUniverse(false, List.of(Minor7Pentatonic, Minor6Pentatonic));
 
   @lombok.Data
   @lombok.RequiredArgsConstructor

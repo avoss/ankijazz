@@ -1,6 +1,8 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.Utils.isSymmetricalDuplicate;
+import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
+import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;
@@ -27,7 +29,8 @@ public class ScaleUniverse implements Iterable<Scale> {
   public static final ScaleUniverse SCALES = new ScaleUniverse(false, SCALE_TYPES);
   public static final ScaleUniverse MODES = new ScaleUniverse(true, SCALE_TYPES);
   public static final ScaleUniverse CHORDS = new ScaleUniverse(false, CHORD_TYPES);
-  
+  public static final ScaleUniverse PENTAS = new ScaleUniverse(false, List.of(Minor7Pentatonic, Minor6Pentatonic));
+
   /**
    * TODO:
    * - add keysignature as separate pass, because superscales are required (chords, pentatonics)

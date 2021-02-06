@@ -45,15 +45,15 @@ progressions:
      progression: >-2 
        A7 D7 G7 C7 
 
-#   - title: Minor6 Pentatonics at b9 of altered Chord
-#     minor: false
-#     progression: >-2 
-#       A7#5b9 D7#5#9 G7#5b9 C7#5
-
-   - title: "Minor7 Pentatonics at #9 of altered Chord"
+   - title: Minor6 Pentatonics at b9 of altered Chord
      minor: false
      progression: >-2 
        A7#5b9 D7#5#9 G7#5b9 C7#5
+
+#   - title: "Minor7 Pentatonics at #9 of altered Chord"
+#     minor: false
+#     progression: >-2 
+#       A7#5b9 D7#5#9 G7#5b9 C7#5
 
    - title: Minor6 Pentatonics at minor 3rd of Minor7b5 Chord
      minor: true
