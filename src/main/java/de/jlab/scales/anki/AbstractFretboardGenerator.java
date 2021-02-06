@@ -11,10 +11,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.anki.AbstractFretboardGenerator.ChordScalePair;
+import de.jlab.scales.anki.AbstractFretboardGenerator.ScaleChordPair;
 import de.jlab.scales.fretboard2.Fingering;
 import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.GuitarString;
@@ -33,11 +34,18 @@ import de.jlab.scales.theory.Scales;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
 
-  @lombok.Data
   @lombok.RequiredArgsConstructor
-  protected static class ChordScalePair {
+  @lombok.ToString
+  @lombok.EqualsAndHashCode
+  protected static class ScaleChordPair {
     private final Scale chord;
     private final Scale scale;
+    public Scale getChord() {
+      return chord;
+    }
+    public Scale getScale() {
+      return scale;
+    }
   }
   
   private final String title;
@@ -50,14 +58,15 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     this.fileName = fileName;
   }
   
-  protected abstract Collection<ChordScalePair> findPairs();
+  protected abstract Collection<ScaleChordPair> findPairs();
   protected abstract String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo);
+  protected abstract Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord);
   
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
     List<FretboardDiagramCard> result = new ArrayList<>();
     Iterator<Note> roots = loopIterator(Scales.CMajor.asList());
-    for (ChordScalePair pair : findPairs()) {
+    for (ScaleChordPair pair : findPairs()) {
       for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string ++) {
         for (BoxPosition box : BoxPosition.values()) {
           result.add(createCard(pair, roots.next(), box, string));
@@ -67,7 +76,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     return result;
   }
 
-  private FretboardDiagramCard createCard(ChordScalePair pair, Note root, BoxPosition box, int stringNumber) {
+  private FretboardDiagramCard createCard(ScaleChordPair pair, Note root, BoxPosition box, int stringNumber) {
     Scale chord = pair.getChord().transpose(root.ordinal());
     ScaleInfo chordInfo = CHORDS.findFirstOrElseThrow(chord);
     Scale scale = pair.getScale().transpose(root.ordinal());
@@ -81,7 +90,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     int rootFret = findFirstMarkedFret(frontBoard, stringNumber);
 
     Fretboard backBoard = new Fretboard();
-    backBoard.mark(position, Marker.outline(scale));
+    backBoard.mark(position, getOutlineMarker(scale, chord));
     backBoard.mark(stringNumber, rootFret, Marker.BACKGROUND);
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
@@ -114,6 +123,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .backMidi(backMidi)
         .build();
   }
+
 
   private int findFirstMarkedFret(Fretboard fretboard, int stringIndex) {
     GuitarString string = fretboard.getString(stringIndex);

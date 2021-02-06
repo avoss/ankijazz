@@ -8,7 +8,7 @@ import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.Utils;
-import de.jlab.scales.anki.AbstractFretboardGenerator.ChordScalePair;
+import de.jlab.scales.anki.AbstractFretboardGenerator.ScaleChordPair;
 import de.jlab.scales.theory.Note;
 
 public class PentatonicsLevel3GeneratorTest {
@@ -16,7 +16,7 @@ public class PentatonicsLevel3GeneratorTest {
   @Test
   public void testGenerator() {
     PentatonicsLevel3Generator generator = new PentatonicsLevel3Generator(Utils.fixedLoopIteratorFactory());
-    assertThat(generator.findPairs().stream()).contains(new ChordScalePair(Major7.getPrototype(), Minor7Pentatonic.getPrototype().transpose(Note.E)));
+    assertThat(generator.findPairs().stream()).contains(new ScaleChordPair(Major7.getPrototype(), Minor7Pentatonic.getPrototype().transpose(Note.E)));
   }
   
   @Test
