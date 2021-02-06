@@ -26,7 +26,6 @@ import de.jlab.scales.theory.ScaleInfo;
 public class FretboardDiagramCard implements Card {
 
   private String assetId;
-  private String frontImageId;
   private Supplier<BufferedImage> frontImage;
   private Supplier<BufferedImage> backImage;
   private Supplier<Part> backMidi;
@@ -48,7 +47,6 @@ public class FretboardDiagramCard implements Card {
     this.backImage = backImage;
     this.backMidi = backMidi;
     this.assetId = computeAssetId();
-    this.frontImageId = computeFrontImageId();
     this.difficulty = computeDifficulty();
   }
 
@@ -79,10 +77,6 @@ public class FretboardDiagramCard implements Card {
     return Utils.assetId(midiBytes, imageBytes);
   }
 
-  private String computeFrontImageId() {
-    return Utils.assetId(imageBytes(frontImage.get()));
-  }
-  
   private byte[] imageBytes(BufferedImage image) {
     try {
       ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -172,7 +166,7 @@ public class FretboardDiagramCard implements Card {
   }
   
   public String getFrontPngName() {
-    return frontImageId.concat(".png");
+    return assetId.concat("f.png");
   }
   public String getBackPngName() {
     return assetId.concat(".png");

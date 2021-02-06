@@ -4,6 +4,7 @@ import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
 import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
 import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
+import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.ScaleUniverse.SCALES;
 
 import java.awt.image.BufferedImage;
@@ -14,8 +15,9 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
+import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.anki.AbstractFretboardGenerator.ScaleChordPair;
+import de.jlab.scales.anki.AbstractFretboardGenerator.ChordScaleAudio;
 import de.jlab.scales.fretboard2.Fingering;
 import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.GuitarString;
@@ -29,44 +31,34 @@ import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.Scales;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
 
-  @lombok.RequiredArgsConstructor
-  @lombok.ToString
-  @lombok.EqualsAndHashCode
-  protected static class ScaleChordPair {
+  @lombok.Data
+  protected static class ChordScaleAudio {
     private final Scale chord;
     private final Scale scale;
-    public Scale getChord() {
-      return chord;
-    }
-    public Scale getScale() {
-      return scale;
-    }
+    private final Scale audio;
   }
   
   private final String title;
   private final String fileName;
-  private LoopIteratorFactory iteratorFactory;
 
-  protected AbstractFretboardGenerator(LoopIteratorFactory iteratorFactory, String title, String fileName) {
-    this.iteratorFactory = iteratorFactory;
+  protected AbstractFretboardGenerator(String title, String fileName) {
     this.title = title;
     this.fileName = fileName;
   }
   
-  protected abstract Collection<ScaleChordPair> findPairs();
+  protected abstract Collection<ChordScaleAudio> findPairs();
   protected abstract String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo);
   protected abstract Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord);
   
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
     List<FretboardDiagramCard> result = new ArrayList<>();
-    Iterator<Note> roots = loopIterator(Scales.CMajor.asList());
-    for (ScaleChordPair pair : findPairs()) {
+    Iterator<Note> roots = Utils.loopIterator(Scales.CMajor.asList());
+    for (ChordScaleAudio pair : findPairs()) {
       for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string ++) {
         for (BoxPosition box : BoxPosition.values()) {
           result.add(createCard(pair, roots.next(), box, string));
@@ -76,35 +68,36 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     return result;
   }
 
-  private FretboardDiagramCard createCard(ScaleChordPair pair, Note root, BoxPosition box, int stringNumber) {
+  private FretboardDiagramCard createCard(ChordScaleAudio pair, Note root, BoxPosition box, int stringNumber) {
     Scale chord = pair.getChord().transpose(root.ordinal());
-    ScaleInfo chordInfo = CHORDS.findFirstOrElseThrow(chord);
+    ScaleInfo chordInfo = findChordInfo(chord);
     Scale scale = pair.getScale().transpose(root.ordinal());
-    ScaleInfo scaleInfo = SCALES.findFirstOrElseThrow(scale);
+    ScaleInfo scaleInfo = MODES.findFirstOrElseThrow(scale);
+    Scale audio = pair.getAudio().transpose(root.ordinal());
+    Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getParentInfo().getScale().getRoot());
     
-    Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scale.getRoot());
     Fretboard frontBoard = new Fretboard();
-    Position position = Marker.box(frontBoard, stringNumber, chord.getRoot(), box, fingering, Marker.BACKGROUND);
+    Position position = Marker.box(frontBoard, stringNumber, getFrontNote(chord, scale), box, fingering, frontMarker());
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
 
-    int rootFret = findFirstMarkedFret(frontBoard, stringNumber);
 
     Fretboard backBoard = new Fretboard();
     backBoard.mark(position, getOutlineMarker(scale, chord));
-    backBoard.mark(stringNumber, rootFret, Marker.BACKGROUND);
+    int rootFret = findFirstMarkedFret(frontBoard, stringNumber);
+    backBoard.mark(stringNumber, rootFret, frontMarker());
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
-      if (scale.contains(chord.getRoot())) {
+      if (scale.contains(getFrontNote(chord, scale))) {
         return MidiFretboardRenderer.builder()
             .fretboard(backBoard)
-            .backgroundChord(chord)
+            .backgroundChord(audio)
             .renderBackground(true)
             .build()
             .render();
       }
       return MidiFretboardRenderer.builder()
         .fretboard(backBoard)
-        .backgroundChord(chord)
+        .backgroundChord(audio)
         .renderForeground(true)
         .foregroundIncludesRoot(true)
         .build()
@@ -122,6 +115,18 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .backImage(backImage)
         .backMidi(backMidi)
         .build();
+  }
+
+  protected Marker frontMarker() {
+    return Marker.ROOT;
+  }
+
+  protected Note getFrontNote(Scale chord, Scale scale) {
+    return scale.getRoot();
+  }
+
+  protected ScaleInfo findChordInfo(Scale chord) {
+    return CHORDS.findFirstOrElseThrow(chord);
   }
 
 
@@ -144,10 +149,6 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   @Override
   public String getTitle() {
     return title;
-  }
-  
-  protected <U> Iterator<U> loopIterator(Collection<? extends U> collection) {
-    return iteratorFactory.iterator(collection);
   }
   
 }

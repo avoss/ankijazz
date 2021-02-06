@@ -26,17 +26,18 @@ import de.jlab.scales.theory.ScaleInfo;
 public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
 
   
-  public PentatonicsLevel3Generator(LoopIteratorFactory iteratorFactory) {
-    super(iteratorFactory, " Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
+  public PentatonicsLevel3Generator() {
+    super(" Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
   }
   
   @Override
-  protected Collection<ScaleChordPair> findPairs() {
-    List<ScaleChordPair> pairs = new ArrayList<>();
+  protected Collection<ChordScaleAudio> findPairs() {
+    List<ChordScaleAudio> pairs = new ArrayList<>();
     PentatonicChooser chooser = new PentatonicChooser();
     for (BuiltinChordType type : List.of(Minor7, Major7, Major7Sharp11, Major6, Dominant7sus4, Minor6, Dominant7, Dominant7sharp5flat9, Minor7b5)) {
-      Scale penta = chooser.chooseBest(type.getPrototype());
-      pairs.add(new ScaleChordPair(type.getPrototype(), penta));
+      Scale chord = type.getPrototype();
+      Scale penta = chooser.chooseBest(chord);
+      pairs.add(new ChordScaleAudio(chord, penta, chord));
     }
     return pairs;
   }
@@ -50,5 +51,16 @@ public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
   protected Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord) {
     return Marker.outline(scale);
   }
+  
+  @Override
+  protected Note getFrontNote(Scale chord, Scale scale) {
+    return chord.getRoot();
+  }
+
+  @Override
+  protected Marker frontMarker() {
+    return Marker.BACKGROUND;
+  }
+  
 
 }
