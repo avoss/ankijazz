@@ -26,6 +26,7 @@ import de.jlab.scales.theory.ScaleInfo;
 public class FretboardDiagramCard implements Card {
 
   private String assetId;
+  private String frontImageId;
   private Supplier<BufferedImage> frontImage;
   private Supplier<BufferedImage> backImage;
   private Supplier<Part> backMidi;
@@ -47,6 +48,7 @@ public class FretboardDiagramCard implements Card {
     this.backImage = backImage;
     this.backMidi = backMidi;
     this.assetId = computeAssetId();
+    this.frontImageId = computeFrontImageId();
     this.difficulty = computeDifficulty();
   }
 
@@ -68,17 +70,24 @@ public class FretboardDiagramCard implements Card {
   }
 
   private String computeAssetId() {
+    MidiFile midiFile = new MidiFile();
+    Part part = backMidi.get();
+    part.perform(midiFile);
+    byte[] midiBytes = midiFile.getBytes();
+    byte[] imageBytes = imageBytes(backImage.get());
+
+    return Utils.assetId(midiBytes, imageBytes);
+  }
+
+  private String computeFrontImageId() {
+    return Utils.assetId(imageBytes(frontImage.get()));
+  }
+  
+  private byte[] imageBytes(BufferedImage image) {
     try {
-      MidiFile midiFile = new MidiFile();
-      Part part = backMidi.get();
-      part.perform(midiFile);
-      byte[] midiBytes = midiFile.getBytes();
-
       ByteArrayOutputStream bos = new ByteArrayOutputStream();
-      ImageIO.write(backImage.get(), "png", bos);
-      byte[] imageBytes = bos.toByteArray();
-
-      return Utils.assetId(midiBytes, imageBytes);
+      ImageIO.write(image, "png", bos);
+      return bos.toByteArray();
     } catch (IOException e) {
       throw new UncheckedIOException(e);
     }
@@ -163,16 +172,16 @@ public class FretboardDiagramCard implements Card {
   }
   
   public String getFrontPngName() {
-    return assetId.concat("-Front.png");
+    return frontImageId.concat(".png");
   }
   public String getBackPngName() {
-    return assetId.concat("-Back.png");
+    return assetId.concat(".png");
   }
   public String backMidiName() {
-    return assetId.concat("-Back.midi");
+    return assetId.concat(".midi");
   }
   public String getBackMp3Name() {
-    return assetId.concat("-Back.mp3");
+    return assetId.concat(".mp3");
   }
   public ScaleInfo getChordInfo() {
     return chordInfo;
