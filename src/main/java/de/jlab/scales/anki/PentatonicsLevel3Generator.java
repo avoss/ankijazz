@@ -41,7 +41,7 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.Scales;
 
-public class PentatonicsLevel3VisualizeChords extends AbstractCardGenerator<FretboardDiagramCard> {
+public class PentatonicsLevel3Generator extends AbstractCardGenerator<FretboardDiagramCard> {
 
   @lombok.Data
   @lombok.RequiredArgsConstructor
@@ -50,7 +50,7 @@ public class PentatonicsLevel3VisualizeChords extends AbstractCardGenerator<Fret
     private final Scale penta;
   }
   
-  public PentatonicsLevel3VisualizeChords(LoopIteratorFactory iteratorFactory) {
+  public PentatonicsLevel3Generator(LoopIteratorFactory iteratorFactory) {
     super(iteratorFactory, " Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
   }
   
