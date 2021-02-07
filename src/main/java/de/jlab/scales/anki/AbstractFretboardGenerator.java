@@ -53,6 +53,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   protected abstract Collection<ChordScaleAudio> findPairs();
   protected abstract String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo);
   protected abstract Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord);
+  protected abstract boolean playScaleThenChord();
   
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
@@ -77,14 +78,13 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getParentInfo().getScale().getRoot());
     
     Fretboard frontBoard = new Fretboard();
-    Position position = Marker.box(frontBoard, stringNumber, getFrontNote(chord, scale), box, fingering, frontMarker());
+    Position position = Marker.box(frontBoard, stringNumber, getFrontNote(chord, scale), box, fingering, getFrontMarker());
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
-
 
     Fretboard backBoard = new Fretboard();
     backBoard.mark(position, getOutlineMarker(scale, chord));
     int rootFret = findFirstMarkedFret(frontBoard, stringNumber);
-    backBoard.mark(stringNumber, rootFret, frontMarker());
+    backBoard.mark(stringNumber, rootFret, getFrontMarker());
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
       if (scale.contains(getFrontNote(chord, scale))) {
@@ -92,6 +92,8 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
             .fretboard(backBoard)
             .backgroundChord(audio)
             .renderBackground(true)
+            .renderForeground(playScaleThenChord())
+            .foregroundIncludesRoot(chord.contains(scale.getRoot()))
             .build()
             .render();
       }
@@ -117,7 +119,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .build();
   }
 
-  protected Marker frontMarker() {
+  protected Marker getFrontMarker() {
     return Marker.ROOT;
   }
 

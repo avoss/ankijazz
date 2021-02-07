@@ -47,4 +47,8 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
   protected ScaleInfo findChordInfo(Scale chord) {
     return CHORDS.findFirstOrElseThrow(chord);
   }
+  @Override
+  protected boolean playScaleThenChord() {
+    return true;
+  }
 }

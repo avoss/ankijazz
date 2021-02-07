@@ -58,9 +58,13 @@ public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
   }
 
   @Override
-  protected Marker frontMarker() {
+  protected Marker getFrontMarker() {
     return Marker.BACKGROUND;
   }
-  
+
+  @Override
+  protected boolean playScaleThenChord() {
+    return false;
+  }
 
 }
