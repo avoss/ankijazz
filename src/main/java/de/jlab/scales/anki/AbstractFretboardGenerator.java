@@ -28,6 +28,11 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.Scales;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
+  
+  public interface Validator {
+    void validate(Fretboard frontBoard, Fretboard backBoard);
+    void validate(ScaleInfo chordInfo, ScaleInfo scaleInfo);
+  }
 
   @lombok.Data
   protected static class ChordScaleAudio {
@@ -38,8 +43,10 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   
   private final String title;
   private final String fileName;
+  private Validator validator;
 
-  protected AbstractFretboardGenerator(String title, String fileName) {
+  protected AbstractFretboardGenerator(Validator validator, String title, String fileName) {
+    this.validator = validator;
     this.title = title;
     this.fileName = fileName;
   }
@@ -69,6 +76,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     ScaleInfo chordInfo = findChordInfo(chord);
     Scale scale = pair.getScale().transpose(root.ordinal());
     ScaleInfo scaleInfo = MODES.findFirstOrElseThrow(scale);
+    validator.validate(chordInfo, scaleInfo);
     Scale audio = pair.getAudio().transpose(root.ordinal());
     Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getParentInfo().getScale().getRoot());
     
@@ -81,6 +89,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     if (!scale.contains(chord.getRoot())) {
       backBoard.markVisible(chord.getRoot(), Marker.ROOT);
     }
+    validator.validate(frontBoard, backBoard);
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
       if (playScaleThenChord()) {

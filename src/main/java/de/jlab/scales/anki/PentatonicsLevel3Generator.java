@@ -26,8 +26,8 @@ import de.jlab.scales.theory.ScaleInfo;
 public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
 
   
-  public PentatonicsLevel3Generator() {
-    super("Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
+  public PentatonicsLevel3Generator(Validator validator) {
+    super(validator, "Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
   }
   
   @Override

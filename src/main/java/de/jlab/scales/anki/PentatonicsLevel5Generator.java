@@ -7,7 +7,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 
-import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
@@ -18,8 +17,8 @@ import de.jlab.scales.theory.Scales;
 public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
 
   
-  public PentatonicsLevel5Generator() {
-    super("Pentatonics Level 5: Visualize Modes (Fretboard Diagrams)", "PentatonicsLevel5VisualizeModes");
+  public PentatonicsLevel5Generator(Validator validator) {
+    super(validator, "Pentatonics Level 5: Visualize Modes (Fretboard Diagrams)", "PentatonicsLevel5VisualizeModes");
   }
   
   @Override

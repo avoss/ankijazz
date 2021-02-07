@@ -15,9 +15,8 @@ import de.jlab.scales.theory.Scales;
 
 public class CagedLevel3Generator extends AbstractFretboardGenerator {
 
-  
-  public CagedLevel3Generator() {
-    super("CAGED Level 3: Visualize Modes and Arpeggios (Fretboard Diagrams)", "CAGEDLevel3VisualizeModes");
+  public CagedLevel3Generator(Validator validator) {
+    super(validator, "CAGED Level 3: Visualize Modes and Arpeggios (Fretboard Diagrams)", "CAGEDLevel3VisualizeModes");
   }
   
   @Override
