@@ -52,7 +52,7 @@ public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
 
   @Override
   protected Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale) {
-    return Marker.outline(chord.superimpose(scale.getRoot()));
+    return Marker.outline(chord);
   }
 
   @Override
