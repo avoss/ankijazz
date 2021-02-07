@@ -14,6 +14,7 @@ import java.util.function.Supplier;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
+import de.jlab.scales.fretboard2.Fretboard.Box;
 import de.jlab.scales.fretboard2.Fingering;
 import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.Marker;
@@ -85,6 +86,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
 
     Fretboard backBoard = new Fretboard();
+    backBoard.setBox(new Box(frontBoard.getMinFret(), frontBoard.getMaxFret()));
     backBoard.mark(position, getOutlineMarker(chord, scale));
     if (!scale.contains(chord.getRoot())) {
       backBoard.markVisible(chord.getRoot(), Marker.ROOT);
