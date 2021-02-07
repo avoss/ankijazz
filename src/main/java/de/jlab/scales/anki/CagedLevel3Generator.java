@@ -26,7 +26,8 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
 //    Scale scale = Scales.CMajor.superimpose(Note.G);
 //    Scale chord = scale.getChord(0);
 //    pairs.add(new ChordScaleAudio(chord, scale, chord));
-    for (Scale scale : Scales.commonModes(false)) {
+//    for (Scale scale : Scales.commonModes(false)) {
+    for (Scale scale : List.of(Scales.CMajor.superimpose(Note.F))) {
       Scale chord = scale.getChord(0);
       pairs.add(new ChordScaleAudio(chord, scale, chord));
     }

@@ -34,7 +34,8 @@ public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
   protected Collection<ChordScaleAudio> findPairs() {
     List<ChordScaleAudio> pairs = new ArrayList<>();
     PentatonicChooser chooser = new PentatonicChooser();
-    for (BuiltinChordType type : List.of(Minor7, Major7, Major7Sharp11, Major6, Dominant7sus4, Minor6, Dominant7, Dominant7sharp5flat9, Minor7b5)) {
+//    for (BuiltinChordType type : List.of(Minor7, Major7, Major7Sharp11, Major6, Dominant7sus4, Minor6, Dominant7, Dominant7sharp5flat9, Minor7b5)) {
+    for (BuiltinChordType type : List.of(Dominant7sharp5flat9)) {
       Scale chord = type.getPrototype();
       Scale penta = chooser.chooseBest(chord);
       pairs.add(new ChordScaleAudio(chord, penta, chord));
@@ -49,19 +50,9 @@ public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
 
   @Override
   protected Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord) {
-    return Marker.outline(scale);
+    return Marker.outline(scale.superimpose(chord.getRoot()));
   }
   
-  @Override
-  protected Note getFrontNote(Scale chord, Scale scale) {
-    return chord.getRoot();
-  }
-
-  @Override
-  protected Marker getFrontMarker() {
-    return Marker.BACKGROUND;
-  }
-
   @Override
   protected boolean playScaleThenChord() {
     return false;
