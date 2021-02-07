@@ -17,17 +17,14 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
 
   
   public CagedLevel3Generator() {
-    super(" CAGED Level 3: Visualize Modes and Arpeggios (Fretboard Diagrams)", "CAGEDLevel3VisualizeModes");
+    super("CAGED Level 3: Visualize Modes and Arpeggios (Fretboard Diagrams)", "CAGEDLevel3VisualizeModes");
   }
   
   @Override
   protected Collection<ChordScaleAudio> findPairs() {
     List<ChordScaleAudio> pairs = new ArrayList<>();
-//    Scale scale = Scales.CMajor.superimpose(Note.G);
-//    Scale chord = scale.getChord(0);
-//    pairs.add(new ChordScaleAudio(chord, scale, chord));
-//    for (Scale scale : Scales.commonModes(false)) {
-    for (Scale scale : List.of(Scales.CMajor.superimpose(Note.F))) {
+    for (Scale scale : Scales.commonModes(false)) {
+//    for (Scale scale : List.of(Scales.CMajor.superimpose(Note.F))) {
       Scale chord = scale.getChord(0);
       pairs.add(new ChordScaleAudio(chord, scale, chord));
     }
@@ -40,14 +37,20 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
   }
 
   @Override
-  protected Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord) {
+  protected Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale) {
     return Marker.outline(chord.superimpose(scale.getRoot()));
+  }
+  
+  @Override
+  protected boolean foregroundIncludesRoot(Scale chord, Scale scale) {
+    return chord.contains(scale.getRoot());
   }
 
   @Override
   protected ScaleInfo findChordInfo(Scale chord) {
     return CHORDS.findFirstOrElseThrow(chord);
   }
+  
   @Override
   protected boolean playScaleThenChord() {
     return true;

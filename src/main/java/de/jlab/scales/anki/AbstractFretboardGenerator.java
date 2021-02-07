@@ -46,7 +46,8 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   
   protected abstract Collection<ChordScaleAudio> findPairs();
   protected abstract String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo);
-  protected abstract Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord);
+  protected abstract Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale);
+  protected abstract boolean foregroundIncludesRoot(Scale chord, Scale scale);
   protected abstract boolean playScaleThenChord();
   
   @Override
@@ -76,18 +77,19 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
 
     Fretboard backBoard = new Fretboard();
-    backBoard.mark(position, getOutlineMarker(scale, chord));
-    backBoard.markVisible(chord.getRoot(), Marker.ROOT);
+    backBoard.mark(position, getOutlineMarker(chord, scale));
+    if (!scale.contains(chord.getRoot())) {
+      backBoard.markVisible(chord.getRoot(), Marker.ROOT);
+    }
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
-      boolean foregroundIncludesRoot = scale.contains(chord.getRoot());
       if (playScaleThenChord()) {
         return MidiFretboardRenderer.builder()
             .fretboard(backBoard)
             .backgroundChord(audio)
             .renderBackground(true)
             .renderForeground(true)
-            .foregroundIncludesRoot(foregroundIncludesRoot)
+            .foregroundIncludesRoot(foregroundIncludesRoot(chord, scale))
             .build()
             .render();
       }
@@ -95,7 +97,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .fretboard(backBoard)
         .backgroundChord(audio)
         .renderForeground(true)
-        .foregroundIncludesRoot(foregroundIncludesRoot)
+        .foregroundIncludesRoot(foregroundIncludesRoot(chord, scale))
         .build()
         .render();
     };

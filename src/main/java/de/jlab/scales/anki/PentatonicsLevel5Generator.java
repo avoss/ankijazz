@@ -26,8 +26,8 @@ public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
   protected Collection<ChordScaleAudio> findPairs() {
     List<ChordScaleAudio> pairs = new ArrayList<>();
     PentatonicChooser chooser = new PentatonicChooser();
-//    for (Scale scale : Scales.commonModes(false)) {
-    for (Scale scale : List.of(Scales.CMelodicMinor.superimpose(Note.B))) {
+    for (Scale scale : Scales.commonModes(false)) {
+//    for (Scale scale : List.of(Scales.CMelodicMinor.superimpose(Note.B))) {
       Scale chord = scale.getChord(0);
       Scale penta = chooser.chooseBest(chord);
       pairs.add(new ChordScaleAudio(penta, scale, chord));
@@ -41,10 +41,15 @@ public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
   }
 
   @Override
-  protected Function<Note, Marker> getOutlineMarker(Scale scale, Scale chord) {
+  protected Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale) {
     return Marker.outline(chord.superimpose(scale.getRoot()));
   }
 
+  @Override
+  protected boolean foregroundIncludesRoot(Scale chord, Scale scale) {
+    return chord.contains(scale.getRoot());
+  }
+  
   @Override
   protected ScaleInfo findChordInfo(Scale chord) {
     return PENTAS.findFirstOrElseThrow(chord);
