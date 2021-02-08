@@ -6,6 +6,7 @@ import static de.jlab.scales.theory.ScaleUniverse.MODES;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -62,7 +63,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
     List<FretboardDiagramCard> result = new ArrayList<>();
-    Iterator<Note> roots = Utils.loopIterator(Scales.CMajor.asList());
+    Iterator<Note> roots = getNoteIterator();
     for (ChordScaleAudio pair : findPairs()) {
       for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string ++) {
         for (BoxPosition box : BoxPosition.values()) {
@@ -71,6 +72,11 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
       }
     }
     return result;
+  }
+
+  protected Iterator<Note> getNoteIterator() {
+//    return Utils.loopIterator(Scales.CMajor.asList());
+    return Utils.loopIterator(Arrays.asList(Note.values()));
   }
 
   private FretboardDiagramCard createCard(ChordScaleAudio pair, Note root, BoxPosition box, int stringNumber) {

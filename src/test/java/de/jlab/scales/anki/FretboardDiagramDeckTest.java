@@ -1,23 +1,22 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.fretboard2.Fretboard.ROOTS_ONLY;
+import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
+import static de.jlab.scales.fretboard2.StandardTuning.LOW_E_STRING;
+import static java.util.stream.Collectors.toSet;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.TreeSet;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
-import de.jlab.scales.fretboard2.GuitarString;
-import de.jlab.scales.fretboard2.Marker;
-import de.jlab.scales.fretboard2.StringFretboardRenderer;
 import de.jlab.scales.midi.MockMidiOut;
 import de.jlab.scales.midi.NoteOn;
 import de.jlab.scales.midi.Part;
@@ -25,24 +24,23 @@ import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-import static de.jlab.scales.fretboard2.Fretboard.NON_EMPTY;
-import static de.jlab.scales.fretboard2.Fretboard.ROOTS_ONLY;
-import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
-import static de.jlab.scales.fretboard2.StandardTuning.LOW_E_STRING;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toSet;
-import static org.assertj.core.api.Assertions.*;
-
 public class FretboardDiagramDeckTest {
 
   class Validator implements AbstractFretboardGenerator.Validator {
 
+    Set<String> fretboards = new HashSet<>();
     
     @Override
     public void validate(Fretboard frontBoard, Fretboard backBoard) {
       assertThatFrontBoardRootIsBackBoardRoot(frontBoard, backBoard);
       assertNumberOfRootsOnBackBoard(backBoard);
       assertFrontAndBackHaveSameSize(frontBoard, backBoard);
+      assertNoDuplicateQuestionAnswerPair(frontBoard, backBoard);
+    }
+
+    private void assertNoDuplicateQuestionAnswerPair(Fretboard frontBoard, Fretboard backBoard) {
+      String string = frontBoard.toString().concat(backBoard.toString());
+      assertThat(fretboards.add(string)).isTrue().withFailMessage(() -> fretboards.toString());
     }
 
     @Override
@@ -133,8 +131,15 @@ public class FretboardDiagramDeckTest {
   }
 
   @Test
-  public void testCagedLevel3() {
-    CardGenerator<FretboardDiagramCard> generator = new CagedLevel3Generator(validator);
+  public void testCagedLevel5() {
+    CardGenerator<FretboardDiagramCard> generator = new CagedLevel5Generator(validator);
+    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.writeTo(deck, 0.1);
+  }
+  
+  @Test
+  public void testCagedLevel1() {
+    CardGenerator<FretboardDiagramCard> generator = new CagedLevel1Generator(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }

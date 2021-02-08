@@ -46,7 +46,7 @@ public class FretboardDiagramCard implements Card {
     this.frontImage = frontImage;
     this.backImage = backImage;
     this.backMidi = backMidi;
-    this.assetId = computeAssetId();
+    this.assetId = Utils.uuid(); //computeAssetId();
     this.difficulty = computeDifficulty();
   }
 
