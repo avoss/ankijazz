@@ -25,7 +25,7 @@ public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
 
   
   public PentatonicsLevel5Generator(Validator validator) {
-    super(validator, "Pentatonics Level 5: Visualize Modes (Fretboard Diagrams)", "PentatonicsLevel5VisualizeModes");
+    super(validator, "Pentatonics Level 5: Outline Modes (Fretboard Diagrams)", "PentatonicsLevel5OutlineModes");
   }
   
   @Override

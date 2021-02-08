@@ -19,7 +19,7 @@ import de.jlab.scales.theory.Scales;
 public class CagedLevel5Generator extends AbstractCagedGenerator {
 
   public CagedLevel5Generator(Validator validator) {
-    super(validator, "CAGED Level 5: Visualize Modes (Fretboard Diagrams)", "CAGEDLevel5VisualizeModes");
+    super(validator, "CAGED Level 5: Learn Modes (Fretboard Diagrams)", "CAGEDLevel5LearnModes");
   }
 
 }

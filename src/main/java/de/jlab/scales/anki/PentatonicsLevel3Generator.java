@@ -15,7 +15,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 
-import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.theory.BuiltinChordType;
@@ -28,7 +27,7 @@ public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
 
   
   public PentatonicsLevel3Generator(Validator validator) {
-    super(validator, "Pentatonics Level 3: Visualize Chords (Fretboard Diagrams)", "PentatonicsLevel3VisualizeChords");
+    super(validator, "Pentatonics Level 3: Outline Chords (Fretboard Diagrams)", "PentatonicsLevel3OutlineChords");
   }
   
   @Override

@@ -40,7 +40,7 @@ public class FretboardDiagramDeckTest {
 
     private void assertNoDuplicateQuestionAnswerPair(Fretboard frontBoard, Fretboard backBoard) {
       String string = frontBoard.toString().concat(backBoard.toString());
-      assertThat(fretboards.add(string)).isTrue().withFailMessage(() -> fretboards.toString());
+      assertThat(fretboards.add(string)).withFailMessage(() -> "Duplicate boards: " + backBoard.toString()).isTrue();
     }
 
     @Override
@@ -113,6 +113,13 @@ public class FretboardDiagramDeckTest {
   
   Validator validator = new Validator();
   Validator penta3Validator = new Penta3Validator();
+
+  @Test
+  public void testPentatonicsLevel1() {
+    CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel1Generator(validator);
+    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.writeTo(deck, 0.1);
+  }
   
   @Test
   public void testPentatonicsLevel3() {
@@ -131,16 +138,17 @@ public class FretboardDiagramDeckTest {
   }
 
   @Test
+  public void testCagedLevel1() {
+    CardGenerator<FretboardDiagramCard> generator = new CagedLevel1Generator(validator);
+    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.writeTo(deck, 0.1);
+  }
+
+  @Test
   public void testCagedLevel5() {
     CardGenerator<FretboardDiagramCard> generator = new CagedLevel5Generator(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
   
-  @Test
-  public void testCagedLevel1() {
-    CardGenerator<FretboardDiagramCard> generator = new CagedLevel1Generator(validator);
-    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.writeTo(deck, 0.1);
-  }
 }

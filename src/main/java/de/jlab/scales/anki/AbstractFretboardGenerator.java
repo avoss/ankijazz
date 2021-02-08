@@ -30,10 +30,12 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.Scales;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
-  
+
   public interface Validator {
     void validate(Fretboard frontBoard, Fretboard backBoard);
+
     void validate(ScaleInfo chordInfo, ScaleInfo scaleInfo);
+
     void validate(Supplier<Part> backMidi);
   }
 
@@ -42,6 +44,14 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     private final Scale chord;
     private final Scale scale;
     private final Scale audio;
+  }
+
+  @lombok.Data
+  protected static class CardData {
+    private final ChordScaleAudio chordScaleAudio;
+    private final Note root;
+    private final BoxPosition box;
+    private final int stringIndex;
   }
   
   private final String title;
@@ -53,30 +63,37 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     this.title = title;
     this.fileName = fileName;
   }
-  
+
   protected abstract Collection<ChordScaleAudio> findPairs();
+
   protected abstract String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo);
+
   protected abstract Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale);
+
   protected abstract boolean foregroundIncludesRoot(Scale chord, Scale scale);
+
   protected abstract boolean playScaleThenChord();
-  
+
   @Override
   public Collection<? extends FretboardDiagramCard> generate() {
     List<FretboardDiagramCard> result = new ArrayList<>();
-    Iterator<Note> roots = getNoteIterator();
+    for (CardData data: getCardData()) {
+      result.add(createCard(data.getChordScaleAudio(), data.getRoot(), data.getBox(), data.getStringIndex()));
+    }
+    return result;
+  }
+  
+  protected Collection<? extends CardData> getCardData() {
+    List<CardData> result = new ArrayList<>();
+    Iterator<Note> roots = Utils.loopIterator(Arrays.asList(Note.values()));
     for (ChordScaleAudio pair : findPairs()) {
-      for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string ++) {
+      for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string++) {
         for (BoxPosition box : BoxPosition.values()) {
-          result.add(createCard(pair, roots.next(), box, string));
+          result.add(new CardData(pair, roots.next(), box, string));
         }
       }
     }
     return result;
-  }
-
-  protected Iterator<Note> getNoteIterator() {
-//    return Utils.loopIterator(Scales.CMajor.asList());
-    return Utils.loopIterator(Arrays.asList(Note.values()));
   }
 
   private FretboardDiagramCard createCard(ChordScaleAudio pair, Note root, BoxPosition box, int stringNumber) {
@@ -87,7 +104,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     validator.validate(chordInfo, scaleInfo);
     Scale audio = pair.getAudio().transpose(root.ordinal());
     Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getParentInfo().getScale().getRoot());
-    
+
     Fretboard frontBoard = new Fretboard();
     Position position = Marker.box(frontBoard, stringNumber, getFrontRoot(chord, scale), box, fingering, Marker.ROOT);
 
@@ -100,36 +117,17 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
       if (playScaleThenChord()) {
-        return MidiFretboardRenderer.builder()
-            .fretboard(backBoard)
-            .backgroundChord(audio)
-            .renderBackground(true)
-            .renderForeground(true)
-            .foregroundIncludesRoot(foregroundIncludesRoot(chord, scale))
-            .build()
-            .render();
+        return MidiFretboardRenderer.builder().fretboard(backBoard).backgroundChord(audio).renderBackground(true).renderForeground(true)
+            .foregroundIncludesRoot(foregroundIncludesRoot(chord, scale)).build().render();
       }
-      return MidiFretboardRenderer.builder()
-        .fretboard(backBoard)
-        .backgroundChord(audio)
-        .renderForeground(true)
-        .foregroundIncludesRoot(foregroundIncludesRoot(chord, scale))
-        .build()
-        .render();
+      return MidiFretboardRenderer.builder().fretboard(backBoard).backgroundChord(audio).renderForeground(true).foregroundIncludesRoot(foregroundIncludesRoot(chord, scale)).build()
+          .render();
     };
     validator.validate(backMidi);
 
     String cardTitle = getCardTitle(chordInfo, scaleInfo);
-    return FretboardDiagramCard.builder()
-        .title(cardTitle)
-        .fretNumber(backBoard.getMinFret())
-        .stringNumber(stringNumber)
-        .chordInfo(chordInfo)
-        .scaleInfo(scaleInfo)
-        .frontImage(frontImage)
-        .backImage(backImage)
-        .backMidi(backMidi)
-        .build();
+    return FretboardDiagramCard.builder().title(cardTitle).fretNumber(backBoard.getMinFret()).stringNumber(stringNumber).chordInfo(chordInfo).scaleInfo(scaleInfo)
+        .frontImage(frontImage).backImage(backImage).backMidi(backMidi).build();
   }
 
   protected abstract Note getFrontRoot(Scale chord, Scale scale);
@@ -146,10 +144,10 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   public String getFileName() {
     return fileName;
   }
-  
+
   @Override
   public String getTitle() {
     return title;
   }
-  
+
 }
