@@ -5,7 +5,10 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -14,6 +17,10 @@ import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
 import de.jlab.scales.fretboard2.GuitarString;
 import de.jlab.scales.fretboard2.Marker;
+import de.jlab.scales.fretboard2.StringFretboardRenderer;
+import de.jlab.scales.midi.MockMidiOut;
+import de.jlab.scales.midi.NoteOn;
+import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
@@ -34,8 +41,7 @@ public class FretboardDiagramDeckTest {
     @Override
     public void validate(Fretboard frontBoard, Fretboard backBoard) {
       assertThatFrontBoardRootIsBackBoardRoot(frontBoard, backBoard);
-//      assertNumberOfRootsOnBackBoard(backBoard);
-//      assertNoDuplicateNotes(backBoard);
+      assertNumberOfRootsOnBackBoard(backBoard);
       assertFrontAndBackHaveSameSize(frontBoard, backBoard);
     }
 
@@ -44,23 +50,12 @@ public class FretboardDiagramDeckTest {
       assertThatChordIsContainedInScale(chordInfo.getScale(), scaleInfo.getScale());
     }
 
-    private void assertFrontAndBackHaveSameSize(Fretboard frontBoard, Fretboard backBoard) {
+    protected void assertFrontAndBackHaveSameSize(Fretboard frontBoard, Fretboard backBoard) {
       assertThat(frontBoard.getMinFret()).isEqualTo(backBoard.getMinFret());
       assertThat(frontBoard.getMaxFret()).isEqualTo(backBoard.getMaxFret());
     }
     
-    private void assertNoDuplicateNotes(Fretboard fretboard) {
-      List<MarkedFret> marked = fretboard.findMarkedFrets(NON_EMPTY);
-      Note prev = null;
-      List<Note> notes = marked.stream().map(f -> f.getNote()).collect(toList());
-      for (Note note : notes) {
-        assertThat(note).isNotEqualTo(prev);
-        prev = note;
-      }
-      
-    }
-
-    private void assertNumberOfRootsOnBackBoard(Fretboard backBoard) {
+    protected void assertNumberOfRootsOnBackBoard(Fretboard backBoard) {
       List<MarkedFret> roots = backBoard.findMarkedFrets(ROOTS_ONLY);
       assertThat(roots.stream().map(f -> f.getNote()).collect(toSet()).size()).isEqualTo(1);
       if (containsString(roots, HIGH_E_STRING)) {
@@ -86,6 +81,23 @@ public class FretboardDiagramDeckTest {
       assertThat(scale.contains(chord)).isTrue();
     }
 
+    @Override
+    public void validate(Supplier<Part> backMidi) {
+      assertNoDuplicateNotes(backMidi.get());
+    }
+
+    private void assertNoDuplicateNotes(Part part) {
+      MockMidiOut midiOut = new MockMidiOut();
+      part.perform(midiOut);
+      int prevPitch = -1;
+      int prevChannel = -1;
+      for (NoteOn note : midiOut.getNotes()) {
+        assertThat(note.getPitch() == prevPitch && note.getChannel() == prevChannel).isFalse();
+        prevPitch = note.getPitch();
+        prevChannel = note.getChannel();
+      }
+    }
+
   }
   
   class Penta3Validator extends Validator {
@@ -94,6 +106,10 @@ public class FretboardDiagramDeckTest {
       Set<Note> scaleNotes = scale.asSet();
       scaleNotes.removeAll(chord.asSet());
       assertThat(scaleNotes.size()).isLessThanOrEqualTo(2);
+    }
+    @Override
+    protected void assertNumberOfRootsOnBackBoard(Fretboard backBoard) {
+      // ignore
     }
   }
   
@@ -104,22 +120,22 @@ public class FretboardDiagramDeckTest {
   public void testPentatonicsLevel3() {
     CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel3Generator(penta3Validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-//    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
-//    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "PentatonicsLevel3VisualizeChords.json");
-//    TestUtils.writeTo(deck, 0.1);
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "PentatonicsLevel3VisualizeChords.json");
+    TestUtils.writeTo(deck, 0.1);
   }
   
   @Test
   public void testPentatonicsLevel5() {
     CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel5Generator(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-//    TestUtils.writeTo(deck, 0.1);
+    TestUtils.writeTo(deck, 0.1);
   }
 
   @Test
   public void testCagedLevel3() {
     CardGenerator<FretboardDiagramCard> generator = new CagedLevel3Generator(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-//    TestUtils.writeTo(deck, 0.1);
+    TestUtils.writeTo(deck, 0.1);
   }
 }

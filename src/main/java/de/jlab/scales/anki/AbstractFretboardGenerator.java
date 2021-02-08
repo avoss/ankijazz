@@ -33,6 +33,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   public interface Validator {
     void validate(Fretboard frontBoard, Fretboard backBoard);
     void validate(ScaleInfo chordInfo, ScaleInfo scaleInfo);
+    void validate(Supplier<Part> backMidi);
   }
 
   @lombok.Data
@@ -82,15 +83,12 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getParentInfo().getScale().getRoot());
     
     Fretboard frontBoard = new Fretboard();
-    Position position = Marker.box(frontBoard, stringNumber, chord.getRoot(), box, fingering, Marker.ROOT);
+    Position position = Marker.box(frontBoard, stringNumber, getFrontRoot(chord, scale), box, fingering, Marker.ROOT);
 
     Fretboard backBoard = new Fretboard();
     backBoard.setBox(new Box(frontBoard.getMinFret(), frontBoard.getMaxFret()));
     backBoard.mark(position, getOutlineMarker(chord, scale));
-    if (!scale.contains(chord.getRoot())) {
-      backBoard.markVisible(chord.getRoot(), Marker.ROOT);
-    }
-    applyParticularities(frontBoard, backBoard);
+    applyParticularities(frontBoard, backBoard, chord, scale);
     validator.validate(frontBoard, backBoard);
     Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
@@ -113,6 +111,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .build()
         .render();
     };
+    validator.validate(backMidi);
 
     String cardTitle = getCardTitle(chordInfo, scaleInfo);
     return FretboardDiagramCard.builder()
@@ -127,7 +126,9 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .build();
   }
 
-  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard) {
+  protected abstract Note getFrontRoot(Scale chord, Scale scale);
+
+  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard, Scale chord, Scale scale) {
     // do nothing
   }
 

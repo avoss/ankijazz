@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.fretboard2.Fretboard.ROOTS_ONLY;
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
 import static de.jlab.scales.theory.ScaleUniverse.PENTAS;
 
@@ -9,7 +10,9 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
 
+import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.fretboard2.Marker;
+import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
@@ -50,9 +53,13 @@ public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
     return String.format("Outline %s", scaleInfo.getScaleName());
   }
 
+  protected Note getFrontRoot(Scale chord, Scale scale) {
+    return scale.getRoot();
+  }
+
   @Override
   protected Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale) {
-    return Marker.outline(chord);
+    return Marker.outline(chord.superimpose(scale.getRoot()));
   }
 
   @Override
@@ -69,4 +76,20 @@ public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
   protected boolean playScaleThenChord() {
     return true;
   }
+  
+  // TODO copy/paste
+  private int cheatCount = 0;
+  @Override
+  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard, Scale chord, Scale scale) {
+    List<MarkedFret> front = frontBoard.findMarkedFrets(ROOTS_ONLY);
+    List<MarkedFret> back = backBoard.findMarkedFrets(ROOTS_ONLY);
+    if (!back.containsAll(front)) {
+      frontBoard.clear();
+      frontBoard.mark(back.get(0));
+      if (cheatCount++ > 3) {
+        throw new IllegalStateException("more than 3 positions were not found in CAGED system ... please check");
+      }
+    }
+  }
+  
 }

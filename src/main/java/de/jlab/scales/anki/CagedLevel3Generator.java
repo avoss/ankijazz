@@ -39,6 +39,11 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
   }
 
   @Override
+  protected Note getFrontRoot(Scale chord, Scale scale) {
+    return scale.getRoot();
+  }
+  
+  @Override
   protected Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale) {
     return Marker.outline(chord.superimpose(scale.getRoot()));
   }
@@ -57,17 +62,18 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
   protected boolean playScaleThenChord() {
     return true;
   }
-  
+
+  // TODO copy/paste
   private int cheatCount = 0;
   @Override
-  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard) {
+  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard, Scale chord, Scale scale) {
     List<MarkedFret> front = frontBoard.findMarkedFrets(ROOTS_ONLY);
     List<MarkedFret> back = backBoard.findMarkedFrets(ROOTS_ONLY);
     if (!back.containsAll(front)) {
       frontBoard.clear();
       frontBoard.mark(back.get(0));
       if (cheatCount++ > 3) {
-        System.out.println("more than 3 positions were not found in CAGED system ... please check");
+        throw new IllegalStateException("more than 3 positions were not found in CAGED system ... please check");
       }
     }
   }
