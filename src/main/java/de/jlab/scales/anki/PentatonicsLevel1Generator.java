@@ -17,7 +17,7 @@ public class PentatonicsLevel1Generator extends AbstractFretboardGenerator {
 
   
   public PentatonicsLevel1Generator(Validator validator) {
-    super(validator, "Pentatonics Level 1: Learn Positions (Fretboard Diagrams)", "PentatonicsLevel1LearnPositions");
+    super(validator, "Pentatonics Level 1: Scale Positions (Fretboard Diagrams)", "PentatonicsLevel1ScalePositions");
   }
   
   @Override
