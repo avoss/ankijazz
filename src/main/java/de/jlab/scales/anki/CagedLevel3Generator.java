@@ -6,25 +6,25 @@ import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
-public class CagedLevel5Generator extends AbstractCagedGenerator {
+public class CagedLevel3Generator extends AbstractCagedGenerator {
 
-  public CagedLevel5Generator(Validator validator) {
-    super(validator, "CAGED Level 5: Mode Positions with Chords highlighted (Fretboard Diagrams)", "CAGEDLevel5ModesWithChords");
+  public CagedLevel3Generator(Validator validator) {
+    super(validator, "CAGED Level 3: Mode Positions (Fretboard Diagrams)", "CAGEDLevel3ModePositions");
   }
- 
+  
   @Override
   protected Function<Note, Marker> getOutlineMarker(Scale chord, Scale scale) {
-    return Marker.outline(chord.superimpose(scale.getRoot()));
+    return Marker.outline(scale);
   }
   
   @Override
   protected boolean foregroundIncludesRoot(Scale chord, Scale scale) {
-    return chord.contains(scale.getRoot());
+    return true;
   }
-  
+
   @Override
   protected boolean playScaleThenChord() {
-    return true;
+    return false;
   }
 
 }

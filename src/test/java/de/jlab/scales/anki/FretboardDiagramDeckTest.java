@@ -145,6 +145,13 @@ public class FretboardDiagramDeckTest {
   }
 
   @Test
+  public void testCagedLevel3() {
+    CardGenerator<FretboardDiagramCard> generator = new CagedLevel3Generator(validator);
+    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.writeTo(deck, 0.1);
+  }
+  
+  @Test
   public void testCagedLevel5() {
     CardGenerator<FretboardDiagramCard> generator = new CagedLevel5Generator(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);

@@ -13,7 +13,7 @@ import de.jlab.scales.theory.Scales;
 public class CagedLevel1Generator extends AbstractCagedGenerator {
 
   public CagedLevel1Generator(Validator validator) {
-    super(validator, "CAGED Level 1: Learn Positions (Fretboard Diagrams)", "CAGEDLevel1LearnPositions");
+    super(validator, "CAGED Level 1: Scale Positions (Fretboard Diagrams)", "CAGEDLevel1ScalePositions");
   }
   
   @Override

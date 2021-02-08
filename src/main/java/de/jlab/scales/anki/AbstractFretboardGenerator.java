@@ -15,9 +15,9 @@ import java.util.function.Supplier;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
-import de.jlab.scales.fretboard2.Fretboard.Box;
 import de.jlab.scales.fretboard2.Fingering;
 import de.jlab.scales.fretboard2.Fretboard;
+import de.jlab.scales.fretboard2.Fretboard.Box;
 import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.fretboard2.MidiFretboardRenderer;
 import de.jlab.scales.fretboard2.NPS;
@@ -27,7 +27,6 @@ import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.Scales;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
 

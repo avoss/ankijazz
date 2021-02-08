@@ -5,21 +5,15 @@ import static de.jlab.scales.anki.AnkiUtils.ankiPng;
 import static java.util.stream.Collectors.joining;
 
 import java.awt.image.BufferedImage;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.nio.file.Path;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import javax.imageio.ImageIO;
-
 import de.jlab.scales.Utils;
 import de.jlab.scales.difficulty.Difficulties;
 import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.ScaleInfo;
 
@@ -67,27 +61,6 @@ public class FretboardDiagramCard implements Card {
     return assetId;
   }
 
-  private String computeAssetId() {
-    MidiFile midiFile = new MidiFile();
-    Part part = backMidi.get();
-    part.perform(midiFile);
-    byte[] midiBytes = midiFile.getBytes();
-    byte[] imageBytes = imageBytes(backImage.get());
-
-    return Utils.assetId(midiBytes, imageBytes);
-  }
-
-  private byte[] imageBytes(BufferedImage image) {
-    try {
-      ByteArrayOutputStream bos = new ByteArrayOutputStream();
-      ImageIO.write(image, "png", bos);
-      return bos.toByteArray();
-    } catch (IOException e) {
-      throw new UncheckedIOException(e);
-    }
-  }
-  
-  
   @Override
   public void writeAssets(Path directory) {
     Utils.writeImage(directory.resolve(getFrontPngName()), frontImage.get());
