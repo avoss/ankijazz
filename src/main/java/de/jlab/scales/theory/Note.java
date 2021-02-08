@@ -60,6 +60,10 @@ public enum Note {
     return transpose(5);
   }
 
+  public Note sharp4() {
+    return transpose(6);
+  }
+  
   public Note flat5() {
     return transpose(6);
   }

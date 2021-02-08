@@ -265,9 +265,20 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   
 
   public boolean isAlteredDominant() {
-    if (!isDominant())
+    if (!isDominant()) {
       return false;
+    }
+    if (isLydianDominant()) {
+      return false;
+    }
     return contains(root.flat5()) || contains(root.sharp5()) || contains(root.flat9()) || contains(root.sharp9());
+  }
+
+  public boolean isLydianDominant() {
+    if (!isDominant()) {
+      return false;
+    }
+    return contains(root.sharp4()) && contains(root.five()) && contains(root.nine()); // not sure about 9th, for scales its true, but not for chords ...
   }
   
   public boolean isInversionOf(Scale other) {
