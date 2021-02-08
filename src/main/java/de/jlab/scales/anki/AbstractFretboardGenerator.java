@@ -83,7 +83,6 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     
     Fretboard frontBoard = new Fretboard();
     Position position = Marker.box(frontBoard, stringNumber, chord.getRoot(), box, fingering, Marker.ROOT);
-    Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
 
     Fretboard backBoard = new Fretboard();
     backBoard.setBox(new Box(frontBoard.getMinFret(), frontBoard.getMaxFret()));
@@ -91,7 +90,9 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     if (!scale.contains(chord.getRoot())) {
       backBoard.markVisible(chord.getRoot(), Marker.ROOT);
     }
+    applyParticularities(frontBoard, backBoard);
     validator.validate(frontBoard, backBoard);
+    Supplier<BufferedImage> frontImage = () -> new PngFretboardRenderer(frontBoard, false).render();
     Supplier<BufferedImage> backImage = () -> new PngFretboardRenderer(backBoard, true).render();
     Supplier<Part> backMidi = () -> {
       if (playScaleThenChord()) {
@@ -124,6 +125,10 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .backImage(backImage)
         .backMidi(backMidi)
         .build();
+  }
+
+  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard) {
+    // do nothing
   }
 
   protected ScaleInfo findChordInfo(Scale chord) {

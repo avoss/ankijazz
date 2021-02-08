@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.OptionalInt;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -165,4 +166,40 @@ public class Fretboard {
     Collections.reverse(list);
     return list.stream().collect(Collectors.joining("\n")).concat("\n");
   }
+  
+  @lombok.Data
+  public class MarkedFret {
+    private final int stringNumber;
+    private final int fretNumber;
+    private final Note note;
+    private final Marker marker;
+  }
+  
+  public static final Predicate<MarkedFret> ROOTS_ONLY = (f) -> f.getMarker() == Marker.ROOT;
+  public static final Predicate<MarkedFret> NON_EMPTY = (f) -> f.getMarker() != Marker.EMPTY;
+  
+  public List<MarkedFret> findMarkedFrets(Predicate<MarkedFret> filter) {
+    List<MarkedFret> result = new ArrayList<>();
+    for (GuitarString string : getStrings()) {
+      for (int fret = getMinFret(); fret <= getMaxFret(); fret++) {
+        if (string.markerOf(fret) != Marker.EMPTY) {
+          MarkedFret markedFret = new MarkedFret(string.getStringIndex(), fret, string.noteOf(fret), string.markerOf(fret));
+          if (filter.test(markedFret))
+          result.add(markedFret);
+        }
+      }
+    }
+    return result;
+  }
+
+  public void clear() {
+    for (GuitarString string: strings) {
+      string.clear();
+    }
+  }
+
+  public void mark(MarkedFret fret) {
+    strings.get(fret.getStringNumber()).mark(fret.getFretNumber(), fret.getMarker());
+  }
+  
 }

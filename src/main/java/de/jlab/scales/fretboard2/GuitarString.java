@@ -61,4 +61,8 @@ public class GuitarString {
     }
   }
 
+  public void clear() {
+    marked.clear();
+  }
+
 }

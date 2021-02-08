@@ -1,5 +1,6 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.fretboard2.Fretboard.ROOTS_ONLY;
 import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
 
 import java.util.ArrayList;
@@ -7,6 +8,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.function.Function;
 
+import de.jlab.scales.fretboard2.Fretboard;
+import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
 import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
@@ -53,5 +56,19 @@ public class CagedLevel3Generator extends AbstractFretboardGenerator {
   @Override
   protected boolean playScaleThenChord() {
     return true;
+  }
+  
+  private int cheatCount = 0;
+  @Override
+  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard) {
+    List<MarkedFret> front = frontBoard.findMarkedFrets(ROOTS_ONLY);
+    List<MarkedFret> back = backBoard.findMarkedFrets(ROOTS_ONLY);
+    if (!back.containsAll(front)) {
+      frontBoard.clear();
+      frontBoard.mark(back.get(0));
+      if (cheatCount++ > 3) {
+        System.out.println("more than 3 positions were not found in CAGED system ... please check");
+      }
+    }
   }
 }

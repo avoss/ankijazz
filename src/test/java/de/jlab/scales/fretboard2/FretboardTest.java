@@ -15,8 +15,10 @@ import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.fretboard2.Fretboard.Box;
+import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.Scales;
 
 public class FretboardTest {
 
@@ -73,7 +75,6 @@ public class FretboardTest {
         "|---|-o-|---|-o-|---|\n" + //
         "|---|-R-|---|-•-|-o-|" , //
         renderer.toString());
-    
   }
 
   @Test
@@ -158,5 +159,27 @@ public class FretboardTest {
     fretboard.setBox(new Box(5, 7));
     assertThat(fretboard.getMinFret()).isEqualTo(5);
     assertThat(fretboard.getMaxFret()).isEqualTo(7);
+  }
+  
+  @Test
+  public void testClearMark() {
+    Position position = NPS.C_MINOR7_PENTATONIC.getPositions().get(0);
+    Fretboard fretboard = new Fretboard(position, Marker.outline(Scales.CMinor7Pentatonic));
+    List<MarkedFret> roots = fretboard.findMarkedFrets(Fretboard.ROOTS_ONLY);
+    fretboard.clear();
+    for (MarkedFret fret : roots) {
+      fretboard.mark(fret);
+    }
+    
+    StringFretboardRenderer renderer = new StringFretboardRenderer(fretboard);
+    
+    assertEquals(
+        "|-R-|---|---|\n" + //
+        "|---|---|---|\n" + //
+        "|---|---|---|\n" + //
+        "|---|---|-R-|\n" + //
+        "|---|---|---|\n" + //
+        "|-R-|---|---|" , //
+        renderer.toString());
   }
 }
