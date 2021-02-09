@@ -10,6 +10,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
+import de.jlab.scales.Utils;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.theory.Note;
@@ -19,7 +20,7 @@ public class JamDeckTest {
   class TestCardGenerator extends AbstractJamCardGenerator {
 
     protected TestCardGenerator() {
-      super("Test Jam Deck", Note.C, true);
+      super("Test Jam Deck", Note.C, true, Utils.fixedLoopIteratorFactory());
     }
 
     @Override
@@ -39,8 +40,12 @@ public class JamDeckTest {
   }
 
   @Test
-  public void testC() {
-    TestUtils.writeTo(new JamDeck(new TestCardGenerator()), 0.01);
+  public void writeTestDeck() {
+    JamDeck deck = new JamDeck(new TestCardGenerator());
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "JamDeckTest.txt");
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "JamDeckTest.json");
+    TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "JamDeckTest.html");
+    TestUtils.writeTo(deck, 0.01);
   }
 
 }

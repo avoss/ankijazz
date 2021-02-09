@@ -24,11 +24,17 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
   private final String title;
   private final String fileName;
   private final List<JamCard> cards = new ArrayList<>();
+  private final LoopIteratorFactory iteratorFactory;
   
   protected AbstractJamCardGenerator(String title, Note instrument, boolean withGuitar) {
+    this(title, instrument, withGuitar, Utils.randomLoopIteratorFactory());
+  }
+  
+  protected AbstractJamCardGenerator(String title, Note instrument, boolean withGuitar, LoopIteratorFactory iteratorFactory) {
     this.title = title;
     this.instrument = instrument;
     this.withGuitar = withGuitar;
+    this.iteratorFactory = iteratorFactory;
     this.fileName = "Jam".concat(instrument.name()).concat(withGuitar ? "Guitar" : "").concat("Deck");
 
     addCards();
@@ -40,7 +46,6 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
 
   protected void addCards(Set<Feature> features, Set<Supplier<Ensemble>> ensembles) {
     int numberOfCards = 0;
-    LoopIteratorFactory iteratorFactory = Utils.randomLoopIteratorFactory();
     SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
     for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
       if (withGuitar) {
