@@ -21,7 +21,7 @@ public class RenderContext {
       .numberOfBars(16)
       .withHeader(false)
       .withBarNumbers(false)
-      .repeat(2)
+      .repeat(1)
       .build();
   
   private int imageWidth;

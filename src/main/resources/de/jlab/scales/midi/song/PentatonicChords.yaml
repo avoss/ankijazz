@@ -6,59 +6,69 @@
 # these can be mixed.
 # Major progressions must be in key of C, minor progressions in key of Am
 
-id: Pentatonics
-title: Pentatonics
+id: PentatonicChords
+title: Practice to Outline Chords with Pentatonic Scales
 progressions:
 
-   - title: Minor7 Pentatonics at root of Minor7 Chord
+   - title: Outline Minor7 Chord
      minor: true
      progression: >-2 
         F#m7 Bm7 Em7 Am7
+     comment: Minor7 Pentatonic at root of Minor7 Chord
 
-   - title: Minor7 Pentatonics at major 3rd of Major7 Chord
+   - title: Outline  Major7 Chord
      minor: false
      progression: >-2 
-       AΔ7 DΔ7 GΔ7 CΔ7 
+       AΔ7 DΔ7 GΔ7 CΔ7
+     comment: Minor7 Pentatonic at major 3rd of Major7 Chord
 
-   - title: Minor7 Pentatonics at major 7th of Major7#11 Chord
+   - title: Outline Major7#11 Chord
      minor: false
      progression: >-2 
        AΔ7#11 DΔ7#11 GΔ7#11 CΔ7#11 
+     comment: Minor7 Pentatonic at major 7th of Major7#11 Chord
 
-   - title: Minor7 Pentatonics at 6th of Major 6 Chord
+   - title: Outline Major6 Chord
      minor: false
      progression: >-2 
        A6 D6 G6 C6 
+     comment: Minor7 Pentatonic at 6th of Major6 Chord
 
-   - title: Minor7 Pentatonics at 5th of Sus4 Chord
+   - title: Outline 7Sus4 Chord
      minor: false
      progression: >-2 
-       Asus4 Dsus4 Gsus4 Csus4 
+       A7sus4 D7sus4 G7sus4 C7sus4 
+     comment: Minor7 Pentatonics at 5th of 7Sus4 Chord
 
-   - title: Minor6 Pentatonics at root of Minor6 Chord
+   - title: Outline Minor6 Chord
      minor: true
      progression: >-2 
         F#m6 Bm6 Em6 Am6
+     comment: Minor6 Pentatonics at root of Minor6 Chord
 
-   - title: Minor6 Pentatonics at 5th of Dominant 7th Chord
+   - title: Outline Dominant 7th Chord
      minor: false
      progression: >-2 
        A7 D7 G7 C7 
+     comment: Minor6 Pentatonics at 5th of Dominant 7th Chord
 
-   - title: Minor6 Pentatonics at b9 of altered Chord
+   - title: Outline Altered Dominant Chord
      minor: false
      progression: >-2 
        A7#5b9 D7#5#9 G7#5b9 C7#5
+     comment: Minor6 Pentatonics at b9 of altered Chord
 
-#   - title: "Minor7 Pentatonics at #9 of altered Chord"
+#   - title: "Outline Altered Dominant Chord with Minor7 Pentatonic"
 #     minor: false
 #     progression: >-2 
 #       A7#5b9 D7#5#9 G7#5b9 C7#5
+#     comment: "Minor7 Pentatonics at #9 of altered Chord"
 
-   - title: Minor6 Pentatonics at minor 3rd of Minor7b5 Chord
+   - title: Outline Minor7b5 Chord
      minor: true
      progression: >-2 
         F#m7b5 Bm7b5 Em7b5 Am7b5
+     comment: Minor6 Pentatonics at minor 3rd of Minor7b5 Chord
 
    - title: Minor7 Pentatonics Mixed
      minor: false

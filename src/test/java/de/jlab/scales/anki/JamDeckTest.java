@@ -3,6 +3,8 @@ package de.jlab.scales.anki;
 import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Set;
 import java.util.function.Supplier;
 
@@ -46,6 +48,16 @@ public class JamDeckTest {
     TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "JamDeckTest.json");
     TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "JamDeckTest.html");
     TestUtils.writeTo(deck, 0.01);
+  }
+  
+  @Test
+  public void testFretboardJam() {
+    JamDeck deck = new JamDeck(new FretboardJamCardGenerator("Test", "FretboardJam", Utils.randomLoopIteratorFactory()));
+    Path ankiDir = Paths.get("build/anki");
+    deck.writeAnki(ankiDir); 
+    deck.writeHtml(ankiDir);
+    deck.writeJson(ankiDir);
+    deck.writeAssets(ankiDir);
   }
 
 }

@@ -26,14 +26,14 @@ import de.jlab.scales.theory.KeySignature;
 import de.jlab.scales.theory.Note;
 import lombok.Data;
 
-public class SongFactory {
+public class SongFactory  {
   private final Set<Feature> features;
   private final Map<Feature, List<? extends KeyFactory>> keyFactories = new HashMap<>();
   private final Map<Feature, ProgressionSet> progressionSets = new HashMap<>();
   private final Set<Song> songsGeneratedSoFar = new HashSet<>();
   private final LoopIteratorFactory iteratorFactory;
 
-  public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, SimpleBlues, JazzBlues, Pentatonics, EachKey, SomeKeys, AllKeys }
+  public enum Feature { Test, Workouts, Triads, TwoFiveOnes, ExtTwoFiveOnes, SimpleBlues, JazzBlues, EachKey, SomeKeys, AllKeys }
 
   interface KeyFactory {
     String getTitle();
