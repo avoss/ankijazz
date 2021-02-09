@@ -14,7 +14,8 @@ import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
 
 public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
-  private final String copyright = "(C) 2021 www.AnkiJazz.com - all rights reserved";
+//  private final String copyright = "(C) 2021 www.AnkiJazz.com - all rights reserved";
+  private final String copyright = "(C) 2021 www.AnkiJazz.com - Anki shared deck license";
   
   private static final double IMAGE_SIZE = 0.7;
 
