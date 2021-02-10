@@ -2,6 +2,7 @@ package de.jlab.scales.anki;
 
 import static de.jlab.scales.midi.song.Ensembles.funk;
 import static de.jlab.scales.midi.song.Ensembles.latin;
+import static de.jlab.scales.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.F;
@@ -12,18 +13,25 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
+import de.jlab.scales.midi.Part;
+import de.jlab.scales.midi.Parts;
+import de.jlab.scales.midi.Sequential;
 import de.jlab.scales.midi.song.Bar;
 import de.jlab.scales.midi.song.Chord;
 import de.jlab.scales.midi.song.Ensemble;
+import de.jlab.scales.midi.song.Ensembles;
+import de.jlab.scales.midi.song.NoteToMidiMapper;
 import de.jlab.scales.midi.song.Song;
 import de.jlab.scales.midi.song.SongWrapper;
 import de.jlab.scales.theory.Note;
@@ -37,11 +45,11 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final String fileName;
   private final LoopIteratorFactory iteratorFactory;
   private final RenderContext context = RenderContext.ANKI;
-  private final Iterator<SongWrapper> songFactory;
+  final Iterator<SongWrapper> songFactory;
   
-  final int minBpm = 60;
+  final int minBpm = 100;
   final int maxBpm = 130;
-  final int numberOfSongs = 20;
+  final int numberOfSongs = 5;
   final int chordsPerSong = 4;
   
 
@@ -81,20 +89,62 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
           .key("Mixed Keys")
           .progression(scaleInfo.getTypeName())
           .progressionSet(scaleInfo.getScaleType().getTypeName())
-          .song(createSong(pair.getChord()))
+          .song(createSong(pair))
           .build();
       return wrapper;
     }
+
+    class Melody {
+      private final int minPitch = 56;
+      private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, minPitch + 24);
+      boolean ascending;
+      private Iterator<Note> iterator;
+      private int melodyVelocity = 127;
+      
+      void start(Scale scale) {
+        ascending = !ascending;
+        List<Note> list = scale.asList();
+        list.add(list.get(0));
+        if (!ascending) {
+          Collections.reverse(list);
+        }
+        iterator = list.iterator();
+        if (ascending) {
+          mapper.resetToLowest();
+        } else {
+          mapper.resetToHighest();
+        }
+      }
+      
+      Part next() {
+        Sequential seq = Parts.seq();
+        for (int i = 4; i > 0; i--) {
+          if (iterator.hasNext()) {
+            Note note = iterator.next();
+            int pitch = mapper.nextClosest(note);
+            seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , 4));
+            seq.add(Parts.rest(4));
+          }
+        }
+        return seq;
+      }
+    }
     
-    private Song createSong(Scale chord) {
+    Melody melody = new Melody();
+    
+    private Song createSong(ScaleChordPair pair) {
+      Scale scale = pair.getScale();
       Iterator<Chord> chords = iteratorFactory.iterator(IntStream.range(0, chordsPerSong)
-        .mapToObj(i -> chord.transpose(roots.next()))
-        .map(scale -> new Chord(scale, ScaleUniverse.CHORDS.findFirstOrElseThrow(scale).getScaleName()))
+        .mapToObj(i -> pair.getChord().transpose(roots.next()))
+        .map(c -> new Chord(c, ScaleUniverse.CHORDS.findFirstOrElseThrow(c).getScaleName()))
         .collect(toList()));
-      List<Bar> bars = IntStream.range(0, context.getNumberOfBars())
+      List<Bar> bars = IntStream.range(0, context.getNumberOfBars()/2)
         .mapToObj(i -> chords.next())
-        .map(c -> Bar.of(c))
-        .collect(toList());
+        .flatMap(c -> {
+          Scale transposed = scale.transpose(c.getScale().getRoot());
+          melody.start(transposed);
+          return Stream.of(Bar.of(melody.next(), c), Bar.of(melody.next(), c)); 
+         }).collect(toList());
       return new Song(bars);
     }
 
@@ -119,7 +169,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
           new ScaleChordPair(CMajor.superimpose(A), Cm7.transpose(A)),
           new ScaleChordPair(CMajor.superimpose(B), Cm7b5.transpose(B)),
           
-          new ScaleChordPair(CMelodicMinor, C6),
+          new ScaleChordPair(CMelodicMinor, Cm6),
           new ScaleChordPair(CMelodicMinor.superimpose(F), C7.transpose(F)),
           new ScaleChordPair(CMelodicMinor.superimpose(B), C7sharp5.transpose(B)),
           
@@ -131,7 +181,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   }
 
   Supplier<Ensemble> getEnsemble(int bpm) {
-    return bpm < 90 ? () -> funk(bpm) : () -> latin(bpm);
+    return () -> latin(bpm);
   }
   
   @Override

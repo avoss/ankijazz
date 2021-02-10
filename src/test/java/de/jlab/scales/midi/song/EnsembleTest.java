@@ -1,7 +1,7 @@
 package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.midi.MidiUtils.midiPitchToNote;
-import static de.jlab.scales.midi.song.Ensembles.MELODY_MIDI_CHANNEL;
+import static de.jlab.scales.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
 import static de.jlab.scales.midi.song.MidiTestUtils.song;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;

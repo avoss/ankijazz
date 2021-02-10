@@ -22,7 +22,6 @@ import de.jlab.scales.midi.Program;
  *  </dl>
  */
 public class Ensembles {
-  public static final int MELODY_MIDI_CHANNEL = 15;
   private Ensembles() {}
   
   public static Ensemble latin(int tempo) {
@@ -30,6 +29,8 @@ public class Ensembles {
     ensemble.setDrumVolume(90);
     ensemble.setDrumPan(-20);
     ensemble.countIn(Drum.Cowbell, "x... x... x... x...");
+    ensemble.melody(Program.SynthStrings1, 100);
+    
     ensemble.percussive(Drum.BassDrum1)
       .bar("9... .... ..9. ....")
       .bar("..9. .... .... ....");
@@ -80,6 +81,8 @@ public class Ensembles {
     ensemble.setDrumVolume(85);
     ensemble.setDrumPan(-20);
     ensemble.countIn(Drum.Cowbell, "x... x... x... x...");
+    ensemble.melody(Program.SynthStrings1, 100);
+
     ensemble.percussive(Drum.BassDrum1)
       .bar("x..x ..x. ..x. ..x.")
       .bar("x..x ..x. .... ....");
