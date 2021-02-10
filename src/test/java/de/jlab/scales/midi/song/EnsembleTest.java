@@ -83,7 +83,7 @@ public class EnsembleTest {
     Bar b2 = Bar.of(m2, Chord.of(Scales.Cm7.transpose(Note.D), "Dm7"));
     Song song = Song.of(b1, b2);
     Part latin = Ensembles.latin(125).play(song, 2);
-    TestUtils.assertMidiMatches(latin, getClass(), "latinWitMelody.midi");
+    TestUtils.assertMidiMatches(latin, getClass(), "latinWithMelody.midi");
   }
   
 }
