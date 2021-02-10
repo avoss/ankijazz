@@ -1,9 +1,11 @@
 package de.jlab.scales.midi.song;
 
 import java.util.List;
+import java.util.Optional;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
+import de.jlab.scales.midi.Part;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
@@ -11,16 +13,27 @@ import lombok.Getter;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Bar {
   @EqualsAndHashCode.Include
-  private List<Chord> chords;
+  private final List<Chord> chords;
+  @EqualsAndHashCode.Include
+  private final Optional<Part> melody;
   
   private int beatsPerBar;
   private Interpolator interpolator;
   private Bar next;
 
+  public Bar(Part melody, List<Chord> chords) {
+    this.melody = Optional.of(melody);
+    this.chords = chords;
+  }
+  
   public Bar(List<Chord> chords) {
+    this.melody = Optional.empty();
     this.chords = chords;
   }
 
+  public static Bar of(Part melody, Chord ... chords) {
+    return new Bar(melody, List.of(chords));
+  }
   public static Bar of(Chord ... chords) {
     return new Bar(List.of(chords));
   }

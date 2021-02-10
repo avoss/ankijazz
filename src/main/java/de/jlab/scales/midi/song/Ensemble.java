@@ -35,6 +35,7 @@ public class Ensemble {
     this.timeSignature = timeSignature;
     this.beatsPerBar = timeSignature.getNumerator();
     this.tempo = tempo;
+    instruments.add(new MelodyInstrument(ticksPerBar));
   }
   
   public PercussiveInstrument percussive(Drum drum) {

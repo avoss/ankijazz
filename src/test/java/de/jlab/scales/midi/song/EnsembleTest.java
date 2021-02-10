@@ -1,6 +1,7 @@
 package de.jlab.scales.midi.song;
 
 import static de.jlab.scales.midi.MidiUtils.midiPitchToNote;
+import static de.jlab.scales.midi.song.Ensembles.MELODY_MIDI_CHANNEL;
 import static de.jlab.scales.midi.song.MidiTestUtils.song;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -18,6 +19,7 @@ import de.jlab.scales.midi.Program;
 import de.jlab.scales.midi.Tempo;
 import de.jlab.scales.midi.TimeSignature;
 import de.jlab.scales.theory.Note;
+import de.jlab.scales.theory.Scales;
 
 public class EnsembleTest {
   final TimeSignature timeSignature = Parts.timeSignature(3, 4);
@@ -70,6 +72,18 @@ public class EnsembleTest {
     TestUtils.assertMidiMatches(latin, getClass(), "latin.midi");
     Part funk = Ensembles.funk(90).play(song, 2);
     TestUtils.assertMidiMatches(funk, getClass(), "funk.midi");
+  }
+  
+  @Test
+  public void testMelody() {
+    // part length differs from bar length!
+    Part m1 = Parts.seq(Parts.note(MELODY_MIDI_CHANNEL, 60, 127, 1, 2), Parts.rest(1, 4));
+    Part m2 = Parts.note(MELODY_MIDI_CHANNEL, 62, 127, 1, 2);
+    Bar b1 = Bar.of(m1, Chord.of(Scales.Cm7, "Cm7"));
+    Bar b2 = Bar.of(m2, Chord.of(Scales.Cm7.transpose(Note.D), "Dm7"));
+    Song song = Song.of(b1, b2);
+    Part latin = Ensembles.latin(125).play(song, 2);
+    TestUtils.assertMidiMatches(latin, getClass(), "latinWitMelody.midi");
   }
   
 }
