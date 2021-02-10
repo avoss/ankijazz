@@ -1,10 +1,12 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.anki.FretboardJamCardGenerator.CAGED_MODES;
+import static de.jlab.scales.anki.FretboardJamCardGenerator.CAGED_SCALES;
+import static de.jlab.scales.anki.FretboardJamCardGenerator.PENTATONIC_CHORDS;
+import static de.jlab.scales.anki.FretboardJamCardGenerator.PENTATONIC_SCALES;
 import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
 
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Set;
 import java.util.function.Supplier;
 
@@ -52,12 +54,10 @@ public class JamDeckTest {
   
   @Test
   public void testFretboardJam() {
-    JamDeck deck = new JamDeck(new FretboardJamCardGenerator("Test", "FretboardJam", Utils.randomLoopIteratorFactory()));
-    Path ankiDir = Paths.get("build/anki");
-    deck.writeAnki(ankiDir); 
-    deck.writeHtml(ankiDir);
-    deck.writeJson(ankiDir);
-    deck.writeAssets(ankiDir);
+    TestUtils.writeTo(new JamDeck(new FretboardJamCardGenerator(PENTATONIC_SCALES, Utils.randomLoopIteratorFactory())), 0.2);
+    TestUtils.writeTo(new JamDeck(new FretboardJamCardGenerator(PENTATONIC_CHORDS, Utils.randomLoopIteratorFactory())), 0.2);
+    TestUtils.writeTo(new JamDeck(new FretboardJamCardGenerator(CAGED_SCALES, Utils.randomLoopIteratorFactory())), 0.2);
+    TestUtils.writeTo(new JamDeck(new FretboardJamCardGenerator(CAGED_MODES, Utils.randomLoopIteratorFactory())), 0.2);
   }
 
 }

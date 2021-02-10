@@ -12,7 +12,7 @@ public class FretboardJamCardGeneratorTest {
 
   @Test
   public void test() {
-    FretboardJamCardGenerator generator = new FretboardJamCardGenerator("Test", "FretboardJam", Utils.fixedLoopIteratorFactory());
+    FretboardJamCardGenerator generator = new FretboardJamCardGenerator(FretboardJamCardGenerator.CAGED_MODES, Utils.fixedLoopIteratorFactory());
     SongWrapper wrapper = generator.songFactory.next();
     Part part = Ensembles.latin(130).play(wrapper.getSong(), 2);
     TestUtils.assertMidiMatches(part, getClass(), "FretboardJamCardGeneratorTest.midi");
