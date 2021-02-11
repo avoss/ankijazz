@@ -128,7 +128,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       
       .pair(new ScaleChordPair(CMinor6Pentatonic, Cm6, "Outline Minor6 Chord"))
       .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(G), C7, "Outline Dominant 7th Chord"))
-      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Db), C7sharp5flat9, "Outline Altered Dominant Chord"))
+      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Db), C7sharp5, "Outline Altered Dominant Chord"))
       .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Eb), Cm7b5, "Outline Minor7b5 Chord"))
       .build(); 
   

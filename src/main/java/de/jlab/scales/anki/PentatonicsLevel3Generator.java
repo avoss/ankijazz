@@ -1,7 +1,7 @@
 package de.jlab.scales.anki;
 
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5flat9;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
 import static de.jlab.scales.theory.BuiltinChordType.Major6;
 import static de.jlab.scales.theory.BuiltinChordType.Major7;
@@ -34,7 +34,7 @@ public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
   protected Collection<ChordScaleAudio> findPairs() {
     List<ChordScaleAudio> pairs = new ArrayList<>();
     PentatonicChooser chooser = new PentatonicChooser();
-    for (BuiltinChordType type : List.of(Minor7, Major7, Major7Sharp11, Major6, Dominant7sus4, Minor6, Dominant7, Dominant7sharp5flat9, Minor7b5)) {
+    for (BuiltinChordType type : List.of(Minor7, Major7, Major7Sharp11, Major6, Dominant7sus4, Minor6, Dominant7, Dominant7sharp5, Minor7b5)) {
       Scale chord = type.getPrototype();
       Scale penta = chooser.chooseBest(chord);
       pairs.add(new ChordScaleAudio(chord, penta, chord));
