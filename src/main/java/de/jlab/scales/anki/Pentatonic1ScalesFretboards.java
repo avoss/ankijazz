@@ -17,7 +17,7 @@ public class Pentatonic1ScalesFretboards extends AbstractFretboardGenerator {
 
   
   public Pentatonic1ScalesFretboards(Validator validator) {
-    super(validator, "AnkiJazz Guitar - Pentatonics 1: Scale Positions (Fretboard Diagrams)", "Pentatonic1ScalesFretboards");
+    super(validator, "AnkiJazz Guitar - Pentatonics 1: Scales (Fretboard)", "Pentatonic1ScalesFretboards");
   }
   
   @Override

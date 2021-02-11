@@ -84,7 +84,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
 
   
   public static final Spec CAGED_MODES = Spec.builder()
-      .title("AnkiJazz Guitar - CAGED 4: Practice Mode Positions (Jam Tracks)")
+      .title("AnkiJazz Guitar - CAGED 4: Modes (Jamtracks)")
       .fileName("Caged4ModesJamtracks")
       .pair(new ScaleChordPair(CMajor, Scales.Cmaj7))
       .pair(new ScaleChordPair(CMajor.superimpose(D), Cm7.transpose(D)))
@@ -103,7 +103,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       .build(); 
 
   public static final Spec CAGED_SCALES = Spec.builder()
-      .title("AnkiJazz Guitar - CAGED 2: Practice Scale Positions (Jam Tracks) ")
+      .title("AnkiJazz Guitar - CAGED 2: Scales (Jamtracks)")
       .fileName("Caged2ScalesJamtracks")
       .pair(new ScaleChordPair(CMajor, Scales.Cmaj7))
       .pair(new ScaleChordPair(CMelodicMinor, Cm6))
@@ -111,14 +111,14 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       .build(); 
 
   public static final Spec PENTATONIC_SCALES = Spec.builder()
-      .title("AnkiJazz Guitar - Pentatonics 2: Practice Scale Positions (Jam Tracks)")
+      .title("AnkiJazz Guitar - Pentatonics 2: Scales (Jamtracks)")
       .fileName("Pentatonic2ScalesJamtracks")
       .pair(new ScaleChordPair(CMinor7Pentatonic, Cm7))
       .pair(new ScaleChordPair(CMinor6Pentatonic, Cm6))
       .build(); 
 
   public static final Spec PENTATONIC_CHORDS = Spec.builder()
-      .title("AnkiJazz Guitar - Pentatonics 4: Practice Outlined Chords (Jam Tracks)")
+      .title("AnkiJazz Guitar - Pentatonics 4: Outline Chords (Jamtracks)")
       .fileName("Pentatonic4ChordsJamtracks")
       .pair(new ScaleChordPair(CMinor7Pentatonic, Cm7, "Outline Minor7 Chord"))
       .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(E), Cmaj7, "Outline Major7 Chord"))

@@ -27,7 +27,7 @@ public class Pentatonic3ChordsFretboards extends AbstractFretboardGenerator {
 
   
   public Pentatonic3ChordsFretboards(Validator validator) {
-    super(validator, "AnkiJazz Guitar - Pentatonics 3: Outline Chords (Fretboard Diagrams)", "Pentatonic3ChordsFretboards");
+    super(validator, "AnkiJazz Guitar - Pentatonics 3: Outline Chords (Fretboard)", "Pentatonic3ChordsFretboards");
   }
   
   @Override

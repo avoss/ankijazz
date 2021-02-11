@@ -9,7 +9,7 @@ import de.jlab.scales.theory.Scale;
 public class Caged3ModesFretboards extends AbstractCagedGenerator {
 
   public Caged3ModesFretboards(Validator validator) {
-    super(validator, "AnkiJazz Guitar - CAGED 3: Mode Positions (Fretboard Diagrams)", "Caged3ModesFretboards");
+    super(validator, "AnkiJazz Guitar - CAGED 3: Modes (Fretboard)", "Caged3ModesFretboards");
   }
   
   @Override

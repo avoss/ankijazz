@@ -25,7 +25,7 @@ public class Pentatonic5ModesFretboards extends AbstractFretboardGenerator {
 
   
   public Pentatonic5ModesFretboards(Validator validator) {
-    super(validator, "AnkiJazz Guitar - Pentatonics 5: Outline Modes (Fretboard Diagrams)", "Pentatonic5ModesFretboards");
+    super(validator, "AnkiJazz Guitar - Pentatonics 5: Outline Modes (Fretboard)", "Pentatonic5ModesFretboards");
   }
   
   @Override
