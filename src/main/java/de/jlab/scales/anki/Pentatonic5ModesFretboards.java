@@ -21,11 +21,11 @@ import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.ScaleType;
 import de.jlab.scales.theory.Scales;
 
-public class PentatonicsLevel5Generator extends AbstractFretboardGenerator {
+public class Pentatonic5ModesFretboards extends AbstractFretboardGenerator {
 
   
-  public PentatonicsLevel5Generator(Validator validator) {
-    super(validator, "Pentatonics Level 5: Outline Modes (Fretboard Diagrams)", "PentatonicsLevel5OutlineModes");
+  public Pentatonic5ModesFretboards(Validator validator) {
+    super(validator, "AnkiJazz Guitar - Pentatonics 5: Outline Modes (Fretboard Diagrams)", "Pentatonic5ModesFretboards");
   }
   
   @Override

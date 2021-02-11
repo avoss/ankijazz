@@ -84,8 +84,8 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
 
   
   public static final Spec CAGED_MODES = Spec.builder()
-      .title("CAGED Level 4: Practice Mode Positions (Jam Tracks)")
-      .fileName("Caged4PracticeModes")
+      .title("AnkiJazz Guitar - CAGED 4: Practice Mode Positions (Jam Tracks)")
+      .fileName("Caged4ModesJamtracks")
       .pair(new ScaleChordPair(CMajor, Scales.Cmaj7))
       .pair(new ScaleChordPair(CMajor.superimpose(D), Cm7.transpose(D)))
       .pair(new ScaleChordPair(CMajor.superimpose(E), Cm7.transpose(E)))
@@ -103,23 +103,23 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       .build(); 
 
   public static final Spec CAGED_SCALES = Spec.builder()
-      .title("CAGED Level 2: Practice Scale Positions (Jam Tracks)")
-      .fileName("Caged2PracticeScales")
+      .title("AnkiJazz Guitar - CAGED 2: Practice Scale Positions (Jam Tracks) ")
+      .fileName("Caged2ScalesJamtracks")
       .pair(new ScaleChordPair(CMajor, Scales.Cmaj7))
       .pair(new ScaleChordPair(CMelodicMinor, Cm6))
       .pair(new ScaleChordPair(CHarmonicMinor, CminTriad))
       .build(); 
 
   public static final Spec PENTATONIC_SCALES = Spec.builder()
-      .title("Pentatonics 2: Practice Scale Positions (Jam Tracks)")
-      .fileName("Pentatonics2PracticeScales")
+      .title("AnkiJazz Guitar - Pentatonics 2: Practice Scale Positions (Jam Tracks)")
+      .fileName("Pentatonic2ScalesJamtracks")
       .pair(new ScaleChordPair(CMinor7Pentatonic, Cm7))
       .pair(new ScaleChordPair(CMinor6Pentatonic, Cm6))
       .build(); 
 
   public static final Spec PENTATONIC_CHORDS = Spec.builder()
-      .title("Pentatonics 4: Outline Chords(Jam Tracks)")
-      .fileName("Pentatonics4OutlineChords")
+      .title("AnkiJazz Guitar - Pentatonics 4: Practice Outlined Chords (Jam Tracks)")
+      .fileName("Pentatonic4ChordsJamtracks")
       .pair(new ScaleChordPair(CMinor7Pentatonic, Cm7, "Outline Minor7 Chord"))
       .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(E), Cmaj7, "Outline Major7 Chord"))
       .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(B), Cmaj7, "Outline Major7#11 Chord"))

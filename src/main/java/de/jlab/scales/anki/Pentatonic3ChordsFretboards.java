@@ -23,11 +23,11 @@ import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
-public class PentatonicsLevel3Generator extends AbstractFretboardGenerator {
+public class Pentatonic3ChordsFretboards extends AbstractFretboardGenerator {
 
   
-  public PentatonicsLevel3Generator(Validator validator) {
-    super(validator, "Pentatonics Level 3: Outline Chords (Fretboard Diagrams)", "PentatonicsLevel3OutlineChords");
+  public Pentatonic3ChordsFretboards(Validator validator) {
+    super(validator, "AnkiJazz Guitar - Pentatonics 3: Outline Chords (Fretboard Diagrams)", "Pentatonic3ChordsFretboards");
   }
   
   @Override

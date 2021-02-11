@@ -13,11 +13,11 @@ import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 import de.jlab.scales.theory.Scales;
 
-public class PentatonicsLevel1Generator extends AbstractFretboardGenerator {
+public class Pentatonic1ScalesFretboards extends AbstractFretboardGenerator {
 
   
-  public PentatonicsLevel1Generator(Validator validator) {
-    super(validator, "Pentatonics Level 1: Scale Positions (Fretboard Diagrams)", "PentatonicsLevel1ScalePositions");
+  public Pentatonic1ScalesFretboards(Validator validator) {
+    super(validator, "AnkiJazz Guitar - Pentatonics 1: Scale Positions (Fretboard Diagrams)", "Pentatonic1ScalesFretboards");
   }
   
   @Override

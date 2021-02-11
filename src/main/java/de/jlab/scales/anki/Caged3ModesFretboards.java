@@ -6,10 +6,10 @@ import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
-public class CagedLevel3Generator extends AbstractCagedGenerator {
+public class Caged3ModesFretboards extends AbstractCagedGenerator {
 
-  public CagedLevel3Generator(Validator validator) {
-    super(validator, "CAGED Level 3: Mode Positions (Fretboard Diagrams)", "CAGEDLevel3ModePositions");
+  public Caged3ModesFretboards(Validator validator) {
+    super(validator, "AnkiJazz Guitar - CAGED 3: Mode Positions (Fretboard Diagrams)", "Caged3ModesFretboards");
   }
   
   @Override

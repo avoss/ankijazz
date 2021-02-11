@@ -116,14 +116,14 @@ public class FretboardDiagramDeckTest {
 
   @Test
   public void testPentatonicsLevel1() {
-    CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel1Generator(validator);
+    CardGenerator<FretboardDiagramCard> generator = new Pentatonic1ScalesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
   
   @Test
   public void testPentatonicsLevel3() {
-    CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel3Generator(penta3Validator);
+    CardGenerator<FretboardDiagramCard> generator = new Pentatonic3ChordsFretboards(penta3Validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
     TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "PentatonicsLevel3VisualizeChords.json");
@@ -132,28 +132,28 @@ public class FretboardDiagramDeckTest {
   
   @Test
   public void testPentatonicsLevel5() {
-    CardGenerator<FretboardDiagramCard> generator = new PentatonicsLevel5Generator(validator);
+    CardGenerator<FretboardDiagramCard> generator = new Pentatonic5ModesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
 
   @Test
   public void testCagedLevel1() {
-    CardGenerator<FretboardDiagramCard> generator = new CagedLevel1Generator(validator);
+    CardGenerator<FretboardDiagramCard> generator = new Caged1ScalesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
 
   @Test
   public void testCagedLevel3() {
-    CardGenerator<FretboardDiagramCard> generator = new CagedLevel3Generator(validator);
+    CardGenerator<FretboardDiagramCard> generator = new Caged3ModesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
   
   @Test
   public void testCagedLevel5() {
-    CardGenerator<FretboardDiagramCard> generator = new CagedLevel5Generator(validator);
+    CardGenerator<FretboardDiagramCard> generator = new Caged5ArpeggiosFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
