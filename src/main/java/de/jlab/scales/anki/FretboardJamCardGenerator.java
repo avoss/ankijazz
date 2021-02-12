@@ -84,7 +84,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   public static final Spec CAGED_MODES = Spec.builder()
       .title("AnkiJazz Guitar - CAGED 4: Modes (Jamtracks)")
       .fileName("Caged4ModesJamtracks")
-      .pair(new ScaleChordPair(CMajor, Scales.Cmaj7))
+      .pair(new ScaleChordPair(CMajor, Cmaj7))
       .pair(new ScaleChordPair(CMajor.superimpose(D), Cm7.transpose(D)))
       .pair(new ScaleChordPair(CMajor.superimpose(E), Cm7.transpose(E)))
       .pair(new ScaleChordPair(CMajor.superimpose(F), Cmaj7.transpose(F)))
