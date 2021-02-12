@@ -11,7 +11,7 @@ import de.jlab.scales.midi.song.SongWrapper;
 public class FretboardJamCardGeneratorTest {
 
   @Test
-  public void test() {
+  public void testMidiMatches() {
     FretboardJamCardGenerator generator = new FretboardJamCardGenerator(FretboardJamCardGenerator.CAGED_MODES, Utils.fixedLoopIteratorFactory());
     SongWrapper wrapper = generator.songFactory.next();
     Part part = Ensembles.latin(130).play(wrapper.getSong(), 2);

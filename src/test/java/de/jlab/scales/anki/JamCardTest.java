@@ -26,7 +26,7 @@ public class JamCardTest {
   @Test
   public void testJson() {
     Map<String, Object> json = card().getJson();
-    assertEquals(8, json.size());
+    assertEquals(9, json.size());
     assertEquals("Funk", json.get("style"));
   }
   
