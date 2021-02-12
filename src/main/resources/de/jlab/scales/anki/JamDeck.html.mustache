@@ -28,18 +28,23 @@
         <p>
           <img src="{{position.image}}">
         </p>
-        {{/withGuitar}} <img class="card-img-top" src="{{pngName}}">
+        {{/withGuitar}} 
+        <img class="card-img-top" src="{{pngName}}">
         <p class="card-text text-center">
           <audio controls src="{{mp3Name}}"></audio>
         </p>
+        <p>{{comment}}</p>
         <p class="card-text">Fields:</p>
         <ul>
           <li>Title: {{progression}}</li>
+          <li>Comment: {{comment}}</li>
           <li>Type: {{type}}</li>
           <li>Key: {{key}}</li>
           <li>Style: {{style}}</li>
-          <li>Tempo: {{tempo}}</li> {{#withGuitar}}
-          <li>Position: {{position.label}}</li> {{/withGuitar}}
+          <li>Tempo: {{tempo}}</li> 
+          {{#withGuitar}}
+          <li>Position: {{position.label}}</li> 
+          {{/withGuitar}}
         </ul>
       </div>
     </div>

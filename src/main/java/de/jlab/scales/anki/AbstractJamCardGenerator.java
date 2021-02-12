@@ -51,13 +51,24 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
       if (withGuitar) {
         for (FretboardPosition position : FretboardPosition.values()) {
           for (Supplier<Ensemble> ensemble : ensembles) {
-            cards.add(new JamCard(instrument, context, wrapper, ensemble, position));
+            cards.add(JamCard.builder()
+              .instrument(instrument)
+              .context(context)
+              .wrapper(wrapper)
+              .ensembleSupplier(ensemble)
+              .position(position)
+              .build());
             numberOfCards ++;
           }
         }
       } else {
         for (Supplier<Ensemble> ensemble : ensembles) {
-          cards.add(new JamCard(instrument, context, wrapper, ensemble));
+          cards.add(JamCard.builder()
+              .instrument(instrument)
+              .context(context)
+              .wrapper(wrapper)
+              .ensembleSupplier(ensemble)
+              .build());
           numberOfCards ++;
         }
       }

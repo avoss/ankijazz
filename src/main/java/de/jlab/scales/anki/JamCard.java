@@ -40,20 +40,13 @@ public class JamCard implements Card {
   private final int bpm;
   private final String style;
   
-  public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Supplier<Ensemble> ensemble, FretboardPosition position) {
-    this(instrument, context, wrapper, ensemble, Optional.of(position));
-  }
-  
-  public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Supplier<Ensemble> ensemble) {
-    this(instrument, context, wrapper, ensemble, Optional.absent());
-  }
-  
-  public JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Supplier<Ensemble> ensembleSupplier, Optional<FretboardPosition> position) {
+  @lombok.Builder
+  private JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Supplier<Ensemble> ensembleSupplier, FretboardPosition position) {
     this.instrument = instrument;
     this.context = context;
     this.wrapper = wrapper;
     this.ensembleSupplier = ensembleSupplier;
-    this.position = position;
+    this.position = Optional.fromNullable(position);
     this.song = wrapper.getSong();
     this.assetId = computeAssetId();
     this.difficulty = computeDifficulty();
@@ -81,6 +74,7 @@ public class JamCard implements Card {
   public Map<String, Object> getJson() {
     Map<String, Object> map = new LinkedHashMap<>();
     map.put("title", getProgression());
+    map.put("comment", getComment());
     map.put("type", getType());
     map.put("key", getKey());
     map.put("style", getStyle());
@@ -100,6 +94,7 @@ public class JamCard implements Card {
     Stream<String> positionStream = position.isPresent() ? Stream.of(position.get().getLabel(), ankiPng(position.get().getImage())) : Stream.empty();
     Stream<String> songStream = Stream.of(
         getProgression(),
+        getComment(),
         getType(),
         getKey(),
         getStyle(),
@@ -179,5 +174,8 @@ public class JamCard implements Card {
   public FretboardPosition getPosition() {
     return position.get();
   }
-
+  
+  public String getComment() {
+    return wrapper.getComment();
+  }
 }

@@ -35,6 +35,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.stream.IntStream;
 
+import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.Part;
@@ -67,6 +68,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     private final Scale scale;
     private final Scale chord;
     private String title;
+    private String comment;
   }
   
   @lombok.Builder
@@ -116,16 +118,16 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   public static final Spec PENTATONIC_CHORDS = Spec.builder()
       .title("AnkiJazz Guitar - Pentatonics 4: Outline Chords (Jamtracks)")
       .fileName("Pentatonic4ChordsJamtracks")
-      .pair(new ScaleChordPair(CMinor7Pentatonic, Cm7, "Outline Minor7 Chord"))
-      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(E), Cmaj7, "Outline Major7 Chord"))
-      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(B), Cmaj7, "Outline Major7#11 Chord"))
-      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(A), C6, "Outline Major6 Chord"))
-      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(G), C7sus4, "Outline 7Sus4 Chord"))
+      .pair(new ScaleChordPair(CMinor7Pentatonic, Cm7, "Outline Minor7 Chord", "Play Minor7 Pentatonic at root of Minor7 Chord"))
+      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(E), Cmaj7, "Outline Major7 Chord", "Play Minor7 Pentatonic at major 3rd of Major7 Chord"))
+      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(B), Cmaj7, "Outline Major7#11 Chord", "Play Minor7 Pentatonic at major 7th of Major7#11 Chord"))
+      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(A), C6, "Outline Major6 Chord", "Play Minor7 Pentatonic at 6th of Major6 Chord"))
+      .pair(new ScaleChordPair(CMinor7Pentatonic.transpose(G), C7sus4, "Outline 7Sus4 Chord", "Play Minor7 Pentatonics at 5th of 7Sus4 Chord"))
       
-      .pair(new ScaleChordPair(CMinor6Pentatonic, Cm6, "Outline Minor6 Chord"))
-      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(G), C7, "Outline Dominant 7th Chord"))
-      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Db), C7sharp5, "Outline Altered Dominant Chord"))
-      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Eb), Cm7b5, "Outline Minor7b5 Chord"))
+      .pair(new ScaleChordPair(CMinor6Pentatonic, Cm6, "Outline Minor6 Chord", "Play Minor6 Pentatonics at root of Minor6 Chord"))
+      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(G), C7, "Outline Dominant 7th Chord", "Play Minor6 Pentatonics at 5th of Dominant 7th Chord"))
+      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Db), C7sharp5, "Outline Altered Dominant Chord", "Play Minor6 Pentatonics at b9 of altered Chord"))
+      .pair(new ScaleChordPair(CMinor6Pentatonic.transpose(Eb), Cm7b5, "Outline Minor7b5 Chord", "Play Minor6 Pentatonics at minor 3rd of Minor7b5 Chord"))
       .build(); 
   
   public FretboardJamCardGenerator(Spec spec, LoopIteratorFactory iteratorFactory) {
@@ -159,6 +161,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
           .progression(pair.getTitle() == null ? scaleInfo.getTypeName() : pair.getTitle())
           .progressionSet(scaleInfo.getScaleType().getTypeName())
           .song(createSong(pair))
+          .comment(pair.getComment())
           .build();
       return wrapper;
     }
@@ -187,7 +190,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       
       Part next() {
         Sequential seq = Parts.seq();
-        for (int i = 4; i > 0; i--) {
+        for (int i = 0; i < 4; i++) {
           if (iterator.hasNext()) {
             Note note = iterator.next();
             int pitch = mapper.nextClosest(note);
@@ -224,7 +227,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       List<Integer> semitones2 = new ArrayList<>(semitones1);
       Collections.rotate(semitones2, -1);
       semitones1.addAll(semitones2);
-      return semitones1.iterator();
+      return Utils.loopIterator(semitones1);
     }
 
     @Override
@@ -240,7 +243,12 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     for (int songNumber = 0; songNumber < numberOfSongs; songNumber ++) {
       SongWrapper wrapper = songFactory.next();
       FretboardPosition position = positions.next();
-      cards.add(new JamCard(Note.C, context, wrapper, () -> latin(120), position));
+      cards.add(JamCard.builder()
+          .instrument(Note.C)
+          .context(context)
+          .wrapper(wrapper)
+          .ensembleSupplier(() -> latin(120))
+          .position(position).build());
     }
     return cards;
   }
