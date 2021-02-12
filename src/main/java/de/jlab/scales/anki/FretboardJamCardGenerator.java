@@ -14,7 +14,6 @@ import static de.jlab.scales.theory.Scales.C6;
 import static de.jlab.scales.theory.Scales.C7;
 import static de.jlab.scales.theory.Scales.C7flat9;
 import static de.jlab.scales.theory.Scales.C7sharp5;
-import static de.jlab.scales.theory.Scales.C7sharp5flat9;
 import static de.jlab.scales.theory.Scales.C7sus4;
 import static de.jlab.scales.theory.Scales.CHarmonicMinor;
 import static de.jlab.scales.theory.Scales.CMajor;
@@ -25,9 +24,9 @@ import static de.jlab.scales.theory.Scales.Cm6;
 import static de.jlab.scales.theory.Scales.Cm7;
 import static de.jlab.scales.theory.Scales.Cm7b5;
 import static de.jlab.scales.theory.Scales.Cmaj7;
-import static de.jlab.scales.theory.Scales.CminTriad;
+import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toCollection;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -56,13 +55,10 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final LoopIteratorFactory iteratorFactory;
   private final RenderContext context = RenderContext.ANKI;
   private final Spec spec;
-  final Iterator<SongWrapper> songFactory;
-  
-  final int minBpm = 100;
-  final int maxBpm = 130;
-  final int numberOfSongs;
+  private final int numberOfSongs;
+  private final int songsPerPair = 12;
   final int chordsPerSong = 4;
-  final int songsPerPair = 12;
+  final Iterator<SongWrapper> songFactory;
 
   @lombok.Data
   @lombok.RequiredArgsConstructor
@@ -98,7 +94,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       .pair(new ScaleChordPair(CMelodicMinor.superimpose(F), C7.transpose(F)))
       .pair(new ScaleChordPair(CMelodicMinor.superimpose(B), C7sharp5.transpose(B)))
           
-      .pair(new ScaleChordPair(CHarmonicMinor, CminTriad))
+      .pair(new ScaleChordPair(CHarmonicMinor, Cmmaj7))
       .pair(new ScaleChordPair(CHarmonicMinor.superimpose(G), C7flat9.transpose(G)))
       .build(); 
 
@@ -107,7 +103,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       .fileName("Caged2ScalesJamtracks")
       .pair(new ScaleChordPair(CMajor, Scales.Cmaj7))
       .pair(new ScaleChordPair(CMelodicMinor, Cm6))
-      .pair(new ScaleChordPair(CHarmonicMinor, CminTriad))
+      .pair(new ScaleChordPair(CHarmonicMinor, Cmmaj7))
       .build(); 
 
   public static final Spec PENTATONIC_SCALES = Spec.builder()
@@ -206,7 +202,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     Melody melody = new Melody();
     
     private Song createSong(ScaleChordPair pair) {
-      Iterator<Integer> semitonesIterator = iteratorFactory.iterator(IntStream.range(0, chordsPerSong).map(i -> roots.next().ordinal()).boxed().collect(toList()));
+      Iterator<Integer> semitonesIterator = semitonesIterator();
       List<Bar> bars = new ArrayList<>();
       for (int i = 0; i < context.getNumberOfBars() / 2; i++) {
         int semitones = semitonesIterator.next();
@@ -218,6 +214,17 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
         bars.add(Bar.of(melody.next(), chord));
       }
       return new Song(bars);
+    }
+
+    /**
+     * ensures that each chord is played in both directions, ascending and descending.
+     */
+    private Iterator<Integer> semitonesIterator() {
+      List<Integer> semitones1 = IntStream.range(0, chordsPerSong).map(i -> roots.next().ordinal()).boxed().collect(toCollection(ArrayList::new));
+      List<Integer> semitones2 = new ArrayList<>(semitones1);
+      Collections.rotate(semitones2, -1);
+      semitones1.addAll(semitones2);
+      return semitones1.iterator();
     }
 
     @Override

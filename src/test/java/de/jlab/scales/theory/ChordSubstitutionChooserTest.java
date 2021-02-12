@@ -72,7 +72,7 @@ public class ChordSubstitutionChooserTest {
 
   private void writeDocumentation(List<Documentation> documentation) {
     try {
-      Path dir = Paths.get("build");
+      Path dir = Paths.get("build/preview");
       Files.createDirectories(dir);
       Path path = dir.resolve("PentatonicSubstitutions.json");
       new ObjectMapper().writeValue(path.toFile(), documentation);

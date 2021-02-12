@@ -115,14 +115,14 @@ public class FretboardDiagramDeckTest {
   Validator penta3Validator = new Penta3Validator();
 
   @Test
-  public void testPentatonicsLevel1() {
+  public void testPentatonic1ScalesFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Pentatonic1ScalesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
   
   @Test
-  public void testPentatonicsLevel3() {
+  public void testPentatonic3ChordsFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Pentatonic3ChordsFretboards(penta3Validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
@@ -131,28 +131,28 @@ public class FretboardDiagramDeckTest {
   }
   
   @Test
-  public void testPentatonicsLevel5() {
+  public void testPentatonic5ModesFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Pentatonic5ModesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
 
   @Test
-  public void testCagedLevel1() {
+  public void testCaged1ScalesFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Caged1ScalesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
 
   @Test
-  public void testCagedLevel3() {
+  public void testCaged3ModesFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Caged3ModesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
   }
   
   @Test
-  public void testCagedLevel5() {
+  public void testCaged5ArpeggiosFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Caged5ArpeggiosFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
     TestUtils.writeTo(deck, 0.1);
