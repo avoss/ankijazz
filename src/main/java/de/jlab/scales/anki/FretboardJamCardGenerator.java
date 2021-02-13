@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.Utils.Interpolator;
 import de.jlab.scales.Utils.LoopIteratorFactory;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.Part;
@@ -34,7 +35,6 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final Spec spec;
   private final int numberOfSongs;
   private final int songsPerChordScalePair = 12;
-  final int chordsPerSong = 4;
   final Iterator<SongWrapper> songFactory;
  
   @lombok.Builder
@@ -90,6 +90,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     
     Iterator<Note> roots = iteratorFactory.iterator(asList(Note.values()));
     Iterator<ChordScaleAudio> pairs = iteratorFactory.iterator(spec.getPairs());
+    int songIndex = 0;
     
     @Override
     public SongWrapper next() {
@@ -99,9 +100,10 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
           .key("Mixed Keys")
           .progression(pair.getTitle() == null ? "Play ".concat(scaleInfo.getTypeName()) : pair.getTitle())
           .progressionSet(scaleInfo.getScaleType().getTypeName())
-          .song(createSong(pair))
+          .song(createSong(pair, songIndex))
           .comment(pair.getComment())
           .build();
+      songIndex++;
       return wrapper;
     }
 
@@ -143,8 +145,8 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     
     Melody melody = new Melody();
     
-    private Song createSong(ChordScaleAudio pair) {
-      Iterator<Integer> semitonesIterator = semitonesIterator();
+    private Song createSong(ChordScaleAudio pair, int songIndex) {
+      Iterator<Integer> semitonesIterator = semitonesIterator(songIndex);
       List<Bar> bars = new ArrayList<>();
       for (int i = 0; i < context.getNumberOfBars() / 2; i++) {
         int semitones = semitonesIterator.next();
@@ -158,11 +160,17 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       return new Song(bars);
     }
 
+    Interpolator numberOfChords = Utils.interpolator(0, numberOfSongs, 2, 5);
     /**
      * ensures that each chord is played in both directions, ascending and descending.
+     * @param songIndex 
      */
-    private Iterator<Integer> semitonesIterator() {
+    private Iterator<Integer> semitonesIterator(int songIndex) {
+      int chordsPerSong = numberOfChords.apply(songIndex); 
       List<Integer> semitones1 = IntStream.range(0, chordsPerSong).map(i -> roots.next().ordinal()).boxed().collect(toCollection(ArrayList::new));
+      if (chordsPerSong < 4) {
+        return Utils.loopIterator(semitones1);
+      }
       List<Integer> semitones2 = new ArrayList<>(semitones1);
       Collections.rotate(semitones2, -1);
       semitones1.addAll(semitones2);

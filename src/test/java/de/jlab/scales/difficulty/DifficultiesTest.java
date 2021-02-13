@@ -8,22 +8,13 @@ import static de.jlab.scales.theory.Scales.Cmaj7;
 import static de.jlab.scales.theory.Scales.CmajTriad;
 import static org.assertj.core.api.Assertions.assertThat;
 
-import org.assertj.core.data.Offset;
 import org.junit.Test;
 
 import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
 
 public class DifficultiesTest {
-  private static final Offset<Double> EPS = Offset.offset(0.05);
-  
-  @Test
-  public void testRefactoringDoesNotChangeValues() {
-    assertThat(getSongDifficulty(song("Cm Dm A7 F"))).isCloseTo(0.30962, EPS);
-    assertThat(getSongDifficulty(song("C9 EbΔ7#11 C69 G7"))).isCloseTo(0.51346, EPS);
-    assertThat(getSongDifficulty(song("A9 D#7b5#9 C7#9b13 Db7#5#9"))).isCloseTo(0.75481, EPS);
-  }
-  
+
   @Test
   public void testChordDifficulty() {
     assertThat(getChordDifficulty(CmajTriad)).isLessThan(getChordDifficulty(Cmaj7));

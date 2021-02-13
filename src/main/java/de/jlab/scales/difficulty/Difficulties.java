@@ -145,7 +145,7 @@ public class Difficulties {
     
     DifficultyModel model = new DifficultyModel();
     model.doubleTerm(120).update(chordDifficulty);
-    model.doubleTerm(50).update(numberOfDifferentChordsDifficulty);
+    model.doubleTerm(200).update(numberOfDifferentChordsDifficulty);
     return model.getDifficulty();
   }
   
