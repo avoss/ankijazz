@@ -1,18 +1,9 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.ScaleUniverse.SCALES;
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.junit.Test;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectReader;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.theory.Scale;

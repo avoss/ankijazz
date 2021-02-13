@@ -1,14 +1,5 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
-import static de.jlab.scales.theory.BuiltinChordType.Major6;
-import static de.jlab.scales.theory.BuiltinChordType.Major7;
-import static de.jlab.scales.theory.BuiltinChordType.Major7Sharp11;
-import static de.jlab.scales.theory.BuiltinChordType.Minor6;
-import static de.jlab.scales.theory.BuiltinChordType.Minor7;
-import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Db;
@@ -16,14 +7,22 @@ import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.*;
+import static de.jlab.scales.theory.Scales.C6;
+import static de.jlab.scales.theory.Scales.C7;
+import static de.jlab.scales.theory.Scales.C7sharp5;
+import static de.jlab.scales.theory.Scales.C7sus4;
+import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
+import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
+import static de.jlab.scales.theory.Scales.Cm6;
+import static de.jlab.scales.theory.Scales.Cm7;
+import static de.jlab.scales.theory.Scales.Cm7b5;
+import static de.jlab.scales.theory.Scales.Cmaj7;
+import static de.jlab.scales.theory.Scales.Cmaj7Sharp11;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import de.jlab.scales.anki.FretboardJamCardGenerator.ScaleChordPair;
-import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.BuiltinScaleType;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
