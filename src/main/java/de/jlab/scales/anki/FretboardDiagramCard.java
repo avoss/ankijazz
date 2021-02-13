@@ -29,10 +29,12 @@ public class FretboardDiagramCard implements Card {
   private String title;
   private int fretNumber;
   private int stringNumber;
+  private String comment;
 
   @lombok.Builder
-  private FretboardDiagramCard(String title, int fretNumber, int stringNumber, ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
+  private FretboardDiagramCard(String title, String comment, int fretNumber, int stringNumber, ScaleInfo chordInfo, ScaleInfo scaleInfo, Supplier<BufferedImage> frontImage, Supplier<BufferedImage> backImage, Supplier<Part> backMidi) {
     this.title = title;
+    this.comment = comment;
     this.fretNumber = fretNumber;
     this.stringNumber = stringNumber;
     this.chordInfo = chordInfo;
@@ -73,6 +75,7 @@ public class FretboardDiagramCard implements Card {
   public String getCsv() {
     return Stream.of(
         getTitle(),
+        getComment(),
         getFretNumber(),
         getStringNumber(),
         getScaleName(),
@@ -91,6 +94,7 @@ public class FretboardDiagramCard implements Card {
   public Map<String, Object> getJson() {
     Map<String, Object> map = new LinkedHashMap<>();
     map.put("title", getTitle());
+    map.put("comment", getComment());
     map.put("fretNumber", getFretNumber());
     map.put("stringNumber", getStringNumber());
     map.put("scaleName", getScaleName());
@@ -161,5 +165,8 @@ public class FretboardDiagramCard implements Card {
   }
   public String getStringNumber() {
     return Integer.toString(stringNumber + 1);
+  }
+  public String getComment() {
+    return comment;
   }
 }

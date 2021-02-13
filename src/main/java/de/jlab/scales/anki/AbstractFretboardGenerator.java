@@ -118,8 +118,17 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     validator.validate(backMidi);
 
     String cardTitle = getCardTitle(chordInfo, scaleInfo);
-    return FretboardDiagramCard.builder().title(cardTitle).fretNumber(backBoard.getMinFret()).stringNumber(stringNumber).chordInfo(chordInfo).scaleInfo(scaleInfo)
-        .frontImage(frontImage).backImage(backImage).backMidi(backMidi).build();
+    return FretboardDiagramCard.builder()
+        .title(cardTitle)
+        .fretNumber(backBoard.getMinFret())
+        .stringNumber(stringNumber)
+        .chordInfo(chordInfo)
+        .scaleInfo(scaleInfo)
+        .frontImage(frontImage)
+        .backImage(backImage)
+        .backMidi(backMidi)
+        .comment(pair.getComment())
+        .build();
   }
 
   protected abstract Note getFrontRoot(Scale chord, Scale scale);
