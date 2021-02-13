@@ -5,9 +5,9 @@ import static de.jlab.scales.theory.Note.B;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Note.G;
+import static de.jlab.scales.theory.Note.*;
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.C6;
+import static de.jlab.scales.theory.Scales.*;
 import static de.jlab.scales.theory.Scales.C7;
 import static de.jlab.scales.theory.Scales.C7sharp5;
 import static de.jlab.scales.theory.Scales.C7sus4;
@@ -21,9 +21,11 @@ import static de.jlab.scales.theory.Scales.Cmaj7Sharp11;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import de.jlab.scales.theory.BuiltinScaleType;
+import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleType;
@@ -54,24 +56,47 @@ public class ChordScaleAudio {
 
   public static List<ChordScaleAudio> cagedModes() {
     List<ChordScaleAudio> result = new ArrayList<>();
-    for (Scale scale : Scales.commonModes(false)) {
-      Scale chord = substituteAlteredChord(scale);
+    for (Scale scale : CMajor.getInversions()) {
+      Scale chord = scale.getChord(0);
       result.add(builder()
           .chord(chord)
           .scale(scale)
           .audio(chord)
           .build());
     }
+    result.add(builder()
+      .chord(Cmmaj7)
+      .scale(CMelodicMinor)
+      .audio(Cmmaj7)
+      .build());
+
+    result.add(builder()
+        .chord(C7.transpose(F))
+        .scale(CMelodicMinor.superimpose(F))
+        .audio(C7.transpose(F))
+        .build());
+
+    result.add(builder()
+        .chord(C7sharp5.transpose(B))
+        .scale(CMelodicMinor.superimpose(B))
+        .audio(C7sharp5.transpose(B))
+        .build());
+
+    result.add(builder()
+        .chord(Cmmaj7)
+        .scale(CHarmonicMinor)
+        .audio(Cmmaj7)
+        .build());
+
+    result.add(builder()
+        .chord(C7flat9.transpose(G))
+        .scale(CHarmonicMinor.superimpose(G))
+        .audio(C7flat9.transpose(G))
+        .build());
+    
     return result;
   }
   
-  private static Scale substituteAlteredChord(Scale scale) {
-    if (scale.isAlteredDominant()) {
-      return Scales.C7sharp5.transpose(scale.getRoot());
-    }
-    return scale.getChord(0);
-  }
-
   public static List<ChordScaleAudio> pentatonicScales() {
     return List.of(
         builder()
@@ -166,19 +191,87 @@ public class ChordScaleAudio {
 
   public static List<ChordScaleAudio> pentatonicModes() {
     List<ChordScaleAudio> result = new ArrayList<>();
-    PentatonicChooser chooser = new PentatonicChooser();
-    for (Scale scale : Scales.commonModes(false)) {
-      if (!scaleContainsPentatonic(scale)) {
-        continue;
-      }
-      Scale chord = scale.getChord(0);
-      Scale penta = chooser.chooseBest(chord);
-      result.add(builder()
-          .chord(penta)
-          .scale(scale)
-          .audio(chord)
-          .build());
-    }
+    
+    result.add(builder()
+      .chord(CMinor7Pentatonic.transpose(E))
+      .scale(CMajor)
+      .audio(Cmaj7)
+      .title("Outline Ionean Mode")
+      .comment("Play Minor7 Pentatonic at 3rd degree of mode")
+      .build());
+    
+    result.add(builder()
+      .chord(CMinor7Pentatonic.transpose(D))
+      .scale(CMajor.superimpose(D))
+      .audio(Cm7.transpose(D))
+      .title("Outline Dorian Mode")
+      .comment("Play Minor7 Pentatonic at 1st degree of mode")
+      .build());
+
+    result.add(builder()
+        .chord(CMinor7Pentatonic.transpose(E))
+        .scale(CMajor.superimpose(E))
+        .audio(Cm7.transpose(E))
+        .title("Outline Prhygian Mode")
+        .comment("Play Minor7 Pentatonic at 1st degree of mode")
+        .build());
+    
+    result.add(builder()
+        .chord(CMinor7Pentatonic.transpose(E))
+        .scale(CMajor.superimpose(F))
+        .audio(Cmaj7.transpose(F))
+        .title("Outline Lydian Mode")
+        .comment("Play Minor7 Pentatonic at 7th degree of mode")
+        .build());
+
+    result.add(builder()
+        .chord(CMinor6Pentatonic.transpose(D))
+        .scale(CMajor.superimpose(G))
+        .audio(C7.transpose(G))
+        .title("Outline Mixolydian Mode")
+        .comment("Play Minor6 Pentatonic at 5th degree of mode")
+        .build());
+
+    result.add(builder()
+        .chord(CMinor7Pentatonic.transpose(A))
+        .scale(CMajor.superimpose(A))
+        .audio(Cm7.transpose(A))
+        .title("Outline Aeolean Mode")
+        .comment("Play Minor7 Pentatonic at 1st degree of mode")
+        .build());
+
+    result.add(builder()
+        .chord(CMinor6Pentatonic.transpose(D))
+        .scale(CMajor.superimpose(B))
+        .audio(Cm7b5.transpose(B))
+        .title("Outline Locrian Mode")
+        .comment("Play Minor6 Pentatonic at 3rd degree of mode")
+        .build());
+
+    result.add(builder()
+        .chord(CMinor6Pentatonic)
+        .scale(CMelodicMinor.superimpose(C))
+        .audio(Cmmaj7.transpose(C))
+        .title("Outline Melodic Minor")
+        .comment("Play Minor6 Pentatonic at 1st degree of mode")
+        .build());
+
+    result.add(builder()
+        .chord(CMinor6Pentatonic)
+        .scale(CMelodicMinor.superimpose(F))
+        .audio(C7.transpose(F))
+        .title("Outline Lydian Dominant")
+        .comment("Play Minor6 Pentatonic at 5th degree of mode")
+        .build());
+
+    result.add(builder()
+        .chord(CMinor6Pentatonic)
+        .scale(CMelodicMinor.superimpose(B))
+        .audio(C7sharp5.transpose(B))
+        .title("Outline Lydian Dominant")
+        .comment("Play Minor6 Pentatonic at b9 degree of mode")
+        .build());
+    
     return result;
   }
 

@@ -33,7 +33,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final RenderContext context = RenderContext.ANKI;
   private final Spec spec;
   private final int numberOfSongs;
-  private final int songsPerPair = 12;
+  private final int songsPerChordScalePair = 12;
   final int chordsPerSong = 4;
   final Iterator<SongWrapper> songFactory;
  
@@ -72,7 +72,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   public FretboardJamCardGenerator(Spec spec, LoopIteratorFactory iteratorFactory) {
     this.spec = spec;
     this.iteratorFactory = iteratorFactory;
-    this.numberOfSongs = spec.getPairs().size() * songsPerPair;
+    this.numberOfSongs = spec.getPairs().size() * songsPerChordScalePair;
     this.songFactory = new SongWrapperFactory();
   }
 

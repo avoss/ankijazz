@@ -1,10 +1,10 @@
-chord: E Minor Pentatonic, scale: C Major Scale, audio: CΔ7, title: null, comment: null
-chord: D Minor Pentatonic, scale: D Dorian, audio: Dm7, title: null, comment: null
-chord: E Minor Pentatonic, scale: E Phrygian, audio: Em7, title: null, comment: null
-chord: A Minor Pentatonic, scale: F Lydian, audio: FΔ7, title: null, comment: null
-chord: D Minor6 Pentatonic, scale: G Mixolydian, audio: G7, title: null, comment: null
-chord: A Minor Pentatonic, scale: A Aeolean, audio: Am7, title: null, comment: null
-chord: D Minor6 Pentatonic, scale: B Locrian, audio: Bm7b5, title: null, comment: null
-chord: C Minor6 Pentatonic, scale: C Melodic Minor, audio: CmΔ7, title: null, comment: null
-chord: C Minor6 Pentatonic, scale: F Lydian Dominant, audio: F7, title: null, comment: null
-chord: C Minor6 Pentatonic, scale: B Altered, audio: B7#5, title: xyz, comment: Minor 6 Pentatonic at b9 of Altered Dominant Chord
+chord: E Minor Pentatonic, scale: C Major Scale, audio: CΔ7, title: Outline Ionean Mode, comment: Play Minor7 Pentatonic at 3rd degree of mode
+chord: D Minor Pentatonic, scale: D Dorian, audio: Dm7, title: Outline Dorian Mode, comment: Play Minor7 Pentatonic at 1st degree of mode
+chord: E Minor Pentatonic, scale: E Phrygian, audio: Em7, title: Outline Prhygian Mode, comment: Play Minor7 Pentatonic at 1st degree of mode
+chord: E Minor Pentatonic, scale: F Lydian, audio: FΔ7, title: Outline Lydian Mode, comment: Play Minor7 Pentatonic at 7th degree of mode
+chord: D Minor6 Pentatonic, scale: G Mixolydian, audio: G7, title: Outline Mixolydian Mode, comment: Play Minor6 Pentatonic at 5th degree of mode
+chord: A Minor Pentatonic, scale: A Aeolean, audio: Am7, title: Outline Aeolean Mode, comment: Play Minor7 Pentatonic at 1st degree of mode
+chord: D Minor6 Pentatonic, scale: B Locrian, audio: Bm7b5, title: Outline Locrian Mode, comment: Play Minor6 Pentatonic at 3rd degree of mode
+chord: C Minor6 Pentatonic, scale: C Melodic Minor, audio: CmΔ7, title: Outline Melodic Minor, comment: Play Minor6 Pentatonic at 1st degree of mode
+chord: C Minor6 Pentatonic, scale: F Lydian Dominant, audio: F7, title: Outline Lydian Dominant, comment: Play Minor6 Pentatonic at 5th degree of mode
+chord: C Minor6 Pentatonic, scale: B Altered, audio: B7#5, title: Outline Lydian Dominant, comment: Play Minor6 Pentatonic at b9 degree of mode

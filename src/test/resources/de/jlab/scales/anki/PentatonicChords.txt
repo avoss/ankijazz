@@ -1,9 +1,9 @@
-chord: Cm7, scale: C Minor Pentatonic, audio: Cm7, title: null, comment: null
-chord: CΔ7, scale: E Minor Pentatonic, audio: CΔ7, title: null, comment: null
-chord: CΔ7#11, scale: B Minor Pentatonic, audio: CΔ7#11, title: null, comment: null
-chord: C6, scale: A Minor Pentatonic, audio: C6, title: null, comment: null
-chord: C7sus4, scale: G Minor Pentatonic, audio: C7sus4, title: null, comment: null
-chord: Cm6, scale: C Minor6 Pentatonic, audio: Cm6, title: null, comment: null
-chord: C7, scale: G Minor6 Pentatonic, audio: C7, title: null, comment: null
-chord: C7#5, scale: C# Minor6 Pentatonic, audio: C7#5, title: null, comment: Minor 6 Pentatonic at b9 of altered chord
-chord: Cm7b5, scale: Eb Minor6 Pentatonic, audio: Cm7b5, title: null, comment: null
+chord: Cm7, scale: C Minor Pentatonic, audio: Cm7, title: Outline Minor7 Chord, comment: Play Minor7 Pentatonic at root of Minor7 Chord
+chord: CΔ7, scale: E Minor Pentatonic, audio: CΔ7, title: Outline Major7 Chord, comment: Play Minor7 Pentatonic at major 3rd of Major7 Chord
+chord: CΔ7#11, scale: B Minor Pentatonic, audio: CΔ7, title: Outline Major7#11 Chord, comment: Play Minor7 Pentatonic at major 7th of Major7#11 Chord
+chord: C6, scale: A Minor Pentatonic, audio: C6, title: Outline Major6 Chord, comment: Play Minor7 Pentatonic at major 6th of Major6 Chord
+chord: C7sus4, scale: G Minor Pentatonic, audio: C7sus4, title: Outline 7Sus4 Chord, comment: Play Minor7 Pentatonics at 5th of 7Sus4 Chord
+chord: Cm6, scale: C Minor6 Pentatonic, audio: Cm6, title: Outline Minor6 Chord, comment: Play Minor6 Pentatonics at root of Minor6 Chord
+chord: C7, scale: G Minor6 Pentatonic, audio: C7, title: Outline Dominant 7th Chord, comment: Play Minor6 Pentatonics at 5th of Dominant 7th Chord
+chord: C7#5, scale: C# Minor6 Pentatonic, audio: C7#5, title: Outline Altered Dominant Chord, comment: Play Minor6 Pentatonics at b9 of altered Chord
+chord: Cm7b5, scale: Eb Minor6 Pentatonic, audio: Cm7b5, title: Outline Minor7b5 Chord, comment: Play Minor6 Pentatonics at minor 3rd of Minor7b5 Chord
