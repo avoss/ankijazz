@@ -3,7 +3,6 @@ package de.jlab.scales.anki;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.function.Function;
 
 import de.jlab.scales.Utils;
@@ -11,7 +10,6 @@ import de.jlab.scales.fretboard2.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.Scales;
 
 public class Pentatonic1ScalesFretboards extends AbstractFretboardGenerator {
 
@@ -22,10 +20,7 @@ public class Pentatonic1ScalesFretboards extends AbstractFretboardGenerator {
   
   @Override
   protected Collection<ChordScaleAudio> findPairs() {
-    return List.of(
-        new ChordScaleAudio(Scales.Cm7, Scales.CMinor7Pentatonic, Scales.Cm7),
-        new ChordScaleAudio(Scales.Cm6, Scales.CMinor6Pentatonic, Scales.Cm6)
-        );
+    return ChordScaleAudio.pentatonicScales();
   }
   
   @Override

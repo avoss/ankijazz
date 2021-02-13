@@ -66,7 +66,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   @lombok.AllArgsConstructor
   static class ScaleChordPair {
     private final Scale scale;
-    private final Scale chord;
+    private final Scale audio;
     private String title;
     private String comment;
   }
@@ -209,7 +209,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       List<Bar> bars = new ArrayList<>();
       for (int i = 0; i < context.getNumberOfBars() / 2; i++) {
         int semitones = semitonesIterator.next();
-        Scale transposedChord = pair.getChord().transpose(semitones);
+        Scale transposedChord = pair.getAudio().transpose(semitones);
         Chord chord = new Chord(transposedChord, ScaleUniverse.CHORDS.findFirstOrElseThrow(transposedChord).getScaleName());
         Scale transposedScale = pair.getScale().transpose(semitones);
         melody.start(transposedScale);

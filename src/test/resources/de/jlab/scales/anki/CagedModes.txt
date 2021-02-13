@@ -1,0 +1,12 @@
+chord: CΔ7, scale: C Major Scale, audio: CΔ7, title: null, comment: null
+chord: Dm7, scale: D Dorian, audio: Dm7, title: null, comment: null
+chord: Em7, scale: E Phrygian, audio: Em7, title: null, comment: null
+chord: FΔ7, scale: F Lydian, audio: FΔ7, title: null, comment: null
+chord: G7, scale: G Mixolydian, audio: G7, title: null, comment: null
+chord: Am7, scale: A Aeolean, audio: Am7, title: null, comment: null
+chord: Bm7b5, scale: B Locrian, audio: Bm7b5, title: null, comment: null
+chord: CmΔ7, scale: C Melodic Minor, audio: CmΔ7, title: null, comment: null
+chord: F7, scale: F Lydian Dominant, audio: F7, title: null, comment: null
+chord: B7#5, scale: B Altered, audio: B7#5, title: null, comment: null
+chord: CmΔ7, scale: C Harmonic Minor, audio: CmΔ7, title: null, comment: null
+chord: G7b9, scale: G Phrygian Dominant, audio: G7b9, title: null, comment: null

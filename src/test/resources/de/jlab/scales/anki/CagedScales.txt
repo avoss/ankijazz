@@ -1,0 +1,3 @@
+chord: CΔ7, scale: C Major Scale, audio: CΔ7, title: null, comment: null
+chord: CmΔ7, scale: C Melodic Minor, audio: CmΔ7, title: null, comment: null
+chord: CmΔ7, scale: C Harmonic Minor, audio: CmΔ7, title: null, comment: null

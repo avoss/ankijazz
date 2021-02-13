@@ -1,0 +1,10 @@
+chord: E Minor Pentatonic, scale: C Major Scale, audio: CΔ7, title: null, comment: null
+chord: D Minor Pentatonic, scale: D Dorian, audio: Dm7, title: null, comment: null
+chord: E Minor Pentatonic, scale: E Phrygian, audio: Em7, title: null, comment: null
+chord: A Minor Pentatonic, scale: F Lydian, audio: FΔ7, title: null, comment: null
+chord: D Minor6 Pentatonic, scale: G Mixolydian, audio: G7, title: null, comment: null
+chord: A Minor Pentatonic, scale: A Aeolean, audio: Am7, title: null, comment: null
+chord: D Minor6 Pentatonic, scale: B Locrian, audio: Bm7b5, title: null, comment: null
+chord: C Minor6 Pentatonic, scale: C Melodic Minor, audio: CmΔ7, title: null, comment: null
+chord: C Minor6 Pentatonic, scale: F Lydian Dominant, audio: F7, title: null, comment: null
+chord: C Minor6 Pentatonic, scale: B Altered, audio: B7#5, title: xyz, comment: Minor 6 Pentatonic at b9 of Altered Dominant Chord

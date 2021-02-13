@@ -1,0 +1,2 @@
+chord: Cm7, scale: C Minor Pentatonic, audio: Cm7, title: null, comment: null
+chord: Cm6, scale: C Minor6 Pentatonic, audio: Cm6, title: null, comment: null

@@ -3,7 +3,6 @@ package de.jlab.scales.anki;
 import static de.jlab.scales.fretboard2.Fretboard.ROOTS_ONLY;
 import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -12,7 +11,6 @@ import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.Scales;
 
 public abstract class AbstractCagedGenerator extends AbstractFretboardGenerator {
 
@@ -22,21 +20,9 @@ public abstract class AbstractCagedGenerator extends AbstractFretboardGenerator 
 
   @Override
   protected Collection<ChordScaleAudio> findPairs() {
-    List<ChordScaleAudio> pairs = new ArrayList<>();
-    for (Scale scale : Scales.commonModes(false)) {
-      Scale chord = substituteAlteredChord(scale);
-      pairs.add(new ChordScaleAudio(chord, scale, chord));
-    }
-    return pairs;
+    return ChordScaleAudio.cagedModes();
   }
-
-  protected Scale substituteAlteredChord(Scale scale) {
-    if (scale.isAlteredDominant()) {
-      return Scales.C7sharp5.transpose(scale.getRoot());
-    }
-    return scale.getChord(0);
-  }
-  
+ 
   @Override
   protected String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo) {
     return scaleInfo.getScaleName();

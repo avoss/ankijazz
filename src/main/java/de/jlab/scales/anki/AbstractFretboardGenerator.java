@@ -39,13 +39,6 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
   }
 
   @lombok.Data
-  protected static class ChordScaleAudio {
-    private final Scale chord;
-    private final Scale scale;
-    private final Scale audio;
-  }
-
-  @lombok.Data
   protected static class CardData {
     private final ChordScaleAudio chordScaleAudio;
     private final Note root;
