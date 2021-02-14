@@ -167,14 +167,8 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
      */
     private Iterator<Integer> semitonesIterator(int songIndex) {
       int chordsPerSong = numberOfChords.apply(songIndex); 
-      List<Integer> semitones1 = IntStream.range(0, chordsPerSong).map(i -> roots.next().ordinal()).boxed().collect(toCollection(ArrayList::new));
-      if (chordsPerSong < 4) {
-        return Utils.loopIterator(semitones1);
-      }
-      List<Integer> semitones2 = new ArrayList<>(semitones1);
-      Collections.rotate(semitones2, -1);
-      semitones1.addAll(semitones2);
-      return Utils.loopIterator(semitones1);
+      List<Integer> semitones = IntStream.range(0, chordsPerSong).map(i -> roots.next().ordinal()).boxed().collect(toCollection(ArrayList::new));
+      return Utils.loopIterator(semitones);
     }
 
     @Override
