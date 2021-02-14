@@ -167,6 +167,6 @@ public class FretboardDiagramCard implements Card {
     return Integer.toString(stringNumber + 1);
   }
   public String getComment() {
-    return comment;
+    return comment == null ? "" : comment;
   }
 }
