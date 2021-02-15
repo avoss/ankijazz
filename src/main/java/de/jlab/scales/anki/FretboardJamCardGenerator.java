@@ -13,6 +13,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.function.BiFunction;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
@@ -91,19 +92,60 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
 
   class Melody {
     private final int minPitch = 56;
-    private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, minPitch + 24);
+    private final int maxPitch = minPitch + 24;
+    private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, maxPitch);
+    int directionCounter = -1;
     boolean ascending;
+    Note prevNote;
     private Iterator<Note> iterator;
     private int melodyVelocity = 127;
     
+    Melody() {
+      reset();
+    }
+    
     void start(Scale scale) {
-      ascending = !ascending;
+      maybeChangeDirection();
+      List<Note> list = createNoteList(scale);
+      iterator = Utils.loopIterator(list);
+    }
+
+    private List<Note> createNoteList(Scale scale) {
       List<Note> list = scale.asList();
-      list.add(list.get(0));
       if (!ascending) {
         Collections.reverse(list);
       }
-      iterator = list.iterator();
+      if (directionCounter == 1) {
+        rotateClosestToPrevNote(list);
+      }
+      return list;
+    }
+
+    void rotateClosestToPrevNote(List<Note> list) {
+      BiFunction<Note, Note, Integer> fn = ascending 
+          ? (prev, next) -> (prev == next ? 100 : prev.semitones(next))
+          : (prev, next) -> (prev == next ? 100 : next.semitones(prev));
+      Note bestNote = prevNote;
+      int bestValue = fn.apply(prevNote, prevNote); // = 100
+      for (Note note : list) {
+        if (fn.apply(prevNote, note) < bestValue) {
+          bestNote = note;
+          bestValue = fn.apply(prevNote, note);
+        }
+      }
+      Collections.rotate(list, -list.indexOf(bestNote));
+    }
+
+    private void maybeChangeDirection() {
+      directionCounter += 1;
+      if (directionCounter == 2) {
+        directionCounter = 0;
+        ascending = !ascending;
+        reset();
+      }
+    }
+
+    private void reset() {
       if (ascending) {
         mapper.resetToLowest();
       } else {
@@ -113,13 +155,12 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     
     Part next() {
       Sequential seq = Parts.seq();
-      for (int i = 0; i < 4; i++) {
-        if (iterator.hasNext()) {
-          Note note = iterator.next();
-          int pitch = mapper.nextClosest(note);
-          seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , 4));
-          seq.add(Parts.rest(4));
-        }
+      for (int i = 0; i < 2; i++) {
+        Note note = iterator.next();
+        int pitch = ascending ? mapper.nextHigherUnbounded(note) : mapper.nextLowerUnbounded(note);
+        seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , 2));
+        seq.add(Parts.rest(2));
+        prevNote = note;
       }
       return seq;
     }

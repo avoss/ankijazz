@@ -1,6 +1,5 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.Utils.fixedLoopIteratorFactory;
 import static de.jlab.scales.anki.FretboardJamCardGenerator.CAGED_MODES;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertTrue;
@@ -41,13 +40,12 @@ public class FretboardJamCardGeneratorTest {
 
   @Test
   public void testMidiMatches() {
-    Part part = Ensembles.latin(130).play(song(), 2);
+    Part part = Ensembles.latin(120).play(song(), 2);
     TestUtils.assertMidiMatches(part, getClass(), "FretboardJamCardGeneratorTest.midi");
-    
   }
 
   private Song song() {
-    FretboardJamCardGenerator generator = new FretboardJamCardGenerator(CAGED_MODES, fixedLoopIteratorFactory());
+    FretboardJamCardGenerator generator = new FretboardJamCardGenerator(CAGED_MODES, Utils.fixedLoopIteratorFactory());
     Song song = generator.songFactory.next().getSong();
     return song;
   }
