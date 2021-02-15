@@ -90,7 +90,25 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     return spec.getFileName();
   }
 
-  class Melody {
+  interface MelodyProvider {
+    void start(Scale scale);
+    Part next();
+  }
+  
+  class NoMelody implements MelodyProvider {
+
+    @Override
+    public void start(Scale scale) {
+    }
+
+    @Override
+    public Part next() {
+      return null;
+    }
+    
+  }
+  
+  class Melody implements MelodyProvider {
     private final int minPitch = 56;
     private final int maxPitch = minPitch + 24;
     private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, maxPitch);
@@ -104,16 +122,18 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       reset();
     }
     
-    void start(Scale scale) {
+    @Override
+    public void start(Scale scale) {
       maybeChangeDirection();
       List<Note> list = createNoteList(scale);
       iterator = Utils.loopIterator(list);
     }
 
-    private List<Note> createNoteList(Scale scale) {
+    List<Note> createNoteList(Scale scale) {
       List<Note> list = scale.asList();
       if (!ascending) {
         Collections.reverse(list);
+        Collections.rotate(list, 1);
       }
       if (directionCounter == 1) {
         rotateClosestToPrevNote(list);
@@ -153,7 +173,8 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       }
     }
     
-    Part next() {
+    @Override
+    public Part next() {
       Sequential seq = Parts.seq();
       for (int i = 0; i < 2; i++) {
         Note note = iterator.next();
@@ -196,7 +217,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   class SongWrapperFactory implements Iterator<SongWrapper> {
     
     Iterator<ChordScaleAudio> pairs = iteratorFactory.iterator(spec.getPairs());
-    Melody melody = new Melody();
+    MelodyProvider melody = new Melody();
     SemitonesIteratorFactory semitonesIteratorFactory = new SemitonesIteratorFactory();
     int songIndex = 0;
     

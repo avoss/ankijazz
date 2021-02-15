@@ -26,7 +26,7 @@ public class Ensembles {
   
   public static Ensemble latin(int tempo) {
     Ensemble ensemble = new Ensemble("Latin", 16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
-    ensemble.setDrumVolume(90);
+    ensemble.setDrumVolume(80);
     ensemble.setDrumPan(-20);
     ensemble.countIn(Drum.Cowbell, "x... x... x... x...");
     ensemble.melody(Program.SynthStrings1, 100);

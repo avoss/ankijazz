@@ -22,7 +22,7 @@ public class Bar {
   private Bar next;
 
   public Bar(Part melody, List<Chord> chords) {
-    this.melody = Optional.of(melody);
+    this.melody = Optional.ofNullable(melody);
     this.chords = chords;
   }
   
