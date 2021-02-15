@@ -13,7 +13,12 @@ public class ModesTheoryDeckTest {
     TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "ModesTheoryDeckTest.html");
     TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "ModesTheoryDeckTest.json");
     TestUtils.writeTo(deck, 0.10);
-    TestUtils.writeTo(new ModesTheoryDeck(false), 0.10);
   }
 
+  @Test
+  public void testScalesTheoryDeck() {
+    Deck<?> deck = new ModesTheoryDeck(false);
+    TestUtils.writeTo(deck, 0.10);
+  }
+  
 }

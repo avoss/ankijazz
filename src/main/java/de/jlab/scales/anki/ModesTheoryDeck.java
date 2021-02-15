@@ -54,7 +54,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
     for (Scale scale : allKeys(scales)) {
       for (ScaleInfo info : MODES.infos(scale)) {
         double difficulty = computeScaleDifficulty(info);
-        spellScales(difficulty, info);
+        spellScale(difficulty, info);
         if (fullVersion) {
           nameParent(difficulty, info);
           nameMode(difficulty, info);
@@ -64,6 +64,14 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
     enharmonics();
     modeIntervals();
     spellChords();
+    if (!fullVersion) {
+      for (Scale scale : allKeys(commonModes(false))) {
+        for (ScaleInfo info : MODES.infos(scale)) {
+          double difficulty = computeScaleDifficulty(info);
+          nameParent(difficulty, info);
+        }
+      }
+    }
   }
 
   private SimpleCard card(double difficulty, String task, String front, String back) {
@@ -130,7 +138,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
     add(card(difficulty, "NameParent", front, back, modeInfo));
   }
 
-  private void spellScales(double difficulty, ScaleInfo modeInfo) {
+  private void spellScale(double difficulty, ScaleInfo modeInfo) {
     String front = format("<div>What are the <b>notes</b> of <b>%s</b>?</div>", modeInfo.getScaleName());
     String back = divb(modeInfo.getKeySignature().toString(modeInfo.getScale()));
     add(card(difficulty, "SpellScale", front, back, modeInfo));
