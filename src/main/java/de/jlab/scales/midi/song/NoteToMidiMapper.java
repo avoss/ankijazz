@@ -46,6 +46,13 @@ public class NoteToMidiMapper {
     }
     return nextLower(note);
   }
+
+  public int nextHigherUnbounded(Note note) {
+    int pitch = tryHigher(note);
+    previousMidiPitch = pitch;
+    previousNote = note;
+    return pitch;
+  }
   
   public int nextHigher(Note note) {
     int pitch = tryHigher(note);
@@ -57,6 +64,13 @@ public class NoteToMidiMapper {
     return nextLower(note);
   }
 
+  public int nextLowerUnbounded(Note note) {
+    int pitch = tryLower(note);
+    previousMidiPitch = pitch;
+    previousNote = note;
+    return pitch;
+  }
+  
   public int nextLower(Note note) {
     int pitch = tryLower(note);
     if (pitch >= lowestMidiPitch) {
@@ -100,5 +114,6 @@ public class NoteToMidiMapper {
     previousNote = midiPitchToNote(midiPitch);
     return this;
   }
-  
+
+ 
 }

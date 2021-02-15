@@ -28,6 +28,35 @@ public class NoteToMidiMapperTest {
     assertEquals(50, mapper.nextClosest(D));
     assertEquals(60, mapper.nextClosest(C));
   }
+  
+  @Test
+  public void testNextHigher() {
+    NoteToMidiMapper mapper = NoteToMidiMapper.octave(60);
+    assertEquals(69, mapper.nextHigher(A));
+    assertEquals(62, mapper.nextHigher(D));
+  }
  
+  @Test
+  public void testNextHigherUnbounded() {
+    NoteToMidiMapper mapper = NoteToMidiMapper.octave(60);
+    assertEquals(69, mapper.nextHigherUnbounded(A));
+    assertEquals(74, mapper.nextHigherUnbounded(D));
+  }
 
+  @Test
+  public void testNextLower() {
+    NoteToMidiMapper mapper = NoteToMidiMapper.octave(60);
+    assertEquals(62, mapper.nextLower(D));
+    assertEquals(61, mapper.nextLower(Db));
+    assertEquals(69, mapper.nextLower(A));
+  }
+  
+  @Test
+  public void testNextLowerUnbounded() {
+    NoteToMidiMapper mapper = NoteToMidiMapper.octave(60);
+    assertEquals(62, mapper.nextLowerUnbounded(D));
+    assertEquals(61, mapper.nextLowerUnbounded(Db));
+    assertEquals(57, mapper.nextLowerUnbounded(A));
+  }
+  
 }
