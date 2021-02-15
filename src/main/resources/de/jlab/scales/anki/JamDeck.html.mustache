@@ -22,7 +22,7 @@
     </p>
     {{#cards}}
     <div class="card border-secondary mb-3">
-      <h4 class="card-header">{{progression}} in {{key}} {{#withGuitar}} in {{position.label}} Position {{/withGuitar}}</h4>
+      <h4 class="card-header">{{progression}} in {{key}} {{#withGuitar}} in {{position.label}} Position {{#stringSet}} on {{stringSet}} {{/stringSet}} {{/withGuitar}}</h4>
       <div class="card-body">
         {{#withGuitar}}
         <p>
@@ -43,7 +43,8 @@
           <li>Style: {{style}}</li>
           <li>Tempo: {{tempo}}</li> 
           {{#withGuitar}}
-          <li>Position: {{position.label}}</li> 
+          <li>Position: {{position.label}}</li>
+          <li>StringSet: {{stringSet}} (Triads only)</li> 
           {{/withGuitar}}
         </ul>
       </div>

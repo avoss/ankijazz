@@ -39,13 +39,15 @@ public class JamCard implements Card {
   private final double difficulty;
   private final int bpm;
   private final String style;
+  private final String stringSet;
   
   @lombok.Builder
-  private JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Supplier<Ensemble> ensembleSupplier, FretboardPosition position) {
+  private JamCard(Note instrument, RenderContext context, SongWrapper wrapper, Supplier<Ensemble> ensembleSupplier, FretboardPosition position, String stringSet) {
     this.instrument = instrument;
     this.context = context;
     this.wrapper = wrapper;
     this.ensembleSupplier = ensembleSupplier;
+    this.stringSet = stringSet;
     this.position = Optional.fromNullable(position);
     this.song = wrapper.getSong();
     this.assetId = computeAssetId();
@@ -85,13 +87,16 @@ public class JamCard implements Card {
     if (position.isPresent()) {
       map.put("positionLabel", position.get().getLabel());
       map.put("positionImage", position.get().getImage());
+      map.put("stringSet", getStringSet());
     }
     return map;
   }
 
   @Override
   public String getCsv() {
-    Stream<String> positionStream = position.isPresent() ? Stream.of(position.get().getLabel(), ankiPng(position.get().getImage())) : Stream.empty();
+    Stream<String> positionStream = position.isPresent() 
+        ? Stream.of(position.get().getLabel(), ankiPng(position.get().getImage()), getStringSet()) 
+        : Stream.empty();
     Stream<String> songStream = Stream.of(
         getProgression(),
         getComment(),
@@ -173,6 +178,10 @@ public class JamCard implements Card {
   
   public FretboardPosition getPosition() {
     return position.get();
+  }
+
+  public String getStringSet() {
+    return stringSet == null ? "" : stringSet;
   }
   
   public String getComment() {

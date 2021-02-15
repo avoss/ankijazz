@@ -2,6 +2,7 @@ package de.jlab.scales.anki;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
@@ -25,6 +26,7 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
   private final String fileName;
   private final List<JamCard> cards = new ArrayList<>();
   private final LoopIteratorFactory iteratorFactory;
+  private final Iterator<String> stringSetIterator;
   
   protected AbstractJamCardGenerator(String title, Note instrument, boolean withGuitar) {
     this(title, instrument, withGuitar, Utils.randomLoopIteratorFactory());
@@ -36,6 +38,7 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
     this.withGuitar = withGuitar;
     this.iteratorFactory = iteratorFactory;
     this.fileName = "Jam".concat(instrument.name()).concat(withGuitar ? "Guitar" : "").concat("Deck");
+    this.stringSetIterator = iteratorFactory.iterator(List.of("High String Set", "Low String Set"));
 
     addCards();
     
@@ -57,6 +60,7 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
               .wrapper(wrapper)
               .ensembleSupplier(ensemble)
               .position(position)
+              .stringSet(features.contains(Feature.Triads) ? stringSetIterator.next() : "")
               .build());
             numberOfCards ++;
           }
