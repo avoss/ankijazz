@@ -111,7 +111,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   abstract class AbstractMelodyProvider implements MelodyProvider {
     private final int minPitch = 56;
     private final int maxPitch = minPitch + 24;
-    private final int melodyVelocity = 127;
+    private final int melodyVelocity = 110;
     private final NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, maxPitch);
     private Iterator<Note> iterator;
     private final int midiNotesPerBar;
