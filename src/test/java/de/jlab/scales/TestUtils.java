@@ -95,10 +95,14 @@ public class TestUtils {
     Files.write(dir.resolve(fileName), actualLines);
   }
 
-  private static Path outputDir(Class<?> testClass) throws IOException {
-    Path dir = Paths.get("build", testClass.getPackage().getName().replace('.', '/'));
-    Files.createDirectories(dir);
-    return dir;
+  public static Path outputDir(Class<?> testClass) {
+    try {
+      Path dir = Paths.get("build", testClass.getPackage().getName().replace('.', '/'));
+      Files.createDirectories(dir);
+      return dir;
+    } catch (IOException e) {
+      throw new UncheckedIOException(e);
+    }
   }
 
   public static void assertFileContentMatchesInAnyOrder(List<String> actualLines, Class<?> testClass, String fileName) {
