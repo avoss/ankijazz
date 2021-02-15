@@ -24,6 +24,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.difficulty.Difficulties;
 import de.jlab.scales.difficulty.DifficultyModel;
 import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
 import de.jlab.scales.theory.IntervalAnalyzer;
@@ -204,7 +205,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   }
 
   private double computeScaleDifficulty(ScaleInfo info) {
-    return new ScaleModel(info).getDifficulty();
+    return Difficulties.getScaleInfoDifficulty(info);
   }
   
 }
