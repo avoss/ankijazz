@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 import de.jlab.scales.Utils;
-import de.jlab.scales.anki.FretboardJamCardGenerator.Melody;
+import de.jlab.scales.anki.FretboardJamCardGenerator.PlayThroughChangesMelody;
 import de.jlab.scales.jtg.PngImageRenderer;
 import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.Part;
@@ -49,7 +49,7 @@ public class FretboardJamCardGeneratorTest {
   @Test
   public void testMelody() {
     FretboardJamCardGenerator generator = new FretboardJamCardGenerator(CAGED_MODES, Utils.randomLoopIteratorFactory());
-    Melody melody = generator.new Melody();
+    PlayThroughChangesMelody melody = generator.new PlayThroughChangesMelody();
     Scale cmajor = Scales.CMajor;
     Scale bmajor = cmajor.transpose(B);
     melody.start(cmajor);

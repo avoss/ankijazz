@@ -37,7 +37,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final RenderContext context = RenderContext.ANKI;
   private final Spec spec;
   private final int numberOfSongs;
-  private final int songsPerChordScalePair = 24;
+  private final int songsPerChordScalePair = 12;
   final int numberOfBarsPerChord = 2;
   final Iterator<SongWrapper> songFactory;
  
@@ -107,21 +107,25 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     }
     
   }
-  
-  class Melody implements MelodyProvider {
+
+  abstract class AbstractMelodyProvider implements MelodyProvider {
     private final int minPitch = 56;
     private final int maxPitch = minPitch + 24;
-    private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, maxPitch);
-    int directionCounter = -1;
-    boolean ascending;
-    Note prevNote;
+    private final int melodyVelocity = 127;
+    private final NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, maxPitch);
     private Iterator<Note> iterator;
-    private int melodyVelocity = 127;
+    private final int midiNotesPerBar;
+    private final int noteLengthDenominator;
     
-    Melody() {
+    protected boolean ascending;
+    protected Note prevNote;
+    
+    AbstractMelodyProvider(int midiNotesPerBar, int noteLengthDenominator) {
+      this.midiNotesPerBar = midiNotesPerBar;
+      this.noteLengthDenominator = noteLengthDenominator;
       reset();
     }
-    
+
     @Override
     public void start(Scale scale) {
       maybeChangeDirection();
@@ -135,13 +139,66 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
         Collections.reverse(list);
         Collections.rotate(list, 1);
       }
-      if (directionCounter == 1) {
-        rotateClosestToPrevNote(list);
-      }
+      rotateClosestToPrevNote(list);
       return list;
     }
+    
+    protected abstract void maybeChangeDirection();
+    protected abstract void rotateClosestToPrevNote(List<Note> list);
 
-    void rotateClosestToPrevNote(List<Note> list) {
+    void reset() {
+      if (ascending) {
+        mapper.resetToLowest();
+      } else {
+        mapper.resetToHighest();
+      }
+    }
+    
+    @Override
+    public Part next() {
+      Sequential seq = Parts.seq();
+      for (int i = 0; i < midiNotesPerBar; i++) {
+        Note note = iterator.next();
+        int pitch = ascending ? mapper.nextHigherUnbounded(note) : mapper.nextLowerUnbounded(note);
+        seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , noteLengthDenominator));
+        seq.add(Parts.rest(noteLengthDenominator));
+        prevNote = note;
+      }
+      return seq;
+    }
+
+  }
+  
+  class PlayOverChangesMelody extends AbstractMelodyProvider {
+
+    PlayOverChangesMelody() {
+      super(4, 4);
+    }
+
+    @Override
+    protected void maybeChangeDirection() {
+      ascending = !ascending;
+      reset();
+    }
+
+    @Override
+    protected void rotateClosestToPrevNote(List<Note> list) {
+      
+    }
+    
+  }
+  class PlayThroughChangesMelody extends AbstractMelodyProvider {
+    int directionCounter = -1;
+    
+    PlayThroughChangesMelody() {
+      super(2, 2);
+    }
+
+    @Override
+    protected void rotateClosestToPrevNote(List<Note> list) {
+      if (directionCounter != 1) {
+        return;
+      }
       BiFunction<Note, Note, Integer> fn = ascending 
           ? (prev, next) -> (prev == next ? 100 : prev.semitones(next))
           : (prev, next) -> (prev == next ? 100 : next.semitones(prev));
@@ -156,7 +213,8 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       Collections.rotate(list, -list.indexOf(bestNote));
     }
 
-    private void maybeChangeDirection() {
+    @Override
+    protected void maybeChangeDirection() {
       directionCounter += 1;
       if (directionCounter == 2) {
         directionCounter = 0;
@@ -165,26 +223,6 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       }
     }
 
-    private void reset() {
-      if (ascending) {
-        mapper.resetToLowest();
-      } else {
-        mapper.resetToHighest();
-      }
-    }
-    
-    @Override
-    public Part next() {
-      Sequential seq = Parts.seq();
-      for (int i = 0; i < 2; i++) {
-        Note note = iterator.next();
-        int pitch = ascending ? mapper.nextHigherUnbounded(note) : mapper.nextLowerUnbounded(note);
-        seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , 2));
-        seq.add(Parts.rest(2));
-        prevNote = note;
-      }
-      return seq;
-    }
   }
   
   class SemitonesIteratorFactory  {
@@ -217,7 +255,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   class SongWrapperFactory implements Iterator<SongWrapper> {
     
     Iterator<ChordScaleAudio> pairs = iteratorFactory.iterator(spec.getPairs());
-    MelodyProvider melody = new Melody();
+    MelodyProvider melody = new PlayOverChangesMelody();
     SemitonesIteratorFactory semitonesIteratorFactory = new SemitonesIteratorFactory();
     int songIndex = 0;
     
