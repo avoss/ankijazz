@@ -1,16 +1,18 @@
 package de.jlab.scales.anki;
 
+import static de.jlab.scales.Utils.getFirst;
+import static de.jlab.scales.Utils.getLast;
 import static de.jlab.scales.midi.song.Ensembles.latin;
 import static de.jlab.scales.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
 import static java.util.Arrays.asList;
-import static java.util.stream.Collectors.toCollection;
+import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.stream.IntStream;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.Interpolator;
@@ -35,6 +37,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final Spec spec;
   private final int numberOfSongs;
   private final int songsPerChordScalePair = 24;
+  final int numberOfBarsPerChord = 2;
   final Iterator<SongWrapper> songFactory;
  
   @lombok.Builder
@@ -86,10 +89,74 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
     return spec.getFileName();
   }
 
+  class Melody {
+    private final int minPitch = 56;
+    private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, minPitch + 24);
+    boolean ascending;
+    private Iterator<Note> iterator;
+    private int melodyVelocity = 127;
+    
+    void start(Scale scale) {
+      ascending = !ascending;
+      List<Note> list = scale.asList();
+      list.add(list.get(0));
+      if (!ascending) {
+        Collections.reverse(list);
+      }
+      iterator = list.iterator();
+      if (ascending) {
+        mapper.resetToLowest();
+      } else {
+        mapper.resetToHighest();
+      }
+    }
+    
+    Part next() {
+      Sequential seq = Parts.seq();
+      for (int i = 0; i < 4; i++) {
+        if (iterator.hasNext()) {
+          Note note = iterator.next();
+          int pitch = mapper.nextClosest(note);
+          seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , 4));
+          seq.add(Parts.rest(4));
+        }
+      }
+      return seq;
+    }
+  }
+  
+  class SemitonesIteratorFactory  {
+    private Iterator<Note> roots = iteratorFactory.iterator(Arrays.asList(Note.values()));
+    private Interpolator numberOfChords;
+    private Note prevRoot = roots.next();
+    private final int minSemitones = 2;
+    private final int maxSemitones = 5;
+    SemitonesIteratorFactory() {
+      numberOfChords = Utils.interpolator(0, numberOfSongs, minSemitones, maxSemitones);
+    }
+
+    public Iterator<Integer> create(Integer songIndex) {
+      int chordsPerSong = numberOfChords.apply(songIndex);
+      List<Note> notes = new ArrayList<>();
+      do {
+        for (int i = 0; i < chordsPerSong; i++) {
+          Note root = roots.next();
+          while (prevRoot.distance(root) < 2) {
+            root = roots.next();
+          }
+          notes.add(root);
+          prevRoot = root;
+        }
+      } while(getFirst(notes).distance(getLast(notes)) < 2);
+      return Utils.loopIterator(notes.stream().map(n -> n.ordinal()).collect(toList()));
+    }
+  }
+  
   class SongWrapperFactory implements Iterator<SongWrapper> {
     
-    Iterator<Note> roots = iteratorFactory.iterator(asList(Note.values()));
     Iterator<ChordScaleAudio> pairs = iteratorFactory.iterator(spec.getPairs());
+    Melody melody = new Melody();
+    SemitonesIteratorFactory semitonesIteratorFactory = new SemitonesIteratorFactory();
     int songIndex = 0;
     
     @Override
@@ -106,70 +173,23 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       songIndex++;
       return wrapper;
     }
-
-    class Melody {
-      private final int minPitch = 56;
-      private NoteToMidiMapper mapper = NoteToMidiMapper.range(minPitch, minPitch + 24);
-      boolean ascending;
-      private Iterator<Note> iterator;
-      private int melodyVelocity = 127;
-      
-      void start(Scale scale) {
-        ascending = !ascending;
-        List<Note> list = scale.asList();
-        list.add(list.get(0));
-        if (!ascending) {
-          Collections.reverse(list);
-        }
-        iterator = list.iterator();
-        if (ascending) {
-          mapper.resetToLowest();
-        } else {
-          mapper.resetToHighest();
-        }
-      }
-      
-      Part next() {
-        Sequential seq = Parts.seq();
-        for (int i = 0; i < 4; i++) {
-          if (iterator.hasNext()) {
-            Note note = iterator.next();
-            int pitch = mapper.nextClosest(note);
-            seq.add(Parts.note(MELODY_MIDI_CHANNEL, pitch, melodyVelocity , 4));
-            seq.add(Parts.rest(4));
-          }
-        }
-        return seq;
-      }
-    }
-    
-    Melody melody = new Melody();
     
     private Song createSong(ChordScaleAudio pair, int songIndex) {
-      Iterator<Integer> semitonesIterator = semitonesIterator(songIndex);
+      Iterator<Integer> semitonesIterator = semitonesIteratorFactory.create(songIndex);
       List<Bar> bars = new ArrayList<>();
-      for (int i = 0; i < context.getNumberOfBars() / 2; i++) {
+      for (int i = 0; i < context.getNumberOfBars() / numberOfBarsPerChord; i++) {
         int semitones = semitonesIterator.next();
         Scale transposedChord = pair.getAudio().transpose(semitones);
         Chord chord = new Chord(transposedChord, ScaleUniverse.CHORDS.findFirstOrElseThrow(transposedChord).getScaleName());
         Scale transposedScale = pair.getScale().transpose(semitones);
         melody.start(transposedScale);
-        bars.add(Bar.of(melody.next(), chord));
-        bars.add(Bar.of(melody.next(), chord));
+        for (int j = 0; j < numberOfBarsPerChord; j++) {
+          bars.add(Bar.of(melody.next(), chord));
+        }
       }
       return new Song(bars);
     }
 
-    Interpolator numberOfChords = Utils.interpolator(0, numberOfSongs, 2, 5);
-    /**
-     * ensures that each chord is played in both directions, ascending and descending.
-     * @param songIndex 
-     */
-    private Iterator<Integer> semitonesIterator(int songIndex) {
-      int chordsPerSong = numberOfChords.apply(songIndex); 
-      List<Integer> semitones = IntStream.range(0, chordsPerSong).map(i -> roots.next().ordinal()).boxed().collect(toCollection(ArrayList::new));
-      return Utils.loopIterator(semitones);
-    }
 
     @Override
     public boolean hasNext() {

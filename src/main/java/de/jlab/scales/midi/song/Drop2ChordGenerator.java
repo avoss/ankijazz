@@ -82,7 +82,7 @@ public class Drop2ChordGenerator implements ChordGenerator {
   }
 
   private int distance(List<Note> notes) {
-    return highestMidiPitch - MidiUtils.noteToMidiPitchBelow(highestMidiPitch, getLast(notes));
+    return highestMidiPitch - MidiUtils.noteToMidiPitchBelowOrSame(highestMidiPitch, getLast(notes));
   }
   
 

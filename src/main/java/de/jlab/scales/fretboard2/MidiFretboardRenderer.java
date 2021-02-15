@@ -177,7 +177,7 @@ public class MidiFretboardRenderer implements FretboardRenderer<Part> {
     for (int i = 0; i < midiChord.length; i++) {
       seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, midiChord[i], 40, duration, TICK));
     }
-    int bassPitch = MidiUtils.noteToMidiPitchBelow(45, backgroundChord.getRoot());
+    int bassPitch = MidiUtils.noteToMidiPitchBelowOrSame(45, backgroundChord.getRoot());
     seq.add(Parts.note(BG_CHORD_MIDI_CHANNEL, bassPitch, 90, duration, TICK));
     return seq;
   }
