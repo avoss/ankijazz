@@ -170,7 +170,7 @@ public class TestUtils {
     deck.writeJson(ankiDir);
     deck.writeAssets(ankiDir);
 
-    Deck<T> subdeck = deck.subdeck(50);
+    Deck<T> subdeck = deck.subdeck(25);
     Path previewDir = Paths.get("build/preview");
     subdeck.writeAnki(previewDir); 
     subdeck.writeHtml(previewDir);

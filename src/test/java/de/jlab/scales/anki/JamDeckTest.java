@@ -35,7 +35,7 @@ public class JamDeckTest {
     
   }
   @Test
-  @Ignore
+  //@Ignore
   public void testOtherInstruments() {
     TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (C-Instrument)", Note.C, false)), 0.1);
     TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Bb-Instrument)", Note.Bb, false)), 0.1);
@@ -53,7 +53,6 @@ public class JamDeckTest {
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "JamDeckTest.txt");
     TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "JamDeckTest.json");
     TestUtils.assertFileContentMatches(deck.getHtml(), getClass(), "JamDeckTest.html");
-    TestUtils.writeTo(deck, 0.01);
   }
   
   @Test
