@@ -4,7 +4,7 @@ music scales modes notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeCDeck.html">preview some cards here</a>.
+Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeCDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -18,7 +18,7 @@ music scales modes notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeBbDeck.html">preview some cards here</a>.
+Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeBbDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -32,7 +32,7 @@ music scales modes notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeEbDeck.html">preview some cards here</a>.
+Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeEbDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -46,7 +46,7 @@ music scales modes notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeGuitarDeck.html">preview some cards here</a>.
+Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeGuitarDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -60,7 +60,7 @@ music scales modes notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeBassDeck.html">preview some cards here</a>.
+Cards with notation and audio to practice scales and modes that are most commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesPracticeBassDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -74,7 +74,7 @@ music rhythm notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice rhythm patterns commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/RhythmPianoDeck.html">preview some cards here</a>.
+Cards with notation and audio to practice rhythm patterns commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/RhythmPianoDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -86,7 +86,7 @@ music scales modes chords
 
 https://www.ankijazz.com
 
-Small, text-only (and mobile friendly) deck to learn to spell scales and chords, as well as questions about modal relationship between scales (e.g. what is mode 5 of D Major?). Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesTheoryDeck.html">preview some cards here</a>.
+Small, text-only (and mobile friendly) deck to learn to spell scales and chords, as well as questions about modal relationship between scales (e.g. what is mode 5 of D Major?). Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ModesTheoryDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
@@ -101,7 +101,138 @@ https://www.ankijazz.com
 This is a subset of my other Deck <em>AnkiJazz - Learn Scales, Modes, Chords and more (Theory)</em>. It only asks you about scales (not their modes) and
 contains only the most important chords.
 
-Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ScalesTheoryDeck.html">preview some cards here</a>.
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/ScalesTheoryDeck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 
+---------------------
+
+AnkiJazz Guitar - Pentatonics 1: Scales (Fretboard)
+
+guitar music pentatonic scales fretboard
+
+https://www.ankijazz.com
+
+Cards with fretboard diagrams and audio to learn the Pentatonic Scales.
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Pentatonic1ScalesFretboards.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - Pentatonics 2: Scales (Jamtracks)
+
+guitar music pentatonic scales jamtrack
+
+https://www.ankijazz.com
+
+Cards with jam tracks to practice the Pentatonic Scales.
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Pentatonic2ScalesJamtracks.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - Pentatonics 3: Outline Chords (Fretboard)
+
+guitar music pentatonic scales fretboard chords
+
+https://www.ankijazz.com
+
+Cards with fretboard diagrams and audio to learn to outline chords using Pentatonic Scales.
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Pentatonic3ChordsFretboards.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - Pentatonics 4: Outline Chords (Jamtracks)
+
+guitar music pentatonic scales jamtrack chords
+
+https://www.ankijazz.com
+
+Cards with jam tracks to practice to outline chords using Pentatonic Scales.
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Pentatonic4ChordsJamtracks.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - Pentatonics 5: Outline Modes (Fretboard)
+
+guitar music pentatonic scales fretboard modes
+
+https://www.ankijazz.com
+
+Cards with fretboard diagrams and audio to learn to outline modes using Pentatonic Scales.
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Pentatonic5ModesFretboards.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - CAGED 1: Scales (Fretboard)
+
+guitar music CAGED scales fretboard
+
+https://www.ankijazz.com
+
+Cards with fretboard diagrams and audio to learn the 5 positions of the CAGED system
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Caged1ScalesFretboards.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - CAGED 2: Scales (Jamtracks)
+
+guitar music CAGED scales jamtrack
+
+https://www.ankijazz.com
+
+Cards with jam tracks to practice the 5 positions of the CAGED system
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Caged2ScalesJamtracks.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+ 
+AnkiJazz Guitar - CAGED 3: Modes (Fretboard)
+
+guitar music CAGED scales fretboard
+
+https://www.ankijazz.com
+
+Cards with fretboard diagrams and audio to learn to play modes in the 5 positions of the CAGED system
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Caged3ModesFretboards.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - CAGED 4: Modes (Jamtracks)
+
+guitar music CAGED scales jamtrack
+
+https://www.ankijazz.com
+
+Cards with jam tracks to practice modes in the 5 positions of the CAGED system
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Caged4ModesJamtracks.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz Guitar - CAGED 5: Modes and Arpeggios (Fretboard)
+
+guitar music CAGED scales fretboard arpeggios
+
+https://www.ankijazz.com
+
+Cards with fretboard diagrams and audio to learn the arpeggios contained in the 5 positions of the CAGED system
+Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/Caged5ArpeggiosFretboards.html"><b>preview some cards here</b></a>.
+
+See full documentation at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
