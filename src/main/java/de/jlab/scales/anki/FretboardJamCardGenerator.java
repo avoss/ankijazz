@@ -266,7 +266,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
       SongWrapper wrapper = SongWrapper.builder()
           .key("Mixed Keys")
           .progression(pair.getTitle() == null ? "Play ".concat(scaleInfo.getTypeName()) : pair.getTitle())
-          .progressionSet(scaleInfo.getScaleType().getTypeName())
+          .type(scaleInfo.getTypeName())
           .song(createSong(pair, songIndex))
           .comment(pair.getComment())
           .build();

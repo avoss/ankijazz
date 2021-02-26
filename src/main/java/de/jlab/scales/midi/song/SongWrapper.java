@@ -7,7 +7,7 @@ import lombok.Data;
 @Builder
 public class SongWrapper {
   private final Song song;
-  private final String progressionSet;
+  private final String type;
   private final String progression;
   private final String key;
   private final String comment;

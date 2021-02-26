@@ -161,7 +161,7 @@ public class JamCard implements Card {
   }
 
   public String getType() {
-    return wrapper.getProgressionSet();
+    return wrapper.getType();
   }
 
   public String getStyle() {

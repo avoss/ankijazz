@@ -131,7 +131,7 @@ public class FretboardDiagramCard implements Card {
   }
 
   public String getScaleTypeName() {
-    return scaleInfo.getScaleType().getTypeName();
+    return scaleInfo.getTypeName();
   }
 
   public String getScaleName() {

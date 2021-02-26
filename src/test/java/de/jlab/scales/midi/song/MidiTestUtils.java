@@ -55,7 +55,7 @@ public class MidiTestUtils {
       .song(staticSong())
       .key("Key of C")
       .progression("Test Progression")
-      .progressionSet("Minor7Chords")
+      .type("Minor7Chords")
       .build();
   }
   

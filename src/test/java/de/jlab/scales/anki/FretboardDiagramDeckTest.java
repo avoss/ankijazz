@@ -148,6 +148,7 @@ public class FretboardDiagramDeckTest {
   public void testCaged3ModesFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Caged3ModesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "Caged3ModesFretboards.json");
     TestUtils.writeTo(deck, 0.1);
   }
   

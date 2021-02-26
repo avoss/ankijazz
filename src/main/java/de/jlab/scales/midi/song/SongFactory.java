@@ -154,7 +154,7 @@ public class SongFactory  {
         SongWrapper songWrapper = SongWrapper.builder()
           .song(song)
           .key(key.getTitle())
-          .progressionSet(progressionSet.getTitle())
+          .type(progressionSet.getTitle())
           .progression(progression.getTitle())
           .build();
           
