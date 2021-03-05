@@ -9,6 +9,7 @@ import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,6 +17,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
+import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 
@@ -58,6 +60,7 @@ public class BoxMarkerTest {
   @Test
   public void testRootOutsideOfPosition() {
     Fretboard fretboard = new Fretboard();
+    // e.g. outline lydian chord
     Position position = Marker.box(fretboard, HIGH_E_STRING, Note.Bb, LEFT, aMinorPent);
     assertEquals("3 5|3 5|2 5|2 5|3 5|3 5", position.toString());
     assertThat(fretboard.getMinFret()).isEqualTo(2);
@@ -134,6 +137,20 @@ public class BoxMarkerTest {
         assertEquals(String.format("%s %s\n%s", fingering, root.name(), fretboard2), Marker.ROOT, fretboard2.getString(stringIndex).markerOf(markedFret));
       }
     }
+  }
+  
+  @Test
+  public void assertRequestedRootIsIncludedInPosition() {
+    Fretboard frontBoard = new Fretboard();
+    int stringNumber = 1;
+    // Ab-Altered
+    Position position = Marker.box(frontBoard, stringNumber, Note.Ab, BoxPosition.RIGHT, NPS.C_MELODIC_MINOR_CAGED.transpose(Note.A), Marker.ROOT);
+    List<MarkedFret> markedFrets = frontBoard.findMarkedFrets(Fretboard.NON_EMPTY);
+    assertThat(markedFrets.size()).isEqualTo(1);
+    MarkedFret markedFret = markedFrets.get(0);
+    assertThat(markedFret.getStringNumber()).isEqualTo(stringNumber);
+    Collection<Integer> positionFrets = position.getFrets(stringNumber);
+    assertThat(positionFrets).contains(markedFret.getFretNumber());
   }
 
 }

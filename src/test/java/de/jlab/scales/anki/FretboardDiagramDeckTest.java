@@ -125,8 +125,8 @@ public class FretboardDiagramDeckTest {
   public void testPentatonic3ChordsFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Pentatonic3ChordsFretboards(penta3Validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
     TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "PentatonicsLevel3VisualizeChords.json");
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
     TestUtils.writeTo(deck, 0.1);
   }
   
@@ -148,8 +148,8 @@ public class FretboardDiagramDeckTest {
   public void testCaged3ModesFretboards() {
     CardGenerator<FretboardDiagramCard> generator = new Caged3ModesFretboards(validator);
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "Caged3ModesFretboards.json");
     TestUtils.writeTo(deck, 0.1);
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "Caged3ModesFretboards.json");
   }
   
   @Test

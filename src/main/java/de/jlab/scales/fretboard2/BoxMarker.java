@@ -19,6 +19,7 @@ public class BoxMarker {
   private final Position position;
   private final GuitarString string;
   private Marker marker;
+  private int stringIndex;
 
     
   public BoxMarker(Fretboard fretboard, int stringIndex, Note root, BoxPosition boxPosition, Fingering fingering) {
@@ -27,6 +28,7 @@ public class BoxMarker {
   
   public BoxMarker(Fretboard fretboard, int stringIndex, Note root, BoxPosition boxPosition, Fingering fingering, Marker marker) {
     this.fretboard = fretboard;
+    this.stringIndex = stringIndex;
     this.boxPosition = boxPosition;
     this.fingering = fingering;
     this.marker = marker;
@@ -34,8 +36,12 @@ public class BoxMarker {
     
     int rootFret1 = string.fretOf(root);
     int rootFret2 = rootFret1 + 12;
-    Optional<Position> position1 = findPosition(rootFret1);
-    Optional<Position> position2 = findPosition(rootFret2);
+    Optional<Position> position1 = findPositionContainingRoot(rootFret1);
+    Optional<Position> position2 = findPositionContainingRoot(rootFret2);
+    if (position1.isEmpty() && position2.isEmpty()) {
+      position1 = findPositionWithoutRoot(rootFret1);
+      position2 = findPositionWithoutRoot(rootFret2);
+    }
     if (position1.isEmpty()) {
       this.rootFret = rootFret2;
       this.position = position2.get();
@@ -57,7 +63,7 @@ public class BoxMarker {
     }
   }
   
-  Optional<Position> findPosition(int rootFret) {
+  Optional<Position> findPositionWithoutRoot(int rootFret) {
     Comparator<Position> byFret = (a, b) -> Integer.compare(a.getMinFret(), b.getMinFret());
     Stream<Position> positions = fingering.getPositions().stream();
     if (boxPosition == BoxPosition.LEFT) {
@@ -66,6 +72,16 @@ public class BoxMarker {
     }
     Predicate<Position> filter = p -> rootFret <= middleFret(p);
     return positions.filter(filter).min(byFret);
+  }
+  
+  Optional<Position> findPositionContainingRoot(int rootFret) {
+    Comparator<Position> byFret = (a, b) -> Integer.compare(a.getMinFret(), b.getMinFret());
+    Predicate<Position> filter = p -> p.getFrets(stringIndex).contains(rootFret);
+    Stream<Position> positions = fingering.getPositions().stream();
+    if (boxPosition == BoxPosition.LEFT) {
+      return positions.filter(filter).min(byFret);
+    }
+    return positions.filter(filter).max(byFret);
   }
 
   private double middleFret(Position p) {

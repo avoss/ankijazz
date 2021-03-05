@@ -1,3 +1,7 @@
+# JazzEck
+- more mm modes: lydian augmented, locrian natural 9
+- penta bend 3 over dominant chord
+
 # Scales Core
 Anki media directory is C:\Users\andreas\AppData\Roaming\Anki2
 

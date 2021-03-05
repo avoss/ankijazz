@@ -29,6 +29,7 @@ import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
+  private static final int numberOfCardsPerPosition = 1;
 
   public interface Validator {
     void validate(Fretboard frontBoard, Fretboard backBoard);
@@ -81,7 +82,9 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     for (ChordScaleAudio pair : findPairs()) {
       for (int string = 0; string < STANDARD_TUNING.getStrings().size(); string++) {
         for (BoxPosition box : BoxPosition.values()) {
-          result.add(new CardData(pair, roots.next(), box, string));
+          for (int i = 0; i < numberOfCardsPerPosition; i++) {
+            result.add(new CardData(pair, roots.next(), box, string));
+          }
         }
       }
     }

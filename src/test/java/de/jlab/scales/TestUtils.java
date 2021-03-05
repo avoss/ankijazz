@@ -163,7 +163,7 @@ public class TestUtils {
   }
 
   public static <T extends Card> Deck<T> writeTo(Deck<T> deck, double randomness) {
-    deck.sort(randomness);
+//    deck.sort(randomness);
     Path ankiDir = Paths.get("build/anki");
     deck.writeAnki(ankiDir); 
     deck.writeHtml(ankiDir);
