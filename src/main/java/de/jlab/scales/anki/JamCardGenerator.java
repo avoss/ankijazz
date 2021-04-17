@@ -25,7 +25,7 @@ public class JamCardGenerator extends AbstractJamCardGenerator {
 
   @Override
   protected void addCards() {
-    Set<Supplier<Ensemble>> ensembles =  Set.of(() -> funk(80) /*, () -> latin(125) */);
+    Set<Supplier<Ensemble>> ensembles =  Set.of(() -> funk(90)/*, () -> latin(125)*/);
     addCards(Set.of(Triads, SomeKeys, AllKeys), ensembles);
     addCards(Set.of(Workouts, SomeKeys, AllKeys), ensembles);
     addCards(Set.of(TwoFiveOnes, EachKey, AllKeys), ensembles);

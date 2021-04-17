@@ -97,12 +97,8 @@ public class BoxMarkerTest {
     Fingering fingering = NPS.C_MINOR6_PENTATONIC.transpose(Note.F);
     Position left = Marker.box(fretboard, A_STRING, Note.E, LEFT, fingering);
     Position right = Marker.box(fretboard, A_STRING, Note.E, RIGHT, fingering);
-    /*
-     * some scales in some positions have no left/right because root is exactly
-     * in the center. If we force one of them to the left or right, it would
-     * be too far away from the requested fret. 
-     */
-    assertEquals(left, right);
+    assertEquals(left.toString(), "4 6|3 5|3 6|3 5|3 6|4 6");
+    assertEquals(right.toString(), "8 10|8 11|8 10|7 10|9 11|8 10");
   }
   
   @Test
@@ -140,12 +136,25 @@ public class BoxMarkerTest {
   }
   
   @Test
-  public void assertRequestedRootIsIncludedInPosition() {
+  public void assertRequestedRootIsIncludedInPositionOfAlteredCaged() {
     Fretboard frontBoard = new Fretboard();
     int stringNumber = 1;
     // Ab-Altered
     Position position = Marker.box(frontBoard, stringNumber, Note.Ab, BoxPosition.RIGHT, NPS.C_MELODIC_MINOR_CAGED.transpose(Note.A), Marker.ROOT);
     List<MarkedFret> markedFrets = frontBoard.findMarkedFrets(Fretboard.NON_EMPTY);
+    assertThat(markedFrets.size()).isEqualTo(1);
+    MarkedFret markedFret = markedFrets.get(0);
+    assertThat(markedFret.getStringNumber()).isEqualTo(stringNumber);
+    Collection<Integer> positionFrets = position.getFrets(stringNumber);
+    assertThat(positionFrets).contains(markedFret.getFretNumber());
+  }
+
+  @Test
+  public void assertRequestedRootIsIncludedInPositionOf3NPSMajor() {
+    Fretboard fretBoard = new Fretboard();
+    int stringNumber = 3;
+    Position position = Marker.box(fretBoard, stringNumber, Note.C, BoxPosition.RIGHT, NPS.C_MAJOR_3NPS);
+    List<MarkedFret> markedFrets = fretBoard.findMarkedFrets(Fretboard.NON_EMPTY);
     assertThat(markedFrets.size()).isEqualTo(1);
     MarkedFret markedFret = markedFrets.get(0);
     assertThat(markedFret.getStringNumber()).isEqualTo(stringNumber);

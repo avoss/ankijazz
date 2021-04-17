@@ -196,6 +196,7 @@ public class Scales {
     List<Scale> scales = new ArrayList<>();
     scales.addAll(CMajor.getInversions());
     scales.add(CMelodicMinor);
+    // TODO lydian augmented, locrian nat 2
     scales.add(CMelodicMinor.superimpose(F)); // Lydian Dominant
     scales.add(CMelodicMinor.superimpose(B)); // Altered
     scales.add(CHarmonicMinor);

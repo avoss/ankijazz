@@ -35,19 +35,20 @@ public class JamDeckTest {
     
   }
   @Test
-  //@Ignore
+  @Ignore
   public void testOtherInstruments() {
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (C-Instrument)", Note.C, false)), 0.1);
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Bb-Instrument)", Note.Bb, false)), 0.1);
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Eb-Instrument)", Note.Eb, false)), 0.1);
+    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (C-Instrument)", Note.C, false)), 0.2);
+    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Bb-Instrument)", Note.Bb, false)), 0.2);
+    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Eb-Instrument)", Note.Eb, false)), 0.2);
   }
   
   @Test
   public void testGuitarDeck() {
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Guitar)", Note.C, true)), 0.1);
+    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Guitar)", Note.C, true)), 0.2);
   }
 
   @Test
+  @Ignore
   public void writeTestDeck() {
     JamDeck deck = new JamDeck(new TestCardGenerator());
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "JamDeckTest.txt");

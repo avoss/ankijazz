@@ -55,19 +55,4 @@ public class Pentatonic5ModesFretboards extends AbstractFretboardGenerator {
     return true;
   }
   
-  // TODO copy/paste
-  private int cheatCount = 0;
-  @Override
-  protected void applyParticularities(Fretboard frontBoard, Fretboard backBoard, Scale chord, Scale scale) {
-    List<MarkedFret> front = frontBoard.findMarkedFrets(ROOTS_ONLY);
-    List<MarkedFret> back = backBoard.findMarkedFrets(ROOTS_ONLY);
-    if (!back.containsAll(front)) {
-      frontBoard.clear();
-      frontBoard.mark(back.get(0));
-      if (cheatCount++ > 3) {
-        throw new IllegalStateException("more than 3 positions were not found in CAGED system ... please check");
-      }
-    }
-  }
-  
 }

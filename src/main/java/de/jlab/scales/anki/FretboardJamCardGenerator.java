@@ -37,7 +37,7 @@ public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final RenderContext context = RenderContext.ANKI;
   private final Spec spec;
   private final int numberOfSongs;
-  private final int songsPerChordScalePair = 12;
+  private final int songsPerChordScalePair = 36;
   final int numberOfBarsPerChord = 2;
   final Iterator<SongWrapper> songFactory;
  

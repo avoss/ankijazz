@@ -1,7 +1,10 @@
 package de.jlab.scales.fretboard2;
 
+import static java.lang.Math.abs;
+
 import java.util.Comparator;
 import java.util.Optional;
+import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
@@ -36,12 +39,8 @@ public class BoxMarker {
     
     int rootFret1 = string.fretOf(root);
     int rootFret2 = rootFret1 + 12;
-    Optional<Position> position1 = findPositionContainingRoot(rootFret1);
-    Optional<Position> position2 = findPositionContainingRoot(rootFret2);
-    if (position1.isEmpty() && position2.isEmpty()) {
-      position1 = findPositionWithoutRoot(rootFret1);
-      position2 = findPositionWithoutRoot(rootFret2);
-    }
+    Optional<Position> position1 = findPosition(rootFret1);
+    Optional<Position> position2 = findPosition(rootFret2);
     if (position1.isEmpty()) {
       this.rootFret = rootFret2;
       this.position = position2.get();
@@ -50,17 +49,49 @@ public class BoxMarker {
       this.position = position1.get();
     } else {
       Position p1 = position1.get();
+      int badness1 = new PositionComparator(rootFret1).badness(p1);
       Position p2 = position2.get();
-      double distance1 = Math.abs(rootFret1 - middleFret(p1));
-      double distance2 = Math.abs(rootFret2 - middleFret(p2));
-      if (distance1 < distance2) {
+      int badness2 = new PositionComparator(rootFret2).badness(p2);
+      if (badness1 < badness2) {
         this.rootFret = rootFret1;
-        this.position = position1.get();
+        this.position = p1;
       } else {
         this.rootFret = rootFret2;
-        this.position = position2.get();
+        this.position = p2;
       }
     }
+  }
+
+  class PositionComparator implements Comparator<Position> {
+
+    final Function<Position, Integer> fretNumber;
+    final int rootFret;
+    
+    PositionComparator(int rootFret) {
+      this.rootFret = rootFret;
+      this.fretNumber = boxPosition == BoxPosition.RIGHT 
+          ? (p) -> p.getMinFret() 
+          : (p) -> p.getMaxFret();
+    }
+    
+    @Override
+    public int compare(Position a, Position b) {
+      return Integer.compare(badness(a), badness(b));
+    }
+
+    int badness(Position position) {
+      int badness = abs(rootFret - fretNumber.apply(position));
+      if (!position.getFrets(stringIndex).contains(rootFret)) {
+        badness += 1000;
+      }
+      return badness;
+    }
+    
+  }
+
+  Optional<Position> findPosition(int rootFret) {
+    PositionComparator byFret = new PositionComparator(rootFret);
+    return fingering.getPositions().stream().min(byFret);
   }
   
   Optional<Position> findPositionWithoutRoot(int rootFret) {

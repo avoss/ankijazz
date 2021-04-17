@@ -49,24 +49,27 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
 
   protected void addCards(Set<Feature> features, Set<Supplier<Ensemble>> ensembles) {
     int numberOfCards = 0;
-    SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
-    for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
-      if (withGuitar) {
-        for (FretboardPosition position : FretboardPosition.values()) {
-          for (Supplier<Ensemble> ensemble : ensembles) {
+    if (withGuitar) {
+      for (FretboardPosition position : FretboardPosition.values()) {
+        for (Supplier<Ensemble> ensemble : ensembles) {
+          SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
+          for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
             cards.add(JamCard.builder()
-              .instrument(instrument)
-              .context(context)
-              .wrapper(wrapper)
-              .ensembleSupplier(ensemble)
-              .position(position)
-              .stringSet(features.contains(Feature.Triads) ? stringSetIterator.next() : "")
-              .build());
+                .instrument(instrument)
+                .context(context)
+                .wrapper(wrapper)
+                .ensembleSupplier(ensemble)
+                .position(position)
+                .stringSet(features.contains(Feature.Triads) ? stringSetIterator.next() : "")
+                .build());
             numberOfCards ++;
           }
         }
-      } else {
-        for (Supplier<Ensemble> ensemble : ensembles) {
+      }
+    } else {
+      for (Supplier<Ensemble> ensemble : ensembles) {
+        SongFactory factory = new SongFactory(iteratorFactory, new ProgressionFactory(iteratorFactory), features);
+        for (SongWrapper wrapper: factory.generate(context.getNumberOfBars())) {
           cards.add(JamCard.builder()
               .instrument(instrument)
               .context(context)
