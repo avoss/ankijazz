@@ -48,7 +48,6 @@ public class JamDeckTest {
   }
 
   @Test
-  @Ignore
   public void writeTestDeck() {
     JamDeck deck = new JamDeck(new TestCardGenerator());
     TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "JamDeckTest.txt");
