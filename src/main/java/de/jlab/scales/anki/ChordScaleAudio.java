@@ -273,7 +273,7 @@ public class ChordScaleAudio {
         .chord(CMinor6Pentatonic)
         .scale(CMelodicMinor.superimpose(B))
         .audio(C7sharp5.transpose(B))
-        .title("Outline Lydian Dominant")
+        .title("Outline Altered Dominant")
         .comment("Play Minor6 Pentatonic at b9 degree of mode")
         .build());
     
