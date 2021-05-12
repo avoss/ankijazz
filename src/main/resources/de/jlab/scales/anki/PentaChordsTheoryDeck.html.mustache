@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>{{title}}</title>
+<style>
+.card {
+	max-width: 40rem;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{title}}</h1>
+    {{#cards}}
+    <div class="card border-secondary mb-3">
+      <h5 class="card-header">{{{fields.front}}}</h5>
+      <div class="card-body">
+        <p class="card-text">{{{fields.back}}}</p>
+        <p class="card-text">Chord Name: {{fields.chordName}}</p>
+        <p class="card-text">Chord Type: {{fields.chordType}}</p>
+      </div>
+    </div>
+    {{/cards}}
+  </div>
+</body>
+</html>
