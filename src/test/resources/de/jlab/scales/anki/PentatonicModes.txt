@@ -7,4 +7,4 @@ chord: A Minor Pentatonic, scale: A Aeolean, audio: Am7, title: Outline Aeolean 
 chord: D Minor6 Pentatonic, scale: B Locrian, audio: Bm7b5, title: Outline Locrian Mode, comment: Play Minor6 Pentatonic at 3rd degree of mode
 chord: C Minor6 Pentatonic, scale: C Melodic Minor, audio: CmΔ7, title: Outline Melodic Minor, comment: Play Minor6 Pentatonic at 1st degree of mode
 chord: C Minor6 Pentatonic, scale: F Lydian Dominant, audio: F7, title: Outline Lydian Dominant, comment: Play Minor6 Pentatonic at 5th degree of mode
-chord: C Minor6 Pentatonic, scale: B Altered, audio: B7#5, title: Outline Lydian Dominant, comment: Play Minor6 Pentatonic at b9 degree of mode
+chord: C Minor6 Pentatonic, scale: B Altered, audio: B7#5, title: Outline Altered Dominant, comment: Play Minor6 Pentatonic at b9 degree of mode
