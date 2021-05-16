@@ -24,6 +24,7 @@ public class PentaChordsTheoryDeck extends AbstractDeck<SimpleCard> {
   private static final String BACK = "back";
   private static final String CHORD_NAME = "chordName";
   private static final String CHORD_TYPE = "chordType";
+  private static final String COMMENT = "comment";
 
   public PentaChordsTheoryDeck() {
     super("Outline Chords with Pentatonic Scales");
@@ -45,11 +46,12 @@ public class PentaChordsTheoryDeck extends AbstractDeck<SimpleCard> {
       String chordName = chord.getRoot().getName(accidental).concat(chordType);
       String front = format("<div>Outline <b>%s</b></div>", chordName);
       String back = format("<div><b>%s %s</b></div>", penta.getRoot().getName(accidental), pentaType);
-      SimpleCard card = new SimpleCard(Difficulties.getChordDifficulty(csa.getChord()), FRONT, BACK, CHORD_NAME, CHORD_TYPE);
+      SimpleCard card = new SimpleCard(Difficulties.getChordDifficulty(csa.getChord()), FRONT, BACK, CHORD_NAME, CHORD_TYPE, COMMENT);
       card.put(FRONT, front);
       card.put(BACK, back);
       card.put(CHORD_NAME, chordName);
       card.put(CHORD_TYPE, chordType);
+      card.put(COMMENT, csa.getComment());
       cards.add(card);
     }
     return cards.stream();
