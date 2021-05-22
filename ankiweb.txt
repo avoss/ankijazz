@@ -107,6 +107,19 @@ See full documentation with examples and description of fields at <a href="https
 
 ---------------------
 
+AnkiJazz Guitar - Chords (Jamtracks)
+
+guitar music jazz chords jamtrack
+
+https://www.ankijazz.com
+
+Cards with jam tracks to practice triads and common jazz chords in all keys.
+Before downloading, you can <a href="https://ankijazz.com/assets/preview/JamCGuitarDeck.html"><b>preview some cards here</b></a>.
+
+Because AnkiWeb only allows to share decks up to 250MB size, this is a reduced version. Full version with documentation is available at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
 AnkiJazz Guitar - Pentatonics 1: Scales (Fretboard)
 
 guitar music pentatonic scales fretboard
