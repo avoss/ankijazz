@@ -56,6 +56,7 @@ import static java.util.stream.Collectors.toCollection;
 import java.util.Arrays;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -71,8 +72,8 @@ public enum BuiltinChordType implements ScaleType {
   Minor7(Cm7, "m7", Eb, Major),
   Minor6(Cm6, "m6", Bb, Major),
   Minor69(Cm69, "m69", Bb, Major),
-  Minor9(Cm9, "m9", Bb, Major),
-  Minor11(Cm11, "m11", Bb, Major),
+  Minor9(Cm9, "m9", Eb, Major),
+  Minor11(Cm11, "m11", Eb, Major),
   Minor7b5(Cm7b5, "m7b5", Db, Major),
   Diminished7(Cdim7, "dim7", E, HarmonicMinor),
   
@@ -142,14 +143,19 @@ public enum BuiltinChordType implements ScaleType {
 
   @Override
   public Set<KeySignature> getKeySignatures(Note root) {
-    Scale chord = prototype.transpose(root);
-    // TODO should use all containing scale types, not just one
-    Set<Accidental> accidentals = signatureScaleType.getKeySignatures(signatureScaleRoot.transpose(root)).stream().map(KeySignature::getAccidental).collect(toCollection(LinkedHashSet::new));
-    return accidentals.stream().map(accidental -> KeySignature.fromChord(chord, accidental)).collect(toCollection(LinkedHashSet::new));
+    return signatureScaleType.getKeySignatures(signatureScaleRoot.transpose(root.ordinal()));
   }
 
   public static Stream<BuiltinChordType> stream() {
     return Arrays.stream(BuiltinChordType.values());
+  }
+  
+  public Note getSignatureScaleRoot() {
+    return signatureScaleRoot;
+  }
+  
+  public ScaleType getSignatureScaleType() {
+    return signatureScaleType;
   }
 
 }

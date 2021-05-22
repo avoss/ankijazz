@@ -7,5 +7,5 @@ public interface ScaleType {
   String getTypeName();
   String[] getModeNames();
   boolean isChord();
-  Set<? extends KeySignature> getKeySignatures(Note root);
+  Set<KeySignature> getKeySignatures(Note root);
 }

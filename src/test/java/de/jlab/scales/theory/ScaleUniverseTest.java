@@ -45,6 +45,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
@@ -86,7 +87,7 @@ public class ScaleUniverseTest {
     for (Scale chord : allKeys(Scales.allChords())) {
       for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
         String marker = TestUtils.reviewMarker(chord, info.getKeySignature());
-        String line = String.format("%s %s %s", info.getScaleName(), info.getKeySignature().toString(chord), marker);
+        String line = format("%s %s %s", info.getScaleName(), info.getKeySignature().toString(chord), marker);
         actual.add(line);
       }
     }
@@ -305,7 +306,15 @@ public class ScaleUniverseTest {
     assertScaleContaining(Scales.Cm6, "[Bb Major Scale, C Melodic Minor, Bb Melodic Minor, E Harmonic Minor, G Harmonic Minor, C Diminished Half/Whole]");
     assertScaleContaining(Scales.Cdim7, "[E Harmonic Minor, G Harmonic Minor, Bb Harmonic Minor, C# Harmonic Minor, C Diminished Half/Whole, D Diminished Half/Whole]");
   }
-
+  
+  @Test
+  public void testFaug() {
+    Scale chord = Scales.CaugTriad.transpose(Note.F);
+    ScaleInfo chordInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(chord);
+    String spelled = chordInfo.getKeySignature().toString(chordInfo.getScale().stackedThirds());
+    assertEquals("F A C#", spelled);
+  }
+  
   private void assertScaleContaining(Scale chord, String expected) {
     List<ScaleInfo> infos = jazz.findScalesContaining(chord.asSet());
     List<String> names = infos.stream().map(ScaleInfo::getScaleName).collect(Collectors.toList());
