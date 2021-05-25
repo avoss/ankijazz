@@ -14,35 +14,19 @@ import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
 import static java.util.Arrays.asList;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
 
 public enum Accidental {
-  FLAT() {
+
+  NONE(0, ""),
+
+  FLAT(-1, "b") {
     private final List<Note> COUNT_FLATS = asList(C, F, Bb, Eb, Ab, Db, Gb, B, E, A, D, G);
 
-    @Override
-    public Note apply(Note note) {
-      return note.transpose(-1);
-    }
-
-    @Override
-    public Accidental inverse() {
-      return SHARP;
-    }
-
-    @Override
-    public String symbol() {
-      return "b";
-    }
-
-    @Override
-    public Accidental twice() {
-      return DOUBLE_FLAT;
-    }
-    
     @Override
     public int numberOfAccidentals(Note majorKey) {
       return COUNT_FLATS.indexOf(majorKey);
@@ -52,30 +36,12 @@ public enum Accidental {
     public boolean isEnharmonic(Note note) {
       return note == Note.C || note == Note.F;
     }
+
   },
   
-  SHARP {
+  SHARP(1, "#") {
     private final List<Note> COUNT_SHARPS = asList(C, G, D, A, E, B, Gb, Db, Ab, Eb, Bb, F);
 
-    @Override
-    public Note apply(Note note) {
-      return note.transpose(1);
-    }
-
-    @Override
-    public Accidental inverse() {
-      return FLAT;
-    }
-
-    @Override
-    public String symbol() {
-      return "#";
-    }
-
-    @Override
-    public Accidental twice() {
-      return DOUBLE_SHARP;
-    }
     @Override
     public int numberOfAccidentals(Note majorKey) {
       return COUNT_SHARPS.indexOf(majorKey);
@@ -85,78 +51,13 @@ public enum Accidental {
     public boolean isEnharmonic(Note note) {
       return note == Note.E || note == Note.B;
     }
+
   }, 
   
-  DOUBLE_FLAT {
-
-    @Override
-    public Note apply(Note note) {
-      return note.transpose(-2);
-    }
-
-    @Override
-    public String symbol() {
-      return "bb";
-    }
-
-    @Override
-    public Accidental inverse() {
-      return DOUBLE_SHARP;
-    }
-
-    @Override
-    public Accidental twice() {
-      throw new UnsupportedOperationException();
-    }
-    @Override
-    public int numberOfAccidentals(Note majorKey) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean isEnharmonic(Note note) {
-      throw new UnsupportedOperationException();
-    }
-    
-  },
-  DOUBLE_SHARP {
-
-    @Override
-    public Note apply(Note note) {
-      return note.transpose(2);
-    }
-
-    @Override
-    public String symbol() {
-      return "x";
-    }
-
-    @Override
-    public Accidental inverse() {
-      return DOUBLE_FLAT;
-    }
-    @Override
-    public Accidental twice() {
-      throw new UnsupportedOperationException();
-    }
-    @Override
-    public int numberOfAccidentals(Note majorKey) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean isEnharmonic(Note note) {
-      throw new UnsupportedOperationException();
-    }
-    
-  };
-
-  public abstract Note apply(Note note);
-  public abstract String symbol();
-  public abstract Accidental inverse();
-  public abstract Accidental twice();
-  public abstract int numberOfAccidentals(Note majorKey);
-  public abstract boolean isEnharmonic(Note note);
+  DOUBLE_FLAT(-2, "bb"),
+  TRIPLE_FLAT(-3, "bbb"),
+  DOUBLE_SHARP(2, "x"),
+  TRIPLE_SHARP(3, "x#");
 
   private static final Map<Note, Accidental> preferredMajorKeyAccidentals = ImmutableMap.<Note, Accidental>builder()
       .put(C, FLAT)
@@ -172,9 +73,54 @@ public enum Accidental {
       .put(Bb, FLAT)
       .put(F, FLAT)
       .build();
+
+  private final int offset;
+  private final String symbol;
   
+  Accidental(int offset, String symbol) {
+    this.offset = offset;
+    this.symbol = symbol;
+  }
+  
+  public Accidental inverse() {
+    return fromOffset(-offset);
+  }
+
+  public Accidental twice() {
+    return apply(this);
+  }
+
+  public Accidental apply(Accidental that) {
+    return fromOffset(this.offset + that.offset);
+  }
+
+  public int numberOfAccidentals(Note majorKey) {
+    throw new UnsupportedOperationException();
+  }
+
+  public boolean isEnharmonic(Note note) {
+    throw new UnsupportedOperationException();
+  }
+
+  public String symbol() {
+    return symbol;
+  }
+  
+  public int offset() {
+    return offset;
+  }
+  
+  public Note apply(Note note) {
+    return note.transpose(offset);
+  }
+  
+
   public static Accidental preferredAccidentalForMajorKey(Note majorKey) {
     return preferredMajorKeyAccidentals.get(majorKey);
+  }
+  
+  public static Accidental fromOffset(int offset) {
+    return Arrays.stream(Accidental.values()).filter(a -> a.offset() == offset).findAny().get();
   }
  
 }

@@ -308,11 +308,15 @@ public class ScaleUniverseTest {
   }
   
   @Test
-  public void testFaug() {
-    Scale chord = Scales.CaugTriad.transpose(Note.F);
+  public void testChordSpellings() {
+    assertChordSpelling(Scales.CaugTriad.transpose(Note.F), "F A C#");
+    assertChordSpelling(Scales.C7sharp5flat9.transpose(Note.E), "E G# B# D F");
+  }
+
+  private void assertChordSpelling(Scale chord, String expected) {
     ScaleInfo chordInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(chord);
     String spelled = chordInfo.getKeySignature().toString(chordInfo.getScale().stackedThirds());
-    assertEquals("F A C#", spelled);
+    assertEquals(expected, spelled);
   }
   
   private void assertScaleContaining(Scale chord, String expected) {

@@ -12,14 +12,6 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
-/**
- * TODO: 
- * - if (enharmonic root or double accidental or missing scale notes) { return fallback }
- * - fallback should have badness
- * 
- * @author andreas
- *
- */
 @RequiredArgsConstructor
 @Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -35,9 +27,10 @@ public class KeySignature {
   private boolean suppressStaffSignature = false;
   @EqualsAndHashCode.Include
   private final int numberOfAccidentals;
+  private final Map<Note, Accidental> accidentalMap;
   
   public KeySignature suppressStaffSignature() {
-    KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap, numberOfAccidentals);
+    KeySignature keySignature = new KeySignature(Note.C, accidental, notationMap, numberOfAccidentals, accidentalMap);
     keySignature.suppressStaffSignature = true;
     return keySignature;
   }
@@ -58,24 +51,12 @@ public class KeySignature {
     return fromScale(scale, notationKey, accidental);
   }
   
-  public static KeySignature fromChord(Scale chord, Accidental accidental) {
-    Analyzer analyzer = new Analyzer();
-    Result result = analyzer.analyzeChord(chord, accidental);
-    if (!result.getRemainingScaleNotes().isEmpty()) {
-      result = analyzer.analyzeChord(chord, accidental.inverse());
-    }
-    if (!result.getRemainingScaleNotes().isEmpty()) {
-      result = analyzer.fallback(chord, accidental);
-    }
-    return toKeySignature(chord, result, Note.C).suppressStaffSignature();
-  }
-  
   private static KeySignature toKeySignature(Scale scale, Result result, Note notationKey) {
     int numberOfAccidentals = 
         result.getMajorNotesWithAccidental().size() 
         + result.getMajorNotesWithInverseAccidental().size()
         + result.getMajorNotesWithDoubleAccidental().size() * 2;
-    return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap(), numberOfAccidentals);
+    return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap(), numberOfAccidentals, result.getAccidentalMap());
   }
 
   public Note getKeySignature() {
@@ -107,6 +88,10 @@ public class KeySignature {
   
   public int getNumberOfAccidentals() {
     return numberOfAccidentals;
+  }
+
+  public boolean hasAccidental(Note note) {
+    return !accidentalMap.get(note).equals(Accidental.NONE);
   }
 
 

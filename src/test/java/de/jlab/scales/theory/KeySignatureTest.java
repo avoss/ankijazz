@@ -2,7 +2,6 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.TestUtils.reviewMarker;
-import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
@@ -12,7 +11,6 @@ import static de.jlab.scales.theory.KeySignature.fromScale;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.D;
 import static de.jlab.scales.theory.Note.Db;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
@@ -24,11 +22,13 @@ import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -65,6 +65,15 @@ public class KeySignatureTest {
     assertNotation("Db Eb F Gb Ab Bb C", CMajor.transpose(Db));
     assertNotation("G# A# B C# D# E Fx", CHarmonicMinor.transpose(Ab));
   }
+  
+  @Test
+  public void testAccidentalMap() {
+    Scale scale = CHarmonicMinor.transpose(Ab); // G# A# B C# D# E F##
+    Map<Note, Accidental> map = fromScale(scale).getAccidentalMap();
+    assertEquals(Accidental.NONE, map.get(B));
+    assertEquals(Accidental.SHARP, map.get(Ab));
+    assertEquals(Accidental.DOUBLE_SHARP, map.get(G));
+  }
 
   @Test
   public void testNotationMapFallback() {
@@ -95,21 +104,14 @@ public class KeySignatureTest {
   }
 
   @Test
-  public void testChords() {
-    Scale dmaj7 = Scales.Cmaj7.transpose(D);
-    assertEquals("D F# A C#", KeySignature.fromChord(dmaj7, SHARP).toString(dmaj7));
-    //assertEquals("D Gb A Db", KeySignature.fromChord(dmaj7, FLAT).toString(dmaj7));
-    
-    Scale dbm6 = Scales.Cm6.transpose(Db);
-    assertEquals("C# E G# A#", KeySignature.fromChord(dbm6, SHARP).toString(dbm6));
-    assertEquals("Db E Ab Bb", KeySignature.fromChord(dbm6, FLAT).toString(dbm6));
-    
-    Scale gmaj7 = Scales.Cmaj7.transpose(G);
-    assertEquals("G B D F#", KeySignature.fromChord(gmaj7, SHARP).toString(gmaj7));
-    //assertEquals("G B D Gb", KeySignature.fromChord(gmaj7, FLAT).toString(gmaj7));
-    
-    Scale gsm6 = Scales.Cm6.transpose(Ab);
-    assertEquals("G# B D# F", KeySignature.fromChord(gsm6, SHARP).toString(gsm6));
+  public void testHasAccidental() {
+    BuiltinScaleType.MelodicMinor.getPrototype().transpose(Note.Gb);
+    Set<KeySignature> keySignatures = BuiltinScaleType.MelodicMinor.getKeySignatures(Note.Gb);
+    assertEquals(1, keySignatures.size());
+    KeySignature keySignature = keySignatures.iterator().next();
+    assertEquals("E#", keySignature.notate(Note.F));
+    assertTrue(keySignature.hasAccidental(Note.F));
+    assertEquals("A", keySignature.notate(Note.A));
+    assertFalse(keySignature.hasAccidental(Note.A));
   }
- 
 }

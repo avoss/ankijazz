@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 public class ChordParser {
   
-  private static final Pattern pattern = Pattern.compile("([A-G])([b#]?)(.*)");
+  private static final Pattern pattern = Pattern.compile("([A-G])([b#x]?)(.*)");
 
   private static final Map<String, ScaleType> symbolMap = 
       BuiltinChordType.stream().collect(Collectors.toMap(BuiltinChordType::getTypeName, Function.identity()));
@@ -30,6 +30,8 @@ public class ChordParser {
       root = root.transpose(-1);
     } else if ("#".equals(matcher.group(2))) {
       root = root.transpose(1);
+    } else if ("x".equals(matcher.group(2))) {
+      root = root.transpose(2);
     }
     String symbol = matcher.group(3);
     ScaleType type = symbolMap.get(symbol);
@@ -37,7 +39,6 @@ public class ChordParser {
       throw new ParseChordException("could not parse " + chord);
     }
     return type.getPrototype().transpose(root);
-    
   }
   
 

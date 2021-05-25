@@ -1,6 +1,6 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.*;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
@@ -17,6 +17,8 @@ import static de.jlab.scales.theory.Note.Gb;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
+
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -59,10 +61,18 @@ public class AnalyzerTest {
   }
   
   @Test
+  public void testAccidentalMap() {
+    Result result = new Analyzer().analyzeScale(CMajor.transpose(Note.E), SHARP);
+    Map<Note, Accidental> map = result.getAccidentalMap();
+    assertEquals(NONE, map.get(E));
+    assertEquals(SHARP, map.get(Gb));
+  }
+  
+  @Test
   public void assertBug() {
     Scale fsmaj = CMajor.transpose(Gb);
     Analyzer a = new Analyzer();
-    Result result = a.analyzeScale(fsmaj, Accidental.SHARP);
+    Result result = a.analyzeScale(fsmaj, SHARP);
     assertEquals("F#", result.getNotationMap().get(Gb));
   }
 

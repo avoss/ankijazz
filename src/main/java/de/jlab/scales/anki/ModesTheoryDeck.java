@@ -186,11 +186,11 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   }
 
   private String chordSignature(ScaleInfo info) {
+    KeySignature keySignature = info.getKeySignature();
     Note root = info.getScale().getRoot();
-    if (!Scales.CMajor.contains(root)) {
+    if (keySignature.hasAccidental(root)) {
       return "";
     }
-    KeySignature keySignature = info.getKeySignature();
     if (keySignature.getNumberOfAccidentals() == 0) {
       return "";
     }

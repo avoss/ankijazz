@@ -1,6 +1,5 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.B;
@@ -13,7 +12,6 @@ import static de.jlab.scales.theory.Scales.CMajor;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +45,11 @@ public class Analyzer {
     private final Set<Note> remainingMajorNotes = new LinkedHashSet<>();
     private final Set<Note> remainingScaleNotes = new LinkedHashSet<>();
     private final Map<Note, String> notationMap = new TreeMap<>();
+    
+    /**
+     * same as notation map but contains accidental that was applied to create the notation
+     */
+    private final Map<Note, Accidental> accidentalMap = new TreeMap<>();
 
     Result(Scale scale, Accidental accidental) {
       this.scale = scale;
@@ -65,31 +68,13 @@ public class Analyzer {
     private void completeNotationMap() {
       for (Note note : Note.values()) {
         notationMap.putIfAbsent(note, note.getName(accidental));
-        // notationMap.putIfAbsent(note, defaultNoteName(note, accidental));
+        if (!CMajor.contains(note)) {
+          accidentalMap.putIfAbsent(note, accidental);
+        } else {
+          accidentalMap.putIfAbsent(note, Accidental.NONE);
+        }
       }
     }
-    
-//    private String defaultNoteName(Note note, Accidental accidental) {
-//      if (accidental == SHARP) {
-//        if (note == F && scale.contains(Gb) && !scale.contains(E)) {
-//          return "E#";
-//        }
-//        if (note == C && scale.contains(Db) && !scale.contains(B)) {
-//          return "B#";
-//        }
-//      }
-//
-//      if (accidental == FLAT) {
-//        if (note == B && scale.contains(Bb) && !scale.contains(C)) {
-//          return "Cb";
-//        }
-//        if (note == E && scale.contains(Eb) && !scale.contains(F)) {
-//          return "Fb";
-//        }
-//      }
-//      return note.getName(accidental);
-//    }
-//    
     
     private void computeNotationKey(List<Note> signatureKeys, Function<Note, Note> transposer) {
       notationKey = C;
@@ -124,18 +109,22 @@ public class Analyzer {
         result.majorNotesWithoutAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
         result.notationMap.put(scaleNote, cmajorNote.name());
+        result.accidentalMap.put(scaleNote, Accidental.NONE);
       } else if (accidental.apply(cmajorNote) == scaleNote) {
         result.majorNotesWithAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
         result.notationMap.put(scaleNote, cmajorNote.name() + accidental.symbol());
+        result.accidentalMap.put(scaleNote, accidental);
       } else if (accidental.inverse().apply(cmajorNote) == scaleNote) {
         result.majorNotesWithInverseAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
         result.notationMap.put(scaleNote, cmajorNote.name() + accidental.inverse().symbol());
+        result.accidentalMap.put(scaleNote, accidental.inverse());
       } else if (accidental.twice().apply(cmajorNote) == scaleNote) {
         result.majorNotesWithDoubleAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
         result.notationMap.put(scaleNote, cmajorNote.name() + accidental.twice().symbol());
+        result.accidentalMap.put(scaleNote, accidental.twice());
       } else {
         result.remainingMajorNotes.add(cmajorNote);
       }
@@ -144,48 +133,6 @@ public class Analyzer {
     return result;
   }
 
-  public Result analyzeChord(Scale chord, Accidental accidental) {
-    Result result = new Result(chord, accidental);
-    Note majorRoot = cMajorStartNote(chord, accidental);
-    List<Note> cmajorNotes = CMajor.superimpose(majorRoot).asList();
-    List<Note> scaleNotes = chord.asList();
-    result.remainingScaleNotes.addAll(scaleNotes);
-
-    Iterator<Note> iter = scaleNotes.iterator();
-    Note scaleNote = iter.next();
-    for (int i = 0; i < cmajorNotes.size(); i++) {
-      Note cmajorNote = cmajorNotes.get(i);
-      if (cmajorNote == scaleNote) {
-        result.majorNotesWithoutAccidental.add(cmajorNote);
-        result.remainingScaleNotes.remove(scaleNote);
-        result.notationMap.put(scaleNote, cmajorNote.name());
-        if (iter.hasNext()) {
-          scaleNote = iter.next();
-        } else {
-          break;
-        }
-      } else if (!invalidAccidental(cmajorNote, accidental) && accidental.apply(cmajorNote) == scaleNote) {
-        result.majorNotesWithAccidental.add(cmajorNote);
-        result.remainingScaleNotes.remove(scaleNote);
-        result.notationMap.put(scaleNote, cmajorNote.name() + accidental.symbol());
-        if (iter.hasNext()) {
-          scaleNote = iter.next();
-        } else {
-          break;
-        }
-      } else {
-        result.remainingMajorNotes.add(cmajorNote);
-      }
-    }
-    result.initialize();
-    return result;
-  }
-
-  private boolean invalidAccidental(Note note, Accidental accidental) {
-    return (accidental == SHARP && (note == E || note == B))
-        || (accidental == FLAT && (note == F || note == C));
-  }
-  
   private Note cMajorStartNote(Scale scale, Accidental accidental) {
     Note note = scale.getRoot();
     if (!CMajor.contains(note)) {

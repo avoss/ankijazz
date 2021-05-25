@@ -1,6 +1,6 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.*;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
@@ -30,6 +30,14 @@ public class AccidentalTest {
     for (int i = 0; i < flats.length; i++)          {
       assertEquals(i, FLAT.numberOfAccidentals(flats[i]));
     }
+  }
+  
+  @Test
+  public void testOffsetToAccidental() {
+    assertEquals(SHARP, fromOffset(1));
+    assertEquals(FLAT, fromOffset(-1));
+    assertEquals(DOUBLE_SHARP, fromOffset(2));
+    assertEquals(DOUBLE_FLAT, fromOffset(-2));
   }
 
 }

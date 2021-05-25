@@ -162,10 +162,10 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     };
   }
 
-  public Note getNote(int degree) {
-    degree = modSize(degree);
+  public Note getNote(int index) {
+    index = modSize(index);
     Iterator<Note> iter = iterator();
-    for (int i = 0; i < degree; i++)
+    for (int i = 0; i < index; i++)
       iter.next();
     return iter.next();
   }
