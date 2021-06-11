@@ -38,8 +38,8 @@ public class BuiltinChordTypeTest {
   }
 
   @Test
-  @Ignore
-  public void findMajorScalesContainingAllChords() {
+  //@Ignore
+  public void findScalesContainingAllChords() {
     ScaleUniverse scales = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, HarmonicMajor));
     for (ScaleType chordType : BuiltinChordType.values()) {
       for (Scale chord : Scales.allKeys(chordType.getPrototype())) {

@@ -26,10 +26,10 @@ public class DegreeParserTest {
   
   @Test
   public void playground() {
-    print(BuiltinChordType.MajorTriad, "1 3 5");
     print(BuiltinChordType.AugmentedTriad, "1 3 #5");
-    print(BuiltinChordType.Minor7, "1 b3 5 b7");
+    print(BuiltinChordType.Minor7b5, "1 b3 b5 b7");
     print(BuiltinChordType.Diminished7, "1 b3 b5 bb7");
+    //print(BuiltinChordType.Diminished7, "1 b3 b5 bb7");
   }
   
   private void print(BuiltinChordType type, String string) {

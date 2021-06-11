@@ -18,6 +18,16 @@ import de.jlab.scales.Utils;
 
 public class ChrisBollinger {
   
+  @Test
+  public void findScalesContainingChord() {
+    Scale chord = Scales.Cm7b5.transpose(Note.Ab);
+    //Scale chord = Scales.CaugTriad.transpose(Note.F);
+    System.out.println(chord);
+    for (ScaleInfo info : ScaleUniverse.SCALES.findScalesContaining(chord.asSet())) {
+      System.out.println(format("%20s = %s", info.getScaleName(), info.getKeySignature().toString(info.getScale())  ));
+    }
+  }
+  
   Collection<? extends Scale> chordsToSpell() {
     List<Scale> chords = new ArrayList<>();
     Iterator<Note> roots = Utils.loopIterator(Arrays.asList(Note.values()));
