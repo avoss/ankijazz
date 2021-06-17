@@ -15,16 +15,14 @@ import de.jlab.scales.rhythm.RhythmGenerator;
 
 public class RhythmDeck extends AbstractDeck<RhythmCard> {
 
-  private static final int MIN_BPM = 60;
-  private static final int MAX_BPM = 80;
-  private LilyMetronome metronome;
+  private final LilyMetronome metronome;
   
-  public RhythmDeck(LilyRhythm.Type type) {
-    super(format(String.format("AnkiJazz - Read and Play Rhythms (%d .. %d bpm)", MIN_BPM, MAX_BPM)), "Rhythm".concat(type.getLabel()).concat("Deck"));
-    this.metronome = new LilyMetronome(5, MIN_BPM, MAX_BPM);
+  public RhythmDeck(LilyRhythm.Type type, int minBpm, int maxBpm) {
+    super(format("AnkiJazz - Rhythm Notation (%d bpm)", minBpm), format("Rhythm%s%dDeck", type.getLabel(), minBpm));
+    this.metronome = new LilyMetronome(5, minBpm, maxBpm);
     RhythmGenerator generator = new RhythmGenerator(Utils.randomLoopIteratorFactory());
     List<AbstractRhythm> rhythms = generator.generate();
-    Interpolator tempoInterpolator = Utils.interpolator(0, rhythms.size(), MIN_BPM, MAX_BPM);
+    Interpolator tempoInterpolator = Utils.interpolator(0, rhythms.size(), minBpm, maxBpm);
     int index = 0;
     for (AbstractRhythm rhythm : rhythms) {
       Tempo tempo = metronome.tempo(tempoInterpolator.apply(index));

@@ -67,14 +67,12 @@ public class RhythmGenerator {
   private final Iterator<Quarter> quarterIterator;
   
   private final RandomTies randomTies;
-  private final LoopIteratorFactory iteratorFactory;
 
   public RhythmGenerator(LoopIteratorFactory iteratorFactory) {
     this(iteratorFactory, new QuarterGenerator().getQuarters());
   }
 
   public RhythmGenerator(LoopIteratorFactory iteratorFactory, Collection<? extends Quarter> quarters) {
-    this.iteratorFactory = iteratorFactory;
     this.quarterIterator = iteratorFactory.iterator(quarters);
     this.randomTies = new RandomTies(iteratorFactory);
   }
