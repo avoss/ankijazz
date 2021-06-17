@@ -68,13 +68,37 @@ There are versions of this deck for C-Instrument, Bb-Instrument, Eb-Instrument, 
 
 ---------------------
 
-AnkiJazz - Practice Common Rhyhthm Patterns
+AnkiJazz - Rhyhthm Notation (60 - 80 bpm)
 
 music rhythm notation
 
 https://www.ankijazz.com
 
-Cards with notation and audio to practice rhythm patterns commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/RhythmPianoDeck.html"><b>preview some cards here</b></a>.
+Cards with notation and audio to practice rhythm patterns commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/RhythmPiano60Deck.html"><b>preview some cards here</b></a>.
+
+See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz - Rhyhthm Notation (100 bpm)
+
+music rhythm notation
+
+https://www.ankijazz.com
+
+Cards with notation and audio to practice rhythm patterns commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/RhythmPiano100Deck.html"><b>preview some cards here</b></a>.
+
+See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+
+---------------------
+
+AnkiJazz - Rhyhthm Notation (120 bpm)
+
+music rhythm notation
+
+https://www.ankijazz.com
+
+Cards with notation and audio to practice rhythm patterns commonly used in modern music. Before downloading, you can <a href="https://www.ankijazz.com/assets/preview/RhythmPiano120Deck.html"><b>preview some cards here</b></a>.
 
 See full documentation with examples and description of fields at <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
 

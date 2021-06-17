@@ -169,8 +169,13 @@ public class TestUtils {
     deck.writeHtml(ankiDir);
     deck.writeJson(ankiDir);
     deck.writeAssets(ankiDir);
+    
+    return writePreviewOnly(deck, randomness);
+  }
 
+  public static <T extends Card> Deck<T> writePreviewOnly(Deck<T> deck, double randomness) {
     Deck<T> subdeck = deck.subdeck(25);
+    subdeck.sort(randomness);
     Path previewDir = Paths.get("build/preview");
     subdeck.writeAnki(previewDir); 
     subdeck.writeHtml(previewDir);

@@ -36,12 +36,11 @@ public class JamDeckTest {
   }
   
   @Test
-  @Ignore
-  public void writeAllInstruments() {
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Guitar)", Note.C, true)), 0.2);
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (C-Instrument)", Note.C, false)), 0.2);
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Bb-Instrument)", Note.Bb, false)), 0.2);
-    TestUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Eb-Instrument)", Note.Eb, false)), 0.2);
+  public void writeAllInstrumentsPreviewOnly() {
+    TestUtils.writePreviewOnly(new JamDeck(new JamCardGenerator("Practice Chords (Guitar)", Note.C, true)), 0.2);
+    TestUtils.writePreviewOnly(new JamDeck(new JamCardGenerator("Practice Chords (C-Instrument)", Note.C, false)), 0.2);
+    TestUtils.writePreviewOnly(new JamDeck(new JamCardGenerator("Practice Chords (Bb-Instrument)", Note.Bb, false)), 0.2);
+    TestUtils.writePreviewOnly(new JamDeck(new JamCardGenerator("Practice Chords (Eb-Instrument)", Note.Eb, false)), 0.2);
   }
   
   @Test
