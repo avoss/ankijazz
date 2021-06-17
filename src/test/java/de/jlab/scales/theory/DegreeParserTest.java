@@ -29,14 +29,13 @@ public class DegreeParserTest {
     print(BuiltinChordType.AugmentedTriad, "1 3 #5");
     print(BuiltinChordType.Minor7b5, "1 b3 b5 b7");
     print(BuiltinChordType.Diminished7, "1 b3 b5 bb7");
-    //print(BuiltinChordType.Diminished7, "1 b3 b5 bb7");
   }
   
   private void print(BuiltinChordType type, String string) {
-    System.out.println(type.getTypeName());
+    System.out.println("\nType " + type.getTypeName() + ":");
     List<Degree> degrees = parser.parse(string);
     for (Note chordRoot : Note.values()) {
-      Scale scale = Scales.CMajor.transpose(chordRoot).superimpose(chordRoot);
+      Scale scale = Scales.CMajor.transpose(chordRoot);//.superimpose(chordRoot);
       System.out.print(spellChord(scale, degrees));
     }
   }
