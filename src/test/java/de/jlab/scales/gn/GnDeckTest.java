@@ -9,6 +9,7 @@ import de.jlab.scales.anki.Deck;
 
 public class GnDeckTest {
 
+  // Does not contain Siesta-Ending and Jazzmine Intro!
   @Test
   public void test() {
     Deck<?> deck = new GnDeck();

@@ -6,7 +6,7 @@ enum GnSong {
   BeatnPath(false),
   BluesMotion(true),
   CamelPanic(true),
-  DontDance(false),
+  DontDance(true),
   DoWhatChaWanna(true),
   FunkAsUsual(false),
   Jazzmine(true),
