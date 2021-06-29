@@ -57,7 +57,7 @@ public class ChrisBollinger {
   public void mappings() throws IOException {
     List<String> lines = new ArrayList<>();
     for (BuiltinChordType type : BuiltinChordType.values()) {
-      String scale = format("%s %s", type.getSignatureScaleRoot(), type.getSignatureScaleType().getTypeName());
+      String scale = format("%s %s", type.getContextScaleRoot(), type.getContextScaleType().getTypeName());
       String chord = format("%s%s", type.getPrototype().getRoot(), type.getTypeName());
       lines.add(format("%8s;%s", chord, scale));
     }
@@ -86,7 +86,7 @@ public class ChrisBollinger {
     StringBuilder sb = new StringBuilder();
     sb.append("Mapping\n   Chord -> Scale to use for notation\n");
     for (BuiltinChordType type : BuiltinChordType.values()) {
-      String scale = format("%s %s", type.getSignatureScaleRoot(), type.getSignatureScaleType().getTypeName());
+      String scale = format("%s %s", type.getContextScaleRoot(), type.getContextScaleType().getTypeName());
       String chord = format("%s%s", type.getPrototype().getRoot(), type.getTypeName());
       sb.append(format("%8s -> %s\n", chord, scale));
     }
