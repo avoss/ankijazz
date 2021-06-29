@@ -2,12 +2,14 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Major7;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.*;
 import static de.jlab.scales.theory.Note.C;
+import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.Gb;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toSet;
@@ -24,9 +26,9 @@ import org.junit.Test;
 public class BuiltinChordTypeTest {
   
   @Test
-  @Ignore
+  //@Ignore
   public void findScalesContainingChord() {
-    ScaleUniverse scales = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, HarmonicMajor));
+    ScaleUniverse scales = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, HarmonicMajor, DiminishedHalfWhole, WholeTone));
     for (ScaleType chordType : BuiltinChordType.values()) {
       Scale chord = chordType.getPrototype();
       System.out.println(format("C%-5s is contained ", chordType.getTypeName()));
@@ -57,6 +59,7 @@ public class BuiltinChordTypeTest {
   public void testSomeChords() {
     assertNotation(Major7, Gb, "F# A# C# E#", "Gb Bb Db F");
     assertNotation(Major7, C, "C E G B");
+    assertNotation(AugmentedTriad, F, "F A C#");
     assertNotation(BuiltinChordType.Minor7, Note.Eb, "D# F# A# C#", "Eb Gb Bb Db");
   }
 
