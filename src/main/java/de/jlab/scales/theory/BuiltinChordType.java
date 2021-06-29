@@ -5,6 +5,7 @@ import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
 import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
 import static de.jlab.scales.theory.Note.A;
+import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.Bb;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.Db;
@@ -51,12 +52,9 @@ import static de.jlab.scales.theory.Scales.CmajTriad;
 import static de.jlab.scales.theory.Scales.CminTriad;
 import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.Csus4Triad;
-import static java.util.stream.Collectors.toCollection;
 
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
@@ -67,7 +65,7 @@ public enum BuiltinChordType implements ScaleType {
   Major7(Cmaj7, "Δ7", C, Major),
   Major9(Cmaj9, "Δ9", C, Major),
   Major7Sharp11(Cmaj7Sharp11, "Δ7#11", G, Major),
-  Major7Sharp5(Cmaj7Sharp5, "Δ7#5", A, MelodicMinor),
+  Major7Sharp5(Cmaj7Sharp5, "Δ7#5", A, HarmonicMinor),
   
   Minor7(Cm7, "m7", Eb, Major),
   Minor6(Cm6, "m6", Bb, Major),
@@ -81,29 +79,28 @@ public enum BuiltinChordType implements ScaleType {
   Dominant9(C9, "9", F, Major),
   Dominant11(C11, "11", F, Major),
   Dominant13(C13, "13", F, Major),
-  MinorMajor7(Cmmaj7, "mΔ7", C, MelodicMinor),
+  MinorMajor7(Cmmaj7, "mΔ7", E, HarmonicMinor),
   Dominant7sus4(C7sus4, "7sus4", F, Major),
   Dominant7flat9(C7flat9, "7b9", F, HarmonicMinor),
-  Dominant7sharp9(C7sharp9, "7#9", A, HarmonicMajor),
+  Dominant7sharp9(C7sharp9, "7#9", Ab, HarmonicMajor),
   Dominant7flat5(C7flat5, "7b5", G, MelodicMinor), 
-  Dominant7sharp5(C7sharp5, "7#5", F, MelodicMinor), 
+  Dominant7sharp5(C7sharp5, "7#5", F, HarmonicMinor), 
   Dominant7sharp11(C7sharp11, "7#11", G, MelodicMinor), 
-  Dominant7flat13(C7flat13, "7b13", F, MelodicMinor), 
+  Dominant7flat13(C7flat13, "7b13", F, HarmonicMinor), 
   
   Dominant7flat5flat9(C7flat5flat9, "7b5b9", Db, MelodicMinor),
-  Dominant7sharp5flat9(C7sharp5flat9, "7#5b9", Db, MelodicMinor),
+  Dominant7sharp5flat9(C7sharp5flat9, "7#5b9", F, HarmonicMinor),
   Dominant7flat5sharp9(C7flat5sharp9, "7b5#9", Db, MelodicMinor),
   Dominant7sharp5sharp9(C7sharp5sharp9, "7#5#9", Db, MelodicMinor),
-  
-  Dominant7flat9sharp11(C7flat9sharp11, "7b9#11", Db, MelodicMinor),
-  Dominant7flat9flat13(C7flat9flat13, "7b9b13", Db, MelodicMinor),
-  Dominant7sharp9sharp11(C7sharp9sharp11, "7#9#11", Db, MelodicMinor),
-  Dominant7sharp9flat13(C7sharp9flat13, "7#9b13", Db, MelodicMinor),
+  Dominant7flat9sharp11(C7flat9sharp11, "7b9#11", Db, MelodicMinor), // TODO: remove, not contained in any scale 
+  Dominant7flat9flat13(C7flat9flat13, "7b9b13", F, HarmonicMinor),
+  Dominant7sharp9sharp11(C7sharp9sharp11, "7#9#11", Db, MelodicMinor), // TODO: remove, not contained in any scale
+  Dominant7sharp9flat13(C7sharp9flat13, "7#9b13", Ab, HarmonicMajor),
   
   MajorTriad(CmajTriad, "", C, Major),
   MinorTriad(CminTriad, "m", Eb, Major),
   DiminishedTriad(CdimTriad, "dim", Db, Major),
-  AugmentedTriad(CaugTriad, "aug", A, MelodicMinor),
+  AugmentedTriad(CaugTriad, "aug", A, HarmonicMinor),
   Sus4Triad(Csus4Triad, "sus4", C, Major),
   
   PowerChord(C5, "5", C, Major);
@@ -111,14 +108,14 @@ public enum BuiltinChordType implements ScaleType {
   
   private final Scale prototype;
   private final String typeName;
-  private final Note signatureScaleRoot;
-  private final ScaleType signatureScaleType;
+  private final Note contextScaleRoot;
+  private final ScaleType contextScaleType;
   
   BuiltinChordType(Scale prototype, String typeName, Note signatureScaleRoot, ScaleType signatureScaleType) {
     this.prototype = prototype;
     this.typeName = typeName;
-    this.signatureScaleRoot = signatureScaleRoot;
-    this.signatureScaleType = signatureScaleType;
+    this.contextScaleRoot = signatureScaleRoot;
+    this.contextScaleType = signatureScaleType;
   }
 
   @Override
@@ -143,19 +140,19 @@ public enum BuiltinChordType implements ScaleType {
 
   @Override
   public Set<KeySignature> getKeySignatures(Note root) {
-    return signatureScaleType.getKeySignatures(signatureScaleRoot.transpose(root.ordinal()));
+    return contextScaleType.getKeySignatures(contextScaleRoot.transpose(root.ordinal()));
   }
 
   public static Stream<BuiltinChordType> stream() {
     return Arrays.stream(BuiltinChordType.values());
   }
   
-  public Note getSignatureScaleRoot() {
-    return signatureScaleRoot;
+  public Note getContextScaleRoot() {
+    return contextScaleRoot;
   }
   
-  public ScaleType getSignatureScaleType() {
-    return signatureScaleType;
+  public ScaleType getContextScaleType() {
+    return contextScaleType;
   }
 
 }

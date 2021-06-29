@@ -1,6 +1,8 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
+
+import static org.assertj.core.api.Assertions.*;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Major7;
@@ -16,13 +18,14 @@ import static java.util.stream.Collectors.toSet;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 import org.junit.Ignore;
 import org.junit.Test;
+
 public class BuiltinChordTypeTest {
   
   @Test
@@ -81,10 +84,70 @@ public class BuiltinChordTypeTest {
   
   @Test
   public void assertNoDuplicateTypes() {
-    Set<Scale> scales = Arrays.stream(BuiltinChordType.values()).map(t -> t.getPrototype()).collect(Collectors.toSet());
+    Set<Scale> scales = Arrays.stream(BuiltinChordType.values()).map(t -> t.getPrototype()).collect(toSet());
     assertEquals(BuiltinChordType.values().length, scales.size());
-    Set<String> names = Arrays.stream(BuiltinChordType.values()).map(t -> t.getTypeName()).collect(Collectors.toSet());
+    Set<String> names = Arrays.stream(BuiltinChordType.values()).map(t -> t.getTypeName()).collect(toSet());
     assertEquals(BuiltinChordType.values().length, names.size());
   }
+  
+  @Test
+  public void testCLydian() {
+    KeySignature gmajor = Major.getKeySignatures(Note.G).iterator().next();
+    assertThat(gmajor.getAccidental()).isEqualTo(Accidental.SHARP);
+    assertThat(gmajor.getNumberOfAccidentals()).isEqualTo(1);
+    KeySignature actual = BuiltinChordType.Major7Sharp11.getKeySignatures(Note.C).iterator().next();
+    assertThat(actual).isEqualTo(gmajor);
+  }
+  
+  @Test
+  public void testALydian() {
+    KeySignature emajor = Major.getKeySignatures(Note.E).iterator().next();
+    assertThat(emajor.getAccidental()).isEqualTo(Accidental.SHARP);
+    assertThat(emajor.getNumberOfAccidentals()).isEqualTo(4);
+    KeySignature actual = BuiltinChordType.Major7Sharp11.getKeySignatures(Note.A).iterator().next();
+    assertThat(actual).isEqualTo(emajor);
+  }
+  
+  @Test
+  public void testE7sharp5flat9() {
+    Set<KeySignature> expectedKeySignatures = BuiltinScaleType.HarmonicMinor.getKeySignatures(Note.A);
+    assertThat(expectedKeySignatures.size()).isEqualTo(1);
+    Set<KeySignature> actualKeySignatures = BuiltinChordType.Dominant7sharp5flat9.getKeySignatures(Note.E);
+    assertThat(actualKeySignatures).isEqualTo(expectedKeySignatures);
+  }
+  
+  @Test
+  public void assertContextContainsChord() {
+    for (BuiltinChordType type : chordsContainedInScale()) {
+      Scale context = type.getContextScaleType().getPrototype().transpose(type.getContextScaleRoot());
+      assertThat(context.asSet()).describedAs("Type: %s ", type.getTypeName()).containsAll(type.getPrototype().asSet());
+    }
+  }
+
+  private Collection<BuiltinChordType> chordsContainedInScale() {
+    Set<BuiltinChordType> invalid = Set.of(BuiltinChordType.Dominant7flat9sharp11, BuiltinChordType.Dominant7sharp9sharp11);
+    return BuiltinChordType.stream().filter(t -> !invalid.contains(t)).collect(toSet());
+  }
+
+  @Test
+  public void assertMostSimpleContextIsUsed() {
+    for (BuiltinChordType type : chordsContainedInScale()) {
+      Set<ScaleType> contextTypes = ScaleUniverse.SCALES.findScalesContaining(type.getPrototype().asSet()).stream().map(info -> info.getScaleType()).collect(toSet());
+      boolean found = assertContextType(type, contextTypes, Major) || assertContextType(type, contextTypes, HarmonicMinor) || assertContextType(type, contextTypes, MelodicMinor) || assertContextType(type, contextTypes, HarmonicMajor);
+      assertThat(found).describedAs(type.getTypeName()).isTrue();
+    }
+      
+  }
+
+  private boolean assertContextType(BuiltinChordType type, Set<ScaleType> contextTypes, BuiltinScaleType context) {
+    if (contextTypes.contains((ScaleType) context)) {
+      if (type.getContextScaleType() != context) {
+        fail(format("%s should use context type %s", type.getTypeName(), context.getTypeName()));
+      }
+      return true;
+    }
+    return false;
+  }
+
   
 }
