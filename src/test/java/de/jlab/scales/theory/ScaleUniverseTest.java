@@ -87,7 +87,7 @@ public class ScaleUniverseTest {
     for (Scale chord : allKeys(Scales.allChords())) {
       for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
         String marker = TestUtils.reviewMarker(chord, info.getKeySignature());
-        String line = format("%s %s %s", info.getScaleName(), info.getKeySignature().toString(chord), marker);
+        String line = format("%s %s %s", info.getScaleName(), info.getKeySignature().toString(chord.stackedThirds()), marker);
         actual.add(line);
       }
     }
