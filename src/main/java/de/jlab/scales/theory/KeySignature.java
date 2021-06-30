@@ -53,11 +53,16 @@ public class KeySignature {
   }
   
   public KeySignature(Note notationKey, Result result) {
+    this(notationKey, result.getAccidental(), result.getAccidentalMap(), result.getNumberOfAccidentals());
+  }
+  
+  public KeySignature(Note notationKey, Accidental accidental, Map<Note, Accidental> accidentalMap, int numberOfAccidentals) {
     this.notationKey = notationKey;
-    this.accidental = result.getAccidental();
-    this.accidentalMap = result.getAccidentalMap();
-    this.numberOfAccidentals = result.getNumberOfAccidentals();
+    this.accidental = accidental;
+    this.accidentalMap = accidentalMap;
+    this.numberOfAccidentals = numberOfAccidentals;
     this.notationMap = accidentalMap.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().inverse().apply(e.getKey()).name() + e.getValue().symbol()));
+    System.out.println();
   }
 
   public Note getKeySignature() {

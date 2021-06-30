@@ -35,6 +35,7 @@ import static de.jlab.scales.theory.Scales.C7sharp9flat13;
 import static de.jlab.scales.theory.Scales.C7sharp9sharp11;
 import static de.jlab.scales.theory.Scales.C7sus4;
 import static de.jlab.scales.theory.Scales.C9;
+import static de.jlab.scales.theory.Scales.CMajor;
 import static de.jlab.scales.theory.Scales.CaugTriad;
 import static de.jlab.scales.theory.Scales.Cdim7;
 import static de.jlab.scales.theory.Scales.CdimTriad;
@@ -54,8 +55,15 @@ import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.Csus4Triad;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Stream;
+
+import de.jlab.scales.theory.DegreeParser.Degree;
+import de.jlab.scales.theory.DegreeParser.Degrees;
 
 
 public enum BuiltinChordType implements ScaleType {
@@ -110,6 +118,8 @@ public enum BuiltinChordType implements ScaleType {
   private final String typeName;
   private final Note contextScaleRoot;
   private final ScaleType contextScaleType;
+  private final Degrees degrees;
+  private final boolean minor;
   private final String formula;
   
   BuiltinChordType(Scale prototype, String typeName, Note signatureScaleRoot, ScaleType signatureScaleType, String formula) {
@@ -117,7 +127,11 @@ public enum BuiltinChordType implements ScaleType {
     this.typeName = typeName;
     this.contextScaleRoot = signatureScaleRoot;
     this.contextScaleType = signatureScaleType;
+    
     this.formula = formula;
+    Degrees degrees = new DegreeParser().parse(formula);
+    this.minor = degrees.asScale(Note.C).isMinor();
+    this.degrees = minor ? degrees.relativeTo(CMajor.superimpose(-3)) : degrees;
   }
 
   @Override
@@ -142,6 +156,34 @@ public enum BuiltinChordType implements ScaleType {
 
   @Override
   public Set<KeySignature> getKeySignatures(Note root) {
+    return getContextKeySignatures(root);
+  }
+
+  private Set<KeySignature> getDegreesKeySignatures(Note chordRoot) {
+    Note majorKey = chordRoot;
+    if (minor) {
+      majorKey = chordRoot.transpose(3);
+    }
+
+    Set<KeySignature> result = new LinkedHashSet<>();
+    
+    for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(majorKey)) {
+      Map<Note, Accidental> accidentalMap = new LinkedHashMap<>(keySignature.getAccidentalMap());
+      Scale scale = degrees.getScale().transpose(chordRoot);
+      for (Degree degree : degrees.getDegrees()) {
+        Note scaleNote = scale.getNote(degree.getNoteIndexInScale());
+        Accidental appliedAccidental = accidentalMap.get(scaleNote);
+        Accidental newAccidental = Accidental.fromOffset(appliedAccidental.offset() + degree.getOffsetToApply());
+        Note cmajorNote = appliedAccidental.inverse().apply(scaleNote);
+        Note newScaleNote = newAccidental.apply(cmajorNote);
+        accidentalMap.put(newScaleNote, newAccidental);
+      }
+      result.add(new KeySignature(keySignature.getNotationKey(), keySignature.getAccidental(), accidentalMap, keySignature.getNumberOfAccidentals()));
+    }
+    return result;
+  }
+
+  private Set<KeySignature> getContextKeySignatures(Note root) {
     return contextScaleType.getKeySignatures(contextScaleRoot.transpose(root.ordinal()));
   }
 
@@ -156,9 +198,8 @@ public enum BuiltinChordType implements ScaleType {
   public ScaleType getContextScaleType() {
     return contextScaleType;
   }
-  
+
   public String getFormula() {
     return formula;
   }
-
 }
