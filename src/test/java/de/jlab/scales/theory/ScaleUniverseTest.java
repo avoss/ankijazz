@@ -87,7 +87,7 @@ public class ScaleUniverseTest {
     for (Scale chord : allKeys(Scales.allChords())) {
       for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
         String marker = TestUtils.reviewMarker(chord, info.getKeySignature());
-        String line = format("%s %s %s", info.getScaleName(), info.getKeySignature().toString(chord.stackedThirds()), marker);
+        String line = format("%s %s %s", info.getScaleName(), info.getKeySignature().notate(chord.stackedThirds()), marker);
         actual.add(line);
       }
     }
@@ -315,7 +315,7 @@ public class ScaleUniverseTest {
 
   private void assertChordSpelling(Scale chord, String expected) {
     ScaleInfo chordInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(chord);
-    String spelled = chordInfo.getKeySignature().toString(chordInfo.getScale().stackedThirds());
+    String spelled = chordInfo.getKeySignature().notate(chordInfo.getScale().stackedThirds());
     assertEquals(expected, spelled);
   }
   

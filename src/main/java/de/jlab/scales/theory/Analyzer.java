@@ -89,6 +89,12 @@ public class Analyzer {
       }
     }
 
+    public int getNumberOfAccidentals() {
+      return getMajorNotesWithAccidental().size() 
+          + getMajorNotesWithInverseAccidental().size()
+          + getMajorNotesWithDoubleAccidental().size() * 2;
+    }
+
   }
 
   // TODO feature envy, move to Result

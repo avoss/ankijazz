@@ -27,6 +27,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -91,15 +92,19 @@ public class KeySignatureTest {
   }
   
   private void assertNoDuplicateNotationExist(Scale scale, KeySignature signature) {
-    List<String> scaleNotations = signature.notate(scale);
+    List<String> scaleNotations = split(signature.toString(scale));
     List<String> otherNotations = Stream.of(Note.values()).filter(n -> !scale.contains(n)).map(signature::notate).collect(toList());
     assertEquals(Note.values().length, scaleNotations.size() + otherNotations.size());
     scaleNotations.retainAll(otherNotations);
     assertTrue("expected scale notations to be different from non-scale notations: " + scale + " " + signature, scaleNotations.isEmpty());
   }
 
+  private List<String> split(String string) {
+    return new ArrayList<>(Arrays.asList(string.split(" +")));
+  }
+
   private void assertNoDuplicateNotesExist(Scale scale, KeySignature signature) {
-    Set<String> set = signature.notate(scale).stream().map(s -> s.replaceAll("x|#|b", "")).collect(Collectors.toSet());
+    Set<String> set = split(signature.toString(scale)).stream().map(s -> s.replaceAll("x|#|b", "")).collect(Collectors.toSet());
     assertEquals(signature.toString(scale), Math.min(scale.getNumberOfNotes(), CMajor.getNumberOfNotes()), set.size());
   }
 

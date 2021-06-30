@@ -55,10 +55,14 @@ public class DegreeParser {
       return offset > 6 ? offset - 12 : (offset < -6 ? offset + 12 : offset);
     }
 
-    public Scale apply(Note root) {
-      Scale transposed = scale.transpose(root);
-      List<Note> notes = degrees.stream().map(d -> transposed.getNote(d.noteIndexInScale).transpose(d.offsetToApply)).collect(toList());
+    public Scale asScale(Note root) {
+      List<Note> notes = asList(root);
       return new Scale(notes.get(0), notes);
+    }
+
+    public List<Note> asList(Note root) {
+      Scale transposed = scale.transpose(root);
+      return degrees.stream().map(d -> transposed.getNote(d.noteIndexInScale).transpose(d.offsetToApply)).collect(toList());
     }
 
   }

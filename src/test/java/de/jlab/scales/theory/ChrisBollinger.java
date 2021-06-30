@@ -46,7 +46,7 @@ public class ChrisBollinger {
       for (ScaleInfo chordInfo : ScaleUniverse.CHORDS.infos(chord)) {
         String label = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
         String name = chordInfo.getScaleName();
-        String notes = chordInfo.getKeySignature().toString(chordInfo.getScale().stackedThirds());
+        String notes = chordInfo.getKeySignature().notate(chordInfo.getScale().stackedThirds());
         lines.add(format("%s;%s;%s", label, name, notes));
       }
     }

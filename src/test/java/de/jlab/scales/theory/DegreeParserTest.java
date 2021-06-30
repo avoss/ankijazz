@@ -2,12 +2,14 @@ package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Diminished7;
+import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat13;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
 import static de.jlab.scales.theory.Scales.CMajor;
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
 import java.util.Map;
 
 import org.junit.Test;
@@ -56,31 +58,37 @@ public class DegreeParserTest {
   }
   
   @Test
-  public void testApplyMajor() {
-    Scale chord = parser.parse("1 3 #5 b7").apply(Note.E);
+  public void testAsScaleMajor() {
+    Scale chord = parser.parse("1 3 #5 b7").asScale(Note.E);
     assertEquals(Scales.C7sharp5.transpose(Note.E), chord);
   }
 
   @Test
-  public void testApplyMinor() {
+  public void testAsScaleMinor() {
     Degrees degrees = parser.parse("1 b3 5 7").relativeTo(CMajor.superimpose(Note.A));
     assertEquals("1 3 5 #7", degrees.toString());
-    Scale chord = degrees.apply(Note.B);
+    Scale chord = degrees.asScale(Note.B);
     assertEquals(Scales.Cmmaj7.transpose(Note.B), chord);
   }
-  
+
+  @Test
+  public void testAsList() {
+    List<Note> actual = parser.parse("1 3 5 b7 #9").asList(Note.G);
+    assertEquals(List.of(Note.G, Note.B, Note.D, Note.F, Note.Bb), actual);
+    
+  }
   @Test
   public void playground() {
-    print(AugmentedTriad, "1 3 #5");
-    print(Minor7b5, "1 b3 b5 b7");
-    print(Diminished7, "1 b3 b5 bb7");
-    print(Dominant7sus4, "1 3 4 b7");
-    print(BuiltinChordType.Dominant7flat13, "1 3 5 b7 b13");
+    print(AugmentedTriad);
+    print(Minor7b5);
+    print(Diminished7);
+    print(Dominant7sus4);
+    print(Dominant7flat13);
   }
   
-  private void print(BuiltinChordType type, String formula) {
-    Degrees degrees = parser.parse(formula);
-    System.out.println(String.format("\nType %s (%s):", type.getTypeName(), degrees.apply(Note.C).isMinor() ? "Minor" : "Major")); 
+  private void print(BuiltinChordType type) {
+    Degrees degrees = parser.parse(type.getFormula());
+    System.out.println(String.format("\nType %s (%s):", type.getTypeName(), degrees.asScale(Note.C).isMinor() ? "Minor" : "Major")); 
     for (Note root : Note.values()) {
       System.out.print(spellChord(root, degrees));
     }
@@ -89,7 +97,7 @@ public class DegreeParserTest {
   private String spellChord(Note chordRoot, Degrees degrees) {
     StringBuilder sb = new StringBuilder();
     Note majorKey = chordRoot;
-    if (degrees.apply(chordRoot).isMinor()) {
+    if (degrees.asScale(chordRoot).isMinor()) {
       majorKey = chordRoot.transpose(3);
       degrees = degrees.relativeTo(CMajor.superimpose(-3));
     }

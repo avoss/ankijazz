@@ -5,6 +5,7 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import de.jlab.scales.theory.Analyzer.Result;
 import lombok.EqualsAndHashCode;
@@ -38,7 +39,7 @@ public class KeySignature {
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
     Analyzer analyzer = new Analyzer();
     Result result = analyzer.analyzeScale(scale, accidental);
-    return toKeySignature(scale, result, notationKey);
+    return new KeySignature(notationKey, result);
   }
   
   /**
@@ -51,12 +52,15 @@ public class KeySignature {
     return fromScale(scale, notationKey, accidental);
   }
   
-  private static KeySignature toKeySignature(Scale scale, Result result, Note notationKey) {
-    int numberOfAccidentals = 
-        result.getMajorNotesWithAccidental().size() 
-        + result.getMajorNotesWithInverseAccidental().size()
-        + result.getMajorNotesWithDoubleAccidental().size() * 2;
-    return new KeySignature(notationKey, result.getAccidental(), result.getNotationMap(), numberOfAccidentals, result.getAccidentalMap());
+  public KeySignature(Note notationKey, Result result) {
+    this.notationKey = notationKey;
+    this.accidental = result.getAccidental();
+    this.accidentalMap = result.getAccidentalMap();
+    this.numberOfAccidentals = result.getNumberOfAccidentals();
+    this.notationMap = accidentalMap.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().inverse().apply(e.getKey()).name() + e.getValue().symbol()));
+    if (!notationMap.equals(result.getNotationMap())) {
+      throw new IllegalStateException();
+    }
   }
 
   public Note getKeySignature() {
@@ -74,18 +78,15 @@ public class KeySignature {
     return notationMap.get(note);
   }
   
-  public List<String> notate(Scale scale) {
-    return scale.asList().stream().map(this::notate).collect(toList());
-  }
-  
-  public String toString(Scale scale) {
-    return toString(scale.asList());
-  }
-
-  public String toString(List<Note> notes) {
+  public String notate(List<Note> notes) {
     return notes.stream().map(this::notate).collect(joining(" "));
   }
   
+  // does not preserve order, use for debug/test only
+  public String toString(Scale scale) {
+    return notate(scale.asList());
+  }
+
   public int getNumberOfAccidentals() {
     return numberOfAccidentals;
   }

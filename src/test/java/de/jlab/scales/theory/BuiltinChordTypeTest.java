@@ -153,7 +153,7 @@ public class BuiltinChordTypeTest {
   public void assertFormulaMatchesChord() {
     DegreeParser parser = new DegreeParser();
     for (BuiltinChordType type : BuiltinChordType.values()) {
-      Scale actual = parser.parse(type.getFormula()).apply(Note.C);
+      Scale actual = parser.parse(type.getFormula()).asScale(Note.C);
       assertEquals(type.getTypeName(), type.getPrototype(), actual);
     }
   }
