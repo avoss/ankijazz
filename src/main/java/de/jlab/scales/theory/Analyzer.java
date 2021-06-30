@@ -44,7 +44,6 @@ public class Analyzer {
     private final Set<Note> majorNotesWithDoubleAccidental = new HashSet<>();
     private final Set<Note> remainingMajorNotes = new LinkedHashSet<>();
     private final Set<Note> remainingScaleNotes = new LinkedHashSet<>();
-    private final Map<Note, String> notationMap = new TreeMap<>();
     
     /**
      * same as notation map but contains accidental that was applied to create the notation
@@ -62,12 +61,11 @@ public class Analyzer {
       } else {
         computeNotationKey(flatSignatureKeys, (n) -> n.transpose(6));
       }
-      completeNotationMap();
+      completeAccidentalMap();
     }
 
-    private void completeNotationMap() {
+    private void completeAccidentalMap() {
       for (Note note : Note.values()) {
-        notationMap.putIfAbsent(note, note.getName(accidental));
         if (!CMajor.contains(note)) {
           accidentalMap.putIfAbsent(note, accidental);
         } else {
@@ -114,22 +112,18 @@ public class Analyzer {
       if (cmajorNote == scaleNote) {
         result.majorNotesWithoutAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
-        result.notationMap.put(scaleNote, cmajorNote.name());
         result.accidentalMap.put(scaleNote, Accidental.NONE);
       } else if (accidental.apply(cmajorNote) == scaleNote) {
         result.majorNotesWithAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
-        result.notationMap.put(scaleNote, cmajorNote.name() + accidental.symbol());
         result.accidentalMap.put(scaleNote, accidental);
       } else if (accidental.inverse().apply(cmajorNote) == scaleNote) {
         result.majorNotesWithInverseAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
-        result.notationMap.put(scaleNote, cmajorNote.name() + accidental.inverse().symbol());
         result.accidentalMap.put(scaleNote, accidental.inverse());
       } else if (accidental.twice().apply(cmajorNote) == scaleNote) {
         result.majorNotesWithDoubleAccidental.add(cmajorNote);
         result.remainingScaleNotes.remove(scaleNote);
-        result.notationMap.put(scaleNote, cmajorNote.name() + accidental.twice().symbol());
         result.accidentalMap.put(scaleNote, accidental.twice());
       } else {
         result.remainingMajorNotes.add(cmajorNote);

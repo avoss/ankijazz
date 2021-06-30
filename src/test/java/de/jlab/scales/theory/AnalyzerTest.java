@@ -68,12 +68,4 @@ public class AnalyzerTest {
     assertEquals(SHARP, map.get(Gb));
   }
   
-  @Test
-  public void assertBug() {
-    Scale fsmaj = CMajor.transpose(Gb);
-    Analyzer a = new Analyzer();
-    Result result = a.analyzeScale(fsmaj, SHARP);
-    assertEquals("F#", result.getNotationMap().get(Gb));
-  }
-
 }

@@ -58,9 +58,6 @@ public class KeySignature {
     this.accidentalMap = result.getAccidentalMap();
     this.numberOfAccidentals = result.getNumberOfAccidentals();
     this.notationMap = accidentalMap.entrySet().stream().collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue().inverse().apply(e.getKey()).name() + e.getValue().symbol()));
-    if (!notationMap.equals(result.getNotationMap())) {
-      throw new IllegalStateException();
-    }
   }
 
   public Note getKeySignature() {
