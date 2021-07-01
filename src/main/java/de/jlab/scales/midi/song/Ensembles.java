@@ -116,4 +116,12 @@ public class Ensembles {
     return ensemble;
   }
   
+  public static Ensemble chordOnly(int tempo) {
+    Ensemble ensemble = new Ensemble("ChordOnly", 16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
+    ensemble.melody(Program.SynthStrings1, 100);
+    ensemble.drop2chords(72, Program.ElectricPiano2, 40, -1)
+    .bar("x--- ---- ---- ----");
+    return ensemble;
+  }
+  
 }

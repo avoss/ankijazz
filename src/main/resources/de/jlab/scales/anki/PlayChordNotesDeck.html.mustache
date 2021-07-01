@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<title>{{title}}</title>
+<style>
+.card {
+	max-width: 40rem;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>
+      This deck asks you to play certain notes of a chord. See full documentation on <a href="https://www.ankijazz.com">AnkiJazz.com</a>.
+    </p>
+    <p>
+      If you like it, please give me a &#x1F44D; on <a href="https://ankiweb.net" target="_blank">AnkiWeb.net</a> and if you can afford it, why not <a href="https://www.buymeacoffee.com/ankijazz"
+        target="_blank">buy me some coffee</a>?
+    </p>
+    {{#cards}}
+    <div class="card border-secondary mb-3">
+      <h4 class="card-header">Front</h4>
+      <div class="card-body">
+        <p>Play {{intervalName}} of {{chordName}}</p>
+        <p class="card-text text-center">
+          <audio controls src="{{frontMp3Name}}"></audio>
+        </p>
+      </div>
+
+      <h4 class="card-header">Back</h4>
+      <div class="card-body">
+        <p>Note to play is {{noteName}}</p>
+        <p class="card-text text-center">
+          <audio controls src="{{backMp3Name}}"></audio>
+        </p>
+      </div>
+      
+      <h4 class="card-header">Fields</h4>
+      <div class="card-body">
+        <ul>
+          <li>Chord Name: {{chordName}}</li>
+          <li>Interval Name: {{intervalName}}</li>
+          <li>Note Name: {{noteName}}</li>
+        </ul>
+      </div>
+    </div>
+    {{/cards}}
+  </div>
+</body>
+</html>
