@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
 
-public class PlayChordNotesDeckTest {
+public class ChordNoteTrainerDeckTest {
 
   @Test
-  public void test() {
-    TestUtils.writeTo(new PlayChordNotesDeck(), 0);
+  public void writeDeck() {
+    TestUtils.writeTo(new ChordNoteTrainerDeck(), 0.2);
   }
 
 }

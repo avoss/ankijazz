@@ -120,7 +120,10 @@ public class Ensembles {
     Ensemble ensemble = new Ensemble("ChordOnly", 16, Parts.timeSignature(4, 4), Parts.tempo(tempo));
     ensemble.melody(Program.SynthStrings1, 100);
     ensemble.drop2chords(72, Program.ElectricPiano2, 40, -1)
-    .bar("x--- ---- ---- ----");
+      .bar("x--- ---- ---- ----");
+    ensemble.monophonic(32, Program.FingeredElectricBass, 127, 30)
+      .bar("x--- ---- ---- ----", 1);
+    
     return ensemble;
   }
   
