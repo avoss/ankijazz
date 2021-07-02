@@ -1,3 +1,15 @@
+AnkiJazz - Chord tone trainer
+
+music chords target note eartraining
+
+https://www.ankijazz.com
+
+Cards that asks you to name and play/sing certain notes of of a chord. 
+Includes the most commonly used chords in jazz and other music styles. 
+Before downloading, you can <a href="https://ankijazz.com/assets/preview/ChordToneTrainerDeck.html"><b>preview some cards here</b></a>.
+
+------------------
+
 AnkiJazz - Practice common Scales and Modes (C-Instrument)
 
 music scales modes notation

@@ -20,7 +20,7 @@ import de.jlab.scales.theory.Note;
 public class ChordNoteTrainerDeck extends AbstractDeck<ChordNoteTrainerCard> {
 
   protected ChordNoteTrainerDeck() {
-    super("Chord tone / target note trainer 1");
+    super("Chord note trainer");
     for (BuiltinChordType type : List.of(Major7, Minor7, Dominant7, Minor7b5, Minor6, Major6, Dominant7sus4, Dominant7flat9, Dominant7sharp5)) {
       createCards(type);
     }

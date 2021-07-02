@@ -171,7 +171,7 @@ public enum BuiltinChordType implements ScaleType {
     }
 
     Set<KeySignature> result = new LinkedHashSet<>();
-    
+
     for (KeySignature keySignature : BuiltinScaleType.Major.getKeySignatures(majorKey)) {
       Map<Note, Accidental> accidentalMap = new LinkedHashMap<>(keySignature.getAccidentalMap());
       Scale scale = degrees.getScale().transpose(chordRoot);
@@ -207,6 +207,7 @@ public enum BuiltinChordType implements ScaleType {
   public String getFormula() {
     return formula;
   }
+
   public Degrees getDegrees() {
     return degrees;
   }

@@ -12,5 +12,10 @@ public class ChordNoteTrainerDeckTest {
   public void writeDeck() {
     TestUtils.writeTo(new ChordNoteTrainerDeck(), 0.2);
   }
+  
+  @Test
+  public void testDeckContent() {
+    TestUtils.assertFileContentMatches(new ChordNoteTrainerDeck().getJson(), getClass(), "ChordNoteTrainerDeck.json");
+  }
 
 }

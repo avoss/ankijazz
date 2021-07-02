@@ -39,29 +39,33 @@ public class StackerTest {
 
   @Test
   public void testStackedThirdsSomeChords() {
-    assertEquals(List.of(C, Eb, Gb), CdimTriad.stackedThirds());
-    assertEquals(List.of(C, E, G), CmajTriad.stackedThirds());
-    assertEquals(List.of(C, Eb, Gb, A), Cdim7.stackedThirds());
-    assertEquals(List.of(C, E, G, A), C6.stackedThirds());
-    assertEquals(List.of(C, E, G, A, D), C69.stackedThirds());
-    assertEquals(List.of(C, E, G, Bb, D), C9.stackedThirds());
-    assertEquals(List.of(C, Eb, G, Bb, D), Cm9.stackedThirds());
-    assertEquals(List.of(C, Eb, G, Bb, F), Cm11.stackedThirds());
-    assertEquals(List.of(C, E, G, Bb, A), C13.stackedThirds());
-    assertEquals(List.of(D, Gb, A, C, Eb), C7flat9.transpose(D).stackedThirds());
-    assertEquals(List.of(Ab, C, D, Gb, B), C7flat5sharp9.transpose(Ab).stackedThirds());
-    assertEquals(List.of(C, E, Gb, Bb), C7flat5.stackedThirds());
-    assertEquals(List.of(C, E, Ab, Bb), C7sharp5.stackedThirds());
-    assertEquals(List.of(C, E, G, Bb, Gb), C7sharp11.stackedThirds());
-    assertEquals(List.of(C, E, G, Bb, Ab), C7flat13.stackedThirds());
+    assertStack(List.of(C, Eb, Gb), CdimTriad);
+    assertStack(List.of(C, E, G), CmajTriad);
+    assertStack(List.of(C, Eb, Gb, A), Cdim7);
+    assertStack(List.of(C, E, G, A), C6);
+    assertStack(List.of(C, E, G, A, D), C69);
+    assertStack(List.of(C, E, G, Bb, D), C9);
+    assertStack(List.of(C, Eb, G, Bb, D), Cm9);
+    assertStack(List.of(C, Eb, G, Bb, F), Cm11);
+    assertStack(List.of(C, E, G, Bb, A), C13);
+    assertStack(List.of(D, Gb, A, C, Eb), C7flat9.transpose(D));
+    assertStack(List.of(Ab, C, D, Gb, B), C7flat5sharp9.transpose(Ab));
+    assertStack(List.of(C, E, Gb, Bb), C7flat5);
+    assertStack(List.of(C, E, Ab, Bb), C7sharp5);
+    assertStack(List.of(C, E, G, Bb, Gb), C7sharp11);
+    assertStack(List.of(C, E, G, Bb, Ab), C7flat13);
   }
   
+  private void assertStack(List<Note> expected, Scale scale) {
+    assertEquals(expected, new Stacker(scale).getStackedThirds());
+  }
+
   @Test
   public void testStackedThirds() {
     for (ScaleType type : BuiltinChordType.values()) {
       Scale prototype = type.getPrototype();
       for (Scale scale : allModes(allKeys(prototype))) {
-        Note[] thirds = scale.stackedThirds().toArray(new Note[0]);
+        Note[] thirds = new Stacker(scale).getStackedThirds().toArray(new Note[0]);
         for (int i = 1; i < thirds.length; i++) {
           assertThat(thirds[i-1].distance(thirds[i])).isLessThan(7);
         }

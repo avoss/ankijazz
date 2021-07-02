@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * approximate stack of thirds.
+ * @deprecated use DegreeParser instead 
+ */
+@Deprecated
 public class Stacker {
   private Set<Note> set;
   private List<Note> list;
@@ -48,7 +53,7 @@ public class Stacker {
     return true;
   }
   
-  List<Note> getStackedThirds() {
+  public List<Note> getStackedThirds() {
     return list;
   }
 }

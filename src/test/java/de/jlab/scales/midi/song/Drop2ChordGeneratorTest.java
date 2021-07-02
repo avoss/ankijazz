@@ -27,6 +27,7 @@ import de.jlab.scales.theory.BuiltinChordType;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleType;
+import de.jlab.scales.theory.Stacker;
 
 public class Drop2ChordGeneratorTest {
 
@@ -36,7 +37,7 @@ public class Drop2ChordGeneratorTest {
   
   @Test
   public void testLimitNumberOfNotes() {
-    List<Note> notes = C9.stackedThirds();
+    List<Note> notes = new Stacker(C9).getStackedThirds();
     assertEquals(List.of(C, E, G, Bb, D), notes);
     assertEquals(List.of(E, G, Bb, D), generator.limitNumberOfNotes(C, notes));
   }

@@ -10,6 +10,7 @@ import java.util.ListIterator;
 import de.jlab.scales.midi.MidiUtils;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
+import de.jlab.scales.theory.Stacker;
 
 public class Drop2ChordGenerator implements ChordGenerator {
 
@@ -24,7 +25,7 @@ public class Drop2ChordGenerator implements ChordGenerator {
 
   @Override
   public int[] midiChord(Scale chord) {
-    List<Note> notes = chord.stackedThirds();
+    List<Note> notes = new Stacker(chord).getStackedThirds();
     notes = limitNumberOfNotes(chord.getRoot(), notes);
     notes = findBestInversion(notes);
     int dropIndex = dropIndex(notes);
