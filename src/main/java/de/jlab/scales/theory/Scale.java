@@ -305,4 +305,7 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
     return this.notes.containsAll(chord.asSet());
   }
 
+  public List<Note> stackedThirds() {
+    return new Stacker(this).getStackedThirds();
+  }
 }

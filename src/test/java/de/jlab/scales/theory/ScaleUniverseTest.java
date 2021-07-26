@@ -315,9 +315,10 @@ public class ScaleUniverseTest {
 
   private void assertChordSpelling(Scale chord, String expected) {
     ScaleInfo chordInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(chord);
-    BuiltinChordType type = (BuiltinChordType) chordInfo.getScaleType();
-    List<Note> notes = type.getDegrees().asList(chord.getRoot());
-    String spelled = type.getDegreesKeySignatures(chord.getRoot()).iterator().next().notate(notes);
+//    BuiltinChordType type = (BuiltinChordType) chordInfo.getScaleType();
+//    List<Note> notes = type.getDegrees().asList(chord.getRoot());
+//    String spelled = type.getDegreesKeySignatures(chord.getRoot()).iterator().next().notate(notes);
+    String spelled = chordInfo.getKeySignature().notate(chordInfo.getScale().stackedThirds());
     assertEquals(expected, spelled);
   }
   
