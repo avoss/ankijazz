@@ -111,7 +111,7 @@ public class FretboardDiagramCard implements Card {
   }
   
   public String getChordRootName() {
-    return getRoot(chordInfo);
+    return getRootName(chordInfo);
   }
 
   public String getChordTypeName() {
@@ -119,15 +119,15 @@ public class FretboardDiagramCard implements Card {
   }
 
   public String getChordName() {
-    return chordInfo.getScaleName();
+    return getChordRootName() + getChordTypeName();
   }
 
   public String getScaleRootName() {
-    return getRoot(scaleInfo);
+    return getRootName(scaleInfo);
   }
 
-  private String getRoot(ScaleInfo info) {
-    return info.getKeySignature().notate(info.getScale().getRoot());
+  private String getRootName(ScaleInfo info) {
+    return scaleInfo.getKeySignature().notate(info.getScale().getRoot());
   }
 
   public String getScaleTypeName() {

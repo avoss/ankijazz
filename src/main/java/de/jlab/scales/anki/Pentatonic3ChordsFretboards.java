@@ -23,7 +23,8 @@ public class Pentatonic3ChordsFretboards extends AbstractFretboardGenerator {
   
   @Override
   protected String getCardTitle(ScaleInfo chordInfo, ScaleInfo scaleInfo) {
-    return String.format("Outline %s Chord", chordInfo.getScaleName());
+    String chordRootName = scaleInfo.getKeySignature().notate(chordInfo.getScale().getRoot());    
+    return String.format("Outline %s%s Chord", chordRootName, chordInfo.getTypeName());
   }
 
   @Override

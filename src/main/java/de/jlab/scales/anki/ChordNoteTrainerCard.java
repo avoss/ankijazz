@@ -130,7 +130,7 @@ public class ChordNoteTrainerCard implements Card {
     map.put("intervalName", getIntervalName());
     map.put("chordName", getChordName());
     map.put("noteName", getNoteName());
-    map.put("typeName", getNoteName());
+    map.put("typeName", getTypeName());
     map.put("frontMp3Name", getFrontMp3Name());
     map.put("backMp3Name", getBackMp3Name());
     return map;
