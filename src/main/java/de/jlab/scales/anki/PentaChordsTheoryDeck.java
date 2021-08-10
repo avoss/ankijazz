@@ -1,8 +1,8 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.theory.ScaleUniverse.*;
+import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
 import static de.jlab.scales.theory.ScaleUniverse.PENTAS;
-import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.ScaleUniverse.SCALES;
 import static java.lang.String.format;
 
 import java.util.ArrayList;
@@ -16,7 +16,6 @@ import de.jlab.scales.difficulty.Difficulties;
 import de.jlab.scales.theory.Accidental;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
 
 public class PentaChordsTheoryDeck extends AbstractDeck<SimpleCard> {
 

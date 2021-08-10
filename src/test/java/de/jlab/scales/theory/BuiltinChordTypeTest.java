@@ -1,20 +1,22 @@
 package de.jlab.scales.theory;
 
 import static de.jlab.scales.theory.Accidental.FLAT;
-
-import static org.assertj.core.api.Assertions.*;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
 import static de.jlab.scales.theory.BuiltinChordType.Major7;
+import static de.jlab.scales.theory.BuiltinScaleType.DiminishedHalfWhole;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.*;
+import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
+import static de.jlab.scales.theory.BuiltinScaleType.WholeTone;
 import static de.jlab.scales.theory.Note.C;
 import static de.jlab.scales.theory.Note.F;
 import static de.jlab.scales.theory.Note.Gb;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toSet;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.fail;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Arrays;
@@ -23,7 +25,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class BuiltinChordTypeTest {

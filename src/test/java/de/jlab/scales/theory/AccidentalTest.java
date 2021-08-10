@@ -1,7 +1,10 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.*;
+import static de.jlab.scales.theory.Accidental.DOUBLE_FLAT;
+import static de.jlab.scales.theory.Accidental.DOUBLE_SHARP;
+import static de.jlab.scales.theory.Accidental.FLAT;
 import static de.jlab.scales.theory.Accidental.SHARP;
+import static de.jlab.scales.theory.Accidental.fromOffset;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;
 import static de.jlab.scales.theory.Note.B;

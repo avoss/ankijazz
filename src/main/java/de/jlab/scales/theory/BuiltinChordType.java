@@ -55,7 +55,6 @@ import static de.jlab.scales.theory.Scales.Cmmaj7;
 import static de.jlab.scales.theory.Scales.Csus4Triad;
 
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;

@@ -6,7 +6,7 @@ import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat13;
 import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
 import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
 import static de.jlab.scales.theory.Scales.CMajor;
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;

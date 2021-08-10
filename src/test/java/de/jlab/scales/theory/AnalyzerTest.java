@@ -1,6 +1,7 @@
 package de.jlab.scales.theory;
 
-import static de.jlab.scales.theory.Accidental.*;
+import static de.jlab.scales.theory.Accidental.FLAT;
+import static de.jlab.scales.theory.Accidental.NONE;
 import static de.jlab.scales.theory.Accidental.SHARP;
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.Ab;

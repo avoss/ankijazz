@@ -3,21 +3,13 @@ package de.jlab.scales.theory;
 import static de.jlab.scales.TestUtils.assertFileContentMatches;
 import static de.jlab.scales.theory.Scales.allKeys;
 import static java.lang.String.format;
-import static org.junit.Assert.assertEquals;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.Utils;
 
 public class ChrisBollinger {
 

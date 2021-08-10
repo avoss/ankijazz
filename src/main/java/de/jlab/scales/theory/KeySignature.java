@@ -1,7 +1,6 @@
 package de.jlab.scales.theory;
 
 import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 import java.util.Map;
