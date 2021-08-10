@@ -26,9 +26,9 @@ midiChord = \relative e' { ${midiChord} }
         \scaleNotes
       }
     }
-	  \new ChordNames {
-	    \noteNames
-	  }
+%	  \new ChordNames {
+%	    \noteNames
+%	  }
   >>
   \layout {
     indent = 0.0
