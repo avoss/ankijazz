@@ -91,32 +91,6 @@ public class BuiltinChordTypeTest {
   }
   
   @Test
-  public void testCLydian() {
-    KeySignature gmajor = Major.getKeySignatures(Note.G).iterator().next();
-    assertThat(gmajor.getAccidental()).isEqualTo(Accidental.SHARP);
-    assertThat(gmajor.getNumberOfAccidentals()).isEqualTo(1);
-    KeySignature actual = BuiltinChordType.Major7Sharp11.getKeySignatures(Note.C).iterator().next();
-    assertThat(actual).isEqualTo(gmajor);
-  }
-  
-  @Test
-  public void testALydian() {
-    KeySignature emajor = Major.getKeySignatures(Note.E).iterator().next();
-    assertThat(emajor.getAccidental()).isEqualTo(Accidental.SHARP);
-    assertThat(emajor.getNumberOfAccidentals()).isEqualTo(4);
-    KeySignature actual = BuiltinChordType.Major7Sharp11.getKeySignatures(Note.A).iterator().next();
-    assertThat(actual).isEqualTo(emajor);
-  }
-  
-  @Test
-  public void testE7sharp5flat9() {
-    Set<KeySignature> expectedKeySignatures = BuiltinScaleType.HarmonicMinor.getKeySignatures(Note.A);
-    assertThat(expectedKeySignatures.size()).isEqualTo(1);
-    Set<KeySignature> actualKeySignatures = BuiltinChordType.Dominant7sharp5flat9.getKeySignatures(Note.E);
-    assertThat(actualKeySignatures).isEqualTo(expectedKeySignatures);
-  }
-  
-  @Test
   public void assertContextContainsChord() {
     for (BuiltinChordType type : chordsContainedInScale()) {
       Scale context = type.getContextScaleType().getPrototype().transpose(type.getContextScaleRoot());

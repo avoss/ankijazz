@@ -24,7 +24,7 @@ public class ChordToLilyMapperTest {
     assertEquals(new LilyChord("a", "b"), new LilyChord("a", "b"));
     assertLilyChord(Major7, C, "c1:maj7", "<c e g b>1");
     assertLilyChord(Dominant7, Bb, "bf1:7", "<bf d f af>1");
-    assertLilyChord(Diminished7, Db, "df1:dim7", "<df e g bf>1");
+    assertLilyChord(Diminished7, Db, "cs1:dim7", "<cs e g bf>1");
   }
   
   private void assertLilyChord(ScaleType type, Note root, String expectedChord, String expectedNotes) {

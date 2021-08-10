@@ -156,7 +156,7 @@ public enum BuiltinChordType implements ScaleType {
 
   @Override
   public Set<KeySignature> getKeySignatures(Note root) {
-    return getContextKeySignatures(root);
+    return getDegreesKeySignatures(root);
   }
 
   /**
@@ -164,7 +164,7 @@ public enum BuiltinChordType implements ScaleType {
    * Major chords are notated using accidentals of major scale of chords root. 
    * Minor chords are notated using relative (natural) minor scale.
    */
-  public Set<KeySignature> getDegreesKeySignatures(Note chordRoot) {
+  private Set<KeySignature> getDegreesKeySignatures(Note chordRoot) {
     Note majorKey = chordRoot;
     if (minor) {
       majorKey = chordRoot.transpose(3);

@@ -130,9 +130,9 @@ public class ScaleTest {
     assertEquals("Em7", CMajor.getChord(2).asChord());
     assertEquals("CΔ9", CMajor.getChord(2).superimpose(C).asChord());
     assertEquals("Bm7b5", CMajor.getChord(6).asChord());
-    assertEquals("C#7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
+    assertEquals("Db7#5b9", CMajor.getChord(6).superimpose(Db).asChord());
     assertEquals("Cdim7", Cdim7.superimpose(C).superimpose(C).asChord());
-    assertEquals("F#7b5b9", C7.superimpose(Gb).asChord());
+    assertEquals("Gb7b5b9", C7.superimpose(Gb).asChord());
     assertEquals("C7b9", Cdim7.transpose(1).superimpose(C).asChord());
   }
 

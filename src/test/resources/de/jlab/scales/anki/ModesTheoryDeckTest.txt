@@ -430,11 +430,11 @@
 <div>What are the <b>notes</b> of <b>C#m9</b> Chord?</div>	<div><b>C# E G# B D#</b></div>	SpellChord	C#m9	m9	C#			
 <div>What are the <b>notes</b> of <b>Dm11</b> Chord?</div>	<div><b>D F A C G</b></div>	SpellChord	Dm11	m11	D			
 <div>What are the <b>notes</b> of <b>Ebm11</b> Chord?</div>	<div><b>Eb Gb Bb Db Ab</b></div>	SpellChord	Ebm11	m11	Eb			
+<div>What are the <b>notes</b> of <b>D#m11</b> Chord?</div>	<div><b>D# F# A# C# G#</b></div>	SpellChord	D#m11	m11	D#			
 <div>What are the <b>notes</b> of <b>Em11</b> Chord?</div>	<div><b>E G B D A</b></div>	SpellChord	Em11	m11	E			
 <div>What are the <b>notes</b> of <b>Fm11</b> Chord?</div>	<div><b>F Ab C Eb Bb</b></div>	SpellChord	Fm11	m11	F			
 <div>What are the <b>notes</b> of <b>F#m11</b> Chord?</div>	<div><b>F# A C# E B</b></div>	SpellChord	F#m11	m11	F#			
 <div>What are the <b>notes</b> of <b>Gm11</b> Chord?</div>	<div><b>G Bb D F C</b></div>	SpellChord	Gm11	m11	G			
-<div>What are the <b>notes</b> of <b>Abm11</b> Chord?</div>	<div><b>Ab B Eb Gb Db</b></div>	SpellChord	Abm11	m11	Ab			
 <div>What are the <b>notes</b> of <b>G#m11</b> Chord?</div>	<div><b>G# B D# F# C#</b></div>	SpellChord	G#m11	m11	G#			
 <div>What are the <b>notes</b> of <b>Am6</b> Chord?</div>	<div><b>A C E F#</b></div>	SpellChord	Am6	m6	A			
 <div>What are the <b>notes</b> of <b>Bbm6</b> Chord?</div>	<div><b>Bb Db F G</b></div>	SpellChord	Bbm6	m6	Bb			
@@ -443,34 +443,35 @@
 <div>What are the <b>notes</b> of <b>C#m6</b> Chord?</div>	<div><b>C# E G# A#</b></div>	SpellChord	C#m6	m6	C#			
 <div>What are the <b>notes</b> of <b>Dm6</b> Chord?</div>	<div><b>D F A B</b></div>	SpellChord	Dm6	m6	D			
 <div>What are the <b>notes</b> of <b>Ebm6</b> Chord?</div>	<div><b>Eb Gb Bb C</b></div>	SpellChord	Ebm6	m6	Eb			
+<div>What are the <b>notes</b> of <b>D#m6</b> Chord?</div>	<div><b>D# F# A# B#</b></div>	SpellChord	D#m6	m6	D#			
 <div>What are the <b>notes</b> of <b>Em69</b> Chord?</div>	<div><b>E G B C# F#</b></div>	SpellChord	Em69	m69	E			
 <div>What are the <b>notes</b> of <b>Fm69</b> Chord?</div>	<div><b>F Ab C D G</b></div>	SpellChord	Fm69	m69	F			
 <div>What are the <b>notes</b> of <b>F#m69</b> Chord?</div>	<div><b>F# A C# D# G#</b></div>	SpellChord	F#m69	m69	F#			
 <div>What are the <b>notes</b> of <b>Gm69</b> Chord?</div>	<div><b>G Bb D E A</b></div>	SpellChord	Gm69	m69	G			
-<div>What are the <b>notes</b> of <b>G#m69</b> Chord?</div>	<div><b>G# B D# F A#</b></div>	SpellChord	G#m69	m69	G#			
+<div>What are the <b>notes</b> of <b>G#m69</b> Chord?</div>	<div><b>G# B D# E# A#</b></div>	SpellChord	G#m69	m69	G#			
 <div>What are the <b>notes</b> of <b>Am69</b> Chord?</div>	<div><b>A C E F# B</b></div>	SpellChord	Am69	m69	A			
 <div>What are the <b>notes</b> of <b>Bbm69</b> Chord?</div>	<div><b>Bb Db F G C</b></div>	SpellChord	Bbm69	m69	Bb			
 <div>What are the <b>notes</b> of <b>Bm7b5</b> Chord?</div>	<div><b>B D F A</b></div>	SpellChord	Bm7b5	m7b5	B			
 <div>What are the <b>notes</b> of <b>Cm7b5</b> Chord?</div>	<div><b>C Eb Gb Bb</b></div>	SpellChord	Cm7b5	m7b5	C			
 <div>What are the <b>notes</b> of <b>C#m7b5</b> Chord?</div>	<div><b>C# E G B</b></div>	SpellChord	C#m7b5	m7b5	C#			
 <div>What are the <b>notes</b> of <b>Dm7b5</b> Chord?</div>	<div><b>D F Ab C</b></div>	SpellChord	Dm7b5	m7b5	D			
+<div>What are the <b>notes</b> of <b>Ebm7b5</b> Chord?</div>	<div><b>Eb Gb Bbb Db</b></div>	SpellChord	Ebm7b5	m7b5	Eb			
 <div>What are the <b>notes</b> of <b>D#m7b5</b> Chord?</div>	<div><b>D# F# A C#</b></div>	SpellChord	D#m7b5	m7b5	D#			
 <div>What are the <b>notes</b> of <b>Em7b5</b> Chord?</div>	<div><b>E G Bb D</b></div>	SpellChord	Em7b5	m7b5	E			
-<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>flats</b>)?</div>	<div><b>F Ab B Eb</b></div>	SpellChord	Fm7b5	m7b5	F			
-<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord (using <b>sharps</b>)?</div>	<div><b>F G# B D#</b></div>	SpellChord	Fm7b5	m7b5	F			
-<div>What are the <b>notes</b> of <b>GbmΔ7</b> Chord?</div>	<div><b>Gb A Db F</b></div>	SpellChord	GbmΔ7	mΔ7	Gb			
-<div>What are the <b>notes</b> of <b>GmΔ7</b> Chord?</div>	<div><b>G A# D F#</b></div>	SpellChord	GmΔ7	mΔ7	G			
-<div>What are the <b>notes</b> of <b>AbmΔ7</b> Chord?</div>	<div><b>Ab B Eb G</b></div>	SpellChord	AbmΔ7	mΔ7	Ab			
+<div>What are the <b>notes</b> of <b>Fm7b5</b> Chord?</div>	<div><b>F Ab Cb Eb</b></div>	SpellChord	Fm7b5	m7b5	F			
+<div>What are the <b>notes</b> of <b>F#mΔ7</b> Chord?</div>	<div><b>F# A C# E#</b></div>	SpellChord	F#mΔ7	mΔ7	F#			
+<div>What are the <b>notes</b> of <b>GmΔ7</b> Chord?</div>	<div><b>G Bb D F#</b></div>	SpellChord	GmΔ7	mΔ7	G			
+<div>What are the <b>notes</b> of <b>G#mΔ7</b> Chord?</div>	<div><b>G# B D# Fx</b></div>	SpellChord	G#mΔ7	mΔ7	G#			
 <div>What are the <b>notes</b> of <b>AmΔ7</b> Chord?</div>	<div><b>A C E G#</b></div>	SpellChord	AmΔ7	mΔ7	A			
 <div>What are the <b>notes</b> of <b>BbmΔ7</b> Chord?</div>	<div><b>Bb Db F A</b></div>	SpellChord	BbmΔ7	mΔ7	Bb			
 <div>What are the <b>notes</b> of <b>BmΔ7</b> Chord?</div>	<div><b>B D F# A#</b></div>	SpellChord	BmΔ7	mΔ7	B			
 <div>What are the <b>notes</b> of <b>CmΔ7</b> Chord?</div>	<div><b>C Eb G B</b></div>	SpellChord	CmΔ7	mΔ7	C			
-<div>What are the <b>notes</b> of <b>Db7</b> Chord?</div>	<div><b>Db F Ab B</b></div>	SpellChord	Db7	7	Db			
-<div>What are the <b>notes</b> of <b>C#7</b> Chord?</div>	<div><b>C# F G# B</b></div>	SpellChord	C#7	7	C#			
+<div>What are the <b>notes</b> of <b>Db7</b> Chord?</div>	<div><b>Db F Ab Cb</b></div>	SpellChord	Db7	7	Db			
 <div>What are the <b>notes</b> of <b>D7</b> Chord?</div>	<div><b>D F# A C</b></div>	SpellChord	D7	7	D			
 <div>What are the <b>notes</b> of <b>Eb7</b> Chord?</div>	<div><b>Eb G Bb Db</b></div>	SpellChord	Eb7	7	Eb			
 <div>What are the <b>notes</b> of <b>E7</b> Chord?</div>	<div><b>E G# B D</b></div>	SpellChord	E7	7	E			
 <div>What are the <b>notes</b> of <b>F7</b> Chord?</div>	<div><b>F A C Eb</b></div>	SpellChord	F7	7	F			
+<div>What are the <b>notes</b> of <b>Gb7</b> Chord?</div>	<div><b>Gb Bb Db Fb</b></div>	SpellChord	Gb7	7	Gb			
 <div>What are the <b>notes</b> of <b>F#7</b> Chord?</div>	<div><b>F# A# C# E</b></div>	SpellChord	F#7	7	F#			
 <div>What are the <b>notes</b> of <b>G7</b> Chord?</div>	<div><b>G B D F</b></div>	SpellChord	G7	7	G			
 <div>What are the <b>notes</b> of <b>Ab9</b> Chord?</div>	<div><b>Ab C Eb Gb Bb</b></div>	SpellChord	Ab9	9	Ab			
@@ -478,12 +479,12 @@
 <div>What are the <b>notes</b> of <b>Bb9</b> Chord?</div>	<div><b>Bb D F Ab C</b></div>	SpellChord	Bb9	9	Bb			
 <div>What are the <b>notes</b> of <b>B9</b> Chord?</div>	<div><b>B D# F# A C#</b></div>	SpellChord	B9	9	B			
 <div>What are the <b>notes</b> of <b>C9</b> Chord?</div>	<div><b>C E G Bb D</b></div>	SpellChord	C9	9	C			
-<div>What are the <b>notes</b> of <b>Db9</b> Chord?</div>	<div><b>Db F Ab B Eb</b></div>	SpellChord	Db9	9	Db			
-<div>What are the <b>notes</b> of <b>C#9</b> Chord?</div>	<div><b>C# F G# B D#</b></div>	SpellChord	C#9	9	C#			
+<div>What are the <b>notes</b> of <b>Db9</b> Chord?</div>	<div><b>Db F Ab Cb Eb</b></div>	SpellChord	Db9	9	Db			
 <div>What are the <b>notes</b> of <b>D9</b> Chord?</div>	<div><b>D F# A C E</b></div>	SpellChord	D9	9	D			
 <div>What are the <b>notes</b> of <b>Eb11</b> Chord?</div>	<div><b>Eb G Bb Db Ab</b></div>	SpellChord	Eb11	11	Eb			
 <div>What are the <b>notes</b> of <b>E11</b> Chord?</div>	<div><b>E G# B D A</b></div>	SpellChord	E11	11	E			
 <div>What are the <b>notes</b> of <b>F11</b> Chord?</div>	<div><b>F A C Eb Bb</b></div>	SpellChord	F11	11	F			
+<div>What are the <b>notes</b> of <b>Gb11</b> Chord?</div>	<div><b>Gb Bb Db Fb Cb</b></div>	SpellChord	Gb11	11	Gb			
 <div>What are the <b>notes</b> of <b>F#11</b> Chord?</div>	<div><b>F# A# C# E B</b></div>	SpellChord	F#11	11	F#			
 <div>What are the <b>notes</b> of <b>G11</b> Chord?</div>	<div><b>G B D F C</b></div>	SpellChord	G11	11	G			
 <div>What are the <b>notes</b> of <b>Ab11</b> Chord?</div>	<div><b>Ab C Eb Gb Db</b></div>	SpellChord	Ab11	11	Ab			
@@ -491,24 +492,26 @@
 <div>What are the <b>notes</b> of <b>Bb13</b> Chord?</div>	<div><b>Bb D F Ab G</b></div>	SpellChord	Bb13	13	Bb			
 <div>What are the <b>notes</b> of <b>B13</b> Chord?</div>	<div><b>B D# F# A G#</b></div>	SpellChord	B13	13	B			
 <div>What are the <b>notes</b> of <b>C13</b> Chord?</div>	<div><b>C E G Bb A</b></div>	SpellChord	C13	13	C			
-<div>What are the <b>notes</b> of <b>C#13</b> Chord?</div>	<div><b>C# F G# B A#</b></div>	SpellChord	C#13	13	C#			
+<div>What are the <b>notes</b> of <b>Db13</b> Chord?</div>	<div><b>Db F Ab Cb Bb</b></div>	SpellChord	Db13	13	Db			
 <div>What are the <b>notes</b> of <b>D13</b> Chord?</div>	<div><b>D F# A C B</b></div>	SpellChord	D13	13	D			
 <div>What are the <b>notes</b> of <b>Eb13</b> Chord?</div>	<div><b>Eb G Bb Db C</b></div>	SpellChord	Eb13	13	Eb			
 <div>What are the <b>notes</b> of <b>E13</b> Chord?</div>	<div><b>E G# B D C#</b></div>	SpellChord	E13	13	E			
 <div>What are the <b>notes</b> of <b>F7sus4</b> Chord?</div>	<div><b>F Bb C Eb</b></div>	SpellChord	F7sus4	7sus4	F			
+<div>What are the <b>notes</b> of <b>Gb7sus4</b> Chord?</div>	<div><b>Gb Cb Db Fb</b></div>	SpellChord	Gb7sus4	7sus4	Gb			
 <div>What are the <b>notes</b> of <b>F#7sus4</b> Chord?</div>	<div><b>F# B C# E</b></div>	SpellChord	F#7sus4	7sus4	F#			
 <div>What are the <b>notes</b> of <b>G7sus4</b> Chord?</div>	<div><b>G C D F</b></div>	SpellChord	G7sus4	7sus4	G			
 <div>What are the <b>notes</b> of <b>Ab7sus4</b> Chord?</div>	<div><b>Ab Db Eb Gb</b></div>	SpellChord	Ab7sus4	7sus4	Ab			
 <div>What are the <b>notes</b> of <b>A7sus4</b> Chord?</div>	<div><b>A D E G</b></div>	SpellChord	A7sus4	7sus4	A			
 <div>What are the <b>notes</b> of <b>Bb7sus4</b> Chord?</div>	<div><b>Bb Eb F Ab</b></div>	SpellChord	Bb7sus4	7sus4	Bb			
 <div>What are the <b>notes</b> of <b>B7sus4</b> Chord?</div>	<div><b>B E F# A</b></div>	SpellChord	B7sus4	7sus4	B			
-<div>What are the <b>notes</b> of <b>Cdim7</b> Chord?</div>	<div><b>C D# F# A</b></div>	SpellChord	Cdim7	dim7	C			
-<div>What are the <b>notes</b> of <b>Dbdim7</b> Chord?</div>	<div><b>Db E G Bb</b></div>	SpellChord	Dbdim7	dim7	Db			
-<div>What are the <b>notes</b> of <b>Ddim7</b> Chord?</div>	<div><b>D F G# B</b></div>	SpellChord	Ddim7	dim7	D			
-<div>What are the <b>notes</b> of <b>Ebdim7</b> Chord?</div>	<div><b>Eb Gb A C</b></div>	SpellChord	Ebdim7	dim7	Eb			
-<div>What are the <b>notes</b> of <b>Edim7</b> Chord?</div>	<div><b>E G A# C#</b></div>	SpellChord	Edim7	dim7	E			
-<div>What are the <b>notes</b> of <b>Fdim7</b> Chord?</div>	<div><b>F Ab B D</b></div>	SpellChord	Fdim7	dim7	F			
-<div>What are the <b>notes</b> of <b>Gbdim7</b> Chord?</div>	<div><b>Gb A C Eb</b></div>	SpellChord	Gbdim7	dim7	Gb			
+<div>What are the <b>notes</b> of <b>Cdim7</b> Chord?</div>	<div><b>C Eb Gb Bbb</b></div>	SpellChord	Cdim7	dim7	C			
+<div>What are the <b>notes</b> of <b>C#dim7</b> Chord?</div>	<div><b>C# E G Bb</b></div>	SpellChord	C#dim7	dim7	C#			
+<div>What are the <b>notes</b> of <b>Ddim7</b> Chord?</div>	<div><b>D F Ab Cb</b></div>	SpellChord	Ddim7	dim7	D			
+<div>What are the <b>notes</b> of <b>Ebdim7</b> Chord?</div>	<div><b>Eb Gb Bbb Dbb</b></div>	SpellChord	Ebdim7	dim7	Eb			
+<div>What are the <b>notes</b> of <b>D#dim7</b> Chord?</div>	<div><b>D# F# A C</b></div>	SpellChord	D#dim7	dim7	D#			
+<div>What are the <b>notes</b> of <b>Edim7</b> Chord?</div>	<div><b>E G Bb Db</b></div>	SpellChord	Edim7	dim7	E			
+<div>What are the <b>notes</b> of <b>Fdim7</b> Chord?</div>	<div><b>F Ab Cb Ebb</b></div>	SpellChord	Fdim7	dim7	F			
+<div>What are the <b>notes</b> of <b>F#dim7</b> Chord?</div>	<div><b>F# A C Eb</b></div>	SpellChord	F#dim7	dim7	F#			
 <div>What are the <b>notes</b> of <b>GΔ7</b> Chord?</div>	<div><b>G B D F#</b></div>	SpellChord	GΔ7	Δ7	G			
 <div>What are the <b>notes</b> of <b>AbΔ7</b> Chord?</div>	<div><b>Ab C Eb G</b></div>	SpellChord	AbΔ7	Δ7	Ab			
 <div>What are the <b>notes</b> of <b>AΔ7</b> Chord?</div>	<div><b>A C# E G#</b></div>	SpellChord	AΔ7	Δ7	A			
@@ -521,6 +524,7 @@
 <div>What are the <b>notes</b> of <b>EΔ9</b> Chord?</div>	<div><b>E G# B D# F#</b></div>	SpellChord	EΔ9	Δ9	E			
 <div>What are the <b>notes</b> of <b>FΔ9</b> Chord?</div>	<div><b>F A C E G</b></div>	SpellChord	FΔ9	Δ9	F			
 <div>What are the <b>notes</b> of <b>GbΔ9</b> Chord?</div>	<div><b>Gb Bb Db F Ab</b></div>	SpellChord	GbΔ9	Δ9	Gb			
+<div>What are the <b>notes</b> of <b>F#Δ9</b> Chord?</div>	<div><b>F# A# C# E# G#</b></div>	SpellChord	F#Δ9	Δ9	F#			
 <div>What are the <b>notes</b> of <b>GΔ9</b> Chord?</div>	<div><b>G B D F# A</b></div>	SpellChord	GΔ9	Δ9	G			
 <div>What are the <b>notes</b> of <b>AbΔ9</b> Chord?</div>	<div><b>Ab C Eb G Bb</b></div>	SpellChord	AbΔ9	Δ9	Ab			
 <div>What are the <b>notes</b> of <b>A6</b> Chord?</div>	<div><b>A C# E F#</b></div>	SpellChord	A6	6	A			
@@ -538,119 +542,127 @@
 <div>What are the <b>notes</b> of <b>Ab69</b> Chord?</div>	<div><b>Ab C Eb F Bb</b></div>	SpellChord	Ab69	69	Ab			
 <div>What are the <b>notes</b> of <b>A69</b> Chord?</div>	<div><b>A C# E F# B</b></div>	SpellChord	A69	69	A			
 <div>What are the <b>notes</b> of <b>Bb69</b> Chord?</div>	<div><b>Bb D F G C</b></div>	SpellChord	Bb69	69	Bb			
-<div>What are the <b>notes</b> of <b>BΔ7#5</b> Chord?</div>	<div><b>B D# G A#</b></div>	SpellChord	BΔ7#5	Δ7#5	B			
+<div>What are the <b>notes</b> of <b>BΔ7#5</b> Chord?</div>	<div><b>B D# Fx A#</b></div>	SpellChord	BΔ7#5	Δ7#5	B			
 <div>What are the <b>notes</b> of <b>CΔ7#5</b> Chord?</div>	<div><b>C E G# B</b></div>	SpellChord	CΔ7#5	Δ7#5	C			
 <div>What are the <b>notes</b> of <b>DbΔ7#5</b> Chord?</div>	<div><b>Db F A C</b></div>	SpellChord	DbΔ7#5	Δ7#5	Db			
 <div>What are the <b>notes</b> of <b>DΔ7#5</b> Chord?</div>	<div><b>D F# A# C#</b></div>	SpellChord	DΔ7#5	Δ7#5	D			
 <div>What are the <b>notes</b> of <b>EbΔ7#5</b> Chord?</div>	<div><b>Eb G B D</b></div>	SpellChord	EbΔ7#5	Δ7#5	Eb			
-<div>What are the <b>notes</b> of <b>EΔ7#5</b> Chord?</div>	<div><b>E G# C D#</b></div>	SpellChord	EΔ7#5	Δ7#5	E			
-<div>What are the <b>notes</b> of <b>FΔ7#5</b> Chord?</div>	<div><b>F A Db E</b></div>	SpellChord	FΔ7#5	Δ7#5	F			
+<div>What are the <b>notes</b> of <b>EΔ7#5</b> Chord?</div>	<div><b>E G# B# D#</b></div>	SpellChord	EΔ7#5	Δ7#5	E			
+<div>What are the <b>notes</b> of <b>FΔ7#5</b> Chord?</div>	<div><b>F A C# E</b></div>	SpellChord	FΔ7#5	Δ7#5	F			
 <div>What are the <b>notes</b> of <b>GbΔ7#11</b> Chord?</div>	<div><b>Gb Bb Db F C</b></div>	SpellChord	GbΔ7#11	Δ7#11	Gb			
+<div>What are the <b>notes</b> of <b>F#Δ7#11</b> Chord?</div>	<div><b>F# A# C# E# B#</b></div>	SpellChord	F#Δ7#11	Δ7#11	F#			
 <div>What are the <b>notes</b> of <b>GΔ7#11</b> Chord?</div>	<div><b>G B D F# C#</b></div>	SpellChord	GΔ7#11	Δ7#11	G			
 <div>What are the <b>notes</b> of <b>AbΔ7#11</b> Chord?</div>	<div><b>Ab C Eb G D</b></div>	SpellChord	AbΔ7#11	Δ7#11	Ab			
 <div>What are the <b>notes</b> of <b>AΔ7#11</b> Chord?</div>	<div><b>A C# E G# D#</b></div>	SpellChord	AΔ7#11	Δ7#11	A			
 <div>What are the <b>notes</b> of <b>BbΔ7#11</b> Chord?</div>	<div><b>Bb D F A E</b></div>	SpellChord	BbΔ7#11	Δ7#11	Bb			
-<div>What are the <b>notes</b> of <b>BΔ7#11</b> Chord?</div>	<div><b>B Eb Gb Bb F</b></div>	SpellChord	BΔ7#11	Δ7#11	B			
-<div>What are the <b>notes</b> of <b>BΔ7#11</b> Chord?</div>	<div><b>B D# F# A# F</b></div>	SpellChord	BΔ7#11	Δ7#11	B			
+<div>What are the <b>notes</b> of <b>BΔ7#11</b> Chord?</div>	<div><b>B D# F# A# E#</b></div>	SpellChord	BΔ7#11	Δ7#11	B			
 <div>What are the <b>notes</b> of <b>CΔ7#11</b> Chord?</div>	<div><b>C E G B F#</b></div>	SpellChord	CΔ7#11	Δ7#11	C			
-<div>What are the <b>notes</b> of <b>C#7b9</b> Chord?</div>	<div><b>C# F G# B D</b></div>	SpellChord	C#7b9	7b9	C#			
-<div>What are the <b>notes</b> of <b>D7b9</b> Chord?</div>	<div><b>D Gb A C Eb</b></div>	SpellChord	D7b9	7b9	D			
-<div>What are the <b>notes</b> of <b>D#7b9</b> Chord?</div>	<div><b>D# G A# C# E</b></div>	SpellChord	D#7b9	7b9	D#			
-<div>What are the <b>notes</b> of <b>E7b9</b> Chord?</div>	<div><b>E Ab B D F</b></div>	SpellChord	E7b9	7b9	E			
+<div>What are the <b>notes</b> of <b>Db7b9</b> Chord?</div>	<div><b>Db F Ab Cb Ebb</b></div>	SpellChord	Db7b9	7b9	Db			
+<div>What are the <b>notes</b> of <b>D7b9</b> Chord?</div>	<div><b>D F# A C Eb</b></div>	SpellChord	D7b9	7b9	D			
+<div>What are the <b>notes</b> of <b>Eb7b9</b> Chord?</div>	<div><b>Eb G Bb Db Fb</b></div>	SpellChord	Eb7b9	7b9	Eb			
+<div>What are the <b>notes</b> of <b>E7b9</b> Chord?</div>	<div><b>E G# B D F</b></div>	SpellChord	E7b9	7b9	E			
 <div>What are the <b>notes</b> of <b>F7b9</b> Chord?</div>	<div><b>F A C Eb Gb</b></div>	SpellChord	F7b9	7b9	F			
+<div>What are the <b>notes</b> of <b>Gb7b9</b> Chord?</div>	<div><b>Gb Bb Db Fb Abb</b></div>	SpellChord	Gb7b9	7b9	Gb			
 <div>What are the <b>notes</b> of <b>F#7b9</b> Chord?</div>	<div><b>F# A# C# E G</b></div>	SpellChord	F#7b9	7b9	F#			
 <div>What are the <b>notes</b> of <b>G7b9</b> Chord?</div>	<div><b>G B D F Ab</b></div>	SpellChord	G7b9	7b9	G			
 <div>What are the <b>notes</b> of <b>Ab7#9</b> Chord?</div>	<div><b>Ab C Eb Gb B</b></div>	SpellChord	Ab7#9	7#9	Ab			
-<div>What are the <b>notes</b> of <b>A7#9</b> Chord?</div>	<div><b>A Db E G C</b></div>	SpellChord	A7#9	7#9	A			
-<div>What are the <b>notes</b> of <b>A#7#9</b> Chord?</div>	<div><b>A# D F G# C#</b></div>	SpellChord	A#7#9	7#9	A#			
-<div>What are the <b>notes</b> of <b>B7#9</b> Chord?</div>	<div><b>B Eb Gb A D</b></div>	SpellChord	B7#9	7#9	B			
-<div>What are the <b>notes</b> of <b>C7#9</b> Chord?</div>	<div><b>C E G A# D#</b></div>	SpellChord	C7#9	7#9	C			
-<div>What are the <b>notes</b> of <b>Db7#9</b> Chord?</div>	<div><b>Db F Ab B E</b></div>	SpellChord	Db7#9	7#9	Db			
-<div>What are the <b>notes</b> of <b>D7#9</b> Chord?</div>	<div><b>D Gb A C F</b></div>	SpellChord	D7#9	7#9	D			
-<div>What are the <b>notes</b> of <b>Eb7b5</b> Chord?</div>	<div><b>Eb G A Db</b></div>	SpellChord	Eb7b5	7b5	Eb			
-<div>What are the <b>notes</b> of <b>E7b5</b> Chord?</div>	<div><b>E G# A# D</b></div>	SpellChord	E7b5	7b5	E			
-<div>What are the <b>notes</b> of <b>F7b5</b> Chord?</div>	<div><b>F A B Eb</b></div>	SpellChord	F7b5	7b5	F			
+<div>What are the <b>notes</b> of <b>A7#9</b> Chord?</div>	<div><b>A C# E G B#</b></div>	SpellChord	A7#9	7#9	A			
+<div>What are the <b>notes</b> of <b>Bb7#9</b> Chord?</div>	<div><b>Bb D F Ab C#</b></div>	SpellChord	Bb7#9	7#9	Bb			
+<div>What are the <b>notes</b> of <b>B7#9</b> Chord?</div>	<div><b>B D# F# A Cx</b></div>	SpellChord	B7#9	7#9	B			
+<div>What are the <b>notes</b> of <b>C7#9</b> Chord?</div>	<div><b>C E G Bb D#</b></div>	SpellChord	C7#9	7#9	C			
+<div>What are the <b>notes</b> of <b>Db7#9</b> Chord?</div>	<div><b>Db F Ab Cb E</b></div>	SpellChord	Db7#9	7#9	Db			
+<div>What are the <b>notes</b> of <b>D7#9</b> Chord?</div>	<div><b>D F# A C E#</b></div>	SpellChord	D7#9	7#9	D			
+<div>What are the <b>notes</b> of <b>Eb7b5</b> Chord?</div>	<div><b>Eb G Bbb Db</b></div>	SpellChord	Eb7b5	7b5	Eb			
+<div>What are the <b>notes</b> of <b>E7b5</b> Chord?</div>	<div><b>E G# Bb D</b></div>	SpellChord	E7b5	7b5	E			
+<div>What are the <b>notes</b> of <b>F7b5</b> Chord?</div>	<div><b>F A Cb Eb</b></div>	SpellChord	F7b5	7b5	F			
+<div>What are the <b>notes</b> of <b>Gb7b5</b> Chord?</div>	<div><b>Gb Bb Dbb Fb</b></div>	SpellChord	Gb7b5	7b5	Gb			
 <div>What are the <b>notes</b> of <b>F#7b5</b> Chord?</div>	<div><b>F# A# C E</b></div>	SpellChord	F#7b5	7b5	F#			
 <div>What are the <b>notes</b> of <b>G7b5</b> Chord?</div>	<div><b>G B Db F</b></div>	SpellChord	G7b5	7b5	G			
-<div>What are the <b>notes</b> of <b>Ab7b5</b> Chord?</div>	<div><b>Ab C D Gb</b></div>	SpellChord	Ab7b5	7b5	Ab			
-<div>What are the <b>notes</b> of <b>A7b5</b> Chord?</div>	<div><b>A C# D# G</b></div>	SpellChord	A7b5	7b5	A			
+<div>What are the <b>notes</b> of <b>Ab7b5</b> Chord?</div>	<div><b>Ab C Ebb Gb</b></div>	SpellChord	Ab7b5	7b5	Ab			
+<div>What are the <b>notes</b> of <b>A7b5</b> Chord?</div>	<div><b>A C# Eb G</b></div>	SpellChord	A7b5	7b5	A			
 <div>What are the <b>notes</b> of <b>Bb7#11</b> Chord?</div>	<div><b>Bb D F Ab E</b></div>	SpellChord	Bb7#11	7#11	Bb			
-<div>What are the <b>notes</b> of <b>B7#11</b> Chord?</div>	<div><b>B Eb Gb A F</b></div>	SpellChord	B7#11	7#11	B			
-<div>What are the <b>notes</b> of <b>C7#11</b> Chord?</div>	<div><b>C E G A# F#</b></div>	SpellChord	C7#11	7#11	C			
-<div>What are the <b>notes</b> of <b>Db7#11</b> Chord?</div>	<div><b>Db F Ab B G</b></div>	SpellChord	Db7#11	7#11	Db			
+<div>What are the <b>notes</b> of <b>B7#11</b> Chord?</div>	<div><b>B D# F# A E#</b></div>	SpellChord	B7#11	7#11	B			
+<div>What are the <b>notes</b> of <b>C7#11</b> Chord?</div>	<div><b>C E G Bb F#</b></div>	SpellChord	C7#11	7#11	C			
+<div>What are the <b>notes</b> of <b>Db7#11</b> Chord?</div>	<div><b>Db F Ab Cb G</b></div>	SpellChord	Db7#11	7#11	Db			
 <div>What are the <b>notes</b> of <b>D7#11</b> Chord?</div>	<div><b>D F# A C G#</b></div>	SpellChord	D7#11	7#11	D			
 <div>What are the <b>notes</b> of <b>Eb7#11</b> Chord?</div>	<div><b>Eb G Bb Db A</b></div>	SpellChord	Eb7#11	7#11	Eb			
 <div>What are the <b>notes</b> of <b>E7#11</b> Chord?</div>	<div><b>E G# B D A#</b></div>	SpellChord	E7#11	7#11	E			
-<div>What are the <b>notes</b> of <b>F7#5</b> Chord?</div>	<div><b>F A Db Eb</b></div>	SpellChord	F7#5	7#5	F			
-<div>What are the <b>notes</b> of <b>F#7#5</b> Chord?</div>	<div><b>F# A# D E</b></div>	SpellChord	F#7#5	7#5	F#			
-<div>What are the <b>notes</b> of <b>G7#5</b> Chord?</div>	<div><b>G B Eb F</b></div>	SpellChord	G7#5	7#5	G			
-<div>What are the <b>notes</b> of <b>G#7#5</b> Chord?</div>	<div><b>G# C E F#</b></div>	SpellChord	G#7#5	7#5	G#			
-<div>What are the <b>notes</b> of <b>A7#5</b> Chord?</div>	<div><b>A Db F G</b></div>	SpellChord	A7#5	7#5	A			
-<div>What are the <b>notes</b> of <b>Bb7#5</b> Chord?</div>	<div><b>Bb D Gb Ab</b></div>	SpellChord	Bb7#5	7#5	Bb			
-<div>What are the <b>notes</b> of <b>B7#5</b> Chord?</div>	<div><b>B D# G A</b></div>	SpellChord	B7#5	7#5	B			
+<div>What are the <b>notes</b> of <b>F7#5</b> Chord?</div>	<div><b>F A C# Eb</b></div>	SpellChord	F7#5	7#5	F			
+<div>What are the <b>notes</b> of <b>Gb7#5</b> Chord?</div>	<div><b>Gb Bb D Fb</b></div>	SpellChord	Gb7#5	7#5	Gb			
+<div>What are the <b>notes</b> of <b>F#7#5</b> Chord?</div>	<div><b>F# A# Cx E</b></div>	SpellChord	F#7#5	7#5	F#			
+<div>What are the <b>notes</b> of <b>G7#5</b> Chord?</div>	<div><b>G B D# F</b></div>	SpellChord	G7#5	7#5	G			
+<div>What are the <b>notes</b> of <b>Ab7#5</b> Chord?</div>	<div><b>Ab C E Gb</b></div>	SpellChord	Ab7#5	7#5	Ab			
+<div>What are the <b>notes</b> of <b>A7#5</b> Chord?</div>	<div><b>A C# E# G</b></div>	SpellChord	A7#5	7#5	A			
+<div>What are the <b>notes</b> of <b>Bb7#5</b> Chord?</div>	<div><b>Bb D F# Ab</b></div>	SpellChord	Bb7#5	7#5	Bb			
+<div>What are the <b>notes</b> of <b>B7#5</b> Chord?</div>	<div><b>B D# Fx A</b></div>	SpellChord	B7#5	7#5	B			
 <div>What are the <b>notes</b> of <b>C7b13</b> Chord?</div>	<div><b>C E G Bb Ab</b></div>	SpellChord	C7b13	7b13	C			
-<div>What are the <b>notes</b> of <b>C#7b13</b> Chord?</div>	<div><b>C# F G# B A</b></div>	SpellChord	C#7b13	7b13	C#			
-<div>What are the <b>notes</b> of <b>D7b13</b> Chord?</div>	<div><b>D Gb A C Bb</b></div>	SpellChord	D7b13	7b13	D			
-<div>What are the <b>notes</b> of <b>D#7b13</b> Chord?</div>	<div><b>D# G A# C# B</b></div>	SpellChord	D#7b13	7b13	D#			
+<div>What are the <b>notes</b> of <b>Db7b13</b> Chord?</div>	<div><b>Db F Ab Cb Bbb</b></div>	SpellChord	Db7b13	7b13	Db			
+<div>What are the <b>notes</b> of <b>D7b13</b> Chord?</div>	<div><b>D F# A C Bb</b></div>	SpellChord	D7b13	7b13	D			
+<div>What are the <b>notes</b> of <b>Eb7b13</b> Chord?</div>	<div><b>Eb G Bb Db Cb</b></div>	SpellChord	Eb7b13	7b13	Eb			
 <div>What are the <b>notes</b> of <b>E7b13</b> Chord?</div>	<div><b>E G# B D C</b></div>	SpellChord	E7b13	7b13	E			
 <div>What are the <b>notes</b> of <b>F7b13</b> Chord?</div>	<div><b>F A C Eb Db</b></div>	SpellChord	F7b13	7b13	F			
+<div>What are the <b>notes</b> of <b>Gb7b13</b> Chord?</div>	<div><b>Gb Bb Db Fb Ebb</b></div>	SpellChord	Gb7b13	7b13	Gb			
 <div>What are the <b>notes</b> of <b>F#7b13</b> Chord?</div>	<div><b>F# A# C# E D</b></div>	SpellChord	F#7b13	7b13	F#			
 <div>What are the <b>notes</b> of <b>G7b5b9</b> Chord?</div>	<div><b>G B Db F Ab</b></div>	SpellChord	G7b5b9	7b5b9	G			
-<div>What are the <b>notes</b> of <b>G#7b5b9</b> Chord?</div>	<div><b>G# C D F# A</b></div>	SpellChord	G#7b5b9	7b5b9	G#			
-<div>What are the <b>notes</b> of <b>A7b5b9</b> Chord?</div>	<div><b>A Db Eb G Bb</b></div>	SpellChord	A7b5b9	7b5b9	A			
-<div>What are the <b>notes</b> of <b>A#7b5b9</b> Chord?</div>	<div><b>A# D E G# B</b></div>	SpellChord	A#7b5b9	7b5b9	A#			
-<div>What are the <b>notes</b> of <b>B7b5b9</b> Chord?</div>	<div><b>B Eb F A C</b></div>	SpellChord	B7b5b9	7b5b9	B			
+<div>What are the <b>notes</b> of <b>Ab7b5b9</b> Chord?</div>	<div><b>Ab C Ebb Gb Bbb</b></div>	SpellChord	Ab7b5b9	7b5b9	Ab			
+<div>What are the <b>notes</b> of <b>A7b5b9</b> Chord?</div>	<div><b>A C# Eb G Bb</b></div>	SpellChord	A7b5b9	7b5b9	A			
+<div>What are the <b>notes</b> of <b>Bb7b5b9</b> Chord?</div>	<div><b>Bb D Fb Ab Cb</b></div>	SpellChord	Bb7b5b9	7b5b9	Bb			
+<div>What are the <b>notes</b> of <b>B7b5b9</b> Chord?</div>	<div><b>B D# F A C</b></div>	SpellChord	B7b5b9	7b5b9	B			
 <div>What are the <b>notes</b> of <b>C7b5b9</b> Chord?</div>	<div><b>C E Gb Bb Db</b></div>	SpellChord	C7b5b9	7b5b9	C			
-<div>What are the <b>notes</b> of <b>C#7b5b9</b> Chord?</div>	<div><b>C# F G B D</b></div>	SpellChord	C#7b5b9	7b5b9	C#			
-<div>What are the <b>notes</b> of <b>D7#5b9</b> Chord?</div>	<div><b>D Gb Bb C Eb</b></div>	SpellChord	D7#5b9	7#5b9	D			
-<div>What are the <b>notes</b> of <b>D#7#5b9</b> Chord?</div>	<div><b>D# G B C# E</b></div>	SpellChord	D#7#5b9	7#5b9	D#			
-<div>What are the <b>notes</b> of <b>E7#5b9</b> Chord?</div>	<div><b>E Ab C D F</b></div>	SpellChord	E7#5b9	7#5b9	E			
-<div>What are the <b>notes</b> of <b>F7#5b9</b> Chord?</div>	<div><b>F A Db Eb Gb</b></div>	SpellChord	F7#5b9	7#5b9	F			
-<div>What are the <b>notes</b> of <b>F#7#5b9</b> Chord?</div>	<div><b>F# A# D E G</b></div>	SpellChord	F#7#5b9	7#5b9	F#			
-<div>What are the <b>notes</b> of <b>G7#5b9</b> Chord?</div>	<div><b>G B Eb F Ab</b></div>	SpellChord	G7#5b9	7#5b9	G			
-<div>What are the <b>notes</b> of <b>G#7#5b9</b> Chord?</div>	<div><b>G# C E F# A</b></div>	SpellChord	G#7#5b9	7#5b9	G#			
-<div>What are the <b>notes</b> of <b>A7b5#9</b> Chord?</div>	<div><b>A Db Eb G C</b></div>	SpellChord	A7b5#9	7b5#9	A			
-<div>What are the <b>notes</b> of <b>A#7b5#9</b> Chord?</div>	<div><b>A# D E G# C#</b></div>	SpellChord	A#7b5#9	7b5#9	A#			
-<div>What are the <b>notes</b> of <b>B7b5#9</b> Chord?</div>	<div><b>B Eb F A D</b></div>	SpellChord	B7b5#9	7b5#9	B			
-<div>What are the <b>notes</b> of <b>C7b5#9</b> Chord?</div>	<div><b>C E F# A# D#</b></div>	SpellChord	C7b5#9	7b5#9	C			
-<div>What are the <b>notes</b> of <b>Db7b5#9</b> Chord?</div>	<div><b>Db F G B E</b></div>	SpellChord	Db7b5#9	7b5#9	Db			
-<div>What are the <b>notes</b> of <b>D7b5#9</b> Chord?</div>	<div><b>D Gb Ab C F</b></div>	SpellChord	D7b5#9	7b5#9	D			
-<div>What are the <b>notes</b> of <b>D#7b5#9</b> Chord?</div>	<div><b>D# G A C# F#</b></div>	SpellChord	D#7b5#9	7b5#9	D#			
-<div>What are the <b>notes</b> of <b>E7#5#9</b> Chord?</div>	<div><b>E Ab C D G</b></div>	SpellChord	E7#5#9	7#5#9	E			
-<div>What are the <b>notes</b> of <b>F7#5#9</b> Chord?</div>	<div><b>F A C# D# G#</b></div>	SpellChord	F7#5#9	7#5#9	F			
-<div>What are the <b>notes</b> of <b>Gb7#5#9</b> Chord?</div>	<div><b>Gb Bb D E A</b></div>	SpellChord	Gb7#5#9	7#5#9	Gb			
+<div>What are the <b>notes</b> of <b>Db7b5b9</b> Chord?</div>	<div><b>Db F Abb Cb Ebb</b></div>	SpellChord	Db7b5b9	7b5b9	Db			
+<div>What are the <b>notes</b> of <b>D7#5b9</b> Chord?</div>	<div><b>D F# A# C Eb</b></div>	SpellChord	D7#5b9	7#5b9	D			
+<div>What are the <b>notes</b> of <b>Eb7#5b9</b> Chord?</div>	<div><b>Eb G B Db Fb</b></div>	SpellChord	Eb7#5b9	7#5b9	Eb			
+<div>What are the <b>notes</b> of <b>E7#5b9</b> Chord?</div>	<div><b>E G# B# D F</b></div>	SpellChord	E7#5b9	7#5b9	E			
+<div>What are the <b>notes</b> of <b>F7#5b9</b> Chord?</div>	<div><b>F A C# Eb Gb</b></div>	SpellChord	F7#5b9	7#5b9	F			
+<div>What are the <b>notes</b> of <b>Gb7#5b9</b> Chord?</div>	<div><b>Gb Bb D Fb Abb</b></div>	SpellChord	Gb7#5b9	7#5b9	Gb			
+<div>What are the <b>notes</b> of <b>F#7#5b9</b> Chord?</div>	<div><b>F# A# Cx E G</b></div>	SpellChord	F#7#5b9	7#5b9	F#			
+<div>What are the <b>notes</b> of <b>G7#5b9</b> Chord?</div>	<div><b>G B D# F Ab</b></div>	SpellChord	G7#5b9	7#5b9	G			
+<div>What are the <b>notes</b> of <b>Ab7#5b9</b> Chord?</div>	<div><b>Ab C E Gb Bbb</b></div>	SpellChord	Ab7#5b9	7#5b9	Ab			
+<div>What are the <b>notes</b> of <b>A7b5#9</b> Chord?</div>	<div><b>A C# Eb G B#</b></div>	SpellChord	A7b5#9	7b5#9	A			
+<div>What are the <b>notes</b> of <b>Bb7b5#9</b> Chord?</div>	<div><b>Bb D Fb Ab C#</b></div>	SpellChord	Bb7b5#9	7b5#9	Bb			
+<div>What are the <b>notes</b> of <b>B7b5#9</b> Chord?</div>	<div><b>B D# F A Cx</b></div>	SpellChord	B7b5#9	7b5#9	B			
+<div>What are the <b>notes</b> of <b>C7b5#9</b> Chord?</div>	<div><b>C E Gb Bb D#</b></div>	SpellChord	C7b5#9	7b5#9	C			
+<div>What are the <b>notes</b> of <b>Db7b5#9</b> Chord?</div>	<div><b>Db F Abb Cb E</b></div>	SpellChord	Db7b5#9	7b5#9	Db			
+<div>What are the <b>notes</b> of <b>D7b5#9</b> Chord?</div>	<div><b>D F# Ab C E#</b></div>	SpellChord	D7b5#9	7b5#9	D			
+<div>What are the <b>notes</b> of <b>Eb7b5#9</b> Chord?</div>	<div><b>Eb G Bbb Db F#</b></div>	SpellChord	Eb7b5#9	7b5#9	Eb			
+<div>What are the <b>notes</b> of <b>E7#5#9</b> Chord?</div>	<div><b>E G# B# D Fx</b></div>	SpellChord	E7#5#9	7#5#9	E			
+<div>What are the <b>notes</b> of <b>F7#5#9</b> Chord?</div>	<div><b>F A C# Eb G#</b></div>	SpellChord	F7#5#9	7#5#9	F			
+<div>What are the <b>notes</b> of <b>Gb7#5#9</b> Chord?</div>	<div><b>Gb Bb D Fb A</b></div>	SpellChord	Gb7#5#9	7#5#9	Gb			
+<div>What are the <b>notes</b> of <b>F#7#5#9</b> Chord?</div>	<div><b>F# A# Cx E Gx</b></div>	SpellChord	F#7#5#9	7#5#9	F#			
 <div>What are the <b>notes</b> of <b>G7#5#9</b> Chord?</div>	<div><b>G B D# F A#</b></div>	SpellChord	G7#5#9	7#5#9	G			
-<div>What are the <b>notes</b> of <b>G#7#5#9</b> Chord?</div>	<div><b>G# C E F# B</b></div>	SpellChord	G#7#5#9	7#5#9	G#			
-<div>What are the <b>notes</b> of <b>A7#5#9</b> Chord?</div>	<div><b>A Db F G C</b></div>	SpellChord	A7#5#9	7#5#9	A			
-<div>What are the <b>notes</b> of <b>A#7#5#9</b> Chord?</div>	<div><b>A# D F# G# C#</b></div>	SpellChord	A#7#5#9	7#5#9	A#			
-<div>What are the <b>notes</b> of <b>B7b9#11</b> Chord?</div>	<div><b>B Eb Gb A C F</b></div>	SpellChord	B7b9#11	7b9#11	B			
-<div>What are the <b>notes</b> of <b>C7b9#11</b> Chord?</div>	<div><b>C E G A# C# F#</b></div>	SpellChord	C7b9#11	7b9#11	C			
-<div>What are the <b>notes</b> of <b>Db7b9#11</b> Chord?</div>	<div><b>Db F Ab B D G</b></div>	SpellChord	Db7b9#11	7b9#11	Db			
-<div>What are the <b>notes</b> of <b>D7b9#11</b> Chord?</div>	<div><b>D Gb A C Eb Ab</b></div>	SpellChord	D7b9#11	7b9#11	D			
-<div>What are the <b>notes</b> of <b>D#7b9#11</b> Chord?</div>	<div><b>D# G A# C# E A</b></div>	SpellChord	D#7b9#11	7b9#11	D#			
+<div>What are the <b>notes</b> of <b>Ab7#5#9</b> Chord?</div>	<div><b>Ab C E Gb B</b></div>	SpellChord	Ab7#5#9	7#5#9	Ab			
+<div>What are the <b>notes</b> of <b>A7#5#9</b> Chord?</div>	<div><b>A C# E# G B#</b></div>	SpellChord	A7#5#9	7#5#9	A			
+<div>What are the <b>notes</b> of <b>Bb7#5#9</b> Chord?</div>	<div><b>Bb D F# Ab C#</b></div>	SpellChord	Bb7#5#9	7#5#9	Bb			
+<div>What are the <b>notes</b> of <b>B7b9#11</b> Chord?</div>	<div><b>B D# F# A C E#</b></div>	SpellChord	B7b9#11	7b9#11	B			
+<div>What are the <b>notes</b> of <b>C7b9#11</b> Chord?</div>	<div><b>C E G Bb Db F#</b></div>	SpellChord	C7b9#11	7b9#11	C			
+<div>What are the <b>notes</b> of <b>Db7b9#11</b> Chord?</div>	<div><b>Db F Ab Cb Ebb G</b></div>	SpellChord	Db7b9#11	7b9#11	Db			
+<div>What are the <b>notes</b> of <b>D7b9#11</b> Chord?</div>	<div><b>D F# A C Eb G#</b></div>	SpellChord	D7b9#11	7b9#11	D			
+<div>What are the <b>notes</b> of <b>Eb7b9#11</b> Chord?</div>	<div><b>Eb G Bb Db Fb A</b></div>	SpellChord	Eb7b9#11	7b9#11	Eb			
 <div>What are the <b>notes</b> of <b>E7b9#11</b> Chord?</div>	<div><b>E G# B D F A#</b></div>	SpellChord	E7b9#11	7b9#11	E			
 <div>What are the <b>notes</b> of <b>F7b9#11</b> Chord?</div>	<div><b>F A C Eb Gb B</b></div>	SpellChord	F7b9#11	7b9#11	F			
+<div>What are the <b>notes</b> of <b>Gb7b9b13</b> Chord?</div>	<div><b>Gb Bb Db Fb Abb Ebb</b></div>	SpellChord	Gb7b9b13	7b9b13	Gb			
 <div>What are the <b>notes</b> of <b>F#7b9b13</b> Chord?</div>	<div><b>F# A# C# E G D</b></div>	SpellChord	F#7b9b13	7b9b13	F#			
 <div>What are the <b>notes</b> of <b>G7b9b13</b> Chord?</div>	<div><b>G B D F Ab Eb</b></div>	SpellChord	G7b9b13	7b9b13	G			
-<div>What are the <b>notes</b> of <b>G#7b9b13</b> Chord?</div>	<div><b>G# C D# F# A E</b></div>	SpellChord	G#7b9b13	7b9b13	G#			
-<div>What are the <b>notes</b> of <b>A7b9b13</b> Chord?</div>	<div><b>A Db E G Bb F</b></div>	SpellChord	A7b9b13	7b9b13	A			
-<div>What are the <b>notes</b> of <b>A#7b9b13</b> Chord?</div>	<div><b>A# D F G# B F#</b></div>	SpellChord	A#7b9b13	7b9b13	A#			
+<div>What are the <b>notes</b> of <b>Ab7b9b13</b> Chord?</div>	<div><b>Ab C Eb Gb Bbb Fb</b></div>	SpellChord	Ab7b9b13	7b9b13	Ab			
+<div>What are the <b>notes</b> of <b>A7b9b13</b> Chord?</div>	<div><b>A C# E G Bb F</b></div>	SpellChord	A7b9b13	7b9b13	A			
+<div>What are the <b>notes</b> of <b>Bb7b9b13</b> Chord?</div>	<div><b>Bb D F Ab Cb Gb</b></div>	SpellChord	Bb7b9b13	7b9b13	Bb			
 <div>What are the <b>notes</b> of <b>B7b9b13</b> Chord?</div>	<div><b>B D# F# A C G</b></div>	SpellChord	B7b9b13	7b9b13	B			
 <div>What are the <b>notes</b> of <b>C7b9b13</b> Chord?</div>	<div><b>C E G Bb Db Ab</b></div>	SpellChord	C7b9b13	7b9b13	C			
-<div>What are the <b>notes</b> of <b>Db7#9#11</b> Chord?</div>	<div><b>Db F Ab B E G</b></div>	SpellChord	Db7#9#11	7#9#11	Db			
-<div>What are the <b>notes</b> of <b>D7#9#11</b> Chord?</div>	<div><b>D Gb A C F Ab</b></div>	SpellChord	D7#9#11	7#9#11	D			
-<div>What are the <b>notes</b> of <b>D#7#9#11</b> Chord?</div>	<div><b>D# G A# C# F# A</b></div>	SpellChord	D#7#9#11	7#9#11	D#			
-<div>What are the <b>notes</b> of <b>E7#9#11</b> Chord?</div>	<div><b>E Ab B D G Bb</b></div>	SpellChord	E7#9#11	7#9#11	E			
-<div>What are the <b>notes</b> of <b>F7#9#11</b> Chord?</div>	<div><b>F A C D# G# B</b></div>	SpellChord	F7#9#11	7#9#11	F			
-<div>What are the <b>notes</b> of <b>Gb7#9#11</b> Chord?</div>	<div><b>Gb Bb Db E A C</b></div>	SpellChord	Gb7#9#11	7#9#11	Gb			
+<div>What are the <b>notes</b> of <b>Db7#9#11</b> Chord?</div>	<div><b>Db F Ab Cb E G</b></div>	SpellChord	Db7#9#11	7#9#11	Db			
+<div>What are the <b>notes</b> of <b>D7#9#11</b> Chord?</div>	<div><b>D F# A C E# G#</b></div>	SpellChord	D7#9#11	7#9#11	D			
+<div>What are the <b>notes</b> of <b>Eb7#9#11</b> Chord?</div>	<div><b>Eb G Bb Db F# A</b></div>	SpellChord	Eb7#9#11	7#9#11	Eb			
+<div>What are the <b>notes</b> of <b>E7#9#11</b> Chord?</div>	<div><b>E G# B D Fx A#</b></div>	SpellChord	E7#9#11	7#9#11	E			
+<div>What are the <b>notes</b> of <b>F7#9#11</b> Chord?</div>	<div><b>F A C Eb G# B</b></div>	SpellChord	F7#9#11	7#9#11	F			
+<div>What are the <b>notes</b> of <b>Gb7#9#11</b> Chord?</div>	<div><b>Gb Bb Db Fb A C</b></div>	SpellChord	Gb7#9#11	7#9#11	Gb			
+<div>What are the <b>notes</b> of <b>F#7#9#11</b> Chord?</div>	<div><b>F# A# C# E Gx B#</b></div>	SpellChord	F#7#9#11	7#9#11	F#			
 <div>What are the <b>notes</b> of <b>G7#9#11</b> Chord?</div>	<div><b>G B D F A# C#</b></div>	SpellChord	G7#9#11	7#9#11	G			
-<div>What are the <b>notes</b> of <b>G#7#9b13</b> Chord?</div>	<div><b>G# C D# F# B E</b></div>	SpellChord	G#7#9b13	7#9b13	G#			
-<div>What are the <b>notes</b> of <b>A7#9b13</b> Chord?</div>	<div><b>A Db E G C F</b></div>	SpellChord	A7#9b13	7#9b13	A			
-<div>What are the <b>notes</b> of <b>A#7#9b13</b> Chord?</div>	<div><b>A# D F G# C# F#</b></div>	SpellChord	A#7#9b13	7#9b13	A#			
-<div>What are the <b>notes</b> of <b>B7#9b13</b> Chord?</div>	<div><b>B Eb Gb A D G</b></div>	SpellChord	B7#9b13	7#9b13	B			
-<div>What are the <b>notes</b> of <b>C7#9b13</b> Chord?</div>	<div><b>C E G A# D# G#</b></div>	SpellChord	C7#9b13	7#9b13	C			
-<div>What are the <b>notes</b> of <b>C#7#9b13</b> Chord?</div>	<div><b>C# F G# B E A</b></div>	SpellChord	C#7#9b13	7#9b13	C#			
-<div>What are the <b>notes</b> of <b>D7#9b13</b> Chord?</div>	<div><b>D Gb A C F Bb</b></div>	SpellChord	D7#9b13	7#9b13	D			
+<div>What are the <b>notes</b> of <b>Ab7#9b13</b> Chord?</div>	<div><b>Ab C Eb Gb B Fb</b></div>	SpellChord	Ab7#9b13	7#9b13	Ab			
+<div>What are the <b>notes</b> of <b>A7#9b13</b> Chord?</div>	<div><b>A C# E G B# F</b></div>	SpellChord	A7#9b13	7#9b13	A			
+<div>What are the <b>notes</b> of <b>Bb7#9b13</b> Chord?</div>	<div><b>Bb D F Ab C# Gb</b></div>	SpellChord	Bb7#9b13	7#9b13	Bb			
+<div>What are the <b>notes</b> of <b>B7#9b13</b> Chord?</div>	<div><b>B D# F# A Cx G</b></div>	SpellChord	B7#9b13	7#9b13	B			
+<div>What are the <b>notes</b> of <b>C7#9b13</b> Chord?</div>	<div><b>C E G Bb D# Ab</b></div>	SpellChord	C7#9b13	7#9b13	C			
+<div>What are the <b>notes</b> of <b>Db7#9b13</b> Chord?</div>	<div><b>Db F Ab Cb E Bbb</b></div>	SpellChord	Db7#9b13	7#9b13	Db			
+<div>What are the <b>notes</b> of <b>D7#9b13</b> Chord?</div>	<div><b>D F# A C E# Bb</b></div>	SpellChord	D7#9b13	7#9b13	D			
 <div>What are the <b>notes</b> of <b>Eb</b> Triad?</div>	<div><b>Eb G Bb</b></div>	SpellChord	Eb		Eb			
 <div>What are the <b>notes</b> of <b>E</b> Triad?</div>	<div><b>E G# B</b></div>	SpellChord	E		E			
 <div>What are the <b>notes</b> of <b>F</b> Triad?</div>	<div><b>F A C</b></div>	SpellChord	F		F			
@@ -667,21 +679,21 @@
 <div>What are the <b>notes</b> of <b>Ebm</b> Triad?</div>	<div><b>Eb Gb Bb</b></div>	SpellChord	Ebm	m	Eb			
 <div>What are the <b>notes</b> of <b>D#m</b> Triad?</div>	<div><b>D# F# A#</b></div>	SpellChord	D#m	m	D#			
 <div>What are the <b>notes</b> of <b>Em</b> Triad?</div>	<div><b>E G B</b></div>	SpellChord	Em	m	E			
-<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>flats</b>)?</div>	<div><b>F Ab B</b></div>	SpellChord	Fdim	dim	F			
-<div>What are the <b>notes</b> of <b>Fdim</b> Triad (using <b>sharps</b>)?</div>	<div><b>F G# B</b></div>	SpellChord	Fdim	dim	F			
+<div>What are the <b>notes</b> of <b>Fdim</b> Triad?</div>	<div><b>F Ab Cb</b></div>	SpellChord	Fdim	dim	F			
 <div>What are the <b>notes</b> of <b>F#dim</b> Triad?</div>	<div><b>F# A C</b></div>	SpellChord	F#dim	dim	F#			
 <div>What are the <b>notes</b> of <b>Gdim</b> Triad?</div>	<div><b>G Bb Db</b></div>	SpellChord	Gdim	dim	G			
 <div>What are the <b>notes</b> of <b>G#dim</b> Triad?</div>	<div><b>G# B D</b></div>	SpellChord	G#dim	dim	G#			
 <div>What are the <b>notes</b> of <b>Adim</b> Triad?</div>	<div><b>A C Eb</b></div>	SpellChord	Adim	dim	A			
-<div>What are the <b>notes</b> of <b>A#dim</b> Triad?</div>	<div><b>A# C# E</b></div>	SpellChord	A#dim	dim	A#			
+<div>What are the <b>notes</b> of <b>Bbdim</b> Triad?</div>	<div><b>Bb Db Fb</b></div>	SpellChord	Bbdim	dim	Bb			
 <div>What are the <b>notes</b> of <b>Bdim</b> Triad?</div>	<div><b>B D F</b></div>	SpellChord	Bdim	dim	B			
 <div>What are the <b>notes</b> of <b>Caug</b> Triad?</div>	<div><b>C E G#</b></div>	SpellChord	Caug	aug	C			
 <div>What are the <b>notes</b> of <b>Dbaug</b> Triad?</div>	<div><b>Db F A</b></div>	SpellChord	Dbaug	aug	Db			
 <div>What are the <b>notes</b> of <b>Daug</b> Triad?</div>	<div><b>D F# A#</b></div>	SpellChord	Daug	aug	D			
 <div>What are the <b>notes</b> of <b>Ebaug</b> Triad?</div>	<div><b>Eb G B</b></div>	SpellChord	Ebaug	aug	Eb			
-<div>What are the <b>notes</b> of <b>Eaug</b> Triad?</div>	<div><b>E G# C</b></div>	SpellChord	Eaug	aug	E			
-<div>What are the <b>notes</b> of <b>Faug</b> Triad?</div>	<div><b>F A Db</b></div>	SpellChord	Faug	aug	F			
+<div>What are the <b>notes</b> of <b>Eaug</b> Triad?</div>	<div><b>E G# B#</b></div>	SpellChord	Eaug	aug	E			
+<div>What are the <b>notes</b> of <b>Faug</b> Triad?</div>	<div><b>F A C#</b></div>	SpellChord	Faug	aug	F			
 <div>What are the <b>notes</b> of <b>Gbaug</b> Triad?</div>	<div><b>Gb Bb D</b></div>	SpellChord	Gbaug	aug	Gb			
+<div>What are the <b>notes</b> of <b>F#aug</b> Triad?</div>	<div><b>F# A# Cx</b></div>	SpellChord	F#aug	aug	F#			
 <div>What are the <b>notes</b> of <b>Gsus4</b> Triad?</div>	<div><b>G C D</b></div>	SpellChord	Gsus4	sus4	G			
 <div>What are the <b>notes</b> of <b>Absus4</b> Triad?</div>	<div><b>Ab Db Eb</b></div>	SpellChord	Absus4	sus4	Ab			
 <div>What are the <b>notes</b> of <b>Asus4</b> Triad?</div>	<div><b>A D E</b></div>	SpellChord	Asus4	sus4	A			

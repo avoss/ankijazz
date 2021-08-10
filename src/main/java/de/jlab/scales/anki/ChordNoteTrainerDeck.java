@@ -29,7 +29,7 @@ public class ChordNoteTrainerDeck extends AbstractDeck<ChordNoteTrainerCard> {
   private void createCards(BuiltinChordType type) {
     Degrees degrees = type.getDegrees();
     for (Note root : Note.values()) {
-      for (KeySignature keySignature : type.getDegreesKeySignatures(root)) {
+      for (KeySignature keySignature : type.getKeySignatures(root)) {
         for (int index = 0; index < degrees.getDegrees().size(); index++) {
           ChordNoteTrainerCard card = ChordNoteTrainerCard.builder()
           .degrees(degrees)

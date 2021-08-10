@@ -61,7 +61,7 @@ public class StackerTest {
   }
 
   @Test
-  public void testStackedThirds() {
+  public void testDistance() {
     for (ScaleType type : BuiltinChordType.values()) {
       Scale prototype = type.getPrototype();
       for (Scale scale : allModes(allKeys(prototype))) {
@@ -69,6 +69,18 @@ public class StackerTest {
         for (int i = 1; i < thirds.length; i++) {
           assertThat(thirds[i-1].distance(thirds[i])).isLessThan(7);
         }
+      }
+    }
+  }
+  
+  @Test
+  public void testDegrees() {
+    for (BuiltinChordType type : BuiltinChordType.values()) {
+      Scale prototype = type.getPrototype();
+      for (Scale scale : allKeys(prototype)) {
+        List<Note> expected = type.getDegrees().asList(scale.getRoot());
+        List<Note> actual = new Stacker(scale).getStackedThirds();
+        assertEquals(expected, actual);
       }
     }
   }

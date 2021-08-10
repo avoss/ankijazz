@@ -1,5 +1,7 @@
 package de.jlab.scales.theory;
 
+import static de.jlab.scales.TestUtils.assertFileContentMatches;
+import static de.jlab.scales.theory.Scales.allKeys;
 import static java.lang.String.format;
 import static org.junit.Assert.assertEquals;
 
@@ -14,96 +16,36 @@ import java.util.List;
 
 import org.junit.Test;
 
+import de.jlab.scales.TestUtils;
 import de.jlab.scales.Utils;
 
 public class ChrisBollinger {
-  
-  @Test
-  public void findScalesContainingChord() {
-    // Scale chord = Scales.Cm7b5.transpose(Note.Ab);
-    Scale chord = Scales.CaugTriad.transpose(Note.F);
-    System.out.println("** Chord: " + chord);
-    for (ScaleInfo info : ScaleUniverse.SCALES.findScalesContaining(chord.asSet())) {
-      System.out.println(format("%20s = %s", info.getScaleName(), info.getKeySignature().toString(info.getScale())  ));
-    }
-  }
-  
-  Collection<? extends Scale> chordsToSpell() {
-    List<Scale> chords = new ArrayList<>();
-    Iterator<Note> roots = Utils.loopIterator(Arrays.asList(Note.values()));
-      for (Scale chord : Scales.allChords()) {
-        for (int i = 0; i < 7; i++) {
-          chords.add(chord.transpose(roots.next()));
-        }
-      }
-    return chords;
-  }
-  
-  @Test
-  public void spellChords() throws IOException {
-    List<String> lines = new ArrayList<>();
-    for (Scale chord : chordsToSpell()) {
-      for (ScaleInfo chordInfo : ScaleUniverse.CHORDS.infos(chord)) {
-        String label = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
-        String name = chordInfo.getScaleName();
-        String notes = chordInfo.getKeySignature().notate(chordInfo.getScale().stackedThirds());
-        lines.add(format("%s;%s;%s", label, name, notes));
-      }
-    }
-    Files.write(Paths.get("build", "Chords.csv"), lines);
-  }
 
-  @Test
-  public void mappings() throws IOException {
-    List<String> lines = new ArrayList<>();
-    for (BuiltinChordType type : BuiltinChordType.values()) {
-      String scale = format("%s %s", type.getContextScaleRoot(), type.getContextScaleType().getTypeName());
-      String chord = format("%s%s", type.getPrototype().getRoot(), type.getTypeName());
-      lines.add(format("%8s;%s", chord, scale));
+  static class AsciiList {
+    List<String> strings = new ArrayList<>();
+    public void add(String s) {
+      strings.add(s.replace("Δ", "Maj"));
     }
-    Files.write(Paths.get("build", "Mapping.csv"), lines);
+    public List<String> asList() {
+      return strings;
+    }
   }
   
   @Test
-  public void scales() throws IOException {
-    List<String> lines = new ArrayList<>();
-    ScaleType[] types = new ScaleType[] {BuiltinScaleType.Major, BuiltinScaleType.HarmonicMinor, BuiltinScaleType.MelodicMinor};
-    for (ScaleType type : types) {
-      for (Note root : Note.values()) {
-        Scale scale = type.getPrototype().transpose(root);
-        for (KeySignature signature : type.getKeySignatures(root)) {
-          String name = format("%s %s", signature.getKeySignatureString(), type.getTypeName());
-          String notes = signature.toString(scale);
-          lines.add(format("%s;%s", name, notes));
-        }
-      }
-    }
-    Files.write(Paths.get("build", "Scales.csv"), lines);
-  }
-  
-  @Test 
   public void chrisBollinger() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("Mapping\n   Chord -> Scale to use for notation\n");
-    for (BuiltinChordType type : BuiltinChordType.values()) {
-      String scale = format("%s %s", type.getContextScaleRoot(), type.getContextScaleType().getTypeName());
-      String chord = format("%s%s", type.getPrototype().getRoot(), type.getTypeName());
-      sb.append(format("%8s -> %s\n", chord, scale));
-    }
-    sb.append("\n");
-    ScaleType[] types = new ScaleType[] {BuiltinScaleType.Major, BuiltinScaleType.HarmonicMinor, BuiltinScaleType.MelodicMinor};
-    for (ScaleType type : types) {
-      sb.append(format("\nScale: %s\n", type.getTypeName()));
-      for (Note root : Note.values()) {
-        Scale scale = type.getPrototype().transpose(root);
-        for (KeySignature signature : type.getKeySignatures(root)) {
-          String name = format("%s %s", signature.getKeySignatureString(), type.getTypeName());
-          String notes = signature.toString(scale);
-          sb.append(format("%s = %s\n", name, notes));
+    AsciiList actual = new AsciiList();
+    for (Scale prototype : Scales.allChords()) {
+      ScaleInfo protoInfo = ScaleUniverse.CHORDS.findFirstOrElseThrow(prototype);
+      actual.add("-------------------------------------------");
+      actual.add(protoInfo.getScaleName());
+      actual.add("-------------------------------------------");
+      for (Scale chord : allKeys(prototype)) {
+        for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
+          String marker = TestUtils.reviewMarker(chord, info.getKeySignature());
+          actual.add(format("%8s = %-18s %s", info.getScaleName(), info.getKeySignature().notate(chord.stackedThirds()), marker));
         }
       }
     }
-    System.out.println(sb.toString());
+    assertFileContentMatches(actual.asList(), getClass(), "chrisBollinger.txt");
   }
-
 }

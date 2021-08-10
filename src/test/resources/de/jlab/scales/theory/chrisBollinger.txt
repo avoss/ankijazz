@@ -1,0 +1,608 @@
+-------------------------------------------
+Cm7
+-------------------------------------------
+     Cm7 = C Eb G Bb          
+    C#m7 = C# E G# B          
+     Dm7 = D F A C            
+    Ebm7 = Eb Gb Bb Db        
+    D#m7 = D# F# A# C#        
+     Em7 = E G B D            
+     Fm7 = F Ab C Eb          
+    F#m7 = F# A C# E          
+     Gm7 = G Bb D F           
+    G#m7 = G# B D# F#         
+     Am7 = A C E G            
+    Bbm7 = Bb Db F Ab         
+     Bm7 = B D F# A           
+-------------------------------------------
+Cm9
+-------------------------------------------
+     Cm9 = C Eb G Bb D        
+    C#m9 = C# E G# B D#       
+     Dm9 = D F A C E          
+    Ebm9 = Eb Gb Bb Db F      
+    D#m9 = D# F# A# C# E#     
+     Em9 = E G B D F#         
+     Fm9 = F Ab C Eb G        
+    F#m9 = F# A C# E G#       
+     Gm9 = G Bb D F A         
+    G#m9 = G# B D# F# A#      
+     Am9 = A C E G B          
+    Bbm9 = Bb Db F Ab C       
+     Bm9 = B D F# A C#        
+-------------------------------------------
+Cm11
+-------------------------------------------
+    Cm11 = C Eb G Bb F        
+   C#m11 = C# E G# B F#       
+    Dm11 = D F A C G          
+   Ebm11 = Eb Gb Bb Db Ab     
+   D#m11 = D# F# A# C# G#     
+    Em11 = E G B D A          
+    Fm11 = F Ab C Eb Bb       
+   F#m11 = F# A C# E B        
+    Gm11 = G Bb D F C         
+   G#m11 = G# B D# F# C#      
+    Am11 = A C E G D          
+   Bbm11 = Bb Db F Ab Eb      
+    Bm11 = B D F# A E         
+-------------------------------------------
+Cm6
+-------------------------------------------
+     Cm6 = C Eb G A           
+    C#m6 = C# E G# A#         
+     Dm6 = D F A B            
+    Ebm6 = Eb Gb Bb C         
+    D#m6 = D# F# A# B#        
+     Em6 = E G B C#           
+     Fm6 = F Ab C D           
+    F#m6 = F# A C# D#         
+     Gm6 = G Bb D E           
+    G#m6 = G# B D# E#         
+     Am6 = A C E F#           
+    Bbm6 = Bb Db F G          
+     Bm6 = B D F# G#          
+-------------------------------------------
+Cm69
+-------------------------------------------
+    Cm69 = C Eb G A D         
+   C#m69 = C# E G# A# D#      
+    Dm69 = D F A B E          
+   Ebm69 = Eb Gb Bb C F       
+   D#m69 = D# F# A# B# E#     
+    Em69 = E G B C# F#        
+    Fm69 = F Ab C D G         
+   F#m69 = F# A C# D# G#      
+    Gm69 = G Bb D E A         
+   G#m69 = G# B D# E# A#      
+    Am69 = A C E F# B         
+   Bbm69 = Bb Db F G C        
+    Bm69 = B D F# G# C#       
+-------------------------------------------
+Cm7b5
+-------------------------------------------
+   Cm7b5 = C Eb Gb Bb         
+  C#m7b5 = C# E G B           
+   Dm7b5 = D F Ab C           
+  Ebm7b5 = Eb Gb Bbb Db       // double sharp/flat
+  D#m7b5 = D# F# A C#         
+   Em7b5 = E G Bb D           
+   Fm7b5 = F Ab Cb Eb         
+  F#m7b5 = F# A C E           
+   Gm7b5 = G Bb Db F          
+  G#m7b5 = G# B D F#          
+   Am7b5 = A C Eb G           
+  Bbm7b5 = Bb Db Fb Ab        
+   Bm7b5 = B D F A            
+-------------------------------------------
+CmMaj7
+-------------------------------------------
+    CmMaj7 = C Eb G B           
+   C#mMaj7 = C# E G# B#         
+    DmMaj7 = D F A C#           
+   EbmMaj7 = Eb Gb Bb D         
+   D#mMaj7 = D# F# A# Cx        // double sharp/flat
+    EmMaj7 = E G B D#           
+    FmMaj7 = F Ab C E           
+   F#mMaj7 = F# A C# E#         
+    GmMaj7 = G Bb D F#          // sharp + flat
+   G#mMaj7 = G# B D# Fx         // double sharp/flat
+    AmMaj7 = A C E G#           
+   BbmMaj7 = Bb Db F A          
+    BmMaj7 = B D F# A#          
+-------------------------------------------
+C7
+-------------------------------------------
+      C7 = C E G Bb           
+     Db7 = Db F Ab Cb         
+      D7 = D F# A C           
+     Eb7 = Eb G Bb Db         
+      E7 = E G# B D           
+      F7 = F A C Eb           
+     Gb7 = Gb Bb Db Fb        
+     F#7 = F# A# C# E         
+      G7 = G B D F            
+     Ab7 = Ab C Eb Gb         
+      A7 = A C# E G           
+     Bb7 = Bb D F Ab          
+      B7 = B D# F# A          
+-------------------------------------------
+C9
+-------------------------------------------
+      C9 = C E G Bb D         
+     Db9 = Db F Ab Cb Eb      
+      D9 = D F# A C E         
+     Eb9 = Eb G Bb Db F       
+      E9 = E G# B D F#        
+      F9 = F A C Eb G         
+     Gb9 = Gb Bb Db Fb Ab     
+     F#9 = F# A# C# E G#      
+      G9 = G B D F A          
+     Ab9 = Ab C Eb Gb Bb      
+      A9 = A C# E G B         
+     Bb9 = Bb D F Ab C        
+      B9 = B D# F# A C#       
+-------------------------------------------
+C11
+-------------------------------------------
+     C11 = C E G Bb F         
+    Db11 = Db F Ab Cb Gb      
+     D11 = D F# A C G         
+    Eb11 = Eb G Bb Db Ab      
+     E11 = E G# B D A         
+     F11 = F A C Eb Bb        
+    Gb11 = Gb Bb Db Fb Cb     
+    F#11 = F# A# C# E B       
+     G11 = G B D F C          
+    Ab11 = Ab C Eb Gb Db      
+     A11 = A C# E G D         
+    Bb11 = Bb D F Ab Eb       
+     B11 = B D# F# A E        
+-------------------------------------------
+C13
+-------------------------------------------
+     C13 = C E G Bb A         
+    Db13 = Db F Ab Cb Bb      
+     D13 = D F# A C B         
+    Eb13 = Eb G Bb Db C       
+     E13 = E G# B D C#        
+     F13 = F A C Eb D         
+    Gb13 = Gb Bb Db Fb Eb     
+    F#13 = F# A# C# E D#      
+     G13 = G B D F E          
+    Ab13 = Ab C Eb Gb F       
+     A13 = A C# E G F#        
+    Bb13 = Bb D F Ab G        
+     B13 = B D# F# A G#       
+-------------------------------------------
+C7sus4
+-------------------------------------------
+  C7sus4 = C F G Bb           
+ Db7sus4 = Db Gb Ab Cb        
+  D7sus4 = D G A C            
+ Eb7sus4 = Eb Ab Bb Db        
+  E7sus4 = E A B D            
+  F7sus4 = F Bb C Eb          
+ Gb7sus4 = Gb Cb Db Fb        
+ F#7sus4 = F# B C# E          
+  G7sus4 = G C D F            
+ Ab7sus4 = Ab Db Eb Gb        
+  A7sus4 = A D E G            
+ Bb7sus4 = Bb Eb F Ab         
+  B7sus4 = B E F# A           
+-------------------------------------------
+Cdim7
+-------------------------------------------
+   Cdim7 = C Eb Gb Bbb        // double sharp/flat
+  C#dim7 = C# E G Bb          // sharp + flat
+   Ddim7 = D F Ab Cb          
+  Ebdim7 = Eb Gb Bbb Dbb      // double sharp/flat
+  D#dim7 = D# F# A C          
+   Edim7 = E G Bb Db          
+   Fdim7 = F Ab Cb Ebb        // double sharp/flat
+  F#dim7 = F# A C Eb          // sharp + flat
+   Gdim7 = G Bb Db Fb         
+  G#dim7 = G# B D F           
+   Adim7 = A C Eb Gb          
+  Bbdim7 = Bb Db Fb Abb       // double sharp/flat
+   Bdim7 = B D F Ab           
+-------------------------------------------
+CMaj7
+-------------------------------------------
+     CMaj7 = C E G B            
+    DbMaj7 = Db F Ab C          
+     DMaj7 = D F# A C#          
+    EbMaj7 = Eb G Bb D          
+     EMaj7 = E G# B D#          
+     FMaj7 = F A C E            
+    GbMaj7 = Gb Bb Db F         
+    F#Maj7 = F# A# C# E#        
+     GMaj7 = G B D F#           
+    AbMaj7 = Ab C Eb G          
+     AMaj7 = A C# E G#          
+    BbMaj7 = Bb D F A           
+     BMaj7 = B D# F# A#         
+-------------------------------------------
+CMaj9
+-------------------------------------------
+     CMaj9 = C E G B D          
+    DbMaj9 = Db F Ab C Eb       
+     DMaj9 = D F# A C# E        
+    EbMaj9 = Eb G Bb D F        
+     EMaj9 = E G# B D# F#       
+     FMaj9 = F A C E G          
+    GbMaj9 = Gb Bb Db F Ab      
+    F#Maj9 = F# A# C# E# G#     
+     GMaj9 = G B D F# A         
+    AbMaj9 = Ab C Eb G Bb       
+     AMaj9 = A C# E G# B        
+    BbMaj9 = Bb D F A C         
+     BMaj9 = B D# F# A# C#      
+-------------------------------------------
+C6
+-------------------------------------------
+      C6 = C E G A            
+     Db6 = Db F Ab Bb         
+      D6 = D F# A B           
+     Eb6 = Eb G Bb C          
+      E6 = E G# B C#          
+      F6 = F A C D            
+     Gb6 = Gb Bb Db Eb        
+     F#6 = F# A# C# D#        
+      G6 = G B D E            
+     Ab6 = Ab C Eb F          
+      A6 = A C# E F#          
+     Bb6 = Bb D F G           
+      B6 = B D# F# G#         
+-------------------------------------------
+C69
+-------------------------------------------
+     C69 = C E G A D          
+    Db69 = Db F Ab Bb Eb      
+     D69 = D F# A B E         
+    Eb69 = Eb G Bb C F        
+     E69 = E G# B C# F#       
+     F69 = F A C D G          
+    Gb69 = Gb Bb Db Eb Ab     
+    F#69 = F# A# C# D# G#     
+     G69 = G B D E A          
+    Ab69 = Ab C Eb F Bb       
+     A69 = A C# E F# B        
+    Bb69 = Bb D F G C         
+     B69 = B D# F# G# C#      
+-------------------------------------------
+CMaj7#5
+-------------------------------------------
+   CMaj7#5 = C E G# B           
+  DbMaj7#5 = Db F A C           
+   DMaj7#5 = D F# A# C#         
+  EbMaj7#5 = Eb G B D           
+   EMaj7#5 = E G# B# D#         
+   FMaj7#5 = F A C# E           
+  GbMaj7#5 = Gb Bb D F          
+  F#Maj7#5 = F# A# Cx E#        // double sharp/flat
+   GMaj7#5 = G B D# F#          
+  AbMaj7#5 = Ab C E G           
+   AMaj7#5 = A C# E# G#         
+  BbMaj7#5 = Bb D F# A          // sharp + flat
+   BMaj7#5 = B D# Fx A#         // double sharp/flat
+-------------------------------------------
+CMaj7#11
+-------------------------------------------
+  CMaj7#11 = C E G B F#         
+ DbMaj7#11 = Db F Ab C G        
+  DMaj7#11 = D F# A C# G#       
+ EbMaj7#11 = Eb G Bb D A        
+  EMaj7#11 = E G# B D# A#       
+  FMaj7#11 = F A C E B          
+ GbMaj7#11 = Gb Bb Db F C       
+ F#Maj7#11 = F# A# C# E# B#     
+  GMaj7#11 = G B D F# C#        
+ AbMaj7#11 = Ab C Eb G D        
+  AMaj7#11 = A C# E G# D#       
+ BbMaj7#11 = Bb D F A E         
+  BMaj7#11 = B D# F# A# E#      
+-------------------------------------------
+C7b9
+-------------------------------------------
+    C7b9 = C E G Bb Db        
+   Db7b9 = Db F Ab Cb Ebb     // double sharp/flat
+    D7b9 = D F# A C Eb        // sharp + flat
+   Eb7b9 = Eb G Bb Db Fb      
+    E7b9 = E G# B D F         
+    F7b9 = F A C Eb Gb        
+   Gb7b9 = Gb Bb Db Fb Abb    // double sharp/flat
+   F#7b9 = F# A# C# E G       
+    G7b9 = G B D F Ab         
+   Ab7b9 = Ab C Eb Gb Bbb     // double sharp/flat
+    A7b9 = A C# E G Bb        // sharp + flat
+   Bb7b9 = Bb D F Ab Cb       
+    B7b9 = B D# F# A C        
+-------------------------------------------
+C7#9
+-------------------------------------------
+    C7#9 = C E G Bb D#        // sharp + flat
+   Db7#9 = Db F Ab Cb E       
+    D7#9 = D F# A C E#        
+   Eb7#9 = Eb G Bb Db F#      // sharp + flat
+    E7#9 = E G# B D Fx        // double sharp/flat
+    F7#9 = F A C Eb G#        // sharp + flat
+   Gb7#9 = Gb Bb Db Fb A      
+   F#7#9 = F# A# C# E Gx      // double sharp/flat
+    G7#9 = G B D F A#         
+   Ab7#9 = Ab C Eb Gb B       
+    A7#9 = A C# E G B#        
+   Bb7#9 = Bb D F Ab C#       // sharp + flat
+    B7#9 = B D# F# A Cx       // double sharp/flat
+-------------------------------------------
+C7b5
+-------------------------------------------
+    C7b5 = C E Gb Bb          
+   Db7b5 = Db F Abb Cb        // double sharp/flat
+    D7b5 = D F# Ab C          // sharp + flat
+   Eb7b5 = Eb G Bbb Db        // double sharp/flat
+    E7b5 = E G# Bb D          // sharp + flat
+    F7b5 = F A Cb Eb          
+   Gb7b5 = Gb Bb Dbb Fb       // double sharp/flat
+   F#7b5 = F# A# C E          
+    G7b5 = G B Db F           
+   Ab7b5 = Ab C Ebb Gb        // double sharp/flat
+    A7b5 = A C# Eb G          // sharp + flat
+   Bb7b5 = Bb D Fb Ab         
+    B7b5 = B D# F A           
+-------------------------------------------
+C7#11
+-------------------------------------------
+   C7#11 = C E G Bb F#        // sharp + flat
+  Db7#11 = Db F Ab Cb G       
+   D7#11 = D F# A C G#        
+  Eb7#11 = Eb G Bb Db A       
+   E7#11 = E G# B D A#        
+   F7#11 = F A C Eb B         
+  Gb7#11 = Gb Bb Db Fb C      
+  F#7#11 = F# A# C# E B#      
+   G7#11 = G B D F C#         
+  Ab7#11 = Ab C Eb Gb D       
+   A7#11 = A C# E G D#        
+  Bb7#11 = Bb D F Ab E        
+   B7#11 = B D# F# A E#       
+-------------------------------------------
+C7#5
+-------------------------------------------
+    C7#5 = C E G# Bb          // sharp + flat
+   Db7#5 = Db F A Cb          
+    D7#5 = D F# A# C          
+   Eb7#5 = Eb G B Db          
+    E7#5 = E G# B# D          
+    F7#5 = F A C# Eb          // sharp + flat
+   Gb7#5 = Gb Bb D Fb         
+   F#7#5 = F# A# Cx E         // double sharp/flat
+    G7#5 = G B D# F           
+   Ab7#5 = Ab C E Gb          
+    A7#5 = A C# E# G          
+   Bb7#5 = Bb D F# Ab         // sharp + flat
+    B7#5 = B D# Fx A          // double sharp/flat
+-------------------------------------------
+C7b13
+-------------------------------------------
+   C7b13 = C E G Bb Ab        
+  Db7b13 = Db F Ab Cb Bbb     // double sharp/flat
+   D7b13 = D F# A C Bb        // sharp + flat
+  Eb7b13 = Eb G Bb Db Cb      
+   E7b13 = E G# B D C         
+   F7b13 = F A C Eb Db        
+  Gb7b13 = Gb Bb Db Fb Ebb    // double sharp/flat
+  F#7b13 = F# A# C# E D       
+   G7b13 = G B D F Eb         
+  Ab7b13 = Ab C Eb Gb Fb      
+   A7b13 = A C# E G F         
+  Bb7b13 = Bb D F Ab Gb       
+   B7b13 = B D# F# A G        
+-------------------------------------------
+C7b5b9
+-------------------------------------------
+  C7b5b9 = C E Gb Bb Db       
+ Db7b5b9 = Db F Abb Cb Ebb    // double sharp/flat
+  D7b5b9 = D F# Ab C Eb       // sharp + flat
+ Eb7b5b9 = Eb G Bbb Db Fb     // double sharp/flat
+  E7b5b9 = E G# Bb D F        // sharp + flat
+  F7b5b9 = F A Cb Eb Gb       
+ Gb7b5b9 = Gb Bb Dbb Fb Abb   // double sharp/flat
+ F#7b5b9 = F# A# C E G        
+  G7b5b9 = G B Db F Ab        
+ Ab7b5b9 = Ab C Ebb Gb Bbb    // double sharp/flat
+  A7b5b9 = A C# Eb G Bb       // sharp + flat
+ Bb7b5b9 = Bb D Fb Ab Cb      
+  B7b5b9 = B D# F A C         
+-------------------------------------------
+C7#5b9
+-------------------------------------------
+  C7#5b9 = C E G# Bb Db       // sharp + flat
+ Db7#5b9 = Db F A Cb Ebb      // double sharp/flat
+  D7#5b9 = D F# A# C Eb       // sharp + flat
+ Eb7#5b9 = Eb G B Db Fb       
+  E7#5b9 = E G# B# D F        
+  F7#5b9 = F A C# Eb Gb       // sharp + flat
+ Gb7#5b9 = Gb Bb D Fb Abb     // double sharp/flat
+ F#7#5b9 = F# A# Cx E G       // double sharp/flat
+  G7#5b9 = G B D# F Ab        // sharp + flat
+ Ab7#5b9 = Ab C E Gb Bbb      // double sharp/flat
+  A7#5b9 = A C# E# G Bb       // sharp + flat
+ Bb7#5b9 = Bb D F# Ab Cb      // sharp + flat
+  B7#5b9 = B D# Fx A C        // double sharp/flat
+-------------------------------------------
+C7b5#9
+-------------------------------------------
+  C7b5#9 = C E Gb Bb D#       // sharp + flat
+ Db7b5#9 = Db F Abb Cb E      // double sharp/flat
+  D7b5#9 = D F# Ab C E#       // sharp + flat
+ Eb7b5#9 = Eb G Bbb Db F#     // double sharp/flat, sharp + flat
+  E7b5#9 = E G# Bb D Fx       // double sharp/flat, sharp + flat
+  F7b5#9 = F A Cb Eb G#       // sharp + flat
+ Gb7b5#9 = Gb Bb Dbb Fb A     // double sharp/flat
+ F#7b5#9 = F# A# C E Gx       // double sharp/flat
+  G7b5#9 = G B Db F A#        // sharp + flat
+ Ab7b5#9 = Ab C Ebb Gb B      // double sharp/flat
+  A7b5#9 = A C# Eb G B#       // sharp + flat
+ Bb7b5#9 = Bb D Fb Ab C#      // sharp + flat
+  B7b5#9 = B D# F A Cx        // double sharp/flat
+-------------------------------------------
+C7#5#9
+-------------------------------------------
+  C7#5#9 = C E G# Bb D#       // sharp + flat
+ Db7#5#9 = Db F A Cb E        
+  D7#5#9 = D F# A# C E#       
+ Eb7#5#9 = Eb G B Db F#       // sharp + flat
+  E7#5#9 = E G# B# D Fx       // double sharp/flat
+  F7#5#9 = F A C# Eb G#       // sharp + flat
+ Gb7#5#9 = Gb Bb D Fb A       
+ F#7#5#9 = F# A# Cx E Gx      // double sharp/flat
+  G7#5#9 = G B D# F A#        
+ Ab7#5#9 = Ab C E Gb B        
+  A7#5#9 = A C# E# G B#       
+ Bb7#5#9 = Bb D F# Ab C#      // sharp + flat
+  B7#5#9 = B D# Fx A Cx       // double sharp/flat
+-------------------------------------------
+C7b9#11
+-------------------------------------------
+ C7b9#11 = C E G Bb Db F#     // sharp + flat
+Db7b9#11 = Db F Ab Cb Ebb G   // double sharp/flat
+ D7b9#11 = D F# A C Eb G#     // sharp + flat
+Eb7b9#11 = Eb G Bb Db Fb A    
+ E7b9#11 = E G# B D F A#      
+ F7b9#11 = F A C Eb Gb B      
+Gb7b9#11 = Gb Bb Db Fb Abb C  // double sharp/flat
+F#7b9#11 = F# A# C# E G B#    
+ G7b9#11 = G B D F Ab C#      // sharp + flat
+Ab7b9#11 = Ab C Eb Gb Bbb D   // double sharp/flat
+ A7b9#11 = A C# E G Bb D#     // sharp + flat
+Bb7b9#11 = Bb D F Ab Cb E     
+ B7b9#11 = B D# F# A C E#     
+-------------------------------------------
+C7b9b13
+-------------------------------------------
+ C7b9b13 = C E G Bb Db Ab     
+Db7b9b13 = Db F Ab Cb Ebb Bbb // double sharp/flat
+ D7b9b13 = D F# A C Eb Bb     // sharp + flat
+Eb7b9b13 = Eb G Bb Db Fb Cb   
+ E7b9b13 = E G# B D F C       
+ F7b9b13 = F A C Eb Gb Db     
+Gb7b9b13 = Gb Bb Db Fb Abb Ebb // double sharp/flat
+F#7b9b13 = F# A# C# E G D     
+ G7b9b13 = G B D F Ab Eb      
+Ab7b9b13 = Ab C Eb Gb Bbb Fb  // double sharp/flat
+ A7b9b13 = A C# E G Bb F      // sharp + flat
+Bb7b9b13 = Bb D F Ab Cb Gb    
+ B7b9b13 = B D# F# A C G      
+-------------------------------------------
+C7#9#11
+-------------------------------------------
+ C7#9#11 = C E G Bb D# F#     // sharp + flat
+Db7#9#11 = Db F Ab Cb E G     
+ D7#9#11 = D F# A C E# G#     
+Eb7#9#11 = Eb G Bb Db F# A    // sharp + flat
+ E7#9#11 = E G# B D Fx A#     // double sharp/flat
+ F7#9#11 = F A C Eb G# B      // sharp + flat
+Gb7#9#11 = Gb Bb Db Fb A C    
+F#7#9#11 = F# A# C# E Gx B#   // double sharp/flat
+ G7#9#11 = G B D F A# C#      
+Ab7#9#11 = Ab C Eb Gb B D     
+ A7#9#11 = A C# E G B# D#     
+Bb7#9#11 = Bb D F Ab C# E     // sharp + flat
+ B7#9#11 = B D# F# A Cx E#    // double sharp/flat
+-------------------------------------------
+C7#9b13
+-------------------------------------------
+ C7#9b13 = C E G Bb D# Ab     // sharp + flat
+Db7#9b13 = Db F Ab Cb E Bbb   // double sharp/flat
+ D7#9b13 = D F# A C E# Bb     // sharp + flat
+Eb7#9b13 = Eb G Bb Db F# Cb   // sharp + flat
+ E7#9b13 = E G# B D Fx C      // double sharp/flat
+ F7#9b13 = F A C Eb G# Db     // sharp + flat
+Gb7#9b13 = Gb Bb Db Fb A Ebb  // double sharp/flat
+F#7#9b13 = F# A# C# E Gx D    // double sharp/flat
+ G7#9b13 = G B D F A# Eb      // sharp + flat
+Ab7#9b13 = Ab C Eb Gb B Fb    
+ A7#9b13 = A C# E G B# F      
+Bb7#9b13 = Bb D F Ab C# Gb    // sharp + flat
+ B7#9b13 = B D# F# A Cx G     // double sharp/flat
+-------------------------------------------
+C
+-------------------------------------------
+       C = C E G              
+      Db = Db F Ab            
+       D = D F# A             
+      Eb = Eb G Bb            
+       E = E G# B             
+       F = F A C              
+      Gb = Gb Bb Db           
+      F# = F# A# C#           
+       G = G B D              
+      Ab = Ab C Eb            
+       A = A C# E             
+      Bb = Bb D F             
+       B = B D# F#            
+-------------------------------------------
+Cm
+-------------------------------------------
+      Cm = C Eb G             
+     C#m = C# E G#            
+      Dm = D F A              
+     Ebm = Eb Gb Bb           
+     D#m = D# F# A#           
+      Em = E G B              
+      Fm = F Ab C             
+     F#m = F# A C#            
+      Gm = G Bb D             
+     G#m = G# B D#            
+      Am = A C E              
+     Bbm = Bb Db F            
+      Bm = B D F#             
+-------------------------------------------
+Cdim
+-------------------------------------------
+    Cdim = C Eb Gb            
+   C#dim = C# E G             
+    Ddim = D F Ab             
+   Ebdim = Eb Gb Bbb          // double sharp/flat
+   D#dim = D# F# A            
+    Edim = E G Bb             
+    Fdim = F Ab Cb            
+   F#dim = F# A C             
+    Gdim = G Bb Db            
+   G#dim = G# B D             
+    Adim = A C Eb             
+   Bbdim = Bb Db Fb           
+    Bdim = B D F              
+-------------------------------------------
+Caug
+-------------------------------------------
+    Caug = C E G#             
+   Dbaug = Db F A             
+    Daug = D F# A#            
+   Ebaug = Eb G B             
+    Eaug = E G# B#            
+    Faug = F A C#             
+   Gbaug = Gb Bb D            
+   F#aug = F# A# Cx           // double sharp/flat
+    Gaug = G B D#             
+   Abaug = Ab C E             
+    Aaug = A C# E#            
+   Bbaug = Bb D F#            // sharp + flat
+    Baug = B D# Fx            // double sharp/flat
+-------------------------------------------
+Csus4
+-------------------------------------------
+   Csus4 = C F G              
+  Dbsus4 = Db Gb Ab           
+   Dsus4 = D G A              
+  Ebsus4 = Eb Ab Bb           
+   Esus4 = E A B              
+   Fsus4 = F Bb C             
+  Gbsus4 = Gb Cb Db           
+  F#sus4 = F# B C#            
+   Gsus4 = G C D              
+  Absus4 = Ab Db Eb           
+   Asus4 = A D E              
+  Bbsus4 = Bb Eb F            
+   Bsus4 = B E F#             

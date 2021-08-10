@@ -62,6 +62,6 @@ public class UtilsTest {
   @Test
   public void testChordName() {
     assertEquals("Eb7", Utils.chordName(BuiltinChordType.Dominant7, Note.Eb));
-    assertEquals("F#7", Utils.chordName(BuiltinChordType.Dominant7, Note.Gb));
+    assertEquals("Gb7", Utils.chordName(BuiltinChordType.Dominant7, Note.Gb));
   }
 }

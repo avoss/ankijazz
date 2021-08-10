@@ -82,19 +82,6 @@ public class ScaleUniverseTest {
   }
 
   @Test
-  public void testChordTypes() {
-    List<String> actual = new ArrayList<>();
-    for (Scale chord : allKeys(Scales.allChords())) {
-      for (ScaleInfo info : ScaleUniverse.CHORDS.infos(chord)) {
-        String marker = TestUtils.reviewMarker(chord, info.getKeySignature());
-        String line = format("%s %s %s", info.getScaleName(), info.getKeySignature().notate(chord.stackedThirds()), marker);
-        actual.add(line);
-      }
-    }
-    assertFileContentMatches(actual, ScaleUniverseTest.class, "testChordTypes.txt");
-  }
-    
-  @Test
   public void testAllModesInAllKeys() {
     List<ScaleInfo> scaleInfos = allModes(allKeys(asList(CMajor, CMelodicMinor, CHarmonicMinor, CHarmonicMajor, CWholeTone, CDiminishedHalfWhole)))
       .stream()
@@ -198,7 +185,7 @@ public class ScaleUniverseTest {
   @Test
   public void testNames() {
     assertName("C", CmajTriad);
-    assertName("F#7", C7.transpose(Gb));
+    assertName("Gb7", C7.transpose(Gb));
     assertName("Db7", C7.transpose(Db));
     
   }

@@ -6,9 +6,7 @@ import java.util.Set;
 
 /**
  * approximate stack of thirds.
- * @deprecated use DegreeParser instead 
  */
-@Deprecated
 public class Stacker {
   private Set<Note> set;
   private List<Note> list;
