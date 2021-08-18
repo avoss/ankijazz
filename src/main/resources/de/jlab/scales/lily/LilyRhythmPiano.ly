@@ -6,7 +6,7 @@
 
 \header {
   title = "" % \markup{ \small { "C Major Scale" }}
-  tagline = \markup { \teeny { \with-color #grey { "(C) 2020 AnkiJazz.com - Anki Shared Deck License" } } }
+  tagline = \markup { \teeny { \with-color #grey { "(C) 2021 AnkiJazz.com - Anki Shared Deck License" } } }
 }
 
 

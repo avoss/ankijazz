@@ -15,7 +15,7 @@ import de.jlab.scales.jtg.IdSong.IdBar;
 import de.jlab.scales.midi.song.Song;
 
 public class PngImageRenderer extends Layout {
-  //private final String copyright = "(C) 2020 www.AnkiJazz.com - all rights reserved";
+  //private final String copyright = "(C) 2021 www.AnkiJazz.com - all rights reserved";
   private final String copyright = "(C) 2021 www.AnkiJazz.com - Anki Shared Deck License";
 
   private final int barLineSpacing;

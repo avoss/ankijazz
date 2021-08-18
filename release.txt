@@ -1,0 +1,28 @@
+git checkout release
+git merge develop
+git push
+
+./gradlew clean build
+docker start avix
+ssh avix
+(cd /mnt/anki && bash ~/anki.sh) && (cd /mnt/preview && bash ~/anki.sh)
+docker stop avix
+
+
+./gradlew createWebsitePreview
+ng serve + double check all previews
+ng build
+upload new website to ankijazz.com
+replace backup of website to /D/Backup/Ankijazz
+
+# TODO:
+
+./gradlew createAnkiProfileWithMedia
+import txt into Anki build profile
+export decks from Anki build profile
+download old deck from ankiweb for comparison
+import decks into Anki ankijazz profile
+synchronize ankijazz profile
+share decks with same name and description
+
+

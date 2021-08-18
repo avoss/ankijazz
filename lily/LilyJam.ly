@@ -7,7 +7,7 @@
 
 \header {
 %  title = \markup{ \small { "${title}" }}
-  tagline = \markup { \teeny { \with-color #grey { "(C) 2020 AnkiJazz.com - Do not distribute!" } } }
+  tagline = \markup { \teeny { \with-color #grey { "(C) 2021 AnkiJazz.com - Do not distribute!" } } }
 }
 
 chordmusic = {
