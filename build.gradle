@@ -46,30 +46,28 @@ test {
 }
 
 build {
-  dependsOn(copyAssets)
-  dependsOn(copyPreview)
+  dependsOn("copyAnkiAssets")
+  dependsOn("copyPreviewAssets")
+}
+
+clean {
+  dependsOn("cleanAngular")
 }
 
 // Release Tasks
 
 def webappDir = "$projectDir/src/main/webapp"
+def previewDir = "$webappDir/assets/preview"
+def ankiAsset = "$projectDir/src/assets/build.zip"
 
-task release {
-  dependsOn build
-  dependsOn createWebsitePreview
-  dependsOn createAnkiProfileWithMedia
-}
-
-task copyAssets(type:Copy) {
-  dependsOn test
+task copyAnkiAssets(type:Copy) {
   from ('src/assets') {
     include ('*.png', '*.mp3', '*.ly')
   } 
   into 'build/anki'
 }
 
-task copyPreview(type:Copy) {
-  dependsOn test
+task copyPreviewAssets(type:Copy) {
   from ('src/assets') {
     include ('*.png', '*.mp3', '*.ly')
   } 
@@ -77,16 +75,16 @@ task copyPreview(type:Copy) {
 }
 
 task deleteWebsitePreview(type: Delete) {
-  delete "${websitePreview}"
+  delete "${previewDir}"
 }
 
 task createWebsitePreview(type:Copy) {
-  dependsOn copyPreview
-  dependsOn deleteWebsitePreview
+  dependsOn "copyPreviewAssets"
+  dependsOn "deleteWebsitePreview"
   from ('build/preview') {
     include ('*.png', '*.mp3', '*.html', "*.json")
   } 
-  into "${websitePreview}"
+  into "${previewDir}"
 }
 
 
@@ -95,14 +93,14 @@ task deleteAnkiProfile(type: Delete) {
 }
 
 task createEmptyAnkiProfile(type: Copy) {
-  dependsOn deleteAnkiProfile
+  dependsOn "deleteAnkiProfile"
   from zipTree("${ankiAsset}")
   into "${ankiProfile}"
 }
 
 task createAnkiProfileWithMedia(type: Copy) {
-  dependsOn copyAssets
-  dependsOn createEmptyAnkiProfile
+  dependsOn "copyAnkiAssets"
+  dependsOn "createEmptyAnkiProfile"
   from ("build/anki") {
     include ('*.png', '*.mp3')
   }
@@ -114,22 +112,28 @@ task deleteAnkiAsset(type: Delete) {
 }
 
 task createAnkiAssetFromProfile(type: Zip) {
-  dependsOn deleteAnkiAsset
+  dependsOn "deleteAnkiAsset"
   archiveFileName = "build.zip"
   destinationDirectory = file("src/assets")
   from "${ankiProfile}"
 }
 
+task installAngular(type:Exec) {
+  workingDir "$webappDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine "npm.cmd", "install"
+}
 
 task buildAngular(type:Exec) {
-  dependsOn installAngular
-  dependsOn createWebsitePreview
+  dependsOn "installAngular"
+  dependsOn "createWebsitePreview"
+  workingDir "$webappDir"
   group = BasePlugin.BUILD_GROUP
   commandLine "ng.cmd", "build"
 }
 
-task installAngular(type:Exec) {
-  group = BasePlugin.BUILD_GROUP
-  commandLine "npm.cmd", "install"
+task cleanAngular(type: Delete) {
+  delete "$previewDir", "$webappDir/dist"
+  followSymlinks = false
 }
 
