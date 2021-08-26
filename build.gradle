@@ -43,6 +43,17 @@ jar {
 
 test {
   useJUnit()
+  filter {
+    includeTestsMatching "*Test"
+  }
+}
+
+task prod(type: Test) {
+  dependsOn "test"
+  useJUnit()
+  filter {
+    includeTestsMatching "*Prod"
+  }
 }
 
 build {

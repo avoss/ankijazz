@@ -116,47 +116,39 @@ public class FretboardDiagramDeckTest {
 
   @Test
   public void testPentatonic1ScalesFretboards() {
-    CardGenerator<FretboardDiagramCard> generator = new Pentatonic1ScalesFretboards(validator);
+    assertDeck("Pentatonic1ScalesFretboards.json", new Pentatonic1ScalesFretboards(validator));
+  }
+
+  private FretboardDiagramDeck assertDeck(String fileName, CardGenerator<FretboardDiagramCard> generator) {
     FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.writeTo(deck, 0.1);
+    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), fileName);
+    return deck;
   }
   
   @Test
   public void testPentatonic3ChordsFretboards() {
-    CardGenerator<FretboardDiagramCard> generator = new Pentatonic3ChordsFretboards(penta3Validator);
-    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "PentatonicsLevel3VisualizeChords.json");
-    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "PentatonicsLevel3VisualizeChords.txt");
-    TestUtils.writeTo(deck, 0.1);
+    FretboardDiagramDeck deck = assertDeck("Pentatonic3ChordsFretboards.json", new Pentatonic3ChordsFretboards(penta3Validator));
+    TestUtils.assertFileContentMatches(deck.getCsv(), getClass(), "Pentatonic3ChordsFretboards.txt");
   }
   
   @Test
   public void testPentatonic5ModesFretboards() {
-    CardGenerator<FretboardDiagramCard> generator = new Pentatonic5ModesFretboards(validator);
-    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.writeTo(deck, 0.1);
+    assertDeck("Pentatonic5ModesFretboards.json",  new Pentatonic5ModesFretboards(validator));
   }
 
   @Test
   public void testCaged1ScalesFretboards() {
-    CardGenerator<FretboardDiagramCard> generator = new Caged1ScalesFretboards(validator);
-    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.writeTo(deck, 0.1);
+    assertDeck("Caged1ScalesFretboards.json",  new Caged1ScalesFretboards(validator));
   }
 
   @Test
   public void testCaged3ModesFretboards() {
-    CardGenerator<FretboardDiagramCard> generator = new Caged3ModesFretboards(validator);
-    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.assertFileContentMatches(deck.getJson(), getClass(), "Caged3ModesFretboards.json");
-    TestUtils.writeTo(deck, 0.1);
+    assertDeck("Caged3ModesFretboards.json", new Caged3ModesFretboards(validator));
   }
   
   @Test
   public void testCaged5ArpeggiosFretboards() {
-    CardGenerator<FretboardDiagramCard> generator = new Caged5ArpeggiosFretboards(validator);
-    FretboardDiagramDeck deck = new FretboardDiagramDeck(generator);
-    TestUtils.writeTo(deck, 0.1);
+    assertDeck("Caged5ArpeggiosFretboards.json", new Caged5ArpeggiosFretboards(validator));
   }
   
 }
