@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Practice Chords</h2>
+        <hr>
+        <h4>Overview</h4>
+        <p>
+            Many musicians practice scales and scale patterns to get more fluent with playing melodies and solos. 
+            This is an equivalent technical exercise for chords: you practice all chord types in all keys systematically.
+            Every exercise focusses either on a certain chord in a certain key, or a common chord progression like II-V-I or Blues.
+            You can use this deck to practice both, comping and soloing.
+        </p>
+        <p>
+            Cards are sorted by difficulty, where difficulty includes the frequency chords are used in popular music (most common chord types come first),  
+            number of different chords in the progression, number of accidentals, tempo of playback and some other criteria. 
+            So, you probably don't want to configure Anki to show cards in random order (unless you really want to).
+        </p>
+        <h4>Examples</h4>
+    </div>
+    <div>
+        <app-jam-carousel [cards]="compingCards" [error]="compingError" titlePrefix="Play"></app-jam-carousel>
+    </div>
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Description</h2>
+        <hr>
+        <h4>Fields</h4>
+        <p>
+            The <strong>Type</strong> field can have the following values:
+        </p>
+        <ul>
+            <li><strong>Triads</strong>
+                <div>Progressions built of Major, Minor, Augmented and Diminished Triads</div>
+            </li>
+            <li><strong>Workouts</strong>
+                <div>Chord progressions that focus on a single chord. 
+                    Walks through the most commonly used chords in modern music, including e.g. Minor 7, Major 7, Dominant 7, 7sus4, Altered chords and some substitusions.
+                    Although the progressions focus on a single chord type, they are arranged in a way that sound at least somewhat musical.
+                </div>
+            </li>
+            <li><strong>Simple II-V-I Progressions</strong>
+                <div>II-V-I progressions in Major and Minor with only few chord substitutions</div>
+            </li>
+            <li><strong>Extended II-V-I Progressions</strong>
+                <div>II-V-I progressions in Major and Minor with more chord substitutions</div>
+            </li>
+            <li><strong>Jazz Blues</strong>
+                <div>Jazz Blues progressions in Major and Minor</div>
+            </li>
+        </ul>
+        <h4>Preview</h4>
+        <p>You can preview the different deck versions here. 
+            Preview decks only contain a subset the cards, the original deck contains ~300 cards (Guitar version has ~1000 cards).</p>
+        <ul>
+            <li>C-Instrument <a href="/assets/preview/JamCDeck.html" target="_blank">preview</a></li>
+            <li>Bb-Instrument <a href="/assets/preview/JamBbDeck.html" target="_blank">preview</a></li>
+            <li>Eb-Instrument <a href="/assets/preview/JamEbDeck.html" target="_blank">preview</a></li>
+            <li>Guitar <a href="/assets/preview/JamCGuitarDeck.html" target="_blank">preview</a></li>
+        </ul>
+        <h4>Download</h4>
+        <p>
+            Because AnkiWeb only allows to share decks up to 250MB in size, only a scaled down version of the Guitar deck is available for download on <a href="https://ankiweb.net/shared/decks/ankijazz" target="_blank">AnkiWeb</a> site.
+            Full Guitar version and versions for other instruments are available to supporters only.
+            If you <a target="_blank"  href="https://www.buymeacoffee.com/ankijazz">buy me some coffee</a>
+            you will see a "thank-you" message which contains the link to download these decks.
+            Thank you for considering to support me.
+        </p>
+
+    </div>
+
+</div>

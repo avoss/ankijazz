@@ -1,0 +1,134 @@
+<div class="container">
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Learn Scales, Modes and Chords - Theory</h2>
+        <hr>
+        <h4>Overview</h4>
+        <p>
+            This is a small, text-only deck (mobile friendly). It asks you to spell scales and chords, as well
+            as questions about modal relationship between scales (e.g. what is mode 5 of D Major?).
+        </p>
+        <p>
+            Cards are sorted by difficulty, where difficulty is e.g. number of accidentals and some other
+            criteria. So, you probably don't want to configure Anki to show cards in random order (unless you really
+            want to).
+        </p>
+
+        <h4>Examples</h4>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        Could not load data: {{error}}.
+    </div>
+    <div class="d-flex justify-content-center">
+        <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="showNavigationArrows"
+            [interval]="interval" *ngIf="cards" class="maxw45">
+            <ng-template ngbSlide *ngFor="let card of cards">
+                <div class="card m-3">
+                    <h4 class="card-header" [innerHTML]="card.front"></h4>
+                    <div class="card-body ml-5 pl-5">
+                        <h4 [innerHTML]="card.back"></h4>
+                        <p class="card-text">Fields available for sorting and filtering:</p>
+                        <ul>
+                            <li>Task: {{card.task}}</li>
+                            <li>ModeName: {{card.modeName}}</li>
+                            <li>ModeType: {{card.modeType}}</li>
+                            <li>ModeRoot: {{card.modeRoot}}</li>
+                            <li>ParentName: {{card.parentName}}</li>
+                            <li>ParentType: {{card.parentType}}</li>
+                            <li>ParentRoot: {{card.parentRoot}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Description</h2>
+        <hr>
+        <h4>Fields</h4>
+        <p>
+            The <strong>Task</strong> field can have the following values (with example question and answer):
+        </p>
+        <ul>
+            <li><strong>Enharmonics</strong>
+                <div>Front: What is the <em>enharmonic</em> equivalent of <em>C#</em>?</div>
+                <div>Back: <em>Db</em></div>
+            </li>
+            <li><strong>ModeIntervals</strong>
+                <div>Front: What are the <em>intervals</em> of <em>Lydian Dominant</em>?</div>
+                <div>Back: 1 2 3 #4 5 6 b7</div>
+            </li>
+            <li><strong>NameMode</strong>
+                <div>Front: What is <em>mode 2</em> of <em>Bb Major Scale</em>?</div>
+                <div>Back: <em>C Dorian</em></div>
+            </li>
+            <li><strong>NameParent</strong>
+                <div>Front: What is the <em>parent</em> scale of <em>E Dorian</em></div>
+                <div>Back: <em>D Major Scale</em></div>
+            </li>
+            <li><strong>SpellScale</strong>
+                <div>Front: What are the <em>notes</em> of <em>F Dorian</em>?</div>
+                <div>Back: <em>F G Ab Bb C D Eb</em></div>
+            </li>
+            <li><strong>SpellChord</strong>
+                <div>Front: What are the <em>notes</em> of <em>EΔ7</em> Chord?</div>
+                <div>Back: <em>E G# B D#</em></div>
+            </li>
+        </ul>
+        <h4>Deck Versions</h4>
+        <p>
+            There are two versions of the deck:
+        </p>
+        <ul>
+            <li><strong>Modes Theory</strong> asks questions about scales and their modes, and asks you to spell many different chord types</li>
+            <li><strong>Scales Theory</strong> is a subset of <em>Modes Theory</em>. 
+                It does not ask about modes (and modal relationships), and only asks you to spell the most important chord types
+                (m6, 6, m7, m7b5, maj7, 7, 7b9, and 7#5)</li>
+        </ul>
+
+        <h4>Preview</h4>
+        <ul>
+            <li><a href="/assets/preview/ModesTheoryDeck.html" target="_blank">Modes Theory</a></li>
+            <li><a href="/assets/preview/ScalesTheoryDeck.html" target="_blank">Scales Theory</a></li>
+        </ul>
+
+        <h4>Download</h4>
+        <p>
+            These decks are available for download on <a href="https://ankiweb.net/shared/decks/ankijazz" target="_blank">AnkiWeb</a> site. 
+            <app-coffee what="them"></app-coffee>
+        </p>
+
+    </div>
+
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Notation</h2>
+        <hr>
+        <h4>C13 vs Cadd13</h4>
+        <p>
+            In theory, a C13 chord contains the notes C E G Bb D F A. In AnkiJazz, a C13 is treated like a C7add13 with the notes C E G Bb A.
+            Same applies to 11th chords, e.g. in AnkiJazz a C11 is interpreted as C7add11 and has the notes C E G Bb F. 
+            Altered extensions like b9, #9, #11 and b13 are written with an explicit 7th,  e.g. C7b13 which has the notes C E G Bb Ab.
+        </p>
+        <h4>C7#5 vs C7b13</h4>
+        <p>
+            Although #5 and b13 refer to the same note, C7#5 and C7b13 are different chords in AnkiJazz:
+        </p>
+        <ul>
+            <li>C7#5 does <em>not</em> contain a natural 5th and consists of C E Gb Bb</li>
+            <li>C7b13 <em>does</em> contain the natural 5th and consists of C E G Bb Gb</li>
+        </ul>
+        <h4>Key Signatures</h4>
+        <p>
+            For scales, the key signatures discussed in the
+            <a routerLink="/scales" class="card-link">Scales Deck</a> are used.
+        </p>
+        <p>
+            For chords I chose the key signature of the scales that they are contained in. For example,
+            the chord Ebm7 is contained in both, Db Major Scale (which is notated using flats) and
+            B Major Scale (which is notated using sharps). So for this chord, there are two cards, one asking for
+            the notes of Ebm7, the other asking for the notes of D#m7.
+        </p>
+    </div>
+
+</div>

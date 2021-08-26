@@ -98,3 +98,20 @@ task createAnkiAssetFromProfile(type: Zip) {
   destinationDirectory = file("src/assets")
   from "${ankiProfile}"
 }
+
+processResources {
+  dependsOn "buildAngular"
+}
+
+task buildAngular(type:Exec) {
+  dependsOn "installAngular"
+  dependsOn "createWebsitePreview"
+  group = BasePlugin.BUILD_GROUP
+  commandLine "ng.cmd", "build"
+}
+
+task installAngular(type:Exec) {
+  group = BasePlugin.BUILD_GROUP
+  commandLine "npm.cmd", "install"
+}
+

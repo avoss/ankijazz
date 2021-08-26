@@ -1,0 +1,47 @@
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" [routerLink]="'home'">
+            <img src="/assets/img/anki-logo32x32.png"> AnkiJazz</a>
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+        </button>
+
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active" (click)="collapseMenu()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a  class="nav-link" routerLink="/scales" routerLinkActive="active" (click)="collapseMenu()">Scales</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/rhythm" routerLinkActive="active" (click)="collapseMenu()">Rhythms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/comping" routerLinkActive="active" (click)="collapseMenu()">Chords</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/theory" routerLinkActive="active" (click)="collapseMenu()">Theory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/caged" routerLinkActive="active" (click)="collapseMenu()">CAGED</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/pentatonics" routerLinkActive="active" (click)="collapseMenu()">Pentas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/tools" routerLinkActive="active" (click)="collapseMenu()">Tools</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact" routerLinkActive="active" (click)="collapseMenu()">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://apps.ankiweb.net/" target="_blank" (click)="collapseMenu()">Anki <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+                        <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
+                      </svg></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>

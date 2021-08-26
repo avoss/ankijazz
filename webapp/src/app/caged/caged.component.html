@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">CAGED Scale Fingerings</h2>
+        <hr>
+        <h4>Overview</h4>
+        <p>
+            CAGED is a common fingering system with 5 positions to play scales on Guitar. 
+            There are five decks with increasing difficulty to learn and practice these:
+        </p>
+        <ul>
+            <li>Level 1 - Lern CAGED scale positions with Freboard Diagrams (<a href="/assets/preview/Caged1ScalesFretboards.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 2 - Practice scale positions with Jam Tracks (<a href="/assets/preview/Caged2ScalesJamtracks.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 3 - Lern to play common modes using CAGED positions with Freboard Diagrams (<a href="/assets/preview/Caged3ModesFretboards.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 4 - Practice mode positions with Jam Tracks (<a href="/assets/preview/Caged4ModesJamtracks.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 5 - Lern how Arpeggios are embedded in the modes with Fretboard Diagrams(<a href="/assets/preview/Caged5ArpeggiosFretboards.html" target="_blank">Preview Deck here</a>)</li>
+        </ul>
+    </div>
+    <h4 class="pl2rem">Example Fretboard (Level 5 - Modes with embedded Arpeggios)</h4>
+    <app-fret-carousel [cards]="fretCards" [error]="fretError" titlePrefix="Play"></app-fret-carousel>
+    <h4 class="pl2rem">Example Jamtrack (Level 4 - Scales and Modes)</h4>
+    <app-jam-carousel [cards]="jamCards" [error]="jamError"></app-jam-carousel>
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Description</h2>
+        <hr>
+        <h4>Melodic Minor and Harmonic Minor</h4>
+        <p>
+            While CAGED fingerings for the Major scale are pretty much defined, there exist some variations for Melodic and Harmonic Minor.
+            I chose the following:
+        </p>
+        <ul>
+            <li>When you play the Dorian mode with a major 7th instead of the minor 7th, you get Melodic Minor.
+                So I took the Dorian fingering and raised the 7th degree by one fret.</li>
+            <li>When you play the Aeolean mode with a major 7th instead of the minor 7th, you get Harmonic Minor.
+                So I took the Aeolean fingering and raised the 7th degree by one fret.</li>
+        </ul>
+        <p>
+            I like this systematic approach because it gives good results and is easy to remember.
+            However, there is one exception to this rule: if the root is on the E-strings, then the fingering becomes easier if you move the major 7th from B-String to E-String too.
+        </p>
+        <h4>Modes and Chords</h4>
+        <p>
+            In both card types, fretboard and jamtrack, the audio plays chords. 
+            This is the chord you get by stacking the thirds of the mode with the following exceptions:
+        </p>
+        <ul>
+            <li>for Phrygian Dominant (5th mode of Harmonic Minor) I chose a 7b9 chord</li>
+            <li>for Altered Scale (7th mode of Melodic Minor) I chose a 7#5 chord</li>
+        </ul>
+        <p>
+            This also applies to the arpeggios in Level 5.
+        </p>
+        <h4>Download</h4>
+        <p>
+            These decks are available for download on <a href="https://ankiweb.net/shared/decks/ankijazz" target="_blank">AnkiWeb</a> site. 
+            <app-coffee what="them"></app-coffee>
+        </p>
+
+    </div>
+
+</div>

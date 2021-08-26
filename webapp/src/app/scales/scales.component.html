@@ -1,0 +1,155 @@
+<div class="container">
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Practice Scales and Modes</h2>
+        <hr>
+
+        <h4>Overview</h4>
+        <p>
+            This deck contains the scales and modes that are most commonly used in modern music.
+            It includes
+        </p>
+        <ul>
+            <li>Major Scale and all of its modes</li>
+            <li>Harmonic Minor and its Phrygian Dominant mode</li>
+            <li>Melodic Minor and its Lydian Dominant and Altered modes</li>
+            <li>Half/Whole Diminished with its only Whole/Half Diminished mode</li>
+            <li>Whole Tone Scale which has no modes</li>
+        </ul>
+        <p>
+            Melodic Minor refers to "Jazz Melodic Minor", which means it is the same in both directions, ascending and
+            descending.
+        </p>
+        <p>
+            Cards are sorted by difficulty, where difficulty is e.g. number of accidentals and some other
+            criteria. So, you probably don't want to configure Anki to show cards in random order (unless you really
+            want to).
+        </p>
+
+        <h4>Examples</h4>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        Could not load data: {{error}}.
+    </div>
+    <div class="d-flex justify-content-center">
+        <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="showNavigationArrows" [interval]="interval" *ngIf="cards" class="maxw45">
+            <ng-template ngbSlide *ngFor="let card of cards">
+                <div class="card m-3">
+                    <h4 class="card-header">
+                        Play {{card.modeName}} in {{card.direction}} Direction
+                    </h4>
+                    <div class="card-body">
+                        <img class="card-img-top" src="/assets/preview/{{card.modePng}}">
+                        <p class="card-text text-center">
+                            <audio controls src="/assets/preview/{{card.modeMp3}}" (play)="onPlayerPlay()" (pause)="onPlayerPause()" (ended)="onPlayerEnded()"></audio>
+                        </p>
+                        <p class="card-text">Fields available for sorting and filtering:</p>
+                        <ul>
+                            <li>ModeName: {{card.modeName}}</li>
+                            <li>ModeType: {{card.modeType}}</li>
+                            <li>ModeRoot: {{card.modeRoot}}</li>
+                            <li>ParentName: {{card.parentName}}</li>
+                            <li>ParentType: {{card.parentType}}</li>
+                            <li>ParentRoot: {{card.parentRoot}}</li>
+                            <li>Direction: {{card.direction}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Description</h2>
+        <hr>
+
+        <h4>Fields</h4>
+        <ul>
+            <li><strong>ModeName</strong> - name of the scale or mode, e.g. "D Dorian"</li>
+            <li><strong>ModeType</strong> - name of the mode type, e.g. "Dorian"</li>
+            <li><strong>ModeRoot</strong> - name of the modes root, e.g. "D"</li>
+            <li>
+                <strong>ParentName, ParentType, ParentRoot</strong> - Same for the parent scale. 
+                The parent scale is the scale that a mode was derived from. 
+                For example, "D Dorian" is the second mode of the "C Major Scale", so "C Major Scale" is the parent scale
+                of "D Dorian". Both scales, "D Dorian" and "C Major Scale", share the same notes.
+            </li>
+        </ul>
+
+        <h4>Preview</h4>
+        <p>You can preview the different deck versions here. 
+            Preview decks only contain a subset the cards, the original deck contains ~380 cards (Guitar version has ~1100 cards).</p>
+        <ul>
+            <li>C-Instrument <a href="/assets/preview/ModesPracticeCDeck.html" target="_blank">preview</a></li>
+            <li>Bb-Instrument <a href="/assets/preview/ModesPracticeBbDeck.html" target="_blank">preview</a></li>
+            <li>Eb-Instrument <a href="/assets/preview/ModesPracticeEbDeck.html" target="_blank">preview</a></li>
+            <li>Bass Clef <a href="/assets/preview/ModesPracticeBassDeck.html" target="_blank">preview</a></li>
+            <li>Guitar <a href="/assets/preview/ModesPracticeGuitarDeck.html" target="_blank">preview</a></li>
+        </ul>
+
+        <h4>Download</h4>
+        <p>
+            These decks are available for download on <a href="https://ankiweb.net/shared/decks/ankijazz" target="_blank">AnkiWeb</a> site. 
+            <app-coffee what="them"></app-coffee>
+        </p>
+
+    </div>
+
+
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Notation</h2>
+        <hr>
+
+        <h4>Gb vs F#</h4>
+        <p>
+            Gb and F# scales refer to the same pitches.
+            Whether a scale should be notated as Gb or F# depends on the context, both notations are valid and commonly
+            used. So, in AnkiJazz I usually notate both of them which results in 13 different notations for the 12
+            scales.
+        </p>
+
+        <h4>Modes</h4>
+        <p>Modes are notated using the key signature of the parent-scale that the mode was derived from.</p>
+        <p>
+            Some <a target="_blank" href="https://en.schott-music.com/shop/jazz-harmony-no326750.html">Books</a> recommend
+            to notate minor modes with the key signature of their <em>parallel</em> natural minor
+            (where <em>parallel</em> means: <em>same root</em>, not to be mixed with <em>relative</em> which means: <em>same signature</em>).
+            In AnkiJazz, I did not follow that recommendation.
+            For me it is more important to see which key-center I'm in than how the current mode differs from its parallel minor / major.
+            For example, when I'm jamming on a II-V-I progression, I want to quickly see whether the corresponding modes have the same signatures / notes or not.
+        </p>
+
+        <h4>Non-Major Scales</h4>
+        <p>
+            For these scales I used the following key signatures:
+        </p>
+        <ul>
+            <li>
+                Melodic Minor is notated with the key signature of its parallel Dorian scale.
+                In other words, Melodic Minor is notated as Dorian with a raised 7th.
+            </li>
+            <li>
+                Harmonic Minor is notated with the key signature of its parallel Aeolean (Aeolean = Natural Minor)
+                scale. In other words, Harmonic Minor is notated as Aeolean with a raised 7th.
+            </li>
+            <li>
+                Whole Tone and Diminished scales are notated in the key of C using flats.
+            </li>
+        </ul>
+
+        <h4>Result</h4>
+        <ul>
+            <li>
+                Some scales require an "enharmonic root", e.g. the 7-th mode of F# Major is E# Locrian (and not F
+                Locrian).
+            </li>
+            <li>
+                Some scales can only be notated by using both, sharps # and flats b, for example G Melodic-Minor and D Harmonic-Minor.
+            </li>
+            <li>
+                Some scales require double sharps (notated as Fx), for example G# Melodic-Minor and G# Harmonic-Minor
+            </li>
+        </ul>
+
+    </div>
+</div>

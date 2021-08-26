@@ -1,9 +1,12 @@
 /.gradle
 /temp
-/bin
 /build
 /out
 /.idea/
 /scales.core.iml
-/APPDATA.lnk
 /jtg
+
+.classpath
+.project
+.settings
+/bin

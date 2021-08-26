@@ -1,0 +1,172 @@
+<div class="container">
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Practice Rhythms</h2>
+        <hr>
+        <h4>Overview</h4>
+        <p>
+            Rhythm is the driving foundation of modern music.
+            In a tight groove even wrong notes sound right, which means that good timing is more important than good
+            note choices.
+            This deck contains the most common rhythmic patterns.
+        </p>
+        <p>
+            Cards are sorted by difficulty, where difficulty is the complexity and tempo of the rhythm.
+            So, you probably don't want to configure Anki to show cards in random order (unless you really want to).
+        </p>
+        <h4>Examples</h4>
+    </div>
+
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+        Could not load data: {{error}}.
+    </div>
+    <div class="d-flex justify-content-center">
+        <ngb-carousel [showNavigationIndicators]="false" [showNavigationArrows]="showNavigationArrows"
+            [interval]="interval" *ngIf="cards" class="maxw45">
+            <ng-template ngbSlide *ngFor="let card of cards">
+                <div class="card m-3">
+                    <h4 class="card-header">
+                        Play {{card.title}}
+                    </h4>
+                    <div class="card-body">
+                        <img class="card-img-top" src="/assets/preview/{{card.rhythmImage}}">
+
+                        <div class="card-text">
+                            <div class="container">
+                                <div class="row mt-2 ml-2 mr-2">
+                                    <div class="col">Play Metronome</div>
+                                    <div class="col"><audio controls src="/assets/preview/{{card.metronomeAudio}}"
+                                            (play)="onPlayerPlay()" (pause)="onPlayerPause()"
+                                            (ended)="onPlayerEnded()"></audio></div>
+                                </div>
+                                <div class="row mt-2 ml-2 mr-2">
+                                    <div class="col">Play Rhythm</div>
+                                    <div class="col"><audio controls src="/assets/preview/{{card.rhythmAudio}}"
+                                            (play)="onPlayerPlay()" (pause)="onPlayerPause()"
+                                            (ended)="onPlayerEnded()"></audio></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="card-text">Fields available for sorting and filtering:</p>
+                        <ul>
+                            <li>Title: {{card.title}}</li>
+                            <li>Type: {{card.type}}</li>
+                            <li>HasTies: {{card.hasTies}}</li>
+                            <li>HasSyncopation: {{card.hasSyncopation}}</li>
+                            <li>NumberOfUniqueQuarters: {{card.numberOfUniqueQuarters}}</li>
+                            <li>Tempo: {{card.tempo}}</li>
+                        </ul>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Description</h2>
+        <hr>
+        <h4>Fields</h4>
+        <p>
+            The <strong>Type</strong> field can have the following values:
+        </p>
+        <ul>
+            <li><strong>Basic</strong>
+                <div>
+                    <p>
+                        There are 8 ways to decompose a quarter note into 8th, 16th and 8th-triplets without introducing
+                        rests.
+                        These are shown here:
+                    </p>
+                    <div><img class="img-fluid building-block-image" src="/assets/preview/RhythmBasic.png"></div>
+                    <p>
+                        These are the building blocks that make up many rhythms. Exercises with Type=Basic repeat one
+                        of these blocks, so you get familiar with them and recognize them in more complex, composite rhythms.
+                    </p>
+                </div>
+            </li>
+            <li><strong>Syncopated</strong>
+                <div>
+                    <p>
+                        Syncopated rhythms do not align with the downbeat of the measure.
+                        Again there are 8 basic syncopated building blocks which are derived from
+                        the above by replacing the first beat with a rest:
+                    </p>
+                    <div><img class="img-fluid building-block-image" src="/assets/preview/RhythmSyncopated.png"></div>
+                    <p>
+                        Exercises with Type=Syncopated repeat one of these blocks.
+                    </p>
+
+                </div>
+            </li>
+            <li><strong>Tied</strong>
+                <div>
+                    <p>
+                        Tied rhythms sound very similar to syncopated rhythms, but notation
+                        is quite different.
+                    </p>
+                    <div><img class="img-fluid building-block-image" src="/assets/preview/RhythmTied.png"></div>
+                    <p>
+                        Exercises with Type=Tied repeat one of these blocks.
+                    </p>
+
+                </div>
+            </li>
+            <li><strong>Standard</strong>
+                <div>
+                    <p>
+                        These cards contain some standard rhythms / patterns that are very common, like Claves, Bossas,
+                        Charleston and others.
+                    </p>
+                </div>
+            </li>
+            <li><strong>Grouping</strong>
+                <div>
+                    <p>
+                        Groupings are another way to create intersting rhythmic patterns. Take a pattern of length three
+                        16th notes and
+                        repeat that pattern for a whole measure. Because 3 does not fit into 16 there is some extra beat
+                        when the measure repeats.
+                        A grouping of 3 in position 1 looks like this:
+                    </p>
+                    <div><img class="img-fluid building-block-image" src="/assets/preview/Grouping3Position1.png"></div>
+                    <div><audio controls src="/assets/preview/Grouping3Position1.mp3"></audio></div>
+                    <p>
+                        Now this pattern is shifted in time by one 16th note and we get the grouping in position 2:
+                    </p>
+                    <div><img class="img-fluid building-block-image" src="/assets/preview/Grouping3Position2.png"></div>
+                    <div><audio controls src="/assets/preview/Grouping3Position2.mp3"></audio></div>
+                    <p>
+                        The deck contains groupings of length 3 and 5 in all positions (1 to 16)
+                    </p>
+
+                </div>
+            </li>
+            <li><strong>Random</strong>
+                <div>
+                    <p>
+                        This picks randomly some of the Basic and some of the Syncopated building blocks and combines
+                        them into new
+                        rhythms. Also some quarters are randomly tied.
+                    </p>
+
+                </div>
+            </li>
+        </ul>
+
+        <h4>Preview</h4>
+        <p>You can preview a subset of the decks here, the full decks have about 200 cards:
+        </p>
+        <ul>
+            <li><a href="/assets/preview/RhythmPiano60Deck.html" target="_blank">Slow, starts at 60 bpm and speeds up to 80 bpm</a></li>
+            <li><a href="/assets/preview/RhythmPiano100Deck.html" target="_blank">Medium, fixed tempo of 100 bpm</a></li>
+            <li><a href="/assets/preview/RhythmPiano120Deck.html" target="_blank">Fast, fixed tempo of 120 bpm</a></li>
+        </ul>
+            
+        <h4>Download</h4>
+        <p>
+            This deck is available for download on <a href="https://ankiweb.net/shared/decks/ankijazz" target="_blank">AnkiWeb</a> site. 
+            <app-coffee what="it"></app-coffee>
+        </p>
+    </div>
+
+</div>

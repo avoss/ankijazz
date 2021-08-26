@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+hr {
+    background-color: #00b3ff;
+    height: 0.1rem;
+}
+
+.carousel-control-prev-icon {
+    background-image: url('/assets/img/carousel-prev.png');
+ }
+ .carousel-control-next-icon {
+   background-image: url('/assets/img/carousel-next.png');
+ }

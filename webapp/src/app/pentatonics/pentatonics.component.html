@@ -1,0 +1,67 @@
+<div class="container">
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Pentatonic Scales</h2>
+        <hr>
+        <h4>Overview</h4>
+        <p>
+            These decks cover the Minor7 and Minor6 Pentatonic Scales (see below about Minor6 Pentatonic).
+            Minor Pentatonics are very common in many music styles. They can also be used to outline chords and modes (similar to arpeggios).
+            There are five decks with increasing difficulty to learn and practice these:
+        </p>
+        <ul>
+            <li>Level 1 - Lern Pentatonic scale positions with Freboard Diagrams (<a href="/assets/preview/Pentatonic1ScalesFretboards.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 2 - Practice scale positions with Jam Tracks (<a href="/assets/preview/Pentatonic2ScalesJamtracks.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 3 - Learn to outline chords with Freboard Diagrams (<a href="/assets/preview/Pentatonic3ChordsFretboards.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 4 - Practice to outline chords with Jam Tracks (<a href="/assets/preview/Pentatonic4ChordsJamtracks.html" target="_blank">Preview Deck here</a>)</li>
+            <li>Level 5 - Lern to outline modes with Fretboard Diagrams(<a href="/assets/preview/Pentatonic5ModesFretboards.html" target="_blank">Preview Deck here</a>)</li>
+        </ul>
+    </div>
+    <h4 class="pl2rem">Example Fretboard (Level 3 - Learn to Outline Chords)</h4>
+    <app-fret-carousel [cards]="fretCards" [error]="fretError"></app-fret-carousel>
+    <h4 class="pl2rem">Example Jamtrack (Level 4 - Practice to Outline Chords)</h4>
+    <app-jam-carousel [cards]="jamCards" [error]="jamError"></app-jam-carousel>
+
+    <div class="jumbotron bg-light mt-3 pt-4 pb-3 mb-0">
+        <h2 class="heading">Description</h2>
+        <hr>
+        <h4>Minor6 Pentatonic (aka "Robben Ford Scale")</h4>
+        <p>
+            I think it originates from the Blues, e.g. if you play a Blues in A then on the A-Chord you probably play the A-Minor Pentatonic. 
+            But when it comes to the D7 chord, the A-Minor Pentatonic does not sound very good because the D7 contains an F# which conflicts with the G.
+            So if you replace the G with F# in the A-Minor Pentatonic you get the A-Minor6 Pentatonic. 
+            A great scale to outline 7th and m7b5 chords and also some Melodic Minor stuff because the Melodic Minor scale contains two m6 Pentatonics.
+        </p>
+        <h4>Outlining Chords</h4>
+        <p>
+            Of course there are multiple Pentatonic scales that you can play over a chord. This is my personal choice:
+        </p>
+        <table class="table table-sm table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Chord</th>
+                <th scope="col">Pentatonic Scale</th>
+                <th scope="col">Common Intervals</th>
+                <th scope="col">Extra Intervals</th>
+                <th scope="col">Missing Intervals</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let pc of pentaChords">
+                <th scope="row">{{pc.chordName}}</th>
+                <td>{{pc.pentaName}}</td>
+                <td>{{pc.commonNotes}}</td>
+                <td>{{pc.extraNotes}}</td>
+                <td>{{pc.missingNotes}}</td>
+              </tr>
+            </tbody>
+          </table>
+
+        <h4>Download</h4>
+        <p>
+            These decks are available for download on <a href="https://ankiweb.net/shared/decks/ankijazz" target="_blank">AnkiWeb</a> site. 
+            <app-coffee what="them"></app-coffee>
+        </p>
+
+    </div>
+
+</div>

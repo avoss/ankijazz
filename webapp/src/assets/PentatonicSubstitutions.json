@@ -1,0 +1,65 @@
+[
+    {
+        "chordName": "Cm7",
+        "pentaName": "C Minor Pentatonic",
+        "commonNotes": "1 b3 5 b7",
+        "extraNotes": "4",
+        "missingNotes": ""
+    },
+    {
+        "chordName": "CΔ7",
+        "pentaName": "E Minor Pentatonic",
+        "commonNotes": "3 5 7",
+        "extraNotes": "2 6",
+        "missingNotes": "1"
+    },
+    {
+        "chordName": "CΔ7#11",
+        "pentaName": "B Minor Pentatonic",
+        "commonNotes": "3 b5 7",
+        "extraNotes": "2 6",
+        "missingNotes": "1 5"
+    },
+    {
+        "chordName": "C6",
+        "pentaName": "A Minor Pentatonic",
+        "commonNotes": "1 3 5 6",
+        "extraNotes": "2",
+        "missingNotes": ""
+    },
+    {
+        "chordName": "C7sus4",
+        "pentaName": "G Minor Pentatonic",
+        "commonNotes": "1 4 5 b7",
+        "extraNotes": "2",
+        "missingNotes": ""
+    },
+    {
+        "chordName": "Cm6",
+        "pentaName": "C Minor6 Pentatonic",
+        "commonNotes": "1 b3 5 6",
+        "extraNotes": "4",
+        "missingNotes": ""
+    },
+    {
+        "chordName": "C7",
+        "pentaName": "G Minor6 Pentatonic",
+        "commonNotes": "1 3 5 b7",
+        "extraNotes": "2",
+        "missingNotes": ""
+    },
+    {
+        "chordName": "Cm7b5",
+        "pentaName": "Eb Minor6 Pentatonic",
+        "commonNotes": "1 b3 b5 b7",
+        "extraNotes": "b6",
+        "missingNotes": ""
+    },
+    {
+        "chordName": "C7#5",
+        "pentaName": "C# Minor6 Pentatonic",
+        "commonNotes": "3 b6 b7",
+        "extraNotes": "b2 b5",
+        "missingNotes": "1"
+    }
+]
