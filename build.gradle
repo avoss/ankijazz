@@ -41,7 +41,27 @@ jar {
 }
 
 
+test {
+  useJUnit()
+}
+
+build {
+  dependsOn(copyAssets)
+  dependsOn(copyPreview)
+}
+
+// Release Tasks
+
+def webappDir = "$projectDir/src/main/webapp"
+
+task release {
+  dependsOn build
+  dependsOn createWebsitePreview
+  dependsOn createAnkiProfileWithMedia
+}
+
 task copyAssets(type:Copy) {
+  dependsOn test
   from ('src/assets') {
     include ('*.png', '*.mp3', '*.ly')
   } 
@@ -49,6 +69,7 @@ task copyAssets(type:Copy) {
 }
 
 task copyPreview(type:Copy) {
+  dependsOn test
   from ('src/assets') {
     include ('*.png', '*.mp3', '*.ly')
   } 
@@ -58,7 +79,9 @@ task copyPreview(type:Copy) {
 task deleteWebsitePreview(type: Delete) {
   delete "${websitePreview}"
 }
+
 task createWebsitePreview(type:Copy) {
+  dependsOn copyPreview
   dependsOn deleteWebsitePreview
   from ('build/preview') {
     include ('*.png', '*.mp3', '*.html', "*.json")
@@ -66,8 +89,6 @@ task createWebsitePreview(type:Copy) {
   into "${websitePreview}"
 }
 
-build.dependsOn(copyAssets)
-build.dependsOn(copyPreview)
 
 task deleteAnkiProfile(type: Delete) {
   delete "${ankiProfile}"
@@ -99,13 +120,10 @@ task createAnkiAssetFromProfile(type: Zip) {
   from "${ankiProfile}"
 }
 
-processResources {
-  dependsOn "buildAngular"
-}
 
 task buildAngular(type:Exec) {
-  dependsOn "installAngular"
-  dependsOn "createWebsitePreview"
+  dependsOn installAngular
+  dependsOn createWebsitePreview
   group = BasePlugin.BUILD_GROUP
   commandLine "ng.cmd", "build"
 }
