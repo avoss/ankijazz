@@ -1,6 +1,12 @@
+steps to generate / release decks
+
+# TODO:
+
 git checkout release
 git merge develop
 git push
+
+Ensure that in TestUtils.java, writeTo() and writePreviewOnly() are not commented out.
 
 ./gradlew clean build
 docker start avix
@@ -13,16 +19,22 @@ docker stop avix
 ng serve + double check all previews
 ng build
 upload new website to ankijazz.com
-replace backup of website to /D/Backup/Ankijazz
-
-# TODO:
+replace backup of website in /D/Backup/Ankijazz
 
 ./gradlew createAnkiProfileWithMedia
 import txt into Anki build profile
-export decks from Anki build profile
-download old deck from ankiweb for comparison
+export decks from Anki build profile to /D/Backup/Ankijazz
 import decks into Anki ankijazz profile
 synchronize ankijazz profile
-share decks with same name and description
 
 
+double check + preview
+share decks with same name and description:
+
+xModes Bb-Instrument
+xModes Eb-Instrument
+xModes C-Instrument
+xModes Bass Clef
+xScales Theory
+xModes Theory
+xModes Guitar

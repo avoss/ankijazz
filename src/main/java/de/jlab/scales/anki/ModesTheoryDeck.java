@@ -175,7 +175,6 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
         numberOfNotesDifficulty.update(chord.getNumberOfNotes());
         String chordLabel = chord.getNumberOfNotes() == 3 ? "Triad" : "Chord";
         String front = format("<div>What are the <b>notes</b> of <b>%s</b> %s%s?</div>", chordInfo.getScaleName(), chordLabel, chordSignature(chordInfo));
-        // FIXME - far to complicated and wrong
         String back = divb(chordInfo.getKeySignature().notate(chordInfo.getScale().stackedThirds()));
         SimpleCard card = card(model.getDifficulty(), "SpellChord", front, back);
         card.put(MODE_NAME, chordInfo.getScaleName());
