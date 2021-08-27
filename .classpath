@@ -33,13 +33,6 @@
 			<attribute name="gradle_used_by_scope" value="prod"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="bin/prod" path="src/prod/resources">
-		<attributes>
-			<attribute name="test" value="true"/>
-			<attribute name="gradle_scope" value="prod"/>
-			<attribute name="gradle_used_by_scope" value="prod"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/">
 		<attributes>
 			<attribute name="module" value="true"/>
