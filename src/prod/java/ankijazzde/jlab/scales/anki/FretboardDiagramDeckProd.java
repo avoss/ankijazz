@@ -1,10 +1,20 @@
-package de.jlab.scales.anki;
+package ankijazzde.jlab.scales.anki;
 
 import java.util.function.Supplier;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
+import de.jlab.scales.anki.AbstractFretboardGenerator;
+import de.jlab.scales.anki.Caged1ScalesFretboards;
+import de.jlab.scales.anki.Caged3ModesFretboards;
+import de.jlab.scales.anki.Caged5ArpeggiosFretboards;
+import de.jlab.scales.anki.CardGenerator;
+import de.jlab.scales.anki.FretboardDiagramCard;
+import de.jlab.scales.anki.FretboardDiagramDeck;
+import de.jlab.scales.anki.Pentatonic1ScalesFretboards;
+import de.jlab.scales.anki.Pentatonic3ChordsFretboards;
+import de.jlab.scales.anki.Pentatonic5ModesFretboards;
+import de.jlab.scales.anki.AbstractFretboardGenerator.Validator;
 import de.jlab.scales.fretboard2.Fretboard;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.ScaleInfo;
@@ -34,7 +44,7 @@ public class FretboardDiagramDeckProd {
   }
 
   private void writeDeck(CardGenerator<FretboardDiagramCard> generator) {
-    TestUtils.writeTo(new FretboardDiagramDeck(generator), 0.1);
+    ProdUtils.writeTo(new FretboardDiagramDeck(generator), 0.1);
   }
   
   @Test

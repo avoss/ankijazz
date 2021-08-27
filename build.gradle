@@ -12,6 +12,20 @@ repositories {
     mavenCentral()
 }
 
+sourceSets {
+  prod {
+    compileClasspath += sourceSets.main.output
+    runtimeClasspath += sourceSets.main.output
+  }
+}
+
+configurations {
+  prodImplementation.extendsFrom implementation
+  prodRuntimeOnly.extendsFrom runtimeOnly
+}
+
+
+
 dependencies {
     implementation 'com.google.guava:guava:29.0-jre'
     implementation "com.google.inject:guice:3.0"
@@ -22,11 +36,11 @@ dependencies {
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.4'
     implementation 'org.apache.commons:commons-math3:3.6.1'    
     
-    //compile fileTree(dir: 'lib', include: '*.jar')
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     testImplementation 'org.assertj:assertj-core:3.18.1'
     testImplementation 'org.mockito:mockito-core:3.6.0'
-    
+
+    prodImplementation 'junit:junit:4.13'
 }
 
 jar {
@@ -34,8 +48,8 @@ jar {
         attributes (
 "Implementation-Title": "Scales Core",
 "Bundle-License": "http://www.fsf.org/licensing/licenses/agpl-3.0.html",
-"Bundle-Copyright": "(C) 2020 Andreas Voss - mail@jlab.de",
-"Implementation-Vendor-Id": "de.jlab.scales.cored"
+"Bundle-Copyright": "(C) 2021 Andreas Voss - mail@jlab.de",
+"Implementation-Vendor-Id": "de.jlab.scales"
         )
     }
 }
@@ -48,12 +62,14 @@ test {
   }
 }
 
-task prod(type: Test) {
-  dependsOn "test"
+task createRawMedia(type: Test) {
+  dependsOn check
   useJUnit()
-  filter {
-    includeTestsMatching "*Prod"
-  }
+  description = 'Generate raw media for Anki decks, must be processed in linux'
+  group = 'verification'
+  testClassesDirs = sourceSets.prod.output.classesDirs
+  classpath = sourceSets.prod.runtimeClasspath
+  shouldRunAfter test
 }
 
 build {
@@ -62,10 +78,8 @@ build {
 }
 
 clean {
-  dependsOn("cleanAngular")
+  dependsOn("cleanWebsite")
 }
-
-// Release Tasks
 
 def webappDir = "$projectDir/src/main/webapp"
 def previewDir = "$webappDir/assets/preview"
@@ -135,7 +149,7 @@ task installAngular(type:Exec) {
   commandLine "npm.cmd", "install"
 }
 
-task buildAngular(type:Exec) {
+task createWebsite(type:Exec) {
   dependsOn "installAngular"
   dependsOn "createWebsitePreview"
   workingDir "$webappDir"
@@ -143,7 +157,7 @@ task buildAngular(type:Exec) {
   commandLine "ng.cmd", "build"
 }
 
-task cleanAngular(type: Delete) {
+task cleanWebsite(type: Delete) {
   delete "$previewDir", "$webappDir/dist"
   followSymlinks = false
 }

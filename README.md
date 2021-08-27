@@ -16,9 +16,7 @@ Java JDK 11, npm and Docker installed. Generate Docker image from `docker/` dire
 
 ## Build Media
 
-Ensure that in TestUtils.java, writeTo() and writePreviewOnly() are not commented out.
-
-    ./gradlew clean build
+    ./gradlew clean createRawMedia
     docker start avix
     ssh avix
     (cd /mnt/anki && bash ~/anki.sh) && (cd /mnt/preview && bash ~/anki.sh)
@@ -27,18 +25,10 @@ Ensure that in TestUtils.java, writeTo() and writePreviewOnly() are not commente
 
 ## Build Website
 
-    ./gradlew createWebsitePreview
-    QA: run ng serve check website, especially carousels and previews
-    ng build
-    upload new website to ankijazz.com
+    ./gradlew createWebsite
 
 ## Build Decks
 
     ./gradlew createAnkiProfileWithMedia
-    import txt into Anki build profile
-    export decks from Anki build profile to /D/Backup/Ankijazz
-    import decks into Anki ankijazz profile
-    QA: browse decks in Anki 
-    synchronize ankijazz profile
-    re-share decks (with same name!)
+    import *.txt into Anki build profile
 

@@ -1,14 +1,14 @@
-package de.jlab.scales.anki;
+package ankijazzde.jlab.scales.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
+import de.jlab.scales.anki.PentaChordsTheoryDeck;
 
-public class PentaChordsTheoryDeckTest {
+public class PentaChordsTheoryDeckProd {
 
   @Test
-  public void test() {
-    TestUtils.writeTo(new PentaChordsTheoryDeck(), 0.3);
+  public void writePentaChordsTheoryDeck() {
+    ProdUtils.writeTo(new PentaChordsTheoryDeck(), 0.3);
   }
 
 }
