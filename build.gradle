@@ -63,7 +63,7 @@ test {
 }
 
 task createRawMedia(type: Test) {
-  dependsOn check
+  dependsOn build
   useJUnit()
   description = 'Generate raw media for Anki decks, must be processed in linux'
   group = 'verification'
@@ -82,7 +82,7 @@ clean {
 }
 
 def webappDir = "$projectDir/src/main/webapp"
-def previewDir = "$webappDir/assets/preview"
+def previewDir = "$webappDir/src/assets/preview"
 def ankiAsset = "$projectDir/src/assets/build.zip"
 
 task copyAnkiAssets(type:Copy) {
@@ -104,7 +104,6 @@ task deleteWebsitePreview(type: Delete) {
 }
 
 task createWebsitePreview(type:Copy) {
-  dependsOn "copyPreviewAssets"
   dependsOn "deleteWebsitePreview"
   from ('build/preview') {
     include ('*.png', '*.mp3', '*.html', "*.json")
@@ -124,7 +123,6 @@ task createEmptyAnkiProfile(type: Copy) {
 }
 
 task createAnkiProfileWithMedia(type: Copy) {
-  dependsOn "copyAnkiAssets"
   dependsOn "createEmptyAnkiProfile"
   from ("build/anki") {
     include ('*.png', '*.mp3')
@@ -143,14 +141,7 @@ task createAnkiAssetFromProfile(type: Zip) {
   from "${ankiProfile}"
 }
 
-task installAngular(type:Exec) {
-  workingDir "$webappDir"
-  group = BasePlugin.BUILD_GROUP
-  commandLine "npm.cmd", "install"
-}
-
 task createWebsite(type:Exec) {
-  dependsOn "installAngular"
   dependsOn "createWebsitePreview"
   workingDir "$webappDir"
   group = BasePlugin.BUILD_GROUP

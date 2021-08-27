@@ -17,6 +17,9 @@ import de.jlab.scales.theory.Note;
 
 public class JamDeckProd {
  
+  /**
+   * the full deck exceeds 250 MB which is the limit for Anki Shared Decks
+   */
   @Test
   @Ignore
   public void writeLimitedGuitarDeck() {
@@ -39,6 +42,14 @@ public class JamDeckProd {
     return deck.subdeck(numberOfCards);
   }
 
+  @Test
+  public void writeChordJamDecks() {
+    ProdUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Guitar)", Note.C, true)), 0.2);
+    ProdUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (C-Instrument)", Note.C, false)), 0.2);
+    ProdUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Bb-Instrument)", Note.Bb, false)), 0.2);
+    ProdUtils.writeTo(new JamDeck(new JamCardGenerator("Practice Chords (Eb-Instrument)", Note.Eb, false)), 0.2);
+  }
+  
   @Test
   public void testFretboardJam() {
     ProdUtils.writeTo(new JamDeck(new FretboardJamCardGenerator(PENTATONIC_SCALES, Utils.randomLoopIteratorFactory())), 0.1);
