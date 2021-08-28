@@ -1,6 +1,5 @@
 plugins {
   id "java"
-  id "io.freefair.lombok" version "5.1.0"
 }
 sourceCompatibility = 1.11
 compileJava.options.encoding = "UTF-8"
@@ -41,6 +40,15 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:3.6.0'
 
     prodImplementation 'junit:junit:4.13'
+    
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
+
+	prodCompileOnly 'org.projectlombok:lombok:1.18.20'
+	prodAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
 }
 
 jar {
