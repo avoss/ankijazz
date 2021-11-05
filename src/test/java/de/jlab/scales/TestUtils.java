@@ -24,8 +24,6 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
-import de.jlab.scales.anki.Card;
-import de.jlab.scales.anki.Deck;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Accidental;

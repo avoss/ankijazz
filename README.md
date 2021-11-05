@@ -4,7 +4,7 @@ Code to build [AnkiJazz](https://www.ankijazz.com) website and Anki decks.
 
 # Prerequisites
 
-Install Anki, Java JDK 11, npm and Docker
+Install Anki, Java JDK 11, npm and Docker. In your IDE you have to install [Lombok](https://projectlombok.org)
 
 Start Anki and create a new Profile called `build`. Then adjust Anki profile directory in `gradle.properties`. 
 
@@ -38,5 +38,5 @@ Stop the container (`docker stop avix`) when generating media etc, because docke
 
     ./gradlew createAnkiProfileWithMedia
 
-Then import build/anki/*.txt into Anki build profile, make sure that you use TAB as separator and allow duplicate fields.
+Then import build/anki/*.txt into Anki build profile, make sure that you use TAB as separator and allow duplicates.
 

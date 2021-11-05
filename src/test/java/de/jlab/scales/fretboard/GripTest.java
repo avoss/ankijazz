@@ -82,6 +82,20 @@ public class GripTest {
       grip = grip.nextInversion();
     }
   }
+
+  @Test
+  public void testEadd9Chord() {
+    Grip grip = Grip.builder()
+        .fret(Note.E, 4, '3')
+        .fret(Note.B, 5, '1')
+        .fret(Note.G, 4, '5')
+        .fret(Note.D, 4, '9')
+        .build();
+    for (int i = 0; i < 4; i++) {
+      System.out.println(grip + "\n");
+      grip = grip.nextInversion();
+    }
+  }
   
   private void assertFrettedNote(FrettedNote actual, Note string, int fretNumber, char symbol) {
     assertThat(actual.getString()).isEqualTo(string);
