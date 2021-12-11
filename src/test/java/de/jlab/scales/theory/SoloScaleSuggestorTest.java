@@ -10,17 +10,23 @@ import static de.jlab.scales.theory.Note.E;
 import static de.jlab.scales.theory.Note.Eb;
 import static de.jlab.scales.theory.Note.G;
 import static de.jlab.scales.theory.Note.Gb;
+import static de.jlab.scales.theory.ScaleUniverse.SCALES;
 import static de.jlab.scales.theory.Scales.CMajor;
+import static de.jlab.scales.theory.Scales.CMelodicMinor;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
 
+import de.jlab.scales.theory.SoloScaleSuggestor.DefaultStrategy;
 import de.jlab.scales.theory.SoloScaleSuggestor.Vertex;
 
 public class SoloScaleSuggestorTest {
@@ -30,7 +36,7 @@ public class SoloScaleSuggestorTest {
   );
   
   @Test
-  public void testComputeWeight() {
+  public void testNumberOfDifferentNotes() {
     assertThat(weight(CMajor, CMajor)).isEqualTo(0);
     assertThat(weight(new Scale(C), new Scale(C))).isEqualTo(0);
     assertThat(weight(new Scale(C), new Scale(C, D))).isEqualTo(1);
@@ -42,6 +48,15 @@ public class SoloScaleSuggestorTest {
   
   private double weight(Scale source, Scale target) {
     return new SoloScaleSuggestor.DefaultStrategy(UNIVERSE).numberOfDifferentNotes(source, target);
+  }
+  
+  @Test
+  public void testScaleDifficulty() {
+    DefaultStrategy strategy = new SoloScaleSuggestor.DefaultStrategy(UNIVERSE);
+    Vertex cmaj = new Vertex(SCALES.findFirstOrElseThrow(CMajor));
+    Vertex gmaj = new Vertex(SCALES.findFirstOrElseThrow(CMajor.transpose(G)));
+    Vertex cmm = new Vertex(SCALES.findFirstOrElseThrow(CMelodicMinor));
+    assertThat(strategy.weight(cmaj, cmm)).isGreaterThan(strategy.weight(cmaj, gmaj));
   }
 
   @Test
@@ -58,7 +73,7 @@ public class SoloScaleSuggestorTest {
   }
   
   @Test
-  public void printShortestPaths() {
+  public void printSpainSolo() {
     // Spain Solo //
     List<Scale> chords = List.of(
       Scales.Cmaj7.transpose(G),      //GΔ7
@@ -73,6 +88,43 @@ public class SoloScaleSuggestorTest {
       Scales.C7sharp5.transpose(B)    //B7#5 
     );
     System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
+  }
+  
+  @Test
+  public void testHeathrowSolo() {
+    String song = "F9 Dm6 Bb " + 
+               "F9 Dm6 Gb Gb7sus4 F9 Dm6 Bb " +
+               "F9 Dm6 Cm7 Gbm " +
+               "Fm Eb Fsus4 Eb6 Fsus4";
+    printChordNotes(song);
+    printScaleOptions(song);
+  }
+
+  private void printChordNotes(String song) {
+    List<Scale> chords = parseSong(song);
+    Set<Scale> seen = new HashSet<>();
+    for (Scale chord : chords) {
+      if (seen.contains(chord)) {
+        continue;
+      }
+      seen.add(chord);
+      String notes = chord.stackedThirds().stream().map(note -> note.getName(Accidental.FLAT)).collect(Collectors.joining(" "));
+      String name = chord.asChord(Accidental.FLAT);
+      System.out.println(name + " = " + notes);
+    }
+  }
+
+  private void printScaleOptions(String song) {
+    List<Scale> chords = parseSong(song);
+    System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
+  }
+
+  private List<Scale> parseSong(String song) {
+    List<Scale> chords = Pattern.compile("\\s+")
+      .splitAsStream(song)
+      .map(chord -> ChordParser.parseChord(chord))
+      .collect(Collectors.toList());
+    return chords;
   }
 
   private List<String> computePaths(Scale ... chords) {

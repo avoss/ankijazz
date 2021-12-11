@@ -1,24 +1,15 @@
 package de.jlab.scales.theory;
 
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-import java.util.Map;
 import java.util.Set;
-import java.util.function.BiFunction;
 import java.util.stream.Collectors;
 
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.interfaces.KShortestPathAlgorithm;
-import org.jgrapht.alg.shortestpath.DijkstraShortestPath;
 import org.jgrapht.alg.shortestpath.EppsteinKShortestPath;
-import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
-import org.jgrapht.graph.builder.GraphBuilder;
-import org.jgrapht.util.SupplierUtil;
 
 public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
 
@@ -48,9 +39,18 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
       if (source.getInfo() == null || target.getInfo() == null) {
         return 0;
       }
-      return numberOfDifferentNotes(source.getInfo().getScale(), target.getInfo().getScale());
+      int numberOfDifferentNotes = numberOfDifferentNotes(source.getInfo().getScale(), target.getInfo().getScale());
+      return numberOfDifferentNotes + 1000 * (scaleDifficulty(source) + scaleDifficulty(target));
     }
     
+    private double scaleDifficulty(Vertex vertex) {
+      switch ((BuiltinScaleType)vertex.info.getScaleType()) {
+      case Major: return 1;
+      case MelodicMinor: return 2;
+      default: return 3;
+      }
+    }
+
     int numberOfDifferentNotes(Scale source, Scale target) {
       Set<Note> diff = removeAll(source, target);
       diff.addAll(removeAll(target, source));

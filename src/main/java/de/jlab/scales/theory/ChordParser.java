@@ -42,11 +42,11 @@ public class ChordParser {
   }
   
 
-  public String asChord(Scale chord) {
+  public static String asChord(Scale chord) {
     return asChord(chord, null);
   }
   
-  public String asChord(Scale chord, Accidental accidental) {
+  public static String asChord(Scale chord, Accidental accidental) {
     Scale transposed = chord.transpose(C);
     ScaleType type = scaleMap.get(transposed);
     if (type == null) {

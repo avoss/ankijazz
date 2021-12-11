@@ -94,11 +94,11 @@ public class Scale implements Iterable<Note>, Comparable<Scale> {
   }
 
   public String asChord() {
-    return new ChordParser().asChord(this);
+    return ChordParser.asChord(this);
   }
 
   public String asChord(Accidental accidental) {
-    return new ChordParser().asChord(this, accidental);
+    return ChordParser.asChord(this, accidental);
   }
 
   private void internalAdd(Note note) {
