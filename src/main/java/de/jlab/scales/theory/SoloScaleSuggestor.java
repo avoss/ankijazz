@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.jgrapht.GraphPath;
 import org.jgrapht.alg.interfaces.KShortestPathAlgorithm;
@@ -19,7 +20,7 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
     private final ScaleInfo info;
   }
 
-  static class ScaleNotFoundException extends IllegalArgumentException {}
+  static class ScaleNotFoundException extends IllegalArgumentException { }
   
   interface Strategy {
     double weight(Vertex source, Vertex target);
@@ -33,7 +34,7 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
     public DefaultStrategy(ScaleUniverse universe) {
       this.universe = universe;
     }
-    
+
     @Override
     public double weight(Vertex source, Vertex target) {
       if (source.getInfo() == null || target.getInfo() == null) {
@@ -112,6 +113,14 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
     }
   }
 
+  Stream<List<Vertex>> stream() {
+    KShortestPathAlgorithm<Vertex, DefaultWeightedEdge> algorithm = new EppsteinKShortestPath<>(graph);
+    List<GraphPath<Vertex, DefaultWeightedEdge>> paths = algorithm.getPaths(source,  target, numberOfPaths);
+    return paths.stream().map(
+      gp -> gp.getVertexList().stream().filter(v -> v.info != null).collect(Collectors.toList())
+    );
+  }
+  
   @Override
   public Iterator<List<ScaleInfo>> iterator() {
     KShortestPathAlgorithm<Vertex, DefaultWeightedEdge> algorithm = new EppsteinKShortestPath<>(graph);

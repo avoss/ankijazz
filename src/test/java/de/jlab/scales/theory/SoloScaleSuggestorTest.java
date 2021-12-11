@@ -34,7 +34,7 @@ public class SoloScaleSuggestorTest {
   private static final ScaleUniverse UNIVERSE = new ScaleUniverse(false, 
       List.of(BuiltinScaleType.Major, BuiltinScaleType.MelodicMinor, BuiltinScaleType.HarmonicMinor, BuiltinScaleType.DiminishedHalfWhole)
   );
-  
+
   @Test
   public void testNumberOfDifferentNotes() {
     assertThat(weight(CMajor, CMajor)).isEqualTo(0);
@@ -89,7 +89,7 @@ public class SoloScaleSuggestorTest {
     );
     System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
   }
-  
+
   @Test
   public void testHeathrowSolo() {
     String song = "F9 Dm6 Bb " + 
