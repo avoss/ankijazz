@@ -17,6 +17,7 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
   @lombok.RequiredArgsConstructor
   @lombok.Getter
   static class Vertex {
+    private final Scale chord;
     private final ScaleInfo info;
   }
 
@@ -68,15 +69,15 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
     public List<Vertex> toVertices(Scale chord) {
       return universe.findScalesContaining(chord.asSet())
           .stream()
-          .map(info -> new Vertex(info))
+          .map(info -> new Vertex(chord, info))
           .collect(Collectors.toList());
     }
     
   }
   
   private final SimpleDirectedWeightedGraph<Vertex, DefaultWeightedEdge> graph;
-  private final Vertex source = new Vertex(null);
-  private final Vertex target = new Vertex(null);
+  private final Vertex source = new Vertex(null, null);
+  private final Vertex target = new Vertex(null, null);
   private final int numberOfPaths;
   private Strategy strategy;
 

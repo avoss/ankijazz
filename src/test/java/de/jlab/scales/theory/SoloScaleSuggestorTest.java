@@ -53,22 +53,22 @@ public class SoloScaleSuggestorTest {
   @Test
   public void testScaleDifficulty() {
     DefaultStrategy strategy = new SoloScaleSuggestor.DefaultStrategy(UNIVERSE);
-    Vertex cmaj = new Vertex(SCALES.findFirstOrElseThrow(CMajor));
-    Vertex gmaj = new Vertex(SCALES.findFirstOrElseThrow(CMajor.transpose(G)));
-    Vertex cmm = new Vertex(SCALES.findFirstOrElseThrow(CMelodicMinor));
+    Vertex cmaj = new Vertex(null, SCALES.findFirstOrElseThrow(CMajor));
+    Vertex gmaj = new Vertex(null, SCALES.findFirstOrElseThrow(CMajor.transpose(G)));
+    Vertex cmm = new Vertex(null, SCALES.findFirstOrElseThrow(CMelodicMinor));
     assertThat(strategy.weight(cmaj, cmm)).isGreaterThan(strategy.weight(cmaj, gmaj));
   }
 
   @Test
   public void testVertex() {
-    Vertex v1 = new SoloScaleSuggestor.Vertex(null);
-    Vertex v2 = new SoloScaleSuggestor.Vertex(null);
+    Vertex v1 = new SoloScaleSuggestor.Vertex(null, null);
+    Vertex v2 = new SoloScaleSuggestor.Vertex(null, null);
     assertThat(v1).isNotEqualTo(v2);
   }
   
   @Test
   public void testPaths() {
-    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[F Major Scale, F Melodic Minor, G Melodic Minor, F Harmonic Minor, C Diminished Half/Whole]");
+    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[C7:F Major Scale, C7:F Melodic Minor, C7:G Melodic Minor, C7:F Harmonic Minor, C7:C Diminished Half/Whole]");
     assertThatThrownBy(() -> computePaths(new Scale(C, Db, D, Eb, E))).isInstanceOf(SoloScaleSuggestor.ScaleNotFoundException.class);
   }
   
@@ -134,15 +134,15 @@ public class SoloScaleSuggestorTest {
   private List<String> computePaths(List<Scale> chords) {
     SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 10);
     List<String> paths = new ArrayList<>();
-    for (List<ScaleInfo> path : suggestor) {
+    suggestor.stream().forEach( path -> {
       assertThat(path.size()).isEqualTo(chords.size());
       paths.add(toString(path));
-    }
+    });
     return paths;
   }
 
-  private String toString(List<ScaleInfo> path) {
-    return path.stream().map(ScaleInfo::getScaleName).collect(Collectors.joining(", "));
+  private String toString(List<Vertex> path) {
+    return path.stream().map(v -> String.format("%s:%s", v.getChord().asChord(Accidental.FLAT), v.getInfo().getScaleName())).collect(Collectors.joining(", "));
   }
 
 }
