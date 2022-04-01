@@ -13,11 +13,11 @@ Start Anki and create a new Profile called `build`. Then adjust Anki profile dir
 
 In `webapp` directory run `npm install`.
 
-The java code generates Lilypond source files and Midi files into build/anki or build/preview. Then a docker container is launched, which runs lilypond, timidity and other tools to generate notation images from \*.ly and MP3 audio files from \*.midi.
+The java code generates "raw media" (Lilypond source files and Midi files) into build/anki or build/preview. Then a docker container is launched, which converts "raw media" into png images and mp3 audio files, which can be used by Anki and the Website. The docker runs Ubuntu linux with tools like lilypond, timidity and others.
 
 # Build
 
-To build the full website, use
+To build the full website, use:
 
     ./gradlew clean createWebsite
 
@@ -27,11 +27,13 @@ You can also generate just the preview media which is part of the website using 
 
 This is also a good test to see, whether your build setup is correct.
 
+To add media to the Anki profile `build` run the following command:
+
     ./gradlew clean createAnkiProfileWithMedia
 
 This will take an hour or so! Then start Anki and manually [import](https://docs.ankiweb.net/importing.html) the generated .txt files which are located in build/anki folder. Make sure that you use TAB as separator and allow duplicates.
 
-When I deveop new decks and want to do manual testing, then I run some unit tests from IDE that generate media into build/preview directory. Then I run
+When I deveop new decks and want to do manual testing, then I run some unit tests from IDE that generate media into build/preview directory. Then I run:
 
 	./gradlew processPreviewMedia
 	
