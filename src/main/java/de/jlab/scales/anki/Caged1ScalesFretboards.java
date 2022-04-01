@@ -3,7 +3,7 @@ package de.jlab.scales.anki;
 import java.util.Collection;
 import java.util.function.Function;
 
-import de.jlab.scales.fretboard2.Marker;
+import de.jlab.scales.fretboard.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 

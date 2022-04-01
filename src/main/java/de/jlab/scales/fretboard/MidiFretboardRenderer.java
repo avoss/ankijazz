@@ -1,7 +1,7 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.fretboard2.Marker.BACKGROUND;
-import static de.jlab.scales.fretboard2.Marker.FOREGROUND;
+import static de.jlab.scales.fretboard.Marker.BACKGROUND;
+import static de.jlab.scales.fretboard.Marker.FOREGROUND;
 
 import java.util.List;
 

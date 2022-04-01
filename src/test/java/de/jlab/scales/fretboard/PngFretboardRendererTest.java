@@ -1,13 +1,18 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
-import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
+import static de.jlab.scales.fretboard.BoxMarker.BoxPosition.RIGHT;
+import static de.jlab.scales.fretboard.StandardTuning.HIGH_E_STRING;
 
 import java.awt.image.BufferedImage;
 
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
+import de.jlab.scales.fretboard.Fretboard;
+import de.jlab.scales.fretboard.Marker;
+import de.jlab.scales.fretboard.NPS;
+import de.jlab.scales.fretboard.PngFretboardRenderer;
+import de.jlab.scales.fretboard.Position;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;

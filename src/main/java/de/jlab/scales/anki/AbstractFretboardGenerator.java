@@ -1,6 +1,6 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
+import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
 import static de.jlab.scales.theory.ScaleUniverse.MODES;
 
@@ -14,15 +14,15 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import de.jlab.scales.Utils;
-import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
-import de.jlab.scales.fretboard2.Fingering;
-import de.jlab.scales.fretboard2.Fretboard;
-import de.jlab.scales.fretboard2.Fretboard.Box;
-import de.jlab.scales.fretboard2.Marker;
-import de.jlab.scales.fretboard2.MidiFretboardRenderer;
-import de.jlab.scales.fretboard2.NPS;
-import de.jlab.scales.fretboard2.PngFretboardRenderer;
-import de.jlab.scales.fretboard2.Position;
+import de.jlab.scales.fretboard.Fingering;
+import de.jlab.scales.fretboard.Fretboard;
+import de.jlab.scales.fretboard.Marker;
+import de.jlab.scales.fretboard.MidiFretboardRenderer;
+import de.jlab.scales.fretboard.NPS;
+import de.jlab.scales.fretboard.PngFretboardRenderer;
+import de.jlab.scales.fretboard.Position;
+import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
+import de.jlab.scales.fretboard.Fretboard.Box;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;

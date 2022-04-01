@@ -1,9 +1,9 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 
 import java.util.function.Function;
 
-import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
+import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 

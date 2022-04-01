@@ -1,8 +1,8 @@
 package de.jlab.scales.anki;
 
-import static de.jlab.scales.fretboard2.Fretboard.ROOTS_ONLY;
-import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
-import static de.jlab.scales.fretboard2.StandardTuning.LOW_E_STRING;
+import static de.jlab.scales.fretboard.Fretboard.ROOTS_ONLY;
+import static de.jlab.scales.fretboard.StandardTuning.HIGH_E_STRING;
+import static de.jlab.scales.fretboard.StandardTuning.LOW_E_STRING;
 import static java.util.stream.Collectors.toSet;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -15,8 +15,8 @@ import java.util.function.Supplier;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard2.Fretboard;
-import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
+import de.jlab.scales.fretboard.Fretboard;
+import de.jlab.scales.fretboard.Fretboard.MarkedFret;
 import de.jlab.scales.midi.MockMidiOut;
 import de.jlab.scales.midi.NoteOn;
 import de.jlab.scales.midi.Part;

@@ -14,7 +14,7 @@ import de.jlab.scales.anki.FretboardDiagramDeck;
 import de.jlab.scales.anki.Pentatonic1ScalesFretboards;
 import de.jlab.scales.anki.Pentatonic3ChordsFretboards;
 import de.jlab.scales.anki.Pentatonic5ModesFretboards;
-import de.jlab.scales.fretboard2.Fretboard;
+import de.jlab.scales.fretboard.Fretboard;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.ScaleInfo;
 

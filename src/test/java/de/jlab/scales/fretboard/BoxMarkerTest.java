@@ -1,11 +1,11 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.LEFT;
-import static de.jlab.scales.fretboard2.BoxMarker.BoxPosition.RIGHT;
-import static de.jlab.scales.fretboard2.StandardTuning.A_STRING;
-import static de.jlab.scales.fretboard2.StandardTuning.G_STRING;
-import static de.jlab.scales.fretboard2.StandardTuning.HIGH_E_STRING;
-import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
+import static de.jlab.scales.fretboard.BoxMarker.BoxPosition.LEFT;
+import static de.jlab.scales.fretboard.BoxMarker.BoxPosition.RIGHT;
+import static de.jlab.scales.fretboard.StandardTuning.A_STRING;
+import static de.jlab.scales.fretboard.StandardTuning.G_STRING;
+import static de.jlab.scales.fretboard.StandardTuning.HIGH_E_STRING;
+import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -16,8 +16,15 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import de.jlab.scales.fretboard2.BoxMarker.BoxPosition;
-import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
+import de.jlab.scales.fretboard.Fingering;
+import de.jlab.scales.fretboard.Fretboard;
+import de.jlab.scales.fretboard.GuitarString;
+import de.jlab.scales.fretboard.Marker;
+import de.jlab.scales.fretboard.MarkerRenderer;
+import de.jlab.scales.fretboard.NPS;
+import de.jlab.scales.fretboard.Position;
+import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
+import de.jlab.scales.fretboard.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 

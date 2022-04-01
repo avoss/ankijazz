@@ -1,6 +1,6 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
+import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
 import static de.jlab.scales.theory.BuiltinScaleType.Major;
 import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;

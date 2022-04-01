@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toCollection;

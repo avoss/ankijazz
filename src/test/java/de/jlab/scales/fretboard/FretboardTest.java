@@ -1,6 +1,6 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
-import static de.jlab.scales.fretboard2.Tunings.STANDARD_TUNING;
+import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
 import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -14,8 +14,15 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard2.Fretboard.Box;
-import de.jlab.scales.fretboard2.Fretboard.MarkedFret;
+import de.jlab.scales.fretboard.BoxMarker;
+import de.jlab.scales.fretboard.Fingering;
+import de.jlab.scales.fretboard.Fretboard;
+import de.jlab.scales.fretboard.Marker;
+import de.jlab.scales.fretboard.NPS;
+import de.jlab.scales.fretboard.Position;
+import de.jlab.scales.fretboard.StringFretboardRenderer;
+import de.jlab.scales.fretboard.Fretboard.Box;
+import de.jlab.scales.fretboard.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.Scales;

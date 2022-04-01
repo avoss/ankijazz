@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 import java.util.List;
 

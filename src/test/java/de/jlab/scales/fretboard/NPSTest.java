@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,6 +6,9 @@ import java.util.List;
 
 import org.junit.Test;
 
+import de.jlab.scales.fretboard.Fingering;
+import de.jlab.scales.fretboard.NPS;
+import de.jlab.scales.fretboard.Position;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scales;
 

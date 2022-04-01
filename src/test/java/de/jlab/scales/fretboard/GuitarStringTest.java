@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.C;
@@ -7,6 +7,9 @@ import static de.jlab.scales.theory.Note.G;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+
+import de.jlab.scales.fretboard.GuitarString;
+import de.jlab.scales.fretboard.Marker;
 
 public class GuitarStringTest {
 

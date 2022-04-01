@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.function.Function;
 
 import de.jlab.scales.Utils;
-import de.jlab.scales.fretboard2.Marker;
+import de.jlab.scales.fretboard.Marker;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;
 import de.jlab.scales.theory.ScaleInfo;

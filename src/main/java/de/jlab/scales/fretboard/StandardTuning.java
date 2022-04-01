@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 import static de.jlab.scales.theory.Note.A;
 import static de.jlab.scales.theory.Note.B;

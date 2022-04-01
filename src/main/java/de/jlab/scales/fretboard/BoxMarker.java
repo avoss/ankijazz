@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 import static java.lang.Math.abs;
 
@@ -8,7 +8,7 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import de.jlab.scales.fretboard2.Fretboard.Box;
+import de.jlab.scales.fretboard.Fretboard.Box;
 import de.jlab.scales.theory.Note;
 
 public class BoxMarker {

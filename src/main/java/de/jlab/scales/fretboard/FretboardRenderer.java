@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard2;
+package de.jlab.scales.fretboard;
 
 // TODO String, Png and Midi renderer implementations?
 public interface FretboardRenderer<T> {
