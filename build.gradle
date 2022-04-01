@@ -55,7 +55,7 @@ dependencies {
 jar {
     manifest {
         attributes (
-"Implementation-Title": "Scales Core",
+"Implementation-Title": "AnkiJazz",
 "Bundle-License": "http://www.fsf.org/licensing/licenses/agpl-3.0.html",
 "Bundle-Copyright": "(C) 2021 Andreas Voss - mail@ankijazz.com",
 "Implementation-Vendor-Id": "de.jlab.scales"

@@ -12,8 +12,7 @@ public class Grip {
 
   
   /**
-   * @author win7
-   *
+   * displays inversions of given chord
    */
   public static class FrettedNote {
     private final Note string;
