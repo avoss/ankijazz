@@ -1,4 +1,4 @@
-package de.jlab.scales.jtg;
+package de.jlab.scales.sheet;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

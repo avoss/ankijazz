@@ -1,4 +1,4 @@
-package de.jlab.scales.jtg;
+package de.jlab.scales.sheet;
 
 @lombok.Data @lombok.Builder(toBuilder = true)
 public class RenderContext {

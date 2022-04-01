@@ -7,9 +7,9 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.Ensembles;
 import de.jlab.scales.midi.song.MidiTestUtils;
+import de.jlab.scales.sheet.RenderContext;
 import de.jlab.scales.theory.Note;
 
 public class JamCardTest {

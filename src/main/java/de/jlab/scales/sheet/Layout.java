@@ -1,4 +1,4 @@
-package de.jlab.scales.jtg;
+package de.jlab.scales.sheet;
 
 
 abstract class Layout {

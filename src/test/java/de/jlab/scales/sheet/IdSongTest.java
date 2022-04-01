@@ -1,14 +1,15 @@
-package de.jlab.scales.jtg;
+package de.jlab.scales.sheet;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.jtg.IdSong.IdBar;
 import de.jlab.scales.midi.song.Bar;
 import de.jlab.scales.midi.song.Chord;
 import de.jlab.scales.midi.song.Song;
+import de.jlab.scales.sheet.IdSong;
+import de.jlab.scales.sheet.IdSong.IdBar;
 import de.jlab.scales.theory.Scales;
 
 public class IdSongTest {

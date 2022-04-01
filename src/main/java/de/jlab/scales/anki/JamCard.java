@@ -16,8 +16,6 @@ import com.google.common.base.Optional;
 import de.jlab.scales.Utils;
 import de.jlab.scales.difficulty.Difficulties;
 import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.jtg.PngImageRenderer;
-import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.MidiFile;
 import de.jlab.scales.midi.MidiOut;
 import de.jlab.scales.midi.Part;
@@ -25,6 +23,8 @@ import de.jlab.scales.midi.TransposingMidiOut;
 import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.Song;
 import de.jlab.scales.midi.song.SongWrapper;
+import de.jlab.scales.sheet.PngImageRenderer;
+import de.jlab.scales.sheet.RenderContext;
 import de.jlab.scales.theory.Note;
 
 public class JamCard implements Card {

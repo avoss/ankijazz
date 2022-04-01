@@ -1,4 +1,4 @@
-package de.jlab.scales.jtg;
+package de.jlab.scales.sheet;
 
 import static de.jlab.scales.Utils.linux;
 
@@ -11,11 +11,10 @@ import java.awt.image.BufferedImage;
 import java.nio.file.Path;
 
 import de.jlab.scales.Utils;
-import de.jlab.scales.jtg.IdSong.IdBar;
 import de.jlab.scales.midi.song.Song;
+import de.jlab.scales.sheet.IdSong.IdBar;
 
 public class PngImageRenderer extends Layout {
-  //private final String copyright = "(C) 2021 www.AnkiJazz.com - all rights reserved";
   private final String copyright = "(C) 2021 www.AnkiJazz.com - Anki Shared Deck License";
 
   private final int barLineSpacing;
@@ -30,7 +29,7 @@ public class PngImageRenderer extends Layout {
   private RenderContext originalContext;
 
   public PngImageRenderer(RenderContext context, Song song) {
-    super(context.scaleWidth(1000 * context.getLayoutColumns() / 8)); // used to be 8 columns in initial version ??????????????
+    super(context.scaleWidth(1000 * context.getLayoutColumns() / 8)); 
     this.originalContext = context;
     this.song = new IdSong(song);
     this.barLineSpacing = context.isWithBarNumbers() ? 20 : 10;

@@ -19,9 +19,9 @@ import org.junit.Test;
 
 import de.jlab.scales.Utils;
 import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.jtg.RenderContext;
 import de.jlab.scales.midi.song.SongFactory.Feature;
 import de.jlab.scales.midi.song.SongFactory.KeyFactory;
+import de.jlab.scales.sheet.RenderContext;
 
 public class SongFactoryTest {
   

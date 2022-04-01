@@ -1,4 +1,4 @@
-package de.jlab.scales.jtg;
+package de.jlab.scales.sheet;
 
 import java.util.List;
 import java.util.stream.Collectors;
