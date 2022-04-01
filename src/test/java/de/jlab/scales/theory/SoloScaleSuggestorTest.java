@@ -32,7 +32,7 @@ import de.jlab.scales.theory.SoloScaleSuggestor.Vertex;
 public class SoloScaleSuggestorTest {
 
   private static final ScaleUniverse UNIVERSE = new ScaleUniverse(false, 
-      List.of(BuiltinScaleType.Major, BuiltinScaleType.MelodicMinor, BuiltinScaleType.HarmonicMinor, BuiltinScaleType.DiminishedHalfWhole)
+      List.of(BuiltinScaleType.Major, BuiltinScaleType.MelodicMinor)
   );
 
   @Test
@@ -68,7 +68,7 @@ public class SoloScaleSuggestorTest {
   
   @Test
   public void testPaths() {
-    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[C7:F Major Scale, C7:F Melodic Minor, C7:G Melodic Minor, C7:F Harmonic Minor, C7:C Diminished Half/Whole]");
+    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[C7:F Major Scale, C7:F Melodic Minor, C7:G Melodic Minor]");
     assertThatThrownBy(() -> computePaths(new Scale(C, Db, D, Eb, E))).isInstanceOf(SoloScaleSuggestor.ScaleNotFoundException.class);
   }
   

@@ -57,7 +57,7 @@ jar {
         attributes (
 "Implementation-Title": "Scales Core",
 "Bundle-License": "http://www.fsf.org/licensing/licenses/agpl-3.0.html",
-"Bundle-Copyright": "(C) 2021 Andreas Voss - mail@jlab.de",
+"Bundle-Copyright": "(C) 2021 Andreas Voss - mail@ankijazz.com",
 "Implementation-Vendor-Id": "de.jlab.scales"
         )
     }
@@ -71,15 +71,44 @@ test {
   }
 }
 
+/*
+ * Create Media
+ */
+ 
 task createRawMedia(type: Test) {
   dependsOn build
   useJUnit()
-  description = 'Generate raw media for Anki decks, must be processed in linux'
+  description = 'Generate raw media for Anki decks, to be be processed in docker container'
   group = 'verification'
   testClassesDirs = sourceSets.prod.output.classesDirs
   classpath = sourceSets.prod.runtimeClasspath
   shouldRunAfter test
 }
+
+def dockerCommandLine(path) {
+  return ["docker", "run", "--rm", "--mount", "type=bind,source=$projectDir/build,target=/mnt", "--name", "ankijazz", "avoss/ankijazz", "//mnt/$path"]
+}
+
+task generateAndProcessPreviewMedia(type:Exec) {
+  dependsOn createRawMedia
+  workingDir "$projectDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("preview") 
+}
+
+task generateAndProcessAnkiMedia(type:Exec) {
+  dependsOn createRawMedia
+  workingDir "$projectDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("anki") 
+}
+
+task processPreviewMedia(type:Exec) {
+  workingDir "$projectDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("preview") 
+}
+
 
 build {
   dependsOn("copyAnkiAssets")
@@ -114,6 +143,7 @@ task deleteWebsitePreview(type: Delete) {
 
 task createWebsitePreview(type:Copy) {
   dependsOn "deleteWebsitePreview"
+  dependsOn "generateAndProcessPreviewMedia"
   from ('build/preview') {
     include ('*.png', '*.mp3', '*.html', "*.json")
   } 
@@ -133,6 +163,7 @@ task createEmptyAnkiProfile(type: Copy) {
 
 task createAnkiProfileWithMedia(type: Copy) {
   dependsOn "createEmptyAnkiProfile"
+  dependsOn "generateAndProcessAnkiMedia"
   from ("build/anki") {
     include ('*.png', '*.mp3')
   }
@@ -161,4 +192,6 @@ task cleanWebsite(type: Delete) {
   delete "$previewDir", "$webappDir/dist"
   followSymlinks = false
 }
+
+
 

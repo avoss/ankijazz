@@ -98,7 +98,7 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
     ScaleInfo scaleInfo = MODES.findFirstOrElseThrow(scale);
     validator.validate(chordInfo, scaleInfo);
     Scale audio = pair.getAudio().transpose(root.ordinal());
-    Fingering fingering = NPS.caged(scaleInfo.getScaleType()).transpose(scaleInfo.getParentInfo().getScale().getRoot());
+    Fingering fingering = getFingering(scaleInfo).transpose(scaleInfo.getParentInfo().getScale().getRoot());
 
     Fretboard frontBoard = new Fretboard();
     Position position = Marker.box(frontBoard, stringNumber, getFrontRoot(chord, scale), box, fingering, Marker.ROOT);
@@ -132,6 +132,10 @@ public abstract class AbstractFretboardGenerator implements CardGenerator<Fretbo
         .backMidi(backMidi)
         .comment(pair.getComment())
         .build();
+  }
+
+  private Fingering getFingering(ScaleInfo scaleInfo) {
+    return NPS.caged(scaleInfo.getScaleType());
   }
 
   protected abstract Note getFrontRoot(Scale chord, Scale scale);

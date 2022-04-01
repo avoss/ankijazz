@@ -42,7 +42,8 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
         return 0;
       }
       int numberOfDifferentNotes = numberOfDifferentNotes(source.getInfo().getScale(), target.getInfo().getScale());
-      return numberOfDifferentNotes + 1000 * (scaleDifficulty(source) + scaleDifficulty(target));
+      int avoidScaleChanges = numberOfDifferentNotes == 0 ? 0 : 100;
+      return avoidScaleChanges + numberOfDifferentNotes + 0.01 * (scaleDifficulty(source) + scaleDifficulty(target));
     }
     
     private double scaleDifficulty(Vertex vertex) {
