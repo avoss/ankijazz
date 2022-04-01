@@ -208,18 +208,17 @@ public class PngImageRenderer extends Layout {
     float x = x(column(index)) + barLineSpacing;
     float y = y(row(index) + 1);
     if (bar.getChords().size() == 1) {
-      String symbol = bar.getChords().get(0).getChord().getSymbol();
+      String symbol = bar.getChords().get(0).getSymbol();
       singleChordRenderer.setPosition(x, y);
       new ChordRenderer(singleChordRenderer).parse(symbol);
     } else if (bar.getChords().size() == 2) {
-      String leftSymbol = bar.getChords().get(0).getChord().getSymbol();
+      String leftSymbol = bar.getChords().get(0).getSymbol();
       leftChordRenderer.setPosition(x, y);
       new ChordRenderer(leftChordRenderer).parse(leftSymbol);
 
-      String rightSymbol = bar.getChords().get(1).getChord().getSymbol();
+      String rightSymbol = bar.getChords().get(1).getSymbol();
       rightChordRenderer.setPosition(x, y);
       new ChordRenderer(rightChordRenderer).parse(rightSymbol);
-      
     }
 
 
