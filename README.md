@@ -11,7 +11,7 @@ Install Anki, Java JDK 11, npm and Docker. In your IDE you have to install [Lomb
 
 Start Anki and create a new Profile called `build`. Then adjust Anki profile directory in `gradle.properties`. 
 
-In `src/main/webapp` run `npm install`.
+In `webapp` directory run `npm install`.
 
 The java code generates Lilypond source files and Midi files into build/anki or build/preview. Then a docker container is launched, which runs lilypond, timidity and other tools to generate notation images from \*.ly and MP3 audio files from \*.midi.
 

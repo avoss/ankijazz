@@ -119,7 +119,7 @@ clean {
   dependsOn("cleanWebsite")
 }
 
-def webappDir = "$projectDir/src/main/webapp"
+def webappDir = "$projectDir/webapp"
 def previewDir = "$webappDir/src/assets/preview"
 def ankiAsset = "$projectDir/src/assets/build.zip"
 
