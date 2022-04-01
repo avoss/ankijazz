@@ -8,9 +8,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
-import de.jlab.scales.fretboard.GuitarString;
-import de.jlab.scales.fretboard.Marker;
-
 public class GuitarStringTest {
 
   @Test

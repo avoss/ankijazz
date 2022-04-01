@@ -8,11 +8,6 @@ import java.awt.image.BufferedImage;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.Marker;
-import de.jlab.scales.fretboard.NPS;
-import de.jlab.scales.fretboard.PngFretboardRenderer;
-import de.jlab.scales.fretboard.Position;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.PentatonicChooser;
 import de.jlab.scales.theory.Scale;

@@ -7,11 +7,6 @@ import java.util.function.Function;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.Marker;
-import de.jlab.scales.fretboard.MidiFretboardRenderer;
-import de.jlab.scales.fretboard.NPS;
-import de.jlab.scales.fretboard.Position;
 import de.jlab.scales.fretboard.MidiFretboardRenderer.MidiFretboardRendererBuilder;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;

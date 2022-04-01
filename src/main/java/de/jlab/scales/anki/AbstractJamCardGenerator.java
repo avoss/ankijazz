@@ -13,8 +13,8 @@ import de.jlab.scales.midi.song.Ensemble;
 import de.jlab.scales.midi.song.ProgressionFactory;
 import de.jlab.scales.midi.song.SongFactory;
 import de.jlab.scales.midi.song.SongFactory.Feature;
-import de.jlab.scales.sheet.RenderContext;
 import de.jlab.scales.midi.song.SongWrapper;
+import de.jlab.scales.sheet.RenderContext;
 import de.jlab.scales.theory.Note;
 
 public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard> {

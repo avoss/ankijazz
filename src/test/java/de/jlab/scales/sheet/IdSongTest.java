@@ -8,7 +8,6 @@ import org.junit.Test;
 import de.jlab.scales.midi.song.Bar;
 import de.jlab.scales.midi.song.Chord;
 import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.sheet.IdSong;
 import de.jlab.scales.sheet.IdSong.IdBar;
 import de.jlab.scales.theory.Scales;
 

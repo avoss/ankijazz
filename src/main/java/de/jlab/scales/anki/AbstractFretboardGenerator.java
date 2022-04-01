@@ -14,15 +14,15 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import de.jlab.scales.Utils;
+import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
 import de.jlab.scales.fretboard.Fingering;
 import de.jlab.scales.fretboard.Fretboard;
+import de.jlab.scales.fretboard.Fretboard.Box;
 import de.jlab.scales.fretboard.Marker;
 import de.jlab.scales.fretboard.MidiFretboardRenderer;
 import de.jlab.scales.fretboard.NPS;
 import de.jlab.scales.fretboard.PngFretboardRenderer;
 import de.jlab.scales.fretboard.Position;
-import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
-import de.jlab.scales.fretboard.Fretboard.Box;
 import de.jlab.scales.midi.Part;
 import de.jlab.scales.theory.Note;
 import de.jlab.scales.theory.Scale;

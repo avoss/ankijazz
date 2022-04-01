@@ -14,13 +14,6 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard.BoxMarker;
-import de.jlab.scales.fretboard.Fingering;
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.Marker;
-import de.jlab.scales.fretboard.NPS;
-import de.jlab.scales.fretboard.Position;
-import de.jlab.scales.fretboard.StringFretboardRenderer;
 import de.jlab.scales.fretboard.Fretboard.Box;
 import de.jlab.scales.fretboard.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;

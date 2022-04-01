@@ -16,13 +16,6 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import de.jlab.scales.fretboard.Fingering;
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.GuitarString;
-import de.jlab.scales.fretboard.Marker;
-import de.jlab.scales.fretboard.MarkerRenderer;
-import de.jlab.scales.fretboard.NPS;
-import de.jlab.scales.fretboard.Position;
 import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
 import de.jlab.scales.fretboard.Fretboard.MarkedFret;
 import de.jlab.scales.theory.Note;
