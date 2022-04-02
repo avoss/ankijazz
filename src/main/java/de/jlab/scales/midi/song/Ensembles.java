@@ -5,7 +5,9 @@ import de.jlab.scales.midi.Parts;
 import de.jlab.scales.midi.Program;
 
 /**
- * bar() notation
+ * An Ensemble generates Midi from a {@link Song}.
+ * <p>
+ * Method bar(String pattern), where pattern may contain:
  * <dl>
  *   <dt>0-9</dt>
  *   <dd>play chord or note with velocity between 0 and ~100</dd

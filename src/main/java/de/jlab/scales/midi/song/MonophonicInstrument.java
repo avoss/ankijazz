@@ -18,7 +18,6 @@ public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> 
   private final int midiChannel;
   private int denominator;
   
-  // TODO use parameter object
   public MonophonicInstrument(int beatsPerBar, int ticksPerBar, int midiChannel, NoteToMidiMapper noteToMidiMapper, Program program, int volume, int pan) {
     super(beatsPerBar, ticksPerBar, midiChannel, program, volume, pan);
     this.denominator = ticksPerBar;
