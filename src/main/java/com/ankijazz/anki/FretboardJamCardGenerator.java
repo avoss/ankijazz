@@ -1,9 +1,9 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.Utils.getFirst;
-import static de.jlab.scales.Utils.getLast;
-import static de.jlab.scales.midi.song.Ensembles.latin;
-import static de.jlab.scales.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
+import static com.ankijazz.Utils.getFirst;
+import static com.ankijazz.Utils.getLast;
+import static com.ankijazz.midi.song.Ensembles.latin;
+import static com.ankijazz.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 
@@ -15,22 +15,22 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.BiFunction;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
-import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Sequential;
-import de.jlab.scales.midi.song.Bar;
-import de.jlab.scales.midi.song.Chord;
-import de.jlab.scales.midi.song.NoteToMidiMapper;
-import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.midi.song.SongWrapper;
-import de.jlab.scales.sheet.RenderContext;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
+import com.ankijazz.Utils.LoopIteratorFactory;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Sequential;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.NoteToMidiMapper;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.midi.song.SongWrapper;
+import com.ankijazz.sheet.RenderContext;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleUniverse;
 
 public class FretboardJamCardGenerator implements CardGenerator<JamCard> {
   private final LoopIteratorFactory iteratorFactory;

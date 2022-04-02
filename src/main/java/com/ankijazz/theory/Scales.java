@@ -1,17 +1,17 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.Ab;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Note.Gb;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.Ab;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.Eb;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Note.Gb;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.stream.Stream;
 
-import de.jlab.scales.Utils;
+import com.ankijazz.Utils;
 
 public class Scales {
 

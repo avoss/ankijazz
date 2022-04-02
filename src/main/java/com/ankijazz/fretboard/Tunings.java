@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 public class Tunings {
 

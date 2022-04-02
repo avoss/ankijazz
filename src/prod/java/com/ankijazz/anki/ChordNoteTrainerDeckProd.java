@@ -1,8 +1,8 @@
-package ankijazzde.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.ChordNoteTrainerDeck;
+import com.ankijazz.anki.ChordNoteTrainerDeck;
 
 public class ChordNoteTrainerDeckProd {
 

@@ -1,19 +1,19 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.C7flat5;
-import static de.jlab.scales.theory.Scales.C7flat5flat9;
-import static de.jlab.scales.theory.Scales.C7flat5sharp9;
-import static de.jlab.scales.theory.Scales.C7flat9;
-import static de.jlab.scales.theory.Scales.C7sharp5;
-import static de.jlab.scales.theory.Scales.C7sharp5flat9;
-import static de.jlab.scales.theory.Scales.C7sharp5sharp9;
-import static de.jlab.scales.theory.Scales.C7sharp9;
-import static de.jlab.scales.theory.Scales.C7sus4;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.Cdim7;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Scales.C7;
+import static com.ankijazz.theory.Scales.C7flat5;
+import static com.ankijazz.theory.Scales.C7flat5flat9;
+import static com.ankijazz.theory.Scales.C7flat5sharp9;
+import static com.ankijazz.theory.Scales.C7flat9;
+import static com.ankijazz.theory.Scales.C7sharp5;
+import static com.ankijazz.theory.Scales.C7sharp5flat9;
+import static com.ankijazz.theory.Scales.C7sharp5sharp9;
+import static com.ankijazz.theory.Scales.C7sharp9;
+import static com.ankijazz.theory.Scales.C7sus4;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.Cdim7;
 
 import java.util.ArrayList;
 import java.util.Arrays;

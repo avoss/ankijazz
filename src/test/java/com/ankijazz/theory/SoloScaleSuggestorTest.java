@@ -1,18 +1,18 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.ScaleUniverse.SCALES;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.Eb;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Note.Gb;
+import static com.ankijazz.theory.ScaleUniverse.SCALES;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -26,8 +26,15 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.SoloScaleSuggestor.DefaultStrategy;
-import de.jlab.scales.theory.SoloScaleSuggestor.Vertex;
+import com.ankijazz.theory.Accidental;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.ChordParser;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleUniverse;
+import com.ankijazz.theory.Scales;
+import com.ankijazz.theory.SoloScaleSuggestor;
+import com.ankijazz.theory.SoloScaleSuggestor.DefaultStrategy;
+import com.ankijazz.theory.SoloScaleSuggestor.Vertex;
 
 public class SoloScaleSuggestorTest {
 

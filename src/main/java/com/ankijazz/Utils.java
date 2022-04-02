@@ -1,4 +1,4 @@
-package de.jlab.scales;
+package com.ankijazz;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
@@ -20,16 +20,15 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
+import com.ankijazz.midi.MidiFile;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleType;
 import com.google.common.base.Charsets;
 import com.google.common.hash.HashCode;
 import com.google.common.hash.Hashing;
-
-import de.jlab.scales.midi.MidiFile;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleType;
 
 public final class Utils {
   private static final String ANKI_JAZZ = "AnkiJazz-";

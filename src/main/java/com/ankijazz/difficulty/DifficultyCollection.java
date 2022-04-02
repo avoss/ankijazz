@@ -1,4 +1,4 @@
-package de.jlab.scales.difficulty;
+package com.ankijazz.difficulty;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import static org.junit.Assert.assertEquals;
 
@@ -6,8 +6,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.fretboard.Fingering;
+import com.ankijazz.fretboard.NPS;
+import com.ankijazz.fretboard.Position;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scales;
 
 public class NPSTest {
 

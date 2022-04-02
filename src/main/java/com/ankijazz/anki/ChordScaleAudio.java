@@ -1,40 +1,40 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.C6;
-import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.C7flat9;
-import static de.jlab.scales.theory.Scales.C7sharp5;
-import static de.jlab.scales.theory.Scales.C7sus4;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
-import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
-import static de.jlab.scales.theory.Scales.Cm6;
-import static de.jlab.scales.theory.Scales.Cm7;
-import static de.jlab.scales.theory.Scales.Cm7b5;
-import static de.jlab.scales.theory.Scales.Cmaj7;
-import static de.jlab.scales.theory.Scales.Cmaj7Sharp11;
-import static de.jlab.scales.theory.Scales.Cmmaj7;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.Eb;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.ScaleUniverse.MODES;
+import static com.ankijazz.theory.Scales.C6;
+import static com.ankijazz.theory.Scales.C7;
+import static com.ankijazz.theory.Scales.C7flat9;
+import static com.ankijazz.theory.Scales.C7sharp5;
+import static com.ankijazz.theory.Scales.C7sus4;
+import static com.ankijazz.theory.Scales.CHarmonicMinor;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.CMinor6Pentatonic;
+import static com.ankijazz.theory.Scales.CMinor7Pentatonic;
+import static com.ankijazz.theory.Scales.Cm6;
+import static com.ankijazz.theory.Scales.Cm7;
+import static com.ankijazz.theory.Scales.Cm7b5;
+import static com.ankijazz.theory.Scales.Cmaj7;
+import static com.ankijazz.theory.Scales.Cmaj7Sharp11;
+import static com.ankijazz.theory.Scales.Cmmaj7;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-import de.jlab.scales.theory.BuiltinScaleType;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleType;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleType;
+import com.ankijazz.theory.Scales;
 
 @lombok.Data
 @lombok.Builder

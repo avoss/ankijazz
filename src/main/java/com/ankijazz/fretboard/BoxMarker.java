@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import static java.lang.Math.abs;
 
@@ -8,8 +8,8 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-import de.jlab.scales.fretboard.Fretboard.Box;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.fretboard.Fretboard.Box;
+import com.ankijazz.theory.Note;
 
 public class BoxMarker {
   public enum BoxPosition { LEFT, RIGHT }

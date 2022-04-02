@@ -1,9 +1,9 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.FretboardJamCardGenerator.CAGED_MODES;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
+import static com.ankijazz.anki.FretboardJamCardGenerator.CAGED_MODES;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.G;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -13,17 +13,18 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.Utils;
-import de.jlab.scales.anki.FretboardJamCardGenerator.PlayThroughChangesMelody;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.song.Ensembles;
-import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.sheet.PngImageRenderer;
-import de.jlab.scales.sheet.RenderContext;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.TestUtils;
+import com.ankijazz.Utils;
+import com.ankijazz.anki.FretboardJamCardGenerator;
+import com.ankijazz.anki.FretboardJamCardGenerator.PlayThroughChangesMelody;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.song.Ensembles;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.sheet.PngImageRenderer;
+import com.ankijazz.sheet.RenderContext;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.Scales;
 
 public class FretboardJamCardGeneratorTest {
   

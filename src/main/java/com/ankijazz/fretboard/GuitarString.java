@@ -1,11 +1,11 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.Note;
 
 @lombok.ToString
 public class GuitarString {

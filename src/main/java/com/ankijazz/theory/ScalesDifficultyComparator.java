@@ -1,11 +1,11 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.BuiltinScaleType.DiminishedHalfWhole;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.WholeTone;
+import static com.ankijazz.theory.BuiltinScaleType.DiminishedHalfWhole;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMajor;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Major;
+import static com.ankijazz.theory.BuiltinScaleType.MelodicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.WholeTone;
 
 import java.util.Comparator;
 import java.util.List;

@@ -1,12 +1,12 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.b3;
-import static de.jlab.scales.rhythm.Event.bt;
-import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Event.rt;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.b3;
+import static com.ankijazz.rhythm.Event.bt;
+import static com.ankijazz.rhythm.Event.r2;
+import static com.ankijazz.rhythm.Event.rt;
+import static com.ankijazz.rhythm.Quarter.q;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -16,7 +16,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.rhythm.RhythmTransformer.Tick;
+import com.ankijazz.rhythm.Event;
+import com.ankijazz.rhythm.Quarter;
+import com.ankijazz.rhythm.RhythmTransformer;
+import com.ankijazz.rhythm.RhythmTransformer.Tick;
 
 public class RhythmTransformerTest {
 

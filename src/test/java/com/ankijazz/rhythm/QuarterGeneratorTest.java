@@ -1,4 +1,4 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
 import static org.junit.Assert.assertEquals;
 
@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
+import com.ankijazz.TestUtils;
+import com.ankijazz.rhythm.Quarter;
+import com.ankijazz.rhythm.QuarterGenerator;
 
 public class QuarterGeneratorTest {
 

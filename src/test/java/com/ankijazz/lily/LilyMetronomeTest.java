@@ -1,4 +1,4 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -10,7 +10,8 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
-import de.jlab.scales.lily.LilyMetronome.Tempo;
+import com.ankijazz.lily.LilyMetronome;
+import com.ankijazz.lily.LilyMetronome.Tempo;
 
 public class LilyMetronomeTest {
 

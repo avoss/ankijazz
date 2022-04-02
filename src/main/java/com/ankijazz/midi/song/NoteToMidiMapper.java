@@ -1,8 +1,8 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.MidiUtils.midiPitchToNote;
+import static com.ankijazz.midi.MidiUtils.midiPitchToNote;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.Note;
 
 public class NoteToMidiMapper {
 

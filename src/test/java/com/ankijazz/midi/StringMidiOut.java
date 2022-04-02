@@ -1,9 +1,11 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
-import static de.jlab.scales.midi.MidiFile.ticks;
+import static com.ankijazz.midi.MidiFile.ticks;
 import static java.lang.String.format;
 
 import java.nio.file.Path;
+
+import com.ankijazz.midi.MidiOut;
 
 public class StringMidiOut implements MidiOut {
   

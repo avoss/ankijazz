@@ -1,4 +1,4 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

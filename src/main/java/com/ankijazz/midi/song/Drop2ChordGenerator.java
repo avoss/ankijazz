@@ -1,16 +1,16 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.Utils.getLast;
+import static com.ankijazz.Utils.getLast;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
-import de.jlab.scales.midi.MidiUtils;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Stacker;
+import com.ankijazz.midi.MidiUtils;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.Stacker;
 
 public class Drop2ChordGenerator implements ChordGenerator {
 

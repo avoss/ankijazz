@@ -1,10 +1,10 @@
-package ankijazzde.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.Deck;
-import de.jlab.scales.anki.RhythmDeck;
-import de.jlab.scales.lily.LilyRhythm.Type;
+import com.ankijazz.anki.Deck;
+import com.ankijazz.anki.RhythmDeck;
+import com.ankijazz.lily.LilyRhythm.Type;
 
 public class RhythmDeckProd {
 

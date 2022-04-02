@@ -1,4 +1,4 @@
-package de.jlab.scales.difficulty;
+package com.ankijazz.difficulty;
 
 public interface WithDifficulty {
   

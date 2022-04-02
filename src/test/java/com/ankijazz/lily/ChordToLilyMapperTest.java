@@ -1,21 +1,22 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
-import static de.jlab.scales.theory.BuiltinChordType.Diminished7;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
-import static de.jlab.scales.theory.BuiltinChordType.Major7;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.Db;
+import static com.ankijazz.theory.BuiltinChordType.Diminished7;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7;
+import static com.ankijazz.theory.BuiltinChordType.Major7;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.Db;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.lily.ChordToLilyMapper.LilyChord;
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleType;
+import com.ankijazz.lily.ChordToLilyMapper;
+import com.ankijazz.lily.ChordToLilyMapper.LilyChord;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleType;
 
 public class ChordToLilyMapperTest {
 

@@ -1,14 +1,14 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.Gb;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Major;
+import static com.ankijazz.theory.BuiltinScaleType.MelodicMinor;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.Eb;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.Gb;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -16,6 +16,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
+
+import com.ankijazz.theory.KeySignature;
 
 public class BuiltInScaleTypesTest {
 

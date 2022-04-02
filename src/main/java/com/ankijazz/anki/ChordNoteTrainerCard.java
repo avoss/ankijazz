@@ -1,6 +1,6 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
+import static com.ankijazz.anki.AnkiUtils.ankiMp3;
 import static java.util.stream.Collectors.joining;
 
 import java.nio.file.Path;
@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.midi.MidiFile;
-import de.jlab.scales.midi.MidiOut;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.song.Bar;
-import de.jlab.scales.midi.song.Chord;
-import de.jlab.scales.midi.song.Ensembles;
-import de.jlab.scales.midi.song.MelodyInstrument;
-import de.jlab.scales.midi.song.NoteToMidiMapper;
-import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.theory.DegreeParser.Degrees;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.Utils;
+import com.ankijazz.midi.MidiFile;
+import com.ankijazz.midi.MidiOut;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Ensembles;
+import com.ankijazz.midi.song.MelodyInstrument;
+import com.ankijazz.midi.song.NoteToMidiMapper;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.DegreeParser.Degrees;
 
 @lombok.Builder
 public class ChordNoteTrainerCard implements Card {

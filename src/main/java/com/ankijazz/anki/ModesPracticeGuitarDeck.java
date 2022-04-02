@@ -1,13 +1,13 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.lily.Direction.ASCENDING;
-import static de.jlab.scales.lily.Direction.DESCENDING;
-import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.allKeys;
-import static de.jlab.scales.theory.Scales.commonModes;
+import static com.ankijazz.lily.Direction.ASCENDING;
+import static com.ankijazz.lily.Direction.DESCENDING;
+import static com.ankijazz.theory.ScaleUniverse.MODES;
+import static com.ankijazz.theory.Scales.allKeys;
+import static com.ankijazz.theory.Scales.commonModes;
 
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public class ModesPracticeGuitarDeck extends AbstractDeck<ModesPracticeGuitarCard> {
 

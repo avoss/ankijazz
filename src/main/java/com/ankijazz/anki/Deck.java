@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import java.nio.file.Path;
 import java.util.List;

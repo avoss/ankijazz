@@ -1,9 +1,17 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import com.ankijazz.midi.MidiFile;
+import com.ankijazz.midi.MidiOut;
+import com.ankijazz.midi.NoteOn;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.midi.Tempo;
+import com.ankijazz.midi.TimeSignature;
 
 import lombok.Getter;
 

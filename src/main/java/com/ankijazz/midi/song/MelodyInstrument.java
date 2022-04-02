@@ -1,10 +1,10 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import de.jlab.scales.midi.Parallel;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
-import de.jlab.scales.midi.Sequential;
+import com.ankijazz.midi.Parallel;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.midi.Sequential;
 
 public class MelodyInstrument implements Instrument {
   public static final int MELODY_MIDI_CHANNEL = 15;

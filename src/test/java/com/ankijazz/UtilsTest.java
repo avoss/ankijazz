@@ -1,11 +1,11 @@
-package de.jlab.scales;
+package com.ankijazz;
 
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CWholeTone;
-import static de.jlab.scales.theory.Scales.allModes;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.Gb;
+import static com.ankijazz.theory.Scales.CDiminishedHalfWhole;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CWholeTone;
+import static com.ankijazz.theory.Scales.allModes;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -15,10 +15,11 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import de.jlab.scales.Utils.Interpolator;
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
 
 public class UtilsTest {
 

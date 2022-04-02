@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;

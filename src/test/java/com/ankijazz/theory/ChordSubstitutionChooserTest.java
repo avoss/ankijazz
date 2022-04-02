@@ -1,6 +1,6 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.ScaleUniverse.SCALES;
+import static com.ankijazz.theory.ScaleUniverse.SCALES;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
@@ -14,10 +14,14 @@ import java.util.Set;
 
 import org.junit.Test;
 
+import com.ankijazz.TestUtils;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.PentatonicChooser;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ChordSubstitutionChooser.SubstitutionInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
 
 public class ChordSubstitutionChooserTest {
   

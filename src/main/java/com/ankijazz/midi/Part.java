@@ -1,4 +1,4 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 public interface Part {
   void perform(MidiOut midiOut);

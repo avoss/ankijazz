@@ -1,12 +1,15 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.G;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.G;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
+
+import com.ankijazz.fretboard.GuitarString;
+import com.ankijazz.fretboard.Marker;
 
 public class GuitarStringTest {
 

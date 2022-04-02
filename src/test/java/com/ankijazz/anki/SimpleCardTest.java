@@ -1,8 +1,10 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.ankijazz.anki.SimpleCard;
 
 public class SimpleCardTest {
 

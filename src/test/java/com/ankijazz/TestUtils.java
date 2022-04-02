@@ -1,4 +1,4 @@
-package de.jlab.scales;
+package com.ankijazz;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
@@ -24,13 +24,14 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
-import de.jlab.scales.midi.MidiFile;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.Accidental;
-import de.jlab.scales.theory.BuiltinScaleType;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.Utils;
+import com.ankijazz.midi.MidiFile;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.Accidental;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
 
 public class TestUtils {
   static boolean disabled = false;

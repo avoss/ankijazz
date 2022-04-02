@@ -1,15 +1,15 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
 
 public class MonophonicInstrument extends TonalInstrument<MonophonicInstrument> {
 

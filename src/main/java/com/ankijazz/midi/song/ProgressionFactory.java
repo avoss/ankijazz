@@ -1,6 +1,6 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.song.ProgressionFactory.ChordProgressionSet.loadChordProgression;
+import static com.ankijazz.midi.song.ProgressionFactory.ChordProgressionSet.loadChordProgression;
 import static java.util.stream.Collectors.toList;
 
 import java.io.IOException;
@@ -8,13 +8,13 @@ import java.io.UncheckedIOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.ankijazz.Utils.LoopIteratorFactory;
+import com.ankijazz.midi.song.ProgressionParser.ChordFactory;
+import com.ankijazz.theory.KeySignature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
-import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.midi.song.ProgressionParser.ChordFactory;
-import de.jlab.scales.theory.KeySignature;
 import lombok.Getter;
 import lombok.Setter;
 

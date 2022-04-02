@@ -1,25 +1,30 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.MidiUtils.midiPitchToNote;
-import static de.jlab.scales.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
-import static de.jlab.scales.midi.song.MidiTestUtils.song;
+import static com.ankijazz.midi.MidiUtils.midiPitchToNote;
+import static com.ankijazz.midi.song.MelodyInstrument.MELODY_MIDI_CHANNEL;
+import static com.ankijazz.midi.song.MidiTestUtils.song;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.midi.Drum;
-import de.jlab.scales.midi.MockMidiOut;
-import de.jlab.scales.midi.NoteOn;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
-import de.jlab.scales.midi.Tempo;
-import de.jlab.scales.midi.TimeSignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.TestUtils;
+import com.ankijazz.midi.Drum;
+import com.ankijazz.midi.MockMidiOut;
+import com.ankijazz.midi.NoteOn;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.midi.Tempo;
+import com.ankijazz.midi.TimeSignature;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Ensemble;
+import com.ankijazz.midi.song.Ensembles;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scales;
 
 public class EnsembleTest {
   final TimeSignature timeSignature = Parts.timeSignature(3, 4);

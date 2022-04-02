@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import static java.util.stream.Collectors.toList;
 
@@ -14,14 +14,13 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
+import com.ankijazz.difficulty.DifficultyCollection;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
-
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
-import de.jlab.scales.difficulty.DifficultyCollection;
 
 public abstract class AbstractDeck<T extends Card> implements Deck<T> {
   private static final ObjectMapper MAPPER = new ObjectMapper();

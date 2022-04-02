@@ -1,7 +1,7 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.song.MidiTestUtils.event;
-import static de.jlab.scales.theory.Scales.Cm7;
+import static com.ankijazz.midi.song.MidiTestUtils.event;
+import static com.ankijazz.theory.Scales.Cm7;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
@@ -12,12 +12,19 @@ import java.util.function.BiFunction;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.AbstractPart;
-import de.jlab.scales.midi.CompositePart;
-import de.jlab.scales.midi.MidiOut;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.midi.AbstractPart;
+import com.ankijazz.midi.CompositePart;
+import com.ankijazz.midi.MidiOut;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.BarProcessor;
+import com.ankijazz.midi.song.BarProcessorFactory;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Event;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.theory.Scale;
+
 import lombok.EqualsAndHashCode;
 
 public class BarProcessorTest {

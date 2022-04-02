@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
@@ -8,7 +8,7 @@ import java.io.UncheckedIOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import de.jlab.scales.Utils;
+import com.ankijazz.Utils;
 
 public abstract class LilyCard implements Card {
 

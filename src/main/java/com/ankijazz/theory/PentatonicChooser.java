@@ -1,10 +1,10 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Major;
+import static com.ankijazz.theory.BuiltinScaleType.MelodicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Minor6Pentatonic;
+import static com.ankijazz.theory.BuiltinScaleType.Minor7Pentatonic;
 
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import de.jlab.scales.theory.ChordSubstitutionChooser.SubstitutionInfo;
+import com.ankijazz.theory.ChordSubstitutionChooser.SubstitutionInfo;
 
 public class PentatonicChooser {
   private static final ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, Minor7Pentatonic, Minor6Pentatonic));

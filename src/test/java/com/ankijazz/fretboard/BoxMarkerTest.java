@@ -1,11 +1,11 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.fretboard.BoxMarker.BoxPosition.LEFT;
-import static de.jlab.scales.fretboard.BoxMarker.BoxPosition.RIGHT;
-import static de.jlab.scales.fretboard.StandardTuning.A_STRING;
-import static de.jlab.scales.fretboard.StandardTuning.G_STRING;
-import static de.jlab.scales.fretboard.StandardTuning.HIGH_E_STRING;
-import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
+import static com.ankijazz.fretboard.BoxMarker.BoxPosition.LEFT;
+import static com.ankijazz.fretboard.BoxMarker.BoxPosition.RIGHT;
+import static com.ankijazz.fretboard.StandardTuning.A_STRING;
+import static com.ankijazz.fretboard.StandardTuning.G_STRING;
+import static com.ankijazz.fretboard.StandardTuning.HIGH_E_STRING;
+import static com.ankijazz.fretboard.Tunings.STANDARD_TUNING;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -16,10 +16,17 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
-import de.jlab.scales.fretboard.Fretboard.MarkedFret;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.fretboard.Fingering;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.GuitarString;
+import com.ankijazz.fretboard.Marker;
+import com.ankijazz.fretboard.MarkerRenderer;
+import com.ankijazz.fretboard.NPS;
+import com.ankijazz.fretboard.Position;
+import com.ankijazz.fretboard.BoxMarker.BoxPosition;
+import com.ankijazz.fretboard.Fretboard.MarkedFret;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
 
 public class BoxMarkerTest {
   Fingering aMinorPent = NPS.C_MINOR7_PENTATONIC.transpose(Note.A);

@@ -1,15 +1,20 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.theory.Scales.Cmaj7;
+import static com.ankijazz.theory.Scales.Cmaj7;
 
 import java.util.function.Function;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard.MidiFretboardRenderer.MidiFretboardRendererBuilder;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.TestUtils;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Marker;
+import com.ankijazz.fretboard.MidiFretboardRenderer;
+import com.ankijazz.fretboard.NPS;
+import com.ankijazz.fretboard.Position;
+import com.ankijazz.fretboard.MidiFretboardRenderer.MidiFretboardRendererBuilder;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.Note;
 public class MidiFretboardRendererTest {
 
   @Test

@@ -1,4 +1,4 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
 import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -13,8 +13,11 @@ import java.util.stream.Collectors;
 import org.assertj.core.data.Offset;
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.Utils;
+import com.ankijazz.TestUtils;
+import com.ankijazz.Utils;
+import com.ankijazz.rhythm.AbstractRhythm;
+import com.ankijazz.rhythm.Quarter;
+import com.ankijazz.rhythm.RhythmGenerator;
 
 public class RhythmGeneratorTest {
 

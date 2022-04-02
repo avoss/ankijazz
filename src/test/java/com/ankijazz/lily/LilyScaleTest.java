@@ -1,15 +1,15 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Note.Gb;
-import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
-import static de.jlab.scales.theory.Scales.CWholeTone;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Note.Gb;
+import static com.ankijazz.theory.ScaleUniverse.MODES;
+import static com.ankijazz.theory.Scales.CDiminishedHalfWhole;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.CMinor7Pentatonic;
+import static com.ankijazz.theory.Scales.CWholeTone;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -17,8 +17,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.lily.Direction;
+import com.ankijazz.lily.LilyScale;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public class LilyScaleTest {
 

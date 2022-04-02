@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import java.util.List;
 

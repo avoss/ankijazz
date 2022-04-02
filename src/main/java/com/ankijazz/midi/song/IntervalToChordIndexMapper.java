@@ -1,8 +1,8 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.Scales;
 
 /**
  * maps interval number to chord index. For example, Cmaj has notes C E G. The interval 5 means G, but its index in the chord is 2

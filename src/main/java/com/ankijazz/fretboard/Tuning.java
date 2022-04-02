@@ -1,8 +1,8 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import java.util.List;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.Note;
 
 public interface Tuning {
   List<Note> getStrings();

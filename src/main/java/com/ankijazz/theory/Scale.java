@@ -1,6 +1,6 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
+import static com.ankijazz.theory.Accidental.FLAT;
 import static java.util.stream.Collectors.joining;
 
 import java.util.ArrayList;

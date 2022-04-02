@@ -1,10 +1,13 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.theory.Scales;
 
 public class SongTest {
 

@@ -1,23 +1,23 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.TestUtils.assertFileContentMatches;
-import static de.jlab.scales.TestUtils.reviewMarker;
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
-import static de.jlab.scales.theory.KeySignature.fromScale;
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.Ab;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.allKeys;
+import static com.ankijazz.TestUtils.assertFileContentMatches;
+import static com.ankijazz.TestUtils.reviewMarker;
+import static com.ankijazz.theory.Accidental.SHARP;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMajor;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Major;
+import static com.ankijazz.theory.BuiltinScaleType.MelodicMinor;
+import static com.ankijazz.theory.KeySignature.fromScale;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.Ab;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Scales.CDiminishedHalfWhole;
+import static com.ankijazz.theory.Scales.CHarmonicMinor;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.allKeys;
 import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
@@ -35,6 +35,13 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.junit.Test;
+
+import com.ankijazz.theory.Accidental;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleType;
 
 public class KeySignatureTest {
 

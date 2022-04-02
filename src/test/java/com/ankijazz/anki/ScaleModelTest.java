@@ -1,8 +1,8 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.Eb;
-import static de.jlab.scales.theory.Scales.CMajor;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.Eb;
+import static com.ankijazz.theory.Scales.CMajor;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.io.IOException;
@@ -13,8 +13,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleUniverse;
+import com.ankijazz.anki.LilyCard;
+import com.ankijazz.anki.ModesPracticeCard;
+import com.ankijazz.anki.ScaleModel;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleUniverse;
 
 public class ScaleModelTest {
   

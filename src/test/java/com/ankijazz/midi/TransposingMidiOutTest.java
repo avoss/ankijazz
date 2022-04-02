@@ -1,10 +1,13 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.midi.Drum;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.TransposingMidiOut;
+import com.ankijazz.theory.Note;
 
 public class TransposingMidiOutTest {
 

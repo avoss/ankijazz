@@ -1,4 +1,4 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

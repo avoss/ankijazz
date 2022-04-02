@@ -1,13 +1,16 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Quarter.q;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
 import org.junit.Test;
+
+import com.ankijazz.rhythm.Quarter;
+import com.ankijazz.rhythm.RandomRhythm;
 
 public class RhythmTest {
 

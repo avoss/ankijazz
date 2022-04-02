@@ -1,18 +1,19 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
-import static de.jlab.scales.lily.LilyRhythm.Type.PIANO;
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.lily.LilyRhythm.Type.PIANO;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.r2;
+import static com.ankijazz.rhythm.Quarter.q;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.rhythm.Quarter;
-import de.jlab.scales.rhythm.RandomRhythm;
+import com.ankijazz.lily.LilyRhythm;
+import com.ankijazz.rhythm.Quarter;
+import com.ankijazz.rhythm.RandomRhythm;
 
 public class LilyRhythmTest {
 

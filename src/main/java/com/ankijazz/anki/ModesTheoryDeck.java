@@ -1,20 +1,20 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.ScaleUniverse.MODES;
-import static de.jlab.scales.theory.Scales.C6;
-import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.C7flat9;
-import static de.jlab.scales.theory.Scales.C7sharp5;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.Cm6;
-import static de.jlab.scales.theory.Scales.Cm7;
-import static de.jlab.scales.theory.Scales.Cm7b5;
-import static de.jlab.scales.theory.Scales.Cmaj7;
-import static de.jlab.scales.theory.Scales.allKeys;
-import static de.jlab.scales.theory.Scales.commonModes;
-import static de.jlab.scales.theory.Scales.commonScales;
+import static com.ankijazz.theory.Accidental.FLAT;
+import static com.ankijazz.theory.Accidental.SHARP;
+import static com.ankijazz.theory.ScaleUniverse.MODES;
+import static com.ankijazz.theory.Scales.C6;
+import static com.ankijazz.theory.Scales.C7;
+import static com.ankijazz.theory.Scales.C7flat9;
+import static com.ankijazz.theory.Scales.C7sharp5;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.Cm6;
+import static com.ankijazz.theory.Scales.Cm7;
+import static com.ankijazz.theory.Scales.Cm7b5;
+import static com.ankijazz.theory.Scales.Cmaj7;
+import static com.ankijazz.theory.Scales.allKeys;
+import static com.ankijazz.theory.Scales.commonModes;
+import static com.ankijazz.theory.Scales.commonScales;
 import static java.lang.String.format;
 
 import java.util.ArrayList;
@@ -23,17 +23,17 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.difficulty.Difficulties;
-import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
-import de.jlab.scales.theory.IntervalAnalyzer;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.Utils;
+import com.ankijazz.difficulty.Difficulties;
+import com.ankijazz.difficulty.DifficultyModel;
+import com.ankijazz.difficulty.DifficultyModel.DoubleTerm;
+import com.ankijazz.theory.IntervalAnalyzer;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleUniverse;
+import com.ankijazz.theory.Scales;
 
 public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
 

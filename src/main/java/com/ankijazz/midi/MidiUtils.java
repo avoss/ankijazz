@@ -1,6 +1,6 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.Note;
 
 public class MidiUtils {
   private MidiUtils() {}

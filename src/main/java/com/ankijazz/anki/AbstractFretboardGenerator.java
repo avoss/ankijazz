@@ -1,8 +1,8 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
-import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
-import static de.jlab.scales.theory.ScaleUniverse.MODES;
+import static com.ankijazz.fretboard.Tunings.STANDARD_TUNING;
+import static com.ankijazz.theory.ScaleUniverse.CHORDS;
+import static com.ankijazz.theory.ScaleUniverse.MODES;
 
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -13,20 +13,20 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.fretboard.BoxMarker.BoxPosition;
-import de.jlab.scales.fretboard.Fingering;
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.Fretboard.Box;
-import de.jlab.scales.fretboard.Marker;
-import de.jlab.scales.fretboard.MidiFretboardRenderer;
-import de.jlab.scales.fretboard.NPS;
-import de.jlab.scales.fretboard.PngFretboardRenderer;
-import de.jlab.scales.fretboard.Position;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.Utils;
+import com.ankijazz.fretboard.Fingering;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Marker;
+import com.ankijazz.fretboard.MidiFretboardRenderer;
+import com.ankijazz.fretboard.NPS;
+import com.ankijazz.fretboard.PngFretboardRenderer;
+import com.ankijazz.fretboard.Position;
+import com.ankijazz.fretboard.BoxMarker.BoxPosition;
+import com.ankijazz.fretboard.Fretboard.Box;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public abstract class AbstractFretboardGenerator implements CardGenerator<FretboardDiagramCard> {
   private static final int numberOfCardsPerPosition = 1;

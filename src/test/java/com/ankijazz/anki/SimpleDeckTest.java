@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,6 +9,10 @@ import java.nio.file.Paths;
 import java.util.stream.Collectors;
 
 import org.junit.Test;
+
+import com.ankijazz.anki.Deck;
+import com.ankijazz.anki.SimpleCard;
+import com.ankijazz.anki.SimpleDeck;
 
 public class SimpleDeckTest {
   

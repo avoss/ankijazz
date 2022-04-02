@@ -1,4 +1,4 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 import java.nio.file.Path;
 import java.util.concurrent.ThreadLocalRandom;

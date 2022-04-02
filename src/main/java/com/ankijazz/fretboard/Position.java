@@ -1,8 +1,8 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import java.util.Collection;
 
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.theory.Scale;
 
 public interface Position {
   /**

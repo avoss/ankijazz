@@ -1,4 +1,4 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import static java.util.stream.Collectors.toList;
 
@@ -8,12 +8,17 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.ChordParser;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleUniverse;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Event;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.midi.song.SongWrapper;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.ChordParser;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleUniverse;
+import com.ankijazz.theory.Scales;
 
 public class MidiTestUtils {
 

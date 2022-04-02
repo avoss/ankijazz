@@ -1,6 +1,6 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
-import static de.jlab.scales.Utils.linux;
+import static com.ankijazz.Utils.linux;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -10,9 +10,9 @@ import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.nio.file.Path;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.sheet.IdSong.IdBar;
+import com.ankijazz.Utils;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.sheet.IdSong.IdBar;
 
 public class PngImageRenderer extends Layout {
   private final String copyright = "(C) 2021 www.AnkiJazz.com - Anki Shared Deck License";

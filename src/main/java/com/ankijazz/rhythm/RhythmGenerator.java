@@ -1,19 +1,19 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
-import static de.jlab.scales.Utils.repeat;
-import static de.jlab.scales.rhythm.BasicRhythm.Type.BASIC;
-import static de.jlab.scales.rhythm.BasicRhythm.Type.SYNCOPATED;
-import static de.jlab.scales.rhythm.BasicRhythm.Type.TIED;
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.b3;
-import static de.jlab.scales.rhythm.Event.bt;
-import static de.jlab.scales.rhythm.Event.r1;
-import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Event.r3;
-import static de.jlab.scales.rhythm.Event.r4;
-import static de.jlab.scales.rhythm.Event.rt;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.Utils.repeat;
+import static com.ankijazz.rhythm.BasicRhythm.Type.BASIC;
+import static com.ankijazz.rhythm.BasicRhythm.Type.SYNCOPATED;
+import static com.ankijazz.rhythm.BasicRhythm.Type.TIED;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.b3;
+import static com.ankijazz.rhythm.Event.bt;
+import static com.ankijazz.rhythm.Event.r1;
+import static com.ankijazz.rhythm.Event.r2;
+import static com.ankijazz.rhythm.Event.r3;
+import static com.ankijazz.rhythm.Event.r4;
+import static com.ankijazz.rhythm.Event.rt;
+import static com.ankijazz.rhythm.Quarter.q;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
@@ -23,9 +23,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.function.Function;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
-import de.jlab.scales.Utils.LoopIteratorFactory;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
+import com.ankijazz.Utils.LoopIteratorFactory;
 
 // FIXME RhythmGenerator has no tests
 public class RhythmGenerator {

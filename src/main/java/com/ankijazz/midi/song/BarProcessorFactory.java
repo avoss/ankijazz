@@ -1,14 +1,14 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 
-import de.jlab.scales.midi.CompositePart;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.midi.CompositePart;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.theory.Scale;
 
 public class BarProcessorFactory implements EventProcessor {
   

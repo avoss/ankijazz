@@ -1,12 +1,12 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.Parts.note;
+import static com.ankijazz.midi.Parts.note;
 
 import java.util.function.BiFunction;
 
-import de.jlab.scales.midi.Drum;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.midi.Drum;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.Scale;
 
 public class PercussiveInstrument extends AbstractInstrument<PercussiveInstrument> {
 

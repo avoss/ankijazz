@@ -1,9 +1,9 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
-import de.jlab.scales.midi.Sequential;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.midi.Sequential;
 
 public abstract class TonalInstrument<T extends AbstractInstrument<T>> extends AbstractInstrument<T> {
 

@@ -1,12 +1,16 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.song.MidiTestUtils.event;
+import static com.ankijazz.midi.song.MidiTestUtils.event;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
+
+import com.ankijazz.midi.song.Event;
+import com.ankijazz.midi.song.EventProcessor;
+import com.ankijazz.midi.song.RhythmParser;
 
 public class RhythmParserTest {
 

@@ -1,11 +1,11 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
 
 public class RhythmParser {
   

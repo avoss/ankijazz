@@ -1,4 +1,4 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import java.util.List;
 import java.util.stream.Collectors;

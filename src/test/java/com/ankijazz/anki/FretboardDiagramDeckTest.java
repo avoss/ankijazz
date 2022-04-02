@@ -1,8 +1,8 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.fretboard.Fretboard.ROOTS_ONLY;
-import static de.jlab.scales.fretboard.StandardTuning.HIGH_E_STRING;
-import static de.jlab.scales.fretboard.StandardTuning.LOW_E_STRING;
+import static com.ankijazz.fretboard.Fretboard.ROOTS_ONLY;
+import static com.ankijazz.fretboard.StandardTuning.HIGH_E_STRING;
+import static com.ankijazz.fretboard.StandardTuning.LOW_E_STRING;
 import static java.util.stream.Collectors.toSet;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -14,15 +14,25 @@ import java.util.function.Supplier;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.Fretboard.MarkedFret;
-import de.jlab.scales.midi.MockMidiOut;
-import de.jlab.scales.midi.NoteOn;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.TestUtils;
+import com.ankijazz.anki.AbstractFretboardGenerator;
+import com.ankijazz.anki.Caged1ScalesFretboards;
+import com.ankijazz.anki.Caged3ModesFretboards;
+import com.ankijazz.anki.Caged5ArpeggiosFretboards;
+import com.ankijazz.anki.CardGenerator;
+import com.ankijazz.anki.FretboardDiagramCard;
+import com.ankijazz.anki.FretboardDiagramDeck;
+import com.ankijazz.anki.Pentatonic1ScalesFretboards;
+import com.ankijazz.anki.Pentatonic3ChordsFretboards;
+import com.ankijazz.anki.Pentatonic5ModesFretboards;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Fretboard.MarkedFret;
+import com.ankijazz.midi.MockMidiOut;
+import com.ankijazz.midi.NoteOn;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public class FretboardDiagramDeckTest {
 

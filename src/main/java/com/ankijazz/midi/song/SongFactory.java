@@ -1,8 +1,8 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
-import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
-import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
+import static com.ankijazz.midi.song.SongFactory.Feature.AllKeys;
+import static com.ankijazz.midi.song.SongFactory.Feature.EachKey;
+import static com.ankijazz.midi.song.SongFactory.Feature.SomeKeys;
 import static java.lang.String.format;
 import static java.util.Collections.singletonList;
 
@@ -18,12 +18,13 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.midi.song.ProgressionFactory.Progression;
-import de.jlab.scales.midi.song.ProgressionFactory.ProgressionSet;
-import de.jlab.scales.theory.BuiltinScaleType;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.Utils.LoopIteratorFactory;
+import com.ankijazz.midi.song.ProgressionFactory.Progression;
+import com.ankijazz.midi.song.ProgressionFactory.ProgressionSet;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+
 import lombok.Data;
 
 public class SongFactory  {

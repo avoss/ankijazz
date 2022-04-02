@@ -1,4 +1,4 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
 import java.util.List;
 

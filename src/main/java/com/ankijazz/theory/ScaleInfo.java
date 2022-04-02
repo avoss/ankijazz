@@ -1,4 +1,4 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 import java.util.ArrayList;
 import java.util.List;
 

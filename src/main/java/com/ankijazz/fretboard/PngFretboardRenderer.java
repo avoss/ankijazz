@@ -1,6 +1,6 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.Utils.linux;
+import static com.ankijazz.Utils.linux;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -10,8 +10,8 @@ import java.awt.RenderingHints;
 import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
 
 public class PngFretboardRenderer implements FretboardRenderer<BufferedImage> {
 //  private final String copyright = "(C) 2021 www.AnkiJazz.com - all rights reserved";

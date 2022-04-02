@@ -1,6 +1,6 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Note.C;
+import static com.ankijazz.theory.Note.C;
 
 import java.util.Map;
 import java.util.NoSuchElementException;

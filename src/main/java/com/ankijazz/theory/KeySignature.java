@@ -1,4 +1,4 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
 import static java.util.stream.Collectors.joining;
 
@@ -6,7 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import de.jlab.scales.theory.Analyzer.Result;
+import com.ankijazz.theory.Analyzer.Result;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

@@ -1,24 +1,26 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.allKeys;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Scales.C7;
+import static com.ankijazz.theory.Scales.CDiminishedHalfWhole;
+import static com.ankijazz.theory.Scales.CHarmonicMinor;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.allKeys;
 import static org.junit.Assert.assertEquals;
 
 import java.util.Collection;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.IntervalAnalyzer.Result;
+import com.ankijazz.theory.IntervalAnalyzer;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.IntervalAnalyzer.Result;
 
 public class IntervalAnalyzerTest {
 

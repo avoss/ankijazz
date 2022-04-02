@@ -1,11 +1,12 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.midi.song.IntervalToChordIndexMapper;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scales;
 
 public class IntervalToChordIndexMapperTest {
 

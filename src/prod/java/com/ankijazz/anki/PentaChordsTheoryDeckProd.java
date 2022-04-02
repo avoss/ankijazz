@@ -1,8 +1,8 @@
-package ankijazzde.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.PentaChordsTheoryDeck;
+import com.ankijazz.anki.PentaChordsTheoryDeck;
 
 public class PentaChordsTheoryDeckProd {
 

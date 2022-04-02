@@ -1,6 +1,6 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMajor;
 import static java.util.stream.Collectors.toList;
 
 import java.util.Arrays;

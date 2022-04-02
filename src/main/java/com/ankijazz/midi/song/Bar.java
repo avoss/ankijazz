@@ -1,11 +1,12 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import java.util.List;
 import java.util.Optional;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
-import de.jlab.scales.midi.Part;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
+import com.ankijazz.midi.Part;
+
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 

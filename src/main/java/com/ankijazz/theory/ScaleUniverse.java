@@ -1,8 +1,8 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.Utils.isSymmetricalDuplicate;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
+import static com.ankijazz.Utils.isSymmetricalDuplicate;
+import static com.ankijazz.theory.BuiltinScaleType.Minor6Pentatonic;
+import static com.ankijazz.theory.BuiltinScaleType.Minor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 
 import java.text.MessageFormat;

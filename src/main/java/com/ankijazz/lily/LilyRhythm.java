@@ -1,10 +1,10 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
 import static java.util.stream.Collectors.joining;
 
-import de.jlab.scales.rhythm.AbstractRhythm;
-import de.jlab.scales.rhythm.Event;
-import de.jlab.scales.rhythm.Quarter;
+import com.ankijazz.rhythm.AbstractRhythm;
+import com.ankijazz.rhythm.Event;
+import com.ankijazz.rhythm.Quarter;
 
 public class LilyRhythm {
 

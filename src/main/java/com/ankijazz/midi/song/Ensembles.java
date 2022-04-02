@@ -1,8 +1,8 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import de.jlab.scales.midi.Drum;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
+import com.ankijazz.midi.Drum;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
 
 /**
  * An Ensemble generates Midi from a {@link Song}.

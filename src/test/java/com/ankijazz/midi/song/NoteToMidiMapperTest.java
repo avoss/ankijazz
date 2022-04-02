@@ -1,15 +1,17 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.F;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.ankijazz.midi.song.NoteToMidiMapper;
 
 public class NoteToMidiMapperTest {
   

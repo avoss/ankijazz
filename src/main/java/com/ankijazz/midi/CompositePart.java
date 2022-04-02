@@ -1,4 +1,4 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 import java.util.ArrayList;
 import java.util.List;

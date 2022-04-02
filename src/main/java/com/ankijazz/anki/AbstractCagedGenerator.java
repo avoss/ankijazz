@@ -1,12 +1,12 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
+import static com.ankijazz.theory.ScaleUniverse.CHORDS;
 
 import java.util.Collection;
 
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public abstract class AbstractCagedGenerator extends AbstractFretboardGenerator {
 

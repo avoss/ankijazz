@@ -1,7 +1,7 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
-import static de.jlab.scales.anki.AnkiUtils.ankiPng;
+import static com.ankijazz.anki.AnkiUtils.ankiMp3;
+import static com.ankijazz.anki.AnkiUtils.ankiPng;
 import static java.util.stream.Collectors.joining;
 
 import java.awt.image.BufferedImage;
@@ -11,11 +11,11 @@ import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.difficulty.Difficulties;
-import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.Utils;
+import com.ankijazz.difficulty.Difficulties;
+import com.ankijazz.difficulty.DifficultyModel;
+import com.ankijazz.midi.Part;
+import com.ankijazz.theory.ScaleInfo;
 
 public class FretboardDiagramCard implements Card {
 

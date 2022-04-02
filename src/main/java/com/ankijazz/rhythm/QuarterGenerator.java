@@ -1,4 +1,4 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
 import static java.util.Arrays.asList;
 

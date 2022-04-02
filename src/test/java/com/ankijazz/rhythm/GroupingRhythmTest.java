@@ -1,15 +1,18 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.b3;
-import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.b3;
+import static com.ankijazz.rhythm.Event.r2;
+import static com.ankijazz.rhythm.Quarter.q;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
 
 import org.junit.Test;
+
+import com.ankijazz.rhythm.GroupingRhythm;
+import com.ankijazz.rhythm.Quarter;
 
 public class GroupingRhythmTest {
 

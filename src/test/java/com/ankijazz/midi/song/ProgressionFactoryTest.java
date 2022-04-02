@@ -1,4 +1,4 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -6,12 +6,13 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.Utils;
-import de.jlab.scales.midi.song.ProgressionFactory.ChordProgressionSet;
-import de.jlab.scales.midi.song.ProgressionFactory.Progression;
-import de.jlab.scales.midi.song.ProgressionFactory.ProgressionSet;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.TestUtils;
+import com.ankijazz.Utils;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.midi.song.ProgressionFactory.ChordProgressionSet;
+import com.ankijazz.midi.song.ProgressionFactory.Progression;
+import com.ankijazz.midi.song.ProgressionFactory.ProgressionSet;
+import com.ankijazz.theory.Note;
 
 public class ProgressionFactoryTest {
 

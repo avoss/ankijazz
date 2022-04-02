@@ -1,16 +1,16 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.lily.Direction.ASCENDING;
+import static com.ankijazz.lily.Direction.ASCENDING;
 
-import de.jlab.scales.difficulty.Difficulties;
-import de.jlab.scales.difficulty.WithDifficulty;
-import de.jlab.scales.lily.Clef;
-import de.jlab.scales.lily.Direction;
-import de.jlab.scales.lily.LilyScale;
-import de.jlab.scales.theory.Accidental;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.difficulty.Difficulties;
+import com.ankijazz.difficulty.WithDifficulty;
+import com.ankijazz.lily.Clef;
+import com.ankijazz.lily.Direction;
+import com.ankijazz.lily.LilyScale;
+import com.ankijazz.theory.Accidental;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.ScaleInfo;
 
 public class ScaleModel implements WithDifficulty {
   private final ScaleInfo modeInfo;

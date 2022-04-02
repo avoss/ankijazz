@@ -1,21 +1,21 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat9;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7sharp5;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
-import static de.jlab.scales.theory.BuiltinChordType.Major6;
-import static de.jlab.scales.theory.BuiltinChordType.Major7;
-import static de.jlab.scales.theory.BuiltinChordType.Minor6;
-import static de.jlab.scales.theory.BuiltinChordType.Minor7;
-import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7flat9;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7sharp5;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7sus4;
+import static com.ankijazz.theory.BuiltinChordType.Major6;
+import static com.ankijazz.theory.BuiltinChordType.Major7;
+import static com.ankijazz.theory.BuiltinChordType.Minor6;
+import static com.ankijazz.theory.BuiltinChordType.Minor7;
+import static com.ankijazz.theory.BuiltinChordType.Minor7b5;
 
 import java.util.List;
 
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.DegreeParser.Degrees;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.DegreeParser.Degrees;
 
 public class ChordNoteTrainerDeck extends AbstractDeck<ChordNoteTrainerCard> {
 

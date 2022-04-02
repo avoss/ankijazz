@@ -1,11 +1,11 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.CHORD;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_BAR;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_CHOICE;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.EOF;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_BAR;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_CHOICE;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.CHORD;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.END_BAR;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.END_CHOICE;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.EOF;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.START_BAR;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.START_CHOICE;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.theory.ChordParser;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.Utils.LoopIteratorFactory;
+import com.ankijazz.theory.ChordParser;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Scale;
 /*
  * 
  * maj triads: "A D G C"

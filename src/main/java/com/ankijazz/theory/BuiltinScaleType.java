@@ -1,18 +1,18 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.CDiminishedHalfWhole;
-import static de.jlab.scales.theory.Scales.CDominant7Pentatonic;
-import static de.jlab.scales.theory.Scales.CHarmonicMajor;
-import static de.jlab.scales.theory.Scales.CHarmonicMinor;
-import static de.jlab.scales.theory.Scales.CMajor;
-import static de.jlab.scales.theory.Scales.CMelodicMinor;
-import static de.jlab.scales.theory.Scales.CMinor6Pentatonic;
-import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
-import static de.jlab.scales.theory.Scales.CWholeTone;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Scales.CDiminishedHalfWhole;
+import static com.ankijazz.theory.Scales.CDominant7Pentatonic;
+import static com.ankijazz.theory.Scales.CHarmonicMajor;
+import static com.ankijazz.theory.Scales.CHarmonicMinor;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.CMinor6Pentatonic;
+import static com.ankijazz.theory.Scales.CMinor7Pentatonic;
+import static com.ankijazz.theory.Scales.CWholeTone;
 
 import java.util.LinkedHashSet;
 import java.util.Set;

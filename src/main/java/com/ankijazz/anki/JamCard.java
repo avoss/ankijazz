@@ -1,7 +1,7 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
-import static de.jlab.scales.anki.AnkiUtils.ankiPng;
+import static com.ankijazz.anki.AnkiUtils.ankiMp3;
+import static com.ankijazz.anki.AnkiUtils.ankiPng;
 import static java.util.stream.Collectors.joining;
 
 import java.nio.file.Path;
@@ -10,22 +10,21 @@ import java.util.Map;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
 
+import com.ankijazz.Utils;
+import com.ankijazz.difficulty.Difficulties;
+import com.ankijazz.difficulty.DifficultyModel;
+import com.ankijazz.midi.MidiFile;
+import com.ankijazz.midi.MidiOut;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.TransposingMidiOut;
+import com.ankijazz.midi.song.Ensemble;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.midi.song.SongWrapper;
+import com.ankijazz.sheet.PngImageRenderer;
+import com.ankijazz.sheet.RenderContext;
+import com.ankijazz.theory.Note;
 import com.google.common.base.Charsets;
 import com.google.common.base.Optional;
-
-import de.jlab.scales.Utils;
-import de.jlab.scales.difficulty.Difficulties;
-import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.midi.MidiFile;
-import de.jlab.scales.midi.MidiOut;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.TransposingMidiOut;
-import de.jlab.scales.midi.song.Ensemble;
-import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.midi.song.SongWrapper;
-import de.jlab.scales.sheet.PngImageRenderer;
-import de.jlab.scales.sheet.RenderContext;
-import de.jlab.scales.theory.Note;
 
 public class JamCard implements Card {
 

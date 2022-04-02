@@ -1,14 +1,14 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.G;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.G;
 
 import java.util.List;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.Note;
 
 public class StandardTuning implements Tuning {
 

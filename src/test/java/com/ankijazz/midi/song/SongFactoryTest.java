@@ -1,11 +1,11 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.TestUtils.assertFileContentMatches;
-import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
-import static de.jlab.scales.midi.song.SongFactory.Feature.EachKey;
-import static de.jlab.scales.midi.song.SongFactory.Feature.SomeKeys;
-import static de.jlab.scales.midi.song.SongFactory.Feature.Test;
-import static de.jlab.scales.midi.song.SongFactory.Feature.Workouts;
+import static com.ankijazz.TestUtils.assertFileContentMatches;
+import static com.ankijazz.midi.song.SongFactory.Feature.AllKeys;
+import static com.ankijazz.midi.song.SongFactory.Feature.EachKey;
+import static com.ankijazz.midi.song.SongFactory.Feature.SomeKeys;
+import static com.ankijazz.midi.song.SongFactory.Feature.Test;
+import static com.ankijazz.midi.song.SongFactory.Feature.Workouts;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -17,11 +17,15 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.midi.song.SongFactory.Feature;
-import de.jlab.scales.midi.song.SongFactory.KeyFactory;
-import de.jlab.scales.sheet.RenderContext;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.LoopIteratorFactory;
+import com.ankijazz.midi.song.ProgressionFactory;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.midi.song.SongFactory;
+import com.ankijazz.midi.song.SongWrapper;
+import com.ankijazz.midi.song.SongFactory.Feature;
+import com.ankijazz.midi.song.SongFactory.KeyFactory;
+import com.ankijazz.sheet.RenderContext;
 
 public class SongFactoryTest {
   

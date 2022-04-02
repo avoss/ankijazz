@@ -1,17 +1,17 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
-import static de.jlab.scales.anki.AnkiUtils.ankiPng;
+import static com.ankijazz.anki.AnkiUtils.ankiMp3;
+import static com.ankijazz.anki.AnkiUtils.ankiPng;
 import static java.util.stream.Collectors.joining;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Stream;
 
-import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.lily.LilyMetronome.Tempo;
-import de.jlab.scales.lily.LilyRhythm;
-import de.jlab.scales.rhythm.AbstractRhythm;
+import com.ankijazz.difficulty.DifficultyModel;
+import com.ankijazz.lily.LilyRhythm;
+import com.ankijazz.lily.LilyMetronome.Tempo;
+import com.ankijazz.rhythm.AbstractRhythm;
 
 public class RhythmCard extends LilyCard {
   

@@ -1,4 +1,4 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toCollection;

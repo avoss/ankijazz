@@ -1,4 +1,4 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
 
 abstract class Layout {

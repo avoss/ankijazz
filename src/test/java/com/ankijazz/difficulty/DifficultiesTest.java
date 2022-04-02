@@ -1,17 +1,17 @@
-package de.jlab.scales.difficulty;
+package com.ankijazz.difficulty;
 
-import static de.jlab.scales.difficulty.Difficulties.getChordDifficulty;
-import static de.jlab.scales.difficulty.Difficulties.getChordTypeDifficulty;
-import static de.jlab.scales.difficulty.Difficulties.getSongDifficulty;
-import static de.jlab.scales.midi.song.MidiTestUtils.song;
-import static de.jlab.scales.theory.Scales.Cmaj7;
-import static de.jlab.scales.theory.Scales.CmajTriad;
+import static com.ankijazz.difficulty.Difficulties.getChordDifficulty;
+import static com.ankijazz.difficulty.Difficulties.getChordTypeDifficulty;
+import static com.ankijazz.difficulty.Difficulties.getSongDifficulty;
+import static com.ankijazz.midi.song.MidiTestUtils.song;
+import static com.ankijazz.theory.Scales.Cmaj7;
+import static com.ankijazz.theory.Scales.CmajTriad;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.Note;
 
 public class DifficultiesTest {
 

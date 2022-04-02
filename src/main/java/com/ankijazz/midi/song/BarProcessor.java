@@ -1,9 +1,9 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import java.util.List;
 import java.util.function.BiConsumer;
 
-import de.jlab.scales.midi.CompositePart;
+import com.ankijazz.midi.CompositePart;
 
 public class BarProcessor implements BiConsumer<CompositePart, Bar> {
   private final List<BiConsumer<CompositePart, Bar>> consumers;

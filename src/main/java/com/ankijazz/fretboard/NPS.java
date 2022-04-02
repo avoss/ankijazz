@@ -1,11 +1,11 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor6Pentatonic;
-import static de.jlab.scales.theory.BuiltinScaleType.Minor7Pentatonic;
+import static com.ankijazz.fretboard.Tunings.STANDARD_TUNING;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Major;
+import static com.ankijazz.theory.BuiltinScaleType.MelodicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Minor6Pentatonic;
+import static com.ankijazz.theory.BuiltinScaleType.Minor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 
 import java.util.ArrayList;
@@ -21,11 +21,11 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleType;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.Utils;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleType;
+import com.ankijazz.theory.Scales;
 
 public class NPS {
   private static final List<Integer> CAGED = List.of(3, 3, 3, 3, 2);

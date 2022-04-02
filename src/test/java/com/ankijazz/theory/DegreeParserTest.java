@@ -1,11 +1,11 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
-import static de.jlab.scales.theory.BuiltinChordType.Diminished7;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7flat13;
-import static de.jlab.scales.theory.BuiltinChordType.Dominant7sus4;
-import static de.jlab.scales.theory.BuiltinChordType.Minor7b5;
-import static de.jlab.scales.theory.Scales.CMajor;
+import static com.ankijazz.theory.BuiltinChordType.AugmentedTriad;
+import static com.ankijazz.theory.BuiltinChordType.Diminished7;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7flat13;
+import static com.ankijazz.theory.BuiltinChordType.Dominant7sus4;
+import static com.ankijazz.theory.BuiltinChordType.Minor7b5;
+import static com.ankijazz.theory.Scales.CMajor;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -14,8 +14,16 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import de.jlab.scales.theory.DegreeParser.Degree;
-import de.jlab.scales.theory.DegreeParser.Degrees;
+import com.ankijazz.theory.Accidental;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.DegreeParser;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.Scales;
+import com.ankijazz.theory.DegreeParser.Degree;
+import com.ankijazz.theory.DegreeParser.Degrees;
 
 public class DegreeParserTest {
   DegreeParser parser = new DegreeParser();

@@ -1,14 +1,15 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
+import com.ankijazz.TestUtils;
+import com.ankijazz.anki.ChordScaleAudio;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleUniverse;
 
 public class ChordScaleAudioTest {
 

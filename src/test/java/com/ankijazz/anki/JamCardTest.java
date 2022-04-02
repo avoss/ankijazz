@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -7,10 +7,12 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.song.Ensembles;
-import de.jlab.scales.midi.song.MidiTestUtils;
-import de.jlab.scales.sheet.RenderContext;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.anki.FretboardPosition;
+import com.ankijazz.anki.JamCard;
+import com.ankijazz.midi.song.Ensembles;
+import com.ankijazz.midi.song.MidiTestUtils;
+import com.ankijazz.sheet.RenderContext;
+import com.ankijazz.theory.Note;
 
 public class JamCardTest {
 

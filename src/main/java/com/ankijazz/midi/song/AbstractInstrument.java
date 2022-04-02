@@ -1,15 +1,16 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.Utils.loopIterator;
+import static com.ankijazz.Utils.loopIterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.BiFunction;
 
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Sequential;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Sequential;
+import com.ankijazz.theory.Scale;
+
 import lombok.Getter;
 
 @Getter

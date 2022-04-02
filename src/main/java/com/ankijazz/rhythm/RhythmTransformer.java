@@ -1,4 +1,4 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
 import static java.util.stream.Collectors.toList;
 
@@ -9,9 +9,8 @@ import java.util.List;
 
 import org.apache.commons.math3.fraction.Fraction;
 
+import com.ankijazz.rhythm.RhythmTransformer.Tick.TickBuilder;
 import com.google.common.collect.Lists;
-
-import de.jlab.scales.rhythm.RhythmTransformer.Tick.TickBuilder;
 
 public class RhythmTransformer {
   

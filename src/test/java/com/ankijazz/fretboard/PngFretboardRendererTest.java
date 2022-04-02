@@ -1,17 +1,22 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.fretboard.BoxMarker.BoxPosition.RIGHT;
-import static de.jlab.scales.fretboard.StandardTuning.HIGH_E_STRING;
+import static com.ankijazz.fretboard.BoxMarker.BoxPosition.RIGHT;
+import static com.ankijazz.fretboard.StandardTuning.HIGH_E_STRING;
 
 import java.awt.image.BufferedImage;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.PentatonicChooser;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.TestUtils;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Marker;
+import com.ankijazz.fretboard.NPS;
+import com.ankijazz.fretboard.PngFretboardRenderer;
+import com.ankijazz.fretboard.Position;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.PentatonicChooser;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.Scales;
 
 public class PngFretboardRendererTest {
 

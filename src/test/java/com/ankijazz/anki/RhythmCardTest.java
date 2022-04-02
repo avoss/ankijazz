@@ -1,21 +1,23 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.TestUtils.assertFileContentMatches;
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.TestUtils.assertFileContentMatches;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.r2;
+import static com.ankijazz.rhythm.Quarter.q;
 
 import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.lily.LilyMetronome;
-import de.jlab.scales.lily.LilyMetronome.Tempo;
-import de.jlab.scales.lily.LilyRhythm;
-import de.jlab.scales.rhythm.AbstractRhythm;
-import de.jlab.scales.rhythm.Quarter;
-import de.jlab.scales.rhythm.StandardRhythm;
+import com.ankijazz.anki.Card;
+import com.ankijazz.anki.RhythmCard;
+import com.ankijazz.lily.LilyMetronome;
+import com.ankijazz.lily.LilyRhythm;
+import com.ankijazz.lily.LilyMetronome.Tempo;
+import com.ankijazz.rhythm.AbstractRhythm;
+import com.ankijazz.rhythm.Quarter;
+import com.ankijazz.rhythm.StandardRhythm;
 
 public class RhythmCardTest {
 

@@ -1,8 +1,8 @@
-package de.jlab.scales.midi;
+package com.ankijazz.midi;
 
 import java.nio.file.Path;
 
-import de.jlab.scales.theory.Note;
+import com.ankijazz.theory.Note;
 
 public class TransposingMidiOut implements MidiOut {
   private final MidiOut delegate;

@@ -1,6 +1,6 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.theory.Scale;
 
 public interface ChordGenerator {
   int[] midiChord(Scale chord);

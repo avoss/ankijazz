@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.Set;
 import java.util.function.Supplier;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.LoopIteratorFactory;
-import de.jlab.scales.midi.song.Ensemble;
-import de.jlab.scales.midi.song.ProgressionFactory;
-import de.jlab.scales.midi.song.SongFactory;
-import de.jlab.scales.midi.song.SongFactory.Feature;
-import de.jlab.scales.midi.song.SongWrapper;
-import de.jlab.scales.sheet.RenderContext;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.LoopIteratorFactory;
+import com.ankijazz.midi.song.Ensemble;
+import com.ankijazz.midi.song.ProgressionFactory;
+import com.ankijazz.midi.song.SongFactory;
+import com.ankijazz.midi.song.SongWrapper;
+import com.ankijazz.midi.song.SongFactory.Feature;
+import com.ankijazz.sheet.RenderContext;
+import com.ankijazz.theory.Note;
 
 public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard> {
 

@@ -1,17 +1,17 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import static java.lang.String.format;
 
 import java.nio.file.Path;
 import java.util.List;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.Utils.Interpolator;
-import de.jlab.scales.lily.LilyMetronome;
-import de.jlab.scales.lily.LilyMetronome.Tempo;
-import de.jlab.scales.lily.LilyRhythm;
-import de.jlab.scales.rhythm.AbstractRhythm;
-import de.jlab.scales.rhythm.RhythmGenerator;
+import com.ankijazz.Utils;
+import com.ankijazz.Utils.Interpolator;
+import com.ankijazz.lily.LilyMetronome;
+import com.ankijazz.lily.LilyRhythm;
+import com.ankijazz.lily.LilyMetronome.Tempo;
+import com.ankijazz.rhythm.AbstractRhythm;
+import com.ankijazz.rhythm.RhythmGenerator;
 
 public class RhythmDeck extends AbstractDeck<RhythmCard> {
 

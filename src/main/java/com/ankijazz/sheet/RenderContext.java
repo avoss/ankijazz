@@ -1,4 +1,4 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
 @lombok.Data @lombok.Builder(toBuilder = true)
 public class RenderContext {

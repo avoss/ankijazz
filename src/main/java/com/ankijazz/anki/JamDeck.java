@@ -1,4 +1,4 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 public class JamDeck extends AbstractDeck<JamCard> {
   public JamDeck(CardGenerator<JamCard> generator) {

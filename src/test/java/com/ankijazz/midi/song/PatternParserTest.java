@@ -1,8 +1,10 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import com.ankijazz.midi.song.PatternParser;
 
 public class PatternParserTest {
 

@@ -1,13 +1,13 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.b4;
-import static de.jlab.scales.rhythm.Event.bt;
-import static de.jlab.scales.rhythm.Event.r1;
-import static de.jlab.scales.rhythm.Event.r3;
-import static de.jlab.scales.rhythm.Event.rt;
-import static de.jlab.scales.rhythm.Quarter.q;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.b4;
+import static com.ankijazz.rhythm.Event.bt;
+import static com.ankijazz.rhythm.Event.r1;
+import static com.ankijazz.rhythm.Event.r3;
+import static com.ankijazz.rhythm.Event.rt;
+import static com.ankijazz.rhythm.Quarter.q;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -17,6 +17,8 @@ import static org.junit.Assert.assertTrue;
 
 import org.apache.commons.math3.fraction.Fraction;
 import org.junit.Test;
+
+import com.ankijazz.rhythm.Quarter;
 
 public class QuarterTest {
 

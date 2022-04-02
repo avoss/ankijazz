@@ -1,6 +1,6 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
-import static de.jlab.scales.lily.LilyUtil.toLilyNote;
+import static com.ankijazz.lily.LilyUtil.toLilyNote;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
@@ -8,11 +8,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleUniverse;
+
 import lombok.Data;
 
 public class ChordToLilyMapper {

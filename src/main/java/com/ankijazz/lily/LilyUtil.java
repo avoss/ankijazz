@@ -1,12 +1,12 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.UncheckedIOException;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.Utils;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
 
 public abstract class LilyUtil {
   

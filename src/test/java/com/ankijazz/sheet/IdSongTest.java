@@ -1,15 +1,16 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.song.Bar;
-import de.jlab.scales.midi.song.Chord;
-import de.jlab.scales.midi.song.Song;
-import de.jlab.scales.sheet.IdSong.IdBar;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.sheet.IdSong;
+import com.ankijazz.sheet.IdSong.IdBar;
+import com.ankijazz.theory.Scales;
 
 public class IdSongTest {
 

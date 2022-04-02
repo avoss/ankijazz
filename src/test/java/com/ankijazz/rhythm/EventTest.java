@@ -1,15 +1,15 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
-import static de.jlab.scales.rhythm.Event.b1;
-import static de.jlab.scales.rhythm.Event.b2;
-import static de.jlab.scales.rhythm.Event.b3;
-import static de.jlab.scales.rhythm.Event.b4;
-import static de.jlab.scales.rhythm.Event.r1;
-import static de.jlab.scales.rhythm.Event.r2;
-import static de.jlab.scales.rhythm.Event.r3;
-import static de.jlab.scales.rhythm.Event.r4;
-import static de.jlab.scales.rhythm.Event.r6;
-import static de.jlab.scales.rhythm.Event.r8;
+import static com.ankijazz.rhythm.Event.b1;
+import static com.ankijazz.rhythm.Event.b2;
+import static com.ankijazz.rhythm.Event.b3;
+import static com.ankijazz.rhythm.Event.b4;
+import static com.ankijazz.rhythm.Event.r1;
+import static com.ankijazz.rhythm.Event.r2;
+import static com.ankijazz.rhythm.Event.r3;
+import static com.ankijazz.rhythm.Event.r4;
+import static com.ankijazz.rhythm.Event.r6;
+import static com.ankijazz.rhythm.Event.r8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -17,6 +17,8 @@ import static org.junit.Assert.assertTrue;
 import java.util.Arrays;
 
 import org.junit.Test;
+
+import com.ankijazz.rhythm.Event;
 
 public class EventTest {
 

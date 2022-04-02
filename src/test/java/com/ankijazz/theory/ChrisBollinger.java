@@ -1,7 +1,7 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.TestUtils.assertFileContentMatches;
-import static de.jlab.scales.theory.Scales.allKeys;
+import static com.ankijazz.TestUtils.assertFileContentMatches;
+import static com.ankijazz.theory.Scales.allKeys;
 import static java.lang.String.format;
 
 import java.util.ArrayList;
@@ -9,7 +9,11 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
+import com.ankijazz.TestUtils;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleUniverse;
+import com.ankijazz.theory.Scales;
 
 public class ChrisBollinger {
 

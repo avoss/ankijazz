@@ -1,8 +1,8 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.theory.ScaleUniverse.CHORDS;
-import static de.jlab.scales.theory.ScaleUniverse.PENTAS;
-import static de.jlab.scales.theory.ScaleUniverse.SCALES;
+import static com.ankijazz.theory.ScaleUniverse.CHORDS;
+import static com.ankijazz.theory.ScaleUniverse.PENTAS;
+import static com.ankijazz.theory.ScaleUniverse.SCALES;
 import static java.lang.String.format;
 
 import java.util.ArrayList;
@@ -12,10 +12,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import de.jlab.scales.difficulty.Difficulties;
-import de.jlab.scales.theory.Accidental;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.difficulty.Difficulties;
+import com.ankijazz.theory.Accidental;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
 
 public class PentaChordsTheoryDeck extends AbstractDeck<SimpleCard> {
 

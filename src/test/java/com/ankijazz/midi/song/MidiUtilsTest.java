@@ -1,13 +1,13 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.midi.MidiUtils.midiPitchToNote;
-import static de.jlab.scales.theory.Note.C;
+import static com.ankijazz.midi.MidiUtils.midiPitchToNote;
+import static com.ankijazz.theory.Note.C;
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.MidiUtils;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.midi.MidiUtils;
+import com.ankijazz.theory.Note;
 
 public class MidiUtilsTest {
 

@@ -1,19 +1,19 @@
-package ankijazzde.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.FretboardJamCardGenerator.CAGED_MODES;
-import static de.jlab.scales.anki.FretboardJamCardGenerator.CAGED_SCALES;
-import static de.jlab.scales.anki.FretboardJamCardGenerator.PENTATONIC_CHORDS;
-import static de.jlab.scales.anki.FretboardJamCardGenerator.PENTATONIC_SCALES;
+import static com.ankijazz.anki.FretboardJamCardGenerator.CAGED_MODES;
+import static com.ankijazz.anki.FretboardJamCardGenerator.CAGED_SCALES;
+import static com.ankijazz.anki.FretboardJamCardGenerator.PENTATONIC_CHORDS;
+import static com.ankijazz.anki.FretboardJamCardGenerator.PENTATONIC_SCALES;
 
 import org.junit.Ignore;
 import org.junit.Test;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.anki.Deck;
-import de.jlab.scales.anki.FretboardJamCardGenerator;
-import de.jlab.scales.anki.JamCardGenerator;
-import de.jlab.scales.anki.JamDeck;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.Utils;
+import com.ankijazz.anki.Deck;
+import com.ankijazz.anki.FretboardJamCardGenerator;
+import com.ankijazz.anki.JamCardGenerator;
+import com.ankijazz.anki.JamDeck;
+import com.ankijazz.theory.Note;
 
 public class JamDeckProd {
  

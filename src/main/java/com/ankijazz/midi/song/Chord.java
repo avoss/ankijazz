@@ -1,6 +1,7 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.theory.Scale;
+
 import lombok.Data;
 
 /**

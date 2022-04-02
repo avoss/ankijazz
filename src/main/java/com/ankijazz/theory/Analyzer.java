@@ -1,14 +1,14 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.Note.A;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.CMajor;
+import static com.ankijazz.theory.Accidental.SHARP;
+import static com.ankijazz.theory.Note.A;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Scales.CMajor;
 
 import java.util.Arrays;
 import java.util.HashSet;

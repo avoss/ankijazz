@@ -1,13 +1,13 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.TestUtils.majorKeySignature;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.BOF;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.CHORD;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_BAR;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.END_CHOICE;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.EOF;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_BAR;
-import static de.jlab.scales.midi.song.ProgressionParser.Scanner.Token.START_CHOICE;
+import static com.ankijazz.TestUtils.majorKeySignature;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.BOF;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.CHORD;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.END_BAR;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.END_CHOICE;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.EOF;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.START_BAR;
+import static com.ankijazz.midi.song.ProgressionParser.Scanner.Token.START_CHOICE;
 import static java.util.stream.Collectors.toList;
 import static org.junit.Assert.assertEquals;
 
@@ -15,13 +15,17 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.midi.song.ProgressionParser.ChordFactory;
-import de.jlab.scales.midi.song.ProgressionParser.Scanner;
-import de.jlab.scales.midi.song.ProgressionParser.SimpleChordFactory;
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.Utils;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.ProgressionParser;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.midi.song.ProgressionParser.ChordFactory;
+import com.ankijazz.midi.song.ProgressionParser.Scanner;
+import com.ankijazz.midi.song.ProgressionParser.SimpleChordFactory;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scales;
 
 public class ProgressionParserTest {
 

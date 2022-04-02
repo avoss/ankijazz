@@ -1,7 +1,7 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.fretboard.Tunings.STANDARD_TUNING;
-import static de.jlab.scales.theory.Scales.CMinor7Pentatonic;
+import static com.ankijazz.fretboard.Tunings.STANDARD_TUNING;
+import static com.ankijazz.theory.Scales.CMinor7Pentatonic;
 import static java.util.stream.Collectors.toList;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -13,12 +13,19 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.fretboard.Fretboard.Box;
-import de.jlab.scales.fretboard.Fretboard.MarkedFret;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.TestUtils;
+import com.ankijazz.fretboard.BoxMarker;
+import com.ankijazz.fretboard.Fingering;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Marker;
+import com.ankijazz.fretboard.NPS;
+import com.ankijazz.fretboard.Position;
+import com.ankijazz.fretboard.StringFretboardRenderer;
+import com.ankijazz.fretboard.Fretboard.Box;
+import com.ankijazz.fretboard.Fretboard.MarkedFret;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.Scales;
 
 public class FretboardTest {
 

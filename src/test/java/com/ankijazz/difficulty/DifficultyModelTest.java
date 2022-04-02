@@ -1,4 +1,4 @@
-package de.jlab.scales.difficulty;
+package com.ankijazz.difficulty;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
@@ -7,8 +7,9 @@ import static org.junit.Assert.assertNotEquals;
 import org.assertj.core.data.Offset;
 import org.junit.Test;
 
-import de.jlab.scales.difficulty.DifficultyModel.BooleanTerm;
-import de.jlab.scales.difficulty.DifficultyModel.DoubleTerm;
+import com.ankijazz.difficulty.DifficultyModel;
+import com.ankijazz.difficulty.DifficultyModel.BooleanTerm;
+import com.ankijazz.difficulty.DifficultyModel.DoubleTerm;
 
 public class DifficultyModelTest {
 

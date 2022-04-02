@@ -1,7 +1,7 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.anki.AnkiUtils.ankiMp3;
-import static de.jlab.scales.anki.AnkiUtils.ankiPng;
+import static com.ankijazz.anki.AnkiUtils.ankiMp3;
+import static com.ankijazz.anki.AnkiUtils.ankiPng;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

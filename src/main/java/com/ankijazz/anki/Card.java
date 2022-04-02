@@ -1,8 +1,8 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import java.util.Map;
 
-import de.jlab.scales.difficulty.WithDifficulty;
+import com.ankijazz.difficulty.WithDifficulty;
 
 public interface Card extends WithDifficulty, WithAssets, Comparable<Card> {
   final String CSV_DELIMITER = "\t";

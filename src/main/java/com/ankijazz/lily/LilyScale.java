@@ -1,17 +1,17 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
-import static de.jlab.scales.lily.Direction.ASCENDING;
-import static de.jlab.scales.lily.Direction.DESCENDING;
+import static com.ankijazz.lily.Direction.ASCENDING;
+import static com.ankijazz.lily.Direction.DESCENDING;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.joining;
 
 import java.util.Collections;
 import java.util.List;
 
-import de.jlab.scales.theory.KeySignature;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.theory.KeySignature;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public class LilyScale {
   

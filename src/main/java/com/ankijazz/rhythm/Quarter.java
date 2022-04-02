@@ -1,4 +1,4 @@
-package de.jlab.scales.rhythm;
+package com.ankijazz.rhythm;
 
 import static java.util.Collections.emptyList;
 import static java.util.stream.Collectors.joining;
@@ -10,8 +10,8 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.math3.fraction.Fraction;
 
-import de.jlab.scales.difficulty.DifficultyModel;
-import de.jlab.scales.difficulty.WithDifficulty;
+import com.ankijazz.difficulty.DifficultyModel;
+import com.ankijazz.difficulty.WithDifficulty;
 
 @lombok.EqualsAndHashCode
 public class Quarter implements WithDifficulty {

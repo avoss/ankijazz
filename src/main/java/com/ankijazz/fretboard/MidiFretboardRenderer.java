@@ -1,18 +1,18 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
-import static de.jlab.scales.fretboard.Marker.BACKGROUND;
-import static de.jlab.scales.fretboard.Marker.FOREGROUND;
+import static com.ankijazz.fretboard.Marker.BACKGROUND;
+import static com.ankijazz.fretboard.Marker.FOREGROUND;
 
 import java.util.List;
 
-import de.jlab.scales.midi.MidiUtils;
-import de.jlab.scales.midi.Parallel;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
-import de.jlab.scales.midi.Sequential;
-import de.jlab.scales.midi.song.Drop2ChordGenerator;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.midi.MidiUtils;
+import com.ankijazz.midi.Parallel;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.midi.Sequential;
+import com.ankijazz.midi.song.Drop2ChordGenerator;
+import com.ankijazz.theory.Scale;
 
 @lombok.Getter
 public class MidiFretboardRenderer implements FretboardRenderer<Part> {

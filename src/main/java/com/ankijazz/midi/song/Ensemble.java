@@ -1,19 +1,19 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.theory.Scales.Cmaj7;
+import static com.ankijazz.theory.Scales.Cmaj7;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import de.jlab.scales.midi.Drum;
-import de.jlab.scales.midi.Parallel;
-import de.jlab.scales.midi.Part;
-import de.jlab.scales.midi.Parts;
-import de.jlab.scales.midi.Program;
-import de.jlab.scales.midi.Sequential;
-import de.jlab.scales.midi.Tempo;
-import de.jlab.scales.midi.TimeSignature;
+import com.ankijazz.midi.Drum;
+import com.ankijazz.midi.Parallel;
+import com.ankijazz.midi.Part;
+import com.ankijazz.midi.Parts;
+import com.ankijazz.midi.Program;
+import com.ankijazz.midi.Sequential;
+import com.ankijazz.midi.Tempo;
+import com.ankijazz.midi.TimeSignature;
 
 public class Ensemble {
   

@@ -1,13 +1,18 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
-import de.jlab.scales.theory.ScaleUniverse;
-import de.jlab.scales.theory.Scales;
+import com.ankijazz.TestUtils;
+import com.ankijazz.anki.Card;
+import com.ankijazz.anki.FretboardPosition;
+import com.ankijazz.anki.ModesPracticeCard;
+import com.ankijazz.anki.ModesPracticeGuitarCard;
+import com.ankijazz.anki.ScaleModel;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleUniverse;
+import com.ankijazz.theory.Scales;
 
 public class ModesPracticeCardTest {
 

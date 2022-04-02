@@ -1,18 +1,18 @@
-package de.jlab.scales.midi.song;
+package com.ankijazz.midi.song;
 
-import static de.jlab.scales.Utils.getLast;
-import static de.jlab.scales.theory.Note.B;
-import static de.jlab.scales.theory.Note.Bb;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.D;
-import static de.jlab.scales.theory.Note.Db;
-import static de.jlab.scales.theory.Note.E;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.G;
-import static de.jlab.scales.theory.Scales.C7;
-import static de.jlab.scales.theory.Scales.C9;
-import static de.jlab.scales.theory.Scales.allKeys;
-import static de.jlab.scales.theory.Scales.allModes;
+import static com.ankijazz.Utils.getLast;
+import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.D;
+import static com.ankijazz.theory.Note.Db;
+import static com.ankijazz.theory.Note.E;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.G;
+import static com.ankijazz.theory.Scales.C7;
+import static com.ankijazz.theory.Scales.C9;
+import static com.ankijazz.theory.Scales.allKeys;
+import static com.ankijazz.theory.Scales.allModes;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -22,12 +22,13 @@ import java.util.List;
 
 import org.junit.Test;
 
-import de.jlab.scales.midi.MidiUtils;
-import de.jlab.scales.theory.BuiltinChordType;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleType;
-import de.jlab.scales.theory.Stacker;
+import com.ankijazz.midi.MidiUtils;
+import com.ankijazz.midi.song.Drop2ChordGenerator;
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleType;
+import com.ankijazz.theory.Stacker;
 
 public class Drop2ChordGeneratorTest {
 

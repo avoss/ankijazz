@@ -1,11 +1,11 @@
-package ankijazzde.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.anki.ModesPracticeDeck;
-import de.jlab.scales.anki.ModesPracticeGuitarDeck;
-import de.jlab.scales.lily.Clef;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.anki.ModesPracticeDeck;
+import com.ankijazz.anki.ModesPracticeGuitarDeck;
+import com.ankijazz.lily.Clef;
+import com.ankijazz.theory.Note;
 
 public class ModesPracticeDeckProd {
 

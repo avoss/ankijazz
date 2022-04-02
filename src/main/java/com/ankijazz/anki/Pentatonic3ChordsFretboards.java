@@ -1,13 +1,13 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import java.util.Collection;
 import java.util.function.Function;
 
-import de.jlab.scales.fretboard.Fretboard;
-import de.jlab.scales.fretboard.Marker;
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
-import de.jlab.scales.theory.ScaleInfo;
+import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Marker;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
 
 public class Pentatonic3ChordsFretboards extends AbstractFretboardGenerator {
 

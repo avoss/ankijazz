@@ -1,4 +1,4 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
 public enum Note {
   C("1", "C", "C"), 

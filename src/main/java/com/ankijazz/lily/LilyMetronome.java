@@ -1,4 +1,4 @@
-package de.jlab.scales.lily;
+package com.ankijazz.lily;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -9,8 +9,8 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.jlab.scales.Utils;
-import de.jlab.scales.anki.WithAssets;
+import com.ankijazz.Utils;
+import com.ankijazz.anki.WithAssets;
 
 public class LilyMetronome implements WithAssets {
   

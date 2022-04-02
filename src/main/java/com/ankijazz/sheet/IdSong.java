@@ -1,11 +1,12 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import de.jlab.scales.midi.song.Bar;
-import de.jlab.scales.midi.song.Chord;
-import de.jlab.scales.midi.song.Song;
+import com.ankijazz.midi.song.Bar;
+import com.ankijazz.midi.song.Chord;
+import com.ankijazz.midi.song.Song;
+
 import lombok.Getter;
 
 /**

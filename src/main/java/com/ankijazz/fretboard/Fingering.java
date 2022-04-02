@@ -1,9 +1,9 @@
-package de.jlab.scales.fretboard;
+package com.ankijazz.fretboard;
 
 import java.util.List;
 
-import de.jlab.scales.theory.Note;
-import de.jlab.scales.theory.Scale;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
 
 public interface Fingering {
   String getName();

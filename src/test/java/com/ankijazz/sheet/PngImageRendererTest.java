@@ -1,10 +1,12 @@
-package de.jlab.scales.sheet;
+package com.ankijazz.sheet;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.midi.song.MidiTestUtils;
-import de.jlab.scales.midi.song.Song;
+import com.ankijazz.TestUtils;
+import com.ankijazz.midi.song.MidiTestUtils;
+import com.ankijazz.midi.song.Song;
+import com.ankijazz.sheet.PngImageRenderer;
+import com.ankijazz.sheet.RenderContext;
 
 
 public class PngImageRendererTest {

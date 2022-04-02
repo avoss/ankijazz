@@ -1,18 +1,20 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
-import static de.jlab.scales.midi.song.Ensembles.latin;
-import static de.jlab.scales.midi.song.SongFactory.Feature.AllKeys;
+import static com.ankijazz.midi.song.Ensembles.latin;
+import static com.ankijazz.midi.song.SongFactory.Feature.AllKeys;
 
 import java.util.Set;
 import java.util.function.Supplier;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
-import de.jlab.scales.Utils;
-import de.jlab.scales.midi.song.Ensemble;
-import de.jlab.scales.midi.song.SongFactory.Feature;
-import de.jlab.scales.theory.Note;
+import com.ankijazz.TestUtils;
+import com.ankijazz.Utils;
+import com.ankijazz.anki.AbstractJamCardGenerator;
+import com.ankijazz.anki.JamDeck;
+import com.ankijazz.midi.song.Ensemble;
+import com.ankijazz.midi.song.SongFactory.Feature;
+import com.ankijazz.theory.Note;
 
 public class JamDeckTest {
  

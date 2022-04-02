@@ -1,18 +1,18 @@
-package de.jlab.scales.theory;
+package com.ankijazz.theory;
 
-import static de.jlab.scales.theory.Accidental.FLAT;
-import static de.jlab.scales.theory.Accidental.SHARP;
-import static de.jlab.scales.theory.BuiltinChordType.AugmentedTriad;
-import static de.jlab.scales.theory.BuiltinChordType.Major7;
-import static de.jlab.scales.theory.BuiltinScaleType.DiminishedHalfWhole;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMajor;
-import static de.jlab.scales.theory.BuiltinScaleType.HarmonicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.Major;
-import static de.jlab.scales.theory.BuiltinScaleType.MelodicMinor;
-import static de.jlab.scales.theory.BuiltinScaleType.WholeTone;
-import static de.jlab.scales.theory.Note.C;
-import static de.jlab.scales.theory.Note.F;
-import static de.jlab.scales.theory.Note.Gb;
+import static com.ankijazz.theory.Accidental.FLAT;
+import static com.ankijazz.theory.Accidental.SHARP;
+import static com.ankijazz.theory.BuiltinChordType.AugmentedTriad;
+import static com.ankijazz.theory.BuiltinChordType.Major7;
+import static com.ankijazz.theory.BuiltinScaleType.DiminishedHalfWhole;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMajor;
+import static com.ankijazz.theory.BuiltinScaleType.HarmonicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.Major;
+import static com.ankijazz.theory.BuiltinScaleType.MelodicMinor;
+import static com.ankijazz.theory.BuiltinScaleType.WholeTone;
+import static com.ankijazz.theory.Note.C;
+import static com.ankijazz.theory.Note.F;
+import static com.ankijazz.theory.Note.Gb;
 import static java.lang.String.format;
 import static java.util.stream.Collectors.toSet;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,6 +26,16 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.junit.Test;
+
+import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.BuiltinScaleType;
+import com.ankijazz.theory.DegreeParser;
+import com.ankijazz.theory.Note;
+import com.ankijazz.theory.Scale;
+import com.ankijazz.theory.ScaleInfo;
+import com.ankijazz.theory.ScaleType;
+import com.ankijazz.theory.ScaleUniverse;
+import com.ankijazz.theory.Scales;
 
 public class BuiltinChordTypeTest {
   

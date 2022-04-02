@@ -1,8 +1,10 @@
-package de.jlab.scales.anki;
+package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import de.jlab.scales.TestUtils;
+import com.ankijazz.TestUtils;
+import com.ankijazz.anki.Deck;
+import com.ankijazz.anki.ModesTheoryDeck;
 
 public class ModesTheoryDeckTest {
 
