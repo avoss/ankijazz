@@ -99,17 +99,11 @@ public class MidiFile implements MidiOut {
     track.add(shortMessage(clock, ShortMessage.PROGRAM_CHANGE, channel, program, 0));
   }
 
+  @Override
   public void controllerChange(int channel, int controller, int value) {
     track.add(shortMessage(clock, ShortMessage.CONTROL_CHANGE, channel, controller, value));
   }
 
-  /**
-   * 0 = left, 64 = center, 127 = right
-   */
-  public void panChange(int channel, int value) {
-    track.add(shortMessage(clock, ShortMessage.CONTROL_CHANGE, channel, 10, value));
-  }
-  
   @Override
   public void save(Path path) {
     try {
