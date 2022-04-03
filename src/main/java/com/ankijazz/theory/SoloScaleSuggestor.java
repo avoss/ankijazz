@@ -12,6 +12,13 @@ import org.jgrapht.alg.shortestpath.EppsteinKShortestPath;
 import org.jgrapht.graph.DefaultWeightedEdge;
 import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 
+/**
+ * computes the scales that can be used to improvise over a chord progression.
+ * For every chord, it computes a set of scales that contain the chord and are valid for that chord.
+ * Then it computes the shortest path, so that the number of scale changes is minimized. If multiple
+ * shortest paths exist, then the least difficult scales are chosen (e.g. smallest number of accidentals).
+ */
+
 public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
 
   @lombok.RequiredArgsConstructor
@@ -21,7 +28,9 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
     private final ScaleInfo info;
   }
 
-  static class ScaleNotFoundException extends IllegalArgumentException { }
+  static class ScaleNotFoundException extends IllegalArgumentException {
+    private static final long serialVersionUID = -6665971531347246519L; 
+  }
   
   interface Strategy {
     double weight(Vertex source, Vertex target);

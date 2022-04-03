@@ -174,12 +174,12 @@ public class ScaleTest {
     assertEquals(expected, actual);
   }
 
-  @Test(expected = ParseChordException.class)
+  @Test(expected = ChordParser.ParseChordException.class)
   public void invalidChord1() {
     Scales.parseChord("xm7");
   }
 
-  @Test(expected = ParseChordException.class)
+  @Test(expected = ChordParser.ParseChordException.class)
   public void invalidChord2() {
     Scales.parseChord("Cm7x");
   }

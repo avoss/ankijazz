@@ -22,7 +22,7 @@ import com.google.common.collect.MultimapBuilder;
 
 /**
  * ScaleUniverse is a set of ScaleInfos, e.g. all Major Scales, or all Major Scales and all their Modes etc. 
- * One use-case is e.g. to search for all Scales that contain a certain chord.
+ * Can be used e.g. to search for all Scales that contain a certain chord.
  */
 public class ScaleUniverse implements Iterable<Scale> {
 

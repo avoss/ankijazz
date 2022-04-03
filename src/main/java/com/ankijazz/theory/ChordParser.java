@@ -9,7 +9,22 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+/*
+ * parses and formats chord symbols like "Abm7". 
+ * Only chords enumerated in BuiltinChordType are recognized.
+ * @see BuiltinChordType
+ */
 public class ChordParser {
+  
+  public static class ParseChordException extends RuntimeException {
+    private static final long serialVersionUID = -7243824667823947228L;
+
+    public ParseChordException(String message) {
+      super(message);
+    }
+
+  }
+  
   
   private static final Pattern pattern = Pattern.compile("([A-G])([b#x]?)(.*)");
 

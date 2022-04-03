@@ -18,9 +18,9 @@ import java.util.Collection;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.IntervalAnalyzer.Result;
+import com.ankijazz.theory.DegreeAnalyzer.Result;
 
-public class IntervalAnalyzerTest {
+public class DegreeAnalyzerTest {
 
   @Test
   public void testIntervalMapFromScale() {
@@ -41,7 +41,7 @@ public class IntervalAnalyzerTest {
   
   private void assertIntervals(String expected, Collection<Scale> scales) {
     for (Scale scale : scales) {
-      Result result = new IntervalAnalyzer().analyze(scale);
+      Result result = new DegreeAnalyzer().analyze(scale);
       assertEquals(expected, result.toString());
     }
   }

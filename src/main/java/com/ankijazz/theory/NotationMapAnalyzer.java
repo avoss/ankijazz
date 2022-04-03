@@ -21,7 +21,7 @@ import java.util.function.Function;
 
 
 /**
- * Computes a Map<Note, Accidental> to be used to notate the notes of a scale. This is tricky, because some scales
+ * Computes a Map<Note, Accidental> to be used to notate the notes of a scale. Note that some scales
  * require both, flats and sharps (like G-Melodic Minor = G A Bb C D E F#), or double sharps (like G# Melodic Minor).
  * Only works for scales with 7 notes. Other scales will always use flats.
  */

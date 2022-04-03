@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 import com.ankijazz.theory.ChordSubstitutionChooser.SubstitutionInfo;
 
 public class PentatonicChooser {
-  private static final ScaleUniverse universe = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, Minor7Pentatonic, Minor6Pentatonic));
+  private static final ScaleUniverse UNIVERSE = new ScaleUniverse(false, List.of(Major, MelodicMinor, HarmonicMinor, Minor7Pentatonic, Minor6Pentatonic));
   private final ChordSubstitutionChooser chooser = new ChordSubstitutionChooser();
 
   public Scale chooseBest(Scale chord) {
@@ -31,7 +31,7 @@ public class PentatonicChooser {
   }
   
   private Set<Scale> candidates(Scale chord) {
-    return universe.findScalesContaining(chord.asSet()).stream().flatMap(info -> info.getSubScales().stream()).collect(Collectors.toCollection(LinkedHashSet::new));
+    return UNIVERSE.findScalesContaining(chord.asSet()).stream().flatMap(info -> info.getSubScales().stream()).collect(Collectors.toCollection(LinkedHashSet::new));
   }
 
 }

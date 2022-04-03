@@ -10,6 +10,12 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 
+
+/**
+ * parses a string that describes the degrees of a chord or scale. 
+ * E.g. "1 b3 5 b7" for a Minor7 Chord, or "1 2 b3 4 5 6 b7" for the Dorian Scale.
+ * @see DegreeAnalyzer
+ */
 public class DegreeParser {
   
   private final Pattern pattern = Pattern.compile("([b#x]*)([0-9]+)");

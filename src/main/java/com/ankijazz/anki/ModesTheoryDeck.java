@@ -27,7 +27,7 @@ import com.ankijazz.Utils;
 import com.ankijazz.difficulty.Difficulties;
 import com.ankijazz.difficulty.DifficultyModel;
 import com.ankijazz.difficulty.DifficultyModel.DoubleTerm;
-import com.ankijazz.theory.IntervalAnalyzer;
+import com.ankijazz.theory.DegreeAnalyzer;
 import com.ankijazz.theory.KeySignature;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scale;
@@ -106,7 +106,7 @@ public class ModesTheoryDeck extends AbstractDeck<SimpleCard> {
   }
 
   void modeIntervals() {
-    IntervalAnalyzer analyzer = new IntervalAnalyzer();
+    DegreeAnalyzer analyzer = new DegreeAnalyzer();
     for (Scale scale : commonModes()) {
       ScaleInfo modeInfo = MODES.findFirstOrElseThrow(scale);
       String front = format("<div>What are the <b>intervals</b> of <b>%s</b>?</div>", modeInfo.getTypeName());

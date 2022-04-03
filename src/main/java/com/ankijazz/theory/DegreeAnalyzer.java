@@ -7,7 +7,13 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-public class IntervalAnalyzer {
+/**
+ * computes the scale degrees for every note of a chord or scale.
+ * E.g. [A:"1", C:"b3", E:"5", G:"b7"] for a A-Minor7 Chord
+ * @see DegreeParser
+ */
+
+public class DegreeAnalyzer {
   
   @lombok.Getter
   @lombok.EqualsAndHashCode

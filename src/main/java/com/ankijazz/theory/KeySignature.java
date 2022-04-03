@@ -13,6 +13,12 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
+/**
+ * Used to notate chords and scales as strings.
+ * Note that some scales require both, flats and sharps, like G-Melodic Minor = G A Bb C D E F#.
+ * In that example, notate(Note.Bb) will return "Bb" and notate(Note.Gb) will return "F#".
+ */
+
 @RequiredArgsConstructor
 @Getter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)

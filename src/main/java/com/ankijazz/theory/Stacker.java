@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * approximate stack of thirds.
+ * approximates stack of thirds.
  */
 public class Stacker {
   private Set<Note> set;
