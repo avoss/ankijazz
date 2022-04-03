@@ -32,14 +32,13 @@ public abstract class AbstractDeck<T extends Card> implements Deck<T> {
   protected AbstractDeck(String title) {
     this.title = title;
     this.outputFileName = getClass().getSimpleName();
-    this.mustacheTemplate = String.format("%s.html.mustache", getClass().getName().replace('.', '/'));
+    this.mustacheTemplate = mustacheTemplate();
   }
 
   protected AbstractDeck(String title, String outputFileName) {
     this.title = title;
     this.outputFileName = outputFileName;
-    // FIXME duplicated code:
-    this.mustacheTemplate = String.format("%s.html.mustache", getClass().getName().replace('.', '/'));
+    this.mustacheTemplate = mustacheTemplate();
   }
   
   protected AbstractDeck(String title, String outputFileName, String mustacheTemplate, List<? extends T> cards) {
@@ -47,6 +46,10 @@ public abstract class AbstractDeck<T extends Card> implements Deck<T> {
     this.outputFileName = outputFileName;
     this.mustacheTemplate = mustacheTemplate;
     this.cards.addAll(cards);
+  }
+  
+  private String mustacheTemplate() {
+    return String.format("%s.html.mustache", getClass().getName().replace('.', '/'));
   }
   
   public String getTitle() {
