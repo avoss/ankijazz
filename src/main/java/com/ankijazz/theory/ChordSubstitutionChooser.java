@@ -3,7 +3,6 @@ package com.ankijazz.theory;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Optional;
 import java.util.Set;
@@ -13,6 +12,10 @@ import java.util.stream.Collectors;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
+/**
+ * calculates properties of a chord substitution, e.g. what notes are common in the original chord and its substitution, which notes are missing etc. 
+ * Also computes a number that reflects the quality of the substitution.
+ */
 public class ChordSubstitutionChooser {
 
   @EqualsAndHashCode
@@ -30,21 +33,21 @@ public class ChordSubstitutionChooser {
 
     SubstitutionInfo(Scale chord, Scale substitution) {
       this.chord = chord;
-      root = chord.getRoot();
       this.substitution = substitution;
-      substitutionNotes = substitution.asSet();
-      chordNotes = chord.asSet();
+      this.root = chord.getRoot();
+      this.substitutionNotes = substitution.asSet();
+      this.chordNotes = chord.asSet();
       
-      commonNotes = chord.asSet();
-      commonNotes.retainAll(substitution.asSet());
+      this.commonNotes = chord.asSet();
+      this.commonNotes.retainAll(substitution.asSet());
 
-      extraNotes = new HashSet<>(substitutionNotes);
-      extraNotes.removeAll(chordNotes);
+      this.extraNotes = new HashSet<>(substitutionNotes);
+      this.extraNotes.removeAll(chordNotes);
       
-      missingNotes = new HashSet<>(chordNotes);
-      missingNotes.removeAll(substitutionNotes);
+      this.missingNotes = new HashSet<>(chordNotes);
+      this.missingNotes.removeAll(substitutionNotes);
       
-      quality = computeQuality();
+      this.quality = computeQuality();
     }
 
     private int computeQuality() {
@@ -116,8 +119,7 @@ public class ChordSubstitutionChooser {
   }
 
   public List<SubstitutionInfo> orderedByQuality(Scale chord, Collection<? extends Scale> candidates) {
-    return candidates.stream().map(candidate -> new SubstitutionInfo(chord, candidate)).collect(Collectors.toCollection(LinkedHashSet::new)).stream().sorted()
-        .collect(Collectors.toList());
+    return candidates.stream().map(candidate -> new SubstitutionInfo(chord, candidate)).sorted().collect(Collectors.toList());
   }
 
 }
