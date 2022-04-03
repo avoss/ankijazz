@@ -24,11 +24,11 @@ import java.util.Map;
 import org.junit.Test;
 
 import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.Analyzer;
+import com.ankijazz.theory.NotationMapAnalyzer;
 import com.ankijazz.theory.Note;
-import com.ankijazz.theory.Analyzer.Result;
+import com.ankijazz.theory.NotationMapAnalyzer.Result;
 
-public class AnalyzerTest {
+public class NotationMapAnalyzerTest {
 
   @Test
   public void testResultInitialize() {
@@ -66,7 +66,7 @@ public class AnalyzerTest {
   
   @Test
   public void testAccidentalMap() {
-    Result result = new Analyzer().analyzeScale(CMajor.transpose(Note.E), SHARP);
+    Result result = new NotationMapAnalyzer().analyzeScale(CMajor.transpose(Note.E), SHARP);
     Map<Note, Accidental> map = result.getAccidentalMap();
     assertEquals(NONE, map.get(E));
     assertEquals(SHARP, map.get(Gb));

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import com.ankijazz.theory.Analyzer.Result;
+import com.ankijazz.theory.NotationMapAnalyzer.Result;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -37,7 +37,7 @@ public class KeySignature {
   }
 
   public static KeySignature fromScale(Scale scale, Note notationKey, Accidental accidental) {
-    Analyzer analyzer = new Analyzer();
+    NotationMapAnalyzer analyzer = new NotationMapAnalyzer();
     Result result = analyzer.analyzeScale(scale, accidental);
     return new KeySignature(notationKey, result);
   }

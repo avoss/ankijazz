@@ -21,9 +21,11 @@ import java.util.function.Function;
 
 
 /**
- * TODO only notationMap and remainingScaleNotes is used, everything else can be removed
+ * Computes a Map<Note, Accidental> to be used to notate the notes of a scale. This is tricky, because some scales
+ * require both, flats and sharps (like G-Melodic Minor = G A Bb C D E F#), or double sharps (like G# Melodic Minor).
+ * Only works for scales with 7 notes. Other scales will always use flats.
  */
-public class Analyzer {
+public class NotationMapAnalyzer {
   private static final List<Note> sharpSignatureKeys = Arrays.asList(F, C, G, D, A, E, B);
   private static final List<Note> flatSignatureKeys = Arrays.asList(B, E, A, D, G, C, F);
   
@@ -142,7 +144,7 @@ public class Analyzer {
   }
 
   public Result fallback(Scale scale, Accidental accidental) {
-    Result result = new Analyzer.Result(scale, accidental);
+    Result result = new NotationMapAnalyzer.Result(scale, accidental);
     result.initialize();
     return result;
   }
