@@ -7,5 +7,9 @@ public interface ScaleType {
   String getTypeName();
   String[] getModeNames();
   boolean isChord();
+  
+  /**
+   * e.g. F#/Gb major scale has multiple KeySignatures 
+   */
   Set<KeySignature> getKeySignatures(Note root);
 }
