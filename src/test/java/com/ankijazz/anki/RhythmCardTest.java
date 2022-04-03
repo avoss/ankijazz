@@ -10,11 +10,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.Card;
-import com.ankijazz.anki.RhythmCard;
 import com.ankijazz.lily.LilyMetronome;
-import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.lily.LilyMetronome.Tempo;
+import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.rhythm.AbstractRhythm;
 import com.ankijazz.rhythm.Quarter;
 import com.ankijazz.rhythm.StandardRhythm;

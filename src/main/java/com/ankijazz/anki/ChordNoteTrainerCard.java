@@ -20,9 +20,9 @@ import com.ankijazz.midi.song.Ensembles;
 import com.ankijazz.midi.song.MelodyInstrument;
 import com.ankijazz.midi.song.NoteToMidiMapper;
 import com.ankijazz.midi.song.Song;
+import com.ankijazz.theory.DegreeParser.Degrees;
 import com.ankijazz.theory.KeySignature;
 import com.ankijazz.theory.Note;
-import com.ankijazz.theory.DegreeParser.Degrees;
 
 @lombok.Builder
 public class ChordNoteTrainerCard implements Card {

@@ -18,8 +18,6 @@ import java.util.Collection;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.IntervalAnalyzer;
-import com.ankijazz.theory.Scale;
 import com.ankijazz.theory.IntervalAnalyzer.Result;
 
 public class IntervalAnalyzerTest {

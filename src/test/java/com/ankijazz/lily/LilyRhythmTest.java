@@ -11,7 +11,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.rhythm.Quarter;
 import com.ankijazz.rhythm.RandomRhythm;
 

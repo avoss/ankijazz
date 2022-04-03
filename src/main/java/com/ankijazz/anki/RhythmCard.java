@@ -9,8 +9,8 @@ import java.util.Map;
 import java.util.stream.Stream;
 
 import com.ankijazz.difficulty.DifficultyModel;
-import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.lily.LilyMetronome.Tempo;
+import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.rhythm.AbstractRhythm;
 
 public class RhythmCard extends LilyCard {

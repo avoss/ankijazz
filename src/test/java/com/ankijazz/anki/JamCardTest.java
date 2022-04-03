@@ -7,8 +7,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.FretboardPosition;
-import com.ankijazz.anki.JamCard;
 import com.ankijazz.midi.song.Ensembles;
 import com.ankijazz.midi.song.MidiTestUtils;
 import com.ankijazz.sheet.RenderContext;

@@ -50,15 +50,6 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.BuiltinScaleType;
-import com.ankijazz.theory.KeySignature;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleInfo;
-import com.ankijazz.theory.ScaleType;
-import com.ankijazz.theory.ScaleUniverse;
-import com.ankijazz.theory.Scales;
 
 public class ScaleUniverseTest {
 

@@ -15,7 +15,6 @@ import org.junit.Test;
 
 import com.ankijazz.TestUtils;
 import com.ankijazz.Utils;
-import com.ankijazz.anki.FretboardJamCardGenerator;
 import com.ankijazz.anki.FretboardJamCardGenerator.PlayThroughChangesMelody;
 import com.ankijazz.midi.Part;
 import com.ankijazz.midi.song.Ensembles;

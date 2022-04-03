@@ -36,13 +36,6 @@ import java.util.stream.Stream;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.BuiltinScaleType;
-import com.ankijazz.theory.KeySignature;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleType;
-
 public class KeySignatureTest {
 
  

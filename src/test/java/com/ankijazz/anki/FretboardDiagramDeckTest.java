@@ -15,16 +15,6 @@ import java.util.function.Supplier;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.anki.AbstractFretboardGenerator;
-import com.ankijazz.anki.Caged1ScalesFretboards;
-import com.ankijazz.anki.Caged3ModesFretboards;
-import com.ankijazz.anki.Caged5ArpeggiosFretboards;
-import com.ankijazz.anki.CardGenerator;
-import com.ankijazz.anki.FretboardDiagramCard;
-import com.ankijazz.anki.FretboardDiagramDeck;
-import com.ankijazz.anki.Pentatonic1ScalesFretboards;
-import com.ankijazz.anki.Pentatonic3ChordsFretboards;
-import com.ankijazz.anki.Pentatonic5ModesFretboards;
 import com.ankijazz.fretboard.Fretboard;
 import com.ankijazz.fretboard.Fretboard.MarkedFret;
 import com.ankijazz.midi.MockMidiOut;

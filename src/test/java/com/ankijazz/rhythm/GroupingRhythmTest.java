@@ -11,9 +11,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.rhythm.GroupingRhythm;
-import com.ankijazz.rhythm.Quarter;
-
 public class GroupingRhythmTest {
 
   @Test

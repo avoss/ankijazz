@@ -8,7 +8,6 @@ import org.junit.Test;
 import com.ankijazz.midi.song.Bar;
 import com.ankijazz.midi.song.Chord;
 import com.ankijazz.midi.song.Song;
-import com.ankijazz.sheet.IdSong;
 import com.ankijazz.sheet.IdSong.IdBar;
 import com.ankijazz.theory.Scales;
 

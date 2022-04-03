@@ -2,8 +2,6 @@ package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.PentaChordsTheoryDeck;
-
 public class PentaChordsTheoryDeckProd {
 
   @Test

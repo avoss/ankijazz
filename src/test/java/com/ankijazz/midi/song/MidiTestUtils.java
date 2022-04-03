@@ -8,11 +8,6 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
-import com.ankijazz.midi.song.Bar;
-import com.ankijazz.midi.song.Chord;
-import com.ankijazz.midi.song.Event;
-import com.ankijazz.midi.song.Song;
-import com.ankijazz.midi.song.SongWrapper;
 import com.ankijazz.theory.BuiltinChordType;
 import com.ankijazz.theory.ChordParser;
 import com.ankijazz.theory.Note;

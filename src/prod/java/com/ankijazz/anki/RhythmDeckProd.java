@@ -2,8 +2,6 @@ package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.Deck;
-import com.ankijazz.anki.RhythmDeck;
 import com.ankijazz.lily.LilyRhythm.Type;
 
 public class RhythmDeckProd {

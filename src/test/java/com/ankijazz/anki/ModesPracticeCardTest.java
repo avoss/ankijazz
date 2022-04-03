@@ -3,11 +3,6 @@ package com.ankijazz.anki;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.anki.Card;
-import com.ankijazz.anki.FretboardPosition;
-import com.ankijazz.anki.ModesPracticeCard;
-import com.ankijazz.anki.ModesPracticeGuitarCard;
-import com.ankijazz.anki.ScaleModel;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scale;
 import com.ankijazz.theory.ScaleInfo;

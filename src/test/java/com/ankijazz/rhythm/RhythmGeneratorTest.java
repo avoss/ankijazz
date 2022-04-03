@@ -15,9 +15,6 @@ import org.junit.Test;
 
 import com.ankijazz.TestUtils;
 import com.ankijazz.Utils;
-import com.ankijazz.rhythm.AbstractRhythm;
-import com.ankijazz.rhythm.Quarter;
-import com.ankijazz.rhythm.RhythmGenerator;
 
 public class RhythmGeneratorTest {
 

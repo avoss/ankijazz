@@ -5,8 +5,6 @@ import static java.lang.String.format;
 
 import java.nio.file.Path;
 
-import com.ankijazz.midi.MidiOut;
-
 public class StringMidiOut implements MidiOut {
   
   StringBuilder sb = new StringBuilder();

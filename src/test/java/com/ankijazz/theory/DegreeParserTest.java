@@ -14,14 +14,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.BuiltinChordType;
-import com.ankijazz.theory.BuiltinScaleType;
-import com.ankijazz.theory.DegreeParser;
-import com.ankijazz.theory.KeySignature;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.Scales;
 import com.ankijazz.theory.DegreeParser.Degree;
 import com.ankijazz.theory.DegreeParser.Degrees;
 

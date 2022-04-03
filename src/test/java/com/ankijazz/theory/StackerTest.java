@@ -35,12 +35,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.BuiltinChordType;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleType;
-import com.ankijazz.theory.Stacker;
-
 public class StackerTest {
 
   @Test

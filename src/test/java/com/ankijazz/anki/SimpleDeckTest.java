@@ -10,10 +10,6 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.Deck;
-import com.ankijazz.anki.SimpleCard;
-import com.ankijazz.anki.SimpleDeck;
-
 public class SimpleDeckTest {
   
   @Test

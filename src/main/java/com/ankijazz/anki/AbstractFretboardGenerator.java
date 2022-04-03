@@ -14,15 +14,15 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 
 import com.ankijazz.Utils;
+import com.ankijazz.fretboard.BoxMarker.BoxPosition;
 import com.ankijazz.fretboard.Fingering;
 import com.ankijazz.fretboard.Fretboard;
+import com.ankijazz.fretboard.Fretboard.Box;
 import com.ankijazz.fretboard.Marker;
 import com.ankijazz.fretboard.MidiFretboardRenderer;
 import com.ankijazz.fretboard.NPS;
 import com.ankijazz.fretboard.PngFretboardRenderer;
 import com.ankijazz.fretboard.Position;
-import com.ankijazz.fretboard.BoxMarker.BoxPosition;
-import com.ankijazz.fretboard.Fretboard.Box;
 import com.ankijazz.midi.Part;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scale;

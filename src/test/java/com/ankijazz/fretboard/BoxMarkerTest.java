@@ -16,13 +16,6 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.ankijazz.fretboard.Fingering;
-import com.ankijazz.fretboard.Fretboard;
-import com.ankijazz.fretboard.GuitarString;
-import com.ankijazz.fretboard.Marker;
-import com.ankijazz.fretboard.MarkerRenderer;
-import com.ankijazz.fretboard.NPS;
-import com.ankijazz.fretboard.Position;
 import com.ankijazz.fretboard.BoxMarker.BoxPosition;
 import com.ankijazz.fretboard.Fretboard.MarkedFret;
 import com.ankijazz.theory.Note;

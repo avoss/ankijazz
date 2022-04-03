@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.ankijazz.midi.song.IntervalToChordIndexMapper;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scales;
 

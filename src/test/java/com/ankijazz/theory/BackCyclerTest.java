@@ -14,9 +14,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.BackCycler;
-import com.ankijazz.theory.Scale;
-
 public class BackCyclerTest {
 
   @Test

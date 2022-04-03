@@ -21,8 +21,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Note;
-
 public class AccidentalTest {
 
   @Test

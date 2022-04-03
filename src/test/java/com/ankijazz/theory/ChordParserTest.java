@@ -20,14 +20,6 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.BuiltinChordType;
-import com.ankijazz.theory.ChordParser;
-import com.ankijazz.theory.KeySignature;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleType;
-
 public class ChordParserTest {
 
   @Test

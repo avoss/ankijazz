@@ -24,7 +24,6 @@ import java.util.stream.Collectors;
 
 import javax.imageio.ImageIO;
 
-import com.ankijazz.Utils;
 import com.ankijazz.midi.MidiFile;
 import com.ankijazz.midi.Part;
 import com.ankijazz.theory.Accidental;

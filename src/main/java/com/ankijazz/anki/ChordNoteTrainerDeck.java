@@ -13,9 +13,9 @@ import static com.ankijazz.theory.BuiltinChordType.Minor7b5;
 import java.util.List;
 
 import com.ankijazz.theory.BuiltinChordType;
+import com.ankijazz.theory.DegreeParser.Degrees;
 import com.ankijazz.theory.KeySignature;
 import com.ankijazz.theory.Note;
-import com.ankijazz.theory.DegreeParser.Degrees;
 
 public class ChordNoteTrainerDeck extends AbstractDeck<ChordNoteTrainerCard> {
 

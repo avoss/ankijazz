@@ -18,11 +18,6 @@ import com.ankijazz.midi.Parts;
 import com.ankijazz.midi.Program;
 import com.ankijazz.midi.Tempo;
 import com.ankijazz.midi.TimeSignature;
-import com.ankijazz.midi.song.Bar;
-import com.ankijazz.midi.song.Chord;
-import com.ankijazz.midi.song.Ensemble;
-import com.ankijazz.midi.song.Ensembles;
-import com.ankijazz.midi.song.Song;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scales;
 

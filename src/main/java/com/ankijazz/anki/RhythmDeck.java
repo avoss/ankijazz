@@ -8,8 +8,8 @@ import java.util.List;
 import com.ankijazz.Utils;
 import com.ankijazz.Utils.Interpolator;
 import com.ankijazz.lily.LilyMetronome;
-import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.lily.LilyMetronome.Tempo;
+import com.ankijazz.lily.LilyRhythm;
 import com.ankijazz.rhythm.AbstractRhythm;
 import com.ankijazz.rhythm.RhythmGenerator;
 

@@ -15,7 +15,6 @@ import java.util.Set;
 
 import org.junit.Test;
 
-import com.ankijazz.Utils;
 import com.ankijazz.Utils.Interpolator;
 import com.ankijazz.theory.BuiltinChordType;
 import com.ankijazz.theory.Note;

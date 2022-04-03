@@ -3,7 +3,6 @@ package com.ankijazz.anki;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.anki.ChordNoteTrainerDeck;
 
 public class ChordNoteTrainerDeckTest {
 

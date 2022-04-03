@@ -10,10 +10,6 @@ import java.util.List;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleInfo;
-import com.ankijazz.theory.ScaleUniverse;
-import com.ankijazz.theory.Scales;
 
 public class ChrisBollinger {
 

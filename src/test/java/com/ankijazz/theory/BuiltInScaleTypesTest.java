@@ -17,8 +17,6 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.KeySignature;
-
 public class BuiltInScaleTypesTest {
 
   @Test

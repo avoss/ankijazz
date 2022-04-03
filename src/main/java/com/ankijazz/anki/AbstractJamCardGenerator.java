@@ -12,8 +12,8 @@ import com.ankijazz.Utils.LoopIteratorFactory;
 import com.ankijazz.midi.song.Ensemble;
 import com.ankijazz.midi.song.ProgressionFactory;
 import com.ankijazz.midi.song.SongFactory;
-import com.ankijazz.midi.song.SongWrapper;
 import com.ankijazz.midi.song.SongFactory.Feature;
+import com.ankijazz.midi.song.SongWrapper;
 import com.ankijazz.sheet.RenderContext;
 import com.ankijazz.theory.Note;
 

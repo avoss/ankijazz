@@ -6,9 +6,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.fretboard.Fingering;
-import com.ankijazz.fretboard.NPS;
-import com.ankijazz.fretboard.Position;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scales;
 

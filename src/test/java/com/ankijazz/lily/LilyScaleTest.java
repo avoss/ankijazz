@@ -17,8 +17,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.lily.Direction;
-import com.ankijazz.lily.LilyScale;
 import com.ankijazz.theory.Scale;
 import com.ankijazz.theory.ScaleInfo;
 

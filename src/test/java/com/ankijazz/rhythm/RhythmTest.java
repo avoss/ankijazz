@@ -9,9 +9,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.rhythm.Quarter;
-import com.ankijazz.rhythm.RandomRhythm;
-
 public class RhythmTest {
 
   @Test

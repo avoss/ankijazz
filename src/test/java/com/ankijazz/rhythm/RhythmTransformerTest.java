@@ -16,9 +16,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.rhythm.Event;
-import com.ankijazz.rhythm.Quarter;
-import com.ankijazz.rhythm.RhythmTransformer;
 import com.ankijazz.rhythm.RhythmTransformer.Tick;
 
 public class RhythmTransformerTest {

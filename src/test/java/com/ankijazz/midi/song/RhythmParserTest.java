@@ -8,10 +8,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.midi.song.Event;
-import com.ankijazz.midi.song.EventProcessor;
-import com.ankijazz.midi.song.RhythmParser;
-
 public class RhythmParserTest {
 
   static class TestEventProcessor implements EventProcessor {

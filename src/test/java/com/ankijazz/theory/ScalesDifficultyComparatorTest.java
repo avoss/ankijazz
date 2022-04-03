@@ -3,12 +3,6 @@ package com.ankijazz.theory;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import org.junit.Test;
-
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.ScaleInfo;
-import com.ankijazz.theory.ScaleUniverse;
-import com.ankijazz.theory.Scales;
-import com.ankijazz.theory.ScalesDifficultyComparator;
 public class ScalesDifficultyComparatorTest {
 
   @Test

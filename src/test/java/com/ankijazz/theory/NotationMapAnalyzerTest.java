@@ -23,9 +23,6 @@ import java.util.Map;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.NotationMapAnalyzer;
-import com.ankijazz.theory.Note;
 import com.ankijazz.theory.NotationMapAnalyzer.Result;
 
 public class NotationMapAnalyzerTest {

@@ -10,7 +10,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.ankijazz.lily.ChordToLilyMapper;
 import com.ankijazz.lily.ChordToLilyMapper.LilyChord;
 import com.ankijazz.theory.BuiltinChordType;
 import com.ankijazz.theory.KeySignature;

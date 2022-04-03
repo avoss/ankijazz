@@ -8,11 +8,6 @@ import java.awt.image.BufferedImage;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.fretboard.Fretboard;
-import com.ankijazz.fretboard.Marker;
-import com.ankijazz.fretboard.NPS;
-import com.ankijazz.fretboard.PngFretboardRenderer;
-import com.ankijazz.fretboard.Position;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.PentatonicChooser;
 import com.ankijazz.theory.Scale;

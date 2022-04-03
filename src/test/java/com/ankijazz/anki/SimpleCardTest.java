@@ -4,8 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.SimpleCard;
-
 public class SimpleCardTest {
 
   @Test

@@ -9,8 +9,6 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.rhythm.Quarter;
-import com.ankijazz.rhythm.QuarterGenerator;
 
 public class QuarterGeneratorTest {
 

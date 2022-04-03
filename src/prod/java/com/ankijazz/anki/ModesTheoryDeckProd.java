@@ -2,9 +2,6 @@ package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.Deck;
-import com.ankijazz.anki.ModesTheoryDeck;
-
 public class ModesTheoryDeckProd {
 
   @Test

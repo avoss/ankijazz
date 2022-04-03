@@ -4,9 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import com.ankijazz.midi.song.Bar;
-import com.ankijazz.midi.song.Chord;
-import com.ankijazz.midi.song.Song;
 import com.ankijazz.theory.Scales;
 
 public class SongTest {

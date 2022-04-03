@@ -15,11 +15,6 @@ import java.util.Set;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.theory.BuiltinChordType;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.PentatonicChooser;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleInfo;
 import com.ankijazz.theory.ChordSubstitutionChooser.SubstitutionInfo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 

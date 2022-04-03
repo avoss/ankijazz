@@ -9,10 +9,6 @@ import org.junit.Ignore;
 import org.junit.Test;
 
 import com.ankijazz.Utils;
-import com.ankijazz.anki.Deck;
-import com.ankijazz.anki.FretboardJamCardGenerator;
-import com.ankijazz.anki.JamCardGenerator;
-import com.ankijazz.anki.JamDeck;
 import com.ankijazz.theory.Note;
 
 public class JamDeckProd {

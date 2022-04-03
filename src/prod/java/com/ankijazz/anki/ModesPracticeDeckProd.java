@@ -2,8 +2,6 @@ package com.ankijazz.anki;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.ModesPracticeDeck;
-import com.ankijazz.anki.ModesPracticeGuitarDeck;
 import com.ankijazz.lily.Clef;
 import com.ankijazz.theory.Note;
 

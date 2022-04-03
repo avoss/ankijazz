@@ -3,9 +3,6 @@ package com.ankijazz.anki;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-import com.ankijazz.anki.Card;
-import com.ankijazz.anki.Deck;
-
 public class ProdUtils {
   public static <T extends Card> Deck<T> writeTo(Deck<T> deck, double randomness) {
     deck.sort(randomness);

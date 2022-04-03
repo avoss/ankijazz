@@ -18,8 +18,6 @@ import java.util.Arrays;
 
 import org.junit.Test;
 
-import com.ankijazz.rhythm.Event;
-
 public class EventTest {
 
   @Test

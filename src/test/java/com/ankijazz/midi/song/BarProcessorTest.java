@@ -17,12 +17,6 @@ import com.ankijazz.midi.CompositePart;
 import com.ankijazz.midi.MidiOut;
 import com.ankijazz.midi.Part;
 import com.ankijazz.midi.Parts;
-import com.ankijazz.midi.song.Bar;
-import com.ankijazz.midi.song.BarProcessor;
-import com.ankijazz.midi.song.BarProcessorFactory;
-import com.ankijazz.midi.song.Chord;
-import com.ankijazz.midi.song.Event;
-import com.ankijazz.midi.song.Song;
 import com.ankijazz.theory.Scale;
 
 import lombok.EqualsAndHashCode;

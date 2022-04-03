@@ -18,8 +18,6 @@ import static org.junit.Assert.assertTrue;
 import org.apache.commons.math3.fraction.Fraction;
 import org.junit.Test;
 
-import com.ankijazz.rhythm.Quarter;
-
 public class QuarterTest {
 
   @Test

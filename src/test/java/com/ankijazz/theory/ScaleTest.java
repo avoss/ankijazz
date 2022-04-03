@@ -36,12 +36,6 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.Note;
-import com.ankijazz.theory.ParseChordException;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.Scales;
-
 public class ScaleTest {
 
   @Test

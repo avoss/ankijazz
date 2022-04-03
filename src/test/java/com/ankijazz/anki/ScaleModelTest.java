@@ -13,9 +13,6 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.ankijazz.anki.LilyCard;
-import com.ankijazz.anki.ModesPracticeCard;
-import com.ankijazz.anki.ScaleModel;
 import com.ankijazz.theory.Scale;
 import com.ankijazz.theory.ScaleUniverse;
 

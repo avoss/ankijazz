@@ -26,13 +26,6 @@ import java.util.stream.Collectors;
 
 import org.junit.Test;
 
-import com.ankijazz.theory.Accidental;
-import com.ankijazz.theory.BuiltinScaleType;
-import com.ankijazz.theory.ChordParser;
-import com.ankijazz.theory.Scale;
-import com.ankijazz.theory.ScaleUniverse;
-import com.ankijazz.theory.Scales;
-import com.ankijazz.theory.SoloScaleSuggestor;
 import com.ankijazz.theory.SoloScaleSuggestor.DefaultStrategy;
 import com.ankijazz.theory.SoloScaleSuggestor.Vertex;
 

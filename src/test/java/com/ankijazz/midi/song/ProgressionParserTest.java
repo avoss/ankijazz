@@ -16,10 +16,6 @@ import java.util.List;
 import org.junit.Test;
 
 import com.ankijazz.Utils;
-import com.ankijazz.midi.song.Bar;
-import com.ankijazz.midi.song.Chord;
-import com.ankijazz.midi.song.ProgressionParser;
-import com.ankijazz.midi.song.Song;
 import com.ankijazz.midi.song.ProgressionParser.ChordFactory;
 import com.ankijazz.midi.song.ProgressionParser.Scanner;
 import com.ankijazz.midi.song.ProgressionParser.SimpleChordFactory;

@@ -7,7 +7,6 @@ import static org.junit.Assert.assertNotEquals;
 import org.assertj.core.data.Offset;
 import org.junit.Test;
 
-import com.ankijazz.difficulty.DifficultyModel;
 import com.ankijazz.difficulty.DifficultyModel.BooleanTerm;
 import com.ankijazz.difficulty.DifficultyModel.DoubleTerm;
 

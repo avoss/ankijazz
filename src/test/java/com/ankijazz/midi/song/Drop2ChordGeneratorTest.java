@@ -23,7 +23,6 @@ import java.util.List;
 import org.junit.Test;
 
 import com.ankijazz.midi.MidiUtils;
-import com.ankijazz.midi.song.Drop2ChordGenerator;
 import com.ankijazz.theory.BuiltinChordType;
 import com.ankijazz.theory.Note;
 import com.ankijazz.theory.Scale;

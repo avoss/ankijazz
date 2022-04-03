@@ -10,7 +10,6 @@ import java.nio.file.Paths;
 
 import org.junit.Test;
 
-import com.ankijazz.lily.LilyMetronome;
 import com.ankijazz.lily.LilyMetronome.Tempo;
 
 public class LilyMetronomeTest {

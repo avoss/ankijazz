@@ -10,8 +10,6 @@ import org.junit.Test;
 
 import com.ankijazz.TestUtils;
 import com.ankijazz.Utils;
-import com.ankijazz.anki.AbstractJamCardGenerator;
-import com.ankijazz.anki.JamDeck;
 import com.ankijazz.midi.song.Ensemble;
 import com.ankijazz.midi.song.SongFactory.Feature;
 import com.ankijazz.theory.Note;

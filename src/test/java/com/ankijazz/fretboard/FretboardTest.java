@@ -14,13 +14,6 @@ import java.util.stream.Stream;
 import org.junit.Test;
 
 import com.ankijazz.TestUtils;
-import com.ankijazz.fretboard.BoxMarker;
-import com.ankijazz.fretboard.Fingering;
-import com.ankijazz.fretboard.Fretboard;
-import com.ankijazz.fretboard.Marker;
-import com.ankijazz.fretboard.NPS;
-import com.ankijazz.fretboard.Position;
-import com.ankijazz.fretboard.StringFretboardRenderer;
 import com.ankijazz.fretboard.Fretboard.Box;
 import com.ankijazz.fretboard.Fretboard.MarkedFret;
 import com.ankijazz.theory.Note;

@@ -8,7 +8,6 @@ import org.junit.Test;
 
 import com.ankijazz.TestUtils;
 import com.ankijazz.Utils;
-import com.ankijazz.midi.song.Song;
 import com.ankijazz.midi.song.ProgressionFactory.ChordProgressionSet;
 import com.ankijazz.midi.song.ProgressionFactory.Progression;
 import com.ankijazz.midi.song.ProgressionFactory.ProgressionSet;
