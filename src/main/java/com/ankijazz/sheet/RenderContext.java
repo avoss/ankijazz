@@ -2,6 +2,7 @@ package com.ankijazz.sheet;
 
 @lombok.Data @lombok.Builder(toBuilder = true)
 public class RenderContext {
+
   public static final RenderContext FULL = RenderContext.builder()
       .imageWidth(2000)
       .imageHeight(2828)

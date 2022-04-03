@@ -17,8 +17,9 @@ public class Bar {
   private final List<Chord> chords;
   @EqualsAndHashCode.Include
   private final Optional<Part> melody;
-  
+  @EqualsAndHashCode.Include
   private int beatsPerBar;
+  
   private Interpolator interpolator;
   private Bar next;
 

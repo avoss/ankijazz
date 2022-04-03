@@ -69,37 +69,54 @@ public class ChordScaleAudio {
           .audio(chord)
           .build());
     }
-    result.add(builder()
-      .chord(Cmmaj7)
-      .scale(CMelodicMinor)
-      .audio(Cmmaj7)
-      .build());
+    
+    result.add(melodicMinor());
+    result.add(lydianDominant());
+    result.add(alteredDominant());
+    result.add(harmonicMinor());
+    result.add(phrygianDominant());
+    
+    return result;
+  }
 
-    result.add(builder()
-        .chord(C7.transpose(F))
-        .scale(CMelodicMinor.superimpose(F))
-        .audio(C7.transpose(F))
-        .build());
-
-    result.add(builder()
-        .chord(C7sharp5.transpose(B))
-        .scale(CMelodicMinor.superimpose(B))
-        .audio(C7sharp5.transpose(B))
-        .build());
-
-    result.add(builder()
-        .chord(Cmmaj7)
-        .scale(CHarmonicMinor)
-        .audio(Cmmaj7)
-        .build());
-
-    result.add(builder()
+  private static ChordScaleAudio phrygianDominant() {
+    return builder()
         .chord(C7flat9.transpose(G))
         .scale(CHarmonicMinor.superimpose(G))
         .audio(C7flat9.transpose(G))
-        .build());
-    
-    return result;
+        .build();
+  }
+
+  private static ChordScaleAudio harmonicMinor() {
+    return builder()
+        .chord(Cmmaj7)
+        .scale(CHarmonicMinor)
+        .audio(Cmmaj7)
+        .build();
+  }
+
+  private static ChordScaleAudio alteredDominant() {
+    return builder()
+        .chord(C7sharp5.transpose(B))
+        .scale(CMelodicMinor.superimpose(B))
+        .audio(C7sharp5.transpose(B))
+        .build();
+  }
+
+  private static ChordScaleAudio lydianDominant() {
+    return builder()
+        .chord(C7.transpose(F))
+        .scale(CMelodicMinor.superimpose(F))
+        .audio(C7.transpose(F))
+        .build();
+  }
+
+  private static ChordScaleAudio melodicMinor() {
+    return builder()
+      .chord(Cmmaj7)
+      .scale(CMelodicMinor)
+      .audio(Cmmaj7)
+      .build();
   }
   
   public static List<ChordScaleAudio> pentatonicScales() {

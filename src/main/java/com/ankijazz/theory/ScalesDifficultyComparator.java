@@ -29,7 +29,4 @@ public final class ScalesDifficultyComparator implements Comparator<ScaleInfo> {
     return index >= 0 ? index : 1000;
   }
   
-  public List<ScaleType> getTypes() {
-    return types;
-  }
 }

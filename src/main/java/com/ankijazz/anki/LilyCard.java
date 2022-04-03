@@ -15,7 +15,7 @@ public abstract class LilyCard implements Card {
   private String lilyString;
   private String assetId;
 
-  public LilyCard(String lilyString) {
+  protected LilyCard(String lilyString) {
     this.lilyString = lilyString;
     this.assetId = Utils.assetId(lilyString);
   }

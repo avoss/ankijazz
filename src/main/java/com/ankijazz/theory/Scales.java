@@ -180,7 +180,6 @@ public class Scales {
     scales.add(CMajor);
     scales.add(CMelodicMinor);
     scales.add(CHarmonicMinor);
-//    scales.add(CHarmonicMajor);
     if (includeSymmetricScales) {
       scales.add(CWholeTone);
       scales.add(CDiminishedHalfWhole);
@@ -196,13 +195,10 @@ public class Scales {
     List<Scale> scales = new ArrayList<>();
     scales.addAll(CMajor.getInversions());
     scales.add(CMelodicMinor);
-    // TODO lydian augmented, locrian nat 2
     scales.add(CMelodicMinor.superimpose(F)); // Lydian Dominant
     scales.add(CMelodicMinor.superimpose(B)); // Altered
     scales.add(CHarmonicMinor);
     scales.add(CHarmonicMinor.superimpose(G)); // Phrygian Dominant
-//    scales.add(CHarmonicMajor);
-//    scales.add(CHarmonicMajor.transpose(B));   // Marcus
     if (includeSymmetricScales) {
       scales.add(CWholeTone);
       scales.add(CDiminishedHalfWhole);
