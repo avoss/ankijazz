@@ -20,6 +20,10 @@ import java.util.stream.Stream;
 import com.google.common.collect.ListMultimap;
 import com.google.common.collect.MultimapBuilder;
 
+/**
+ * ScaleUniverse is a set of ScaleInfos, e.g. all Major Scales, or all Major Scales and all their Modes etc. 
+ * One use-case is e.g. to search for all Scales that contain a certain chord.
+ */
 public class ScaleUniverse implements Iterable<Scale> {
 
   public static List<ScaleType> SCALE_TYPES = List.of(BuiltinScaleType.values());
@@ -30,11 +34,6 @@ public class ScaleUniverse implements Iterable<Scale> {
   public static final ScaleUniverse MODES = new ScaleUniverse(true, SCALE_TYPES);
   public static final ScaleUniverse CHORDS = new ScaleUniverse(false, CHORD_TYPES);
   public static final ScaleUniverse PENTAS = new ScaleUniverse(false, List.of(Minor7Pentatonic, Minor6Pentatonic));
-
-  /**
-   * TODO:
-   * - add keysignature as separate pass, because superscales are required (chords, pentatonics)
-   */
 
   @lombok.Builder
   static class Namer {
