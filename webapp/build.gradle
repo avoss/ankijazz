@@ -1,0 +1,34 @@
+def previewDir = file("src/assets/preview")
+
+configurations {
+  previewMedia
+}
+
+dependencies {
+  previewMedia project(path: ":ankijazz", configuration: "previewMedia")
+}
+
+task deletePreviewMedia(type: Delete) {
+  delete previewDir
+}
+
+task copyPreviewMedia(type:Copy) {
+  dependsOn configurations.previewMedia
+  dependsOn deletePreviewMedia
+  from configurations.previewMedia.singleFile
+  into previewDir
+}
+
+
+task build(type:Exec) {
+  dependsOn copyPreviewMedia
+  group = BasePlugin.BUILD_GROUP
+  workingDir "$projectDir"
+  commandLine "ng.cmd", "build"
+}
+
+task clean(type: Delete) {
+  delete previewDir, "dist"
+  followSymlinks = false
+}
+

@@ -21,11 +21,15 @@ sourceSets {
 configurations {
   prodImplementation.extendsFrom implementation
   prodRuntimeOnly.extendsFrom runtimeOnly
+  previewMedia {
+    canBeResolved = false
+    canBeConsumed = true
+  }
 }
 
 
-
 dependencies {
+    implementation project(":scales")
     implementation 'com.google.guava:guava:29.0-jre'
     implementation 'com.github.spullara.mustache.java:compiler:0.9.4'
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.4'
@@ -36,7 +40,8 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     testImplementation 'org.assertj:assertj-core:3.18.1'
     testImplementation 'org.mockito:mockito-core:3.6.0'
-
+    testImplementation testFixtures(project(":scales"))
+	
     prodImplementation 'junit:junit:4.13'
     
     compileOnly 'org.projectlombok:lombok:1.18.20'
@@ -47,7 +52,19 @@ dependencies {
 
 	prodCompileOnly 'org.projectlombok:lombok:1.18.20'
 	prodAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
+
+	previewMedia files("build/preview")
+	
 }
+
+
+
+artifacts {
+	previewMedia(file("build/preview")) {
+      builtBy 'generateAndProcessPreviewMedia'
+    }
+}
+
 
 jar {
     manifest {
@@ -78,55 +95,9 @@ artifacts {
 }
 
 /*
- * Create Media
+ * Generate Media
  */
- 
-task createRawMedia(type: Test) {
-  dependsOn build
-  useJUnit()
-  description = 'Generate raw media for Anki decks, to be be processed in docker container'
-  group = 'verification'
-  testClassesDirs = sourceSets.prod.output.classesDirs
-  classpath = sourceSets.prod.runtimeClasspath
-  shouldRunAfter test
-}
 
-def dockerCommandLine(path) {
-  return ["docker", "run", "--rm", "--mount", "type=bind,source=$projectDir/build,target=/mnt", "--name", "ankijazz", "avoss/ankijazz", "//mnt/$path"]
-}
-
-task generateAndProcessPreviewMedia(type:Exec) {
-  dependsOn createRawMedia
-  workingDir "$projectDir"
-  group = BasePlugin.BUILD_GROUP
-  commandLine dockerCommandLine("preview") 
-}
-
-task generateAndProcessAnkiMedia(type:Exec) {
-  dependsOn createRawMedia
-  workingDir "$projectDir"
-  group = BasePlugin.BUILD_GROUP
-  commandLine dockerCommandLine("anki") 
-}
-
-task processPreviewMedia(type:Exec) {
-  workingDir "$projectDir"
-  group = BasePlugin.BUILD_GROUP
-  commandLine dockerCommandLine("preview") 
-}
-
-
-build {
-  dependsOn("copyAnkiAssets")
-  dependsOn("copyPreviewAssets")
-}
-
-clean {
-  dependsOn("cleanWebsite")
-}
-
-def webappDir = "$projectDir/webapp"
-def previewDir = "$webappDir/src/assets/preview"
 def ankiAsset = "$projectDir/src/assets/build.zip"
 
 task copyAnkiAssets(type:Copy) {
@@ -142,33 +113,58 @@ task copyPreviewAssets(type:Copy) {
   } 
   into 'build/preview'
 }
-
-task deleteWebsitePreview(type: Delete) {
-  delete "${previewDir}"
+ 
+task generateRawMedia(type: Test) {
+  useJUnit()
+  description = 'Generate raw media for Anki decks, to be be processed in docker container'
+  group = 'verification'
+  testClassesDirs = sourceSets.prod.output.classesDirs
+  classpath = sourceSets.prod.runtimeClasspath
 }
 
-task createWebsitePreview(type:Copy) {
-  dependsOn "deleteWebsitePreview"
-  dependsOn "generateAndProcessPreviewMedia"
-  from ('build/preview') {
-    include ('*.png', '*.mp3', '*.html', "*.json")
-  } 
-  into "${previewDir}"
+def dockerCommandLine(path) {
+  return ["docker", "run", "--rm", "--mount", "type=bind,source=$projectDir/build,target=/mnt", "--name", "ankijazz", "avoss/ankijazz", "//mnt/$path"]
 }
 
+task generateAndProcessPreviewMedia(type:Exec) {
+  dependsOn copyPreviewAssets
+  dependsOn generateRawMedia
+  workingDir "$projectDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("preview")
+}
+
+task generateAndProcessAnkiMedia(type:Exec) {
+  dependsOn copyAnkiAssets
+  dependsOn generateRawMedia
+  workingDir "$projectDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("anki") 
+}
+
+task processPreviewMedia(type:Exec) {
+  workingDir "$projectDir"
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("preview") 
+}
+
+
+/*
+ * Generate Anki Profile with/without Media
+ */
 
 task deleteAnkiProfile(type: Delete) {
   delete "${ankiProfile}"
 }
 
 task createEmptyAnkiProfile(type: Copy) {
-  dependsOn "deleteAnkiProfile"
+  dependsOn deleteAnkiProfile
   from zipTree("${ankiAsset}")
   into "${ankiProfile}"
 }
 
 task createAnkiProfileWithMedia(type: Copy) {
-  dependsOn "createEmptyAnkiProfile"
+  dependsOn createEmptyAnkiProfile
   dependsOn "generateAndProcessAnkiMedia"
   from ("build/anki") {
     include ('*.png', '*.mp3')
@@ -181,23 +177,9 @@ task deleteAnkiAsset(type: Delete) {
 }
 
 task createAnkiAssetFromProfile(type: Zip) {
-  dependsOn "deleteAnkiAsset"
+  dependsOn deleteAnkiAsset
   archiveFileName = "build.zip"
   destinationDirectory = file("src/assets")
   from "${ankiProfile}"
 }
-
-task createWebsite(type:Exec) {
-  dependsOn "createWebsitePreview"
-  workingDir "$webappDir"
-  group = BasePlugin.BUILD_GROUP
-  commandLine "ng.cmd", "build"
-}
-
-task cleanWebsite(type: Delete) {
-  delete "$previewDir", "$webappDir/dist"
-  followSymlinks = false
-}
-
-
 

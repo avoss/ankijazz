@@ -1,0 +1,84 @@
+plugins {
+  id "java-library"
+  id "java-test-fixtures"
+}
+sourceCompatibility = 1.11
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+  prod {
+    compileClasspath += sourceSets.main.output
+    runtimeClasspath += sourceSets.main.output
+  }
+}
+
+configurations {
+  prodImplementation.extendsFrom implementation
+  prodRuntimeOnly.extendsFrom runtimeOnly
+}
+
+
+
+dependencies {
+    implementation 'com.google.guava:guava:29.0-jre'
+    implementation 'com.github.spullara.mustache.java:compiler:0.9.4'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.4'
+    implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.4'
+    implementation 'org.apache.commons:commons-math3:3.6.1'    
+    implementation 'org.jgrapht:jgrapht-core:1.5.1'
+    
+    testImplementation 'junit:junit:4.13'
+    testImplementation 'org.assertj:assertj-core:3.18.1'
+    testImplementation 'org.mockito:mockito-core:3.6.0'
+
+    testFixturesImplementation 'junit:junit:4.13'
+
+    prodImplementation 'junit:junit:4.13'
+    
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	
+	testCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
+
+	testFixturesCompileOnly 'org.projectlombok:lombok:1.18.20'
+	testFixturesAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
+
+	prodCompileOnly 'org.projectlombok:lombok:1.18.20'
+	prodAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
+}
+
+jar {
+    manifest {
+        attributes (
+"Implementation-Title": "AnkiJazz",
+"Bundle-License": "http://www.fsf.org/licensing/licenses/agpl-3.0.html",
+"Bundle-Copyright": "(C) 2021 Andreas Voss - mail@ankijazz.com",
+"Implementation-Vendor-Id": "com.ankijazz"
+        )
+    }
+}
+
+
+test {
+  useJUnit()
+  filter {
+    includeTestsMatching "*Test"
+  }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
+}
