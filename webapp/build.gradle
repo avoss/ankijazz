@@ -5,7 +5,7 @@ configurations {
 }
 
 dependencies {
-  previewMedia project(path: ":ankijazz", configuration: "previewMedia")
+  previewMedia project(path: ":anki", configuration: "previewMedia")
 }
 
 task deletePreviewMedia(type: Delete) {

@@ -165,7 +165,7 @@ task createEmptyAnkiProfile(type: Copy) {
 
 task createAnkiProfileWithMedia(type: Copy) {
   dependsOn createEmptyAnkiProfile
-  dependsOn "generateAndProcessAnkiMedia"
+  dependsOn generateAndProcessAnkiMedia
   from ("build/anki") {
     include ('*.png', '*.mp3')
   }

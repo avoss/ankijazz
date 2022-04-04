@@ -1,10 +1,6 @@
-/.gradle
-/temp
-/build
-/out
-/.idea/
-/scales.core.iml
-/jtg
-/bin
-/.vscode
-desktop.ini
+.gradle
+.project
+.settings
+.classpath
+bin
+build
