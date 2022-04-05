@@ -54,10 +54,7 @@ dependencies {
 	prodAnnotationProcessor 'org.projectlombok:lombok:1.18.20'    
 
 	previewMedia files("build/preview")
-	
 }
-
-
 
 artifacts {
 	previewMedia(file("build/preview")) {
@@ -85,14 +82,6 @@ test {
   }
 }
 
-task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-}
-
-artifacts {
-    archives sourcesJar
-}
 
 /*
  * Generate Media
@@ -126,7 +115,9 @@ def dockerCommandLine(path) {
   return ["docker", "run", "--rm", "--mount", "type=bind,source=$projectDir/build,target=/mnt", "--name", "ankijazz", "avoss/ankijazz", "//mnt/$path"]
 }
 
+
 task generateAndProcessPreviewMedia(type:Exec) {
+  onlyIf { ! file("${buildDir}/preview/.media-processed").exists() }
   dependsOn copyPreviewAssets
   dependsOn generateRawMedia
   workingDir "$projectDir"
@@ -134,7 +125,9 @@ task generateAndProcessPreviewMedia(type:Exec) {
   commandLine dockerCommandLine("preview")
 }
 
+
 task generateAndProcessAnkiMedia(type:Exec) {
+  onlyIf { ! file("${buildDir}/anki/.media-processed").exists() }
   dependsOn copyAnkiAssets
   dependsOn generateRawMedia
   workingDir "$projectDir"
@@ -144,6 +137,7 @@ task generateAndProcessAnkiMedia(type:Exec) {
 
 task processPreviewMedia(type:Exec) {
   workingDir "$projectDir"
+  description = 'for development only, processes whatever media are present in preview directory'
   group = BasePlugin.BUILD_GROUP
   commandLine dockerCommandLine("preview") 
 }
@@ -157,29 +151,29 @@ task deleteAnkiProfile(type: Delete) {
   delete "${ankiProfile}"
 }
 
-task createEmptyAnkiProfile(type: Copy) {
+task buildAnkiProfileFromAsset(type: Copy) {
   dependsOn deleteAnkiProfile
   from zipTree("${ankiAsset}")
   into "${ankiProfile}"
-}
-
-task createAnkiProfileWithMedia(type: Copy) {
-  dependsOn createEmptyAnkiProfile
-  dependsOn generateAndProcessAnkiMedia
-  from ("build/anki") {
-    include ('*.png', '*.mp3')
-  }
-  into "${ankiProfile}/collection.media"
 }
 
 task deleteAnkiAsset(type: Delete) {
   delete "${ankiAsset}"
 }
 
-task createAnkiAssetFromProfile(type: Zip) {
+task buildAnkiAssetFromProfile(type: Zip) {
   dependsOn deleteAnkiAsset
+  description = 'for development only, updates asset with changes made on Anki profile'
   archiveFileName = "build.zip"
   destinationDirectory = file("src/assets")
   from "${ankiProfile}"
 }
 
+task buildAnkiProfile(type: Copy) {
+  dependsOn buildAnkiProfileFromAsset
+  dependsOn generateAndProcessAnkiMedia
+  from ("build/anki") {
+    include ('*.png', '*.mp3')
+  }
+  into "${ankiProfile}/collection.media"
+}

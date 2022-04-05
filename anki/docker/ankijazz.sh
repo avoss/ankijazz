@@ -18,4 +18,7 @@ export -f runSynth
 (cd $1 && find . -name '*.ly' | parallel runLily)
 (cd $1 && find . -name '*.midi' | parallel runSynth)
 
+echo $(date) > "$1/.media-processed"
+
+
 

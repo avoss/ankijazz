@@ -1,0 +1,5 @@
+// ./gradlew tiTree build
+
+plugins {
+  id 'org.barfuin.gradle.taskinfo' version '1.0.5'
+}

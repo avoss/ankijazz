@@ -8,13 +8,8 @@ dependencies {
   previewMedia project(path: ":anki", configuration: "previewMedia")
 }
 
-task deletePreviewMedia(type: Delete) {
-  delete previewDir
-}
-
 task copyPreviewMedia(type:Copy) {
   dependsOn configurations.previewMedia
-  dependsOn deletePreviewMedia
   from configurations.previewMedia.singleFile
   into previewDir
 }

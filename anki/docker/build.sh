@@ -1,1 +1,1 @@
-docker build -t avoss/ankijazz . # && docker push avoss/ankijazz:latest
+docker build -t avoss/ankijazz . && docker push avoss/ankijazz:latest
