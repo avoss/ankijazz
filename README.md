@@ -9,6 +9,7 @@ Extensive music theory library that can answer the following questions, for exam
 - what is the key signature of F Melodic Minor?
 - which Pentatonic Scale is a good substitute for a Gmaj7 Arpeggio?
 - what scales to use to improvise over a given chord progression (with fewest scale changes as possible)?
+- a nice Midi DSL to generate backing tracks for chord progressions
 - and many more!
 
 Generate fretboard diagrams:
