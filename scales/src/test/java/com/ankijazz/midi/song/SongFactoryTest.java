@@ -21,7 +21,6 @@ import com.ankijazz.Utils;
 import com.ankijazz.Utils.LoopIteratorFactory;
 import com.ankijazz.midi.song.SongFactory.Feature;
 import com.ankijazz.midi.song.SongFactory.KeyFactory;
-import com.ankijazz.sheet.RenderContext;
 
 public class SongFactoryTest {
   
@@ -57,8 +56,7 @@ public class SongFactoryTest {
   @Test
   public void assertNoDuplicateSongsAreGenerated() {
     SongFactory factory = factory(EnumSet.of(Test, Workouts, AllKeys, EachKey));
-    RenderContext context = RenderContext.ANKI;
-    List<SongWrapper> list = factory.generate(context.getNumberOfBars());
+    List<SongWrapper> list = factory.generate(16);
     Set<Song> set = list.stream().map(SongWrapper::getSong).collect(toSet());
     assertEquals(list.size(), set.size());
   }

@@ -19,7 +19,7 @@ import com.ankijazz.theory.Note;
 
 public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard> {
 
-  private final RenderContext context = RenderContext.ANKI;
+  private final RenderContext context;
   private final Note instrument;
   private final boolean withGuitar;
   private final String title;
@@ -28,11 +28,13 @@ public abstract class AbstractJamCardGenerator implements CardGenerator<JamCard>
   private final LoopIteratorFactory iteratorFactory;
   private final Iterator<String> stringSetIterator;
   
-  protected AbstractJamCardGenerator(String title, Note instrument, boolean withGuitar) {
-    this(title, instrument, withGuitar, Utils.randomLoopIteratorFactory());
+  
+  protected AbstractJamCardGenerator(RenderContext context, String title, Note instrument, boolean withGuitar) {
+    this(context, title, instrument, withGuitar, Utils.randomLoopIteratorFactory());
   }
   
-  protected AbstractJamCardGenerator(String title, Note instrument, boolean withGuitar, LoopIteratorFactory iteratorFactory) {
+  protected AbstractJamCardGenerator(RenderContext context, String title, Note instrument, boolean withGuitar, LoopIteratorFactory iteratorFactory) {
+    this.context = context;
     this.title = title;
     this.instrument = instrument;
     this.withGuitar = withGuitar;

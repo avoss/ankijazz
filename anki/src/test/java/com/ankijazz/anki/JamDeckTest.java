@@ -12,6 +12,7 @@ import com.ankijazz.TestUtils;
 import com.ankijazz.Utils;
 import com.ankijazz.midi.song.Ensemble;
 import com.ankijazz.midi.song.SongFactory.Feature;
+import com.ankijazz.sheet.RenderContext;
 import com.ankijazz.theory.Note;
 
 public class JamDeckTest {
@@ -19,7 +20,7 @@ public class JamDeckTest {
   class TestCardGenerator extends AbstractJamCardGenerator {
 
     protected TestCardGenerator() {
-      super("Test Jam Deck", Note.C, true, Utils.fixedLoopIteratorFactory());
+      super(RenderContext.ANKI, "Test Jam Deck", Note.C, true, Utils.fixedLoopIteratorFactory());
     }
 
     @Override

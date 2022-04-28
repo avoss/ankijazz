@@ -142,6 +142,12 @@ task processPreviewMedia(type:Exec) {
   commandLine dockerCommandLine("preview") 
 }
 
+task processProdMedia(type:Exec) {
+  workingDir "$projectDir"
+  description = 'for development only, processes whatever media are present in preview directory'
+  group = BasePlugin.BUILD_GROUP
+  commandLine dockerCommandLine("anki") 
+}
 
 /*
  * Generate Anki Profile with/without Media

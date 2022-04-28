@@ -14,13 +14,14 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import com.ankijazz.midi.song.Ensemble;
+import com.ankijazz.sheet.RenderContext;
 import com.ankijazz.theory.Note;
 
 public class JamCardGenerator extends AbstractJamCardGenerator {
 
   
   public JamCardGenerator(String title, Note instrument, boolean withGuitar) {
-    super(title, instrument, withGuitar);
+    super(RenderContext.ANKI, title, instrument, withGuitar);
   }
 
   @Override
