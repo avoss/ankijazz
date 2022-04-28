@@ -29,7 +29,18 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
   }
 
   static class ScaleNotFoundException extends IllegalArgumentException {
+    private Scale chord;
     private static final long serialVersionUID = -6665971531347246519L; 
+
+    public ScaleNotFoundException(Scale chord) {
+      this.chord = chord;
+    }
+    
+    @Override
+      public String toString() {
+        return "No scale found for " + chord.asChord();
+      }
+
   }
   
   interface Strategy {
@@ -103,7 +114,7 @@ public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
       Scale chord = chordIterator.next();
       List<Vertex> next = strategy.toVertices(chord);
       if (next.isEmpty()) {
-        throw new ScaleNotFoundException();
+        throw new ScaleNotFoundException(chord);
       }
       addVertices(prev, next);
       prev = next;

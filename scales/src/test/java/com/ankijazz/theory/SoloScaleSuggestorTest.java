@@ -2,7 +2,7 @@ package com.ankijazz.theory;
 
 import static com.ankijazz.theory.Note.A;
 import static com.ankijazz.theory.Note.B;
-import static com.ankijazz.theory.Note.Bb;
+import static com.ankijazz.theory.Note.*;
 import static com.ankijazz.theory.Note.C;
 import static com.ankijazz.theory.Note.D;
 import static com.ankijazz.theory.Note.Db;
@@ -11,8 +11,9 @@ import static com.ankijazz.theory.Note.Eb;
 import static com.ankijazz.theory.Note.G;
 import static com.ankijazz.theory.Note.Gb;
 import static com.ankijazz.theory.ScaleUniverse.SCALES;
-import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.*;
 import static com.ankijazz.theory.Scales.CMelodicMinor;
+import static com.ankijazz.theory.Scales.Cmaj7;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -32,7 +33,7 @@ import com.ankijazz.theory.SoloScaleSuggestor.Vertex;
 public class SoloScaleSuggestorTest {
 
   private static final ScaleUniverse UNIVERSE = new ScaleUniverse(false, 
-      List.of(BuiltinScaleType.Major, BuiltinScaleType.MelodicMinor)
+      List.of(BuiltinScaleType.Major, BuiltinScaleType.MelodicMinor, BuiltinScaleType.HarmonicMinor)
   );
 
   @Test
@@ -68,7 +69,7 @@ public class SoloScaleSuggestorTest {
   
   @Test
   public void testPaths() {
-    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[C7:F Major Scale, C7:F Melodic Minor, C7:G Melodic Minor]");
+    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[C7:F Major Scale, C7:F Melodic Minor, C7:G Melodic Minor, C7:F Harmonic Minor]");
     assertThatThrownBy(() -> computePaths(new Scale(C, Db, D, Eb, E))).isInstanceOf(SoloScaleSuggestor.ScaleNotFoundException.class);
   }
   
@@ -76,20 +77,36 @@ public class SoloScaleSuggestorTest {
   public void printSpainSolo() {
     // Spain Solo //
     List<Scale> chords = List.of(
-      Scales.Cmaj7.transpose(G),      //GΔ7
-      Scales.C7.transpose(Gb),        //F#7
-      Scales.Cm7.transpose(E),        //Em7
-      Scales.C7.transpose(A),         //A7
-      Scales.Cmaj7.transpose(D),      //DΔ7
-      Scales.Cmaj7.transpose(G),      //GΔ7
-      Scales.C7flat5.transpose(Db),   //C#7b5
-      Scales.C7sharp5sharp9.transpose(Gb),  //F#7#9
-      Scales.C7sus4.transpose(B),     //B7sus4
-      Scales.C7sharp5.transpose(B)    //B7#5 
+      Cmaj7.transpose(G),      //GΔ7
+      C7.transpose(Gb),        //F#7
+      Cm7.transpose(E),        //Em7
+      C7.transpose(A),         //A7
+      Cmaj7.transpose(D),      //DΔ7
+      Cmaj7.transpose(G),      //GΔ7
+      C7flat5.transpose(Db),   //C#7b5
+      C7sharp5sharp9.transpose(Gb),  //F#7#9
+      C7sus4.transpose(B),     //B7sus4
+      C7sharp5.transpose(B)    //B7#5 
     );
     System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
   }
 
+
+  @Test
+  public void printWITTCL_PartA_Solo() {
+    List<Scale> chords = List.of(
+      Cm7b5.transpose(G),
+      C7flat9,
+      Scales.CminTriad.transpose(F),
+      Scales.CminTriad.transpose(F),
+      Cm7b5.transpose(D),
+      C7flat9.transpose(G),
+      Scales.C6,
+      Scales.C6
+    );
+    System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
+  }
+  
   @Test
   public void testHeathrowSolo() {
     String song = "F9 Dm6 Bb " + 
