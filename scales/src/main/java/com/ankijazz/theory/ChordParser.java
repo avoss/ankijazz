@@ -2,6 +2,7 @@ package com.ankijazz.theory;
 
 import static com.ankijazz.theory.Note.C;
 
+import java.util.List;
 import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.function.Function;
@@ -54,6 +55,13 @@ public class ChordParser {
       throw new ParseChordException("could not parse " + chord);
     }
     return type.getPrototype().transpose(root);
+  }
+  
+  public static List<Scale> parseChords(String chords) {
+    return Pattern.compile("\\s+")
+      .splitAsStream(chords)
+      .map(chord -> parseChord(chord))
+      .collect(Collectors.toList());
   }
   
 

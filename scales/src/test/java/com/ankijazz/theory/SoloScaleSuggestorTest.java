@@ -2,6 +2,7 @@ package com.ankijazz.theory;
 
 import static com.ankijazz.theory.Note.A;
 import static com.ankijazz.theory.Note.B;
+import static com.ankijazz.theory.ChordParser.parseChords;
 import static com.ankijazz.theory.Note.*;
 import static com.ankijazz.theory.Note.C;
 import static com.ankijazz.theory.Note.D;
@@ -12,8 +13,6 @@ import static com.ankijazz.theory.Note.G;
 import static com.ankijazz.theory.Note.Gb;
 import static com.ankijazz.theory.ScaleUniverse.SCALES;
 import static com.ankijazz.theory.Scales.*;
-import static com.ankijazz.theory.Scales.CMelodicMinor;
-import static com.ankijazz.theory.Scales.Cmaj7;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -69,46 +68,24 @@ public class SoloScaleSuggestorTest {
   
   @Test
   public void testPaths() {
-    assertThat(computePaths(Scales.C7).toString()).isEqualTo("[C7:F Major Scale, C7:F Melodic Minor, C7:G Melodic Minor, C7:F Harmonic Minor]");
+    List<String> paths = computePaths(Scales.C7);
+    assertThat(paths.size()).isEqualTo(4);
+    assertThat(paths.toString()).contains("F Melodic Minor");
     assertThatThrownBy(() -> computePaths(new Scale(C, Db, D, Eb, E))).isInstanceOf(SoloScaleSuggestor.ScaleNotFoundException.class);
   }
   
   @Test
-  public void printSpainSolo() {
-    // Spain Solo //
-    List<Scale> chords = List.of(
-      Cmaj7.transpose(G),      //GΔ7
-      C7.transpose(Gb),        //F#7
-      Cm7.transpose(E),        //Em7
-      C7.transpose(A),         //A7
-      Cmaj7.transpose(D),      //DΔ7
-      Cmaj7.transpose(G),      //GΔ7
-      C7flat5.transpose(Db),   //C#7b5
-      C7sharp5sharp9.transpose(Gb),  //F#7#9
-      C7sus4.transpose(B),     //B7sus4
-      C7sharp5.transpose(B)    //B7#5 
-    );
-    System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
-  }
-
-
-  @Test
-  public void printWITTCL_PartA_Solo() {
-    List<Scale> chords = List.of(
-      Cm7b5.transpose(G),
-      C7flat9,
-      Scales.CminTriad.transpose(F),
-      Scales.CminTriad.transpose(F),
-      Cm7b5.transpose(D),
-      C7flat9.transpose(G),
-      Scales.C6,
-      Scales.C6
-    );
-    System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
+  public void printHowHighTheMoon() {
+    String song = 
+        "Cmaj7 Bb7sus4 Ebmaj7 G7sus4 " + // Intro  
+        "Cmaj7 Cm7 F7 Bbmaj7 Bbm7 Eb7 Abmaj7 Dm7 G7b9 Cm7 Dm7b5 G7b9 Em7 A7b9 Dm7 G7 " + // A-Teil
+        "Cmaj7 Cm7 F7 Bbmaj7 Bbm7 Eb7 Abmaj7 Dm7 G7b9 Cmaj7 Dm7 G7 Em7 Eb7 Dm7 G7 Cmaj7 Ebmaj7 Abmaj7 Dbmaj7"; // B-Teil
+    printScaleOptions(song);
   }
   
+  
   @Test
-  public void testHeathrowSolo() {
+  public void printHeathrowSolo() {
     String song = "F9 Dm6 Bb " + 
                "F9 Dm6 Gb Gb7sus4 F9 Dm6 Bb " +
                "F9 Dm6 Cm7 Gbm " +
@@ -118,7 +95,7 @@ public class SoloScaleSuggestorTest {
   }
 
   private void printChordNotes(String song) {
-    List<Scale> chords = parseSong(song);
+    List<Scale> chords = parseChords(song);
     Set<Scale> seen = new HashSet<>();
     for (Scale chord : chords) {
       if (seen.contains(chord)) {
@@ -132,16 +109,8 @@ public class SoloScaleSuggestorTest {
   }
 
   private void printScaleOptions(String song) {
-    List<Scale> chords = parseSong(song);
-    System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n")));
-  }
-
-  private List<Scale> parseSong(String song) {
-    List<Scale> chords = Pattern.compile("\\s+")
-      .splitAsStream(song)
-      .map(chord -> ChordParser.parseChord(chord))
-      .collect(Collectors.toList());
-    return chords;
+    List<Scale> chords = parseChords(song);
+    System.out.println(computePaths(chords).stream().collect(Collectors.joining("\n\n")));
   }
 
   private List<String> computePaths(Scale ... chords) {
@@ -149,7 +118,7 @@ public class SoloScaleSuggestorTest {
   }
   
   private List<String> computePaths(List<Scale> chords) {
-    SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 10);
+    SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 20);
     List<String> paths = new ArrayList<>();
     suggestor.stream().forEach( path -> {
       assertThat(path.size()).isEqualTo(chords.size());
@@ -159,7 +128,7 @@ public class SoloScaleSuggestorTest {
   }
 
   private String toString(List<Vertex> path) {
-    return path.stream().map(v -> String.format("%s:%s", v.getChord().asChord(Accidental.FLAT), v.getInfo().getScaleName())).collect(Collectors.joining(", "));
+    return path.stream().map(v -> String.format("%8s : %s", v.getChord().asChord(Accidental.FLAT), v.getInfo().getScaleName())).collect(Collectors.joining("\n"));
   }
 
 }

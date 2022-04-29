@@ -14,11 +14,16 @@ import static com.ankijazz.theory.Note.Eb;
 import static com.ankijazz.theory.Note.F;
 import static com.ankijazz.theory.Note.G;
 import static com.ankijazz.theory.Note.Gb;
+import static com.ankijazz.theory.Scales.C7;
+import static com.ankijazz.theory.Scales.Cm7;
+import static com.ankijazz.theory.Scales.Cmaj7;
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Test;
+import static org.assertj.core.api.Assertions.*;
 
 public class ChordParserTest {
 
@@ -97,6 +102,13 @@ public class ChordParserTest {
     assertChord("Cm9", C, Eb, G, Bb, D);
     assertChord("Cm11", C, Eb, G, Bb, F);
     assertChord("Cm7b5", C, Eb, Gb, Bb);
+  }
+  
+  @Test
+  public void testParseChords() {
+    List<Scale> chords = ChordParser.parseChords("Dm7 G7 Cmaj7");
+    assertThat(chords.size()).isEqualTo(3);
+    assertThat(chords).containsExactly(Cm7.transpose(D), C7.transpose(G), Cmaj7);
   }
   
   private void assertChord(String symbol, Note... notes) {

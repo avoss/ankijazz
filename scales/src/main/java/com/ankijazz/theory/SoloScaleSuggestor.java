@@ -15,8 +15,7 @@ import org.jgrapht.graph.SimpleDirectedWeightedGraph;
 /**
  * computes the scales that can be used to improvise over a chord progression.
  * For every chord, it computes a set of scales that contain the chord and are valid for that chord.
- * Then it computes the shortest path, so that the number of scale changes is minimized. If multiple
- * shortest paths exist, then the least difficult scales are chosen (e.g. smallest number of accidentals).
+ * Then it computes the shortest path, so that the number of scale changes is minimized.
  */
 
 public class SoloScaleSuggestor implements Iterable<List<ScaleInfo>> {
