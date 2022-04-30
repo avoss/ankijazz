@@ -16,6 +16,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.junit.Test;
 
@@ -52,7 +53,7 @@ public class SmoothLineSuggestorTest {
   }
   
   @Test
-  public void printHowHighTheMoon() {
+  public void printHowHighTheMoonChords() {
     List<Scale> chords = parseChords("Em7 Eb7 Dm7 G7 Cmaj7 Ebmaj7 Abmaj7 Dbmaj7");
     printLines(DESCENDING, chords);
     printLines(ASCENDING, chords);
