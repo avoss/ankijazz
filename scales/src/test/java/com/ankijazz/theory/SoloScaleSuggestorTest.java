@@ -77,12 +77,19 @@ public class SoloScaleSuggestorTest {
   @Test
   public void printHowHighTheMoon() {
     String song = 
-        "Cmaj7 Bb7sus4 Ebmaj7 G7sus4 " + // Intro  
+        //"Cmaj7 Bb7sus4 Ebmaj7 G7sus4 " + // Intro  
         "Cmaj7 Cm7 F7 Bbmaj7 Bbm7 Eb7 Abmaj7 Dm7 G7b9 Cm7 Dm7b5 G7b9 Em7 A7b9 Dm7 G7 " + // A-Teil
         "Cmaj7 Cm7 F7 Bbmaj7 Bbm7 Eb7 Abmaj7 Dm7 G7b9 Cmaj7 Dm7 G7 Em7 Eb7 Dm7 G7 Cmaj7 Ebmaj7 Abmaj7 Dbmaj7"; // B-Teil
     printScaleOptions(song);
   }
   
+  @Test
+  public void printWITTCL() {
+    String song = 
+        "Gm7b5 C7b9 Fm7 Dm7b5 G7b9 C6 " + // A-Teil
+        "Cm7 F7 Bbmaj7 Ab7 G7"; // B-Teil
+    printScaleOptions(song);
+  }
   
   @Test
   public void printHeathrowSolo() {
@@ -118,7 +125,7 @@ public class SoloScaleSuggestorTest {
   }
   
   private List<String> computePaths(List<Scale> chords) {
-    SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 20);
+    SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 1);
     List<String> paths = new ArrayList<>();
     suggestor.stream().forEach( path -> {
       assertThat(path.size()).isEqualTo(chords.size());
