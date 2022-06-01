@@ -12,4 +12,8 @@ public class SimpleDeck<T extends Card> extends AbstractDeck<T> {
     super(title, outputFileName, mustacheTemplate, cards);
   }
 
+  public SimpleDeck(String title, String outputFileName) {
+    super(title, outputFileName);
+  }
+
 }
