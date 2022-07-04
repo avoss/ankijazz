@@ -1,18 +1,16 @@
 package com.ankijazz.theory;
 
-import static com.ankijazz.theory.Note.A;
-import static com.ankijazz.theory.Note.B;
 import static com.ankijazz.theory.ChordParser.parseChords;
-import static com.ankijazz.theory.Note.*;
+import static com.ankijazz.theory.Note.Bb;
 import static com.ankijazz.theory.Note.C;
 import static com.ankijazz.theory.Note.D;
 import static com.ankijazz.theory.Note.Db;
 import static com.ankijazz.theory.Note.E;
 import static com.ankijazz.theory.Note.Eb;
 import static com.ankijazz.theory.Note.G;
-import static com.ankijazz.theory.Note.Gb;
 import static com.ankijazz.theory.ScaleUniverse.SCALES;
-import static com.ankijazz.theory.Scales.*;
+import static com.ankijazz.theory.Scales.CMajor;
+import static com.ankijazz.theory.Scales.CMelodicMinor;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -21,9 +19,9 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.ankijazz.theory.SoloScaleSuggestor.DefaultStrategy;
@@ -75,23 +73,14 @@ public class SoloScaleSuggestorTest {
   }
   
   @Test
-  public void printHowHighTheMoon() {
-    String song = 
-        //"Cmaj7 Bb7sus4 Ebmaj7 G7sus4 " + // Intro  
-        "Cmaj7 Cm7 F7 Bbmaj7 Bbm7 Eb7 Abmaj7 Dm7 G7b9 Cm7 Dm7b5 G7b9 Em7 A7b9 Dm7 G7 " + // A-Teil
-        "Cmaj7 Cm7 F7 Bbmaj7 Bbm7 Eb7 Abmaj7 Dm7 G7b9 Cmaj7 Dm7 G7 Em7 Eb7 Dm7 G7 Cmaj7 Ebmaj7 Abmaj7 Dbmaj7"; // B-Teil
+  @Ignore
+  public void printStrangeCadence() {
+    String song = "Dm7b5 G7b9 Em7 A7b9";
     printScaleOptions(song);
   }
   
   @Test
-  public void printWITTCL() {
-    String song = 
-        "Gm7b5 C7b9 Fm7 Dm7b5 G7b9 C6 " + // A-Teil
-        "Cm7 F7 Bbmaj7 Ab7 G7"; // B-Teil
-    printScaleOptions(song);
-  }
-  
-  @Test
+  @Ignore
   public void printHeathrowSolo() {
     String song = "F9 Dm6 Bb " + 
                "F9 Dm6 Gb Gb7sus4 F9 Dm6 Bb " +
@@ -125,7 +114,7 @@ public class SoloScaleSuggestorTest {
   }
   
   private List<String> computePaths(List<Scale> chords) {
-    SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 1);
+    SoloScaleSuggestor suggestor = new SoloScaleSuggestor(new SoloScaleSuggestor.DefaultStrategy(UNIVERSE), chords, 10);
     List<String> paths = new ArrayList<>();
     suggestor.stream().forEach( path -> {
       assertThat(path.size()).isEqualTo(chords.size());

@@ -57,3 +57,7 @@ The anki subproject generates "raw media" (Lilypond source files and Midi files)
 # About the Code
 
 TBD.
+
+# How to debug Anki
+
+Set `QTWEBENGINE_REMOTE_DEBUGGING` to 8080, start Anki, then open `chrome://inspect` in Chrome.
