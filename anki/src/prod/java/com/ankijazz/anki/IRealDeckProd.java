@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
 /**
@@ -25,6 +26,7 @@ public class IRealDeckProd {
   final String imagePrefix = setlist.replaceAll("\\s+", "");
   
   @Test
+  @Ignore
   public void generateIRealPro() throws IOException {
     SimpleDeck<SimpleCard> deck = new SimpleDeck<SimpleCard>(setlist, setlist.concat(" Deck"));
     
