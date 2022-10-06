@@ -3,6 +3,7 @@ package com.ankijazz.fretboard;
 import static org.junit.Assert.assertEquals;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
 
@@ -86,5 +87,26 @@ public class NPSTest {
     assertEquals(positionString, position.transpose(-12).toString());
     assertEquals(Scales.CMinor7Pentatonic.transpose(Note.G), gMinorPentatonic.getScale());
   }
+  
+  @Test
+  public void testMajor3NPS() {
+    String expected = "7 8 10|7 8 10|7 9 10|7 9 10|8 10 12|8 10 12#8 10 12|8 10 12|9 10 12|9 10 12|10 12 13|10 12 13#10 12 13|10 12 14|10 12 14|10 12 14|12 13 15|12 13 15#12 13 15|12 14 15|12 14 15|12 14 16|13 15 17|13 15 17#1 3 5|2 3 5|2 3 5|2 4 5|3 5 6|3 5 7#3 5 7|3 5 7|3 5 7|4 5 7|5 6 8|5 7 8#5 7 8|5 7 8|5 7 9|5 7 9|6 8 10|7 8 10";
+    assert3NPS(NPS.C_MAJOR_3NPS, expected);
+  }
+
+  @Test
+  public void testMelodicMinor3NPS() {
+    String expected = "5 7 8|5 6 8|5 7 9|5 7 8|6 8 10|7 8 10#7 8 10|6 8 10|7 9 10|7 8 10|8 10 12|8 10 11#8 10 11|8 10 12|9 10 12|8 10 12|10 12 13|10 11 13#10 11 13|10 12 14|10 12 13|10 12 14|12 13 15|11 13 15#11 13 15|12 14 15|12 13 15|12 14 16|13 15 16|13 15 17#1 3 5|2 3 5|1 3 5|2 4 5|3 4 6|3 5 7#3 5 7|3 5 6|3 5 7|4 5 7|4 6 8|5 7 8";
+    assert3NPS(NPS.C_MELODIC_MINOR_3NPS, expected);
+  }
+  
+  private void assert3NPS(Fingering nps, String expected) {
+    List<Position> positions = nps.getPositions();
+    assertEquals(7, positions.size());
+    String actual = positions.stream().map(p -> p.toString()).collect(Collectors.joining("#"));
+    //System.out.println(actual);
+    assertEquals(expected, actual);
+  }
+  
   
 }
